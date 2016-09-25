@@ -4,4 +4,10 @@
    <FileRef
       location = "group:Titan.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Titan iOS/Titan iOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TitanKit/TitanKit.xcodeproj">
+   </FileRef>
 </Workspace>

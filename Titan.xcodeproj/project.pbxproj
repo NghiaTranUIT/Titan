@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FB11D97C90D00B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; };
 		BA035FB21D97C90D00B616AB /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.release.xcconfig"; sourceTree = "<group>"; };
+		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
 		BA035FB01D97C90D00B616AB /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +40,7 @@
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,18 +49,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA035FB11D97C90D00B616AB /* TitanKit.framework in Frameworks */,
+				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E634B1D325D2CBFACDBE15C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */,
+				0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BAEFE7B01D97BE810081A5FE = {
 			isa = PBXGroup;
 			children = (
 				BA035FB01D97C90D00B616AB /* TitanKit.framework */,
 				BAEFE7BB1D97BE810081A5FE /* Titan */,
 				BAEFE7BA1D97BE810081A5FE /* Products */,
+				5E634B1D325D2CBFACDBE15C /* Pods */,
+				413CAFF22DEAB4F102132D9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,10 +111,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAEFE7C81D97BE810081A5FE /* Build configuration list for PBXNativeTarget "Titan" */;
 			buildPhases = (
+				A07488668F6C7C0FACFCF264 /* [CP] Check Pods Manifest.lock */,
 				BAEFE7B51D97BE810081A5FE /* Sources */,
 				BAEFE7B61D97BE810081A5FE /* Frameworks */,
 				BAEFE7B71D97BE810081A5FE /* Resources */,
 				BA035FB31D97C90D00B616AB /* Embed Frameworks */,
+				15614138E4602BB9FE66B890 /* [CP] Embed Pods Frameworks */,
+				57F4E16020241BAD36B43039 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,6 +174,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15614138E4602BB9FE66B890 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57F4E16020241BAD36B43039 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A07488668F6C7C0FACFCF264 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BAEFE7B51D97BE810081A5FE /* Sources */ = {
@@ -264,6 +339,7 @@
 		};
 		BAEFE7C91D97BE810081A5FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -278,6 +354,7 @@
 		};
 		BAEFE7CA1D97BE810081A5FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

@@ -10,6 +10,7 @@
 		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FB11D97C90D00B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; };
 		BA035FB21D97C90D00B616AB /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BE1D97BE810081A5FE /* ViewController.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.release.xcconfig"; sourceTree = "<group>"; };
 		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
 		BA035FB01D97C90D00B616AB /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEFE7BE1D97BE810081A5FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA035FB01D97C90D00B616AB /* TitanKit.framework */,
 				FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */,
 			);
 			name = Frameworks;
@@ -73,10 +76,66 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA035FC01D97DB9100B616AB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC71D97DCEE00B616AB /* Constants.swift */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		BA035FC11D97DB9700B616AB /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		BA035FC21D97DBA400B616AB /* Source code */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC41D97DBB200B616AB /* Controller */,
+			);
+			name = "Source code";
+			sourceTree = "<group>";
+		};
+		BA035FC31D97DBA900B616AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC61D97DBBE00B616AB /* Storyboard */,
+				BA035FC51D97DBB800B616AB /* Assetes */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		BA035FC41D97DBB200B616AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA035FC51D97DBB800B616AB /* Assetes */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7C01D97BE810081A5FE /* Assets.xcassets */,
+			);
+			name = Assetes;
+			sourceTree = "<group>";
+		};
+		BA035FC61D97DBBE00B616AB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7C21D97BE810081A5FE /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		BAEFE7B01D97BE810081A5FE = {
 			isa = PBXGroup;
 			children = (
-				BA035FB01D97C90D00B616AB /* TitanKit.framework */,
 				BAEFE7BB1D97BE810081A5FE /* Titan */,
 				BAEFE7BA1D97BE810081A5FE /* Products */,
 				5E634B1D325D2CBFACDBE15C /* Pods */,
@@ -95,10 +154,10 @@
 		BAEFE7BB1D97BE810081A5FE /* Titan */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
-				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
-				BAEFE7C01D97BE810081A5FE /* Assets.xcassets */,
-				BAEFE7C21D97BE810081A5FE /* Main.storyboard */,
+				BA035FC31D97DBA900B616AB /* Resource */,
+				BA035FC01D97DB9100B616AB /* Configuration */,
+				BA035FC11D97DB9700B616AB /* App Delegate */,
+				BA035FC21D97DBA400B616AB /* Source code */,
 				BAEFE7C51D97BE810081A5FE /* Info.plist */,
 			);
 			path = Titan;
@@ -230,6 +289,7 @@
 			files = (
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
+				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

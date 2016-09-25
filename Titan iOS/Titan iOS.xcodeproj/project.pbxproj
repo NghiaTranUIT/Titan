@@ -12,7 +12,21 @@
 		BA035F731D97C5A900B616AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA035F711D97C5A900B616AB /* Main.storyboard */; };
 		BA035F751D97C5A900B616AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA035F741D97C5A900B616AB /* Assets.xcassets */; };
 		BA035F781D97C5A900B616AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA035F761D97C5A900B616AB /* LaunchScreen.storyboard */; };
+		BA035FBE1D97CB8700B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FBD1D97CB8700B616AB /* TitanKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA035FBB1D97CB3200B616AB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BA035F6A1D97C5A900B616AB /* Titan iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Titan iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +36,7 @@
 		BA035F741D97C5A900B616AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA035F771D97C5A900B616AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA035F791D97C5A900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA035FBD1D97CB8700B616AB /* TitanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TitanKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Titan-eiqsjetwxiovpshiyjylrjnfphzz/Build/Products/Debug-iphonesimulator/TitanKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA035FBE1D97CB8700B616AB /* TitanKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +56,7 @@
 			children = (
 				BA035F6C1D97C5A900B616AB /* Titan iOS */,
 				BA035F6B1D97C5A900B616AB /* Products */,
+				BA035FBC1D97CB8700B616AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +81,14 @@
 			path = "Titan iOS";
 			sourceTree = "<group>";
 		};
+		BA035FBC1D97CB8700B616AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FBD1D97CB8700B616AB /* TitanKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 				BA035F661D97C5A900B616AB /* Sources */,
 				BA035F671D97C5A900B616AB /* Frameworks */,
 				BA035F681D97C5A900B616AB /* Resources */,
+				BA035FBB1D97CB3200B616AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

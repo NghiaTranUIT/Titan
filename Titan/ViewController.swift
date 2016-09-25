@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import TitanKit
 
 class ViewController: NSViewController {
 
@@ -14,6 +15,8 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let network = Network()
+        network.checkVersion()
     }
 
     override var representedObject: Any? {

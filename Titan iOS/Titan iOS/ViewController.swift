@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import TitanKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let network = Network()
+        network.checkVersion()
     }
 
     override func didReceiveMemoryWarning() {

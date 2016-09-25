@@ -5,9 +5,9 @@ Postgresql client for macOS/iOS. Clean design. Absolutely 100% Free and open-sou
 
 Vinh Nghia Tran
 
-http://github.com/NghiaTranUIT
-http://www.nghiatran.me
-vinhnghiatran@gmail.com
+http://github.com/NghiaTranUIT  
+http://www.nghiatran.me  
+vinhnghiatran@gmail.com  
 
 # License
 

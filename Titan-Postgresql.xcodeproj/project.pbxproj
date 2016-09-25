@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA2AA4881D97942A00F8A1B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2AA4871D97942A00F8A1B6 /* AppDelegate.swift */; };
+		BA2AA48A1D97942A00F8A1B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2AA4891D97942A00F8A1B6 /* ViewController.swift */; };
+		BA2AA48D1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2AA48B1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld */; };
+		BA2AA48F1D97942A00F8A1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2AA48E1D97942A00F8A1B6 /* Assets.xcassets */; };
+		BA2AA4921D97942A00F8A1B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2AA4901D97942A00F8A1B6 /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Titan-Postgresql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2AA4871D97942A00F8A1B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA2AA4891D97942A00F8A1B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA2AA48C1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Titan_Postgresql.xcdatamodel; sourceTree = "<group>"; };
+		BA2AA48E1D97942A00F8A1B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA2AA4911D97942A00F8A1B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA2AA4931D97942A00F8A1B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA2AA4811D97942A00F8A1B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA2AA47B1D97942A00F8A1B6 = {
+			isa = PBXGroup;
+			children = (
+				BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql */,
+				BA2AA4851D97942A00F8A1B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA2AA4851D97942A00F8A1B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql */ = {
+			isa = PBXGroup;
+			children = (
+				BA2AA4871D97942A00F8A1B6 /* AppDelegate.swift */,
+				BA2AA4891D97942A00F8A1B6 /* ViewController.swift */,
+				BA2AA48E1D97942A00F8A1B6 /* Assets.xcassets */,
+				BA2AA4901D97942A00F8A1B6 /* Main.storyboard */,
+				BA2AA4931D97942A00F8A1B6 /* Info.plist */,
+				BA2AA48B1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld */,
+			);
+			path = "Titan-Postgresql";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql" */;
+			buildPhases = (
+				BA2AA4801D97942A00F8A1B6 /* Sources */,
+				BA2AA4811D97942A00F8A1B6 /* Frameworks */,
+				BA2AA4821D97942A00F8A1B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Titan-Postgresql";
+			productName = "Titan-Postgresql";
+			productReference = BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA2AA47C1D97942A00F8A1B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = fe;
+				TargetAttributes = {
+					BA2AA4831D97942A00F8A1B6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U8CXVPE3MM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BA2AA47F1D97942A00F8A1B6 /* Build configuration list for PBXProject "Titan-Postgresql" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA2AA47B1D97942A00F8A1B6;
+			productRefGroup = BA2AA4851D97942A00F8A1B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA2AA4821D97942A00F8A1B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2AA48F1D97942A00F8A1B6 /* Assets.xcassets in Resources */,
+				BA2AA4921D97942A00F8A1B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA2AA4801D97942A00F8A1B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2AA48A1D97942A00F8A1B6 /* ViewController.swift in Sources */,
+				BA2AA4881D97942A00F8A1B6 /* AppDelegate.swift in Sources */,
+				BA2AA48D1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA2AA4901D97942A00F8A1B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2AA4911D97942A00F8A1B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA2AA4941D97942A00F8A1B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA2AA4951D97942A00F8A1B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		BA2AA4971D97942A00F8A1B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = "Titan-Postgresql/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.Titan-Postgresql";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BA2AA4981D97942A00F8A1B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = "Titan-Postgresql/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.Titan-Postgresql";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA2AA47F1D97942A00F8A1B6 /* Build configuration list for PBXProject "Titan-Postgresql" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2AA4941D97942A00F8A1B6 /* Debug */,
+				BA2AA4951D97942A00F8A1B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2AA4971D97942A00F8A1B6 /* Debug */,
+				BA2AA4981D97942A00F8A1B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA2AA48B1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA2AA48C1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodel */,
+			);
+			currentVersion = BA2AA48C1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodel */;
+			path = Titan_Postgresql.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BA2AA47C1D97942A00F8A1B6 /* Project object */;
+}

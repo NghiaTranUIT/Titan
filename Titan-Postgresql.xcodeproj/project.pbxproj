@@ -12,20 +12,111 @@
 		BA2AA48D1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2AA48B1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld */; };
 		BA2AA48F1D97942A00F8A1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2AA48E1D97942A00F8A1B6 /* Assets.xcassets */; };
 		BA2AA4921D97942A00F8A1B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2AA4901D97942A00F8A1B6 /* Main.storyboard */; };
+		BA2EC0B81D97996E0056B4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EC0B71D97996E0056B4AC /* AppDelegate.swift */; };
+		BA2EC0BA1D97996E0056B4AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2EC0B91D97996E0056B4AC /* ViewController.swift */; };
+		BA2EC0BD1D97996E0056B4AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2EC0BB1D97996E0056B4AC /* Main.storyboard */; };
+		BA2EC0C01D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA2EC0BE1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodeld */; };
+		BA2EC0C21D97996E0056B4AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2EC0C11D97996E0056B4AC /* Assets.xcassets */; };
+		BA2EC0C51D97996E0056B4AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2EC0C31D97996E0056B4AC /* LaunchScreen.storyboard */; };
+		BA2EC0E51D9799FE0056B4AC /* TitanPostgresqlKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = BA2EC0E31D9799FE0056B4AC /* TitanPostgresqlKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA2EC0E81D9799FE0056B4AC /* TitanPostgresqlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2EC0E11D9799FE0056B4AC /* TitanPostgresqlKit.framework */; };
+		BA2EC0E91D9799FE0056B4AC /* TitanPostgresqlKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA2EC0E11D9799FE0056B4AC /* TitanPostgresqlKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA2EC0F61D979A100056B4AC /* TitanPostgresqlKit-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = BA2EC0F41D979A100056B4AC /* TitanPostgresqlKit-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA2EC0F91D979A100056B4AC /* TitanPostgresqlKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2EC0F21D979A100056B4AC /* TitanPostgresqlKit.framework */; };
+		BA2EC0FA1D979A100056B4AC /* TitanPostgresqlKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA2EC0F21D979A100056B4AC /* TitanPostgresqlKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BA2EC0E61D9799FE0056B4AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA2AA47C1D97942A00F8A1B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA2EC0E01D9799FE0056B4AC;
+			remoteInfo = "TitanPostgresqlKit-iOS";
+		};
+		BA2EC0F71D979A100056B4AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA2AA47C1D97942A00F8A1B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA2EC0F11D979A100056B4AC;
+			remoteInfo = "TitanPostgresqlKit-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA2EC0971D9798720056B4AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA2EC0FA1D979A100056B4AC /* TitanPostgresqlKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0DB1D9799840056B4AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA2EC0E91D9799FE0056B4AC /* TitanPostgresqlKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Titan-Postgresql.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql-macOS-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Titan-Postgresql-macOS-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2AA4871D97942A00F8A1B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA2AA4891D97942A00F8A1B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA2AA48C1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Titan_Postgresql.xcdatamodel; sourceTree = "<group>"; };
 		BA2AA48E1D97942A00F8A1B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA2AA4911D97942A00F8A1B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA2AA4931D97942A00F8A1B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2EC0B51D97996E0056B4AC /* Titan-Postgresql-iOS-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Titan-Postgresql-iOS-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2EC0B71D97996E0056B4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA2EC0B91D97996E0056B4AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA2EC0BC1D97996E0056B4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA2EC0BF1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Titan_Postgresql_iOS_app.xcdatamodel; sourceTree = "<group>"; };
+		BA2EC0C11D97996E0056B4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA2EC0C41D97996E0056B4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA2EC0C61D97996E0056B4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2EC0E11D9799FE0056B4AC /* TitanPostgresqlKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanPostgresqlKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2EC0E31D9799FE0056B4AC /* TitanPostgresqlKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TitanPostgresqlKit-iOS.h"; sourceTree = "<group>"; };
+		BA2EC0E41D9799FE0056B4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2EC0F21D979A100056B4AC /* TitanPostgresqlKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanPostgresqlKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2EC0F41D979A100056B4AC /* TitanPostgresqlKit-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TitanPostgresqlKit-macOS.h"; sourceTree = "<group>"; };
+		BA2EC0F51D979A100056B4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BA2AA4811D97942A00F8A1B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0F91D979A100056B4AC /* TitanPostgresqlKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0B21D97996E0056B4AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0E81D9799FE0056B4AC /* TitanPostgresqlKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0DD1D9799FE0056B4AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0EE1D979A100056B4AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,7 +129,10 @@
 		BA2AA47B1D97942A00F8A1B6 = {
 			isa = PBXGroup;
 			children = (
-				BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql */,
+				BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql-macOS-app */,
+				BA2EC0B61D97996E0056B4AC /* Titan-Postgresql-iOS-app */,
+				BA2EC0E21D9799FE0056B4AC /* TitanPostgresqlKit-iOS */,
+				BA2EC0F31D979A100056B4AC /* TitanPostgresqlKit-macOS */,
 				BA2AA4851D97942A00F8A1B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +140,15 @@
 		BA2AA4851D97942A00F8A1B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */,
+				BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql-macOS-app.app */,
+				BA2EC0B51D97996E0056B4AC /* Titan-Postgresql-iOS-app.app */,
+				BA2EC0E11D9799FE0056B4AC /* TitanPostgresqlKit.framework */,
+				BA2EC0F21D979A100056B4AC /* TitanPostgresqlKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql */ = {
+		BA2AA4861D97942A00F8A1B6 /* Titan-Postgresql-macOS-app */ = {
 			isa = PBXGroup;
 			children = (
 				BA2AA4871D97942A00F8A1B6 /* AppDelegate.swift */,
@@ -61,28 +158,137 @@
 				BA2AA4931D97942A00F8A1B6 /* Info.plist */,
 				BA2AA48B1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodeld */,
 			);
+			name = "Titan-Postgresql-macOS-app";
 			path = "Titan-Postgresql";
+			sourceTree = "<group>";
+		};
+		BA2EC0B61D97996E0056B4AC /* Titan-Postgresql-iOS-app */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EC0B71D97996E0056B4AC /* AppDelegate.swift */,
+				BA2EC0B91D97996E0056B4AC /* ViewController.swift */,
+				BA2EC0BB1D97996E0056B4AC /* Main.storyboard */,
+				BA2EC0C11D97996E0056B4AC /* Assets.xcassets */,
+				BA2EC0C31D97996E0056B4AC /* LaunchScreen.storyboard */,
+				BA2EC0C61D97996E0056B4AC /* Info.plist */,
+				BA2EC0BE1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodeld */,
+			);
+			path = "Titan-Postgresql-iOS-app";
+			sourceTree = "<group>";
+		};
+		BA2EC0E21D9799FE0056B4AC /* TitanPostgresqlKit-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EC0E31D9799FE0056B4AC /* TitanPostgresqlKit-iOS.h */,
+				BA2EC0E41D9799FE0056B4AC /* Info.plist */,
+			);
+			path = "TitanPostgresqlKit-iOS";
+			sourceTree = "<group>";
+		};
+		BA2EC0F31D979A100056B4AC /* TitanPostgresqlKit-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				BA2EC0F41D979A100056B4AC /* TitanPostgresqlKit-macOS.h */,
+				BA2EC0F51D979A100056B4AC /* Info.plist */,
+			);
+			path = "TitanPostgresqlKit-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		BA2EC0DE1D9799FE0056B4AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0E51D9799FE0056B4AC /* TitanPostgresqlKit-iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0EF1D979A100056B4AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0F61D979A100056B4AC /* TitanPostgresqlKit-macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql */ = {
+		BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql-macOS-app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql" */;
+			buildConfigurationList = BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql-macOS-app" */;
 			buildPhases = (
 				BA2AA4801D97942A00F8A1B6 /* Sources */,
 				BA2AA4811D97942A00F8A1B6 /* Frameworks */,
 				BA2AA4821D97942A00F8A1B6 /* Resources */,
+				BA2EC0971D9798720056B4AC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA2EC0F81D979A100056B4AC /* PBXTargetDependency */,
+			);
+			name = "Titan-Postgresql-macOS-app";
+			productName = "Titan-Postgresql";
+			productReference = BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql-macOS-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA2EC0B41D97996E0056B4AC /* Titan-Postgresql-iOS-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2EC0C71D97996E0056B4AC /* Build configuration list for PBXNativeTarget "Titan-Postgresql-iOS-app" */;
+			buildPhases = (
+				BA2EC0B11D97996E0056B4AC /* Sources */,
+				BA2EC0B21D97996E0056B4AC /* Frameworks */,
+				BA2EC0B31D97996E0056B4AC /* Resources */,
+				BA2EC0DB1D9799840056B4AC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA2EC0E71D9799FE0056B4AC /* PBXTargetDependency */,
+			);
+			name = "Titan-Postgresql-iOS-app";
+			productName = "Titan-Postgresql-iOS-app";
+			productReference = BA2EC0B51D97996E0056B4AC /* Titan-Postgresql-iOS-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA2EC0E01D9799FE0056B4AC /* TitanPostgresqlKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2EC0EA1D9799FE0056B4AC /* Build configuration list for PBXNativeTarget "TitanPostgresqlKit-iOS" */;
+			buildPhases = (
+				BA2EC0DC1D9799FE0056B4AC /* Sources */,
+				BA2EC0DD1D9799FE0056B4AC /* Frameworks */,
+				BA2EC0DE1D9799FE0056B4AC /* Headers */,
+				BA2EC0DF1D9799FE0056B4AC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Titan-Postgresql";
-			productName = "Titan-Postgresql";
-			productReference = BA2AA4841D97942A00F8A1B6 /* Titan-Postgresql.app */;
-			productType = "com.apple.product-type.application";
+			name = "TitanPostgresqlKit-iOS";
+			productName = "TitanPostgresqlKit-iOS";
+			productReference = BA2EC0E11D9799FE0056B4AC /* TitanPostgresqlKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA2EC0F11D979A100056B4AC /* TitanPostgresqlKit-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2EC0FB1D979A100056B4AC /* Build configuration list for PBXNativeTarget "TitanPostgresqlKit-macOS" */;
+			buildPhases = (
+				BA2EC0ED1D979A100056B4AC /* Sources */,
+				BA2EC0EE1D979A100056B4AC /* Frameworks */,
+				BA2EC0EF1D979A100056B4AC /* Headers */,
+				BA2EC0F01D979A100056B4AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TitanPostgresqlKit-macOS";
+			productName = "TitanPostgresqlKit-macOS";
+			productReference = BA2EC0F21D979A100056B4AC /* TitanPostgresqlKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +301,21 @@
 				ORGANIZATIONNAME = fe;
 				TargetAttributes = {
 					BA2AA4831D97942A00F8A1B6 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U8CXVPE3MM;
+						ProvisioningStyle = Automatic;
+					};
+					BA2EC0B41D97996E0056B4AC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U8CXVPE3MM;
+						ProvisioningStyle = Automatic;
+					};
+					BA2EC0E01D9799FE0056B4AC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U8CXVPE3MM;
+						ProvisioningStyle = Automatic;
+					};
+					BA2EC0F11D979A100056B4AC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = U8CXVPE3MM;
 						ProvisioningStyle = Automatic;
@@ -114,7 +335,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql */,
+				BA2AA4831D97942A00F8A1B6 /* Titan-Postgresql-macOS-app */,
+				BA2EC0B41D97996E0056B4AC /* Titan-Postgresql-iOS-app */,
+				BA2EC0E01D9799FE0056B4AC /* TitanPostgresqlKit-iOS */,
+				BA2EC0F11D979A100056B4AC /* TitanPostgresqlKit-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -126,6 +350,30 @@
 			files = (
 				BA2AA48F1D97942A00F8A1B6 /* Assets.xcassets in Resources */,
 				BA2AA4921D97942A00F8A1B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0B31D97996E0056B4AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0C51D97996E0056B4AC /* LaunchScreen.storyboard in Resources */,
+				BA2EC0C21D97996E0056B4AC /* Assets.xcassets in Resources */,
+				BA2EC0BD1D97996E0056B4AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0DF1D9799FE0056B4AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0F01D979A100056B4AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +390,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA2EC0B11D97996E0056B4AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2EC0BA1D97996E0056B4AC /* ViewController.swift in Sources */,
+				BA2EC0C01D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodeld in Sources */,
+				BA2EC0B81D97996E0056B4AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0DC1D9799FE0056B4AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2EC0ED1D979A100056B4AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA2EC0E71D9799FE0056B4AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA2EC0E01D9799FE0056B4AC /* TitanPostgresqlKit-iOS */;
+			targetProxy = BA2EC0E61D9799FE0056B4AC /* PBXContainerItemProxy */;
+		};
+		BA2EC0F81D979A100056B4AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA2EC0F11D979A100056B4AC /* TitanPostgresqlKit-macOS */;
+			targetProxy = BA2EC0F71D979A100056B4AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BA2AA4901D97942A00F8A1B6 /* Main.storyboard */ = {
@@ -151,6 +436,22 @@
 				BA2AA4911D97942A00F8A1B6 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA2EC0BB1D97996E0056B4AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2EC0BC1D97996E0056B4AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA2EC0C31D97996E0056B4AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2EC0C41D97996E0056B4AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -278,6 +579,142 @@
 			};
 			name = Release;
 		};
+		BA2EC0C81D97996E0056B4AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = "Titan-Postgresql-iOS-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.Titan-Postgresql-iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA2EC0C91D97996E0056B4AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = "Titan-Postgresql-iOS-app/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.Titan-Postgresql-iOS-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA2EC0EB1D9799FE0056B4AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TitanPostgresqlKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.TitanPostgresqlKit-iOS";
+				PRODUCT_NAME = TitanPostgresqlKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA2EC0EC1D9799FE0056B4AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "TitanPostgresqlKit-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.TitanPostgresqlKit-iOS";
+				PRODUCT_NAME = TitanPostgresqlKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA2EC0FC1D979A100056B4AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "TitanPostgresqlKit-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.TitanPostgresqlKit-macOS";
+				PRODUCT_NAME = TitanPostgresqlKit;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA2EC0FD1D979A100056B4AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "TitanPostgresqlKit-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fe.TitanPostgresqlKit-macOS";
+				PRODUCT_NAME = TitanPostgresqlKit;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -290,11 +727,36 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql" */ = {
+		BA2AA4961D97942A00F8A1B6 /* Build configuration list for PBXNativeTarget "Titan-Postgresql-macOS-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA2AA4971D97942A00F8A1B6 /* Debug */,
 				BA2AA4981D97942A00F8A1B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA2EC0C71D97996E0056B4AC /* Build configuration list for PBXNativeTarget "Titan-Postgresql-iOS-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2EC0C81D97996E0056B4AC /* Debug */,
+				BA2EC0C91D97996E0056B4AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BA2EC0EA1D9799FE0056B4AC /* Build configuration list for PBXNativeTarget "TitanPostgresqlKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2EC0EB1D9799FE0056B4AC /* Debug */,
+				BA2EC0EC1D9799FE0056B4AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BA2EC0FB1D979A100056B4AC /* Build configuration list for PBXNativeTarget "TitanPostgresqlKit-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2EC0FC1D979A100056B4AC /* Debug */,
+				BA2EC0FD1D979A100056B4AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
@@ -308,6 +770,16 @@
 			);
 			currentVersion = BA2AA48C1D97942A00F8A1B6 /* Titan_Postgresql.xcdatamodel */;
 			path = Titan_Postgresql.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		BA2EC0BE1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA2EC0BF1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodel */,
+			);
+			currentVersion = BA2EC0BF1D97996E0056B4AC /* Titan_Postgresql_iOS_app.xcdatamodel */;
+			path = Titan_Postgresql_iOS_app.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

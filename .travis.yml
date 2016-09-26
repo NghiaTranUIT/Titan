@@ -24,6 +24,8 @@ env:
 
 before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - rvm use system
+  - sudo gem install cocoapods -v '1.0.1'
 
 script:
   - set -o pipefail

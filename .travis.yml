@@ -31,8 +31,8 @@ before_install:
   - rvm install ruby-2.2.2
   - rvm use 2.2.2
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  # - sudo gem install cocoapods -v '1.0.1'
-  - sudo gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - sudo gem install cocoapods -v 1.1.0.beta.1 --pre
+  # - sudo gem install cocoapods --no-rdoc --no-ri --no-document --quiet
   - pod --version
 
 after_success:

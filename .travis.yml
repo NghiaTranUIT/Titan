@@ -26,7 +26,7 @@ before_install:
   - rvm install 2.2.2
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   - rvm use system
-  - gem install cocoapods -v '1.0.1'
+  - sudo gem install cocoapods -v '1.0.1'
 
 script:
   - set -o pipefail

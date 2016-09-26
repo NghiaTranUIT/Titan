@@ -16,11 +16,11 @@ env:
     - OSX_SDK=macosx10.11
   matrix:
 
-    - DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
-    - DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
-    - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
 
-    - DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
+    #- DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
     - DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
     - DESTINATION="arch=x86_64"                      SCHEME="$OSX_APP_SCHEME"           SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
 

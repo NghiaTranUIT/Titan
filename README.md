@@ -2,12 +2,14 @@
 # Titan
 Postgresql client for macOS/iOS. Clean design. Absolutely 100% Free and open-source.
 
+[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)
+
 ## Why postgresql ?
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack position.  
 Go for backend. React-FB and redux for frontend, ...
 It's pretty suck when I tried to find best postgresql client on macOS.  
 *Postico* is the best one I found, but it's missing  multi-tab, multi-connection in free version.  
-*pgAdmin III* are the worst , GUI  seem like from 20s, and only non-retina support. 
+*pgAdmin III* are the worst , GUI  seem like from 20s, and only non-retina support.
 After tried  and deleted many similar client.  
 Finally, I prefers *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and didn't support multi-tab too.
 
@@ -20,10 +22,10 @@ It's best time to apply what I learn to real product.
 
 *   Cross-framework  - supported iOS and macOS too
 *   ReSwift (Redux)
-*   RxSwift + MVVM 
+*   RxSwift + MVVM
 *   Networking abstraction layer
 *   Postgresql-driver abstraction layer
-*   Swift 3.0 
+*   Swift 3.0
 *   Core Data
 
 ## How to build libpg.framework

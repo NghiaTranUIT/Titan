@@ -25,7 +25,7 @@ env:
     - DESTINATION="arch=x86_64"                      SCHEME="$OSX_APP_SCHEME"           SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
 
 install:
-  - pod repo update
+  - pod update
 
 before_install:
   - rvm install ruby-2.2.2

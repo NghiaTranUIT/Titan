@@ -10,7 +10,7 @@ env:
     - OSX_FRAMEWORK_SCHEME="TitanKit"
     - IOS_APP_SCHEME="Titan iOS"
     - OSX_APP_SCHEME="Titan"
-    - IOS_SDK=iphonesimulator9.0
+    - IOS_SDK=iphonesimulator10.0
     - OSX_SDK=macosx10.11
   matrix:
 

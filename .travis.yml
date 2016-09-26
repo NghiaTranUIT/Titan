@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode8
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 env:
   global:
@@ -23,9 +25,9 @@ env:
     - DESTINATION="arch=x86_64"                      SCHEME="$OSX_APP_SCHEME"           SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
 
 before_install:
-  - rvm install 2.2.2
+  - rvm install ruby-2.3.1
+  - rvm use 2.3.1
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - rvm use system
   - sudo gem install cocoapods -v '1.0.1'
 
 script:

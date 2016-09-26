@@ -2,7 +2,7 @@
 # Titan
 Postgresql client for macOS/iOS. Clean design. Absolutely 100% Free and open-source.
 
-[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)
+[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)[![codecov.io](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master/graphs/badge.svg)](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master)
 
 ## Why postgresql ?
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack position.  

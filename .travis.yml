@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode8
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+rvm:
+  - 2.2.2
 
 env:
   global:
@@ -31,11 +31,9 @@ before_install:
   # - sudo gem install cocoapods -v '1.0.1'
   - sudo gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 
-  # Log
-  - gem cocoapod --version
-  - brew --version
-  - xctool -version
-  - xcodebuild -version -sdk
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
 script:
   - set -o pipefail
   - xcodebuild -version

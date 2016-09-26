@@ -1,5 +1,7 @@
 language: objective-c
 osx_image: xcode8
+rvm:
+  - 2.2.2
 
 env:
   global:
@@ -14,19 +16,27 @@ env:
     - OSX_SDK=macosx10.11
   matrix:
 
-    - DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
-    - DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
-    - DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
+    #- DESTINATION="arch=x86_64"                      SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="NO"
 
-    - DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
+    #- DESTINATION="OS=10.0,name=iPhone 5"            SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
     - DESTINATION="OS=10.0,name=iPhone 7 Plus"       SCHEME="$IOS_APP_SCHEME"           SDK="$IOS_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
     - DESTINATION="arch=x86_64"                      SCHEME="$OSX_APP_SCHEME"           SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
 
+install:
+  - pod repo update
+
 before_install:
-  - rvm install 2.2.2
+  - rvm install ruby-2.2.2
+  - rvm use 2.2.2
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
-  - rvm use system
-  - sudo gem install cocoapods -v '1.0.1'
+  # - sudo gem install cocoapods -v '1.0.1'
+  - sudo gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - pod --version
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 script:
   - set -o pipefail

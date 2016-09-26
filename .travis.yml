@@ -25,11 +25,17 @@ env:
     - DESTINATION="arch=x86_64"                      SCHEME="$OSX_APP_SCHEME"           SDK="$OSX_SDK"     RUN_TESTS="YES"    BUILD_EXAMPLE="YES"
 
 before_install:
-  - rvm install ruby-2.3.1
-  - rvm use 2.3.1
+  - rvm install ruby-2.2.1
+  - rvm use 2.2.1
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
   # - sudo gem install cocoapods -v '1.0.1'
   - sudo gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+
+  # Log
+  - gem cocoapod --version
+  - brew --version
+  - xctool -version
+  - xcodebuild -version -sdk
 script:
   - set -o pipefail
   - xcodebuild -version

@@ -9,7 +9,7 @@ workspace 'Titan.xcworkspace'
 
 # Pods
 def important_pods
-    pod 'Alamofire', '4.0'
+    pod 'Alamofire', '~> 4.0'
 end
 
 # macOS

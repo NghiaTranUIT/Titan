@@ -7,13 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FB11D97C90D00B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; };
 		BA035FB21D97C90D00B616AB /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
+		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BE1D97BE810081A5FE /* ViewController.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Main.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA035FF21D98C81900B616AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAEFE7B11D97BE810081A5FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAEFE7B81D97BE810081A5FE;
+			remoteInfo = Titan;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BA035FB31D97C90D00B616AB /* Embed Frameworks */ = {
@@ -30,33 +43,134 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.release.xcconfig"; sourceTree = "<group>"; };
+		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
 		BA035FB01D97C90D00B616AB /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA035FEF1D98C81900B616AB /* TitanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanTests.swift; sourceTree = "<group>"; };
+		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEFE7BE1D97BE810081A5FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA035FEA1D98C81900B616AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAEFE7B61D97BE810081A5FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA035FB11D97C90D00B616AB /* TitanKit.framework in Frameworks */,
+				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BAEFE7B01D97BE810081A5FE = {
+		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BA035FB01D97C90D00B616AB /* TitanKit.framework */,
+				FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E634B1D325D2CBFACDBE15C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */,
+				0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA035FC01D97DB9100B616AB /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC71D97DCEE00B616AB /* Constants.swift */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		BA035FC11D97DB9700B616AB /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		BA035FC21D97DBA400B616AB /* Source code */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC41D97DBB200B616AB /* Controller */,
+			);
+			name = "Source code";
+			sourceTree = "<group>";
+		};
+		BA035FC31D97DBA900B616AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FC61D97DBBE00B616AB /* Storyboard */,
+				BA035FC51D97DBB800B616AB /* Assetes */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		BA035FC41D97DBB200B616AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA035FC51D97DBB800B616AB /* Assetes */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7C01D97BE810081A5FE /* Assets.xcassets */,
+			);
+			name = Assetes;
+			sourceTree = "<group>";
+		};
+		BA035FC61D97DBBE00B616AB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BAEFE7C21D97BE810081A5FE /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		BA035FEE1D98C81900B616AB /* TitanTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA035FEF1D98C81900B616AB /* TitanTests.swift */,
+				BA035FF11D98C81900B616AB /* Info.plist */,
+			);
+			path = TitanTests;
+			sourceTree = "<group>";
+		};
+		BAEFE7B01D97BE810081A5FE = {
+			isa = PBXGroup;
+			children = (
 				BAEFE7BB1D97BE810081A5FE /* Titan */,
+				BA035FEE1D98C81900B616AB /* TitanTests */,
 				BAEFE7BA1D97BE810081A5FE /* Products */,
+				5E634B1D325D2CBFACDBE15C /* Pods */,
+				413CAFF22DEAB4F102132D9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEFE7B91D97BE810081A5FE /* Titan.app */,
+				BA035FED1D98C81900B616AB /* TitanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,10 +186,10 @@
 		BAEFE7BB1D97BE810081A5FE /* Titan */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
-				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
-				BAEFE7C01D97BE810081A5FE /* Assets.xcassets */,
-				BAEFE7C21D97BE810081A5FE /* Main.storyboard */,
+				BA035FC31D97DBA900B616AB /* Resource */,
+				BA035FC01D97DB9100B616AB /* Configuration */,
+				BA035FC11D97DB9700B616AB /* App Delegate */,
+				BA035FC21D97DBA400B616AB /* Source code */,
 				BAEFE7C51D97BE810081A5FE /* Info.plist */,
 			);
 			path = Titan;
@@ -83,14 +198,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BA035FEC1D98C81900B616AB /* TitanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA035FF41D98C81900B616AB /* Build configuration list for PBXNativeTarget "TitanTests" */;
+			buildPhases = (
+				BA035FE91D98C81900B616AB /* Sources */,
+				BA035FEA1D98C81900B616AB /* Frameworks */,
+				BA035FEB1D98C81900B616AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA035FF31D98C81900B616AB /* PBXTargetDependency */,
+			);
+			name = TitanTests;
+			productName = TitanTests;
+			productReference = BA035FED1D98C81900B616AB /* TitanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BAEFE7B81D97BE810081A5FE /* Titan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BAEFE7C81D97BE810081A5FE /* Build configuration list for PBXNativeTarget "Titan" */;
 			buildPhases = (
+				A07488668F6C7C0FACFCF264 /* [CP] Check Pods Manifest.lock */,
 				BAEFE7B51D97BE810081A5FE /* Sources */,
 				BAEFE7B61D97BE810081A5FE /* Frameworks */,
 				BAEFE7B71D97BE810081A5FE /* Resources */,
 				BA035FB31D97C90D00B616AB /* Embed Frameworks */,
+				15614138E4602BB9FE66B890 /* [CP] Embed Pods Frameworks */,
+				57F4E16020241BAD36B43039 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -111,6 +247,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = fe;
 				TargetAttributes = {
+					BA035FEC1D98C81900B616AB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = U8CXVPE3MM;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BAEFE7B81D97BE810081A5FE;
+					};
 					BAEFE7B81D97BE810081A5FE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = U8CXVPE3MM;
@@ -132,11 +274,19 @@
 			projectRoot = "";
 			targets = (
 				BAEFE7B81D97BE810081A5FE /* Titan */,
+				BA035FEC1D98C81900B616AB /* TitanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BA035FEB1D98C81900B616AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAEFE7B71D97BE810081A5FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,17 +298,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15614138E4602BB9FE66B890 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57F4E16020241BAD36B43039 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A07488668F6C7C0FACFCF264 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		BA035FE91D98C81900B616AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BAEFE7B51D97BE810081A5FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
+				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA035FF31D98C81900B616AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAEFE7B81D97BE810081A5FE /* Titan */;
+			targetProxy = BA035FF21D98C81900B616AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BAEFE7C21D97BE810081A5FE /* Main.storyboard */ = {
@@ -172,6 +387,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BA035FF51D98C81900B616AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = TitanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fe.TitanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Titan.app/Contents/MacOS/Titan";
+			};
+			name = Debug;
+		};
+		BA035FF61D98C81900B616AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				INFOPLIST_FILE = TitanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fe.TitanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Titan.app/Contents/MacOS/Titan";
+			};
+			name = Release;
+		};
 		BAEFE7C61D97BE810081A5FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -264,12 +511,15 @@
 		};
 		BAEFE7C91D97BE810081A5FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U8CXVPE3MM;
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.Titan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -278,12 +528,15 @@
 		};
 		BAEFE7CA1D97BE810081A5FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U8CXVPE3MM;
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.Titan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -293,6 +546,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA035FF41D98C81900B616AB /* Build configuration list for PBXNativeTarget "TitanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA035FF51D98C81900B616AB /* Debug */,
+				BA035FF61D98C81900B616AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BAEFE7B41D97BE810081A5FE /* Build configuration list for PBXProject "Titan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

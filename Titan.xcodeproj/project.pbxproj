@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.release.xcconfig"; sourceTree = "<group>"; };
 		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
+		72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TitanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FB01D97C90D00B616AB /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +85,7 @@
 			children = (
 				BA035FB01D97C90D00B616AB /* TitanKit.framework */,
 				FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */,
+				72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -244,7 +246,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = fe;
 				TargetAttributes = {
 					BA035FEC1D98C81900B616AB = {
@@ -255,7 +257,7 @@
 					};
 					BAEFE7B81D97BE810081A5FE = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U8CXVPE3MM;
+						DevelopmentTeam = 37RNQQR3UK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -437,6 +439,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -486,6 +489,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -513,10 +517,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DEVELOPMENT_TEAM = 37RNQQR3UK;
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -530,10 +535,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DEVELOPMENT_TEAM = 37RNQQR3UK;
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;

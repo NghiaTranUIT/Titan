@@ -14,7 +14,7 @@ open class Network {
         
     }
     
-    public func checkVersion() {
+    open func checkVersion() {
         print("Here is latest version _ UPDATE")
     }
 }

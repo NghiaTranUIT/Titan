@@ -17,64 +17,8 @@
 		BA0360101D98CC3200B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035F941D97C60D00B616AB /* TitanKit.framework */; };
 		BA03601D1D98CC4100B616AB /* TitanKitiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03601C1D98CC4100B616AB /* TitanKitiOSTests.swift */; };
 		BA03601F1D98CC4100B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FA41D97C62B00B616AB /* TitanKit.framework */; };
-		BAA0AA891D998AAD00A86A6E /* Byteswap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA811D998AAD00A86A6E /* Byteswap.swift */; };
-		BAA0AA8A1D998AAD00A86A6E /* Byteswap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA811D998AAD00A86A6E /* Byteswap.swift */; };
-		BAA0AA8B1D998AAD00A86A6E /* Byteswap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA811D998AAD00A86A6E /* Byteswap.swift */; };
-		BAA0AA8C1D998AAD00A86A6E /* Byteswap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA811D998AAD00A86A6E /* Byteswap.swift */; };
-		BAA0AA8D1D998AAD00A86A6E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA821D998AAD00A86A6E /* Connection.swift */; };
-		BAA0AA8E1D998AAD00A86A6E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA821D998AAD00A86A6E /* Connection.swift */; };
-		BAA0AA8F1D998AAD00A86A6E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA821D998AAD00A86A6E /* Connection.swift */; };
-		BAA0AA901D998AAD00A86A6E /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA821D998AAD00A86A6E /* Connection.swift */; };
-		BAA0AA911D998AAD00A86A6E /* ConnectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */; };
-		BAA0AA921D998AAD00A86A6E /* ConnectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */; };
-		BAA0AA931D998AAD00A86A6E /* ConnectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */; };
-		BAA0AA941D998AAD00A86A6E /* ConnectionParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */; };
-		BAA0AA951D998AAD00A86A6E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA841D998AAD00A86A6E /* Database.swift */; };
-		BAA0AA961D998AAD00A86A6E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA841D998AAD00A86A6E /* Database.swift */; };
-		BAA0AA971D998AAD00A86A6E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA841D998AAD00A86A6E /* Database.swift */; };
-		BAA0AA981D998AAD00A86A6E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA841D998AAD00A86A6E /* Database.swift */; };
-		BAA0AA991D998AAD00A86A6E /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA851D998AAD00A86A6E /* Parameter.swift */; };
-		BAA0AA9A1D998AAD00A86A6E /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA851D998AAD00A86A6E /* Parameter.swift */; };
-		BAA0AA9B1D998AAD00A86A6E /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA851D998AAD00A86A6E /* Parameter.swift */; };
-		BAA0AA9C1D998AAD00A86A6E /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA851D998AAD00A86A6E /* Parameter.swift */; };
-		BAA0AA9D1D998AAD00A86A6E /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA861D998AAD00A86A6E /* Query.swift */; };
-		BAA0AA9E1D998AAD00A86A6E /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA861D998AAD00A86A6E /* Query.swift */; };
-		BAA0AA9F1D998AAD00A86A6E /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA861D998AAD00A86A6E /* Query.swift */; };
-		BAA0AAA01D998AAD00A86A6E /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA861D998AAD00A86A6E /* Query.swift */; };
-		BAA0AAA11D998AAD00A86A6E /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA871D998AAD00A86A6E /* QueryResult.swift */; };
-		BAA0AAA21D998AAD00A86A6E /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA871D998AAD00A86A6E /* QueryResult.swift */; };
-		BAA0AAA31D998AAD00A86A6E /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA871D998AAD00A86A6E /* QueryResult.swift */; };
-		BAA0AAA41D998AAD00A86A6E /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA871D998AAD00A86A6E /* QueryResult.swift */; };
-		BAA0AAA51D998AAD00A86A6E /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */; };
-		BAA0AAA61D998AAD00A86A6E /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */; };
-		BAA0AAA71D998AAD00A86A6E /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */; };
-		BAA0AAA81D998AAD00A86A6E /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */; };
-		BAA0AAAF1D998ADB00A86A6E /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */; };
-		BAA0AAB01D998ADB00A86A6E /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */; };
-		BAA0AAB11D998ADB00A86A6E /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */; };
-		BAA0AAB21D998ADB00A86A6E /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */; };
-		BAA0AAB31D998ADB00A86A6E /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */; };
-		BAA0AAB41D998ADB00A86A6E /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */; };
-		BAA0AAB51D998ADB00A86A6E /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */; };
-		BAA0AAB61D998ADB00A86A6E /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */; };
-		BAA0AAB71D998ADB00A86A6E /* migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAC1D998ADB00A86A6E /* migrate.sql */; };
-		BAA0AAB81D998ADB00A86A6E /* migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAC1D998ADB00A86A6E /* migrate.sql */; };
-		BAA0AAB91D998ADB00A86A6E /* migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAC1D998ADB00A86A6E /* migrate.sql */; };
-		BAA0AABA1D998ADB00A86A6E /* migrate.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAC1D998ADB00A86A6E /* migrate.sql */; };
-		BAA0AABB1D998ADB00A86A6E /* seed.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAD1D998ADB00A86A6E /* seed.sql */; };
-		BAA0AABC1D998ADB00A86A6E /* seed.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAD1D998ADB00A86A6E /* seed.sql */; };
-		BAA0AABD1D998ADB00A86A6E /* seed.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAD1D998ADB00A86A6E /* seed.sql */; };
-		BAA0AABE1D998ADB00A86A6E /* seed.sql in Resources */ = {isa = PBXBuildFile; fileRef = BAA0AAAD1D998ADB00A86A6E /* seed.sql */; };
-		BAA0AABF1D998ADB00A86A6E /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */; };
-		BAA0AAC01D998ADB00A86A6E /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */; };
-		BAA0AAC11D998ADB00A86A6E /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */; };
-		BAA0AAC21D998ADB00A86A6E /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */; };
-		BAA0AAC61D9A4F6000A86A6E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AAC51D9A4F6000A86A6E /* Quick.framework */; };
-		BAA0AAC71D9A4F6000A86A6E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AAC51D9A4F6000A86A6E /* Quick.framework */; };
 		BAA0AAC81D9A4F6000A86A6E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AAC51D9A4F6000A86A6E /* Quick.framework */; };
 		BAA0AAC91D9A4F6000A86A6E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AAC51D9A4F6000A86A6E /* Quick.framework */; };
-		BAA0AACB1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */; };
-		BAA0AACC1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */; };
 		BAA0AACD1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */; };
 		BAA0AACE1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */; };
 		BAA0AACF1D9A500D00A86A6E /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FE61D980CC600B616AB /* libpq.framework */; };
@@ -118,19 +62,6 @@
 		BA03601C1D98CC4100B616AB /* TitanKitiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanKitiOSTests.swift; sourceTree = "<group>"; };
 		BA03601E1D98CC4100B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAA0AA7F1D998A2000A86A6E /* Pods_TitanKitTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TitanKitTests.framework; path = "/Users/NghiaTran/Documents/Work/Titan-Postgresql/Titan-Postgresql/Pods/../build/Debug/Pods_TitanKitTests.framework"; sourceTree = "<absolute>"; };
-		BAA0AA811D998AAD00A86A6E /* Byteswap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Byteswap.swift; sourceTree = "<group>"; };
-		BAA0AA821D998AAD00A86A6E /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionParameters.swift; sourceTree = "<group>"; };
-		BAA0AA841D998AAD00A86A6E /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		BAA0AA851D998AAD00A86A6E /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
-		BAA0AA861D998AAD00A86A6E /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
-		BAA0AA871D998AAD00A86A6E /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
-		BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultRow.swift; sourceTree = "<group>"; };
-		BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSpec.swift; sourceTree = "<group>"; };
-		BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseSpec.swift; sourceTree = "<group>"; };
-		BAA0AAAC1D998ADB00A86A6E /* migrate.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = migrate.sql; sourceTree = "<group>"; };
-		BAA0AAAD1D998ADB00A86A6E /* seed.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = seed.sql; sourceTree = "<group>"; };
-		BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultSpec.swift; sourceTree = "<group>"; };
 		BAA0AAC31D9A464500A86A6E /* Pods_TitanKitTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_TitanKitTests.framework; path = "/Users/NghiaTran/Documents/Work/Titan-Postgresql/Titan-Postgresql/Pods/../build/Debug/Pods_TitanKitTests.framework"; sourceTree = "<absolute>"; };
 		BAA0AAC51D9A4F6000A86A6E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
@@ -142,8 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AACB1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */,
-				BAA0AAC61D9A4F6000A86A6E /* Quick.framework in Frameworks */,
 				BA035FE71D980CC600B616AB /* libpq.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,8 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AACC1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */,
-				BAA0AAC71D9A4F6000A86A6E /* Quick.framework in Frameworks */,
 				BA035FE81D980CC600B616AB /* libpq.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,14 +166,6 @@
 		BA035FAC1D97C63500B616AB /* Source code */ = {
 			isa = PBXGroup;
 			children = (
-				BAA0AA811D998AAD00A86A6E /* Byteswap.swift */,
-				BAA0AA821D998AAD00A86A6E /* Connection.swift */,
-				BAA0AA831D998AAD00A86A6E /* ConnectionParameters.swift */,
-				BAA0AA841D998AAD00A86A6E /* Database.swift */,
-				BAA0AA851D998AAD00A86A6E /* Parameter.swift */,
-				BAA0AA861D998AAD00A86A6E /* Query.swift */,
-				BAA0AA871D998AAD00A86A6E /* QueryResult.swift */,
-				BAA0AA881D998AAD00A86A6E /* QueryResultRow.swift */,
 				BA035FAD1D97C86200B616AB /* Network.swift */,
 			);
 			name = "Source code";
@@ -269,10 +188,6 @@
 		BA03600C1D98CC3200B616AB /* TitanKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAA0AAA91D998ADB00A86A6E /* ConnectionSpec.swift */,
-				BAA0AAAA1D998ADB00A86A6E /* DatabaseSpec.swift */,
-				BAA0AAAB1D998ADB00A86A6E /* db */,
-				BAA0AAAE1D998ADB00A86A6E /* QueryResultSpec.swift */,
 				BA03600D1D98CC3200B616AB /* TitanKitTests.swift */,
 				BA03600F1D98CC3200B616AB /* Info.plist */,
 			);
@@ -286,15 +201,6 @@
 				BA03601E1D98CC4100B616AB /* Info.plist */,
 			);
 			path = TitanKitiOSTests;
-			sourceTree = "<group>";
-		};
-		BAA0AAAB1D998ADB00A86A6E /* db */ = {
-			isa = PBXGroup;
-			children = (
-				BAA0AAAC1D998ADB00A86A6E /* migrate.sql */,
-				BAA0AAAD1D998ADB00A86A6E /* seed.sql */,
-			);
-			path = db;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,8 +359,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB71D998ADB00A86A6E /* migrate.sql in Resources */,
-				BAA0AABB1D998ADB00A86A6E /* seed.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,8 +366,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB81D998ADB00A86A6E /* migrate.sql in Resources */,
-				BAA0AABC1D998ADB00A86A6E /* seed.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,8 +373,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB91D998ADB00A86A6E /* migrate.sql in Resources */,
-				BAA0AABD1D998ADB00A86A6E /* seed.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,8 +380,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AABA1D998ADB00A86A6E /* migrate.sql in Resources */,
-				BAA0AABE1D998ADB00A86A6E /* seed.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,17 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAAF1D998ADB00A86A6E /* ConnectionSpec.swift in Sources */,
-				BAA0AA891D998AAD00A86A6E /* Byteswap.swift in Sources */,
-				BAA0AAA11D998AAD00A86A6E /* QueryResult.swift in Sources */,
-				BAA0AA9D1D998AAD00A86A6E /* Query.swift in Sources */,
-				BAA0AABF1D998ADB00A86A6E /* QueryResultSpec.swift in Sources */,
-				BAA0AA911D998AAD00A86A6E /* ConnectionParameters.swift in Sources */,
-				BAA0AA8D1D998AAD00A86A6E /* Connection.swift in Sources */,
-				BAA0AAA51D998AAD00A86A6E /* QueryResultRow.swift in Sources */,
-				BAA0AA991D998AAD00A86A6E /* Parameter.swift in Sources */,
-				BAA0AA951D998AAD00A86A6E /* Database.swift in Sources */,
-				BAA0AAB31D998ADB00A86A6E /* DatabaseSpec.swift in Sources */,
 				BA035FAE1D97C86200B616AB /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,17 +446,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB01D998ADB00A86A6E /* ConnectionSpec.swift in Sources */,
-				BAA0AA8A1D998AAD00A86A6E /* Byteswap.swift in Sources */,
-				BAA0AAA21D998AAD00A86A6E /* QueryResult.swift in Sources */,
-				BAA0AA9E1D998AAD00A86A6E /* Query.swift in Sources */,
-				BAA0AAC01D998ADB00A86A6E /* QueryResultSpec.swift in Sources */,
-				BAA0AA921D998AAD00A86A6E /* ConnectionParameters.swift in Sources */,
-				BAA0AA8E1D998AAD00A86A6E /* Connection.swift in Sources */,
-				BAA0AAA61D998AAD00A86A6E /* QueryResultRow.swift in Sources */,
-				BAA0AA9A1D998AAD00A86A6E /* Parameter.swift in Sources */,
-				BAA0AA961D998AAD00A86A6E /* Database.swift in Sources */,
-				BAA0AAB41D998ADB00A86A6E /* DatabaseSpec.swift in Sources */,
 				BA035FAF1D97C86200B616AB /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,17 +454,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB11D998ADB00A86A6E /* ConnectionSpec.swift in Sources */,
-				BAA0AA8B1D998AAD00A86A6E /* Byteswap.swift in Sources */,
-				BAA0AAA31D998AAD00A86A6E /* QueryResult.swift in Sources */,
-				BAA0AA9F1D998AAD00A86A6E /* Query.swift in Sources */,
-				BAA0AAC11D998ADB00A86A6E /* QueryResultSpec.swift in Sources */,
-				BAA0AA931D998AAD00A86A6E /* ConnectionParameters.swift in Sources */,
-				BAA0AA8F1D998AAD00A86A6E /* Connection.swift in Sources */,
-				BAA0AAA71D998AAD00A86A6E /* QueryResultRow.swift in Sources */,
-				BAA0AA9B1D998AAD00A86A6E /* Parameter.swift in Sources */,
-				BAA0AA971D998AAD00A86A6E /* Database.swift in Sources */,
-				BAA0AAB51D998ADB00A86A6E /* DatabaseSpec.swift in Sources */,
 				BA03600E1D98CC3200B616AB /* TitanKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,17 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAA0AAB21D998ADB00A86A6E /* ConnectionSpec.swift in Sources */,
-				BAA0AA8C1D998AAD00A86A6E /* Byteswap.swift in Sources */,
-				BAA0AAA41D998AAD00A86A6E /* QueryResult.swift in Sources */,
-				BAA0AAA01D998AAD00A86A6E /* Query.swift in Sources */,
-				BAA0AAC21D998ADB00A86A6E /* QueryResultSpec.swift in Sources */,
-				BAA0AA941D998AAD00A86A6E /* ConnectionParameters.swift in Sources */,
-				BAA0AA901D998AAD00A86A6E /* Connection.swift in Sources */,
-				BAA0AAA81D998AAD00A86A6E /* QueryResultRow.swift in Sources */,
-				BAA0AA9C1D998AAD00A86A6E /* Parameter.swift in Sources */,
-				BAA0AA981D998AAD00A86A6E /* Database.swift in Sources */,
-				BAA0AAB61D998ADB00A86A6E /* DatabaseSpec.swift in Sources */,
 				BA03601D1D98CC4100B616AB /* TitanKitiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

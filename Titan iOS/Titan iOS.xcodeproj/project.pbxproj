@@ -191,7 +191,7 @@
 				TargetAttributes = {
 					BA035F691D97C5A900B616AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = U8CXVPE3MM;
+						DevelopmentTeam = D54Y88Y9CY;
 						ProvisioningStyle = Automatic;
 					};
 					BA035FFA1D98C82C00B616AB = {
@@ -438,7 +438,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = "Titan iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -454,7 +454,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U8CXVPE3MM;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				INFOPLIST_FILE = "Titan iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

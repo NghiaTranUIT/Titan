@@ -7,12 +7,15 @@
 //
 
 import Cocoa
+import TitanKit
 
 class DetailConnectionsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        let story: NSStoryboard! = NSStoryboard(name: "123", bundle: nil)
+        _ = story.hasSomething()
     }
     
 }

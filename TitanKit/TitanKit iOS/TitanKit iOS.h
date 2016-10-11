@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double TitanKit_iOSVersionNumber;
 FOUNDATION_EXPORT const unsigned char TitanKit_iOSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <TitanKit_iOS/PublicHeader.h>
-
+#import <UIKit/UIKit.h>
 

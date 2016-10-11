@@ -13,10 +13,18 @@ struct ConnectionState {
     
 }
 
+//
+// MARK: - Reducer
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         let state = state ?? ConnectionState()
         
         return state
     }
+}
+
+//
+// MARK: - Action 
+struct GetConnectionFromDbAction: Action {
+    
 }

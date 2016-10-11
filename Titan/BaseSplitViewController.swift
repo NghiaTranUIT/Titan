@@ -1,5 +1,5 @@
 //
-//  DetailConnectionsViewController.swift
+//  BaseSplitViewController.swift
 //  Titan
 //
 //  Created by Nghia Tran on 10/11/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DetailConnectionsViewController: BaseViewController {
+class BaseSplitViewController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

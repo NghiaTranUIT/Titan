@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ListConnectionsViewController: NSViewController {
+class ListConnectionsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

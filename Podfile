@@ -26,14 +26,6 @@ target "Titan" do
   important_pods
 end
 
-# iOS
-target "Titan iOS" do
-  project 'Titan iOS/Titan iOS.xcodeproj'
-  platform :ios, '10.0'
-  important_pods
-end
-
-
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

@@ -12,6 +12,8 @@
 		BA035FB21D97C90D00B616AB /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FB01D97C90D00B616AB /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
 		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
+		BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */; };
+		BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BE1D97BE810081A5FE /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FEF1D98C81900B616AB /* TitanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanTests.swift; sourceTree = "<group>"; };
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsViewController.swift; sourceTree = "<group>"; };
+		BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,7 @@
 		BA035FC11D97DB9700B616AB /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
 				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
 			);
 			name = "App Delegate";
@@ -141,7 +146,7 @@
 		BA035FC41D97DBB200B616AB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
+				BA4AFF101DAC9254009AE139 /* Connections */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -169,6 +174,31 @@
 				BA035FF11D98C81900B616AB /* Info.plist */,
 			);
 			path = TitanTests;
+			sourceTree = "<group>";
+		};
+		BA4AFF101DAC9254009AE139 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				BA4AFF111DAC925D009AE139 /* List Connections */,
+				BA4AFF141DAC9297009AE139 /* Detail Connection */,
+			);
+			name = Connections;
+			sourceTree = "<group>";
+		};
+		BA4AFF111DAC925D009AE139 /* List Connections */ = {
+			isa = PBXGroup;
+			children = (
+				BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */,
+			);
+			name = "List Connections";
+			sourceTree = "<group>";
+		};
+		BA4AFF141DAC9297009AE139 /* Detail Connection */ = {
+			isa = PBXGroup;
+			children = (
+				BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */,
+			);
+			name = "Detail Connection";
 			sourceTree = "<group>";
 		};
 		BAEFE7B01D97BE810081A5FE = {
@@ -382,6 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */,
+				BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */,
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
@@ -538,7 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -560,7 +592,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;

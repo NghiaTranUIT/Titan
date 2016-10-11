@@ -10,8 +10,7 @@ workspace 'Titan.xcworkspace'
 # Pods
 def important_pods
     pod 'Alamofire', '~> 4.0'
-    pod 'RxSwift',    '~> 3.0.0-beta.1'
-    pod 'RxCocoa',    '~> 3.0.0-beta.1'
+    pod 'ReSwift'
 end
 
 # Test

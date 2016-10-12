@@ -15,6 +15,8 @@
 		BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E551DADF7A900834F3E /* ConnectionCell.swift */; };
 		BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA222E571DADF83500834F3E /* ConnectionCell.xib */; };
 		BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E591DADF8A800834F3E /* View+Helper.swift */; };
+		BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FD91DAE74E00005A566 /* BaseOperation.swift */; };
+		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
@@ -67,6 +69,8 @@
 		BA222E551DADF7A900834F3E /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BA222E571DADF83500834F3E /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
 		BA222E591DADF8A800834F3E /* View+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
+		BA344FD91DAE74E00005A566 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
+		BA344FDB1DAE74F20005A566 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,30 @@
 			name = ConnectionCell;
 			sourceTree = "<group>";
 		};
+		BA344FD61DAE73830005A566 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BA344FD91DAE74E00005A566 /* BaseOperation.swift */,
+				BA344FDB1DAE74F20005A566 /* NetworkManager.swift */,
+				BA344FD81DAE74C60005A566 /* Operations */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		BA344FD71DAE73900005A566 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		BA344FD81DAE74C60005A566 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		BA4AFF101DAC9254009AE139 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +282,8 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA344FD71DAE73900005A566 /* Database */,
+				BA344FD61DAE73830005A566 /* Networking */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -535,11 +565,13 @@
 				BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */,
+				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,
+				BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */,

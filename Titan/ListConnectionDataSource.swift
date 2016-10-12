@@ -42,8 +42,7 @@ extension ListConnectionDataSource: NSTableViewDataSource {
         return 0
     }
     
-    @objc(tableView:viewForTableColumn:row:)
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    @objc(tableView:viewForTableColumn:row:) func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
     }
 }

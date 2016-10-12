@@ -710,7 +710,7 @@
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUV-eH-kqZ">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" id="emk-97-bGr">
-                                    <rect key="frame" x="1" y="23" width="448" height="276"/>
+                                    <rect key="frame" x="1" y="0.0" width="448" height="299"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="8UU-HR-ytQ" viewBased="YES" id="QUF-6p-hVS">
@@ -778,6 +778,9 @@
                             <constraint firstItem="nUV-eH-kqZ" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="miU-do-JR2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="QUF-6p-hVS" id="TEd-CF-BZo"/>
+                    </connections>
                 </viewController>
                 <customObject id="MXc-ct-AtT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

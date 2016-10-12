@@ -11,7 +11,7 @@ import ReSwift
 
 class BaseDataSource {
     
-    private let store: Store<MainAppState>
+    let store: Store<MainAppState>
     
     init(store: Store<MainAppState>) {
         self.store = store

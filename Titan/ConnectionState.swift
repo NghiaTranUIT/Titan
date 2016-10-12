@@ -25,6 +25,10 @@ extension ConnectionState {
 
 //
 // MARK: - Action 
-struct GetConnectionFromDbAction: Action {
+struct GetConnectionFromCloudAction: Action {
+    
+}
+
+struct GetConnectionFromDatabaseAction: Action {
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReSwift
 
 class GetListConnectionRequest {
 
@@ -14,4 +15,14 @@ class GetListConnectionRequest {
 
 extension GetListConnectionRequest: Request {
     
+    var endpoint: String {
+        get {
+            return Constants.Endpoint.GetListConnectionFromCloudURL
+        }
+    }
+    
+    func toOperation() -> [BaseOperation] {
+        let op = GetListConnectionCloudOperation(request: self)
+        return [op]
+    }
 }

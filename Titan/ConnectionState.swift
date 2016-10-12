@@ -19,16 +19,19 @@ extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         let state = state ?? ConnectionState()
         
+        switch action {
+        case _ as GetListConnectionRequest:
+            break
+        case _ as GetConnectionFromDatabaseAction:
+            break
+        }
+        
         return state
     }
 }
 
 //
-// MARK: - Action 
-struct GetConnectionFromCloudAction: Action {
-    
-}
-
+// MARK: - Action
 struct GetConnectionFromDatabaseAction: Action {
     
 }

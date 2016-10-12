@@ -57,6 +57,8 @@ struct Constants {
         }()
         
         #endif
+        
+        static let GetListConnectionFromCloudURL = "/connections"
     }
     
     //

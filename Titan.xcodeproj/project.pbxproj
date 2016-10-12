@@ -36,6 +36,7 @@
 		BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */; };
 		BAEE192C1DAE9E1A00C3CD3E /* UpdateUIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192B1DAE9E1A00C3CD3E /* UpdateUIOperation.swift */; };
 		BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192D1DAE9F9000C3CD3E /* Result.swift */; };
+		BAEE19301DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192F1DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BE1D97BE810081A5FE /* ViewController.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		BAEE192B1DAE9E1A00C3CD3E /* UpdateUIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUIOperation.swift; sourceTree = "<group>"; };
 		BAEE192D1DAE9F9000C3CD3E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BAEE192F1DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListConnectionCloudOperation.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEFE7BE1D97BE810081A5FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEE192B1DAE9E1A00C3CD3E /* UpdateUIOperation.swift */,
+				BAEE192F1DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */,
+				BAEE19301DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,

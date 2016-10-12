@@ -15,14 +15,13 @@ class BaseOperation: Operation {
     //
     // MARK: - Variable
     var result: Result<[String: AnyObject]>?
-    var param: [String: AnyObject]?
-    
+    var request: Request!
     
     //
     // MARK: - Init
-    convenience init(param: [String: AnyObject]?) {
+    convenience init(request: Request) {
         self.init()
-        self.param = param
+        self.request = request
     }
     
     // MARK:

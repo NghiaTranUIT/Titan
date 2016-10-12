@@ -7,10 +7,19 @@
 //
 
 import Cocoa
+import ReSwift
 
-protocol Request {
+
+//
+// MARK: - Request protocol
+// We conform with Action protocol from ReSwift
+// To make sure we can reuse Request as Action
+// Don't need to create seperate action object
+protocol Request: Action {
     
-    var baseURL: NSURL! {get}
+    var baseURL: NSURL {get}
+    
+    var endpoint: String {get}
     
     var param: [String: AnyObject]? {get}
     
@@ -21,6 +30,8 @@ protocol Request {
     func executeOnBackground()
 }
 
+//
+// MARK: - Default implementation
 extension Request {
     
     var baseURL: NSURL {

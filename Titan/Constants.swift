@@ -14,6 +14,49 @@ struct Constants {
     // MARK: - App
     struct App {
         static let Version = "1.0.0"
+        static let isHTTPS = false
+    }
+    
+    //
+    // MARK: - Endpoint
+    struct Endpoint {
+        
+        static let URLPrefix: String = {
+            if Constants.App.isHTTPS {
+                return "https://"
+            }
+            else {
+                return "http://"
+            }
+        }()
+        
+        #if DEBUG // -> Development
+        
+        static let BaseURL: String = {
+            
+            if Constants.App.isHTTPS {
+                return URLPrefix + "api.titan.com"
+            }
+            else {
+                return URLPrefix + "159.203.246.136"
+            }
+            
+        }()
+        
+        #else // -> Production
+        
+        static let BaseURL: String = {
+        
+            if Constants.App.isHTTPS {
+                return URLPrefix + "api.titan.com"
+            }
+            else {
+                return URLPrefix + "159.203.246.136"
+            }
+        
+        }()
+        
+        #endif
     }
     
     //

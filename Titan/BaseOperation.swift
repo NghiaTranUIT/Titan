@@ -8,28 +8,21 @@
 
 import Foundation
 
-enum OperationType {
-    case GetListConnectionsOnCloud
-    case GetListConnectionsOnDatabase
-    case None
-}
+typealias ResponseBlock = (Result<[String: AnyObject]>?) -> ()
 
 class BaseOperation: Operation {
     
-
     //
     // MARK: - Variable
-    private var currentType: OperationType = .None
+    var result: Result<[String: AnyObject]>?
     var param: [String: AnyObject]?
-    var response : AnyObject?
-    var error : NSError?
+    
     
     //
     // MARK: - Init
-    convenience init(type: OperationType, param: [String: AnyObject]?) {
+    convenience init(param: [String: AnyObject]?) {
         self.init()
         self.param = param
-        self.currentType = type
     }
     
     // MARK:
@@ -95,7 +88,7 @@ class BaseOperation: Operation {
     }
     
     deinit {
-        Logger.info("\(String(self)) deinit")
+        Logger.info(info: "\(String(describing: self)) deinit")
     }
     
 

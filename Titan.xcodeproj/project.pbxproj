@@ -17,6 +17,8 @@
 		BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E591DADF8A800834F3E /* View+Helper.swift */; };
 		BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FD91DAE74E00005A566 /* BaseOperation.swift */; };
 		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
+		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
+		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
@@ -71,6 +73,8 @@
 		BA222E591DADF8A800834F3E /* View+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Helper.swift"; sourceTree = "<group>"; };
 		BA344FD91DAE74E00005A566 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		BA344FDB1DAE74F20005A566 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,15 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		BA344FDD1DAE76BA0005A566 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				BA344FDE1DAE76C50005A566 /* Logger.swift */,
+				BA344FE01DAE77830005A566 /* SlackReporter.swift */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
 		BA4AFF101DAC9254009AE139 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +295,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA344FDD1DAE76BA0005A566 /* Logger */,
 				BA344FD71DAE73900005A566 /* Database */,
 				BA344FD61DAE73830005A566 /* Networking */,
 			);
@@ -569,9 +583,11 @@
 				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */,
+				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,
 				BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */,
+				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */,

@@ -11,6 +11,7 @@ workspace 'Titan.xcworkspace'
 def important_pods
     pod 'Alamofire', '~> 4.0'
     pod 'ReSwift'
+    pod 'SwiftyBeaver'
 end
 
 # Test

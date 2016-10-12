@@ -10,8 +10,24 @@ import Foundation
 
 struct Constants {
     
-    // App
+    //
+    // MARK: - App
     struct App {
         static let Version = "1.0.0"
+    }
+    
+    //
+    // MARK: - Logger
+    struct Logger {
+        
+        // Slack
+        struct Slack {
+            static let Endpoint = "<Slack endpoint>"
+            static let Token = "<Your token>"
+            static let ErrorChannel = "<Error channel name>"
+            static let ResponseChannel = "<Response channel name>"
+            static let ResponseChannel_Webhook = "https://hooks.slack.com/services/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"
+            static let ErrorChannel_Webhook = "https://hooks.slack.com/services/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"
+        }
     }
 }

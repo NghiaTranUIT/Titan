@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-enum SlackReporterType {
+enum SlackReporterDataType {
     case Error
     case Response
 }
 
-struct SlackReporter {
+struct SlackReporterData {
     
-    let type: SlackReporterType
+    let type: SlackReporterDataType
     
     // Slack
     private lazy var usernameSlack: String = {
@@ -46,7 +46,7 @@ struct SlackReporter {
     private var line: String = ""
     private var additionInfo: String = ""
     private lazy var buildNumber: String? = {
-        guard let appInfo = NSBundle.mainBundle().infoDictionary else {return nil}
+        guard let appInfo = Bundle.main.infoDictionary else {return nil}
         let appVersion = appInfo[kCFBundleVersionKey as String] as? String
         return appVersion
     }()
@@ -58,12 +58,12 @@ struct SlackReporter {
         self.line = String(line)
         
         // Filename
-        let componment = fileName.componentsSeparatedByString("/")
+        let componment = fileName.components(separatedBy: "/")
         if let _fileName = componment.last {
             self.fileName = _fileName
         }
         else {
-            self.fileName = "unknow"
+            self.fileName = "Unknow"
         }
     }
     
@@ -104,11 +104,9 @@ struct SlackReporter {
         
         // Current User first
         var text: String = ""
-        if let currentUser = UserObj.currentUser {
-            text += ":dark_sunglasses: \(currentUser.objectId)"
-            if let username = currentUser.username {
-                text += "|\(username)"
-            }
+        text += ":dark_sunglasses: \(UserModel.currentUser.objectId)"
+        if let username = currentUser.username {
+            text += "|\(username)"
         }
         
         // Build version
@@ -147,16 +145,14 @@ class SlackReporter: NSObject {
     
     // MARK:
     // MARK: Variable
-    private let Token = Constants.Slack.Token
-    private let ErrorChannel = Constants.Slack.ErrorChannel
-    private let ResponseChannel = Constants.Slack.ResponseChannel
+    private let Token = Constants.Logger.Slack.Token
+    private let ErrorChannel = Constants.Logger.Slack.ErrorChannel
+    private let ResponseChannel = Constants.Logger.Slack.ResponseChannel
     private lazy var URLErrorChannel: String = {
-        //return "https://feelsapp.slack.com/services/hooks/slackbot?token=\(self.Token)&channel=\(self.ErrorChannel)"
-        return Constants.Slack.ErrorChannel_Webhook
+        return Constants.Logger.Slack.ErrorChannel_Webhook
     }()
     private lazy var URLResponseChannel: String = {
-        //return "https://feelsapp.slack.com/services/hooks/slackbot?token=\(self.Token)&channel=\(self.ResponseChannel)"
-        return Constants.Slack.ResponseChannel_Webhook
+        return Constants.Logger.Slack.ResponseChannel_Webhook
     }()
     
     // MARK:
@@ -203,6 +199,7 @@ class SlackReporter: NSObject {
 }
 
 extension SlackReporter {
+    
     // Test
     func testSlackReport() {
         let error = NSError.errorWithMessage("Hi, I'm from Error Report")

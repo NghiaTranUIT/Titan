@@ -16,16 +16,9 @@ class Log: NSObject {
     let log = SwiftyBeaver.self
     
     // Share instance
-    class var shareInstance : Log {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: Log? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = Log()
-        }
-        return Static.instance!
-    }
+    lazy var shareInstance: Log = {
+        return Log()
+    }()
     
     override init() {
         super.init()

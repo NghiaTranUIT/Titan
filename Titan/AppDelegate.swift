@@ -16,6 +16,7 @@
 
 import Cocoa
 import ReSwift
+import Alamofire
 
 // Main State 
 let mainStore = Store<MainAppState>(reducer: MainReducer(), state: nil, middleware: [])

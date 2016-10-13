@@ -67,11 +67,11 @@ struct SlackReporterData {
         }
     }
     
-    init(responseTime: CGFloat?, apiName: String, response: Alamofire.Response<AnyObject, NSError>?) {
+    init(responseTime: CGFloat?, apiName: String, response: Alamofire.DataResponse<AnyObject>?) {
         self.type = .Response
         self.responseTime = responseTime ?? 0
         self.apiName = apiName
-        self.additionInfo = self.infoTextFromResponse(response)
+        self.additionInfo = self.infoTextFromResponse(response: response)
     }
     
     mutating func toParam() -> [String: String] {
@@ -85,16 +85,12 @@ struct SlackReporterData {
         return param
     }
     
-    private func infoTextFromResponse(response: Alamofire.Response<AnyObject, NSError>?) -> String {
+    private func infoTextFromResponse(response: Alamofire.DataResponse<AnyObject>?) -> String {
         guard let response = response else {return ""}
         
         var text: String = ""
-        if let URL = response.request?.URL?.absoluteString {
+        if let URL = response.request?.url?.absoluteString {
             text += " *URL* = \(URL)"
-        }
-        
-        if let UUID = response.request?.allHTTPHeaderFields?[Constants.APIKey.X_Request_ID] {
-            text += " *UUID* = \(UUID)"
         }
         
         return text
@@ -104,14 +100,11 @@ struct SlackReporterData {
         
         // Current User first
         var text: String = ""
-        text += ":dark_sunglasses: \(UserModel.currentUser.objectId)"
-        if let username = currentUser.username {
-            text += "|\(username)"
-        }
+        text += ":dark_sunglasses: "
         
         // Build version
         if let buildVersion = self.buildNumber {
-            text += " :iphone: \(buildVersion)"
+            text += " :macOS: \(buildVersion)"
         }
         
         // Info
@@ -157,15 +150,14 @@ class SlackReporter: NSObject {
     
     // MARK:
     // MARK: Public
-    func reportErrorData(data: SlackReporterData) {
+    func reportErrorData(_ data: SlackReporterData) {
         
         // Build param
         var data = data
         let param = data.toParam()
         
-        Alamofire.request(.POST, self.URLErrorChannel, parameters: param, encoding: ParameterEncoding.JSON)
-            .response { response in
-                
+        Alamofire.request(self.URLErrorChannel, method: .post, parameters: param, encoding: JSONEncoding.default).responseJSON { (_) in
+            
         }
     }
     
@@ -175,34 +167,21 @@ class SlackReporter: NSObject {
         var data = data
         let param = data.toParam()
         
-        Alamofire.request(.POST, self.URLResponseChannel, parameters: param, encoding: ParameterEncoding.JSON)
-            .response { response in
-                
+        Alamofire.request(self.self.URLResponseChannel, method: .post, parameters: param, encoding: JSONEncoding.default).responseJSON { (_) in
+            
         }
     }
     
     // MARK:
     // MARK: Private
-    class var shareInstance : SlackReporter {
-        
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: SlackReporter? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = SlackReporter()
-        }
-        
-        return Static.instance!
-    }
-    
+    static let shareInstance = SlackReporter()
 }
 
 extension SlackReporter {
     
     // Test
     func testSlackReport() {
-        let error = NSError.errorWithMessage("Hi, I'm from Error Report")
+        let error = NSError.errorWithMessage(message: "Hi, I'm from Error Report")
         let data = SlackReporterData(error: error, fileName: #file, functionName: #function, line:#line)
         self.reportErrorData(data)
     }
@@ -210,6 +189,6 @@ extension SlackReporter {
     // Test
     func testSlackResponseReport() {
         let data = SlackReporterData(responseTime: 0.2, apiName: "TestAPIName", response: nil)
-        self.reportResponseData(data)
+        self.reportResponseData(data: data)
     }
 }

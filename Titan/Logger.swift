@@ -16,9 +16,7 @@ class Log: NSObject {
     let log = SwiftyBeaver.self
     
     // Share instance
-    lazy var shareInstance: Log = {
-        return Log()
-    }()
+    static var shareInstance = Log()
     
     override init() {
         super.init()
@@ -30,23 +28,23 @@ class Log: NSObject {
     
     // MARK:
     // MARK: Public
-    func error(error:Any, fileName: String, functionName: String, line: Int) {
+    func error(_ error:Any, fileName: String, functionName: String, line: Int) {
         self.log.error(error, fileName, functionName, line: line)
     }
     
-    func warning(warning:Any) {
+    func warning(_ warning:Any) {
         self.log.warning(warning)
     }
     
-    func debug(debug:Any) {
+    func debug(_ debug:Any) {
         self.log.debug(debug)
     }
     
-    func info(info:Any) {
+    func info(_ info:Any) {
         self.log.info(info)
     }
     
-    func verbose(verbose:Any) {
+    func verbose(_ verbose:Any) {
         self.log.verbose(verbose)
     }
 }
@@ -56,10 +54,6 @@ class Log: NSObject {
 // MARK: Helper
 class Logger {
     
-    class func initLogger() {
-        Log.shareInstance
-    }
-    
     // Helper
     // MARK: Public
     class func error(error:Any, toSlack:Bool = true, fileName: String = #file, functionName: String = #function, line: Int = #line) {
@@ -68,7 +62,7 @@ class Logger {
         Log.shareInstance.error(error, fileName: fileName, functionName: functionName, line: line)
         
         if toSlack {
-            let errorObj = NSError.errorWithMessage("\(error)")
+            let errorObj = NSError.errorWithMessage(message: "\(error)")
             SlackReporter.shareInstance.reportErrorData(SlackReporterData(error: errorObj, fileName: fileName, functionName: functionName, line: line))
         }
     }

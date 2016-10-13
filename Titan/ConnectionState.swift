@@ -24,6 +24,8 @@ extension ConnectionState {
             break
         case _ as GetConnectionFromDatabaseAction:
             break
+        default:
+            break
         }
         
         return state

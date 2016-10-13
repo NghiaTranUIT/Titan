@@ -9,13 +9,13 @@
 import Foundation
 import ReSwift
 
-class BaseDataSource {
+class BaseDataSource: NSObject {
     
-    let store: Store<MainAppState>
+    var store: Store<MainAppState>!
     
-    init(store: Store<MainAppState>) {
+    convenience init(store: Store<MainAppState>) {
+        self.init()
         self.store = store
-        
         self.store.subscribe(self)
     }
     

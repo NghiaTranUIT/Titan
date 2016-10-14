@@ -32,6 +32,7 @@
 		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
 		BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */; };
 		BA8E0BD61DB0DE8200B9BDD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */; };
+		BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
 		BAEE19231DAE7C0D00C3CD3E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */; };
 		BAEE19261DAE989F00C3CD3E /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */; };
@@ -100,6 +101,7 @@
 		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionManager.swift; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		BA035FC31D97DBA900B616AB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BA8E0BD81DB0E28800B9BDD7 /* Library */,
 				BA035FC61D97DBBE00B616AB /* Storyboard */,
 				BA035FC51D97DBB800B616AB /* Assetes */,
 			);
@@ -332,6 +335,7 @@
 				BA344FDD1DAE76BA0005A566 /* Logger */,
 				BA344FD71DAE73900005A566 /* Database */,
 				BA344FD61DAE73830005A566 /* Networking */,
+				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -403,6 +407,13 @@
 				BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		BA8E0BD81DB0E28800B9BDD7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		BAEE191F1DAE7BE100C3CD3E /* Model Object */ = {
@@ -664,6 +675,7 @@
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,
 				BAEE192C1DAE9E1A00C3CD3E /* UpdateUIOperation.swift in Sources */,
+				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,

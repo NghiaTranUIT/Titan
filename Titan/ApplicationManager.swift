@@ -44,11 +44,8 @@ class ApplicationManager: NSObject {
         // Global Appearance
         self.initGlobalAppearance()
         
-        // Indicator Alamofire
-        self.initAlamofireNetworkActivityIndicator()
-        
         // App Version Checker
-        //AppVersionManager.initAppVersion(window)
+        _ = AppVersionManager.sharedInstance
     }
 }
 
@@ -78,10 +75,3 @@ extension ApplicationManager {
     }
 }
 
-// MARK:
-// MARK: AlamofireNetworkActivityIndicator
-extension ApplicationManager {
-    fileprivate func initAlamofireNetworkActivityIndicator() {
-        //NetworkActivityIndicatorManager.sharedManager.isEnabled = true
-    }
-}

@@ -13,6 +13,7 @@ def important_pods
     pod 'ReSwift'
     pod 'SwiftyBeaver'
     pod 'ObjectMapper'
+    pod 'AlamofireNetworkActivityIndicator'
 end
 
 # Test

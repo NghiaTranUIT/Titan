@@ -16,7 +16,6 @@
 
 import Cocoa
 import ReSwift
-import Alamofire
 
 // Main State 
 let mainStore = Store<MainAppState>(reducer: MainReducer(), state: nil, middleware: [])
@@ -25,7 +24,12 @@ let mainStore = Store<MainAppState>(reducer: MainReducer(), state: nil, middlewa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        
+        // Configure SDKs
+        ApplicationManager.sharedInstance.initAllSDKs()
+        
+        // Init Common things
+        ApplicationManager.sharedInstance.initCommon(window: NSApplication.shared().mainWindow)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

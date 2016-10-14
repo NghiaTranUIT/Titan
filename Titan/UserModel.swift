@@ -18,8 +18,4 @@ class UserModel: BaseModel {
             return true
         }
     }
-    
-    lazy var currentUser: UserModel = {
-       return UserModel()
-    }()
 }

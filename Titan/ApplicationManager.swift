@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Fabric
+import Crashlytics
 
 class ApplicationManager: NSObject {
     
@@ -28,12 +30,10 @@ class ApplicationManager: NSObject {
     // MARK: - Public
     // MARK:
     // MARK: Public
-    func initAllSDKWithApplication(application : NSApplication, launchOption:[NSObject : AnyObject]?) -> Bool {
+    func initAllSDKs() {
         
         // Fabric
         self.initFabric()
-        
-        return true
     }
     
     func initCommon(window: NSWindow?) {
@@ -48,7 +48,7 @@ class ApplicationManager: NSObject {
         self.initAlamofireNetworkActivityIndicator()
         
         // App Version Checker
-        AppVersionManager.initAppVersion(window)
+        //AppVersionManager.initAppVersion(window)
     }
 }
 
@@ -65,8 +65,8 @@ extension ApplicationManager {
 // MARK:
 // MARK: Fabric
 extension ApplicationManager {
-    fileprivate class func initFabric() {
-        Fabric.with([Crashlytics.self, nil])
+    fileprivate func initFabric() {
+        Fabric.with([Crashlytics.self])
     }
 }
 
@@ -82,6 +82,6 @@ extension ApplicationManager {
 // MARK: AlamofireNetworkActivityIndicator
 extension ApplicationManager {
     fileprivate func initAlamofireNetworkActivityIndicator() {
-        NetworkActivityIndicatorManager.sharedManager.isEnabled = true
+        //NetworkActivityIndicatorManager.sharedManager.isEnabled = true
     }
 }

@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.0.1)
+  - ObjectMapper (2.1.0)
   - ReSwift (2.1.0)
   - SwiftyBeaver (1.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - ObjectMapper
   - ReSwift
   - SwiftyBeaver
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   SwiftyBeaver: e42a664ffbdb5ec68ce968ffd3c54f619c92e0d7
 
-PODFILE CHECKSUM: 49280c637a1f05edec760d71d989898d86e92e89
+PODFILE CHECKSUM: 7a554ee9f3acedc613779e574556b3f4d3b6ba80
 
 COCOAPODS: 1.1.0.rc.2

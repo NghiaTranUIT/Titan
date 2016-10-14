@@ -19,6 +19,7 @@ class ListConnectionsViewController: BaseViewController {
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
     
+    
     //
     // MARK: - View Cycle
     override func viewDidLoad() {
@@ -39,7 +40,6 @@ class ListConnectionsViewController: BaseViewController {
         self.tableView.delegate = self.dataSource
         self.tableView.dataSource = self.dataSource
     }
-    
 }
 
 //

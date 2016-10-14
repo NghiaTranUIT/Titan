@@ -12,6 +12,7 @@ def important_pods
     pod 'Alamofire', '~> 4.0'
     pod 'ReSwift'
     pod 'SwiftyBeaver'
+    pod 'ObjectMapper'
 end
 
 # Test

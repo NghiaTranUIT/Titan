@@ -33,8 +33,13 @@
 		BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */; };
 		BA8E0BD61DB0DE8200B9BDD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */; };
 		BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */; };
+		BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BDF1DB0E65C00B9BDD7 /* SettingObj.swift */; };
+		BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE11DB0E67000B9BDD7 /* DatabaseObj.swift */; };
+		BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */; };
+		BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */; };
+		BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
-		BAEE19231DAE7C0D00C3CD3E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */; };
+		BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */; };
 		BAEE19261DAE989F00C3CD3E /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */; };
 		BAEE19281DAE98D000C3CD3E /* GetListConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19271DAE98D000C3CD3E /* GetListConnectionRequest.swift */; };
 		BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */; };
@@ -102,8 +107,13 @@
 		BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionManager.swift; sourceTree = "<group>"; };
+		BA8E0BDF1DB0E65C00B9BDD7 /* SettingObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingObj.swift; sourceTree = "<group>"; };
+		BA8E0BE11DB0E67000B9BDD7 /* DatabaseObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseObj.swift; sourceTree = "<group>"; };
+		BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryObj.swift; sourceTree = "<group>"; };
+		BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLObj.swift; sourceTree = "<group>"; };
+		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
 		BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		BAEE19271DAE98D000C3CD3E /* GetListConnectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListConnectionRequest.swift; sourceTree = "<group>"; };
 		BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
@@ -330,12 +340,12 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA8E0BDE1DB0E47300B9BDD7 /* App Version */,
 				BA8E0BCF1DB0D38300B9BDD7 /* Application */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA344FDD1DAE76BA0005A566 /* Logger */,
 				BA344FD71DAE73900005A566 /* Database */,
 				BA344FD61DAE73830005A566 /* Networking */,
-				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -416,11 +426,24 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
+		BA8E0BDE1DB0E47300B9BDD7 /* App Version */ = {
+			isa = PBXGroup;
+			children = (
+				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
+			);
+			name = "App Version";
+			sourceTree = "<group>";
+		};
 		BAEE191F1DAE7BE100C3CD3E /* Model Object */ = {
 			isa = PBXGroup;
 			children = (
 				BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */,
-				BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */,
+				BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */,
+				BA8E0BDF1DB0E65C00B9BDD7 /* SettingObj.swift */,
+				BA8E0BE11DB0E67000B9BDD7 /* DatabaseObj.swift */,
+				BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */,
+				BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */,
+				BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */,
 			);
 			name = "Model Object";
 			sourceTree = "<group>";
@@ -661,6 +684,7 @@
 			files = (
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
+				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */,
@@ -673,19 +697,23 @@
 				BAEE19301DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
+				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,
+				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BAEE192C1DAE9E1A00C3CD3E /* UpdateUIOperation.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BA344FDA1DAE74E00005A566 /* BaseOperation.swift in Sources */,
+				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */,
+				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* BaseRequest.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
-				BAEE19231DAE7C0D00C3CD3E /* UserModel.swift in Sources */,
+				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

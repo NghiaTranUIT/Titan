@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserModel: BaseModel {
+class UserObj: BaseModel {
     
     //
     // MARK: - Variable

@@ -100,7 +100,7 @@ struct Constants {
         //
         // MARK: - Database
         struct Database {
-            static let Name = ""
+            static let Name = "name"
             static let Host = "host"
             static let User = "user"
             static let Password = "password"

@@ -27,8 +27,6 @@ class ApplicationManager: NSObject {
     
     
     //
-    // MARK: - Public
-    // MARK:
     // MARK: Public
     func initAllSDKs() {
         

@@ -38,10 +38,10 @@ class BaseModel: Mappable, CustomStringConvertible {
     }
     
     func mapping(map: Map) {
-//        self.objectId <- map[Constants.Obj.ObjectId]
-//        self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
-//        self.updatedAt <- (map[Constants.Obj.UpdatedAt], APIDateTransform())
-//        self.className <- map[Constants.Obj.KeyClassname]
+        self.objectId <- map[Constants.Obj.ObjectId]
+        self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
+        self.updatedAt <- (map[Constants.Obj.UpdatedAt], APIDateTransform())
+        self.className <- map[Constants.Obj.KeyClassname]
     }
     
 }
@@ -49,31 +49,30 @@ class BaseModel: Mappable, CustomStringConvertible {
 
 //
 // MARK: - Date Transform
-//public class APIDateTransform: TransformType {
-//    
-//    public typealias Object = NSDate
-//    public typealias JSON = String
-//    
-//    public init() {}
-//    
-//    public func transformFromJSON(value: AnyObject?) -> NSDate? {
-//        
-//        if let value = value as? String {
-//            return NSDateHelper.globalDateFormatter.dateFromString(value)
-//        }
-//        
-//        if let value = value as? NSDate {
-//            return value
-//        }
-//        
-//        return nil
-//    }
-//    
-//    public func transformToJSON(value: NSDate?) -> String? {
-//        if let value = value {
-//            return NSDateHelper.globalDateFormatter.stringFromDate(value)
-//        }
-//        
-//        return nil
-//    }
-//}
+public class APIDateTransform: TransformType {
+
+    public typealias Object = NSDate
+    public typealias JSON = String
+    
+    public init() {}
+    
+    public func transformFromJSON(_ value: Any?) -> NSDate? {
+        if let value = value as? String {
+            return ApplicationManager.sharedInstance.globalDateFormatter.date(from: value) as NSDate?
+        }
+        
+        if let value = value as? NSDate {
+            return value
+        }
+        
+        return nil
+    }
+    
+    public func transformToJSON(_ value: NSDate?) -> String? {
+        if let value = value {
+            return ApplicationManager.sharedInstance.globalDateFormatter.string(from: value as Date)
+        }
+        
+        return nil
+    }
+}

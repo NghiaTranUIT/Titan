@@ -56,7 +56,11 @@ class Logger {
     
     // Helper
     // MARK: Public
-    class func error(error:Any, toSlack:Bool = true, fileName: String = #file, functionName: String = #function, line: Int = #line) {
+    class func initLogger() {
+        _ = Log.shareInstance
+    }
+    
+    class func error(_ error:Any, toSlack:Bool = true, fileName: String = #file, functionName: String = #function, line: Int = #line) {
         
         // Console
         Log.shareInstance.error(error, fileName: fileName, functionName: functionName, line: line)
@@ -67,19 +71,19 @@ class Logger {
         }
     }
     
-    class func warning(warning:Any) {
+    class func warning(_ warning:Any) {
         Log.shareInstance.warning(warning)
     }
     
-    class func debug(debug:Any) {
+    class func debug(_ debug:Any) {
         Log.shareInstance.debug(debug)
     }
     
-    class func info(info:Any) {
+    class func info(_ info:Any) {
         Log.shareInstance.info(info)
     }
     
-    class func verbose(verbose:Any) {
+    class func verbose(_ verbose:Any) {
         Log.shareInstance.verbose(verbose)
     }
 }

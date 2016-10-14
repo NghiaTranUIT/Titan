@@ -9,29 +9,29 @@
 import Foundation
 import ObjectMapper
 
-class BaseModel: Mappable {
+class BaseModel: Mappable, CustomStringConvertible {
     
     //
     // MARK: - Variable
-    let objectId: String = "guest"
+    var objectId: String = "guest"
     var createdAt: NSDate!
     var updatedAt: NSDate!
     var className: String!
     
     required init?(map: Map) {
         
-        guard map.JSONDictionary[Constants.Obj.ObjectId] != nil else {
+        guard map.JSON[Constants.Obj.ObjectId] != nil else {
             Logger.error("Can't create obj in BaseModel. Missing ObjectId")
             return nil
         }
         
-        guard map.JSONDictionary[Constants.Obj.KeyClassname] != nil else {
+        guard map.JSON[Constants.Obj.KeyClassname] != nil else {
             Logger.error("Can't create obj in BaseModel. Missing ClassName")
             return nil
         }
     }
     
-    override var description: String {
+    var description: String {
         get {
             return Mapper().toJSONString(self, prettyPrint: true)!
         }
@@ -44,4 +44,36 @@ class BaseModel: Mappable {
         self.className <- map[Constants.Obj.KeyClassname]
     }
     
+}
+
+
+//
+// MARK: - Date Transform
+public class APIDateTransform: TransformType {
+    
+    public typealias Object = NSDate
+    public typealias JSON = String
+    
+    public init() {}
+    
+    public func transformFromJSON(value: AnyObject?) -> NSDate? {
+        
+        if let value = value as? String {
+            return NSDateHelper.globalDateFormatter.dateFromString(value)
+        }
+        
+        if let value = value as? NSDate {
+            return value
+        }
+        
+        return nil
+    }
+    
+    public func transformToJSON(value: NSDate?) -> String? {
+        if let value = value {
+            return NSDateHelper.globalDateFormatter.stringFromDate(value)
+        }
+        
+        return nil
+    }
 }

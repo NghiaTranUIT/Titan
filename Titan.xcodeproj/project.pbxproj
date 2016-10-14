@@ -29,6 +29,7 @@
 		BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3D1DACDB7C009AE139 /* ListConnectionDataSource.swift */; };
 		BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseDataSource.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
+		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
 		BAEE19231DAE7C0D00C3CD3E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */; };
 		BAEE19261DAE989F00C3CD3E /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */; };
@@ -94,6 +95,7 @@
 		BA4AFF3F1DACDCF0009AE139 /* BaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
+		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAEE19221DAE7C0D00C3CD3E /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA8E0BCF1DB0D38300B9BDD7 /* Application */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA344FDD1DAE76BA0005A566 /* Logger */,
 				BA344FD71DAE73900005A566 /* Database */,
@@ -384,6 +387,14 @@
 				BA4AFF3D1DACDB7C009AE139 /* ListConnectionDataSource.swift */,
 			);
 			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		BA8E0BCF1DB0D38300B9BDD7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 		BAEE191F1DAE7BE100C3CD3E /* Model Object */ = {
@@ -615,6 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,

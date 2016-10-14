@@ -10,8 +10,9 @@ workspace 'Titan.xcworkspace'
 # Pods
 def important_pods
     pod 'Alamofire', '~> 4.0'
-    pod 'RxSwift',    '~> 3.0.0-beta.1'
-    pod 'RxCocoa',    '~> 3.0.0-beta.1'
+    pod 'ReSwift'
+    pod 'SwiftyBeaver'
+    pod 'ObjectMapper'
 end
 
 # Test
@@ -26,14 +27,6 @@ target "Titan" do
   platform :osx, '10.11'
   important_pods
 end
-
-# iOS
-target "Titan iOS" do
-  project 'Titan iOS/Titan iOS.xcodeproj'
-  platform :ios, '10.0'
-  important_pods
-end
-
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

@@ -5,21 +5,26 @@ Postgresql client for macOS/iOS. Clean design. Absolutely 100% Free and open-sou
 [![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)[![codecov.io](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master/graphs/badge.svg)](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master)
 
 ## Why postgresql ?
-At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack position.  
-Go for backend. React-FB and redux for frontend, ...
-It's pretty suck when I tried to find best postgresql client on macOS.  
+At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack developer.  
+Go-lang for backend. React-FB and redux for frontend, ...
+  
+It's pretty struggle when I tried to find best postgresql client on macOS.
+  
 *Postico* is the best one I found, but it's missing  multi-tab, multi-connection in free version.  
-*pgAdmin III* are the worst , GUI  seem like from 20s, and only non-retina support.
-After tried  and deleted many similar client.  
+*pgAdmin III* are the worst , GUI  seem like from 80s, and non-retina support.
+  
+After tried  and deleted many similar clients.  
 Finally, I prefers *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and didn't support multi-tab too.
 
-So  🤔  
-
-I decied to write my own Postgresql client - called as Titan.  
+So  🤔
+  
+I decied to write my own Postgresql client - called as **Titan**.
+  
 It's best time to apply what I learn to real product.
 
-## Technogy
-
+## Technology
+It's whole new project, I intent to apply what I'm learning.
+  
 *   Cross-framework  - supported iOS and macOS too
 *   ReSwift (Redux)
 *   RxSwift + MVVM
@@ -27,6 +32,7 @@ It's best time to apply what I learn to real product.
 *   Postgresql-driver abstraction layer
 *   Swift 3.0
 *   Core Data
+*   ...
 
 ## How to build libpg.framework
 *  Make sure that `xcode-select` points to the correct location by running:
@@ -41,7 +47,10 @@ Base SDK :  Latest macOS 10.12
 Supported Platform  :  macosx  iphonesimulator  iphoneos  
 Valid  Architecture :  i386  x86_64  armv7  arm64  armv7s  
 * Select framework target  and *Build*
-
+  
+## Reference
+1. http://blog.benjamin-encz.de/post/real-world-flux-ios/
+  
 ## Contact
 
 Vinh Nghia Tran

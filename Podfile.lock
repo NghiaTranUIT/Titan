@@ -2,27 +2,61 @@ PODS:
   - Alamofire (4.0.1)
   - ObjectMapper (2.1.0)
   - ReSwift (2.1.0)
+  - RxAlamofire (3.0.0-rc.1):
+    - RxAlamofire/Core (= 3.0.0-rc.1)
+  - RxAlamofire/Core (3.0.0-rc.1):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0.0-rc.1)
   - RxCocoa (3.0.0-rc.1):
     - RxSwift (~> 3.0.0-rc.1)
   - RxSwift (3.0.0-rc.1)
-  - SwiftyBeaver (1.0.3)
+  - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - ObjectMapper
-  - ReSwift
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.1.0`)
+  - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
+  - RxAlamofire (from `https://github.com/RxSwiftCommunity/RxAlamofire.git`, tag `3.0.0-rc.2`)
   - RxCocoa (= 3.0.0-rc.1)
   - RxSwift (= 3.0.0-rc.1)
-  - SwiftyBeaver
+  - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
+
+EXTERNAL SOURCES:
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.1.0
+  ReSwift:
+    :git: https://github.com/ReSwift/ReSwift.git
+    :tag: 2.1.0
+  RxAlamofire:
+    :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
+    :tag: 3.0.0-rc.2
+  SwiftyBeaver:
+    :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
+    :tag: 1.1.0
+
+CHECKOUT OPTIONS:
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.1.0
+  ReSwift:
+    :git: https://github.com/ReSwift/ReSwift.git
+    :tag: 2.1.0
+  RxAlamofire:
+    :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
+    :tag: 3.0.0-rc.2
+  SwiftyBeaver:
+    :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
+    :tag: 1.1.0
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
+  RxAlamofire: 5e544296d77b754c4ad9cb419c29936e6bc9711d
   RxCocoa: e72a074a7f38896ec0382d096df5f58df10115c7
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
-  SwiftyBeaver: e42a664ffbdb5ec68ce968ffd3c54f619c92e0d7
+  SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 19d57624a8d5b8daa68c02b7f16cc9b2aeea3b62
+PODFILE CHECKSUM: 6a97c8f36b42e8fa61f7f1017e9c150ea6f809be
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.1.1

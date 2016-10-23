@@ -9,12 +9,13 @@ workspace 'Titan.xcworkspace'
 
 # Pods
 def important_pods
-    pod 'Alamofire', '~> 4.0'
-    pod 'ReSwift'
-    pod 'SwiftyBeaver'
-    pod 'ObjectMapper'
+    #pod 'Alamofire', '~> 4.0'
+    pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git', :tag => '2.1.0'
+    pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
+    pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :tag => '2.1.0'
     pod 'RxSwift',    '3.0.0-rc.1'
     pod 'RxCocoa',    '3.0.0-rc.1'
+    pod 'RxAlamofire', :git => 'https://github.com/RxSwiftCommunity/RxAlamofire.git', :tag => '3.0.0-rc.2'
 end
 
 # Test

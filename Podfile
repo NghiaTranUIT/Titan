@@ -16,6 +16,7 @@ def important_pods
     pod 'RxSwift',    '3.0.0-rc.1'
     pod 'RxCocoa',    '3.0.0-rc.1'
     pod 'RxAlamofire', :git => 'https://github.com/RxSwiftCommunity/RxAlamofire.git', :tag => '3.0.0-rc.2'
+    pod 'RxOptional', :git => 'https://github.com/RxSwiftCommunity/RxOptional.git', :tag => '3.1.2'
 end
 
 # Test

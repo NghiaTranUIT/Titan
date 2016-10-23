@@ -9,6 +9,9 @@ PODS:
     - RxSwift (~> 3.0.0-rc.1)
   - RxCocoa (3.0.0-rc.1):
     - RxSwift (~> 3.0.0-rc.1)
+  - RxOptional (3.1.2):
+    - RxCocoa
+    - RxSwift
   - RxSwift (3.0.0-rc.1)
   - SwiftyBeaver (1.1.0)
 
@@ -17,6 +20,7 @@ DEPENDENCIES:
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
   - RxAlamofire (from `https://github.com/RxSwiftCommunity/RxAlamofire.git`, tag `3.0.0-rc.2`)
   - RxCocoa (= 3.0.0-rc.1)
+  - RxOptional (from `https://github.com/RxSwiftCommunity/RxOptional.git`, tag `3.1.2`)
   - RxSwift (= 3.0.0-rc.1)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
 
@@ -30,6 +34,9 @@ EXTERNAL SOURCES:
   RxAlamofire:
     :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
     :tag: 3.0.0-rc.2
+  RxOptional:
+    :git: https://github.com/RxSwiftCommunity/RxOptional.git
+    :tag: 3.1.2
   SwiftyBeaver:
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
     :tag: 1.1.0
@@ -44,6 +51,9 @@ CHECKOUT OPTIONS:
   RxAlamofire:
     :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
     :tag: 3.0.0-rc.2
+  RxOptional:
+    :git: https://github.com/RxSwiftCommunity/RxOptional.git
+    :tag: 3.1.2
   SwiftyBeaver:
     :git: https://github.com/SwiftyBeaver/SwiftyBeaver.git
     :tag: 1.1.0
@@ -54,9 +64,10 @@ SPEC CHECKSUMS:
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   RxAlamofire: 5e544296d77b754c4ad9cb419c29936e6bc9711d
   RxCocoa: e72a074a7f38896ec0382d096df5f58df10115c7
+  RxOptional: 91e488186acdfe6d15b3fdef296aecf4ba061c03
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 6a97c8f36b42e8fa61f7f1017e9c150ea6f809be
+PODFILE CHECKSUM: a601c1a1cf8c218beee005a8803b68ce0a9bdc65
 
 COCOAPODS: 1.1.1

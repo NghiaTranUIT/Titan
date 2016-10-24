@@ -25,43 +25,20 @@ protocol Request: Action {
     
     var httpMethod: HTTPMethod {get}
     
-    var param: Parameters? {get}
+    var param: Parameters? {get set}
     
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
     
     func toDirver() -> Driver<Response>
-}
-
-//
-// MARK: - BaseRequest
-class BaseRequest {
     
-    //
-    // MARK: - Variable
-    typealias Parameter = [String: Any]
-    internal var _param: Parameter?
-    
-    //
-    // MARK: - Init
-    init() {
-        
-    }
-    
-    init(param: Parameter) {
-        self._param = param
-    }
-    
-    var param: [String: Any]? {
-        get {
-            return _param
-        }
-    }
-    
+    init()
 }
 
 //
 // MARK: - Default implementation
 extension Request {
+    
+    typealias Parameters = [String: Any]
     
     var basePath: String {
         get {
@@ -71,6 +48,15 @@ extension Request {
     
     var httpMethod: HTTPMethod {
         return .get
+    }
+    
+    var param: Parameters? {
+        get {
+            return self.param
+        }
+        set {
+            param = newValue
+        }
     }
     
     var url: String {
@@ -84,5 +70,10 @@ extension Request {
             .catchError{ error in
                 return Observable.never()
         }
+    }
+    
+    init(param: Parameters?) {
+        self.init()
+        self.param = param
     }
 }

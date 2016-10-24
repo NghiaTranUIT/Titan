@@ -11,7 +11,6 @@ import ObjectMapper
 
 class DatabaseObj: BaseModel {
 
-    
     //
     // MARK: - Variable
     var name: String!
@@ -21,7 +20,8 @@ class DatabaseObj: BaseModel {
     var database: String!
     var port: Int!
     var saveToKeychain: Bool!
-    
+    var ssl: SSLObj?
+    var ssh: SSHObj?
     
     //
     // MARK: - Override
@@ -43,7 +43,7 @@ class DatabaseObj: BaseModel {
         self.database <- map[Constants.Obj.Database.Database]
         self.port <- map[Constants.Obj.Database.Port]
         self.saveToKeychain <- map[Constants.Obj.Database.SaveToKeyChain]
+        self.ssl <- map[Constants.Obj.Database.ssl]
+        self.ssl <- map[Constants.Obj.Database.ssh]
     }
-    
-    
 }

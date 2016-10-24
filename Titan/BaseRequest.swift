@@ -7,36 +7,38 @@
 //
 
 import Cocoa
+import RxSwift
+import RxCocoa
 import ReSwift
-
+import RxAlamofire
+import Alamofire
 
 //
 // MARK: - Request protocol
-// We conform with Action protocol from ReSwift
-// To make sure we can reuse Request as Action
-// Don't need to create seperate action object
 protocol Request: Action {
     
-    var baseURL: NSURL {get}
+    associatedtype Response
+    
+    var basePath: String {get}
     
     var endpoint: String {get}
     
+    var httpMethod: HTTPMethod {get}
+    
     var param: [String: AnyObject]? {get}
     
-    var block: ResponseBlock? {get}
+    func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
     
-    func toOperation() -> [BaseOperation]
-    
-    func executeOnBackground()
+    func toDirver() -> Driver<Response>
 }
 
 //
 // MARK: - Default implementation
 extension Request {
     
-    var baseURL: NSURL {
+    var basePath: String {
         get {
-            return NSURL(string: Constants.Endpoint.BaseURL)!
+            return Constants.Endpoint.BaseURL
         }
     }
     
@@ -46,18 +48,20 @@ extension Request {
         }
     }
     
-    var block: ResponseBlock? {
-        get {
-            return nil
-        }
+    var httpMethod: HTTPMethod {
+        return .get
     }
     
-    func executeOnBackground() {
-        
-        // Get operations
-        let operations = self.toOperation()
-        
-        // Enqueue
-        QueueManager.shared.enqueueOnBackground(operations: operations, block: self.block)
+    var url: String {
+        return basePath + endpoint
+    }
+    
+    func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)> {
+        return RxAlamofire
+            .requestJSON(self.httpMethod, self.url)
+            .debug()
+            .catchError{ error in
+                return Observable.never()
+        }
     }
 }

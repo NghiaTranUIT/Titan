@@ -9,7 +9,7 @@
 import Cocoa
 import TitanKit
 
-class DetailConnectionsViewController: BaseViewController {
+class DetailConnectionsController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

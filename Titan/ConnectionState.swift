@@ -20,7 +20,7 @@ extension ConnectionState {
         let state = state ?? ConnectionState()
         
         switch action {
-        case _ as GetListConnectionRequest:
+        case _ as FetchListConnectionsRequest:
             break
         case _ as GetConnectionFromDatabaseAction:
             break

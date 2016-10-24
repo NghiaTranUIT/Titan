@@ -107,6 +107,8 @@ struct Constants {
             static let Database = "database"
             static let Port = "port"
             static let SaveToKeyChain = "save_to_keychain"
+            static let ssl = "ssl"
+            static let ssh = "ssh"
         }
         
         

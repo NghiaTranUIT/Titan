@@ -32,28 +32,6 @@ class QueueManager {
 // MARK: - Queue execution helpers
 extension QueueManager {
     
-    func enqueueOnBackground(operations: [BaseOperation], block: ResponseBlock?) {
-        guard operations.count > 0 else {
-            return
-        }
-        
-        // UI Operation - run on main thread
-        if let block = block {
-            let uiOp = UpdateUIOperation(block: block)
-            
-            // Dependency
-            let lastOp = operations.last!
-            uiOp.addDependency(lastOp)
-            
-            // Execute on main thread
-            QueueManager.mainQueue.addOperation(uiOp)
-        }
-
-        // Execute
-        QueueManager.backgroundQueue.addOperations(operations, waitUntilFinished: false)
-        
-    }
-    
 }
 
 //

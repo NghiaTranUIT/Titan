@@ -19,15 +19,15 @@
 		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
-		BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */; };
+		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
 		BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */; };
 		BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF361DACD43C009AE139 /* MainAppState.swift */; };
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
-		BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3D1DACDB7C009AE139 /* ListConnectionDataSource.swift */; };
-		BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseDataSource.swift */; };
+		BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */; };
+		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
 		BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */; };
@@ -47,7 +47,6 @@
 		BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192D1DAE9F9000C3CD3E /* Result.swift */; };
 		BAEE19301DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192F1DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
-		BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BE1D97BE810081A5FE /* ViewController.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
 /* End PBXBuildFile section */
@@ -92,15 +91,15 @@
 		BA344FDB1DAE74F20005A566 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
-		BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsViewController.swift; sourceTree = "<group>"; };
+		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsViewController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
 		BA4AFF361DACD43C009AE139 /* MainAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
-		BA4AFF3D1DACDB7C009AE139 /* ListConnectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionDataSource.swift; sourceTree = "<group>"; };
-		BA4AFF3F1DACDCF0009AE139 /* BaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
+		BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionViewModel.swift; sourceTree = "<group>"; };
+		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
@@ -122,7 +121,6 @@
 		BAEE192F1DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListConnectionCloudOperation.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAEFE7BE1D97BE810081A5FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Connection.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 		BA035FC11D97DB9700B616AB /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFE7BE1D97BE810081A5FE /* ViewController.swift */,
 				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
 			);
 			name = "App Delegate";
@@ -316,8 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				BA222E531DADF77A00834F3E /* View */,
-				BA4AFF411DACDDE5009AE139 /* Data Source */,
-				BA4AFF121DAC928B009AE139 /* ListConnectionsViewController.swift */,
+				BA4AFF411DACDDE5009AE139 /* View Model */,
+				BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */,
 			);
 			name = "List Connections";
 			sourceTree = "<group>";
@@ -355,7 +352,7 @@
 			children = (
 				BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */,
 				BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */,
-				BA4AFF3F1DACDCF0009AE139 /* BaseDataSource.swift */,
+				BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -403,12 +400,12 @@
 			name = Reducer;
 			sourceTree = "<group>";
 		};
-		BA4AFF411DACDDE5009AE139 /* Data Source */ = {
+		BA4AFF411DACDDE5009AE139 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				BA4AFF3D1DACDB7C009AE139 /* ListConnectionDataSource.swift */,
+				BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */,
 			);
-			name = "Data Source";
+			name = "View Model";
 			sourceTree = "<group>";
 		};
 		BA8E0BCF1DB0D38300B9BDD7 /* Application */ = {
@@ -670,15 +667,14 @@
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
-				BA4AFF131DAC928B009AE139 /* ListConnectionsViewController.swift in Sources */,
+				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsViewController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* GetListConnectionRequest.swift in Sources */,
 				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
 				BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */,
-				BAEFE7BF1D97BE810081A5FE /* ViewController.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
-				BA4AFF3E1DACDB7C009AE139 /* ListConnectionDataSource.swift in Sources */,
+				BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */,
 				BAEE19301DAEAC3D00C3CD3E /* GetListConnectionCloudOperation.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
@@ -692,7 +688,7 @@
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
-				BA4AFF401DACDCF0009AE139 /* BaseDataSource.swift in Sources */,
+				BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Helper.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,

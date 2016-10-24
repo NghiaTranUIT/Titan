@@ -25,11 +25,38 @@ protocol Request: Action {
     
     var httpMethod: HTTPMethod {get}
     
-    var param: [String: AnyObject]? {get}
+    var param: Parameters? {get}
     
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
     
     func toDirver() -> Driver<Response>
+}
+
+//
+// MARK: - BaseRequest
+class BaseRequest {
+    
+    //
+    // MARK: - Variable
+    typealias Parameter = [String: Any]
+    internal var _param: Parameter?
+    
+    //
+    // MARK: - Init
+    init() {
+        
+    }
+    
+    init(param: Parameter) {
+        self._param = param
+    }
+    
+    var param: [String: Any]? {
+        get {
+            return _param
+        }
+    }
+    
 }
 
 //
@@ -39,12 +66,6 @@ extension Request {
     var basePath: String {
         get {
             return Constants.Endpoint.BaseURL
-        }
-    }
-    
-    var param: [String: AnyObject]? {
-        get {
-            return nil
         }
     }
     

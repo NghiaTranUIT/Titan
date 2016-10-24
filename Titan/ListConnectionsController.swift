@@ -24,10 +24,12 @@ class ListConnectionsController: BaseViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        // 1. Load connections in store
+        // 1. Load connections 
+        self.viewModel.fetchConnections()
     }
     
     override func initCommon() {
         
     }
+    
 }

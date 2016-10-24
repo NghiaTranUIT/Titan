@@ -10,12 +10,11 @@ import Foundation
 
 class ListConnectionViewModel: BaseViewModel {
     
-}
-
-//
-// MARK: - Public
-extension ListConnectionViewModel {
-    
+    //
+    // MARK: - Public
+    func fetchConnections() {
+        let request = FetchListConnectionsRequest()
+    }
 }
 
 //

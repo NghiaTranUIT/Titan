@@ -12,8 +12,8 @@ import RxCocoa
 import RxAlamofire
 import ObjectMapper
 
-class FetchListConnectionsRequest {
-
+class FetchListConnectionsRequest: BaseRequest {
+    
 }
 
 extension FetchListConnectionsRequest: Request {

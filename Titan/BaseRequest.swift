@@ -67,9 +67,6 @@ extension Request {
         return RxAlamofire
             .requestJSON(self.httpMethod, self.url)
             .debug()
-            .catchError{ error in
-                return Observable.never()
-        }
     }
     
     init(param: Parameters?) {

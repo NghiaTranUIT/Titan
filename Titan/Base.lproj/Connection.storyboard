@@ -699,10 +699,10 @@
             </objects>
             <point key="canvasLocation" x="20" y="1580"/>
         </scene>
-        <!--List Connections View Controller-->
+        <!--List Connections Controller-->
         <scene sceneID="sl7-fX-tMg">
             <objects>
-                <viewController id="2ek-Ha-6V0" customClass="ListConnectionsViewController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2ek-Ha-6V0" customClass="ListConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jZl-GI-tqf">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -786,10 +786,10 @@
             </objects>
             <point key="canvasLocation" x="881" y="922"/>
         </scene>
-        <!--Detail Connections View Controller-->
+        <!--Detail Connections Controller-->
         <scene sceneID="FEN-jZ-SSZ">
             <objects>
-                <viewController id="ud0-9A-E9q" customClass="DetailConnectionsViewController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ud0-9A-E9q" customClass="DetailConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="OL5-Se-uLZ">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -14,6 +14,21 @@ class ListConnectionViewModel: BaseViewModel {
     // MARK: - Public
     func fetchConnections() {
         let request = FetchListConnectionsRequest()
+        request.toDirver()
+            .drive(onNext: { (response: FetchListConnectionsRequest.Response) in
+            
+                switch response {
+                case .Failure(let error):
+                    Logger.info("Error = \(error)")
+                    break
+                case .Success(let result):
+                    Logger.info("Here = \(result)")
+                    break
+                }
+                
+                
+            }, onCompleted: nil, onDisposed: nil)
+        .addDisposableTo(self.disposeBag)
     }
 }
 

@@ -29,6 +29,7 @@
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
+		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
 		BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */; };
 		BA8E0BD61DB0DE8200B9BDD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */; };
@@ -100,6 +101,7 @@
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
+		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		BA344FD61DAE73830005A566 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				BA68CB441DBE00150075109D /* Error.swift */,
 				BAEE192D1DAE9F9000C3CD3E /* Result.swift */,
 				BAEE19251DAE989F00C3CD3E /* BaseRequest.swift */,
 				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
@@ -670,6 +673,7 @@
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
+				BA68CB451DBE00150075109D /* Error.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BA222E561DADF7A900834F3E /* ConnectionCell.swift in Sources */,

@@ -18,7 +18,7 @@ class FetchListConnectionsRequest {
 
 extension FetchListConnectionsRequest: Request {
     
-    typealias Response = [DatabaseObj]
+    typealias Response = Result<[DatabaseObj]>
     
     var endpoint: String {
         get {
@@ -30,13 +30,14 @@ extension FetchListConnectionsRequest: Request {
         return self.toAlamofireObservable()
             .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
                 .map { ( _: (response: HTTPURLResponse, json: Any)) -> Response in
+                    
                     if let connections = Mapper<DatabaseObj>().mapArray(JSONObject: json) {
-                        return connections
+                        return Result.Success(connections)
                     }
                     
-                    return []
+                    return Result.Failure(NSError.defaultError())
             }
             .observeOn(MainScheduler.instance)
-            .asDriver(onErrorJustReturn: [])
+            .asDriver(onErrorJustReturn: Result.Failure(NSError.defaultError()))
     }
 }

@@ -32,19 +32,19 @@ class Log: NSObject {
         self.log.error(error, fileName, functionName, line: line)
     }
     
-    func warning(_ warning:Any) {
+    func warning(_ warning:Any, _ file: String, _ function: String, _ line: Int) {
         self.log.warning(warning)
     }
     
-    func debug(_ debug:Any) {
+    func debug(_ debug:Any, _ file: String, _ function: String, _ line: Int) {
         self.log.debug(debug)
     }
     
-    func info(_ info:Any) {
-        self.log.info(info)
+    func info(_ info:Any, _ file: String, _ function: String, _ line: Int) {
+        self.log.info(info, file, function, line: line)
     }
     
-    func verbose(_ verbose:Any) {
+    func verbose(_ verbose:Any, _ file: String, _ function: String, _ line: Int) {
         self.log.verbose(verbose)
     }
 }
@@ -71,20 +71,20 @@ class Logger {
         }
     }
     
-    class func warning(_ warning:Any) {
-        Log.shareInstance.warning(warning)
+    class func warning(_ warning: Any, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        Log.shareInstance.warning(warning, file, function, line)
     }
     
-    class func debug(_ debug:Any) {
-        Log.shareInstance.debug(debug)
+    class func debug(_ debug: Any, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        Log.shareInstance.debug(debug, file, function, line)
     }
     
-    class func info(_ info:Any) {
-        Log.shareInstance.info(info)
+    class func info(_ info: Any, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        Log.shareInstance.info(info, file, function, line)
     }
     
-    class func verbose(_ verbose:Any) {
-        Log.shareInstance.verbose(verbose)
+    class func verbose(_ verbose: Any, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        Log.shareInstance.verbose(verbose, file, function, line)
     }
 }
 

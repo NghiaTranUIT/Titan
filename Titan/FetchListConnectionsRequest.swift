@@ -28,7 +28,7 @@ extension FetchListConnectionsRequest: Request {
     
     func toDirver() -> Driver<Response> {
         return self.toAlamofireObservable()
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background))
+            .observeOn(QueueManager.shared.backgroundQueue)
                 .map { ( _: (response: HTTPURLResponse, json: Any)) -> Response in
                     
                     if let connections = Mapper<DatabaseObj>().mapArray(JSONObject: json) {

@@ -37,7 +37,8 @@ extension FetchListConnectionsRequest: Request {
                     
                     return Result.Failure(NSError.defaultError())
             }
-            .observeOn(MainScheduler.instance)
-            .asDriver(onErrorJustReturn: Result.Failure(NSError.defaultError()))
+            .asDriver { error in
+                return Driver.just(.Failure(error))
+        }
     }
 }

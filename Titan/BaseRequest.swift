@@ -27,6 +27,8 @@ protocol Request: Action {
     
     var param: Parameters? {get set}
     
+    var header: HeaderParameter? {get}
+    
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
     
     func toDirver() -> Driver<Response>
@@ -39,6 +41,7 @@ protocol Request: Action {
 extension Request {
     
     typealias Parameters = [String: Any]
+    typealias HeaderParameter = [String: String]
     
     var basePath: String {
         get {
@@ -52,10 +55,16 @@ extension Request {
     
     var param: Parameters? {
         get {
-            return self.param
+            return nil
         }
         set {
             param = newValue
+        }
+    }
+    
+    var header: HeaderParameter? {
+        get {
+            return ["Accept": "application/json"]
         }
     }
     
@@ -64,9 +73,14 @@ extension Request {
     }
     
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)> {
-        return RxAlamofire
-            .requestJSON(self.httpMethod, self.url)
-            .debug()
+        return SessionManager.default
+            .rx
+            .request(self.httpMethod, self.url, parameters: self.param, encoding: JSONEncoding.default, headers: self.header)
+            .flatMap{
+                $0
+                .validate()
+                .rx.responseJSON()
+            }
     }
     
     init(param: Parameters?) {

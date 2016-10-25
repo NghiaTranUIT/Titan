@@ -25,8 +25,6 @@ class ListConnectionViewModel: BaseViewModel {
                     Logger.info("Here = \(result)")
                     break
                 }
-                
-                
             }, onCompleted: nil, onDisposed: nil)
         .addDisposableTo(self.disposeBag)
     }

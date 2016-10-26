@@ -12,4 +12,22 @@ import RxSwift
 
 class BaseViewModel {
     
+    //
+    // MARK: - Variable
+    lazy var disposeBag: DisposeBag = {
+       return DisposeBag()
+    }()
+    
+    //
+    // MARK: - Init
+    init() {
+        self.initBinding()
+    }
+    
+    
+    //
+    // MARK: - Public
+    func initBinding() {
+        
+    }
 }

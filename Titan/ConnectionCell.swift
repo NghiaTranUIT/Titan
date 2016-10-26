@@ -22,4 +22,9 @@ class ConnectionCell: NSTableCellView {
         super.awakeFromNib()
     }
 
+    //
+    // MARK: - Public
+    func configureCell(with databaseObj: DatabaseObj) {
+        
+    }
 }

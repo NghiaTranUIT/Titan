@@ -12,13 +12,17 @@ class BaseViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
         self.initCommon()
+        
+        self.bindViewModel()
     }
     
     func initCommon() {
         // Do Nothing
     }
     
+    func bindViewModel() {
+        // Do nothing
+    }
 }

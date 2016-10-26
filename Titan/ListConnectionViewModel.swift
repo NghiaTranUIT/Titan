@@ -7,16 +7,22 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class ListConnectionViewModel: BaseViewModel {
     
     //
+    // MARK: - Observable
+    var selectedConnection: Variable<DatabaseObj>!
+    var requestConnectionsObs: Driver<FetchListConnectionsRequest.Response>!
+    
+    //
     // MARK: - Public
     func fetchConnections() {
-        let request = FetchListConnectionsRequest()
-        request.toDirver()
+            FetchListConnectionsRequest()
+            .toDirver()
             .drive(onNext: { (response: FetchListConnectionsRequest.Response) in
-            
                 switch response {
                 case .Failure(let error):
                     Logger.info("Error = \(error)")
@@ -25,7 +31,7 @@ class ListConnectionViewModel: BaseViewModel {
                     Logger.info("Here = \(result)")
                     break
                 }
-            }, onCompleted: nil, onDisposed: nil)
+            })
         .addDisposableTo(self.disposeBag)
     }
 }

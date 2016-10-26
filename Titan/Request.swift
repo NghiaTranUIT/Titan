@@ -76,7 +76,7 @@ extension Request {
         return SessionManager.default
             .rx
             .request(self.httpMethod, self.url, parameters: self.param, encoding: JSONEncoding.default, headers: self.header)
-            .flatMap{
+            .flatMapLatest{
                 $0
                 .validate()
                 .rx.responseJSON()

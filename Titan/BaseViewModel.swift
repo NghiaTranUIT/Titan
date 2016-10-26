@@ -12,14 +12,4 @@ import RxSwift
 
 class BaseViewModel {
     
-    //
-    // MARK: - Variable
-    var store: Store<MainAppState>!
-    lazy var disposeBag = {return DisposeBag()}()
-    
-    //
-    // MARK: - Init
-    init() {
-        self.store = mainStore
-    }
 }

@@ -22,14 +22,14 @@ class ListConnectionsController: BaseViewController {
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        
-        // 1. Load connections 
-        self.viewModel.fetchConnections()
     }
     
     override func initCommon() {
         
+    }
+    
+    override func bindViewModel() {
+        self.viewModel.fetchConnections()
     }
     
 }

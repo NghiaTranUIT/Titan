@@ -10,8 +10,8 @@ import Cocoa
 import RxSwift
 import RxCocoa
 import ReSwift
-import RxAlamofire
 import Alamofire
+import ObjectMapper
 
 //
 // MARK: - Request protocol
@@ -37,11 +37,20 @@ protocol Request: Action {
 }
 
 //
+// MARK: - Conform URLConvitible from Alamofire
+extension Request: URLRequestConvertible {
+    func asURLRequest() -> URLRequest {
+        
+    }
+}
+
+//
 // MARK: - Default implementation
 extension Request {
     
     typealias Parameters = [String: Any]
     typealias HeaderParameter = [String: String]
+    typealias JSONDictionary = [String: Any]
     
     var basePath: String {
         get {
@@ -73,14 +82,24 @@ extension Request {
     }
     
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)> {
-        return SessionManager.default
-            .rx
-            .request(self.httpMethod, self.url, parameters: self.param, encoding: JSONEncoding.default, headers: self.header)
-            .flatMapLatest{
-                $0
-                .validate()
-                .rx.responseJSON()
-            }
+        Observable.create { (o) -> Disposable in
+            let urlRequest = self.asURLRequest()
+            Alamofire.request(urlRequest)
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/json"])
+                .responseJSON(completionHandler: { (response) in
+                    
+                    guard response.result.error == nil, let json = response.result.value as? [JSONDictionary] else {
+                        o.onError(data.result.error ?? ServiceError.InvalidJSON)
+                        o.onCompleted()
+                        return
+                    }
+                    
+                    // Parse here
+                    let result = Mapper.
+                    
+                })
+        }
     }
     
     init(param: Parameters?) {

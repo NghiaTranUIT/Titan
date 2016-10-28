@@ -9,7 +9,6 @@
 import Cocoa
 import RxSwift
 import RxCocoa
-import RxAlamofire
 import ObjectMapper
 
 class FetchListConnectionsRequest {

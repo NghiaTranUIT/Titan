@@ -19,6 +19,7 @@ class ListConnectionsController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
+    let textField = NSTextField()
     
     //
     // MARK: - View Cycle
@@ -41,6 +42,7 @@ class ListConnectionsController: BaseViewController {
     
     override func bindViewModel() {
         self.viewModel.fetchConnections()
+        textField.rx.textInput.text.bindTo(self.viewModel.textFieldInputObserver)
     }
 }
 

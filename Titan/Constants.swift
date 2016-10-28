@@ -86,7 +86,7 @@ struct Constants {
         static let UpdatedAt = "updated_at"
         static let ObjectId = "id"
         static let KeyClassname = "c_n"
-        
+        static let isProcess = "_is_procress"
         
         //
         // MARK: - User

@@ -50,6 +50,7 @@
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
+		BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Connection.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -323,6 +325,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAF869AC1DC2FBB500E21BF4 /* JSON Decoder */,
 				BA8E0BDE1DB0E47300B9BDD7 /* App Version */,
 				BA8E0BCF1DB0D38300B9BDD7 /* Application */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
@@ -502,6 +505,14 @@
 				BAEFE7C51D97BE810081A5FE /* Info.plist */,
 			);
 			path = Titan;
+			sourceTree = "<group>";
+		};
+		BAF869AC1DC2FBB500E21BF4 /* JSON Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */,
+			);
+			name = "JSON Decoder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,6 +712,7 @@
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
+				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,

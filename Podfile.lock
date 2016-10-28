@@ -2,11 +2,6 @@ PODS:
   - Alamofire (4.0.1)
   - ObjectMapper (2.1.0)
   - ReSwift (2.1.0)
-  - RxAlamofire (3.0.0-rc.1):
-    - RxAlamofire/Core (= 3.0.0-rc.1)
-  - RxAlamofire/Core (3.0.0-rc.1):
-    - Alamofire (~> 4.0)
-    - RxSwift (~> 3.0.0-rc.1)
   - RxCocoa (3.0.0-rc.1):
     - RxSwift (~> 3.0.0-rc.1)
   - RxOptional (3.1.2):
@@ -16,9 +11,9 @@ PODS:
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.1.0`)
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
-  - RxAlamofire (from `https://github.com/RxSwiftCommunity/RxAlamofire.git`, tag `3.0.0-rc.2`)
   - RxCocoa (= 3.0.0-rc.1)
   - RxOptional (from `https://github.com/RxSwiftCommunity/RxOptional.git`, tag `3.1.2`)
   - RxSwift (= 3.0.0-rc.1)
@@ -31,9 +26,6 @@ EXTERNAL SOURCES:
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
-  RxAlamofire:
-    :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
-    :tag: 3.0.0-rc.2
   RxOptional:
     :git: https://github.com/RxSwiftCommunity/RxOptional.git
     :tag: 3.1.2
@@ -48,9 +40,6 @@ CHECKOUT OPTIONS:
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
-  RxAlamofire:
-    :git: https://github.com/RxSwiftCommunity/RxAlamofire.git
-    :tag: 3.0.0-rc.2
   RxOptional:
     :git: https://github.com/RxSwiftCommunity/RxOptional.git
     :tag: 3.1.2
@@ -62,12 +51,11 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
-  RxAlamofire: 5e544296d77b754c4ad9cb419c29936e6bc9711d
   RxCocoa: e72a074a7f38896ec0382d096df5f58df10115c7
   RxOptional: 91e488186acdfe6d15b3fdef296aecf4ba061c03
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: a601c1a1cf8c218beee005a8803b68ce0a9bdc65
+PODFILE CHECKSUM: 07e9ec87a653dc2993692551b6c88825c52d3264
 
 COCOAPODS: 1.1.1

@@ -23,20 +23,14 @@ class ListConnectionViewModel: BaseViewModel {
     //
     // MARK: - Observable
     private var selectedConnection: Variable<DatabaseObj>!
-    fileprivate var connections: Driver<[DatabaseObj]>!
+    fileprivate var connections: Variable<[DatabaseObj]>!
     private var requestConnectionsObs: Driver<FetchListConnectionsRequest.Response>!
     let textFieldInputObserver = Variable<String>("")
     
     //
     // MARK: - Public
     func fetchConnections() {
-            self.connections = FetchListConnectionsRequest().toDirver().map({ (response) -> Driver<[DatabaseObj]> in
-                switch response {
-                case .Success(let value):
-                    retu
-                    break
-                }
-            })
+        
     }
     
     override func initBinding() {

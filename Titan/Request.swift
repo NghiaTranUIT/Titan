@@ -15,7 +15,7 @@ import ObjectMapper
 
 //
 // MARK: - Request protocol
-protocol Request: Action {
+protocol Request: Action, URLRequestConvertible {
     
     associatedtype Response
     
@@ -31,14 +31,12 @@ protocol Request: Action {
     
     func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
     
-    func toDirver() -> Driver<Response>
-    
     init()
 }
 
 //
 // MARK: - Conform URLConvitible from Alamofire
-extension Request: URLRequestConvertible {
+extension Request {
     func asURLRequest() -> URLRequest {
         
     }
@@ -81,24 +79,43 @@ extension Request {
         return basePath + endpoint
     }
     
-    func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)> {
-        Observable.create { (o) -> Disposable in
-            let urlRequest = self.asURLRequest()
-            Alamofire.request(urlRequest)
+    func toAlamofireObservable() -> Observable<Result> {
+        return Observable.create { (o) -> Disposable in
+            
+            guard let urlRequest = try? self.asURLRequest() else {
+                o.onError(Result.defaultErrorResult)
+                o.onCompleted()
+                return Disposables.create()
+            }
+            
+            let request = Alamofire.request(urlRequest)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
                     
-                    guard response.result.error == nil, let json = response.result.value as? [JSONDictionary] else {
-                        o.onError(data.result.error ?? ServiceError.InvalidJSON)
+                    // Check error
+                    if let error = response.result.error {
+                        o.onError(Result.Failure(error))
+                        o.onCompleted()
+                        return
+                    }
+                    
+                    // Check Response
+                    guard let data = response.result.value else {
+                        o.onError(Result.defaultErrorResult)
                         o.onCompleted()
                         return
                     }
                     
                     // Parse here
-                    let result = Mapper.
-                    
+                    let result = JSONDecoder.shared.decodeObject(data)
+                    o.onNext(Result.Success(result))
+                    o.onCompleted()
                 })
+            
+            return Disposables.create {
+                request.cancel()
+            }
         }
     }
     

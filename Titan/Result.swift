@@ -8,9 +8,13 @@
 
 import Cocoa
 
-enum Result<Value: Any> {
-    case Success(Value)
+enum Result: Error {
+    
+    case Success(Any)
     case Failure(Error)
+    
+    // Default error
+    static let defaultErrorResult = Result.Failure(NSError.defaultError())
 }
 
 extension Result {

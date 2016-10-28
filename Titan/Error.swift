@@ -10,6 +10,7 @@ import Foundation
 
 extension NSError {
     static func defaultError() -> NSError {
-        return NSError(domain: "com.fe.titan.defaultError", code: 999, userInfo: nil)
+        let userInfo = [NSLocalizedDescriptionKey: "Unknow error"]
+        return NSError(domain: "com.fe.titan.defaultError", code: 999, userInfo: userInfo)
     }
 }

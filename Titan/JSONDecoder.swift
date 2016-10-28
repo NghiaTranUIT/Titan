@@ -8,18 +8,24 @@
 
 import Cocoa
 
-class JSONDecoder {
+protocol JSONDecodable {
+    func decodeObject(_ obj: Any) -> Any
+    func decodeArray(_ array: [Any]) -> Any
+    func decodeDictionary(_ dictionary: [String: Any]) -> Any
+}
+
+class JSONDecoder: JSONDecodable {
 
     // Share instance
     static let shared = JSONDecoder()
     
     //
     // MARK: - Public
-    func decodeObject(_ obj: AnyObject) -> AnyObject {
+    func decodeObject(_ obj: Any) -> Any {
         
-        if let obj = obj as? [AnyObject] { // Check if Array of obj
+        if let obj = obj as? [Any] { // Check if Array of obj
             return self.decodeArray(obj)
-        } else if let obj = obj as? [String: AnyObject] { // Or JSON
+        } else if let obj = obj as? [String: Any] { // Or JSON
             return self.decodeDictionary(obj)
         }
         
@@ -30,9 +36,9 @@ class JSONDecoder {
 //
 // MARK: - Private
 extension JSONDecoder {
-    fileprivate func decodeArray(_ array: [AnyObject]) -> Any {
+    func decodeArray(_ array: [Any]) -> Any {
         
-        var newArray: [AnyObject] = []
+        var newArray: [Any] = []
         
         for value in array {
             newArray.append(self.decodeObject(value))
@@ -41,24 +47,24 @@ extension JSONDecoder {
         return newArray
     }
     
-    fileprivate func decodeDictionary(_ dictionary: [String: AnyObject]) -> Any {
+    func decodeDictionary(_ dictionary: [String: Any]) -> Any {
         
         let id = dictionary[Constants.Obj.ObjectId] as? String
         let c_n = dictionary[Constants.Obj.KeyClassname] as? String
-        let isProcess = dictionary[Constants.Obj.isProcess] as? Bool
+        let isProcess = dictionary[Constants.Obj.IsProcess] as? Bool
         
         if isProcess == false || isProcess == nil {
             if let _ = id, let c_n = c_n { // => It' class obj
                 let className = c_n
                 
-                var data: [String: AnyObject] = dictionary
-                data[Constants.Obj.IsProcessed] = true
+                var data: [String: Any] = dictionary
+                data[Constants.Obj.IsProcess] = true
                 
                 return BaseModel.objectForDictionary(data, classname: className)!
             }
         }
         
-        var newDictionary: [String: AnyObject] = [:]
+        var newDictionary: [String: Any] = [:]
         for (key, value) in dictionary {
             newDictionary[key] = self.decodeObject(value)
         }

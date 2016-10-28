@@ -24,7 +24,6 @@ class ListConnectionViewModel: BaseViewModel {
     // MARK: - Observable
     private var selectedConnection: Variable<DatabaseObj>!
     fileprivate var connections: Variable<[DatabaseObj]>!
-    private var requestConnectionsObs: Driver<FetchListConnectionsRequest.Response>!
     let textFieldInputObserver = Variable<String>("")
     
     //

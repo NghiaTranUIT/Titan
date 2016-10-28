@@ -16,7 +16,6 @@ class FetchListConnectionsRequest {
 }
 
 extension FetchListConnectionsRequest: Request {
-    
     var endpoint: String {
         get {
             return Constants.Endpoint.GetListConnectionFromCloudURL

@@ -17,8 +17,6 @@ import ObjectMapper
 // MARK: - Request protocol
 protocol Request: Action, URLRequestConvertible {
     
-    associatedtype Response
-    
     var basePath: String {get}
     
     var endpoint: String {get}
@@ -27,9 +25,11 @@ protocol Request: Action, URLRequestConvertible {
     
     var param: Parameters? {get set}
     
-    var header: HeaderParameter? {get}
+    var addionalHeader: HeaderParameter? {get}
     
-    func toAlamofireObservable() -> Observable<(HTTPURLResponse, Any)>
+    var parameterEncoding: ParameterEncoding {get}
+    
+    func toAlamofireObservable() -> Observable<Result>
     
     init()
 }
@@ -38,7 +38,7 @@ protocol Request: Action, URLRequestConvertible {
 // MARK: - Conform URLConvitible from Alamofire
 extension Request {
     func asURLRequest() -> URLRequest {
-        
+        return self.buildURLRequest()
     }
 }
 
@@ -69,14 +69,30 @@ extension Request {
         }
     }
     
-    var header: HeaderParameter? {
+    var addionalHeader: HeaderParameter? {
+        get {
+            return nil
+        }
+    }
+    
+    var defaultHeader: HeaderParameter {
         get {
             return ["Accept": "application/json"]
         }
     }
     
-    var url: String {
+    var urlPath: String {
         return basePath + endpoint
+    }
+    
+    var url: URL {
+        return URL(string: urlPath)!
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        get {
+            return JSONEncoding.default
+        }
     }
     
     func toAlamofireObservable() -> Observable<Result> {
@@ -122,5 +138,25 @@ extension Request {
     init(param: Parameters?) {
         self.init()
         self.param = param
+    }
+    
+    func buildURLRequest() -> URLRequest {
+        
+        // Init
+        var urlRequest = URLRequest(url: self.url)
+        urlRequest.httpMethod = self.httpMethod.rawValue
+        urlRequest.timeoutInterval = TimeInterval(10 * 1000)
+        
+        // Encode param
+        var request = try! self.parameterEncoding.encode(urlRequest, with: self.param)
+        
+        // Add addional Header if need
+        if let additinalHeaders = self.addionalHeader {
+            for (key, value) in additinalHeaders {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        return request
     }
 }

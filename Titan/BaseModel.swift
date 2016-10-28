@@ -46,6 +46,29 @@ class BaseModel: Mappable, CustomStringConvertible {
     
 }
 
+//
+// MARK: - Mapping model
+extension BaseModel {
+    class func objectForDictionary(_ dictionary: [String: Any], classname c_n: String) -> BaseModel? {
+        
+        if c_n == Constants.Obj.Classname.Database {
+            let model = self.mapperObject(DatabaseObj.self, dictionary: dictionary)
+            
+            return model
+        }
+        
+        return nil
+    }
+    
+    private class func mapperObject<T>(_ type: T.Type, dictionary: [String: Any]) -> T? where T: Mappable {
+        
+        guard let model = Mapper<T>().map(JSON: dictionary) else {
+            return nil
+        }
+        
+        return model
+    }
+}
 
 //
 // MARK: - Date Transform

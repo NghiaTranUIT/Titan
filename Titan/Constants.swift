@@ -89,6 +89,12 @@ struct Constants {
         static let IsProcess = "_is_procress"
         
         //
+        // MARK: - Classname
+        struct Classname {
+            static let Database = "database"
+        }
+        
+        //
         // MARK: - User
         struct User {
             static let Username = "username"

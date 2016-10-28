@@ -56,10 +56,6 @@ extension Request {
         }
     }
     
-    var httpMethod: HTTPMethod {
-        return .get
-    }
-    
     var param: Parameters? {
         get {
             return nil

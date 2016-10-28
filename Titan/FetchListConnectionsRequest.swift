@@ -9,13 +9,19 @@
 import Cocoa
 import RxSwift
 import RxCocoa
-import ObjectMapper
+import Alamofire
 
 class FetchListConnectionsRequest {
     required init() {}
 }
 
 extension FetchListConnectionsRequest: Request {
+    
+    var httpMethod: HTTPMethod {
+        get {
+            return .get
+        }
+    }
     var endpoint: String {
         get {
             return Constants.Endpoint.GetListConnectionFromCloudURL

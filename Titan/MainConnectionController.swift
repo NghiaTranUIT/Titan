@@ -14,12 +14,10 @@ class MainConnectionController: BaseSplitViewController {
     // MARK: - Variable
     private let viewModel = MainConnectionViewModel()
     
-    
     //
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
-    
 }

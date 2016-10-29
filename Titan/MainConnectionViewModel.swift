@@ -17,5 +17,4 @@ class MainConnectionViewModel: BaseViewModel {
     
     //
     // MARK: - Private
-    
 }

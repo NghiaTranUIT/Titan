@@ -22,6 +22,7 @@ extension FetchListConnectionsRequest: Request {
             return .get
         }
     }
+    
     var endpoint: String {
         get {
             return Constants.Endpoint.GetListConnectionFromCloudURL

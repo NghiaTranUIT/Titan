@@ -23,22 +23,36 @@ class ListConnectionViewModel: BaseViewModel {
     //
     // MARK: - Observable
     private var selectedConnection: Variable<DatabaseObj>!
-    fileprivate var connections: Variable<[DatabaseObj]>!
+    fileprivate var connections: Variable<[DatabaseObj]> = Variable<[DatabaseObj]>([])
     let textFieldInputObserver = Variable<String>("")
     
     //
     // MARK: - Public
     func fetchConnections() {
-        
+        Observable.just(1).flatMapLatest { (_) -> Observable<[DatabaseObj]> in
+            return FetchListConnectionsRequest()
+                .toAlamofireObservable()
+                .startWith(Result.Success([]))
+                .map({ result in
+                    switch result {
+                    case .Success(let data):
+                        return data as! [DatabaseObj]
+                    case .Failure(_):
+                        return []
+                    }
+            })
+        }
+        .shareReplay(1)
+        .bindTo(self.connections)
+        .addDisposableTo(self.disposeBag)
     }
     
     override func initBinding() {
-        
-        // Auto reload connection if it changed
-        self.connections.asObservable().observeOn(QueueManager.shared.mainQueue).subscribe {[unowned self] (connections) in
+        self.connections.asObservable().observeOn(QueueManager.shared.mainQueue)
+        .subscribe {[unowned self] (_) in
+            Logger.info("Reload tableView")
             self.delegate?.ListConnectionViewModelShouldReload(sender: self)
-        }
-        .addDisposableTo(self.disposeBag)
+        }.addDisposableTo(self.disposeBag)
     }
 }
 

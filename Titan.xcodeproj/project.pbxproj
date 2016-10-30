@@ -27,6 +27,12 @@
 		BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */; };
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
+		BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */; };
+		BA5E7A4D1DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */; };
+		BA5E7A4E1DC5BFFF00C06751 /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */; };
+		BA5E7A4F1DC5BFFF00C06751 /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */; };
+		BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */; };
+		BA5E7A511DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
@@ -103,6 +109,12 @@
 		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
+		BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
+		BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
+		BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
+		BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
+		BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
+		BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -211,6 +223,7 @@
 		BA035FC31D97DBA900B616AB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BA5E7A451DC5BFF700C06751 /* Font */,
 				BA8E0BD81DB0E28800B9BDD7 /* Library */,
 				BA035FC61D97DBBE00B616AB /* Storyboard */,
 				BA035FC51D97DBB800B616AB /* Assetes */,
@@ -398,6 +411,19 @@
 				BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */,
 			);
 			name = "View Model";
+			sourceTree = "<group>";
+		};
+		BA5E7A451DC5BFF700C06751 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */,
+				BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */,
+				BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */,
+				BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */,
+				BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */,
+				BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		BA68CB411DBDCC410075109D /* View Model */ = {
@@ -609,6 +635,12 @@
 			files = (
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
+				BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */,
+				BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */,
+				BA5E7A4D1DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf in Resources */,
+				BA5E7A4E1DC5BFFF00C06751 /* SF-UI-Text-Light.otf in Resources */,
+				BA5E7A511DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf in Resources */,
+				BA5E7A4F1DC5BFFF00C06751 /* SF-UI-Text-Medium.otf in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,8 +41,12 @@ class ListConnectionsController: BaseViewController {
     }
     
     override func bindViewModel() {
+        
+        // Fetch connections
         self.viewModel.fetchConnections()
+        
         textField.rx.textInput.text.bindTo(self.viewModel.textFieldInputObserver)
+        .addDisposableTo(self.disposeBag)
     }
 }
 
@@ -55,6 +59,11 @@ extension ListConnectionsController {
         guard self.tableView.selectedRow == 1 else {
             return
         }
+        
+        // Bind to View model
+        let selectedIndexPath = IndexPath(item: self.tableView.selectedRow, section: 0)
+        let selectedItemObserable = Variable<IndexPath>(selectedIndexPath)
+        viewModel.selectedIndexPath = selectedItemObserable.asObservable()
     }
 }
 

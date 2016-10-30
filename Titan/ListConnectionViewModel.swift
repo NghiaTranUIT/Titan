@@ -23,12 +23,18 @@ class ListConnectionViewModel: BaseViewModel {
     
     //
     // MARK: - Observable
-    private var selectedConnection: Variable<DatabaseObj?> = Variable<DatabaseObj?>(nil)
-    var selectedIndexPath: Observable<IndexPath>! {
-        didSet {
-            self.bindSelectedConnection()
+    var selectedIndexPath: Observable<IndexPath>!
+    var selectedConnection: Observable<DatabaseObj?> {
+        
+        guard let _ = self.selectedIndexPath else {
+            return Observable.just(nil)
         }
+        
+        return self.selectedIndexPath.map ({ indexPath -> DatabaseObj in
+            return self.connections.value[indexPath.item]
+        })
     }
+    
     fileprivate var connections: Variable<[DatabaseObj]> = Variable<[DatabaseObj]>([])
     let textFieldInputObserver = Variable<String>("")
     
@@ -61,27 +67,6 @@ class ListConnectionViewModel: BaseViewModel {
             .subscribe {[unowned self] (_) in
                 Logger.info("Reload tableView")
                 self.delegate?.ListConnectionViewModelShouldReload(sender: self)
-            }.addDisposableTo(self.disposeBag)
-        
-        // Bind Table View selected
-        self.selectedConnection.asObservable().observeOn(QueueManager.shared.mainQueue)
-            .filterNil()
-            .subscribe { (databaseObj) in
-                Logger.info("Selected database = \(databaseObj.element)")
-            }
-            .addDisposableTo(self.disposeBag)
-    }
-    
-    private func bindSelectedConnection() {
-        // Bind selectedIndexPath -> SelectedConnection
-        self.selectedIndexPath
-            .map { (indexPath) -> DatabaseObj in
-                let db = self.connections.value[(indexPath.item)]
-                return db
-            }
-            .observeOn(QueueManager.shared.mainQueue)
-            .subscribe { (database) in
-                Logger.info("Selected database = \(database)")
             }.addDisposableTo(self.disposeBag)
     }
 }

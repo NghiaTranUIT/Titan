@@ -12,12 +12,27 @@ class MainConnectionController: BaseSplitViewController {
 
     //
     // MARK: - Variable
-    private let viewModel = MainConnectionViewModel()
+    fileprivate var viewModel: MainConnectionViewModel!
     
     //
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        self.setupBinding()
+    }
+}
+
+//
+// MARK: - Private
+extension MainConnectionController {
+    fileprivate func setupBinding() {
+        
+        // Init
+        self.viewModel = MainConnectionViewModel()
+        
+        // Selected Connection
+        
     }
 }

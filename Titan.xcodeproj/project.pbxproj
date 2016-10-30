@@ -311,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				BA68CB411DBDCC410075109D /* View Model */,
-				BA68CB401DBDCC3E0075109D /* View */,
 				BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */,
 			);
 			name = "Detail Connection";
@@ -399,13 +398,6 @@
 				BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */,
 			);
 			name = "View Model";
-			sourceTree = "<group>";
-		};
-		BA68CB401DBDCC3E0075109D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		BA68CB411DBDCC410075109D /* View Model */ = {

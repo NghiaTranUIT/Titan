@@ -7,7 +7,23 @@
 //
 
 import Foundation
+import RxSwift
 
 class DetailConnectionViewModel: BaseViewModel {
 
+    //
+    // MARK: - Rx
+    var selectedConnection: Observable<DatabaseObj?>!
+    
+    //
+    // MARK: - Private
+    override func initBinding() {
+        
+        // Load data
+        self.selectedConnection.observeOn(QueueManager.shared.mainQueue)
+        .subscribe { (databaseObj) in
+            // Bind to UIs
+        }
+        .addDisposableTo(self.disposeBag)
+    }
 }

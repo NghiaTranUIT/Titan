@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import RxSwift
 
 class MainConnectionViewModel: BaseViewModel {
 
@@ -14,7 +15,10 @@ class MainConnectionViewModel: BaseViewModel {
     // MARK: - Variable
     private let listConnectionModel = ListConnectionViewModel()
     private let connectionDetailModel = DetailConnectionViewModel()
-    
+
     //
     // MARK: - Private
+    override func initBinding() {
+        self.connectionDetailModel.selectedConnection = listConnectionModel.selectedConnection
+    }
 }

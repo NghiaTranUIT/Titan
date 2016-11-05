@@ -22,14 +22,14 @@ class BaseViewController: NSViewController {
         
         self.initCommon()
         
-        self.bindViewModel()
+        self.setupBinding()
     }
     
     func initCommon() {
         // Do Nothing
     }
     
-    func bindViewModel() {
+    func setupBinding() {
         // Do nothing
     }
 }

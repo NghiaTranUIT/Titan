@@ -7,13 +7,28 @@
 //
 
 import Cocoa
-import TitanKit
+import RxSwift
+import RxCocoa
 
 class DetailConnectionsController: BaseViewController {
 
+    //
+    // MARK: - Outlet
+    
+    // Use SSH
+    @IBOutlet weak var userSSHCheckBox: NSButton!
+    
+    
+    //
+    // MARK: - Rx
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
+    override func setupBinding() {
+        self.userSSHCheckBox.rx.tap.subscribe { (_) in
+            Logger.info("TApped")
+        }.addDisposableTo(self.disposeBag)
+    }
 }

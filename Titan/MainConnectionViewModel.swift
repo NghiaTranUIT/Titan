@@ -19,6 +19,6 @@ class MainConnectionViewModel: BaseViewModel {
     //
     // MARK: - Private
     override func initBinding() {
-        self.connectionDetailModel.selectedConnection = listConnectionModel.selectedConnection
+        
     }
 }

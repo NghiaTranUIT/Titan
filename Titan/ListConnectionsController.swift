@@ -19,7 +19,6 @@ class ListConnectionsController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
-    let textField = NSTextField()
     
     //
     // MARK: - View Cycle
@@ -40,13 +39,10 @@ class ListConnectionsController: BaseViewController {
         self.tableView.doubleAction = #selector(ListConnectionsController.openDatabaseClicked(sender:))
     }
     
-    override func bindViewModel() {
+    override func setupBinding() {
         
         // Fetch connections
         self.viewModel.fetchConnections()
-        
-        textField.rx.textInput.text.bindTo(self.viewModel.textFieldInputObserver)
-        .addDisposableTo(self.disposeBag)
     }
 }
 

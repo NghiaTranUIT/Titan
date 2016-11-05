@@ -13,6 +13,11 @@ class ConnectionCell: NSTableCellView {
     //
     // MARK: - Outlet
     
+    // Use SSH
+    
+    
+    //
+    // MARK: - Variable
     // Connection Lbl
     @IBOutlet weak var connectionLbl: NSTextField!
     

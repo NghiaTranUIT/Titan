@@ -36,34 +36,34 @@ class ListConnectionViewModel: BaseViewModel {
     }
     
     fileprivate var connections: Variable<[DatabaseObj]> = Variable<[DatabaseObj]>([])
-    let textFieldInputObserver = Variable<String>("")
     
     //
     // MARK: - Public
     func fetchConnections() {
-        Logger.info("fetchConnections")
-        Observable.just(1).flatMapLatest { (_) -> Observable<[DatabaseObj]> in
-            return FetchListConnectionsRequest()
-                .toAlamofireObservable()
-                .startWith(Result.Success([]))
-                .map({ result in
-                    switch result {
-                    case .Success(let data):
-                        return data as! [DatabaseObj]
-                    case .Failure(_):
-                        return []
-                    }
-            })
-        }
-        .shareReplay(1)
-        .bindTo(self.connections)
-        .addDisposableTo(self.disposeBag)
+        
+        // Fetch List connections
+        FetchListConnectionsRequest()
+            .toAlamofireObservable()
+            .observeOn(QueueManager.shared.backgroundQueue)
+            .startWith(Result.Success([]))
+            .map({ result -> [DatabaseObj] in
+                switch result {
+                case .Success(let data):
+                    return data as! [DatabaseObj]
+                case .Failure(_):
+                    return []
+                }})
+            .shareReplay(1)
+            .bindTo(self.connections)
+            .addDisposableTo(self.disposeBag)
     }
     
     override func initBinding() {
         
         // Bind Connection -> Table View
-        self.connections.asObservable().observeOn(QueueManager.shared.mainQueue)
+        self.connections
+            .asObservable()
+            .observeOn(QueueManager.shared.mainQueue)
             .subscribe {[unowned self] (_) in
                 Logger.info("Reload tableView")
                 self.delegate?.ListConnectionViewModelShouldReload(sender: self)
@@ -82,7 +82,6 @@ extension ListConnectionViewModel {
         return self.connections.value[row]
     }
 }
-
 
 //
 // MARK: - Private

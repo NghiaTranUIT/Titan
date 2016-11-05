@@ -31,8 +31,5 @@ extension MainConnectionController {
         
         // Init
         self.viewModel = MainConnectionViewModel()
-        
-        // Selected Connection
-        
     }
 }

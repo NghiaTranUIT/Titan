@@ -1,21 +1,31 @@
 PODS:
   - Alamofire (4.0.1)
   - ObjectMapper (2.1.0)
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
   - ReSwift (2.1.0)
   - RxCocoa (3.0.0-rc.1):
     - RxSwift (~> 3.0.0-rc.1)
   - RxOptional (3.1.2):
     - RxCocoa
     - RxSwift
+  - RxRealm (0.2.6):
+    - RealmSwift (~> 2.0)
+    - RxSwift (~> 3.0.0-beta.2)
   - RxSwift (3.0.0-rc.1)
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.1.0`)
+  - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
   - RxCocoa (= 3.0.0-rc.1)
   - RxOptional (from `https://github.com/RxSwiftCommunity/RxOptional.git`, tag `3.1.2`)
+  - RxRealm
   - RxSwift (= 3.0.0-rc.1)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
 
@@ -50,12 +60,15 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   RxCocoa: e72a074a7f38896ec0382d096df5f58df10115c7
   RxOptional: 91e488186acdfe6d15b3fdef296aecf4ba061c03
+  RxRealm: 29adf87a3cdbf228c7eec2e58749e3f7c63647fb
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 07e9ec87a653dc2993692551b6c88825c52d3264
+PODFILE CHECKSUM: 7dcce53389edf37a0ba560d89167bd7465463d64
 
 COCOAPODS: 1.1.1

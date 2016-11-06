@@ -16,6 +16,10 @@ def important_pods
     pod 'RxSwift',    '3.0.0-rc.1'
     pod 'RxCocoa',    '3.0.0-rc.1'
     pod 'RxOptional', :git => 'https://github.com/RxSwiftCommunity/RxOptional.git', :tag => '3.1.2'
+    
+    # Realm
+    pod 'RxRealm'
+    pod 'RealmSwift'
 end
 
 # Test

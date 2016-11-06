@@ -35,7 +35,7 @@ class ListConnectionViewModel: BaseViewModel {
         })
     }
     
-    fileprivate var connections: Variable<[DatabaseObj]> = Variable<[DatabaseObj]>([])
+    fileprivate var connections = Variable<[DatabaseObj]>([])
     
     //
     // MARK: - Public

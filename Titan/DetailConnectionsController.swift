@@ -18,6 +18,13 @@ class DetailConnectionsController: BaseViewController {
     // Use SSH
     @IBOutlet weak var userSSHCheckBox: NSButton!
     
+    // Host Name
+    @IBOutlet weak var hostNameTxt: NSTextField!
+    
+    //
+    // MARK: - Variable
+    // View Model
+    let viewModel = DetailConnectionViewModel()
     
     //
     // MARK: - Rx
@@ -27,8 +34,13 @@ class DetailConnectionsController: BaseViewController {
     }
     
     override func setupBinding() {
+        
+        // SSH
         self.userSSHCheckBox.rx.tap.subscribe { (_) in
-            Logger.info("TApped")
+            Logger.info("Tap SSH")
         }.addDisposableTo(self.disposeBag)
+        
+        // Host Name
+        self.hostNameTxt.rx.text.bindTo(self.viewModel.hostNameVar).addDisposableTo(self.disposeBag)
     }
 }

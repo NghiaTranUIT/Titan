@@ -10,20 +10,20 @@ import Foundation
 import ReSwift
 import RxSwift
 
-class BaseViewModel {
+class BaseViewModel: RxViewModel {
     
     //
     // MARK: - Variable
-    lazy var disposeBag: DisposeBag = {
-       return DisposeBag()
-    }()
+    
     
     //
     // MARK: - Init
-    init() {
-        self.initBinding()
+    override init() {
+        super.init()
+        self.didBecomeActive.subscribe {[unowned self] (_) in
+            self.initBinding()
+        }.addDisposableTo(self.disposeBag)
     }
-    
     
     //
     // MARK: - Public

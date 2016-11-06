@@ -14,6 +14,7 @@ class DetailConnectionViewModel: BaseViewModel {
     //
     // MARK: - Rx
     var selectedConnection: Observable<DatabaseObj?>!
+    var hostNameVar = Variable<String>("")
     
     //
     // MARK: - Private

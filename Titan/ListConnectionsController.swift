@@ -14,7 +14,7 @@ class ListConnectionsController: BaseViewController {
 
     //
     // MARK: - Variable
-    fileprivate lazy var viewModel = {return ListConnectionViewModel()}()
+    let viewModel = ListConnectionViewModel()
     
     //
     // MARK: - OUTLET
@@ -59,7 +59,7 @@ extension ListConnectionsController {
         // Bind to View model
         let selectedIndexPath = IndexPath(item: self.tableView.selectedRow, section: 0)
         let selectedItemObserable = Variable<IndexPath>(selectedIndexPath)
-        viewModel.selectedIndexPath = selectedItemObserable.asObservable()
+        self.viewModel.selectedIndexPath = selectedItemObserable.asObservable()
     }
 }
 

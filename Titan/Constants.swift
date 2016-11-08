@@ -18,6 +18,17 @@ struct Constants {
     }
     
     //
+    // MARK: - Key
+    struct Key {
+        
+        //
+        // MARK: - Realm
+        struct Realm {
+            static let KeyChainID = "com.fe.titan.realm.pdoAR69Uv5WTseAhgA5va4eDONO9vgJOPV42DHFx"
+        }
+    }
+    
+    //
     // MARK: - Endpoint
     struct Endpoint {
         

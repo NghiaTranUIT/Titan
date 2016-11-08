@@ -13,9 +13,41 @@ class UserObj: BaseModel {
     //
     // MARK: - Variable
     var username = "guest"
-    var isGuest: Bool {
-        get {
-            return true
+    var isGuest: Bool = true
+    
+    
+    //
+    // MARK: - Current User
+    private struct Static {
+        static var instance: UserObj? = nil
+    }
+    
+    
+    /// Share instance
+    class var currentUser : UserObj? {
+        
+        // LOCK
+        objc_sync_enter(self)
+        defer {objc_sync_exit(self)}
+        
+        // Executing
+        if Static.instance == nil {
+            let guestUser = UserObj.guestUser()
+            Static.instance = guestUser
         }
+        
+        return Static.instance
+    }
+}
+
+//
+// MARK: - Private
+extension UserObj {
+    
+    /// Init GUEST User
+    fileprivate class func guestUser() -> UserObj {
+        let guestUser = UserObj()
+        guestUser.isGuest = true
+        return guestUser
     }
 }

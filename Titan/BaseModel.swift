@@ -13,10 +13,16 @@ class BaseModel: Mappable, CustomStringConvertible {
     
     //
     // MARK: - Variable
-    var objectId: String = "guest"
+    var objectId: String = "guestID"
     var createdAt: NSDate!
     var updatedAt: NSDate!
     var className: String!
+    
+    //
+    // MARK: - Init
+    init() {
+        
+    }
     
     required init?(map: Map) {
         
@@ -31,12 +37,17 @@ class BaseModel: Mappable, CustomStringConvertible {
         }
     }
     
+    
+    //
+    // MARK: - JSON Helper
+    /// Get pretty JSON print
     var description: String {
         get {
             return Mapper().toJSONString(self, prettyPrint: true)!
         }
     }
     
+    /// Mapping function
     func mapping(map: Map) {
         self.objectId <- map[Constants.Obj.ObjectId]
         self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())

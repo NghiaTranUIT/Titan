@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-class DatabaseRealmObj: BaseRealmObj {
+class DatabaseRealmObj: Object {
     
     //
     // MARK: - Variable
@@ -21,4 +22,8 @@ class DatabaseRealmObj: BaseRealmObj {
     dynamic var saveToKeychain = false
     dynamic var ssl: SSLRealmObj?
     dynamic var ssh: SSHRealmObj?
+}
+
+extension DatabaseRealmObj: RealmRxActiveRecord {
+    typealias E = DatabaseRealmObj
 }

@@ -9,25 +9,25 @@
 import RealmSwift
 import RxSwift
 
-class BaseRealmObj: Object {
+protocol RealmRxActiveRecord {
     
+    associatedtype E: Object
+    
+    static func fetchAll() -> Observable<Results<E>>
+    
+    static func first() -> Observable<E>
 }
 
 //
 // MARK: - Active Record
-extension BaseRealmObj {
+extension RealmRxActiveRecord {
     
-    /// Fetch all
-    func fetchAll<T: BaseRealmObj>() -> Observable<Results<T>> {
-        let type = type(of: self) as! T.Type
-        return RealmManager.sharedManager.fetchAll(type: type)
+    static func fetchAll() -> Observable<Results<E>> {
+        return RealmManager.sharedManager.fetchAll(type: E.self)
     }
     
-    
-    /// First
-    func first<T: BaseRealmObj>() -> Observable<T> {
-        let type = type(of: self) as! T.Type
-        return RealmManager.sharedManager.first(type: type)
+    static func first() -> Observable<E> {
+        return RealmManager.sharedManager.first(type: E.self)
     }
 }
 

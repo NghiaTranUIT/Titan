@@ -12,7 +12,7 @@ class RealmKey {
     
     // Auto generate key from Realm.KeyChainID
     // Save to keychain
-    static func getSecrectRealmKey () -> Data {
+    class func getSecrectRealmKey() -> Data {
         // Identifier for our keychain entry - should be unique for your application
         let keychainIdentifier = Constants.Key.Realm.KeyChainID
         let keychainIdentifierData = keychainIdentifier.data(using: String.Encoding.utf8, allowLossyConversion: false)!

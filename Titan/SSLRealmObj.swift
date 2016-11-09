@@ -6,8 +6,9 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Cocoa
+import Foundation
+import RealmSwift
 
-class SSLRealmObj: BaseRealmObj {
+class SSLRealmObj: Object {
 
 }

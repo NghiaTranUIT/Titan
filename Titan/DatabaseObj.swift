@@ -23,6 +23,7 @@ class DatabaseObj: BaseModel {
     var ssl: SSLObj?
     var ssh: SSHObj?
     
+    
     //
     // MARK: - Override
     required init?(_ map: Map) {

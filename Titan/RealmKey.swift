@@ -10,7 +10,6 @@ import Cocoa
 
 class RealmKey {
     
-    
     // Auto generate key from Realm.KeyChainID
     // Save to keychain
     static func getSecrectRealmKey () -> Data {

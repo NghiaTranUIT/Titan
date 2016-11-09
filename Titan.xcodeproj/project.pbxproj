@@ -39,6 +39,9 @@
 		BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */; };
 		BA5E7A511DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
+		BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */; };
+		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
+		BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
@@ -128,6 +131,9 @@
 		BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
 		BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
+		BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRealmObj.swift; sourceTree = "<group>"; };
+		BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLRealmObj.swift; sourceTree = "<group>"; };
+		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -336,6 +342,9 @@
 			children = (
 				BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */,
 				BA33F9B81DCF3E7300B60952 /* BaseRealmObj.swift */,
+				BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */,
+				BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */,
+				BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -790,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
@@ -827,9 +837,11 @@
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
+				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
+				BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,
 			);

@@ -6,8 +6,29 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Realm
+import RealmSwift
+import RxSwift
 
-class BaseRealmObj: RLMObject {
-
+class BaseRealmObj: Object {
+    
 }
+
+//
+// MARK: - Active Record
+extension BaseRealmObj {
+    
+    /// Fetch all
+    func fetchAll<T: BaseRealmObj>() -> Observable<Results<T>> {
+        let type = type(of: self) as! T.Type
+        return RealmManager.sharedManager.fetchAll(type: type)
+    }
+    
+    
+    /// First
+    func first<T: BaseRealmObj>() -> Observable<T> {
+        let type = type(of: self) as! T.Type
+        return RealmManager.sharedManager.first(type: type)
+    }
+}
+
+

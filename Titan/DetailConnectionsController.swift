@@ -33,6 +33,16 @@ class DetailConnectionsController: BaseViewController {
         // Do view setup here.
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        self.viewModel.active = true
+    }
+    
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        self.viewModel.active = false
+    }
+    
     override func setupBinding() {
         
         // SSH

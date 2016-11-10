@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxOptional
+import ReSwift
 
 protocol ListConnectionViewModelDelegate: class {
     func ListConnectionViewModelShouldReload(sender: ListConnectionViewModel)
@@ -24,10 +25,10 @@ class ListConnectionViewModel: BaseViewModel {
     //
     // MARK: - Observable
     var selectedIndexPath: Observable<IndexPath>!
-    var selectedConnection: Observable<DatabaseObj?> {
+    var selectedConnection: Observable<DatabaseObj> {
         
         guard let _ = self.selectedIndexPath else {
-            return Observable.just(nil)
+            return Observable.never()
         }
         
         return self.selectedIndexPath.map ({ indexPath -> DatabaseObj in
@@ -44,6 +45,7 @@ class ListConnectionViewModel: BaseViewModel {
         // Fetch List connections
         UserObj.currentUser.fetchAllDatabase()
             .shareReplay(1)
+            .startWith([])
             .bindTo(self.connections)
             .addDisposableTo(self.disposeBag)
     }
@@ -54,9 +56,18 @@ class ListConnectionViewModel: BaseViewModel {
         self.connections
             .asObservable()
             .observeOn(QueueManager.shared.mainQueue)
-            .subscribe {[unowned self] (_) in
+            .subscribe {[unowned self] (db) in
                 Logger.info("Reload tableView")
                 self.delegate?.ListConnectionViewModelShouldReload(sender: self)
+            }.addDisposableTo(self.disposeBag)
+        
+        // Selected
+        
+        self.selectedConnection
+            .observeOn(QueueManager.shared.mainQueue)
+            .subscribe { db in
+                let action = SelectedConnectionAction(selectedConnection: db.element)
+                mainStore.dispatch(action)
             }.addDisposableTo(self.disposeBag)
     }
 }

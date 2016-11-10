@@ -8,21 +8,23 @@
 
 import Foundation
 import ReSwift
+import RxSwift
 
 struct ConnectionState {
     
+    /// Connection selected
+    var selectedConnection = Variable<DatabaseObj?>(nil)
 }
 
 //
 // MARK: - Reducer
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
-        let state = state ?? ConnectionState()
+        var state = state ?? ConnectionState()
         
         switch action {
-        case _ as FetchListConnectionsRequest:
-            break
-        case _ as GetConnectionFromDatabaseAction:
+        case let action as SelectedConnectionAction:
+            state.selectedConnection = Variable<DatabaseObj?>(action.selectedConnection)
             break
         default:
             break
@@ -32,8 +34,9 @@ extension ConnectionState {
     }
 }
 
+
 //
 // MARK: - Action
-struct GetConnectionFromDatabaseAction: Action {
-    
+struct SelectedConnectionAction: Action {
+    var selectedConnection: DatabaseObj!
 }

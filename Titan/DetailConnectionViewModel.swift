@@ -1,5 +1,5 @@
 //
-//  DetailConnectionViewModel.swift
+//  DetailConnectionViewModel.swiftr
 //  Titan
 //
 //  Created by Nghia Tran on 10/24/16.
@@ -21,10 +21,13 @@ class DetailConnectionViewModel: BaseViewModel {
     override func initBinding() {
         
         // Load data
-        self.selectedConnection.observeOn(QueueManager.shared.mainQueue)
-        .subscribe { (databaseObj) in
-            // Bind to UIs
-        }
-        .addDisposableTo(self.disposeBag)
+        /*
+        self.selectedConnection
+            .observeOn(QueueManager.shared.mainQueue)
+            .subscribe { db in
+                // Bind to UIs
+                Logger.info("Selected databaseObj = ", db)
+            }.addDisposableTo(self.disposeBag)
+ */
     }
 }

@@ -10,11 +10,15 @@ import Cocoa
 import RxSwift
 import RxCocoa
 import Alamofire
+import ReSwift
 
 class FetchListConnectionsRequest {
     required init() {}
 }
 
+
+//
+// MARK: - Network
 extension FetchListConnectionsRequest: Request {
     
     typealias T = [DatabaseObj]
@@ -31,3 +35,7 @@ extension FetchListConnectionsRequest: Request {
         }
     }
 }
+
+//
+// MARK: - Action
+extension FetchListConnectionsRequest: Action {}

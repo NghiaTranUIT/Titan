@@ -21,11 +21,11 @@ class MainConnectionViewModel: BaseViewModel {
     weak var dataSource: MainConnectionViewModelDataSource?
     var listConnectionModel: ListConnectionViewModel {get {return self.dataSource!.GetListConnectionModel(sender: self)}}
     var detailConnectionModel: DetailConnectionViewModel {get {return self.dataSource!.GetDetailConnectionModel(sender: self)}}
-
+    
+    
     //
     // MARK: - Private
     override func initBinding() {
         
-        // Setup
     }
 }

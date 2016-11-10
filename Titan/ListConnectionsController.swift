@@ -26,6 +26,16 @@ class ListConnectionsController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        self.viewModel.active = true
+    }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        self.viewModel.active = false
+    }
+    
     override func initCommon() {
         
     }
@@ -42,6 +52,7 @@ class ListConnectionsController: BaseViewController {
     override func setupBinding() {
         
         // Fetch connections
+        self.viewModel.delegate = self
         self.viewModel.fetchConnections()
     }
 }
@@ -60,6 +71,15 @@ extension ListConnectionsController {
         let selectedIndexPath = IndexPath(item: self.tableView.selectedRow, section: 0)
         let selectedItemObserable = Variable<IndexPath>(selectedIndexPath)
         self.viewModel.selectedIndexPath = selectedItemObserable.asObservable()
+    }
+}
+
+
+//
+// MARK: - ViewModel Delegate
+extension ListConnectionsController: ListConnectionViewModelDelegate {
+    func ListConnectionViewModelShouldReload(sender: ListConnectionViewModel) {
+        self.tableView.reloadData()
     }
 }
 

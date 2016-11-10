@@ -12,10 +12,7 @@ class ConnectionCell: NSTableCellView {
 
     //
     // MARK: - Outlet
-    
-    // Use SSH
-    
-    
+ 
     //
     // MARK: - Variable
     // Connection Lbl
@@ -30,6 +27,6 @@ class ConnectionCell: NSTableCellView {
     //
     // MARK: - Public
     func configureCell(with databaseObj: DatabaseObj) {
-        
+        self.connectionLbl.stringValue = databaseObj.name
     }
 }

@@ -17,6 +17,8 @@ class FetchListConnectionsRequest {
 
 extension FetchListConnectionsRequest: Request {
     
+    typealias T = [DatabaseObj]
+    
     var httpMethod: HTTPMethod {
         get {
             return .get

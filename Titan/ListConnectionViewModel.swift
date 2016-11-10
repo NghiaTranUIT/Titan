@@ -42,17 +42,7 @@ class ListConnectionViewModel: BaseViewModel {
     func fetchConnections() {
         
         // Fetch List connections
-        FetchListConnectionsRequest()
-            .toAlamofireObservable()
-            .observeOn(QueueManager.shared.backgroundQueue)
-            .startWith(Result.Success([]))
-            .map({ result -> [DatabaseObj] in
-                switch result {
-                case .Success(let data):
-                    return data as! [DatabaseObj]
-                case .Failure(_):
-                    return []
-                }})
+        UserObj.currentUser.fetchAllDatabase()
             .shareReplay(1)
             .bindTo(self.connections)
             .addDisposableTo(self.disposeBag)

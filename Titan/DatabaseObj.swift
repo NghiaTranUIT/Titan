@@ -26,14 +26,6 @@ class DatabaseObj: BaseModel {
     
     //
     // MARK: - Override
-    required init?(_ map: Map) {
-        super.init(map: map)
-    }
-    
-    required init?(map: Map) {
-        fatalError("init(map:) has not been implemented")
-    }
-    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

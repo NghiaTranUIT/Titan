@@ -8,13 +8,11 @@
 
 import Cocoa
 
-enum Result: Error {
+enum Result<T>: Error {
     
-    case Success(Any)
+    case Success(T)
     case Failure(Error)
     
-    // Default error
-    static let defaultErrorResult = Result.Failure(NSError.defaultError())
 }
 
 extension Result {
@@ -41,6 +39,14 @@ extension Result {
             return nil
         case .Failure(let error):
             return error as NSError
+        }
+    }
+    
+    
+    /// Default error
+    static var defaultErrorResult: Result<NSError> {
+        get {
+            return Result<NSError>.Failure(NSError.defaultError())
         }
     }
 }

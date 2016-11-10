@@ -18,7 +18,7 @@
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
 		BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */; };
-		BA33F9B91DCF3E7300B60952 /* BaseRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B81DCF3E7300B60952 /* BaseRealmObj.swift */; };
+		BA33F9B91DCF3E7300B60952 /* RealmRxActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B81DCF3E7300B60952 /* RealmRxActiveRecord.swift */; };
 		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
@@ -109,7 +109,7 @@
 		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRealmObj.swift; sourceTree = "<group>"; };
-		BA33F9B81DCF3E7300B60952 /* BaseRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmObj.swift; sourceTree = "<group>"; };
+		BA33F9B81DCF3E7300B60952 /* RealmRxActiveRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmRxActiveRecord.swift; sourceTree = "<group>"; };
 		BA344FDB1DAE74F20005A566 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 		BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
+		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -333,6 +334,7 @@
 				BA33F9B51DCF3E5200B60952 /* Objs */,
 				BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */,
 				BA679CD01DD2349D0054EB43 /* RealmKey.swift */,
+				BA33F9B81DCF3E7300B60952 /* RealmRxActiveRecord.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -341,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */,
-				BA33F9B81DCF3E7300B60952 /* BaseRealmObj.swift */,
 				BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */,
 				BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */,
 				BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */,
@@ -407,12 +408,12 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA33F9B21DCF3E4400B60952 /* Realm */,
 				BAFF52C01DCE270B00B566F7 /* Router */,
 				BAF869AC1DC2FBB500E21BF4 /* JSON Decoder */,
 				BA8E0BDE1DB0E47300B9BDD7 /* App Version */,
 				BA8E0BCF1DB0D38300B9BDD7 /* Application */,
-				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA344FDD1DAE76BA0005A566 /* Logger */,
 				BA344FD71DAE73900005A566 /* Database */,
 				BA344FD61DAE73830005A566 /* Networking */,
@@ -589,6 +590,7 @@
 		BAEFE7BB1D97BE810081A5FE /* Titan */ = {
 			isa = PBXGroup;
 			children = (
+				BA679CD91DD4BFB90054EB43 /* Titan.entitlements */,
 				BA035FC31D97DBA900B616AB /* Resource */,
 				BA035FC01D97DB9100B616AB /* Configuration */,
 				BA035FC11D97DB9700B616AB /* App Delegate */,
@@ -677,6 +679,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = D54Y88Y9CY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -824,7 +831,7 @@
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
-				BA33F9B91DCF3E7300B60952 /* BaseRealmObj.swift in Sources */,
+				BA33F9B91DCF3E7300B60952 /* RealmRxActiveRecord.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
@@ -1001,6 +1008,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1024,6 +1032,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

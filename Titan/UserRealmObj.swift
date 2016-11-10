@@ -7,7 +7,8 @@
 //
 
 import Cocoa
+import RealmSwift
 
-class UserRealmObj: NSObject {
-
+class UserRealmObj: Object {
+  
 }

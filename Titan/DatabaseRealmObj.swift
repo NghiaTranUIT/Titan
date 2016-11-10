@@ -22,6 +22,12 @@ class DatabaseRealmObj: Object {
     dynamic var saveToKeychain = false
     dynamic var ssl: SSLRealmObj?
     dynamic var ssh: SSHRealmObj?
+    
+    //
+    // MARK: - Public
+    func convertToModelObj() -> DatabaseObj {
+        return DatabaseObj()
+    }
 }
 
 extension DatabaseRealmObj: RealmRxActiveRecord {

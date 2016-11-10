@@ -17,6 +17,8 @@ import ObjectMapper
 // MARK: - Request protocol
 protocol Request: Action, URLRequestConvertible {
     
+    associatedtype T
+    
     var basePath: String {get}
     
     var endpoint: String {get}
@@ -29,7 +31,7 @@ protocol Request: Action, URLRequestConvertible {
     
     var parameterEncoding: ParameterEncoding {get}
     
-    func toAlamofireObservable() -> Observable<Result>
+    func toAlamofireObservable() -> Observable<Result<T>>
     
     init()
 }
@@ -91,11 +93,11 @@ extension Request {
         }
     }
     
-    func toAlamofireObservable() -> Observable<Result> {
+    func toAlamofireObservable() -> Observable<Result<T>> {
         return Observable.create { (o) -> Disposable in
             
             guard let urlRequest = try? self.asURLRequest() else {
-                o.onError(Result.defaultErrorResult)
+                o.onError(Result<NSError>.defaultErrorResult)
                 o.onCompleted()
                 return Disposables.create()
             }
@@ -107,21 +109,21 @@ extension Request {
                     
                     // Check error
                     if let error = response.result.error {
-                        o.onError(Result.Failure(error))
+                        o.onError(Result<T>.Failure(error))
                         o.onCompleted()
                         return
                     }
                     
                     // Check Response
                     guard let data = response.result.value else {
-                        o.onError(Result.defaultErrorResult)
+                        o.onError(Result<T>.defaultErrorResult)
                         o.onCompleted()
                         return
                     }
                     
                     // Parse here
-                    let result = JSONDecoder.shared.decodeObject(data)
-                    o.onNext(Result.Success(result))
+                    let result = JSONDecoder.shared.decodeObject(data) as! T
+                    o.onNext(Result<T>.Success(result))
                     o.onCompleted()
                 })
             

@@ -28,7 +28,8 @@ final class RealmManager {
     /// Realm Default
     private lazy var realm: Realm = {
         do {
-            return try Realm(configuration: self.secrectRealmConfigure)
+            //return try Realm(configuration: self.secrectRealmConfigure)
+            return try Realm()
         } catch let error as NSError {
             // If the encryption key is wrong, `error` will say that it's an invalid database
             Logger.error("Error opening realm: \(error)")

@@ -15,6 +15,7 @@ class DatabaseObj: BaseModel {
     // MARK: - Variable
     var name: String!
     var host: String!
+    var username: String!
     var user: UserObj!
     var password: String!
     var database: String!

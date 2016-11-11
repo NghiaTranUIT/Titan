@@ -1037,8 +1037,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="databaseTxt" destination="NP8-60-0op" id="bDx-JI-fDR"/>
                         <outlet property="hostNameTxt" destination="m8h-YT-mD5" id="eCf-IJ-AOn"/>
+                        <outlet property="passwordTxt" destination="gYU-xt-xcQ" id="WpL-9J-EHZ"/>
                         <outlet property="userSSHCheckBox" destination="7qQ-XS-P1F" id="p8P-Ki-08v"/>
+                        <outlet property="usernameTxt" destination="WLS-y5-fVA" id="qt6-kp-XUH"/>
                     </connections>
                 </viewController>
                 <customObject id="Lyo-2b-IBD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -13,18 +13,18 @@ import RxSwift
 struct ConnectionState {
     
     /// Connection selected
-    var selectedConnection = Variable<DatabaseObj?>(nil)
+    var selectedConnection = PublishSubject<DatabaseObj>()
 }
 
 //
 // MARK: - Reducer
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
-        var state = state ?? ConnectionState()
+        let state = state ?? ConnectionState()
         
         switch action {
         case let action as SelectedConnectionAction:
-            state.selectedConnection = Variable<DatabaseObj?>(action.selectedConnection)
+            state.selectedConnection.on(.next(action.selectedConnection))
             break
         default:
             break
@@ -38,5 +38,5 @@ extension ConnectionState {
 //
 // MARK: - Action
 struct SelectedConnectionAction: Action {
-    var selectedConnection: DatabaseObj!
+    var selectedConnection: DatabaseObj
 }

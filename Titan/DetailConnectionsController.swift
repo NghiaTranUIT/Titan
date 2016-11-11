@@ -14,12 +14,11 @@ class DetailConnectionsController: BaseViewController {
 
     //
     // MARK: - Outlet
-    
-    // Use SSH
-    @IBOutlet weak var userSSHCheckBox: NSButton!
-    
-    // Host Name
     @IBOutlet weak var hostNameTxt: NSTextField!
+    @IBOutlet weak var usernameTxt: NSTextField!
+    @IBOutlet weak var passwordTxt: NSTextField!
+    @IBOutlet weak var databaseTxt: NSTextField!
+    @IBOutlet weak var userSSHCheckBox: NSButton!
     
     //
     // MARK: - Variable
@@ -51,6 +50,9 @@ class DetailConnectionsController: BaseViewController {
         }.addDisposableTo(self.disposeBag)
         
         // Host Name
-        self.hostNameTxt.rx.text.bindTo(self.viewModel.hostNameVar).addDisposableTo(self.disposeBag)
+        (self.hostNameTxt.rx.text <-> self.viewModel.hostNameVar).addDisposableTo(self.disposeBag)
+        (self.usernameTxt.rx.text <-> self.viewModel.usernameVar).addDisposableTo(self.disposeBag)
+        (self.passwordTxt.rx.text <-> self.viewModel.passwordVar).addDisposableTo(self.disposeBag)
+        (self.databaseTxt.rx.text <-> self.viewModel.databaseVar).addDisposableTo(self.disposeBag)
     }
 }

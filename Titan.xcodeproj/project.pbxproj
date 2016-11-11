@@ -42,6 +42,7 @@
 		BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */; };
 		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
 		BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */; };
+		BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
@@ -135,6 +136,7 @@
 		BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
+		BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 			children = (
 				BA222E591DADF8A800834F3E /* View+Helper.swift */,
 				BAB439E71DC4572200C501DC /* DisposableBase.swift */,
+				BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
+				BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */,
 				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
 				BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,

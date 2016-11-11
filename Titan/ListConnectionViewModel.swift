@@ -62,11 +62,10 @@ class ListConnectionViewModel: BaseViewModel {
             }.addDisposableTo(self.disposeBag)
         
         // Selected
-        
         self.selectedConnection
             .observeOn(QueueManager.shared.mainQueue)
             .subscribe { db in
-                let action = SelectedConnectionAction(selectedConnection: db.element)
+                let action = SelectedConnectionAction(selectedConnection: db.element!)
                 mainStore.dispatch(action)
             }.addDisposableTo(self.disposeBag)
     }

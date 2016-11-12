@@ -12,3 +12,8 @@ import RealmSwift
 class UserRealmObj: Object {
   
 }
+
+// Magic
+extension UserRealmObj: RealmRxActiveRecord {
+    typealias E = UserRealmObj
+}

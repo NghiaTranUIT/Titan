@@ -754,7 +754,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0NJ-0M-J2z">
-                                        <rect key="frame" x="92" y="13" width="138" height="32"/>
+                                        <rect key="frame" x="91" y="13" width="138" height="32"/>
                                         <buttonCell key="cell" type="push" title="Add Connection" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZIM-Wy-1Tl">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1053,6 +1053,7 @@
                         <outlet property="databaseTxt" destination="NP8-60-0op" id="bDx-JI-fDR"/>
                         <outlet property="hostNameTxt" destination="m8h-YT-mD5" id="eCf-IJ-AOn"/>
                         <outlet property="passwordTxt" destination="gYU-xt-xcQ" id="WpL-9J-EHZ"/>
+                        <outlet property="portTxt" destination="eTM-xT-50C" id="t5C-Yj-VIo"/>
                         <outlet property="userSSHCheckBox" destination="7qQ-XS-P1F" id="p8P-Ki-08v"/>
                         <outlet property="usernameTxt" destination="WLS-y5-fVA" id="qt6-kp-XUH"/>
                     </connections>

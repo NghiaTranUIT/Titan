@@ -43,6 +43,8 @@
 		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
 		BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */; };
 		BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */; };
+		BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */; };
+		BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
@@ -137,6 +139,8 @@
 		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
 		BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
+		BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveRecord.swift; sourceTree = "<group>"; };
+		BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectModel.swift; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -410,6 +414,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA679CE21DD6F2390054EB43 /* Active Record */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA33F9B21DCF3E4400B60952 /* Realm */,
 				BAFF52C01DCE270B00B566F7 /* Router */,
@@ -500,6 +505,28 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
+		BA679CE11DD6E5960054EB43 /* Objs */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */,
+				BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */,
+				BA8E0BDF1DB0E65C00B9BDD7 /* SettingObj.swift */,
+				BA8E0BE11DB0E67000B9BDD7 /* DatabaseObj.swift */,
+				BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */,
+				BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */,
+				BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */,
+			);
+			name = Objs;
+			sourceTree = "<group>";
+		};
+		BA679CE21DD6F2390054EB43 /* Active Record */ = {
+			isa = PBXGroup;
+			children = (
+				BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */,
+			);
+			name = "Active Record";
+			sourceTree = "<group>";
+		};
 		BA68CB411DBDCC410075109D /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,13 +578,8 @@
 		BAEE191F1DAE7BE100C3CD3E /* Model Object */ = {
 			isa = PBXGroup;
 			children = (
-				BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */,
-				BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */,
-				BA8E0BDF1DB0E65C00B9BDD7 /* SettingObj.swift */,
-				BA8E0BE11DB0E67000B9BDD7 /* DatabaseObj.swift */,
-				BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */,
-				BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */,
-				BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */,
+				BA679CE11DD6E5960054EB43 /* Objs */,
+				BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */,
 			);
 			name = "Model Object";
 			sourceTree = "<group>";
@@ -837,6 +859,7 @@
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA33F9B91DCF3E7300B60952 /* RealmRxActiveRecord.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
+				BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */,
@@ -852,6 +875,7 @@
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
+				BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */,
 				BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,

@@ -17,6 +17,7 @@ class DetailConnectionViewModel: BaseViewModel {
     var usernameVar = Variable<String>("")
     var passwordVar = Variable<String>("")
     var databaseVar = Variable<String>("")
+    var portVar = Variable<String>("")
     
     /// Selected Connection from Store
     private let selectedConnection = mainStore.state.connectionState.selectedConnection.shareReplay(1)
@@ -50,5 +51,11 @@ class DetailConnectionViewModel: BaseViewModel {
         self.selectedConnection.map {return $0.database}
             .bindTo(self.databaseVar)
             .addDisposableTo(self.disposeBag)
+        
+        // Port 
+        self.selectedConnection.map {return String($0.port)}
+        .bindTo(self.portVar)
+        .addDisposableTo(self.disposeBag)
+ 
     }
 }

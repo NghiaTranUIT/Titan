@@ -11,8 +11,10 @@ import RxSwift
 
 protocol RealmRxActiveRecord {
     
+    // Magic
     associatedtype E: Object
     
+    /// Fetch
     static func fetchAll() -> Observable<Results<E>>
     
     static func first() -> Observable<E>

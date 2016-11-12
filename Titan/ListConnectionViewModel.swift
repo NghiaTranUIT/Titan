@@ -73,8 +73,14 @@ class ListConnectionViewModel: BaseViewModel {
         // Add New default connection 
         self.addNewConnection.subscribe { _ in
             let defaultDb = DatabaseObj.defaultDatabase()
+            
+            // Selected
             let action = SelectedConnectionAction(selectedConnection: defaultDb)
             mainStore.dispatch(action)
+            
+            // Create database 
+            
+            
         }.addDisposableTo(self.disposeBag)
     }
 }

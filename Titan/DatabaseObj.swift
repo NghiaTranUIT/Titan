@@ -8,6 +8,7 @@
 
 import Cocoa
 import ObjectMapper
+import RxSwift
 
 class DatabaseObj: BaseModel {
 
@@ -45,6 +46,10 @@ class DatabaseObj: BaseModel {
         db.host = "localhost"
         db.database = "postgres"
         db.port = 5432
+        db.username = ""
+        db.password = ""
         return db
     }
 }
+
+extension DatabaseObj: BaseObjectModel {}

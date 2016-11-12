@@ -30,6 +30,18 @@ class DatabaseRealmObj: Object {
     }
 }
 
-extension DatabaseRealmObj: RealmRxActiveRecord {
-    typealias E = DatabaseRealmObj
+
+extension DatabaseRealmObj: ObjectModelConventible {
+    typealias E = DatabaseObj
+
+    func toObjectModel() -> E {
+        let db = E()
+        
+        db.name = self.name
+        db.host = self.host
+        db.password = self.password
+        db.port = self.port
+        
+        return db
+    }
 }

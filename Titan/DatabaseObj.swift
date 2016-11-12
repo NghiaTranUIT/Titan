@@ -24,7 +24,6 @@ class DatabaseObj: BaseModel {
     var ssl: SSLObj?
     var ssh: SSHObj?
     
-    
     //
     // MARK: - Override
     override func mapping(map: Map) {
@@ -39,5 +38,13 @@ class DatabaseObj: BaseModel {
         self.saveToKeychain <- map[Constants.Obj.Database.SaveToKeyChain]
         self.ssl <- map[Constants.Obj.Database.ssl]
         self.ssl <- map[Constants.Obj.Database.ssh]
+    }
+    
+    class func defaultDatabase() -> DatabaseObj {
+        let db = DatabaseObj()
+        db.host = "localhost"
+        db.database = "postgres"
+        db.port = 5432
+        return db
     }
 }

@@ -19,6 +19,7 @@ class ListConnectionsController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var addConnectionBtn: NSButton!
     
     //
     // MARK: - View Cycle
@@ -37,7 +38,7 @@ class ListConnectionsController: BaseViewController {
     }
     
     override func initCommon() {
-        
+        self.initTableView()
     }
     
     private func initTableView() {
@@ -54,6 +55,12 @@ class ListConnectionsController: BaseViewController {
         // Fetch connections
         self.viewModel.delegate = self
         self.viewModel.fetchConnections()
+        
+        // Add new connection
+        self.viewModel.addNewConnection = self.addConnectionBtn.rx.tap.map({ (_) -> DatabaseObj in
+            // Create default db
+            return DatabaseObj.defaultDatabase()
+        })
     }
 }
 

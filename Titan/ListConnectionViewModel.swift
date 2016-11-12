@@ -37,6 +37,7 @@ class ListConnectionViewModel: BaseViewModel {
     }
     
     fileprivate var connections = Variable<[DatabaseObj]>([])
+    var addNewConnection: Observable<DatabaseObj>!
     
     //
     // MARK: - Public
@@ -68,6 +69,13 @@ class ListConnectionViewModel: BaseViewModel {
                 let action = SelectedConnectionAction(selectedConnection: db.element!)
                 mainStore.dispatch(action)
             }.addDisposableTo(self.disposeBag)
+        
+        // Add New default connection 
+        self.addNewConnection.subscribe { _ in
+            let defaultDb = DatabaseObj.defaultDatabase()
+            let action = SelectedConnectionAction(selectedConnection: defaultDb)
+            mainStore.dispatch(action)
+        }.addDisposableTo(self.disposeBag)
     }
 }
 

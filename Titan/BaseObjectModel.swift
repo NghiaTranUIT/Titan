@@ -8,9 +8,11 @@
 
 import Foundation
 
-protocol BaseObjectModel {}
+protocol BaseObjectModel {
+    init()
+}
 
-protocol ObjectModelConventible {
+protocol ObjectModelConvertible {
     
     associatedtype E: BaseObjectModel
     

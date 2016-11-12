@@ -12,8 +12,8 @@ import RealmSwift
 
 protocol ActiveRecord {
     
-    associatedtype Model: BaseObjectModel
-    associatedtype Realm: Object
+    associatedtype Model: BaseObjectModel, BaseRealmModelConvertible
+    associatedtype Realm: Object, ObjectModelConvertible
     associatedtype Request: Titan.Request
     
     /// Fetch
@@ -22,41 +22,48 @@ protocol ActiveRecord {
     static func fetchAllCloud() -> Observable<[Model]>
     
     
-    /// Convention
-    static func first() -> Observable<Model>
-    static func firstLocal() -> Observable<Model>
-    static func firstCloud() -> Observable<Model>
-    
-    
     /// Save
-    static func save() -> Observable<Model>
-    static func saveLocal() -> Observable<Model>
-    static func saveCloud() -> Observable<Model>
+    func save() -> Observable<Model>
+    func saveLocal() -> Observable<Model>
+    func saveCloud() -> Observable<Model>
+    
+    /*
+    /// Convention
+    static func first() -> Observable<Model?>
+    static func firstLocal() -> Observable<Model?>
+    static func firstCloud() -> Observable<Model?>
     
     
     /// Remove
     static func delete() -> Observable<Model>
     static func deleteLocal() -> Observable<Model>
     static func deleteCloud() -> Observable<Model>
+ */
 }
 
 //
-// MARK: - Active Record
-extension ActiveRecord where Realm: ObjectModelConventible {
+// MARK: - Active Record - Fetch All
+extension ActiveRecord {
     
     static func fetchAll() -> Observable<[Model]> {
         
+        if UserObj.currentUser.isGuest {
+            return self.fetchAllLocal()
+        }
+        
+        return Observable.concat([self.fetchAllLocal(), self.fetchAllCloud()])
     }
     
     static func fetchAllLocal() -> Observable<[Model]> {
         return RealmManager.sharedManager
             .fetchAll(type: Realm.self)
             .map { (result: Results<Realm>) -> [Model] in
-                var models: [Model] = []
+                var models: [BaseObjectModel] = []
                 for i in result {
-                    models.append(i.toObjectModel())
+                    let obj = i.toObjectModel()
+                    models.append(obj)
                 }
-                return models
+                return models as! [Model]
         }
     }
     
@@ -68,14 +75,40 @@ extension ActiveRecord where Realm: ObjectModelConventible {
                 case .Failure(_):
                     return []
                 case .Success(let databases):
-                    return databases
+                    return databases as! [Model]
                 }
             })
     }
-    
-    static func first() -> Observable<Model> {
-        
-    }
 }
 
+//
+// MARK: - Active Recored - Save
+extension ActiveRecord where Self: BaseRealmModelConvertible {
+    func save() -> Observable<Model> {
+        if UserObj.currentUser.isGuest {
+            return self.saveLocal()
+        }
+
+        return Observable.concat([self.saveLocal(), self.saveCloud()])
+    }
+    
+    func saveLocal() -> Observable<Model> {
+        let realmObj = self.toRealmObject()
+        return RealmManager.sharedManager
+            .save(obj: realmObj, type: Realm.self)
+            .map {_ in return Observable<Model>.empty()}
+    }
+    
+    func saveCloud() -> Observable<Model> {
+        return Request().toAlamofireObservable()
+                .map { (result) -> Model in
+                    switch result {
+                    case .Failure(_):
+                        return Model()
+                    case .Success(let obj):
+                        return obj as! Self.Model
+                    }
+                }
+    }
+}
 

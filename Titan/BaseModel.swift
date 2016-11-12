@@ -20,7 +20,7 @@ class BaseModel: Mappable, CustomStringConvertible {
     
     //
     // MARK: - Init
-    init() {
+    required init() {
         
     }
     

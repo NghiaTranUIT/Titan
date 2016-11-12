@@ -52,4 +52,20 @@ class DatabaseObj: BaseModel {
     }
 }
 
-extension DatabaseObj: BaseObjectModel {}
+extension DatabaseObj: BaseObjectModel {
+    
+}
+
+extension DatabaseObj: BaseRealmModelConvertible {
+    typealias E = DatabaseRealmObj
+    
+    func toRealmObject() -> E {
+        return DatabaseRealmObj(value: [])
+    }
+}
+
+extension DatabaseObj: ActiveRecord {
+    typealias Model = DatabaseObj
+    typealias Realm = DatabaseRealmObj
+    typealias Request = FetchListConnectionsRequest
+}

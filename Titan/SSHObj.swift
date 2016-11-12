@@ -30,6 +30,10 @@ class SSHObj: BaseModel {
         fatalError("init(map:) has not been implemented")
     }
     
+    required init() {
+        fatalError("init() has not been implemented")
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

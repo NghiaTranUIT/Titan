@@ -55,4 +55,10 @@ final class RealmManager {
         }
         return Observable.just(firstObj)
     }
+    
+    
+    /// Save
+    func save<T: Object>(obj: Object, type: T.Type) -> Observable<T> {
+        
+    }
 }

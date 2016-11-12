@@ -45,6 +45,8 @@
 		BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */; };
 		BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */; };
 		BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */; };
+		BA679CE81DD7063C0054EB43 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE71DD7063C0054EB43 /* BaseRealmModel.swift */; };
+		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
 		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
@@ -141,6 +143,8 @@
 		BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
 		BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveRecord.swift; sourceTree = "<group>"; };
 		BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectModel.swift; sourceTree = "<group>"; };
+		BA679CE71DD7063C0054EB43 /* BaseRealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
+		BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveObjectRequest.swift; sourceTree = "<group>"; };
 		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 				BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */,
 				BA679CD01DD2349D0054EB43 /* RealmKey.swift */,
 				BA33F9B81DCF3E7300B60952 /* RealmRxActiveRecord.swift */,
+				BA679CE71DD7063C0054EB43 /* BaseRealmModel.swift */,
 			);
 			name = Realm;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */,
+				BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -838,6 +844,7 @@
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
 				BA712E091DC0F23400215A94 /* MainConnectionViewModel.swift in Sources */,
+				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
@@ -872,6 +879,7 @@
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
 				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
+				BA679CE81DD7063C0054EB43 /* BaseRealmModel.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,

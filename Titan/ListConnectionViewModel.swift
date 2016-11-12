@@ -44,11 +44,10 @@ class ListConnectionViewModel: BaseViewModel {
     func fetchConnections() {
         
         // Fetch List connections
-        UserObj.currentUser.fetchAllDatabase()
-            .shareReplay(1)
-            .startWith([])
-            .bindTo(self.connections)
-            .addDisposableTo(self.disposeBag)
+        DatabaseObj.fetchAll()
+        .asDriver(onErrorJustReturn: [])
+        .drive(self.connections)
+        .addDisposableTo(self.disposeBag)
     }
     
     override func initBinding() {

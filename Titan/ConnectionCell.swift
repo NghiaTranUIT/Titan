@@ -13,10 +13,12 @@ class ConnectionCell: NSTableCellView {
     //
     // MARK: - Outlet
  
+    
     //
     // MARK: - Variable
     // Connection Lbl
     @IBOutlet weak var connectionLbl: NSTextField!
+    
     
     //
     // MARK: - View Cycle
@@ -24,6 +26,7 @@ class ConnectionCell: NSTableCellView {
         super.awakeFromNib()
     }
 
+    
     //
     // MARK: - Public
     func configureCell(with databaseObj: DatabaseObj) {

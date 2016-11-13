@@ -683,8 +683,8 @@
             <objects>
                 <splitViewController title="Connections" id="3Iq-ti-Kel" customClass="MainConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="S1u-xb-kBm"/>
-                        <splitViewItem holdingPriority="750" id="e3u-SX-Cfx"/>
+                        <splitViewItem holdingPriority="255" behavior="contentList" id="S1u-xb-kBm"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="e3u-SX-Cfx"/>
                     </splitViewItems>
                     <splitView key="splitView" misplaced="YES" dividerStyle="thin" vertical="YES" id="nTr-OS-KlC">
                         <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
@@ -713,20 +713,20 @@
                                     <rect key="frame" x="1" y="0.0" width="318" height="239"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="8UU-HR-ytQ" viewBased="YES" id="QUF-6p-hVS">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="iq2-c0-vZW" id="QUF-6p-hVS">
                                             <rect key="frame" x="0.0" y="0.0" width="318" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="315" minWidth="40" maxWidth="1000" id="M1O-Pw-6Hg">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Connections">
+                                                <tableColumn identifier="" width="315" minWidth="128" maxWidth="3.4028234663852886e+38" id="Pa6-zU-lVl">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Connections">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="SyB-4X-DwO">
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="z2q-6Q-zXA">
                                                         <font key="font" metaFont="system"/>
                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -737,15 +737,18 @@
                                         </tableView>
                                     </subviews>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Uk2-p0-zHN"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="OT0-3P-fBp">
-                                    <rect key="frame" x="1" y="283" width="318" height="16"/>
+                                    <rect key="frame" x="1" y="223" width="318" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="9Vn-2a-wEE">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="9Vn-2a-wEE">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <tableHeaderView key="headerView" id="8UU-HR-ytQ">
+                                <tableHeaderView key="headerView" id="iq2-c0-vZW">
                                     <rect key="frame" x="0.0" y="0.0" width="318" height="23"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
@@ -824,6 +827,7 @@
                                 <constraints>
                                     <constraint firstItem="A13-UW-wYQ" firstAttribute="centerY" secondItem="7w3-CJ-vGn" secondAttribute="centerY" id="0WN-ai-pqk"/>
                                     <constraint firstItem="A13-UW-wYQ" firstAttribute="leading" secondItem="7w3-CJ-vGn" secondAttribute="trailing" constant="12" id="KpO-82-dmI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="UK3-Pn-gur"/>
                                     <constraint firstItem="7w3-CJ-vGn" firstAttribute="leading" secondItem="z3w-cW-hXk" secondAttribute="leading" constant="16" id="bZz-pd-8Ef"/>
                                     <constraint firstItem="7w3-CJ-vGn" firstAttribute="top" secondItem="z3w-cW-hXk" secondAttribute="top" constant="16" id="eQh-82-sJE"/>
                                     <constraint firstAttribute="height" constant="50" id="hoO-ld-N0l"/>

@@ -14,7 +14,7 @@ final class DatabaseObj: BaseModel {
 
     //
     // MARK: - Variable
-    var name: String! = ""
+    var name: String! = "New Connection"
     var host: String! = "localhost"
     var username: String! = "postgres"
     var user: UserObj! = UserObj.currentUser

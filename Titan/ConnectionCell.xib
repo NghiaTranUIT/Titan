@@ -14,8 +14,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-zx-i5f">
-                    <rect key="frame" x="8" y="4" width="296" height="22"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="swg-HW-e1f">
+                    <rect key="frame" x="6" y="7" width="300" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" id="swg-HW-e1f">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -30,7 +30,7 @@
             <connections>
                 <outlet property="connectionLbl" destination="h2u-zx-i5f" id="hzf-Db-idZ"/>
             </connections>
-            <point key="canvasLocation" x="-7" y="21.5"/>
+            <point key="canvasLocation" x="-287" y="-101"/>
         </tableCellView>
     </objects>
 </document>

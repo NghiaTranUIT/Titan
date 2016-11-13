@@ -42,8 +42,13 @@ class ListConnectionsController: BaseViewController {
     }
     
     private func initTableView() {
+        
+        // Data Source
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        // Register
+        self.tableView.registerView(ConnectionCell.self)
         
         // Trigger selected
         self.tableView.target = self
@@ -94,9 +99,14 @@ extension ListConnectionsController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return self.viewModel.numberOfConnection()
     }
+    
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 30
+    }
 }
 
 extension ListConnectionsController: NSTableViewDelegate {
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         // Return if col is not first col
@@ -110,7 +120,7 @@ extension ListConnectionsController: NSTableViewDelegate {
     }
     
     private func connectionListCell(with databaseObj: DatabaseObj, for tableView: NSTableView) -> NSView {
-        let cell = tableView.make(withIdentifier: ConnectionCell.viewID, owner: nil) as! ConnectionCell
+        let cell = tableView.make(withIdentifier: ConnectionCell.identifierView, owner: nil) as! ConnectionCell
         
         cell.configureCell(with: databaseObj)
         

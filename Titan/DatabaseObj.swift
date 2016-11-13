@@ -10,7 +10,7 @@ import Cocoa
 import ObjectMapper
 import RxSwift
 
-class DatabaseObj: BaseModel {
+final class DatabaseObj: BaseModel {
 
     //
     // MARK: - Variable

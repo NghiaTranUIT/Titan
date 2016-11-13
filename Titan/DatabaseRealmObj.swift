@@ -30,9 +30,10 @@ class DatabaseRealmObj: Object {
     }
 }
 
-extension DatabaseRealmObj: BaseRealmModel {}
+extension DatabaseRealmObj: BaseRealmModel { }
 
 extension DatabaseRealmObj: ObjectModelConvertible {
+    
     typealias E = DatabaseObj
 
     func toObjectModel() -> E {

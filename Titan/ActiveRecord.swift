@@ -12,21 +12,21 @@ import RealmSwift
 
 protocol ActiveRecord {
     
-    associatedtype Model: BaseObjectModel, BaseRealmModelConvertible
     associatedtype Realm: Object, ObjectModelConvertible
     associatedtype Request: Titan.Request
     
     /// Fetch
-    static func fetchAll() -> Observable<[Model]>
-    static func fetchAllLocal() -> Observable<[Model]>
-    static func fetchAllCloud() -> Observable<[Model]>
+    static func fetchAll() -> Observable<[Self]>
+    static func fetchAllLocal() -> Observable<[Self]>
+    static func fetchAllCloud() -> Observable<[Self]>
     
     
     /// Save
-    func save() -> Observable<Model>
-    func saveLocal() -> Observable<Model>
-    func saveCloud() -> Observable<Model>
-    
+    /*
+    func save() -> Observable<Self>
+    func saveLocal() -> Observable<Self>
+    func saveCloud() -> Observable<Self>
+    */
     /*
     /// Convention
     static func first() -> Observable<Model?>
@@ -43,9 +43,9 @@ protocol ActiveRecord {
 
 //
 // MARK: - Active Record - Fetch All
-extension ActiveRecord {
+extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
     
-    static func fetchAll() -> Observable<[Model]> {
+    static func fetchAll() -> Observable<[Self]> {
         
         if UserObj.currentUser.isGuest {
             return self.fetchAllLocal()
@@ -54,37 +54,45 @@ extension ActiveRecord {
         return Observable.concat([self.fetchAllLocal(), self.fetchAllCloud()])
     }
     
-    static func fetchAllLocal() -> Observable<[Model]> {
+    static func fetchAllLocal() -> Observable<[Self]> {
         return RealmManager.sharedManager
             .fetchAll(type: Realm.self)
-            .map { (result: Results<Realm>) -> [Model] in
-                var models: [BaseObjectModel] = []
+            .map { (result: Results<Realm>) -> [Self] in
+                var models: [Self] = []
                 for i in result {
-                    let obj = i.toObjectModel()
+                    //TODO: Fix as! Self
+                    // The problem is:
+                    // There is no way to check if the class A (which conform from HypeObject)
+                    // And class B (which conform Object & ObjectModelConvertible
+                    // is same class in Runtime
+                    // => Hot-fix => Force cast to self
+                    // If not -> Can't add to models
+                    let obj = i.toObjectModel() as! Self
                     models.append(obj)
                 }
-                return models as! [Model]
+                return models
         }
     }
     
-    static func fetchAllCloud() -> Observable<[Model]> {
+    static func fetchAllCloud() -> Observable<[Self]> {
         return Request()
             .toAlamofireObservable()
-            .map({ (result) -> [Model] in
+            .map({ (result) -> [Self] in
                 switch result {
                 case .Failure(_):
                     return []
                 case .Success(let databases):
-                    return databases as! [Model]
+                    return databases as! [Self]
                 }
             })
     }
 }
 
+/*
 //
 // MARK: - Active Recored - Save
-extension ActiveRecord where Self: BaseRealmModelConvertible {
-    func save() -> Observable<Model> {
+extension ActiveRecord where Self: HypeObj {
+    func save() -> Observable<Self> {
         if UserObj.currentUser.isGuest {
             return self.saveLocal()
         }
@@ -92,23 +100,13 @@ extension ActiveRecord where Self: BaseRealmModelConvertible {
         return Observable.concat([self.saveLocal(), self.saveCloud()])
     }
     
-    func saveLocal() -> Observable<Model> {
-        let realmObj = self.toRealmObject()
-        return RealmManager.sharedManager
-            .save(obj: realmObj, type: Realm.self)
-            .map {_ in return Observable<Model>.empty()}
+    func saveLocal() -> Observable<Self> {
+        
     }
     
-    func saveCloud() -> Observable<Model> {
-        return Request().toAlamofireObservable()
-                .map { (result) -> Model in
-                    switch result {
-                    case .Failure(_):
-                        return Model()
-                    case .Success(let obj):
-                        return obj as! Self.Model
-                    }
-                }
+    func saveCloud() -> Observable<Self> {
+        
     }
 }
 
+*/

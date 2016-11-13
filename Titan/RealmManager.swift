@@ -58,7 +58,14 @@ final class RealmManager {
     
     
     /// Save
-    func save<T: Object>(obj: Object, type: T.Type) -> Observable<T> {
-        
+    func save<T: Object>(obj: T) -> Observable<T> {
+        return Observable.create({[unowned self] (obs) -> Disposable in
+            
+            try? self.realm.write {
+                self.realm.add(obj)
+            }
+            
+            return Disposables.create()
+        })
     }
 }

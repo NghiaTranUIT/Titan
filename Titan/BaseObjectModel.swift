@@ -14,7 +14,7 @@ protocol BaseObjectModel {
 
 protocol ObjectModelConvertible {
     
-    associatedtype E: BaseObjectModel
+    associatedtype E: BaseObjectModel, BaseRealmModelConvertible
     
     func toObjectModel() -> E
 }

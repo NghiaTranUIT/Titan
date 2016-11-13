@@ -827,7 +827,7 @@
                                 <constraints>
                                     <constraint firstItem="A13-UW-wYQ" firstAttribute="centerY" secondItem="7w3-CJ-vGn" secondAttribute="centerY" id="0WN-ai-pqk"/>
                                     <constraint firstItem="A13-UW-wYQ" firstAttribute="leading" secondItem="7w3-CJ-vGn" secondAttribute="trailing" constant="12" id="KpO-82-dmI"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="500" id="UK3-Pn-gur"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="700" id="UK3-Pn-gur"/>
                                     <constraint firstItem="7w3-CJ-vGn" firstAttribute="leading" secondItem="z3w-cW-hXk" secondAttribute="leading" constant="16" id="bZz-pd-8Ef"/>
                                     <constraint firstItem="7w3-CJ-vGn" firstAttribute="top" secondItem="z3w-cW-hXk" secondAttribute="top" constant="16" id="eQh-82-sJE"/>
                                     <constraint firstAttribute="height" constant="50" id="hoO-ld-N0l"/>

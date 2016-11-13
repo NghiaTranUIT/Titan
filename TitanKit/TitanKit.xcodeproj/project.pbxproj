@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA035F991D97C60D00B616AB /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BA035F971D97C60D00B616AB /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA035FAE1D97C86200B616AB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FAD1D97C86200B616AB /* Network.swift */; };
-		BA035FE71D980CC600B616AB /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FE61D980CC600B616AB /* libpq.framework */; };
 		BA03600E1D98CC3200B616AB /* TitanKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03600D1D98CC3200B616AB /* TitanKitTests.swift */; };
 		BA0360101D98CC3200B616AB /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035F941D97C60D00B616AB /* TitanKit.framework */; };
 		BA4AFF241DAC98A6009AE139 /* NSStoryboard+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF231DAC98A6009AE139 /* NSStoryboard+Helper.swift */; };
@@ -17,7 +16,6 @@
 		BA4AFF311DAC9B23009AE139 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF301DAC9B23009AE139 /* Enums.swift */; };
 		BAA0AAC81D9A4F6000A86A6E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AAC51D9A4F6000A86A6E /* Quick.framework */; };
 		BAA0AACD1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */; };
-		BAA0AACF1D9A500D00A86A6E /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA035FE61D980CC600B616AB /* libpq.framework */; };
 		CA63A1B022B279B393B6CD50 /* Pods_TitanKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC2C339CA77EA074C6486B79 /* Pods_TitanKitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +37,6 @@
 		BA035F981D97C60D00B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA035FAD1D97C86200B616AB /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BA035FCC1D98061E00B616AB /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpq.framework; path = ../../../../../Desktop/libpq.framework; sourceTree = "<group>"; };
-		BA035FE61D980CC600B616AB /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libpq.framework; sourceTree = "<group>"; };
 		BA03600B1D98CC3200B616AB /* TitanKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA03600D1D98CC3200B616AB /* TitanKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanKitTests.swift; sourceTree = "<group>"; };
 		BA03600F1D98CC3200B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA035FE71D980CC600B616AB /* libpq.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +69,6 @@
 				CA63A1B022B279B393B6CD50 /* Pods_TitanKitTests.framework in Frameworks */,
 				BAA0AAC81D9A4F6000A86A6E /* Quick.framework in Frameworks */,
 				BAA0AACD1D9A4FEC00A86A6E /* Nimble.framework in Frameworks */,
-				BAA0AACF1D9A500D00A86A6E /* libpq.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +129,6 @@
 			children = (
 				BA4AFF281DAC9A53009AE139 /* Cocoa.framework */,
 				BA4AFF261DAC9A4C009AE139 /* UIKit.framework */,
-				BA035FE61D980CC600B616AB /* libpq.framework */,
 				BAA0AACA1D9A4FEC00A86A6E /* Nimble.framework */,
 				BAA0AAC51D9A4F6000A86A6E /* Quick.framework */,
 				BAA0AAC31D9A464500A86A6E /* Pods_TitanKitTests.framework */,

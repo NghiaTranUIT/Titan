@@ -8,13 +8,21 @@
 
 import Foundation
 
+/// Base Object Model
+/// Intent for baseclass "BaseObjectMode"
 protocol BaseObjectModel {
     init()
 }
 
+
+/// Convert to object model
 protocol ObjectModelConvertible {
     
+    
+    /// Must convert to BaseObjectModel & BaseRealmModelConvertible
     associatedtype E: BaseObjectModel, BaseRealmModelConvertible
     
+    
+    /// Convert
     func toObjectModel() -> E
 }

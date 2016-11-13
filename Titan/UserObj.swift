@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RealmSwift
 
-class UserObj: BaseModel {
+final class UserObj: BaseModel {
     
     //
     // MARK: - Variable
@@ -54,3 +54,33 @@ extension UserObj {
     }
 }
 
+
+/// Base Class protocol
+extension UserObj: BaseObjectModel {}
+
+
+//
+// MARK: - Active recoder
+extension UserObj: ActiveRecord {
+    typealias Realm = UserRealmObj
+    typealias Request = FetchListConnectionsRequest
+}
+
+//
+// MARK: - Realm Model Convertible
+extension UserObj: BaseRealmModelConvertible {
+    
+    /// Kind of ream obj
+    typealias E = UserRealmObj
+    
+    
+    /// Convert
+    func toRealmObject() -> E {
+        let realmUser = UserRealmObj()
+        
+        realmUser.isGuest = self.isGuest
+        realmUser.username = self.username
+        
+        return realmUser
+    }
+}

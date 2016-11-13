@@ -15,10 +15,11 @@ class DatabaseRealmObj: Object {
     // MARK: - Variable
     dynamic var name: String!
     dynamic var host: String!
+    dynamic var username: String!
     dynamic var user: UserRealmObj!
     dynamic var password: String!
     dynamic var database: String!
-    dynamic var port: Int = 22
+    dynamic var port: Int = 5432
     dynamic var saveToKeychain = false
     dynamic var ssl: SSLRealmObj?
     dynamic var ssh: SSHRealmObj?
@@ -30,8 +31,14 @@ class DatabaseRealmObj: Object {
     }
 }
 
+
+//
+// MARK: - Base Realm model protocol
 extension DatabaseRealmObj: BaseRealmModel { }
 
+
+//
+// MARK: - Object Model Convertible
 extension DatabaseRealmObj: ObjectModelConvertible {
     
     typealias E = DatabaseObj

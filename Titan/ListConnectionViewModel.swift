@@ -36,7 +36,7 @@ class ListConnectionViewModel: BaseViewModel {
         })
     }
     
-    fileprivate var connections = Variable<[DatabaseObj]>([])
+    fileprivate var connections = mainStore.state.connectionState.connections
     var addNewConnection: Observable<DatabaseObj>!
     
     //
@@ -44,10 +44,8 @@ class ListConnectionViewModel: BaseViewModel {
     func fetchConnections() {
         
         // Fetch List connections
-        DatabaseObj.fetchAll()
-        .asDriver(onErrorJustReturn: [])
-        .drive(self.connections)
-        .addDisposableTo(self.disposeBag)
+        let action = GetAllConnectionsAction()
+        mainStore.dispatch(action)
     }
     
     override func initBinding() {
@@ -70,17 +68,22 @@ class ListConnectionViewModel: BaseViewModel {
             }.addDisposableTo(self.disposeBag)
         
         // Add New default connection 
-        self.addNewConnection.subscribe { _ in
-            let defaultDb = DatabaseObj.defaultDatabase()
-            
+        self.addNewConnection.map { (_) -> DatabaseObj in
+            return DatabaseObj.defaultDatabase()
+        }
+        .flatMap { (db) -> Observable<DatabaseObj> in
+            return db.save()
+        }
+        .subscribe { (db) in
             // Selected
-            let action = SelectedConnectionAction(selectedConnection: defaultDb)
+            let action = SelectedConnectionAction(selectedConnection: db.element!)
             mainStore.dispatch(action)
             
-            // Create database 
-            
-            
-        }.addDisposableTo(self.disposeBag)
+            // Add to List connection 
+            let addAction = AddNewConnectionToListConnectionAction(newConnection: db.element!)
+            mainStore.dispatch(addAction)
+        }
+        .addDisposableTo(self.disposeBag)
     }
 }
 

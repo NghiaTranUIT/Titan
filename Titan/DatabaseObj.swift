@@ -14,14 +14,14 @@ final class DatabaseObj: BaseModel {
 
     //
     // MARK: - Variable
-    var name: String!
-    var host: String!
-    var username: String!
-    var user: UserObj!
-    var password: String!
-    var database: String!
-    var port: Int!
-    var saveToKeychain: Bool!
+    var name: String! = ""
+    var host: String! = "localhost"
+    var username: String! = "postgres"
+    var user: UserObj! = UserObj.currentUser
+    var password: String! = ""
+    var database: String! = "postgres"
+    var port: Int! = 5432
+    var saveToKeychain: Bool! = false
     var ssl: SSLObj?
     var ssh: SSHObj?
     
@@ -52,20 +52,38 @@ final class DatabaseObj: BaseModel {
     }
 }
 
-extension DatabaseObj: BaseObjectModel {
-    
-}
 
-extension DatabaseObj: BaseRealmModelConvertible {
-    typealias E = DatabaseRealmObj
-    
-    func toRealmObject() -> E {
-        return DatabaseRealmObj(value: [])
-    }
-}
+/// Base Class protocol
+extension DatabaseObj: BaseObjectModel {}
 
+
+//
+// MARK: - Active recoder
 extension DatabaseObj: ActiveRecord {
-    typealias Model = DatabaseObj
     typealias Realm = DatabaseRealmObj
     typealias Request = FetchListConnectionsRequest
 }
+
+//
+// MARK: - Realm Model Convertible
+extension DatabaseObj: BaseRealmModelConvertible {
+    
+    /// Kind of ream obj
+    typealias E = DatabaseRealmObj
+    
+    
+    /// Convert
+    func toRealmObject() -> E {
+        let db = E()
+        db.name = self.name
+        db.host = self.host
+        db.user = self.user.toRealmObject()
+        db.password = self.password
+        db.database = self.database
+        db.port = self.port
+        db.saveToKeychain = self.saveToKeychain
+        return db
+    }
+}
+
+

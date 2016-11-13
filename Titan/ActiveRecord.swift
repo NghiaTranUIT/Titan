@@ -22,11 +22,10 @@ protocol ActiveRecord {
     
     
     /// Save
-    /*
     func save() -> Observable<Self>
     func saveLocal() -> Observable<Self>
     func saveCloud() -> Observable<Self>
-    */
+ 
     /*
     /// Convention
     static func first() -> Observable<Model?>
@@ -88,11 +87,13 @@ extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
     }
 }
 
-/*
+
 //
 // MARK: - Active Recored - Save
-extension ActiveRecord where Self: HypeObj {
+extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
+    
     func save() -> Observable<Self> {
+        // Is Guest
         if UserObj.currentUser.isGuest {
             return self.saveLocal()
         }
@@ -101,12 +102,20 @@ extension ActiveRecord where Self: HypeObj {
     }
     
     func saveLocal() -> Observable<Self> {
-        
+        let realmObj = self.toRealmObject()
+        return RealmManager.sharedManager
+            .save(obj: realmObj)
+            .map({ (_) -> Self in
+                return self
+            })
     }
     
     func saveCloud() -> Observable<Self> {
-        
+        return Request()
+            .toAlamofireObservable()
+            .map({ (_) -> Self in
+                return self
+            })
     }
 }
 
-*/

@@ -70,6 +70,7 @@ struct Constants {
         #endif
         
         static let GetListConnectionFromCloudURL = "/connections"
+        static let SaveObject = ""
     }
     
     //

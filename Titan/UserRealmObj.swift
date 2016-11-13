@@ -11,9 +11,31 @@ import RealmSwift
 
 class UserRealmObj: Object {
   
+    //
+    // MARK: - Variable
+    var username = "guest"
+    var isGuest: Bool = true
+    
 }
 
-// Magic
-extension UserRealmObj: RealmRxActiveRecord {
-    typealias E = UserRealmObj
+//
+// MARK: - Base Realm model protocol
+extension UserRealmObj: BaseRealmModel { }
+
+
+//
+// MARK: - Object Model Convertible
+extension UserRealmObj: ObjectModelConvertible {
+    
+    typealias E = UserObj
+    
+    func toObjectModel() -> E {
+        let obj = E()
+        
+        obj.isGuest = self.isGuest
+        obj.username = self.username
+        
+        return obj
+    }
 }
+

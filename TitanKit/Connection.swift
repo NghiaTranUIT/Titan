@@ -10,7 +10,21 @@ import Foundation
 
 open class Connection {
     
+    //
+    // MARK: - Variable
+    private let connectionPtr: OpaquePointer!
+    
+    
+    //
+    // MARK: - Init
+    init(connectionPtr: OpaquePointer) {
+        self.connectionPtr = connectionPtr
+    }
+    
+    
+    //
+    // MARK: - Public
     func execute(query: Query) -> QueryResult {
-        
+        return QueryResult()
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BAA8ED901DDB1967006E4E33 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
 		BACFCCAC1DDAF95800EFB0BA /* TitanKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TitanKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F55BF8E95F917D836A9B1CD /* Pods-TitanKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		BACFCC911DDAF89400EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCC941DDAF89400EFB0BA /* TitanKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanKit.h; sourceTree = "<group>"; };
 		BACFCC951DDAF89400EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				BACFCCBC1DDAFC3800EFB0BA /* Error.swift */,
 				BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */,
 				BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */,
+				BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */,
 				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
+				BAA8ED901DDB1967006E4E33 /* ConnectionStatus.swift in Sources */,
 				BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */,
 				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
 			);

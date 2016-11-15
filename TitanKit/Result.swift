@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public enum ConnectionResult: Error {
+    
+    
+    /// State
+    case Success(connection: Connection)
+    case Error(error: Error)
+}

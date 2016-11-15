@@ -2,12 +2,11 @@
 //  TitanKitTests.swift
 //  TitanKitTests
 //
-//  Created by Nghia Tran Vinh on 9/26/16.
-//  Copyright © 2016 fe. All rights reserved.
+//  Created by Nghia Tran on 11/15/16.
+//  Copyright © 2016 Titan. All rights reserved.
 //
 
 import XCTest
-import Quick
 
 class TitanKitTests: XCTestCase {
     

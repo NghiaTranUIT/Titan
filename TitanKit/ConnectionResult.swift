@@ -9,16 +9,19 @@
 import Foundation
 import libpq
 
-public struct DataConnectionStatus: Error {
+public struct ConnectionResult: Error {
     
     
-    /// State
-    var state: ConnectionStatus = .UNKNOW
+    /// status
+    public var status: ConnectionStatus = .UNKNOW
     
     
     // Message error
-    var msgError = "Unknow"
+    public var msgError = "Unknow"
     
+    
+    /// Connection
+    public var connection: Connection? = nil
     
     /// Default init
     init() {
@@ -30,7 +33,7 @@ public struct DataConnectionStatus: Error {
     init(connectionPtr: OpaquePointer?) {
         
         if connectionPtr != nil {
-            self.state = .UNKNOW
+            self.status = .UNKNOW
             self.msgError = "Unknow"
         }
         
@@ -39,40 +42,41 @@ public struct DataConnectionStatus: Error {
         self.msgError = msg
         
         if status == libpq.CONNECTION_OK {
-            self.state =  .CONNECTION_OK
+            self.status =  .CONNECTION_OK
+            let connection = Connection(connectionPtr: connectionPtr!)
+            self.connection = connection
         }
         if status == libpq.CONNECTION_BAD {
-            self.state = .CONNECTION_BAD
+            self.status = .CONNECTION_BAD
         }
         if status == libpq.CONNECTION_STARTED {
-            self.state = .CONNECTION_STARTED
+            self.status = .CONNECTION_STARTED
         }
         if status == libpq.CONNECTION_MADE {
-            self.state = .CONNECTION_MADE
+            self.status = .CONNECTION_MADE
         }
         if status == libpq.CONNECTION_AWAITING_RESPONSE {
-            self.state = .CONNECTION_AWAITING_RESPONSE
+            self.status = .CONNECTION_AWAITING_RESPONSE
         }
         if status == libpq.CONNECTION_AUTH_OK {
-            self.state = .CONNECTION_AUTH_OK
+            self.status = .CONNECTION_AUTH_OK
         }
         if status == libpq.CONNECTION_SETENV {
-            self.state = .CONNECTION_SETENV
+            self.status = .CONNECTION_SETENV
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
-            self.state = .CONNECTION_SSL_STARTUP
+            self.status = .CONNECTION_SSL_STARTUP
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
-            self.state = .CONNECTION_NEEDED
+            self.status = .CONNECTION_NEEDED
         }
     }
     
-    static let unknowStatus = DataConnectionStatus()
+    static let unknowStatus = ConnectionResult()
 }
 
 
 public enum ConnectionStatus {
-    
     
     /// State
     case CONNECTION_OK

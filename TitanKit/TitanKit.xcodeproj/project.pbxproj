@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BAA8ED901DDB1967006E4E33 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */; };
+		BA1999A11DDB4CB700296441 /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */; };
+		BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */; };
+		BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */; };
+		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
-		BACFCCAC1DDAF95800EFB0BA /* TitanKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */; };
 		BACFCCAE1DDAF95800EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC911DDAF89400EFB0BA /* TitanKit.framework */; };
 		BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB41DDAFAD500EFB0BA /* Database.swift */; };
 		BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */; };
 		BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */; };
 		BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBA1DDAFAF600EFB0BA /* Query.swift */; };
 		BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBC1DDAFC3800EFB0BA /* Error.swift */; };
-		BACFCCBF1DDAFD4A00EFB0BA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */; };
 		BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */; };
 		C6C561B63074AFC1C00CDD08 /* Pods_TitanKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */; };
 /* End PBXBuildFile section */
@@ -35,20 +36,21 @@
 /* Begin PBXFileReference section */
 		752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TitanKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F55BF8E95F917D836A9B1CD /* Pods-TitanKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
+		BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSpec.swift; sourceTree = "<group>"; };
+		BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseSpec.swift; sourceTree = "<group>"; };
+		BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParamConnection+Helper.swift"; sourceTree = "<group>"; };
+		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
 		BACFCC911DDAF89400EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCC941DDAF89400EFB0BA /* TitanKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanKit.h; sourceTree = "<group>"; };
 		BACFCC951DDAF89400EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BACFCCA11DDAF91F00EFB0BA /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libpq.framework; sourceTree = "<group>"; };
 		BACFCCA91DDAF95800EFB0BA /* TitanKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanKitTests.swift; sourceTree = "<group>"; };
 		BACFCCAD1DDAF95800EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BACFCCB41DDAFAD500EFB0BA /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
 		BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BACFCCBA1DDAFAF600EFB0BA /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		BACFCCBC1DDAFC3800EFB0BA /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionParam.swift; sourceTree = "<group>"; };
 		DA1E65DC560C21B0B02B1171 /* Pods-TitanKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,13 +85,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA1999A61DDB4E3A00296441 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		BACFCC871DDAF89400EFB0BA = {
 			isa = PBXGroup;
 			children = (
 				BACFCCA41DDAF93600EFB0BA /* Source */,
-				BACFCCA31DDAF92600EFB0BA /* Framework */,
 				BACFCC931DDAF89400EFB0BA /* TitanKit */,
 				BACFCCAA1DDAF95800EFB0BA /* TitanKitTests */,
+				BACFCCA31DDAF92600EFB0BA /* Framework */,
 				BACFCC921DDAF89400EFB0BA /* Products */,
 				94D73FC7FD44C0BCBD5C9208 /* Pods */,
 				CDB205A642EFDCA6A64E930A /* Frameworks */,
@@ -130,9 +140,8 @@
 				BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */,
 				BACFCCBA1DDAFAF600EFB0BA /* Query.swift */,
 				BACFCCBC1DDAFC3800EFB0BA /* Error.swift */,
-				BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */,
 				BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */,
-				BAA8ED8F1DDB1967006E4E33 /* ConnectionStatus.swift */,
+				BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -140,7 +149,9 @@
 		BACFCCAA1DDAF95800EFB0BA /* TitanKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */,
+				BA1999A61DDB4E3A00296441 /* Helper */,
+				BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */,
+				BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */,
 				BACFCCAD1DDAF95800EFB0BA /* Info.plist */,
 			);
 			path = TitanKitTests;
@@ -319,11 +330,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */,
-				BACFCCBF1DDAFD4A00EFB0BA /* Result.swift in Sources */,
 				BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */,
 				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
-				BAA8ED901DDB1967006E4E33 /* ConnectionStatus.swift in Sources */,
+				BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */,
 				BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */,
 				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
 			);
@@ -333,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BACFCCAC1DDAF95800EFB0BA /* TitanKitTests.swift in Sources */,
+				BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */,
+				BA1999A11DDB4CB700296441 /* ConnectionSpec.swift in Sources */,
+				BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

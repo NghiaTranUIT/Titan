@@ -19,4 +19,12 @@ public struct ConnectionParam {
     public let user: String
     public let password: String
     
+    public init(host: String, port: String, options: String, databaseName: String, user: String, password: String) {
+        self.host = host
+        self.port = port
+        self.options = options
+        self.databaseName = databaseName
+        self.user = user
+        self.password = password
+    }
 }

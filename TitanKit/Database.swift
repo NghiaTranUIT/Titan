@@ -27,25 +27,18 @@ open class Database {
     
     
     /// Create Connection to database
-    open func connectionDatabase(param: ConnectionParam) -> ConnectionResult {
+    open func connectDatabase(withParam param: ConnectionParam) -> ConnectionResult {
         
         // Connection
         let _connectionPtr = PQsetdbLogin(param.host, param.port, param.options, "", param.databaseName, param.user, param.password)
         guard let connectionPtr = _connectionPtr else {
-            let unknowStatus = DataConnectionStatus.unknowStatus
-            return ConnectionResult.Error(error: unknowStatus)
+            return ConnectionResult.unknowStatus
         }
         
         // Get status
-        let status = DataConnectionStatus(connectionPtr: connectionPtr)
+        let result = ConnectionResult(connectionPtr: connectionPtr)
         
-        // Check status
-        switch status.state {
-        case .CONNECTION_OK:
-            let connection = Connection(connectionPtr: connectionPtr)
-            return ConnectionResult.Success(connection: connection)
-        default:
-            return ConnectionResult.Error(error: status)
-        }
+        // Return
+        return result
     }
 }

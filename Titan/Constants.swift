@@ -18,6 +18,17 @@ struct Constants {
     }
     
     //
+    // MARK: - Key
+    struct Key {
+        
+        //
+        // MARK: - Realm
+        struct Realm {
+            static let KeyChainID = "com.fe.titan.realm.pdoAR69Uv5WTseAhgA5va4eDONO9vgJOPV42DHFx"
+        }
+    }
+    
+    //
     // MARK: - Endpoint
     struct Endpoint {
         
@@ -59,6 +70,7 @@ struct Constants {
         #endif
         
         static let GetListConnectionFromCloudURL = "/connections"
+        static let SaveObject = ""
     }
     
     //
@@ -73,6 +85,83 @@ struct Constants {
             static let ResponseChannel = "<Response channel name>"
             static let ResponseChannel_Webhook = "https://hooks.slack.com/services/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"
             static let ErrorChannel_Webhook = "https://hooks.slack.com/services/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"
+        }
+    }
+    
+    //
+    // MARK: - Model
+    struct Obj {
+        
+        //
+        // MARK: - Base
+        static let CreatedAt = "created_at"
+        static let UpdatedAt = "updated_at"
+        static let ObjectId = "id"
+        static let KeyClassname = "c_n"
+        static let IsProcess = "_is_procress"
+        
+        //
+        // MARK: - Classname
+        struct Classname {
+            static let Database = "database"
+        }
+        
+        //
+        // MARK: - User
+        struct User {
+            static let Username = "username"
+            static let Setting = "setting"
+            static let Database = "database"
+        }
+        
+        
+        //
+        // MARK: - Database
+        struct Database {
+            static let Name = "name"
+            static let Host = "host"
+            static let User = "user"
+            static let Password = "password"
+            static let Database = "database"
+            static let Port = "port"
+            static let SaveToKeyChain = "save_to_keychain"
+            static let ssl = "ssl"
+            static let ssh = "ssh"
+        }
+        
+        
+        //
+        // MARK: - Query
+        struct Query {
+            static let Name = "name"
+            static let Content = "content"
+        }
+        
+        
+        //
+        // MARK: - Setting
+        struct Setting {
+            static let AutomaticUpdate = "automatic_update"
+            static let Version = "version"
+        }
+        
+        //
+        // MARK: - SSL
+        struct SSL {
+            static let ClientKeyFile = "client_key_file"
+            static let ClientCertificate = "client_certificate"
+            static let ServerRootCertificate = "server_root_certificate"
+            static let CertificateRevocationList = "certificate_revocation_list"
+            static let SSLCompression = "ssl_compression"
+        }
+        
+        //
+        // MARK: - SSH
+        struct SSH {
+            static let Host = "host"
+            static let User = "user"
+            static let IndentityFile = "indentity_file"
+            static let Port = "port"
         }
     }
 }

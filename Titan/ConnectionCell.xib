@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <tableCellView identifier="ConnectionCell" id="BoQ-Sh-xh7" customClass="ConnectionCell" customModule="Titan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="154" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="312" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-KI-YwI">
-                    <rect key="frame" x="0.0" y="3" width="154" height="17"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" id="wtQ-Fl-WYf">
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-zx-i5f">
+                    <rect key="frame" x="6" y="7" width="300" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" id="swg-HW-e1f">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="h2u-zx-i5f" secondAttribute="trailing" constant="8" id="61j-cH-1Zf"/>
+                <constraint firstItem="h2u-zx-i5f" firstAttribute="centerY" secondItem="BoQ-Sh-xh7" secondAttribute="centerY" id="RHy-bO-gOQ"/>
+                <constraint firstItem="h2u-zx-i5f" firstAttribute="leading" secondItem="BoQ-Sh-xh7" secondAttribute="leading" constant="8" id="y5E-OG-V8Q"/>
+            </constraints>
             <connections>
-                <outlet property="textField" destination="xWe-KI-YwI" id="clF-eq-nhx"/>
+                <outlet property="connectionLbl" destination="h2u-zx-i5f" id="hzf-Db-idZ"/>
             </connections>
-            <point key="canvasLocation" x="-86" y="14"/>
+            <point key="canvasLocation" x="-287" y="-101"/>
         </tableCellView>
     </objects>
 </document>

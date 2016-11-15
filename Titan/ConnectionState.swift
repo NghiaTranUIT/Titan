@@ -8,9 +8,13 @@
 
 import Foundation
 import ReSwift
+import RxSwift
 
 struct ConnectionState {
     
+    /// Connection selected
+    var connections = Variable<[DatabaseObj]>([])
+    var selectedConnection = PublishSubject<DatabaseObj>()
 }
 
 //
@@ -18,11 +22,22 @@ struct ConnectionState {
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         let state = state ?? ConnectionState()
+        let disposeBag = DisposeBag()
         
         switch action {
-        case _ as GetListConnectionRequest:
+        case let action as SelectedConnectionAction:
+            state.selectedConnection.on(.next(action.selectedConnection))
             break
-        case _ as GetConnectionFromDatabaseAction:
+        case let action as AddNewConnectionToListConnectionAction:
+            var currentConnections = state.connections.value
+            currentConnections.append(action.newConnection)
+            state.connections.value = currentConnections
+            break
+        case _ as GetAllConnectionsAction:
+            DatabaseObj.fetchAll()
+                .asDriver(onErrorJustReturn: [])
+                .drive(state.connections)
+                .addDisposableTo(disposeBag)
             break
         default:
             break
@@ -32,8 +47,17 @@ extension ConnectionState {
     }
 }
 
+
 //
 // MARK: - Action
-struct GetConnectionFromDatabaseAction: Action {
+struct SelectedConnectionAction: Action {
+    var selectedConnection: DatabaseObj
+}
+
+struct AddNewConnectionToListConnectionAction: Action {
+    var newConnection: DatabaseObj
+}
+
+struct GetAllConnectionsAction: Action {
     
 }

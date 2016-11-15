@@ -7,18 +7,29 @@
 //
 
 import Cocoa
+import RxSwift
 
 class BaseViewController: NSViewController {
 
+    //
+    // MARK: - Variable
+    let disposeBag = DisposeBag()
+    
+    //
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
         self.initCommon()
+        
+        self.setupBinding()
     }
     
     func initCommon() {
         // Do Nothing
     }
     
+    func setupBinding() {
+        // Do nothing
+    }
 }

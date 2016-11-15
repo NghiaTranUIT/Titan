@@ -11,6 +11,13 @@
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
 		BACFCCAC1DDAF95800EFB0BA /* TitanKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */; };
 		BACFCCAE1DDAF95800EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC911DDAF89400EFB0BA /* TitanKit.framework */; };
+		BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB41DDAFAD500EFB0BA /* Database.swift */; };
+		BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */; };
+		BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */; };
+		BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBA1DDAFAF600EFB0BA /* Query.swift */; };
+		BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBC1DDAFC3800EFB0BA /* Error.swift */; };
+		BACFCCBF1DDAFD4A00EFB0BA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */; };
+		BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */; };
 		C6C561B63074AFC1C00CDD08 /* Pods_TitanKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +41,13 @@
 		BACFCCA91DDAF95800EFB0BA /* TitanKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCCAB1DDAF95800EFB0BA /* TitanKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanKitTests.swift; sourceTree = "<group>"; };
 		BACFCCAD1DDAF95800EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BACFCCB41DDAFAD500EFB0BA /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
+		BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		BACFCCBA1DDAFAF600EFB0BA /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		BACFCCBC1DDAFC3800EFB0BA /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionParam.swift; sourceTree = "<group>"; };
 		DA1E65DC560C21B0B02B1171 /* Pods-TitanKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +123,13 @@
 		BACFCCA41DDAF93600EFB0BA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BACFCCB41DDAFAD500EFB0BA /* Database.swift */,
+				BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */,
+				BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */,
+				BACFCCBA1DDAFAF600EFB0BA /* Query.swift */,
+				BACFCCBC1DDAFC3800EFB0BA /* Error.swift */,
+				BACFCCBE1DDAFD4A00EFB0BA /* Result.swift */,
+				BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -196,6 +217,7 @@
 					BACFCC901DDAF89400EFB0BA = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = D54Y88Y9CY;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					BACFCCA81DDAF95800EFB0BA = {
@@ -293,6 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */,
+				BACFCCBF1DDAFD4A00EFB0BA /* Result.swift in Sources */,
+				BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */,
+				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
+				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
+				BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */,
+				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +445,7 @@
 		BACFCC9A1DDAF89400EFB0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -434,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.titan.TitanKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -441,6 +472,7 @@
 		BACFCC9B1DDAF89400EFB0BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -467,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F55BF8E95F917D836A9B1CD /* Pods-TitanKitTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
@@ -482,6 +515,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA1E65DC560C21B0B02B1171 /* Pods-TitanKitTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;

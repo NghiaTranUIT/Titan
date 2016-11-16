@@ -10,6 +10,7 @@
 		BA1999A11DDB4CB700296441 /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */; };
 		BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */; };
 		BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */; };
+		BA1999E41DDC1ED400296441 /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
@@ -69,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACFCCAE1DDAF95800EFB0BA /* TitanKit.framework in Frameworks */,
+				BA1999E41DDC1ED400296441 /* libpq.framework in Frameworks */,
 				C6C561B63074AFC1C00CDD08 /* Pods_TitanKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +523,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TitanKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.titan.TitanKitTests;
@@ -537,6 +543,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TitanKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.titan.TitanKitTests;

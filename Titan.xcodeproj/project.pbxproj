@@ -16,7 +16,6 @@
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
 		BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */; };
-		BA33F9B91DCF3E7300B60952 /* RealmRxActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B81DCF3E7300B60952 /* RealmRxActiveRecord.swift */; };
 		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
@@ -63,6 +62,8 @@
 		BAB439E81DC4572200C501DC /* DisposableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB439E71DC4572200C501DC /* DisposableBase.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAE94ADD1DDCC34200B203A5 /* libpq.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
 		BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */; };
 		BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* Request.swift */; };
@@ -89,11 +90,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		BA756AAC1DD996F500AFCB55 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
 				BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */,
+				BAE94ADD1DDCC34200B203A5 /* libpq.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +164,7 @@
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BAB439E71DC4572200C501DC /* DisposableBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBase.swift; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAE94ADC1DDCC34200B203A5 /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpq.framework; path = TitanKit/libpq.framework; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
 		BAEE19251DAE989F00C3CD3E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 				BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */,
 				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
 				BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */,
+				BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */,
 				BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +608,7 @@
 		BAEFE7B01D97BE810081A5FE = {
 			isa = PBXGroup;
 			children = (
+				BAE94ADC1DDCC34200B203A5 /* libpq.framework */,
 				BAEFE7BB1D97BE810081A5FE /* Titan */,
 				BA035FEE1D98C81900B616AB /* TitanTests */,
 				BAEFE7BA1D97BE810081A5FE /* Products */,
@@ -884,7 +889,6 @@
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
-				BA33F9B91DCF3E7300B60952 /* RealmRxActiveRecord.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,

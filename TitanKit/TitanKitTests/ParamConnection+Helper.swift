@@ -15,7 +15,7 @@ extension ConnectionParam {
     /// Valid
     static var validConnectionParam: ConnectionParam {
         get {
-            return ConnectionParam(host: "localhost", port: "5432", options: "", databaseName: "pixai_dashboard_development", user: "feels", password: "feels536")
+            return ConnectionParam(host: "localhost", port: "5432", options: "", databaseName: "feels_v2_development", user: "feels", password: "feels536")
         }
     }
     

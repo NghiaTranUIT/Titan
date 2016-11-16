@@ -34,30 +34,39 @@ public enum ConnectionStatus {
         // Parser
         if status == libpq.CONNECTION_OK {
             self =  .CONNECTION_OK
+            return
         }
         if status == libpq.CONNECTION_BAD {
             self = .CONNECTION_BAD
+            return
         }
         if status == libpq.CONNECTION_STARTED {
             self = .CONNECTION_STARTED
+            return
         }
         if status == libpq.CONNECTION_MADE {
             self = .CONNECTION_MADE
+            return
         }
         if status == libpq.CONNECTION_AWAITING_RESPONSE {
             self = .CONNECTION_AWAITING_RESPONSE
+            return
         }
         if status == libpq.CONNECTION_AUTH_OK {
             self = .CONNECTION_AUTH_OK
+            return
         }
         if status == libpq.CONNECTION_SETENV {
             self = .CONNECTION_SETENV
+            return
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
             self = .CONNECTION_SSL_STARTUP
+            return
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
             self = .CONNECTION_NEEDED
+            return
         }
         self = .UNKNOW
     }

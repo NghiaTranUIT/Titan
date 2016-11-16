@@ -17,6 +17,12 @@ class DatabaseSpec: QuickSpec {
         
         describe("Connection to Database") {
             
+            var database: Database!
+            
+            beforeEach {
+                database = Database()
+            }
+            
             context("Valid localhost database", {
                 
                 it("Success", closure: {
@@ -24,7 +30,7 @@ class DatabaseSpec: QuickSpec {
                     // Valid
                     let validParam = ConnectionParam.validConnectionParam
                     
-                    let result = Database.share.connectDatabase(withParam: validParam)
+                    let result = database.connectDatabase(withParam: validParam)
                     expect(result.connection).toNot(beNil())
                     expect(result.status) == ConnectionStatus.CONNECTION_OK
                     
@@ -38,7 +44,7 @@ class DatabaseSpec: QuickSpec {
                     // invalid
                     let invalidParam = ConnectionParam.invalidConnectionParam
                     
-                    let result = Database.share.connectDatabase(withParam: invalidParam)
+                    let result = database.connectDatabase(withParam: invalidParam)
                     expect(result.connection).to(beNil())
                     expect(result.status) != ConnectionStatus.CONNECTION_OK
                 })

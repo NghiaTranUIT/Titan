@@ -8,6 +8,22 @@
 
 import Foundation
 
-open class QueryResult {
+public struct QueryResult {
     
+    //
+    // MARK: - Variable
+    
+    
+    /// Result Pointer
+    public var resultPtr: OpaquePointer?
+    
+    
+    /// Status
+    
+    
+    //
+    // MARK: - Init
+    public init(_ resultPtr: OpaquePointer?) {
+        self.resultPtr = resultPtr
+    }
 }

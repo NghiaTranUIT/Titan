@@ -26,40 +26,40 @@ public enum ConnectionStatus {
     
     //
     // MARK: - Public
-    public static func getStatus(with connectionPtr: OpaquePointer?) -> ConnectionStatus {
+    public init(_ connectionPtr: OpaquePointer?) {
         
         // Get status
         let status = PQstatus(connectionPtr)
         
         // Parser
         if status == libpq.CONNECTION_OK {
-            return .CONNECTION_OK
+            self =  .CONNECTION_OK
         }
         if status == libpq.CONNECTION_BAD {
-            return .CONNECTION_BAD
+            self = .CONNECTION_BAD
         }
         if status == libpq.CONNECTION_STARTED {
-            return .CONNECTION_STARTED
+            self = .CONNECTION_STARTED
         }
         if status == libpq.CONNECTION_MADE {
-            return .CONNECTION_MADE
+            self = .CONNECTION_MADE
         }
         if status == libpq.CONNECTION_AWAITING_RESPONSE {
-            return .CONNECTION_AWAITING_RESPONSE
+            self = .CONNECTION_AWAITING_RESPONSE
         }
         if status == libpq.CONNECTION_AUTH_OK {
-            return .CONNECTION_AUTH_OK
+            self = .CONNECTION_AUTH_OK
         }
         if status == libpq.CONNECTION_SETENV {
-            return .CONNECTION_SETENV
+            self = .CONNECTION_SETENV
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
-            return .CONNECTION_SSL_STARTUP
+            self = .CONNECTION_SSL_STARTUP
         }
         if status == libpq.CONNECTION_SSL_STARTUP {
-            return .CONNECTION_NEEDED
+            self = .CONNECTION_NEEDED
         }
-        return .UNKNOW
+        self = .UNKNOW
     }
     
     public static func getErrorMessage(with connectionPtr: OpaquePointer?) -> String {

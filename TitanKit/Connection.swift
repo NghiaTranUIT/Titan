@@ -44,6 +44,6 @@ open class Connection {
                                           query.paramFormat,
                                           query.resultFormat.rawValue)
         
-        
+        return QueryResult(queryResultPtr)
     }
 }

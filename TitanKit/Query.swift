@@ -59,7 +59,7 @@ public struct Query {
     
     /// Result format
     public var resultFormat: QueryResultFormat {
-        get {return .binary}
+        get {return .text}
     }
 }
 

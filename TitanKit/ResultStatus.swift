@@ -27,7 +27,7 @@ public enum ResultStatus {
     
     //
     // MARK: - Init
-    public init(resultPtr: OpaquePointer?) {
+    public init(_ resultPtr: OpaquePointer?) {
         
         let status = PQresultStatus(resultPtr)
         
@@ -66,5 +66,9 @@ public enum ResultStatus {
         }
         
         self = .UNKNOW
+    }
+    
+    public static func getErrorMessage(_ resultPtr: OpaquePointer?) -> String {
+        return String(cString: PQerrorMessage(resultPtr))
     }
 }

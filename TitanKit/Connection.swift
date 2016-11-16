@@ -34,6 +34,16 @@ open class Connection {
     
     /// Execute query
     open func execute(query: Query) -> QueryResult {
-        return QueryResult()
+        
+        let queryResultPtr = PQexecParams(self.connectionPtr,
+                                          query.string,
+                                          query.paramCount,
+                                          query.paramType,
+                                          query.paramValue,
+                                          query.paramLength,
+                                          query.paramFormat,
+                                          query.resultFormat.rawValue)
+        
+        
     }
 }

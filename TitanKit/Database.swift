@@ -15,7 +15,7 @@ open class Database {
     // MARK: - Variable
     
     /// Connections pool
-    fileprivate let connections: [Connection] = []
+    fileprivate var connections: [Connection] = []
     
     
     // Share instance
@@ -23,8 +23,14 @@ open class Database {
     
     
     //
-    // MARK: - Public
+    // MARK: - Init
+    deinit {
+        // Close all connection
+        
+    }
     
+    //
+    // MARK: - Public
     
     /// Create Connection to database
     open func connectDatabase(withParam param: ConnectionParam) -> ConnectionResult {
@@ -38,7 +44,25 @@ open class Database {
         // Get status
         let result = ConnectionResult(connectionPtr: connectionPtr)
         
+        // Store
+        if let connection = result.connection {
+            self.connections.append(connection)
+        }
+        
         // Return
         return result
+    }
+}
+
+
+//
+// MARK: - Private
+extension Database {
+    
+    fileprivate func closeAllConnection() {
+        for connection in self.connections {
+            connection.closeConnection()
+        }
+        self.connections.removeAll()
     }
 }

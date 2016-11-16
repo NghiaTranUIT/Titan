@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import libpq
 
 open class Connection {
     
@@ -24,7 +25,15 @@ open class Connection {
     
     //
     // MARK: - Public
-    func execute(query: Query) -> QueryResult {
+    
+    /// Close connection
+    open func closeConnection() {
+        PQfinish(self.connectionPtr)
+    }
+    
+    
+    /// Execute query
+    open func execute(query: Query) -> QueryResult {
         return QueryResult()
     }
 }

@@ -11,6 +11,7 @@
 		BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */; };
 		BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */; };
 		BA1999E41DDC1ED400296441 /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
+		BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E51DDC3BC900296441 /* ConnectionStatus.swift */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
@@ -40,6 +41,7 @@
 		BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSpec.swift; sourceTree = "<group>"; };
 		BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseSpec.swift; sourceTree = "<group>"; };
 		BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParamConnection+Helper.swift"; sourceTree = "<group>"; };
+		BA1999E51DDC3BC900296441 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
 		BACFCC911DDAF89400EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCC941DDAF89400EFB0BA /* TitanKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanKit.h; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				BACFCCBC1DDAFC3800EFB0BA /* Error.swift */,
 				BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */,
 				BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */,
+				BA1999E51DDC3BC900296441 /* ConnectionStatus.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
 				BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */,
+				BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */,
 				BACFCCBD1DDAFC3800EFB0BA /* Error.swift in Sources */,
 				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
 			);

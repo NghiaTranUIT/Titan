@@ -23,6 +23,7 @@ public struct ConnectionResult: Error {
     /// Connection
     public var connection: Connection? = nil
     
+    
     /// Default init
     init() {
         
@@ -31,62 +32,17 @@ public struct ConnectionResult: Error {
     
     /// Init with connection Pointer
     init(connectionPtr: OpaquePointer?) {
-        
-        if connectionPtr != nil {
-            self.status = .UNKNOW
-            self.msgError = "Unknow"
-        }
-        
-        let status = PQstatus(connectionPtr)
-        let msg = String(cString: PQerrorMessage(connectionPtr))
+        let status = ConnectionStatus.getStatus(with: connectionPtr)
+        let msg = ConnectionStatus.getErrorMessage(with: connectionPtr)
+        self.status = status
         self.msgError = msg
         
-        if status == libpq.CONNECTION_OK {
-            self.status =  .CONNECTION_OK
-            let connection = Connection(connectionPtr: connectionPtr!)
-            self.connection = connection
-        }
-        if status == libpq.CONNECTION_BAD {
-            self.status = .CONNECTION_BAD
-        }
-        if status == libpq.CONNECTION_STARTED {
-            self.status = .CONNECTION_STARTED
-        }
-        if status == libpq.CONNECTION_MADE {
-            self.status = .CONNECTION_MADE
-        }
-        if status == libpq.CONNECTION_AWAITING_RESPONSE {
-            self.status = .CONNECTION_AWAITING_RESPONSE
-        }
-        if status == libpq.CONNECTION_AUTH_OK {
-            self.status = .CONNECTION_AUTH_OK
-        }
-        if status == libpq.CONNECTION_SETENV {
-            self.status = .CONNECTION_SETENV
-        }
-        if status == libpq.CONNECTION_SSL_STARTUP {
-            self.status = .CONNECTION_SSL_STARTUP
-        }
-        if status == libpq.CONNECTION_SSL_STARTUP {
-            self.status = .CONNECTION_NEEDED
+        // Init Connection
+        if self.status == .CONNECTION_OK {
+            self.connection = Connection(connectionPtr: connectionPtr!)
         }
     }
     
-    static let unknowStatus = ConnectionResult()
+    public static var unknowStatus: ConnectionResult {get{return ConnectionResult()}}
 }
 
-
-public enum ConnectionStatus {
-    
-    /// State
-    case CONNECTION_OK
-    case CONNECTION_BAD
-    case CONNECTION_STARTED
-    case CONNECTION_MADE
-    case CONNECTION_AWAITING_RESPONSE
-    case CONNECTION_AUTH_OK
-    case CONNECTION_SETENV
-    case CONNECTION_SSL_STARTUP
-    case CONNECTION_NEEDED
-    case UNKNOW
-}

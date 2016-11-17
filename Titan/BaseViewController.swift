@@ -7,13 +7,8 @@
 //
 
 import Cocoa
-import RxSwift
 
 class BaseViewController: NSViewController {
-
-    //
-    // MARK: - Variable
-    let disposeBag = DisposeBag()
     
     //
     // MARK: - View Cycle
@@ -23,13 +18,23 @@ class BaseViewController: NSViewController {
         self.initCommon()
         
         self.setupBinding()
+        
+        self.setupActions()
     }
     
+    
+    /// All common things
     func initCommon() {
         // Do Nothing
     }
     
     func setupBinding() {
+        // Do nothing
+    }
+    
+    
+    /// Setup all action heres
+    func setupActions() {
         // Do nothing
     }
 }

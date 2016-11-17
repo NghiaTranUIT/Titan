@@ -23,8 +23,6 @@ class DetailConnectionsController: BaseViewController {
     
     //
     // MARK: - Variable
-    // View Model
-    let viewModel = DetailConnectionViewModel()
     
     //
     // MARK: - Rx
@@ -33,28 +31,4 @@ class DetailConnectionsController: BaseViewController {
         // Do view setup here.
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.viewModel.active = true
-    }
-    
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-        self.viewModel.active = false
-    }
-    
-    override func setupBinding() {
-        
-        // SSH
-        self.userSSHCheckBox.rx.tap.subscribe { (_) in
-            Logger.info("Tap SSH")
-        }.addDisposableTo(self.disposeBag)
-        
-        // Host Name
-        (self.hostNameTxt.rx.text <-> self.viewModel.hostNameVar).addDisposableTo(self.disposeBag)
-        (self.usernameTxt.rx.text <-> self.viewModel.usernameVar).addDisposableTo(self.disposeBag)
-        (self.passwordTxt.rx.text <-> self.viewModel.passwordVar).addDisposableTo(self.disposeBag)
-        (self.databaseTxt.rx.text <-> self.viewModel.databaseVar).addDisposableTo(self.disposeBag)
-        (self.portTxt.rx.text <-> self.viewModel.portVar).addDisposableTo(self.disposeBag)
-    }
 }

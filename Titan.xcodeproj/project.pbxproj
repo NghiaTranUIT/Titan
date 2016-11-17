@@ -12,6 +12,21 @@
 		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
 		BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA222E571DADF83500834F3E /* ConnectionCell.xib */; };
 		BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E591DADF8A800834F3E /* View+Identifier.swift */; };
+		BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */; };
+		BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */; };
+		BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */; };
+		BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */; };
+		BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */; };
+		BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */; };
+		BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */; };
+		BA320A4B1DDDF54600C0E82B /* ListConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */; };
+		BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */; };
+		BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */; };
+		BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */; };
+		BA320A531DDDF57900C0E82B /* DetailConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */; };
+		BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */; };
+		BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */; };
+		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
 		BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AD1DCF371400B60952 /* RxViewModel.swift */; };
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
@@ -112,6 +127,21 @@
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA222E571DADF83500834F3E /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
 		BA222E591DADF8A800834F3E /* View+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Identifier.swift"; sourceTree = "<group>"; };
+		BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionInteractor.swift; sourceTree = "<group>"; };
+		BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionPresenter.swift; sourceTree = "<group>"; };
+		BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionConfig.swift; sourceTree = "<group>"; };
+		BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionRouter.swift; sourceTree = "<group>"; };
+		BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionPresenter.swift; sourceTree = "<group>"; };
+		BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionInteractor.swift; sourceTree = "<group>"; };
+		BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionConfig.swift; sourceTree = "<group>"; };
+		BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionRouter.swift; sourceTree = "<group>"; };
+		BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionPresenter.swift; sourceTree = "<group>"; };
+		BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionInteractor.swift; sourceTree = "<group>"; };
+		BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionConfig.swift; sourceTree = "<group>"; };
+		BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionRouter.swift; sourceTree = "<group>"; };
+		BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchConnectionsWorker.swift; sourceTree = "<group>"; };
+		BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectConnectionWorker.swift; sourceTree = "<group>"; };
+		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		BA33F9AD1DCF371400B60952 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
 		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -317,6 +347,37 @@
 			name = ConnectionCell;
 			sourceTree = "<group>";
 		};
+		BA320A3E1DDDF4CC00C0E82B /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
+		BA320A451DDDF51C00C0E82B /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */,
+				BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */,
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
+		BA320A541DDDF67700C0E82B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
+		BA320A591DDDFF0000C0E82B /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BA320A5A1DDDFF0A00C0E82B /* Worker.swift */,
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
 		BA33F9AB1DCF370800B60952 /* Github */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +398,7 @@
 		BA33F9B11DCF3E3400B60952 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BA320A591DDDFF0000C0E82B /* Worker */,
 				BA4AFF341DACD41D009AE139 /* Redux */,
 				BA4AFF1F1DAC9772009AE139 /* Extensions */,
 				BA4AFF191DAC967F009AE139 /* Base */,
@@ -399,9 +461,14 @@
 		BA4AFF111DAC925D009AE139 /* List Connections */ = {
 			isa = PBXGroup;
 			children = (
+				BA320A451DDDF51C00C0E82B /* Workers */,
 				BA222E531DADF77A00834F3E /* View */,
 				BA4AFF411DACDDE5009AE139 /* View Model */,
 				BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */,
+				BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */,
+				BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */,
+				BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */,
+				BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */,
 			);
 			name = "List Connections";
 			sourceTree = "<group>";
@@ -409,8 +476,13 @@
 		BA4AFF141DAC9297009AE139 /* Detail Connection */ = {
 			isa = PBXGroup;
 			children = (
+				BA320A541DDDF67700C0E82B /* Worker */,
 				BA68CB411DBDCC410075109D /* View Model */,
 				BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */,
+				BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */,
+				BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */,
+				BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */,
+				BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */,
 			);
 			name = "Detail Connection";
 			sourceTree = "<group>";
@@ -550,7 +622,12 @@
 		BA712E041DC0F1EA00215A94 /* Main Connection */ = {
 			isa = PBXGroup;
 			children = (
+				BA320A3E1DDDF4CC00C0E82B /* Workers */,
 				BA712E071DC0F21300215A94 /* View Model */,
+				BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */,
+				BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */,
+				BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */,
+				BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */,
 				BA712E051DC0F20E00215A94 /* MainConnectionController.swift */,
 			);
 			name = "Main Connection";
@@ -864,6 +941,7 @@
 			files = (
 				BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
+				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
@@ -883,33 +961,47 @@
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BA68CB451DBE00150075109D /* Error.swift in Sources */,
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
+				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
+				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
+				BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */,
+				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
+				BA320A531DDDF57900C0E82B /* DetailConnectionRouter.swift in Sources */,
 				BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
+				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
+				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,
+				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,
+				BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */,
+				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
+				BA320A4B1DDDF54600C0E82B /* ListConnectionRouter.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
+				BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
 				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
+				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,
 				BA679CE81DD7063C0054EB43 /* BaseRealmModel.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
 				BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */,
 				BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */,
+				BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,
 			);

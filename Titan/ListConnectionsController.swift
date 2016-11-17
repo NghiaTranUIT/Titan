@@ -7,34 +7,39 @@
 //
 
 import Cocoa
-import RxSwift
-import RxCocoa
+import ReSwift
+
+protocol ListConnectionsControllerOutput {
+    func fetchConnections(action: FetchConnectionsAction)
+    func selectConnection(action: SelectConnectionAction)
+}
+
+protocol ListConnectionsControllerInput: class {
+    func displayConnections(_ connections: [DatabaseObj])
+}
 
 class ListConnectionsController: BaseViewController {
 
     //
     // MARK: - Variable
-    let viewModel = ListConnectionViewModel()
+    var output: ListConnectionsControllerOutput!
+    
+    // Connection
+    fileprivate var connections: [DatabaseObj] {
+        return []
+    }
+    
     
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var addConnectionBtn: NSButton!
     
+    
     //
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.viewModel.active = true
-    }
-    
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        self.viewModel.active = false
     }
     
     override func initCommon() {
@@ -55,17 +60,11 @@ class ListConnectionsController: BaseViewController {
         self.tableView.doubleAction = #selector(ListConnectionsController.openDatabaseClicked(sender:))
     }
     
-    override func setupBinding() {
+    override func setupActions() {
         
-        // Fetch connections
-        self.viewModel.delegate = self
-        self.viewModel.fetchConnections()
-        
-        // Add new connection
-        self.viewModel.addNewConnection = self.addConnectionBtn.rx.tap.map({ (_) -> DatabaseObj in
-            // Create default db
-            return DatabaseObj.defaultDatabase()
-        })
+        // Fetch all connection
+        let fetchAllConnectionAction = FetchConnectionsAction()
+        self.output.fetchConnections(action: fetchAllConnectionAction)
     }
 }
 
@@ -75,29 +74,30 @@ extension ListConnectionsController {
     @objc fileprivate func openDatabaseClicked(sender: AnyObject) {
         
         // Prevent select multi connections
+        let selectedRow = self.tableView.selectedRow
         guard self.tableView.selectedRow == 1 else {
             return
         }
         
-        // Bind to View model
-        let selectedIndexPath = IndexPath(item: self.tableView.selectedRow, section: 0)
-        let selectedItemObserable = Variable<IndexPath>(selectedIndexPath)
-        self.viewModel.selectedIndexPath = selectedItemObserable.asObservable()
+        // Selection
+        let selectedDb = self.connections[selectedRow]
+        let action = SelectConnectionAction(selectedConnection: selectedDb)
+        self.output.selectConnection(action: action)
     }
 }
 
 
 //
 // MARK: - ViewModel Delegate
-extension ListConnectionsController: ListConnectionViewModelDelegate {
-    func ListConnectionViewModelShouldReload(sender: ListConnectionViewModel) {
+extension ListConnectionsController: ListConnectionsControllerInput {
+    func displayConnections(_ connections: [DatabaseObj]) {
         self.tableView.reloadData()
     }
 }
 
 extension ListConnectionsController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel.numberOfConnection()
+        return self.connections.count
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -115,15 +115,13 @@ extension ListConnectionsController: NSTableViewDelegate {
         }
         
         // Get model
-        let databaseObj = self.viewModel.connection(atRow: row)
+        let databaseObj = self.connections[row]
         return self.connectionListCell(with: databaseObj, for: tableView)
     }
     
     private func connectionListCell(with databaseObj: DatabaseObj, for tableView: NSTableView) -> NSView {
         let cell = tableView.make(withIdentifier: ConnectionCell.identifierView, owner: nil) as! ConnectionCell
-        
         cell.configureCell(with: databaseObj)
-        
         return cell
     }
     

@@ -44,12 +44,13 @@ class ListConnectionViewModel: BaseViewModel {
     func fetchConnections() {
         
         // Fetch List connections
-        let action = GetAllConnectionsAction()
-        mainStore.dispatch(action)
+//        let action = GetAllConnectionsAction()
+//        mainStore.dispatch(action)
     }
     
     override func initBinding() {
         
+        /*
         // Bind Connection -> Table View
         self.connections
             .asObservable()
@@ -84,6 +85,7 @@ class ListConnectionViewModel: BaseViewModel {
             mainStore.dispatch(addAction)
         }
         .addDisposableTo(self.disposeBag)
+ */
     }
 }
 

@@ -25,7 +25,7 @@ extension ConnectionState {
         let disposeBag = DisposeBag()
         
         switch action {
-        case let action as SelectedConnectionAction:
+        case let action as SelectConnectionAction:
             state.selectedConnection.on(.next(action.selectedConnection))
             break
         case let action as AddNewConnectionToListConnectionAction:
@@ -33,7 +33,7 @@ extension ConnectionState {
             currentConnections.append(action.newConnection)
             state.connections.value = currentConnections
             break
-        case _ as GetAllConnectionsAction:
+        case _ as FetchConnectionsAction:
             DatabaseObj.fetchAll()
                 .asDriver(onErrorJustReturn: [])
                 .drive(state.connections)
@@ -50,14 +50,8 @@ extension ConnectionState {
 
 //
 // MARK: - Action
-struct SelectedConnectionAction: Action {
-    var selectedConnection: DatabaseObj
-}
 
 struct AddNewConnectionToListConnectionAction: Action {
     var newConnection: DatabaseObj
 }
 
-struct GetAllConnectionsAction: Action {
-    
-}

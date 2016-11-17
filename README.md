@@ -27,11 +27,13 @@ It's whole new project, I intent to apply what I'm learning.
   
 *   Cross-framework  - supported iOS and macOS too
 *   ReSwift (Redux)
-*   RxSwift + MVVM
+*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding)
+'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
+*   Clearn Swift architecture: VIP model
 *   Networking abstraction layer
 *   Postgresql-driver abstraction layer
 *   Swift 3.0
-*   Core Data
+*   Realm
 *   ...
 
 ## How to build libpg.framework
@@ -50,7 +52,8 @@ Valid  Architecture :  i386  x86_64  armv7  arm64  armv7s
   
 ## Reference
 1. http://blog.benjamin-encz.de/post/real-world-flux-ios/
-  
+2. http://clean-swift.com/clean-swift-ios-architecture/
+
 ## Contact
 
 Vinh Nghia Tran

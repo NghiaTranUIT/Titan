@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.0.1)
+  - Nimble (5.0.0)
   - ObjectMapper (2.1.0)
+  - Quick (0.10.0)
   - Realm (2.0.2):
     - Realm/Headers (= 2.0.2)
   - Realm/Headers (2.0.2)
@@ -20,7 +22,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Nimble (~> 5.0.0)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.1.0`)
+  - Quick (~> 0.10.0)
   - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
   - RxCocoa (= 3.0.0-rc.1)
@@ -59,7 +63,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
   Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
   RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
@@ -69,6 +75,6 @@ SPEC CHECKSUMS:
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 7dcce53389edf37a0ba560d89167bd7465463d64
+PODFILE CHECKSUM: 33cae6e5c80e477dec456246ffbbab3083420b83
 
 COCOAPODS: 1.1.1

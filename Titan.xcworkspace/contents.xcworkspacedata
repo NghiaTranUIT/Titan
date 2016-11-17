@@ -5,6 +5,9 @@
       location = "group:Titan.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:TitanKit/TitanKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -18,16 +18,17 @@ protocol ListConnectionsControllerInput: class {
     func displayConnections(_ connections: [DatabaseObj])
 }
 
+protocol ListConnectionsControllerDataSource {
+    func numberOfConnections() -> Int
+    func connection(at row: Int) -> DatabaseObj
+}
+
 class ListConnectionsController: BaseViewController {
 
     //
     // MARK: - Variable
     var output: ListConnectionsControllerOutput!
-    
-    // Connection
-    fileprivate var connections: [DatabaseObj] {
-        return []
-    }
+    var dataSource: ListConnectionsControllerDataSource!
     
     
     //
@@ -80,7 +81,7 @@ extension ListConnectionsController {
         }
         
         // Selection
-        let selectedDb = self.connections[selectedRow]
+        let selectedDb = self.dataSource.connection(at: selectedRow)
         let action = SelectConnectionAction(selectedConnection: selectedDb)
         self.output.selectConnection(action: action)
     }
@@ -97,7 +98,7 @@ extension ListConnectionsController: ListConnectionsControllerInput {
 
 extension ListConnectionsController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.connections.count
+        return self.dataSource.numberOfConnections()
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -115,7 +116,7 @@ extension ListConnectionsController: NSTableViewDelegate {
         }
         
         // Get model
-        let databaseObj = self.connections[row]
+        let databaseObj = self.dataSource.connection(at: row)
         return self.connectionListCell(with: databaseObj, for: tableView)
     }
     

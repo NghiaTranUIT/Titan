@@ -12,15 +12,11 @@ protocol ListConnectionPresenterInput: ListConnectionInteractorOutput {
     
 }
 
-protocol ListConnectionsPresenterOutput: ListConnectionsControllerInput {
-    
-}
-
 class ListConnectionPresenter {
 
     //
     // MARK: - Variable
-    weak var output: ListConnectionsPresenterOutput!
+    weak var output: ListConnectionsControllerInput!
     fileprivate var connections: [DatabaseObj] = []
     
 }
@@ -31,5 +27,17 @@ extension ListConnectionPresenter: ListConnectionPresenterInput {
     func presentConnections(_ connections: [DatabaseObj]) {
         self.connections = connections
         self.output.displayConnections(connections)
+    }
+}
+
+//
+// MARK: - ListConnectionsControllerDataSource
+extension ListConnectionPresenter: ListConnectionsControllerDataSource {
+    func numberOfConnections() -> Int {
+        return self.connections.count
+    }
+    
+    func connection(at row: Int) -> DatabaseObj {
+        return self.connections[row]
     }
 }

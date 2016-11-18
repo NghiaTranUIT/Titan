@@ -10,4 +10,20 @@ import Cocoa
 
 class ListConnectionConfig: NSObject {
 
+    static let shared = ListConnectionConfig()
+    
+    func configure(viewController: ListConnectionsController) {
+        
+        // Presenter
+        let presenter = ListConnectionPresenter()
+        presenter.output = viewController
+        
+        // Interactor
+        let interactor = ListConnectionInteractor()
+        interactor.output = presenter
+        
+        // View controller
+        viewController.output = interactor
+        viewController.dataSource = presenter
+    }
 }

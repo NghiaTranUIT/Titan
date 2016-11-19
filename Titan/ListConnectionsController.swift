@@ -45,6 +45,11 @@ class ListConnectionsController: BaseViewController {
     }
     
     override func initCommon() {
+        
+        // Configure
+        ListConnectionConfig.shared.configure(viewController: self)
+        
+        // Table View
         self.initTableView()
     }
     
@@ -63,9 +68,7 @@ class ListConnectionsController: BaseViewController {
     }
     
     override func setupActions() {
-        
-        // Configure
-        ListConnectionConfig.shared.configure(viewController: self)
+    
         
         // Fetch all connection
         self.output.fetchConnections()

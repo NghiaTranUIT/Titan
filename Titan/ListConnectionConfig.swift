@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ListConnectionConfig: NSObject {
+class ListConnectionConfig {
 
     static let shared = ListConnectionConfig()
     

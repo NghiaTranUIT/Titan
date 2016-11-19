@@ -10,6 +10,14 @@ import Cocoa
 import RxSwift
 import RxCocoa
 
+protocol DetailConnectionsControllerOutput {
+    func connectConnection(_ connection: DatabaseObj)
+}
+
+protocol DetailConnectionsControllerDataSource: class {
+    var selectedDatabase: DatabaseObj {get}
+}
+
 class DetailConnectionsController: BaseViewController {
 
     //
@@ -20,9 +28,12 @@ class DetailConnectionsController: BaseViewController {
     @IBOutlet weak var databaseTxt: NSTextField!
     @IBOutlet weak var userSSHCheckBox: NSButton!
     @IBOutlet weak var portTxt: NSTextField!
+    @IBOutlet weak var connectBtn: NSButton!
     
     //
     // MARK: - Variable
+    var output: DetailConnectionsControllerOutput!
+    var dataSource: DetailConnectionsControllerDataSource!
     
     //
     // MARK: - Rx
@@ -31,4 +42,28 @@ class DetailConnectionsController: BaseViewController {
         // Do view setup here.
     }
     
+    override func initCommon() {
+        
+        // IBAction
+        self.connectBtn.target = self
+        self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
+    }
+    
+    override func setupActions() {
+        
+    }
+    
+    //
+    // MARK: - IBAction
+    @objc fileprivate func connectConnectionTapped() {
+        self.output.connectConnection(self.dataSource.selectedDatabase)
+    }
+}
+
+//
+// MARK: - DetailConnectionPresenterOutput
+extension DetailConnectionsController: DetailConnectionPresenterOutput {
+    func presentError(with error: NSError) {
+        
+    }
 }

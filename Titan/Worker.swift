@@ -10,6 +10,9 @@ import Cocoa
 import ReSwift
 
 
+typealias WorkerCompletionBlock = (Result<Any>) -> ()
+
+
 //
 // MARK: - Worker
 protocol Worker {
@@ -20,6 +23,22 @@ protocol Worker {
 }
 
 
+//
+// MARK: - Async Worker
+protocol AsyncWorker: Worker {
+    func execute(_ completionBlock: WorkerCompletionBlock?)
+}
+
+
+//
+// MARK: - Sync Worker
+protocol SyncWorker: Worker {
+    func execute()
+}
+
+
+//
+// MARK: - Extension Worker with Init method.
 extension Worker {
     
     init(action: Action) {

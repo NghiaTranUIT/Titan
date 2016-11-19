@@ -795,11 +795,11 @@
             <objects>
                 <viewController id="ud0-9A-E9q" customClass="DetailConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="OL5-Se-uLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="772" height="517"/>
+                        <rect key="frame" x="0.0" y="0.0" width="772" height="557"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="z3w-cW-hXk">
-                                <rect key="frame" x="0.0" y="467" width="772" height="50"/>
+                                <rect key="frame" x="0.0" y="507" width="772" height="50"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7w3-CJ-vGn">
                                         <rect key="frame" x="14" y="15" width="114" height="19"/>
@@ -834,7 +834,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="bGs-Uo-fHe">
-                                <rect key="frame" x="0.0" y="331" width="772" height="136"/>
+                                <rect key="frame" x="0.0" y="371" width="772" height="136"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TdW-ar-ROQ">
                                         <rect key="frame" x="14" y="100" width="76" height="20"/>
@@ -962,7 +962,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="fSs-TQ-PQK">
-                                <rect key="frame" x="0.0" y="281" width="772" height="50"/>
+                                <rect key="frame" x="0.0" y="321" width="772" height="50"/>
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="7qQ-XS-P1F">
                                         <rect key="frame" x="14" y="16" width="46" height="18"/>
@@ -979,7 +979,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Yqv-3R-rL8">
-                                <rect key="frame" x="0.0" y="153" width="772" height="128"/>
+                                <rect key="frame" x="0.0" y="193" width="772" height="128"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ek1-xU-pbj">
                                         <rect key="frame" x="354" y="55" width="65" height="17"/>
@@ -997,7 +997,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="8HL-6q-fgU">
-                                <rect key="frame" x="0.0" y="103" width="772" height="50"/>
+                                <rect key="frame" x="0.0" y="143" width="772" height="50"/>
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="fFJ-7L-sws">
                                         <rect key="frame" x="14" y="16" width="48" height="18"/>
@@ -1014,7 +1014,7 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="WIr-j6-huf">
-                                <rect key="frame" x="0.0" y="0.0" width="772" height="103"/>
+                                <rect key="frame" x="0.0" y="40" width="772" height="103"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wGW-AT-e9f">
                                         <rect key="frame" x="352" y="43" width="68" height="17"/>
@@ -1031,6 +1031,23 @@
                                     <constraint firstAttribute="height" constant="103" id="vJb-FR-zqS"/>
                                 </constraints>
                             </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="onx-oj-e1A">
+                                <rect key="frame" x="0.0" y="0.0" width="772" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-as-Ouf">
+                                        <rect key="frame" x="341" y="2" width="92" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Di3-yP-2v1">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5O6-as-Ouf" firstAttribute="centerX" secondItem="onx-oj-e1A" secondAttribute="centerX" id="78E-t2-r0n"/>
+                                    <constraint firstItem="5O6-as-Ouf" firstAttribute="centerY" secondItem="onx-oj-e1A" secondAttribute="centerY" id="CIN-nC-G5c"/>
+                                    <constraint firstAttribute="height" constant="40" id="hs6-bT-HKF"/>
+                                </constraints>
+                            </customView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fSs-TQ-PQK" secondAttribute="trailing" id="1tO-43-OW5"/>
@@ -1038,7 +1055,9 @@
                             <constraint firstAttribute="trailing" secondItem="Yqv-3R-rL8" secondAttribute="trailing" id="6Ol-3T-cwF"/>
                             <constraint firstItem="WIr-j6-huf" firstAttribute="top" secondItem="8HL-6q-fgU" secondAttribute="bottom" id="9d0-3a-X3I"/>
                             <constraint firstItem="8HL-6q-fgU" firstAttribute="top" secondItem="Yqv-3R-rL8" secondAttribute="bottom" id="9vf-TN-jaP"/>
+                            <constraint firstAttribute="bottom" secondItem="onx-oj-e1A" secondAttribute="bottom" id="ATJ-ax-MKX"/>
                             <constraint firstItem="z3w-cW-hXk" firstAttribute="top" secondItem="OL5-Se-uLZ" secondAttribute="top" id="Bhu-LL-EjL"/>
+                            <constraint firstAttribute="trailing" secondItem="onx-oj-e1A" secondAttribute="trailing" id="GsO-D4-GEH"/>
                             <constraint firstItem="z3w-cW-hXk" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="Je8-rN-GTu"/>
                             <constraint firstItem="WIr-j6-huf" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="KCy-1B-koY"/>
                             <constraint firstAttribute="trailing" secondItem="WIr-j6-huf" secondAttribute="trailing" id="OEo-Dj-2jI"/>
@@ -1046,14 +1065,17 @@
                             <constraint firstItem="8HL-6q-fgU" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="Ug4-Xn-HYM"/>
                             <constraint firstItem="bGs-Uo-fHe" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="Wwq-6G-iTJ"/>
                             <constraint firstItem="Yqv-3R-rL8" firstAttribute="top" secondItem="fSs-TQ-PQK" secondAttribute="bottom" id="bXy-wW-NGc"/>
+                            <constraint firstItem="onx-oj-e1A" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="bw5-EW-LIO"/>
                             <constraint firstItem="fSs-TQ-PQK" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="e1J-6v-Dpa"/>
                             <constraint firstAttribute="trailing" secondItem="bGs-Uo-fHe" secondAttribute="trailing" id="mgt-eq-iP8"/>
                             <constraint firstItem="Yqv-3R-rL8" firstAttribute="leading" secondItem="OL5-Se-uLZ" secondAttribute="leading" id="sSt-Gj-WAx"/>
                             <constraint firstItem="fSs-TQ-PQK" firstAttribute="top" secondItem="bGs-Uo-fHe" secondAttribute="bottom" id="uPS-qp-hr7"/>
                             <constraint firstItem="bGs-Uo-fHe" firstAttribute="top" secondItem="z3w-cW-hXk" secondAttribute="bottom" id="yWQ-Qg-FR0"/>
+                            <constraint firstItem="onx-oj-e1A" firstAttribute="top" secondItem="WIr-j6-huf" secondAttribute="bottom" id="ygF-qo-7rN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectBtn" destination="5O6-as-Ouf" id="7Ds-Iy-OVH"/>
                         <outlet property="databaseTxt" destination="NP8-60-0op" id="bDx-JI-fDR"/>
                         <outlet property="hostNameTxt" destination="m8h-YT-mD5" id="eCf-IJ-AOn"/>
                         <outlet property="passwordTxt" destination="gYU-xt-xcQ" id="WpL-9J-EHZ"/>

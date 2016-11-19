@@ -14,7 +14,9 @@ protocol ListConnectionInteractorInput: ListConnectionsControllerOutput {
 
 protocol ListConnectionInteractorOutput {
     func presentConnections(_ connections: [DatabaseObj])
+    func presentError(_ error: NSError)
 }
+
 
 class ListConnectionInteractor {
     
@@ -29,19 +31,27 @@ class ListConnectionInteractor {
     fileprivate var selecteConnectionWorker: SelectConnectionWorker!
 }
 
+
 //
 // MARK: - ListConnectionInteractorInput
 extension ListConnectionInteractor: ListConnectionInteractorInput {
     
     func fetchConnections(action: FetchConnectionsAction) {
         self.fetchConnectionWorker = FetchConnectionsWorker(action: action)
-        self.fetchConnectionWorker.fetch {[unowned self] (dbs) in
-            self.output.presentConnections(dbs)
+        self.fetchConnectionWorker.execute {[unowned self] (result) in
+            switch result {
+            case .Success(let dbs as [DatabaseObj]):
+                self.output.presentConnections(dbs)
+            case .Failure(let error):
+                self.output.presentError(error as NSError)
+            default:
+                break
+            }
         }
     }
     
     func selectConnection(action: SelectConnectionAction) {
         self.selecteConnectionWorker = SelectConnectionWorker(action: action)
-        self.selecteConnectionWorker.fetch()
+        self.selecteConnectionWorker.execute()
     }
 }

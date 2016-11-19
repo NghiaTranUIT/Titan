@@ -13,7 +13,7 @@ struct SelectConnectionAction: Action {
     var selectedConnection: DatabaseObj
 }
 
-class SelectConnectionWorker: Worker {
+class SelectConnectionWorker: SyncWorker {
     
     var action: Action!
 
@@ -21,7 +21,7 @@ class SelectConnectionWorker: Worker {
         
     }
     
-    func fetch() {
+    func execute() {
         
     }
 }

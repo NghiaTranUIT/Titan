@@ -33,7 +33,7 @@ class DetailConnectionsController: BaseViewController {
     //
     // MARK: - Variable
     var output: DetailConnectionsControllerOutput!
-    var dataSource: DetailConnectionsControllerDataSource!
+    weak var dataSource: DetailConnectionsControllerDataSource!
     
     //
     // MARK: - Rx

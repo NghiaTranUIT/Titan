@@ -21,23 +21,21 @@ struct ConnectionState {
 // MARK: - Reducer
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
-        let state = state ?? ConnectionState()
-        let disposeBag = DisposeBag()
         
+        // Get state
+        let state = state ?? ConnectionState()
+        
+        // Doing
         switch action {
         case let action as SelectConnectionAction:
             state.selectedConnection.on(.next(action.selectedConnection))
             break
-        case let action as AddNewConnectionToListConnectionAction:
+        case let action as AddNewDefaultConnectionAction:
             var currentConnections = state.connections.value
             currentConnections.append(action.newConnection)
             state.connections.value = currentConnections
             break
         case _ as FetchConnectionsAction:
-            DatabaseObj.fetchAll()
-                .asDriver(onErrorJustReturn: [])
-                .drive(state.connections)
-                .addDisposableTo(disposeBag)
             break
         default:
             break
@@ -48,10 +46,5 @@ extension ConnectionState {
 }
 
 
-//
-// MARK: - Action
 
-struct AddNewConnectionToListConnectionAction: Action {
-    var newConnection: DatabaseObj
-}
 

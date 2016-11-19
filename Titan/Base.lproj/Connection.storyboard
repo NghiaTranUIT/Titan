@@ -762,6 +762,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="addNewConnectionTapped:" target="2ek-Ha-6V0" id="yBR-0F-o2P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1035,7 +1038,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="772" height="40"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5O6-as-Ouf">
-                                        <rect key="frame" x="341" y="2" width="92" height="32"/>
+                                        <rect key="frame" x="340" y="2" width="92" height="32"/>
                                         <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Di3-yP-2v1">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>

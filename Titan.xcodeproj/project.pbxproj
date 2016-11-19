@@ -19,11 +19,9 @@
 		BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */; };
 		BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */; };
 		BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */; };
-		BA320A4B1DDDF54600C0E82B /* ListConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */; };
 		BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */; };
 		BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */; };
 		BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */; };
-		BA320A531DDDF57900C0E82B /* DetailConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */; };
 		BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */; };
 		BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */; };
 		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
@@ -35,6 +33,7 @@
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
+		BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
@@ -42,7 +41,6 @@
 		BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF361DACD43C009AE139 /* MainAppState.swift */; };
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
-		BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */; };
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */; };
@@ -55,16 +53,13 @@
 		BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */; };
 		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
 		BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */; };
-		BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */; };
 		BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */; };
 		BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */; };
 		BA679CE81DD7063C0054EB43 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE71DD7063C0054EB43 /* BaseRealmModel.swift */; };
 		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
-		BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */; };
 		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
 		BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E051DC0F20E00215A94 /* MainConnectionController.swift */; };
-		BA712E091DC0F23400215A94 /* MainConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E081DC0F23400215A94 /* MainConnectionViewModel.swift */; };
 		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
 		BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */; };
 		BA8E0BD61DB0DE8200B9BDD7 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */; };
@@ -75,7 +70,6 @@
 		BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */; };
 		BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
-		BAB439E81DC4572200C501DC /* DisposableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB439E71DC4572200C501DC /* DisposableBase.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAE94ADD1DDCC34200B203A5 /* libpq.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -135,11 +129,9 @@
 		BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionPresenter.swift; sourceTree = "<group>"; };
 		BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionInteractor.swift; sourceTree = "<group>"; };
 		BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionConfig.swift; sourceTree = "<group>"; };
-		BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionRouter.swift; sourceTree = "<group>"; };
 		BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionPresenter.swift; sourceTree = "<group>"; };
 		BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionInteractor.swift; sourceTree = "<group>"; };
 		BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionConfig.swift; sourceTree = "<group>"; };
-		BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionRouter.swift; sourceTree = "<group>"; };
 		BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchConnectionsWorker.swift; sourceTree = "<group>"; };
 		BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectConnectionWorker.swift; sourceTree = "<group>"; };
 		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
@@ -152,6 +144,7 @@
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
+		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultConnectionWorker.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -159,7 +152,6 @@
 		BA4AFF361DACD43C009AE139 /* MainAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
-		BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
@@ -174,16 +166,13 @@
 		BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
-		BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
 		BA679CDF1DD6E5910054EB43 /* ActiveRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveRecord.swift; sourceTree = "<group>"; };
 		BA679CE51DD6F2E30054EB43 /* BaseObjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObjectModel.swift; sourceTree = "<group>"; };
 		BA679CE71DD7063C0054EB43 /* BaseRealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
 		BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveObjectRequest.swift; sourceTree = "<group>"; };
-		BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BA712E051DC0F20E00215A94 /* MainConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionController.swift; sourceTree = "<group>"; };
-		BA712E081DC0F23400215A94 /* MainConnectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionViewModel.swift; sourceTree = "<group>"; };
 		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -194,7 +183,6 @@
 		BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLObj.swift; sourceTree = "<group>"; };
 		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
-		BAB439E71DC4572200C501DC /* DisposableBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBase.swift; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE94ADC1DDCC34200B203A5 /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpq.framework; path = TitanKit/libpq.framework; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -279,10 +267,11 @@
 		BA035FC21D97DBA400B616AB /* Source code */ = {
 			isa = PBXGroup;
 			children = (
+				BA4AFF341DACD41D009AE139 /* Redux Store */,
 				BA33F9B11DCF3E3400B60952 /* Shared */,
 				BA4AFF181DAC9678009AE139 /* Models */,
 				BA4AFF171DAC9672009AE139 /* Views */,
-				BA035FC41D97DBB200B616AB /* Controller */,
+				BA035FC41D97DBB200B616AB /* Scene */,
 			);
 			name = "Source code";
 			sourceTree = "<group>";
@@ -299,12 +288,12 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
-		BA035FC41D97DBB200B616AB /* Controller */ = {
+		BA035FC41D97DBB200B616AB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				BA4AFF1E1DAC96AD009AE139 /* Connections */,
 			);
-			name = Controller;
+			name = Scene;
 			sourceTree = "<group>";
 		};
 		BA035FC51D97DBB800B616AB /* Assetes */ = {
@@ -361,6 +350,7 @@
 			children = (
 				BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */,
 				BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */,
+				BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -402,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				BA320A591DDDFF0000C0E82B /* Worker */,
-				BA4AFF341DACD41D009AE139 /* Redux */,
 				BA4AFF1F1DAC9772009AE139 /* Extensions */,
 				BA4AFF191DAC967F009AE139 /* Base */,
 			);
@@ -466,12 +455,10 @@
 			children = (
 				BA320A451DDDF51C00C0E82B /* Workers */,
 				BA222E531DADF77A00834F3E /* View */,
-				BA4AFF411DACDDE5009AE139 /* View Model */,
 				BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */,
 				BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */,
 				BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */,
 				BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */,
-				BA320A4A1DDDF54600C0E82B /* ListConnectionRouter.swift */,
 			);
 			name = "List Connections";
 			sourceTree = "<group>";
@@ -480,12 +467,10 @@
 			isa = PBXGroup;
 			children = (
 				BA320A541DDDF67700C0E82B /* Worker */,
-				BA68CB411DBDCC410075109D /* View Model */,
 				BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */,
 				BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */,
 				BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */,
 				BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */,
-				BA320A521DDDF57900C0E82B /* DetailConnectionRouter.swift */,
 			);
 			name = "Detail Connection";
 			sourceTree = "<group>";
@@ -538,20 +523,18 @@
 			isa = PBXGroup;
 			children = (
 				BA222E591DADF8A800834F3E /* View+Identifier.swift */,
-				BAB439E71DC4572200C501DC /* DisposableBase.swift */,
-				BA679CDC1DD572770054EB43 /* TwoWayBinding.swift */,
 				BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		BA4AFF341DACD41D009AE139 /* Redux */ = {
+		BA4AFF341DACD41D009AE139 /* Redux Store */ = {
 			isa = PBXGroup;
 			children = (
 				BA4AFF351DACD427009AE139 /* State */,
 				BA4AFF3A1DACD4DE009AE139 /* Reducer */,
 			);
-			name = Redux;
+			name = "Redux Store";
 			sourceTree = "<group>";
 		};
 		BA4AFF351DACD427009AE139 /* State */ = {
@@ -569,14 +552,6 @@
 				BA4AFF3B1DACD502009AE139 /* MainReducer.swift */,
 			);
 			name = Reducer;
-			sourceTree = "<group>";
-		};
-		BA4AFF411DACDDE5009AE139 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				BA4AFF3D1DACDB7C009AE139 /* ListConnectionViewModel.swift */,
-			);
-			name = "View Model";
 			sourceTree = "<group>";
 		};
 		BA5E7A451DC5BFF700C06751 /* Font */ = {
@@ -614,34 +589,17 @@
 			name = "Active Record";
 			sourceTree = "<group>";
 		};
-		BA68CB411DBDCC410075109D /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				BA68CB421DBDCC510075109D /* DetailConnectionViewModel.swift */,
-			);
-			name = "View Model";
-			sourceTree = "<group>";
-		};
 		BA712E041DC0F1EA00215A94 /* Main Connection */ = {
 			isa = PBXGroup;
 			children = (
 				BA320A3E1DDDF4CC00C0E82B /* Workers */,
-				BA712E071DC0F21300215A94 /* View Model */,
+				BA712E051DC0F20E00215A94 /* MainConnectionController.swift */,
 				BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */,
 				BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */,
 				BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */,
 				BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */,
-				BA712E051DC0F20E00215A94 /* MainConnectionController.swift */,
 			);
 			name = "Main Connection";
-			sourceTree = "<group>";
-		};
-		BA712E071DC0F21300215A94 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				BA712E081DC0F23400215A94 /* MainConnectionViewModel.swift */,
-			);
-			name = "View Model";
 			sourceTree = "<group>";
 		};
 		BA8E0BCF1DB0D38300B9BDD7 /* Application */ = {
@@ -949,18 +907,15 @@
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
-				BA712E091DC0F23400215A94 /* MainConnectionViewModel.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
-				BA679CDD1DD572770054EB43 /* TwoWayBinding.swift in Sources */,
 				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
 				BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
+				BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
-				BA4AFF3E1DACDB7C009AE139 /* ListConnectionViewModel.swift in Sources */,
-				BAB439E81DC4572200C501DC /* DisposableBase.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BA68CB451DBE00150075109D /* Error.swift in Sources */,
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
@@ -975,7 +930,6 @@
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */,
 				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
-				BA320A531DDDF57900C0E82B /* DetailConnectionRouter.swift in Sources */,
 				BA679CE01DD6E5910054EB43 /* ActiveRecord.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
@@ -987,7 +941,6 @@
 				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,
 				BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */,
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
-				BA320A4B1DDDF54600C0E82B /* ListConnectionRouter.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
@@ -1001,7 +954,6 @@
 				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,
 				BA679CE81DD7063C0054EB43 /* BaseRealmModel.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
-				BA68CB431DBDCC510075109D /* DetailConnectionViewModel.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
 				BA679CE61DD6F2E30054EB43 /* BaseObjectModel.swift in Sources */,
 				BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */,

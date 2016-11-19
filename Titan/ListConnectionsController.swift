@@ -10,12 +10,13 @@ import Cocoa
 import ReSwift
 
 protocol ListConnectionsControllerOutput {
-    func fetchConnections(action: FetchConnectionsAction)
-    func selectConnection(action: SelectConnectionAction)
+    func fetchConnections()
+    func selectConnection(_ connection: DatabaseObj)
+    func addNewConnection()
 }
 
 protocol ListConnectionsControllerInput: class {
-    func displayConnections(_ connections: [DatabaseObj])
+    func reloadData()
 }
 
 protocol ListConnectionsControllerDataSource {
@@ -64,8 +65,11 @@ class ListConnectionsController: BaseViewController {
     override func setupActions() {
         
         // Fetch all connection
-        let fetchAllConnectionAction = FetchConnectionsAction()
-        self.output.fetchConnections(action: fetchAllConnectionAction)
+        self.output.fetchConnections()
+    }
+    
+    @IBAction func addNewConnectionTapped(_ sender: NSButton) {
+        
     }
 }
 
@@ -82,8 +86,7 @@ extension ListConnectionsController {
         
         // Selection
         let selectedDb = self.dataSource.connection(at: selectedRow)
-        let action = SelectConnectionAction(selectedConnection: selectedDb)
-        self.output.selectConnection(action: action)
+        self.output.selectConnection(selectedDb)
     }
 }
 
@@ -91,7 +94,7 @@ extension ListConnectionsController {
 //
 // MARK: - ViewModel Delegate
 extension ListConnectionsController: ListConnectionsControllerInput {
-    func displayConnections(_ connections: [DatabaseObj]) {
+    func reloadData() {
         self.tableView.reloadData()
     }
 }

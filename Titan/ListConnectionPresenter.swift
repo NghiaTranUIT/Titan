@@ -25,13 +25,18 @@ class ListConnectionPresenter {
 // MARK: - ListConnectionPresenterInput
 extension ListConnectionPresenter: ListConnectionPresenterInput {
     
-    internal func presentError(_ error: NSError) {
+    func presentError(_ error: NSError) {
         
     }
 
     func presentConnections(_ connections: [DatabaseObj]) {
         self.connections = connections
-        self.output.displayConnections(connections)
+        self.output.reloadData()
+    }
+    
+    func addNewConnection(_ connection: DatabaseObj) {
+        self.connections.append(connection)
+        self.output.reloadData()
     }
 }
 

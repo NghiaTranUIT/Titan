@@ -64,6 +64,9 @@ class ListConnectionsController: BaseViewController {
     
     override func setupActions() {
         
+        // Configure
+        ListConnectionConfig.shared.configure(viewController: self)
+        
         // Fetch all connection
         self.output.fetchConnections()
     }

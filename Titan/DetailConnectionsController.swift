@@ -50,7 +50,8 @@ class DetailConnectionsController: BaseViewController {
     }
     
     override func setupActions() {
-        
+        // Config
+        DetailConnectionConfig.shared.configure(viewController: self)
     }
     
     //

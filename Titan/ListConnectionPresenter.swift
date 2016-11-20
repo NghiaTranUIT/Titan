@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import RxSwift
 
 protocol ListConnectionPresenterInput: ListConnectionInteractorOutput {
     
@@ -16,9 +17,23 @@ class ListConnectionPresenter {
 
     //
     // MARK: - Variable
-    weak var output: ListConnectionsControllerInput!
-    fileprivate var connections: [DatabaseObj] = []
+    weak var output: ListConnectionsControllerInput! {
+        didSet {
+            self.initCommon()
+        }
+    }
+    private let disposeBad = DisposeBag()
+    fileprivate var connections: Variable<[DatabaseObj]> {
+        return mainStore.state.connectionState.connections
+    }
     
+    /// Obserable
+    fileprivate func initCommon() {
+        self.connections.asObservable().subscribe { (dbs) in
+            self.output.reloadData()
+        }
+        .addDisposableTo(self.disposeBad)
+    }
 }
 
 //
@@ -29,25 +44,16 @@ extension ListConnectionPresenter: ListConnectionPresenterInput {
         
     }
 
-    func presentConnections(_ connections: [DatabaseObj]) {
-        self.connections = connections
-        self.output.reloadData()
-    }
-    
-    func addNewConnection(_ connection: DatabaseObj) {
-        self.connections.append(connection)
-        self.output.reloadData()
-    }
 }
 
 //
 // MARK: - ListConnectionsControllerDataSource
 extension ListConnectionPresenter: ListConnectionsControllerDataSource {
     func numberOfConnections() -> Int {
-        return self.connections.count
+        return self.connections.value.count
     }
     
     func connection(at row: Int) -> DatabaseObj {
-        return self.connections[row]
+        return self.connections.value[row]
     }
 }

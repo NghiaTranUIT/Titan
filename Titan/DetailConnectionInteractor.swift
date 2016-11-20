@@ -30,8 +30,7 @@ class DetailConnectionInteractor {
 // MARK: - DetailConnectionInteractorInput
 extension DetailConnectionInteractor: DetailConnectionInteractorInput {
     func connectConnection(_ connection: DatabaseObj) {
-        let action = ConnectDatabaseAction(selectedDatabase: connection)
-        self.connectDBWorker = ConnectDatabaseWorker(action: action)
+        self.connectDBWorker = ConnectDatabaseWorker()
         self.connectDBWorker.execute().then { db in
             self.output.presentMainAppWithConnection(db)
         }

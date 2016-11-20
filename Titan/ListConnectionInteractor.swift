@@ -13,8 +13,6 @@ protocol ListConnectionInteractorInput: ListConnectionsControllerOutput {
 }
 
 protocol ListConnectionInteractorOutput {
-    func addNewConnection(_ connection: DatabaseObj)
-    func presentConnections(_ connections: [DatabaseObj])
     func presentError(_ error: NSError)
 }
 
@@ -39,30 +37,37 @@ class ListConnectionInteractor {
 extension ListConnectionInteractor: ListConnectionInteractorInput {
     
     func addNewConnection() {
-        let action = CreateNewDefaultConnectionAction()
-        self.addNewConnectionWorker = CreateNewDefaultConnectionWorker(action: action)
-        self.addNewConnectionWorker.execute().then { db in
-            self.output.addNewConnection(db)
+        let worker = CreateNewDefaultConnectionWorker()
+        
+        // Execute
+        worker.execute().then { db -> Void in
+            // Nothing
         }
         .catch { error in
             self.output.presentError(error as NSError)
         }
+        
+        // Save
+        self.addNewConnectionWorker = worker
     }
 
     func fetchConnections() {
-        let action = FetchConnectionsAction()
-        self.fetchConnectionWorker = FetchConnectionsWorker(action: action)
-        self.fetchConnectionWorker.execute().then { dbs in
-            self.output.presentConnections(dbs)
+        let worker = FetchConnectionsWorker()
+        
+        // Execute
+        worker.execute().then { dbs -> Void in
+            // Nothing
         }
         .catch { error in
             self.output.presentError(error as NSError)
         }
+        
+        // Save
+        self.fetchConnectionWorker = worker
     }
     
     func selectConnection(_ connection: DatabaseObj) {
-        let action = SelectConnectionAction(selectedConnection: connection)
-        self.selecteConnectionWorker = SelectConnectionWorker(action: action)
+        self.selecteConnectionWorker = SelectConnectionWorker()
         self.selecteConnectionWorker.execute()
     }
 }

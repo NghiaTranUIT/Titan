@@ -28,6 +28,18 @@ final class DatabaseObj: BaseModel {
     
     
     //
+    // MARK: - Init
+    class func fromDatabaseRealmObj(_ obj: DatabaseRealmObj) -> DatabaseObj {
+        let db = DatabaseObj()
+        db.host = obj.host
+        db.database = obj.database
+        db.port = obj.port
+        db.username = obj.username
+        db.password = obj.password
+        return db
+    }
+    
+    //
     // MARK: - Override
     override func mapping(map: Map) {
         super.mapping(map: map)

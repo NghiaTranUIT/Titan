@@ -29,7 +29,6 @@
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
 		BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */; };
-		BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDB1DAE74F20005A566 /* NetworkManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
@@ -55,7 +54,7 @@
 		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
 		BA679CD71DD2EC250054EB43 /* SSHRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */; };
 		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
-		BA68CB451DBE00150075109D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error.swift */; };
+		BA68CB451DBE00150075109D /* Error+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error+Default.swift */; };
 		BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E021DC0EC6400215A94 /* ConnectionCell.swift */; };
 		BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA712E051DC0F20E00215A94 /* MainConnectionController.swift */; };
 		BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */; };
@@ -136,7 +135,6 @@
 		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseRealmObj.swift; sourceTree = "<group>"; };
-		BA344FDB1DAE74F20005A566 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
@@ -164,7 +162,7 @@
 		BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
 		BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveObjectRequest.swift; sourceTree = "<group>"; };
-		BA68CB441DBE00150075109D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		BA68CB441DBE00150075109D /* Error+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Default.swift"; sourceTree = "<group>"; };
 		BA712E021DC0EC6400215A94 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BA712E051DC0F20E00215A94 /* MainConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionController.swift; sourceTree = "<group>"; };
 		BA8E0BD01DB0D38F00B9BDD7 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
@@ -222,6 +220,7 @@
 		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAE94ADC1DDCC34200B203A5 /* libpq.framework */,
 				BA5350B51DE18F5A0017225E /* PromiseKit.framework */,
 				BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */,
 				BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */,
@@ -417,10 +416,8 @@
 		BA344FD61DAE73830005A566 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BA68CB441DBE00150075109D /* Error.swift */,
-				BAEE19251DAE989F00C3CD3E /* Request.swift */,
 				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
-				BA344FDB1DAE74F20005A566 /* NetworkManager.swift */,
+				BAEE19251DAE989F00C3CD3E /* Request.swift */,
 				BAEE19241DAE987F00C3CD3E /* Request */,
 			);
 			name = Networking;
@@ -513,6 +510,7 @@
 		BA4AFF1F1DAC9772009AE139 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA68CB441DBE00150075109D /* Error+Default.swift */,
 				BA222E591DADF8A800834F3E /* View+Identifier.swift */,
 				BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */,
 			);
@@ -628,7 +626,6 @@
 		BAEFE7B01D97BE810081A5FE = {
 			isa = PBXGroup;
 			children = (
-				BAE94ADC1DDCC34200B203A5 /* libpq.framework */,
 				BAEFE7BB1D97BE810081A5FE /* Titan */,
 				BA035FEE1D98C81900B616AB /* TitanTests */,
 				BAEFE7BA1D97BE810081A5FE /* Products */,
@@ -908,12 +905,11 @@
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
-				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
-				BA68CB451DBE00150075109D /* Error.swift in Sources */,
+				BA68CB451DBE00150075109D /* Error+Default.swift in Sources */,
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,

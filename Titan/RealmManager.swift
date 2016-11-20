@@ -9,6 +9,7 @@
 import Realm
 import RealmSwift
 import PromiseKit
+import Alamofire
 
 final class RealmManager {
     
@@ -36,4 +37,13 @@ final class RealmManager {
             fatalError("Error opening realm: \(error)")
         }
     }()
+    
+    
+    // Fetch all
+    func fetchAll<T: Object>(type: T.Type) -> Promise<Results<T>> {
+        return Promise { fullfll, reject in
+            let results = self.realm.objects(type)
+            fullfll(results)
+        }
+    }
 }

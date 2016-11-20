@@ -35,7 +35,8 @@ extension ConnectionState {
             currentConnections.append(action.newConnection)
             state.connections.value = currentConnections
             break
-        case _ as FetchConnectionsAction:
+        case let action as FetchConnectionsAction:
+            state.connections.value = action.connections
             break
         default:
             break

@@ -13,12 +13,7 @@ import PromiseKit
 //
 // MARK: - Worker
 protocol Worker {
-    
     associatedtype T
-    
-    var action: Action! {get set}
-    
-    init()
 }
 
 
@@ -33,15 +28,4 @@ protocol AsyncWorker: Worker {
 // MARK: - Sync Worker
 protocol SyncWorker: Worker {
     func execute()
-}
-
-
-//
-// MARK: - Extension Worker with Init method.
-extension Worker {
-    
-    init(action: Action) {
-        self.init()
-        self.action = action
-    }
 }

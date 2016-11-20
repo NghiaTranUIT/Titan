@@ -11,21 +11,26 @@ import ReSwift
 import PromiseKit
 
 struct FetchConnectionsAction: Action {
-    
+    var connections: [DatabaseObj]
 }
 
 class FetchConnectionsWorker: AsyncWorker {
     
     typealias T = [DatabaseObj]
     
-    var action: Action!
-    
-    required init() {
-        
-    }
-    
     func execute() -> Promise<T> {
-        return Promise(value: [])
+        return RealmManager.sharedManager.fetchAll(type: DatabaseRealmObj.self)
+            .then { (results) -> Promise<T> in
+                var dbs: T = T()
+                for db in results {
+                    dbs.append(DatabaseObj.fromDatabaseRealmObj(db))
+                }
+                return Promise(value: dbs)
+        }
+        .then(execute: { (dbs) -> Promise<T> in
+            let action = FetchConnectionsAction(connections: dbs)
+            mainStore.dispatch(action)
+            return Promise(value: dbs)
+        })
     }
-    
 }

@@ -8,6 +8,7 @@
 
 import Cocoa
 import ReSwift
+import BrightFutures
 
 struct FetchConnectionsAction: Action {
     
@@ -15,13 +16,16 @@ struct FetchConnectionsAction: Action {
 
 class FetchConnectionsWorker: AsyncWorker {
     
+    typealias T = [DatabaseObj]
+    
     var action: Action!
     
     required init() {
         
     }
     
-    func execute(_ completionBlock: WorkerCompletionBlock?) {
-        
+    func execute() -> Future<Array<DatabaseObj>, NSError> {
+        return Future(value: [])
     }
+    
 }

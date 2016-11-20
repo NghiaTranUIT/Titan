@@ -15,20 +15,20 @@ protocol RealmRxActiveRecord {
     associatedtype E: Object
     
     /// Fetch
-    static func fetchAll() -> Observable<Results<E>>
+    static func fetchAll() -> Future<E, NSError>
     
-    static func first() -> Observable<E>
+    static func first() -> Future<E, NSError>
 }
 
 //
 // MARK: - Active Record
 extension RealmRxActiveRecord {
     
-    static func fetchAll() -> Observable<Results<E>> {
+    static func fetchAll() -> Future<E, NSError> {
         return RealmManager.sharedManager.fetchAll(type: E.self)
     }
     
-    static func first() -> Observable<E> {
+    static func first() -> Future<E, NSError> {
         return RealmManager.sharedManager.first(type: E.self)
     }
 }

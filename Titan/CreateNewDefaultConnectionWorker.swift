@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-
+import BrightFutures
 
 struct CreateNewDefaultConnectionAction: Action {
     
@@ -20,13 +20,15 @@ struct AddNewDefaultConnectionAction: Action {
 
 class CreateNewDefaultConnectionWorker: AsyncWorker {
 
+    typealias T = DatabaseObj
+    
     var action: Action!
     
     required init() {
         
     }
     
-    func execute(_ completionBlock: WorkerCompletionBlock?) {
+    func execute() -> Future<T, NSError> {
         
     }
 }

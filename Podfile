@@ -14,11 +14,8 @@ def important_pods
     pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
     pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :tag => '2.1.0'
     pod 'RxSwift',    '= 3.0.0-rc.1'
-    pod 'RxCocoa', '= 3.0.0-rc.1'
-    pod 'RxOptional', :git => 'https://github.com/RxSwiftCommunity/RxOptional.git', :tag => '3.1.2'
-    pod 'BrightFutures'
+    
     # Realm
-    pod 'RxRealm'
     pod 'RealmSwift'
 end
 

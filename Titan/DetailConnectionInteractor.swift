@@ -32,17 +32,10 @@ extension DetailConnectionInteractor: DetailConnectionInteractorInput {
     func connectConnection(_ connection: DatabaseObj) {
         let action = ConnectDatabaseAction(selectedDatabase: connection)
         self.connectDBWorker = ConnectDatabaseWorker(action: action)
-        self.connectDBWorker.execute {[unowned self] (result) in
-            switch result {
-            case .Success(let db as DatabaseObj):
-                self.output.presentMainAppWithConnection(db)
-                break
-            case .Failure(let error):
-                self.output.presentError(with: error as NSError)
-                break
-            default:
-                break
-            }
+        self.connectDBWorker.execute().onSuccess { db in
+            self.output.presentMainAppWithConnection(db)
+        }.onFailure { (error) in
+            self.output.presentError(with: error as NSError)
         }
     }
 }

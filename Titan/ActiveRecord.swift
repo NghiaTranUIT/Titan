@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RealmSwift
+import BrightFutures
 
 protocol ActiveRecord {
     
@@ -16,15 +17,14 @@ protocol ActiveRecord {
     associatedtype Request: Titan.Request
     
     /// Fetch
-    static func fetchAll() -> Observable<[Self]>
-    static func fetchAllLocal() -> Observable<[Self]>
-    static func fetchAllCloud() -> Observable<[Self]>
-    
+    static func fetchAll() -> Future<[Self], NSError>
+    static func fetchAllLocal() ->  Future<[Self], NSError>
+    static func fetchAllCloud() ->  Future<[Self], NSError>
     
     /// Save
-    func save() -> Observable<Self>
-    func saveLocal() -> Observable<Self>
-    func saveCloud() -> Observable<Self>
+    func save() -> Future<Self, NSError>
+    func saveLocal() -> Future<Self, NSError>
+    func saveCloud() -> Future<Self, NSError>
  
     /*
     /// Convention
@@ -44,46 +44,44 @@ protocol ActiveRecord {
 // MARK: - Active Record - Fetch All
 extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
     
-    static func fetchAll() -> Observable<[Self]> {
+    static func fetchAll() -> Future<[Self], NSError> {
         
+        // Only local
         if UserObj.currentUser.isGuest {
             return self.fetchAllLocal()
         }
         
-        return Observable.concat([self.fetchAllLocal(), self.fetchAllCloud()])
-    }
-    
-    static func fetchAllLocal() -> Observable<[Self]> {
-        return RealmManager.sharedManager
-            .fetchAll(type: Realm.self)
-            .map { (result: Results<Realm>) -> [Self] in
-                var models: [Self] = []
-                for i in result {
-                    //TODO: Fix as! Self
-                    // The problem is:
-                    // There is no way to check if the class A (which conform from HypeObject)
-                    // And class B (which conform Object & ObjectModelConvertible
-                    // is same class in Runtime
-                    // => Hot-fix => Force cast to self
-                    // If not -> Can't add to models
-                    let obj = i.toObjectModel() as! Self
-                    models.append(obj)
-                }
-                return models
+        // Local + cloud
+        let futures = [self.fetchAllLocal(), self.fetchAllCloud()]
+        return futures.sequence().map { results in
+            return results[0] + results[1]
         }
     }
     
-    static func fetchAllCloud() -> Observable<[Self]> {
-        return Request()
-            .toAlamofireObservable()
-            .map({ (result) -> [Self] in
-                switch result {
-                case .Failure(_):
-                    return []
-                case .Success(let databases):
-                    return databases as! [Self]
-                }
-            })
+    static func fetchAllLocal() ->  Future<[Self], NSError> {
+        return RealmManager.sharedManager.fetchAll(type: Realm.self)
+        .map({ (result) -> [Self] in
+            var models: [Self] = []
+            for i in result {
+                //TODO: Fix as! Self
+                // The problem is:
+                // There is no way to check if the class A (which conform from HypeObject)
+                // And class B (which conform Object & ObjectModelConvertible
+                // is same class in Runtime
+                // => Hot-fix => Force cast to self
+                // If not -> Can't add to models
+                let obj = i.toObjectModel() as! Self
+                models.append(obj)
+            }
+            return models
+        })
+    }
+    
+    static func fetchAllCloud() ->  Future<[Self], NSError> {
+        return Request().toAlamofireObservable()
+        .map({ (dbs) -> [Self] in
+            return dbs as! [Self]
+        })
     }
 }
 
@@ -92,16 +90,17 @@ extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
 // MARK: - Active Recored - Save
 extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
     
-    func save() -> Observable<Self> {
+    func save() -> Future<Self, NSError> {
         // Is Guest
         if UserObj.currentUser.isGuest {
             return self.saveLocal()
         }
 
-        return Observable.concat([self.saveLocal(), self.saveCloud()])
+        // Local + cloud
+        
     }
     
-    func saveLocal() -> Observable<Self> {
+    func saveLocal() -> Future<Self, NSError> {
         let realmObj = self.toRealmObject()
         return RealmManager.sharedManager
             .save(obj: realmObj)
@@ -110,7 +109,7 @@ extension ActiveRecord where Self: BaseObjectModel & BaseRealmModelConvertible {
             })
     }
     
-    func saveCloud() -> Observable<Self> {
+    func saveCloud() -> Future<Self, NSError> {
         return Request()
             .toAlamofireObservable()
             .map({ (_) -> Self in

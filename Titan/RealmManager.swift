@@ -7,8 +7,8 @@
 //
 
 import Realm
-import RxSwift
 import RealmSwift
+import BrightFutures
 
 final class RealmManager {
     
@@ -42,33 +42,37 @@ final class RealmManager {
     // MARK: - Public
     
     /// Fetch all
-    func fetchAll<T: Object>(type: T.Type) -> Observable<Results<T>> {
+    func fetchAll<T: Object>(type: T.Type) -> Future<T, NSError> {
         let result = self.realm.objects(type)
-        return Observable.just(result)
+        return Future { complete in
+            complete(.success(result))
+        }
     }
     
     
     /// First
-    func first<T: Object>(type: T.Type) -> Observable<T> {
+    func first<T: Object>(type: T.Type) -> Future<T, NSError> {
         guard let firstObj = self.realm.objects(type).first else {
-            return Observable.empty()
+            return Future { complete in
+                complete(.success(nil))
+            }
         }
-        return Observable.just(firstObj)
+        return Future { complete in
+            complete(.success(firstObj))
+        }
     }
     
     
     /// Save
-    func save<T: Object>(obj: T) -> Observable<T> {
-        return Observable.create({[unowned self] (obs) -> Disposable in
+    func save<T: Object>(obj: T) -> Future<T, NSError> {
+        
+        return Future { complete in
             
             try! self.realm.write {
                 self.realm.add(obj)
             }
             
-            obs.onNext(obj)
-            obs.onCompleted()
-            
-            return Disposables.create()
-        })
+            complete(.success())
+        }
     }
 }

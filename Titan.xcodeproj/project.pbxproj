@@ -42,6 +42,7 @@
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
+		BA5350B61DE18F5A0017225E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5350B51DE18F5A0017225E /* PromiseKit.framework */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */; };
 		BA5E7A4D1DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */; };
@@ -79,7 +80,6 @@
 		BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* Request.swift */; };
 		BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */; };
 		BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */; };
-		BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE192D1DAE9F9000C3CD3E /* Result.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
@@ -153,6 +153,7 @@
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
 		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		BA5350B51DE18F5A0017225E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 		BAEE19251DAE989F00C3CD3E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchListConnectionsRequest.swift; sourceTree = "<group>"; };
 		BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
-		BAEE192D1DAE9F9000C3CD3E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +218,7 @@
 				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
 				BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */,
 				BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */,
+				BA5350B61DE18F5A0017225E /* PromiseKit.framework in Frameworks */,
 				BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +229,7 @@
 		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA5350B51DE18F5A0017225E /* PromiseKit.framework */,
 				BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */,
 				BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */,
 				BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */,
@@ -425,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				BA68CB441DBE00150075109D /* Error.swift */,
-				BAEE192D1DAE9F9000C3CD3E /* Result.swift */,
 				BAEE19251DAE989F00C3CD3E /* Request.swift */,
 				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
 				BA344FDB1DAE74F20005A566 /* NetworkManager.swift */,
@@ -727,6 +728,7 @@
 				BA8E0BD21DB0DE2C00B9BDD7 /* ShellScript */,
 				BA8294B91DD83BC600127F54 /* ShellScript */,
 				BA756AAC1DD996F500AFCB55 /* Embed Frameworks */,
+				BA5350B71DE18F680017225E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -744,7 +746,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = fe;
 				TargetAttributes = {
 					BA035FEC1D98C81900B616AB = {
@@ -859,6 +861,20 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BA5350B71DE18F680017225E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/PromiseKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		BA8294B91DD83BC600127F54 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -912,7 +928,6 @@
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
 				BA344FDC1DAE74F20005A566 /* NetworkManager.swift in Sources */,
-				BAEE192E1DAE9F9000C3CD3E /* Result.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
@@ -1115,6 +1130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1125,6 +1141,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TitanKit",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -1139,6 +1156,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1149,6 +1167,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TitanKit",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

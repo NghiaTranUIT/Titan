@@ -15,6 +15,8 @@ struct SelectConnectionAction: Action {
 
 class SelectConnectionWorker: SyncWorker {
     
+    typealias T = DatabaseObj
+    
     var action: Action!
 
     required init() {

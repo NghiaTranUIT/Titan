@@ -8,14 +8,13 @@
 
 import Cocoa
 import ReSwift
-
-
-typealias WorkerCompletionBlock = (Result<Any>) -> ()
-
+import BrightFutures
 
 //
 // MARK: - Worker
 protocol Worker {
+    
+    associatedtype T
     
     var action: Action! {get set}
     
@@ -26,7 +25,7 @@ protocol Worker {
 //
 // MARK: - Async Worker
 protocol AsyncWorker: Worker {
-    func execute(_ completionBlock: WorkerCompletionBlock?)
+    func execute() -> Future<T, NSError>
 }
 
 

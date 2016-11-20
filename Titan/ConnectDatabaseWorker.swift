@@ -8,6 +8,7 @@
 
 import Cocoa
 import ReSwift
+import BrightFutures
 
 struct ConnectDatabaseAction: Action {
     var selectedDatabase: DatabaseObj!
@@ -15,13 +16,15 @@ struct ConnectDatabaseAction: Action {
 
 class ConnectDatabaseWorker: AsyncWorker {
 
+    typealias T = DatabaseObj
+    
     var action: Action!
     
     required init() {
         
     }
     
-    func execute(_ completionBlock: WorkerCompletionBlock?) {
-        
+    func execute() -> Future<T, NSError> {
+        return Future(error: NSError.unknowError())
     }
 }

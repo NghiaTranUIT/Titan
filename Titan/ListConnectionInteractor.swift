@@ -41,9 +41,10 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
     func addNewConnection() {
         let action = CreateNewDefaultConnectionAction()
         self.addNewConnectionWorker = CreateNewDefaultConnectionWorker(action: action)
-        self.addNewConnectionWorker.execute().onSuccess { db in
+        self.addNewConnectionWorker.execute().then { db in
             self.output.addNewConnection(db)
-        }.onFailure { error in
+        }
+        .catch { error in
             self.output.presentError(error as NSError)
         }
     }
@@ -51,10 +52,10 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
     func fetchConnections() {
         let action = FetchConnectionsAction()
         self.fetchConnectionWorker = FetchConnectionsWorker(action: action)
-        self.fetchConnectionWorker.execute().onSuccess { dbs in
+        self.fetchConnectionWorker.execute().then { dbs in
             self.output.presentConnections(dbs)
         }
-        .onFailure { error in
+        .catch { error in
             self.output.presentError(error as NSError)
         }
     }

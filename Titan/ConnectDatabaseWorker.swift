@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-import BrightFutures
+import PromiseKit
 
 struct ConnectDatabaseAction: Action {
     var selectedDatabase: DatabaseObj!
@@ -24,7 +24,7 @@ class ConnectDatabaseWorker: AsyncWorker {
         
     }
     
-    func execute() -> Future<T, NSError> {
-        return Future(error: NSError.unknowError())
+    func execute() -> Promise<T> {
+        return Promise(value: T())
     }
 }

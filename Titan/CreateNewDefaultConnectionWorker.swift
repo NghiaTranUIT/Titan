@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-import BrightFutures
+import PromiseKit
 
 struct CreateNewDefaultConnectionAction: Action {
     
@@ -28,7 +28,7 @@ class CreateNewDefaultConnectionWorker: AsyncWorker {
         
     }
     
-    func execute() -> Future<T, NSError> {
-        
+    func execute() -> Promise<T> {
+        return Promise(value: T())
     }
 }

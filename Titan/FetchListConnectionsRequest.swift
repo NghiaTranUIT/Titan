@@ -8,7 +8,6 @@
 
 import Cocoa
 import RxSwift
-import RxCocoa
 import Alamofire
 import ReSwift
 

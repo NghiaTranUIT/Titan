@@ -10,7 +10,7 @@ import Cocoa
 import ReSwift
 import Alamofire
 import ObjectMapper
-import BrightFutures
+import PromiseKit
 
 //
 // MARK: - Request protocol
@@ -30,7 +30,7 @@ protocol Request: Action, URLRequestConvertible {
     
     var parameterEncoding: ParameterEncoding {get}
     
-    func toAlamofireObservable() -> Future<T, NSError>
+    func toAlamofireObservable() -> Promise<T>
     
     init()
 }
@@ -92,11 +92,11 @@ extension Request {
         }
     }
     
-    func toAlamofireObservable() -> Future<T, NSError> {
+    func toAlamofireObservable() -> Promise<T> {
         
-        return Future { complete in
+        return Promise { fulfill, reject in
             guard let urlRequest = try? self.asURLRequest() else {
-                complete(.failure(NSError.unknowError()))
+                reject(NSError.unknowError())
                 return
             }
             
@@ -107,19 +107,19 @@ extension Request {
                     
                     // Check error
                     if let error = response.result.error {
-                        complete(.failure(error as NSError))
+                        reject(error as NSError)
                         return
                     }
                     
                     // Check Response
                     guard let data = response.result.value else {
-                        complete(.failure(NSError.jsonMapperError()))
+                        reject(NSError.jsonMapperError())
                         return
                     }
                     
                     // Parse here
                     let result = JSONDecoder.shared.decodeObject(data) as! T
-                    complete(.success(result))
+                    fulfill(result)
                 })
         }
     }

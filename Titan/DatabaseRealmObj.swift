@@ -11,6 +11,7 @@ import RealmSwift
 
 class DatabaseRealmObj: Object {
     
+    
     //
     // MARK: - Variable
     dynamic var name: String!
@@ -24,6 +25,7 @@ class DatabaseRealmObj: Object {
     dynamic var ssl: SSLRealmObj?
     dynamic var ssh: SSHRealmObj?
     
+    
     //
     // MARK: - Public
     func convertToModelObj() -> DatabaseObj {
@@ -31,26 +33,3 @@ class DatabaseRealmObj: Object {
     }
 }
 
-
-//
-// MARK: - Base Realm model protocol
-extension DatabaseRealmObj: BaseRealmModel { }
-
-
-//
-// MARK: - Object Model Convertible
-extension DatabaseRealmObj: ObjectModelConvertible {
-    
-    typealias E = DatabaseObj
-
-    func toObjectModel() -> E {
-        let db = E()
-        
-        db.name = self.name
-        db.host = self.host
-        db.password = self.password
-        db.port = self.port
-        
-        return db
-    }
-}

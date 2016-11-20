@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-import BrightFutures
+import PromiseKit
 
 //
 // MARK: - Worker
@@ -25,7 +25,7 @@ protocol Worker {
 //
 // MARK: - Async Worker
 protocol AsyncWorker: Worker {
-    func execute() -> Future<T, NSError>
+    func execute() -> Promise<T>
 }
 
 

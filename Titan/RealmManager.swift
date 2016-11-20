@@ -8,7 +8,7 @@
 
 import Realm
 import RealmSwift
-import BrightFutures
+import PromiseKit
 
 final class RealmManager {
     
@@ -36,43 +36,4 @@ final class RealmManager {
             fatalError("Error opening realm: \(error)")
         }
     }()
-    
-    
-    //
-    // MARK: - Public
-    
-    /// Fetch all
-    func fetchAll<T: Object>(type: T.Type) -> Future<T, NSError> {
-        let result = self.realm.objects(type)
-        return Future { complete in
-            complete(.success(result))
-        }
-    }
-    
-    
-    /// First
-    func first<T: Object>(type: T.Type) -> Future<T, NSError> {
-        guard let firstObj = self.realm.objects(type).first else {
-            return Future { complete in
-                complete(.success(nil))
-            }
-        }
-        return Future { complete in
-            complete(.success(firstObj))
-        }
-    }
-    
-    
-    /// Save
-    func save<T: Object>(obj: T) -> Future<T, NSError> {
-        
-        return Future { complete in
-            
-            try! self.realm.write {
-                self.realm.add(obj)
-            }
-            
-            complete(.success())
-        }
-    }
 }

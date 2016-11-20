@@ -12,6 +12,7 @@ import RxSwift
 
 final class DatabaseObj: BaseModel {
 
+    
     //
     // MARK: - Variable
     var name: String! = "New Connection"
@@ -24,6 +25,7 @@ final class DatabaseObj: BaseModel {
     var saveToKeychain: Bool! = false
     var ssl: SSLObj?
     var ssh: SSHObj?
+    
     
     //
     // MARK: - Override
@@ -51,39 +53,3 @@ final class DatabaseObj: BaseModel {
         return db
     }
 }
-
-
-/// Base Class protocol
-extension DatabaseObj: BaseObjectModel {}
-
-
-//
-// MARK: - Active recoder
-extension DatabaseObj: ActiveRecord {
-    typealias Realm = DatabaseRealmObj
-    typealias Request = FetchListConnectionsRequest
-}
-
-//
-// MARK: - Realm Model Convertible
-extension DatabaseObj: BaseRealmModelConvertible {
-    
-    /// Kind of ream obj
-    typealias E = DatabaseRealmObj
-    
-    
-    /// Convert
-    func toRealmObject() -> E {
-        let db = E()
-        db.name = self.name
-        db.host = self.host
-        db.user = self.user.toRealmObject()
-        db.password = self.password
-        db.database = self.database
-        db.port = self.port
-        db.saveToKeychain = self.saveToKeychain
-        return db
-    }
-}
-
-

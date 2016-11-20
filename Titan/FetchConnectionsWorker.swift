@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-import BrightFutures
+import PromiseKit
 
 struct FetchConnectionsAction: Action {
     
@@ -24,8 +24,8 @@ class FetchConnectionsWorker: AsyncWorker {
         
     }
     
-    func execute() -> Future<Array<DatabaseObj>, NSError> {
-        return Future(value: [])
+    func execute() -> Promise<T> {
+        return Promise(value: [])
     }
     
 }

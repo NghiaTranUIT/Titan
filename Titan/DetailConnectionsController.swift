@@ -8,7 +8,6 @@
 
 import Cocoa
 import RxSwift
-import RxCocoa
 
 protocol DetailConnectionsControllerOutput {
     func connectConnection(_ connection: DatabaseObj)

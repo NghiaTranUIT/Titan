@@ -15,15 +15,13 @@ struct SelectConnectionAction: Action {
 
 class SelectConnectionWorker: SyncWorker {
     
-    typealias T = DatabaseObj
+    private var selectedDb: DatabaseObj!
     
-    var action: Action!
-
-    required init() {
-        
+    init(selectedDb: DatabaseObj) {
+        self.selectedDb = selectedDb
     }
-    
     func execute() {
-        
+        let action = SelectConnectionAction(selectedConnection: self.selectedDb)
+        mainStore.dispatch(action)
     }
 }

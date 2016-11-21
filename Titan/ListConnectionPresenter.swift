@@ -24,7 +24,7 @@ class ListConnectionPresenter {
     }
     private let disposeBad = DisposeBag()
     fileprivate var connections: Variable<[DatabaseObj]> {
-        return mainStore.state.connectionState.connections
+        return mainStore.state.connectionState!.connections
     }
     
     /// Obserable

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11761"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Connection Controller-->
+        <scene sceneID="LEe-Wu-5tb">
+            <objects>
+                <tabViewController storyboardIdentifier="MainTabConnectionController" selectedTabViewItemIndex="0" id="rmG-BW-pug" customClass="MainTabConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="Localhost" id="pnK-6k-Rs6"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="0We-vD-ZP2">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <tabViewItems/>
+                    </tabView>
+                    <connections>
+                        <segue destination="T7I-Bu-PaV" kind="relationship" relationship="tabItems" id="qbF-Hu-cJ5"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="mAw-0T-QVE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="146"/>
+        </scene>
+        <!--Detail Tab Connection Controller-->
+        <scene sceneID="hmH-f0-UEn">
+            <objects>
+                <splitViewController storyboardIdentifier="DetailTabConnectionController" id="T7I-Bu-PaV" customClass="DetailTabConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Lxz-ul-Iqj"/>
+                        <splitViewItem id="1NZ-cO-1i1"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="0y1-5H-LQK">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="rVS-JG-b1f" kind="relationship" relationship="splitItems" id="cVi-Az-eQ6"/>
+                        <segue destination="f1b-Rk-4KO" kind="relationship" relationship="splitItems" id="4jC-9n-Q05"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="4bb-yY-ZVg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="493" y="104"/>
+        </scene>
+        <!--Column Database Controller-->
+        <scene sceneID="iPd-IQ-P1x">
+            <objects>
+                <viewController storyboardIdentifier="ColumnDatabaseController" id="rVS-JG-b1f" customClass="ColumnDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ty7-hQ-5eb">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="xJ1-8l-5gY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1163" y="-77"/>
+        </scene>
+        <!--Data Database Controller-->
+        <scene sceneID="lKs-2O-UdL">
+            <objects>
+                <viewController storyboardIdentifier="DataDatabaseController" id="f1b-Rk-4KO" customClass="DataDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="T1p-hO-YF2">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="fK4-ih-8Q9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1163" y="284"/>
+        </scene>
+    </scenes>
+</document>

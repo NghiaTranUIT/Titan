@@ -10,10 +10,6 @@ import Cocoa
 import ReSwift
 import PromiseKit
 
-struct CreateNewDefaultConnectionAction: Action {
-    
-}
-
 struct AddNewDefaultConnectionAction: Action {
     var newConnection: DatabaseObj
 }
@@ -22,13 +18,10 @@ class CreateNewDefaultConnectionWorker: AsyncWorker {
 
     typealias T = DatabaseObj
     
-    var action: Action!
-    
-    required init() {
-        
-    }
-    
     func execute() -> Promise<T> {
+        let defaultDb = DatabaseObj.defaultDatabase()
+        let action = AddNewDefaultConnectionAction(newConnection: defaultDb)
+        mainStore.dispatch(action)
         return Promise(value: T())
     }
 }

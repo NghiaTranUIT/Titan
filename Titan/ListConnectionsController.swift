@@ -75,7 +75,7 @@ class ListConnectionsController: BaseViewController {
     }
     
     @IBAction func addNewConnectionTapped(_ sender: NSButton) {
-        
+        self.output.addNewConnection()
     }
 }
 

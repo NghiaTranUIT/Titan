@@ -67,7 +67,7 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
     }
     
     func selectConnection(_ connection: DatabaseObj) {
-        self.selecteConnectionWorker = SelectConnectionWorker()
+        self.selecteConnectionWorker = SelectConnectionWorker(selectedDb: connection)
         self.selecteConnectionWorker.execute()
     }
 }

@@ -69,6 +69,19 @@
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */; };
+		BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */; };
+		BAD0D38A1DE2AEF10081F28F /* DetailTabConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */; };
+		BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */; };
+		BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D38D1DE2AF6C0081F28F /* ColumnDatabaseController.swift */; };
+		BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3911DE2B08E0081F28F /* ColumnDatabaseInteractor.swift */; };
+		BAD0D3941DE2B0970081F28F /* ColumnDatabasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3931DE2B0970081F28F /* ColumnDatabasePresenter.swift */; };
+		BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */; };
+		BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */; };
+		BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */; };
+		BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39D1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift */; };
+		BAD0D3A01DE2B0FB0081F28F /* MainTabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39F1DE2B0FB0081F28F /* MainTabState.swift */; };
+		BAD0D3A21DE2B1050081F28F /* DetailTabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3A11DE2B1050081F28F /* DetailTabState.swift */; };
 		BAE94ADD1DDCC34200B203A5 /* libpq.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
@@ -176,6 +189,19 @@
 		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
+		BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabConnectionController.swift; sourceTree = "<group>"; };
+		BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabConnectionController.swift; sourceTree = "<group>"; };
+		BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseController.swift; sourceTree = "<group>"; };
+		BAD0D38D1DE2AF6C0081F28F /* ColumnDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseController.swift; sourceTree = "<group>"; };
+		BAD0D3911DE2B08E0081F28F /* ColumnDatabaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseInteractor.swift; sourceTree = "<group>"; };
+		BAD0D3931DE2B0970081F28F /* ColumnDatabasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabasePresenter.swift; sourceTree = "<group>"; };
+		BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseInteractor.swift; sourceTree = "<group>"; };
+		BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabasePresenter.swift; sourceTree = "<group>"; };
+		BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseConfig.swift; sourceTree = "<group>"; };
+		BAD0D39D1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseConfig.swift; sourceTree = "<group>"; };
+		BAD0D39F1DE2B0FB0081F28F /* MainTabState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabState.swift; sourceTree = "<group>"; };
+		BAD0D3A11DE2B1050081F28F /* DetailTabState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabState.swift; sourceTree = "<group>"; };
 		BAE94ADC1DDCC34200B203A5 /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpq.framework; path = TitanKit/libpq.framework; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
@@ -285,7 +311,8 @@
 		BA035FC41D97DBB200B616AB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				BA4AFF1E1DAC96AD009AE139 /* Connections */,
+				BAD0D37F1DE2ADD40081F28F /* Detail */,
+				BA4AFF1E1DAC96AD009AE139 /* Connections List */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -302,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEFE7C21D97BE810081A5FE /* Connection.storyboard */,
+				BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -497,14 +525,14 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
-		BA4AFF1E1DAC96AD009AE139 /* Connections */ = {
+		BA4AFF1E1DAC96AD009AE139 /* Connections List */ = {
 			isa = PBXGroup;
 			children = (
 				BA712E041DC0F1EA00215A94 /* Main Connection */,
 				BA4AFF111DAC925D009AE139 /* List Connections */,
 				BA4AFF141DAC9297009AE139 /* Detail Connection */,
 			);
-			name = Connections;
+			name = "Connections List";
 			sourceTree = "<group>";
 		};
 		BA4AFF1F1DAC9772009AE139 /* Extensions */ = {
@@ -531,6 +559,8 @@
 			children = (
 				BA4AFF361DACD43C009AE139 /* MainAppState.swift */,
 				BA4AFF381DACD489009AE139 /* ConnectionState.swift */,
+				BAD0D39F1DE2B0FB0081F28F /* MainTabState.swift */,
+				BAD0D3A11DE2B1050081F28F /* DetailTabState.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -604,6 +634,71 @@
 				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
 			);
 			name = "App Version";
+			sourceTree = "<group>";
+		};
+		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BAD0D3821DE2AE4C0081F28F /* Main */,
+				BAD0D3851DE2AE750081F28F /* Tab */,
+				BAD0D3871DE2AEBA0081F28F /* Column Database */,
+				BAD0D3881DE2AEC70081F28F /* Data Database */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		BAD0D3821DE2AE4C0081F28F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		BAD0D3851DE2AE750081F28F /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */,
+			);
+			name = Tab;
+			sourceTree = "<group>";
+		};
+		BAD0D3871DE2AEBA0081F28F /* Column Database */ = {
+			isa = PBXGroup;
+			children = (
+				BAD0D3951DE2B09A0081F28F /* Workers */,
+				BAD0D38D1DE2AF6C0081F28F /* ColumnDatabaseController.swift */,
+				BAD0D3911DE2B08E0081F28F /* ColumnDatabaseInteractor.swift */,
+				BAD0D3931DE2B0970081F28F /* ColumnDatabasePresenter.swift */,
+				BAD0D39D1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift */,
+			);
+			name = "Column Database";
+			sourceTree = "<group>";
+		};
+		BAD0D3881DE2AEC70081F28F /* Data Database */ = {
+			isa = PBXGroup;
+			children = (
+				BAD0D39A1DE2B0BD0081F28F /* Worker */,
+				BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */,
+				BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */,
+				BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */,
+				BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */,
+			);
+			name = "Data Database";
+			sourceTree = "<group>";
+		};
+		BAD0D3951DE2B09A0081F28F /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Workers;
+			sourceTree = "<group>";
+		};
+		BAD0D39A1DE2B0BD0081F28F /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Worker;
 			sourceTree = "<group>";
 		};
 		BAEE191F1DAE7BE100C3CD3E /* Model Object */ = {
@@ -780,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
+				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */,
 				BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */,
@@ -903,28 +999,37 @@
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
+				BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */,
+				BAD0D38A1DE2AEF10081F28F /* DetailTabConnectionController.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
+				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
+				BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BA68CB451DBE00150075109D /* Error+Default.swift in Sources */,
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
+				BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
+				BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */,
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
+				BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */,
 				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
+				BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
+				BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
@@ -933,7 +1038,9 @@
 				BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */,
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
+				BAD0D3941DE2B0970081F28F /* ColumnDatabasePresenter.swift in Sources */,
 				BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */,
+				BAD0D3A21DE2B1050081F28F /* DetailTabState.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */,
@@ -942,6 +1049,7 @@
 				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
 				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
+				BAD0D3A01DE2B0FB0081F28F /* MainTabState.swift in Sources */,
 				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,

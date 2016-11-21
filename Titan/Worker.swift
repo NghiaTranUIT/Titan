@@ -13,13 +13,16 @@ import PromiseKit
 //
 // MARK: - Worker
 protocol Worker {
-    associatedtype T
+    
 }
 
 
 //
 // MARK: - Async Worker
 protocol AsyncWorker: Worker {
+    
+    associatedtype T
+    
     func execute() -> Promise<T>
 }
 

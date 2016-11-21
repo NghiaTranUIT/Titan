@@ -17,6 +17,11 @@ struct MainReducer {
 // MARK: Reducer Protocol
 extension MainReducer: Reducer {
     func handleAction(action: Action, state: MainAppState?) -> MainAppState {
-        return MainAppState(connectionState: ConnectionState.reducer(action: action, state: state?.connectionState))
+        let connectionState = ConnectionState.reducer(action: action, state: state?.connectionState)
+        let mainTabState = MainTabState.reducer(action: action, state: state?.mainTabState)
+        let detailTabState = DetailTabState.reducer(action: action, state: state?.detailTabState)
+        return MainAppState(connectionState: connectionState,
+                            mainTabState: mainTabState,
+                            detailTabState: detailTabState)
     }
 }

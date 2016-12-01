@@ -25,7 +25,7 @@ final class DatabaseObj: BaseModel {
     var saveToKeychain: Bool! = false
     var ssl: SSLObj?
     var ssh: SSHObj?
-    
+    var groupConnection: GroupConnectionObj!
     
     //
     // MARK: - Init
@@ -53,6 +53,7 @@ final class DatabaseObj: BaseModel {
         self.saveToKeychain <- map[Constants.Obj.Database.SaveToKeyChain]
         self.ssl <- map[Constants.Obj.Database.ssl]
         self.ssl <- map[Constants.Obj.Database.ssh]
+        self.groupConnection <- map[Constants.Obj.Database.groupConnection]
     }
     
     class func defaultDatabase() -> DatabaseObj {

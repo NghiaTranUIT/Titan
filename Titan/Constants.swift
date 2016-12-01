@@ -127,6 +127,7 @@ struct Constants {
             static let SaveToKeyChain = "save_to_keychain"
             static let ssl = "ssl"
             static let ssh = "ssh"
+            static let groupConnection = "group_connection"
         }
         
         
@@ -162,6 +163,14 @@ struct Constants {
             static let User = "user"
             static let IndentityFile = "indentity_file"
             static let Port = "port"
+        }
+        
+        //
+        // MARK: - Group Connection
+        struct GroupConnection {
+            static let Name = "name"
+            static let connections = "connections"
+            static let color = "color"
         }
     }
 }

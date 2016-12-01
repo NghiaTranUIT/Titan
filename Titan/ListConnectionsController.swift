@@ -21,7 +21,10 @@ protocol ListConnectionsControllerInput: class {
 
 protocol ListConnectionsControllerDataSource {
     func numberOfConnections() -> Int
-    func connection(at row: Int) -> DatabaseObj
+    func numberOfDatabase(at section: Int) -> Int
+    func database(at indexPath: IndexPath) -> DatabaseObj
+    func groupConnection(at indexPath: IndexPath) -> GroupConnectionObj
+    func convertRowToIndexPath(row: Int) -> IndexPath?
 }
 
 class ListConnectionsController: BaseViewController {
@@ -60,6 +63,7 @@ class ListConnectionsController: BaseViewController {
         self.tableView.delegate = self
         
         // Register
+        self.tableView.registerView(ConnectionGroupCell.self)
         self.tableView.registerView(ConnectionCell.self)
         
         // Trigger selected
@@ -90,8 +94,13 @@ extension ListConnectionsController {
             return
         }
         
-        // Selection
-        let selectedDb = self.dataSource.connection(at: selectedRow)
+        // Convert
+        guard let selectedIndexPath = self.dataSource.convertRowToIndexPath(row: selectedRow) else {
+            return
+        }
+        
+        // Select
+        let selectedDb = self.dataSource.database(at: selectedIndexPath)
         self.output.selectConnection(selectedDb)
     }
 }
@@ -107,7 +116,12 @@ extension ListConnectionsController: ListConnectionsControllerInput {
 
 extension ListConnectionsController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.dataSource.numberOfConnections()
+        var count = 0
+        for section in 0..<self.dataSource.numberOfConnections() {
+            let row = self.dataSource.numberOfDatabase(at: section)
+            count += row
+        }
+        return count
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -124,14 +138,31 @@ extension ListConnectionsController: NSTableViewDelegate {
             return nil
         }
         
+        // Convert to index Path
+        guard let indexPath = self.dataSource.convertRowToIndexPath(row: row) else {
+            return nil
+        }
+        
+        // Section cell
+        if indexPath.item == -1 {
+            let sectionObj = self.dataSource.groupConnection(at: indexPath)
+            return self.groupConnectionCell(with: sectionObj, for: tableView)
+        }
+        
         // Get model
-        let databaseObj = self.dataSource.connection(at: row)
-        return self.connectionListCell(with: databaseObj, for: tableView)
+        let databaseObj = self.dataSource.database(at: indexPath)
+        return self.connectionCell(with: databaseObj, for: tableView)
     }
     
-    private func connectionListCell(with databaseObj: DatabaseObj, for tableView: NSTableView) -> NSView {
+    private func connectionCell(with databaseObj: DatabaseObj, for tableView: NSTableView) -> NSView {
         let cell = tableView.make(withIdentifier: ConnectionCell.identifierView, owner: nil) as! ConnectionCell
         cell.configureCell(with: databaseObj)
+        return cell
+    }
+    
+    private func groupConnectionCell(with groupConnectionObj: GroupConnectionObj, for tableView: NSTableView) -> NSView {
+        let cell = tableView.make(withIdentifier: ConnectionGroupCell.identifierView, owner: nil) as! ConnectionGroupCell
+        cell.configureCellWith(groupConnectionObj: groupConnectionObj)
         return cell
     }
     

@@ -13,7 +13,7 @@ import RxSwift
 struct ConnectionState {
     
     /// Connection selected
-    var connections = Variable<[DatabaseObj]>([])
+    var groupConnections = Variable<[GroupConnectionObj]>([])
     var selectedConnection = PublishSubject<DatabaseObj>()
 }
 
@@ -31,12 +31,29 @@ extension ConnectionState {
             state.selectedConnection.on(.next(action.selectedConnection))
             break
         case let action as AddNewDefaultConnectionAction:
-            var currentConnections = state.connections.value
-            currentConnections.append(action.newConnection)
-            state.connections.value = currentConnections
+            var groupConnections = state.groupConnections.value
+            
+            // Check
+            if groupConnections.count == 0 {
+                let groupConnectionObj = action.groupConnectionObj
+                groupConnectionObj.connections.append(action.databaseObj)
+                groupConnections.append(groupConnectionObj)
+            } else {
+                var selectedGroup: GroupConnectionObj? = nil
+                for i in groupConnections {
+                    if i.objectId == action.groupConnectionObj.objectId {
+                        selectedGroup = i
+                        break
+                    }
+                }
+                
+                if let selectedGroup = selectedGroup {
+                    selectedGroup.connections.append(action.databaseObj)
+                }
+            }
+            state.groupConnections.value = groupConnections
             break
         case let action as FetchConnectionsAction:
-            state.connections.value = action.connections
             break
         default:
             break

@@ -13,7 +13,7 @@ class BaseModel: Mappable, CustomStringConvertible {
     
     //
     // MARK: - Variable
-    var objectId: String = "guestID"
+    var objectId: String!
     var createdAt: NSDate!
     var updatedAt: NSDate!
     var className: String!

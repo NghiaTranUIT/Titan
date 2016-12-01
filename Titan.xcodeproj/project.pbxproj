@@ -43,12 +43,6 @@
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5350B61DE18F5A0017225E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5350B51DE18F5A0017225E /* PromiseKit.framework */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
-		BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */; };
-		BA5E7A4D1DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */; };
-		BA5E7A4E1DC5BFFF00C06751 /* SF-UI-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */; };
-		BA5E7A4F1DC5BFFF00C06751 /* SF-UI-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */; };
-		BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */; };
-		BA5E7A511DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
 		BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */; };
 		BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */; };
@@ -66,6 +60,12 @@
 		BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */; };
 		BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */; };
 		BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */; };
+		BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */; };
+		BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */; };
+		BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */; };
+		BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */; };
+		BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */; };
+		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -163,12 +163,6 @@
 		BA5350B51DE18F5A0017225E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
-		BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Bold.otf"; sourceTree = "<group>"; };
-		BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Heavy.otf"; sourceTree = "<group>"; };
-		BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Light.otf"; sourceTree = "<group>"; };
-		BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Medium.otf"; sourceTree = "<group>"; };
-		BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Regular.otf"; sourceTree = "<group>"; };
-		BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Text-Semibold.otf"; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
 		BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRealmObj.swift; sourceTree = "<group>"; };
 		BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLRealmObj.swift; sourceTree = "<group>"; };
@@ -187,6 +181,12 @@
 		BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryObj.swift; sourceTree = "<group>"; };
 		BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLObj.swift; sourceTree = "<group>"; };
 		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
+		BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionObj.swift; sourceTree = "<group>"; };
+		BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
@@ -346,18 +346,19 @@
 		BA222E531DADF77A00834F3E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA222E541DADF77D00834F3E /* ConnectionCell */,
+				BA9441481DF00EB300EBA623 /* Connection Group Cell */,
+				BA222E541DADF77D00834F3E /* Connection Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		BA222E541DADF77D00834F3E /* ConnectionCell */ = {
+		BA222E541DADF77D00834F3E /* Connection Cell */ = {
 			isa = PBXGroup;
 			children = (
 				BA712E021DC0EC6400215A94 /* ConnectionCell.swift */,
 				BA222E571DADF83500834F3E /* ConnectionCell.xib */,
 			);
-			name = ConnectionCell;
+			name = "Connection Cell";
 			sourceTree = "<group>";
 		};
 		BA320A3E1DDDF4CC00C0E82B /* Workers */ = {
@@ -576,12 +577,10 @@
 		BA5E7A451DC5BFF700C06751 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				BA5E7A461DC5BFFF00C06751 /* SF-UI-Text-Bold.otf */,
-				BA5E7A471DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf */,
-				BA5E7A481DC5BFFF00C06751 /* SF-UI-Text-Light.otf */,
-				BA5E7A491DC5BFFF00C06751 /* SF-UI-Text-Medium.otf */,
-				BA5E7A4A1DC5BFFF00C06751 /* SF-UI-Text-Regular.otf */,
-				BA5E7A4B1DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf */,
+				BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */,
+				BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */,
+				BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */,
+				BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */,
 			);
 			name = Font;
 			sourceTree = "<group>";
@@ -596,6 +595,7 @@
 				BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */,
 				BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */,
 				BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */,
+				BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -634,6 +634,14 @@
 				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
 			);
 			name = "App Version";
+			sourceTree = "<group>";
+		};
+		BA9441481DF00EB300EBA623 /* Connection Group Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */,
+			);
+			name = "Connection Group Cell";
 			sourceTree = "<group>";
 		};
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
@@ -874,15 +882,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
+				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
+				BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
-				BA5E7A501DC5BFFF00C06751 /* SF-UI-Text-Regular.otf in Resources */,
-				BA5E7A4C1DC5BFFF00C06751 /* SF-UI-Text-Bold.otf in Resources */,
-				BA5E7A4D1DC5BFFF00C06751 /* SF-UI-Text-Heavy.otf in Resources */,
-				BA5E7A4E1DC5BFFF00C06751 /* SF-UI-Text-Light.otf in Resources */,
-				BA5E7A511DC5BFFF00C06751 /* SF-UI-Text-Semibold.otf in Resources */,
-				BA5E7A4F1DC5BFFF00C06751 /* SF-UI-Text-Medium.otf in Resources */,
+				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1046,6 +1052,7 @@
 				BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
+				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
 				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
@@ -1057,6 +1064,7 @@
 				BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,
+				BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

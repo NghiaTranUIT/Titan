@@ -17,7 +17,6 @@ final class UserObj: BaseModel {
     var username = "guest"
     var isGuest: Bool = true
     
-    
     //
     // MARK: - Current User
     private struct Static {
@@ -50,6 +49,7 @@ extension UserObj {
     /// Init GUEST User
     fileprivate class func guestUser() -> UserObj {
         let guestUser = UserObj()
+        guestUser.objectId = "guestID"
         guestUser.isGuest = true
         return guestUser
     }

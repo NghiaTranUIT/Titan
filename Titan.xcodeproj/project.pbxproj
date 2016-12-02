@@ -66,6 +66,9 @@
 		BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */; };
 		BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */; };
 		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
+		BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */; };
+		BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */; };
+		BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -187,6 +190,9 @@
 		BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
+		BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionGroupCell.xib; sourceTree = "<group>"; };
+		BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCollectionView+Register.swift"; sourceTree = "<group>"; };
+		BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Identifier.swift"; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
@@ -346,7 +352,7 @@
 		BA222E531DADF77A00834F3E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA9441481DF00EB300EBA623 /* Connection Group Cell */,
+				BA9441481DF00EB300EBA623 /* Connection Group Header */,
 				BA222E541DADF77D00834F3E /* Connection Cell */,
 			);
 			name = View;
@@ -542,6 +548,8 @@
 				BA68CB441DBE00150075109D /* Error+Default.swift */,
 				BA222E591DADF8A800834F3E /* View+Identifier.swift */,
 				BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */,
+				BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */,
+				BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -636,12 +644,13 @@
 			name = "App Version";
 			sourceTree = "<group>";
 		};
-		BA9441481DF00EB300EBA623 /* Connection Group Cell */ = {
+		BA9441481DF00EB300EBA623 /* Connection Group Header */ = {
 			isa = PBXGroup;
 			children = (
 				BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */,
+				BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */,
 			);
-			name = "Connection Group Cell";
+			name = "Connection Group Header";
 			sourceTree = "<group>";
 		};
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
@@ -883,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */,
+				BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
 				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
@@ -1000,6 +1010,7 @@
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
+				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
@@ -1035,6 +1046,7 @@
 				BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
+				BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */,
 				BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */,

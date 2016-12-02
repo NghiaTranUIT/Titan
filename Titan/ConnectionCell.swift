@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ConnectionCell: NSTableCellView {
+class ConnectionCell: NSCollectionViewItem {
 
     //
     // MARK: - Outlet

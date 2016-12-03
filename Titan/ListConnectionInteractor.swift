@@ -28,7 +28,7 @@ class ListConnectionInteractor {
     // MARK: - Worker
     fileprivate var fetchConnectionWorker: FetchAllGroupConnectionsWorker!
     fileprivate var selecteConnectionWorker: SelectConnectionWorker!
-    fileprivate var addNewConnectionWorker: CreateNewDefaultConnectionWorker!
+    fileprivate var createNewGroupConnectionWorker: CreateNewDefaultGroupConnectionWorker!
 }
 
 
@@ -37,7 +37,9 @@ class ListConnectionInteractor {
 extension ListConnectionInteractor: ListConnectionInteractorInput {
     
     func addNewConnection() {
-        let worker = CreateNewDefaultConnectionWorker()
+        
+        // Worker
+        let worker = CreateNewDefaultGroupConnectionWorker()
         
         // Execute
         worker.execute().then { db -> Void in
@@ -48,7 +50,7 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         }
         
         // Save
-        self.addNewConnectionWorker = worker
+        self.createNewGroupConnectionWorker = worker
     }
     
     func fetchAllGroupConnections() {
@@ -56,7 +58,11 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         
         // Execute
         worker.execute().then { dbs -> Void in
-            // Nothing
+            
+            // Check if there is no connection
+            // Create new one
+            // Focus too
+            
         }
         .catch { error in
             self.output.presentError(error as NSError)

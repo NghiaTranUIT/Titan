@@ -27,17 +27,6 @@ final class DatabaseObj: BaseModel {
     var ssh: SSHObj?
     var groupConnection: GroupConnectionObj!
     
-    //
-    // MARK: - Init
-    class func fromDatabaseRealmObj(_ obj: DatabaseRealmObj) -> DatabaseObj {
-        let db = DatabaseObj()
-        db.host = obj.host
-        db.database = obj.database
-        db.port = obj.port
-        db.username = obj.username
-        db.password = obj.password
-        return db
-    }
     
     //
     // MARK: - Override
@@ -56,6 +45,8 @@ final class DatabaseObj: BaseModel {
         self.groupConnection <- map[Constants.Obj.Database.groupConnection]
     }
     
+    
+    /// Default database
     class func defaultDatabase() -> DatabaseObj {
         let db = DatabaseObj()
         db.host = "localhost"

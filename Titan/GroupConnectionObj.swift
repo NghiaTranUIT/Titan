@@ -15,7 +15,7 @@ final class GroupConnectionObj: BaseModel {
     //
     // MARK: - Variable
     var name: String! = ""
-    var color: String?
+    var color: GroupColorObj!
     var databases: [DatabaseObj] = []
     
     
@@ -27,5 +27,15 @@ final class GroupConnectionObj: BaseModel {
         self.name <- map[Constants.Obj.GroupConnection.Name]
         self.color <- map[Constants.Obj.GroupConnection.Color]
         self.databases <- map[Constants.Obj.GroupConnection.Databases]
+    }
+    
+    
+    //
+    // MARK: - Default 
+    class func defaultGroupConnection() -> GroupConnectionObj {
+        let group = GroupConnectionObj()
+        group.name = "My Group Connection"
+        group.color = GroupColorObj.defaultColor
+        return group
     }
 }

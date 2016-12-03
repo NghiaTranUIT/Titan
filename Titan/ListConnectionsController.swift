@@ -80,6 +80,8 @@ class ListConnectionsController: BaseViewController {
     }
     
     private func initAppereance() {
+        
+        // Background color
         self.logoContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
         self.logoBigContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
         self.collectionView.backgroundColors = [ThemeObj.share.primaryMenuColor]

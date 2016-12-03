@@ -32,7 +32,7 @@
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
-		BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */; };
+		BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
@@ -73,6 +73,8 @@
 		BAA0A09B1DF268F7000D8F23 /* ThemeObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */; };
 		BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */; };
 		BAA0A0A11DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */; };
+		BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */; };
+		BAA0A0A51DF2D644000D8F23 /* GroupColorRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -158,7 +160,7 @@
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
-		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultConnectionWorker.swift; sourceTree = "<group>"; };
+		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultGroupConnectionWorker.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,8 @@
 		BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeObj.swift; sourceTree = "<group>"; };
 		BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+TextColor.swift"; sourceTree = "<group>"; };
 		BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionRealmObj.swift; sourceTree = "<group>"; };
+		BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupColorObj.swift; sourceTree = "<group>"; };
+		BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupColorRealmObj.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
@@ -387,7 +391,7 @@
 			children = (
 				BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */,
 				BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */,
-				BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */,
+				BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -453,6 +457,7 @@
 				BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */,
 				BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */,
 				BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */,
+				BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */,
 				BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */,
 				BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */,
+				BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -1024,6 +1030,7 @@
 				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
+				BAA0A0A51DF2D644000D8F23 /* GroupColorRealmObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
@@ -1035,7 +1042,7 @@
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
-				BA4159F01DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift in Sources */,
+				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
 				BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
@@ -1047,6 +1054,7 @@
 				BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
+				BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */,
 				BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */,
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,

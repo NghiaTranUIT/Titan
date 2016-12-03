@@ -13,28 +13,27 @@ import PromiseKit
 //
 // MARK: - Action
 struct AddNewDefaultConnectionAction: Action {
-    var databaseObj: DatabaseObj
     var groupConnectionObj: GroupConnectionObj
 }
 
 
 //
 // MARK: - Worker
-class CreateNewDefaultConnectionWorker: AsyncWorker {
+class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
 
     
     /// Type
     typealias T = GroupConnectionObj
     
     
-    /// Group connection
-    var groupConectionObj: GroupConnectionObj!
-    
-    
-    // Execute
+    /// Execute
     func execute() -> Promise<T> {
-        let defaultDb = DatabaseObj.defaultDatabase()
-        let action = AddNewDefaultConnectionAction(databaseObj: defaultDb, groupConnectionObj: self.groupConectionObj)
+        
+        // Create new default froup
+        let group = GroupConnectionObj.defaultGroupConnection()
+        
+        // Dispatch action
+        let action = AddNewDefaultConnectionAction(groupConnectionObj: group)
         mainStore.dispatch(action)
         return Promise(value: T())
     }

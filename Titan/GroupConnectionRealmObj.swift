@@ -15,7 +15,7 @@ final class GroupConnectionRealmObj: Object {
     //
     // MARK: - Variable
     var name: String! = ""
-    var color: String?
+    var color: GroupColorRealmObj!
     var databases = List<DatabaseRealmObj>()
     
     
@@ -26,7 +26,7 @@ final class GroupConnectionRealmObj: Object {
         // Group
         let groupConnection = GroupConnectionObj()
         groupConnection.name = self.name
-        groupConnection.color = self.color
+        groupConnection.color = self.color.convertToModelObj()
         
         // Databases
         var dbs: [DatabaseObj] = []

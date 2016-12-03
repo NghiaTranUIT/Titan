@@ -14,12 +14,13 @@ final class GroupColorRealmObj: Object {
     
     //
     // MARK: - Variable
-    var color: NSColor!
+    var colorHex: String!
     
     
     //
     // MARK: - Public
     func convertToModelObj() -> GroupColorObj {
-        return GroupColorObj(color: self.color)
+        let color = NSColor(hexString: self.colorHex)
+        return GroupColorObj(color: color)
     }
 }

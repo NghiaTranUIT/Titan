@@ -10,6 +10,7 @@
 		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
 		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
+		BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */; };
 		BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA222E571DADF83500834F3E /* ConnectionCell.xib */; };
 		BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E591DADF8A800834F3E /* View+Identifier.swift */; };
 		BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */; };
@@ -138,6 +139,7 @@
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FEF1D98C81900B616AB /* TitanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanTests.swift; sourceTree = "<group>"; };
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA222E571DADF83500834F3E /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
 		BA222E591DADF8A800834F3E /* View+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Identifier.swift"; sourceTree = "<group>"; };
 		BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionInteractor.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */,
 				BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */,
 				BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */,
+				BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -1055,6 +1058,7 @@
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */,
+				BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */,
 				BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */,
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,

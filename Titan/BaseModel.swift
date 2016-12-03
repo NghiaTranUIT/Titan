@@ -11,12 +11,14 @@ import ObjectMapper
 
 class BaseModel: Mappable, CustomStringConvertible {
     
+    
     //
     // MARK: - Variable
     var objectId: String!
     var createdAt: NSDate!
     var updatedAt: NSDate!
     var className: String!
+    
     
     //
     // MARK: - Init
@@ -47,6 +49,7 @@ class BaseModel: Mappable, CustomStringConvertible {
         }
     }
     
+    
     /// Mapping function
     func mapping(map: Map) {
         self.objectId <- map[Constants.Obj.ObjectId]
@@ -56,6 +59,7 @@ class BaseModel: Mappable, CustomStringConvertible {
     }
     
 }
+
 
 //
 // MARK: - Mapping model
@@ -80,6 +84,7 @@ extension BaseModel {
         return model
     }
 }
+
 
 //
 // MARK: - Date Transform

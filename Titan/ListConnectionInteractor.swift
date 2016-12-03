@@ -57,12 +57,14 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         let worker = FetchAllGroupConnectionsWorker()
         
         // Execute
-        worker.execute().then { dbs -> Void in
+        worker.execute().then {[unowned self] dbs -> Void in
             
             // Check if there is no connection
             // Create new one
             // Focus too
-            
+            if dbs.count == 0 {
+                self.addNewConnection()
+            }
         }
         .catch { error in
             self.output.presentError(error as NSError)

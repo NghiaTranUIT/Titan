@@ -35,6 +35,8 @@ class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
         // Dispatch action
         let action = AddNewDefaultConnectionAction(groupConnectionObj: group)
         mainStore.dispatch(action)
+        
+        // Return
         return Promise(value: T())
     }
 }

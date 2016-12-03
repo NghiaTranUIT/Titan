@@ -30,7 +30,9 @@ extension ConnectionState {
         case let action as SelectConnectionAction:
             state.selectedConnection.on(.next(action.selectedConnection))
             break
-        case let action as AddNewDefaultConnectionAction:
+        case let action as CreateNewDatabaseAction:
+            
+            /*
             var groupConnections = state.groupConnections.value
             
             // Check
@@ -51,6 +53,13 @@ extension ConnectionState {
                     selectedGroup.databases.append(action.databaseObj)
                 }
             }
+            state.groupConnections.value = groupConnections
+            */
+            
+            break
+        case let action as AddNewDefaultConnectionAction:
+            var groupConnections = state.groupConnections.value
+            groupConnections.append(action.groupConnectionObj)
             state.groupConnections.value = groupConnections
             break
         case let action as FetchAllGroupConnectionsAction:

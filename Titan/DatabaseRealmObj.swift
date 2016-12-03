@@ -24,6 +24,7 @@ class DatabaseRealmObj: Object {
     dynamic var saveToKeychain = false
     dynamic var ssl: SSLRealmObj?
     dynamic var ssh: SSHRealmObj?
+    var groupConnection = LinkingObjects(fromType: GroupConnectionRealmObj.self, property: "databases")
     
     
     //

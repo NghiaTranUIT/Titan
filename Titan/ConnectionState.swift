@@ -36,7 +36,7 @@ extension ConnectionState {
             // Check
             if groupConnections.count == 0 {
                 let groupConnectionObj = action.groupConnectionObj
-                groupConnectionObj.connections.append(action.databaseObj)
+                groupConnectionObj.databases.append(action.databaseObj)
                 groupConnections.append(groupConnectionObj)
             } else {
                 var selectedGroup: GroupConnectionObj? = nil
@@ -48,12 +48,13 @@ extension ConnectionState {
                 }
                 
                 if let selectedGroup = selectedGroup {
-                    selectedGroup.connections.append(action.databaseObj)
+                    selectedGroup.databases.append(action.databaseObj)
                 }
             }
             state.groupConnections.value = groupConnections
             break
-        case let action as FetchConnectionsAction:
+        case let action as FetchAllGroupConnectionsAction:
+            state.groupConnections.value = action.connections
             break
         default:
             break

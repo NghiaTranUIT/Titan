@@ -14,7 +14,7 @@ import ReSwift
 // MARK: - Output
 /// Send request to Interactor
 protocol ListConnectionsControllerOutput {
-    func fetchConnections()
+    func fetchAllGroupConnections()
     func selectConnection(_ connection: DatabaseObj)
     func addNewConnection()
 }
@@ -118,7 +118,7 @@ class ListConnectionsController: BaseViewController {
     override func setupActions() {
     
         // Fetch all connection
-        self.output.fetchConnections()
+        self.output.fetchAllGroupConnections()
     }
     
     @IBAction func newGroupConnectionBtnTapped(_ sender: Any) {

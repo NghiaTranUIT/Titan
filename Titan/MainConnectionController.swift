@@ -19,7 +19,19 @@ class MainConnectionController: BaseSplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Common
+        self.initCommon()
     }
+    
+    //
+    // MARK: - Private
+    private func initCommon() {
+        
+        // Want layer
+        self.view.wantsLayer = true
+        self.splitView.wantsLayer = true
+    }
+    
 }
 
 

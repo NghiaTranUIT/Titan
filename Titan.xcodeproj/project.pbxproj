@@ -22,7 +22,7 @@
 		BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */; };
 		BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */; };
 		BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */; };
-		BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */; };
+		BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */; };
 		BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */; };
 		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
 		BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AD1DCF371400B60952 /* RxViewModel.swift */; };
@@ -72,6 +72,7 @@
 		BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */; };
 		BAA0A09B1DF268F7000D8F23 /* ThemeObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */; };
 		BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */; };
+		BAA0A0A11DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -147,7 +148,7 @@
 		BA320A4C1DDDF55D00C0E82B /* DetailConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionPresenter.swift; sourceTree = "<group>"; };
 		BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionInteractor.swift; sourceTree = "<group>"; };
 		BA320A501DDDF57000C0E82B /* DetailConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionConfig.swift; sourceTree = "<group>"; };
-		BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchConnectionsWorker.swift; sourceTree = "<group>"; };
+		BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAllGroupConnectionsWorker.swift; sourceTree = "<group>"; };
 		BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectConnectionWorker.swift; sourceTree = "<group>"; };
 		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		BA33F9AD1DCF371400B60952 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +200,7 @@
 		BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeObj.swift; sourceTree = "<group>"; };
 		BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+TextColor.swift"; sourceTree = "<group>"; };
+		BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionRealmObj.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
@@ -383,7 +385,7 @@
 		BA320A451DDDF51C00C0E82B /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				BA320A551DDDF81D00C0E82B /* FetchConnectionsWorker.swift */,
+				BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */,
 				BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */,
 				BA4159EF1DDFF25100F0A82C /* CreateNewDefaultConnectionWorker.swift */,
 			);
@@ -450,6 +452,7 @@
 				BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */,
 				BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */,
 				BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */,
+				BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -1061,6 +1064,7 @@
 				BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA33F9B71DCF3E6800B60952 /* DatabaseRealmObj.swift in Sources */,
+				BAA0A0A11DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
 				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,
 				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,
@@ -1073,7 +1077,7 @@
 				BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
-				BA320A561DDDF81D00C0E82B /* FetchConnectionsWorker.swift in Sources */,
+				BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,

@@ -169,8 +169,8 @@ struct Constants {
         // MARK: - Group Connection
         struct GroupConnection {
             static let Name = "name"
-            static let connections = "connections"
-            static let color = "color"
+            static let Databases = "databases"
+            static let Color = "color"
         }
     }
 }

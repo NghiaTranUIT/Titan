@@ -11,11 +11,13 @@ import ObjectMapper
 
 final class GroupConnectionObj: BaseModel {
     
+    
     //
     // MARK: - Variable
     var name: String! = ""
     var color: String?
-    var connections: [DatabaseObj] = []
+    var databases: [DatabaseObj] = []
+    
     
     //
     // MARK: - Override
@@ -23,7 +25,7 @@ final class GroupConnectionObj: BaseModel {
         super.mapping(map: map)
         
         self.name <- map[Constants.Obj.GroupConnection.Name]
-        self.color <- map[Constants.Obj.GroupConnection.color]
-        self.connections <- map[Constants.Obj.GroupConnection.connections]
+        self.color <- map[Constants.Obj.GroupConnection.Color]
+        self.databases <- map[Constants.Obj.GroupConnection.Databases]
     }
 }

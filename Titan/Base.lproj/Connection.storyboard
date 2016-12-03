@@ -664,11 +664,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Titan Postgre" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Titan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="960" height="540"/>
+                        <rect key="contentRect" x="196" y="240" width="1200" height="718"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="1200" height="718"/>
                     </window>
                     <connections>
                         <segue destination="3Iq-ti-Kel" kind="relationship" relationship="window.shadowedContentViewController" id="ykw-HW-RDT"/>
@@ -684,10 +685,10 @@
                 <splitViewController title="Connections" id="3Iq-ti-Kel" customClass="MainConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="255" behavior="contentList" id="S1u-xb-kBm"/>
-                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="e3u-SX-Cfx"/>
+                        <splitViewItem holdingPriority="260" behavior="sidebar" id="e3u-SX-Cfx"/>
                     </splitViewItems>
                     <splitView key="splitView" misplaced="YES" dividerStyle="thin" vertical="YES" id="nTr-OS-KlC">
-                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="718"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
                     <connections>
@@ -697,21 +698,21 @@
                 </splitViewController>
                 <customObject id="Bx6-8L-WKs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="1580"/>
+            <point key="canvasLocation" x="-62" y="1652"/>
         </scene>
         <!--List Connections Controller-->
         <scene sceneID="sl7-fX-tMg">
             <objects>
                 <viewController id="2ek-Ha-6V0" customClass="ListConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jZl-GI-tqf">
-                        <rect key="frame" x="0.0" y="0.0" width="376" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pJh-Zf-avb">
-                                <rect key="frame" x="0.0" y="856" width="376" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="335" height="44"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="F2N-j8-Men">
-                                        <rect key="frame" x="149" y="0.0" width="78" height="44"/>
+                                        <rect key="frame" x="129" y="0.0" width="78" height="44"/>
                                         <subviews>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xI5-WO-hsS">
                                                 <rect key="frame" x="0.0" y="9" width="26" height="26"/>
@@ -743,13 +744,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="44" width="376" height="812"/>
+                                <rect key="frame" x="0.0" y="44" width="335" height="512"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="376" height="812"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="512"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="812"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="512"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -759,20 +760,24 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="RwG-VW-nJ3"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="m9c-lI-YAg"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y1r-Y8-Ryd">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="0.0" y="796" width="250" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="i3u-4i-vyz">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="234" y="0.0" width="16" height="512"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="dZO-de-GZX">
-                                <rect key="frame" x="0.0" y="0.0" width="376" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-xb-NoS">
-                                        <rect key="frame" x="106" y="8" width="163" height="33"/>
+                                        <rect key="frame" x="86" y="8" width="163" height="33"/>
                                         <buttonCell key="cell" type="bevel" title="New Connection" bezelStyle="regularSquare" alignment="center" inset="2" id="C3u-Ow-z0B">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" size="20" name="OpenSans-Semibold"/>
@@ -812,7 +817,7 @@
                 </viewController>
                 <customObject id="MXc-ct-AtT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="776"/>
+            <point key="canvasLocation" x="893.5" y="776"/>
         </scene>
         <!--Detail Connections Controller-->
         <scene sceneID="FEN-jZ-SSZ">

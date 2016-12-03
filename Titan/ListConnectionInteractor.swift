@@ -26,7 +26,7 @@ class ListConnectionInteractor {
     
     //
     // MARK: - Worker
-    fileprivate var fetchConnectionWorker: FetchConnectionsWorker!
+    fileprivate var fetchConnectionWorker: FetchAllGroupConnectionsWorker!
     fileprivate var selecteConnectionWorker: SelectConnectionWorker!
     fileprivate var addNewConnectionWorker: CreateNewDefaultConnectionWorker!
 }
@@ -50,9 +50,9 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         // Save
         self.addNewConnectionWorker = worker
     }
-
-    func fetchConnections() {
-        let worker = FetchConnectionsWorker()
+    
+    func fetchAllGroupConnections() {
+        let worker = FetchAllGroupConnectionsWorker()
         
         // Execute
         worker.execute().then { dbs -> Void in

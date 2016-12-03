@@ -56,8 +56,10 @@ class ListConnectionsController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var addConnectionBtn: NSButton!
-    
+    @IBOutlet weak var logoBigContainerView: NSView!
+    @IBOutlet weak var logoContainerView: NSView!
+    @IBOutlet weak var bottomBarView: NSView!
+    @IBOutlet weak var newGroupConnectionBtn: NSButton!
     
     //
     // MARK: - View Cycle
@@ -70,8 +72,24 @@ class ListConnectionsController: BaseViewController {
         // Configure
         ListConnectionConfig.shared.configure(viewController: self)
         
+        // Appereance
+        self.initAppereance()
+        
         // Table View
         self.initTableView()
+    }
+    
+    private func initAppereance() {
+        self.logoContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
+        self.logoBigContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
+        self.collectionView.backgroundColors = [ThemeObj.share.primaryMenuColor]
+        self.bottomBarView.backgroundColor = ThemeObj.share.primaryMainAppColor
+        self.newGroupConnectionBtn.backgroundColor = ThemeObj.share.primaryMainAppColor
+        self.newGroupConnectionBtn.textColor = NSColor.white
+        
+        // Remove border
+        self.collectionView.wantsLayer = true
+        self.collectionView.layer?.borderWidth = 0
     }
     
     private func initTableView() {
@@ -103,7 +121,7 @@ class ListConnectionsController: BaseViewController {
         self.output.fetchConnections()
     }
     
-    @IBAction func addNewConnectionTapped(_ sender: NSButton) {
+    @IBAction func newGroupConnectionBtnTapped(_ sender: Any) {
         self.output.addNewConnection()
     }
 }

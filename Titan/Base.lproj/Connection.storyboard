@@ -710,35 +710,46 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pJh-Zf-avb">
                                 <rect key="frame" x="0.0" y="856" width="376" height="44"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xI5-WO-hsS">
-                                        <rect key="frame" x="131" y="9" width="26" height="26"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_titan" id="cLr-iE-ZNA"/>
-                                    </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NT8-Su-8Vn">
-                                        <rect key="frame" x="163" y="9" width="59" height="30"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="TITAN" id="ZuE-tU-mGr">
-                                            <font key="font" size="18" name="OpenSans-Semibold"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="F2N-j8-Men">
+                                        <rect key="frame" x="149" y="0.0" width="78" height="44"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xI5-WO-hsS">
+                                                <rect key="frame" x="0.0" y="9" width="26" height="26"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_titan" id="cLr-iE-ZNA"/>
+                                            </imageView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pEb-B1-t3s">
+                                                <rect key="frame" x="32" y="10" width="44" height="24"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TITAN" id="aUl-me-zv1">
+                                                    <font key="font" size="14" name="OpenSans-Semibold"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pEb-B1-t3s" firstAttribute="centerY" secondItem="F2N-j8-Men" secondAttribute="centerY" id="Hsp-dS-QEy"/>
+                                            <constraint firstItem="pEb-B1-t3s" firstAttribute="leading" secondItem="xI5-WO-hsS" secondAttribute="trailing" constant="8" id="RHK-yp-hsV"/>
+                                            <constraint firstAttribute="width" constant="78" id="ab4-Qy-1dK"/>
+                                            <constraint firstItem="xI5-WO-hsS" firstAttribute="leading" secondItem="F2N-j8-Men" secondAttribute="leading" id="dm0-xk-tJ1"/>
+                                            <constraint firstItem="xI5-WO-hsS" firstAttribute="centerY" secondItem="F2N-j8-Men" secondAttribute="centerY" id="rPR-So-5Mn"/>
+                                        </constraints>
+                                    </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="xI5-WO-hsS" firstAttribute="leading" secondItem="pJh-Zf-avb" secondAttribute="leading" constant="131" id="9Zr-UB-l49"/>
-                                    <constraint firstItem="xI5-WO-hsS" firstAttribute="centerY" secondItem="pJh-Zf-avb" secondAttribute="centerY" id="Hsh-0J-Ha2"/>
-                                    <constraint firstItem="NT8-Su-8Vn" firstAttribute="centerY" secondItem="pJh-Zf-avb" secondAttribute="centerY" constant="-2" id="Och-VY-lZS"/>
-                                    <constraint firstItem="NT8-Su-8Vn" firstAttribute="leading" secondItem="xI5-WO-hsS" secondAttribute="trailing" constant="8" id="R4n-KW-dDZ"/>
+                                    <constraint firstItem="F2N-j8-Men" firstAttribute="centerX" secondItem="pJh-Zf-avb" secondAttribute="centerX" id="X0h-ik-E7P"/>
                                     <constraint firstAttribute="height" constant="44" id="b11-YM-wTE"/>
+                                    <constraint firstAttribute="bottom" secondItem="F2N-j8-Men" secondAttribute="bottom" id="mhT-lo-dq8"/>
+                                    <constraint firstItem="F2N-j8-Men" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="top" id="uuQ-cU-vYu"/>
                                 </constraints>
                             </customView>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="64" width="376" height="792"/>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
+                                <rect key="frame" x="0.0" y="44" width="376" height="812"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="1" y="1" width="374" height="790"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="790"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="812"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -758,9 +769,23 @@
                                 </scroller>
                             </scrollView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="dZO-de-GZX">
-                                <rect key="frame" x="0.0" y="0.0" width="376" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="44"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-xb-NoS">
+                                        <rect key="frame" x="106" y="8" width="163" height="33"/>
+                                        <buttonCell key="cell" type="bevel" title="New Connection" bezelStyle="regularSquare" alignment="center" inset="2" id="C3u-Ow-z0B">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" size="20" name="OpenSans-Semibold"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="newGroupConnectionBtnTapped:" target="2ek-Ha-6V0" id="091-Cf-wXd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="S8Q-HE-GGn"/>
+                                    <constraint firstItem="dkN-xb-NoS" firstAttribute="top" secondItem="dZO-de-GZX" secondAttribute="top" constant="3" id="4be-Ji-7gM"/>
+                                    <constraint firstAttribute="height" constant="44" id="S8Q-HE-GGn"/>
+                                    <constraint firstItem="dkN-xb-NoS" firstAttribute="centerX" secondItem="dZO-de-GZX" secondAttribute="centerX" id="rbA-DM-hKd"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -778,7 +803,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomBarView" destination="dZO-de-GZX" id="C7n-Gl-0Ji"/>
                         <outlet property="collectionView" destination="Sd0-jl-BuX" id="2Bh-zK-lTA"/>
+                        <outlet property="logoBigContainerView" destination="pJh-Zf-avb" id="r0T-vp-C8M"/>
+                        <outlet property="logoContainerView" destination="F2N-j8-Men" id="DZs-mQ-h9p"/>
+                        <outlet property="newGroupConnectionBtn" destination="dkN-xb-NoS" id="q7U-0S-w2n"/>
                     </connections>
                 </viewController>
                 <customObject id="MXc-ct-AtT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

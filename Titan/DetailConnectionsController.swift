@@ -43,15 +43,17 @@ class DetailConnectionsController: BaseViewController {
     
     override func initCommon() {
         
-        // IBAction
-        self.connectBtn.target = self
-        self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
+        /// IBAction
+        //self.connectBtn.target = self
+        //self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
     }
     
     override func setupActions() {
-        // Config
+        
+        /// Config
         DetailConnectionConfig.shared.configure(viewController: self)
     }
+    
     
     //
     // MARK: - IBAction

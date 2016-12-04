@@ -10,6 +10,7 @@ import Cocoa
 import ReSwift
 import PromiseKit
 
+
 //
 // MARK: - Action
 struct AddNewDefaultConnectionAction: Action {
@@ -36,7 +37,13 @@ class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
         let action = AddNewDefaultConnectionAction(groupConnectionObj: group)
         mainStore.dispatch(action)
         
-        // Return
-        return Promise(value: T())
+        // Add
+        let user = UserObj.currentUser
+        user.groupConnections.append(group)
+        
+        // Save
+        return user.save().then(execute: { Void -> Promise<T> in
+            return Promise(value: group)
+        })
     }
 }

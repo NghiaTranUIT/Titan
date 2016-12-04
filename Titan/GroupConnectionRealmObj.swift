@@ -23,17 +23,17 @@ final class GroupConnectionRealmObj: BaseRealmObj {
     
     //
     // MARK: - Public
-    func convertToModelObj() -> GroupConnectionObj {
+    override func convertToModelObj() -> BaseModel {
         
         // Group
         let groupConnection = GroupConnectionObj()
         groupConnection.name = self.name
-        groupConnection.color = self.color.convertToModelObj()
+        groupConnection.color = self.color.convertToModelObj() as! GroupColorObj
         
         // Databases
         var dbs: [DatabaseObj] = []
         dbs = self.databases.map({ (realmObj) -> DatabaseObj in
-            return realmObj.convertToModelObj()
+            return realmObj.convertToModelObj() as! DatabaseObj
         })
         
         // Return

@@ -28,19 +28,15 @@ class FetchAllGroupConnectionsWorker: AsyncWorker {
     
     /// Execute
     func execute() -> Promise<T> {
-        return RealmManager.sharedManager
-            .fetchAll(type: GroupConnectionRealmObj.self)
-            .then { (results) -> Promise<T> in
-                var groups: T = T()
-                for group in results {
-                    groups.append(group.convertToModelObj())
-                }
-                return Promise(value: groups)
-        }
-        .then(execute: { (groups) -> Promise<T> in
+        
+        return UserObj.currentUser.fetch().then(execute: { (_) -> Promise<T> in
+            
+            let groups = UserObj.currentUser.groupConnections
             let action = FetchAllGroupConnectionsAction(connections: groups)
             mainStore.dispatch(action)
+            
             return Promise(value: groups)
+            
         })
     }
 }

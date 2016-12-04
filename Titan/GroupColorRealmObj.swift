@@ -21,7 +21,7 @@ final class GroupColorRealmObj: BaseRealmObj {
     
     //
     // MARK: - Public
-    func convertToModelObj() -> GroupColorObj {
+    override func convertToModelObj() -> BaseModel {
         let color = NSColor(hexString: self.colorHex)
         return GroupColorObj(color: color)
     }

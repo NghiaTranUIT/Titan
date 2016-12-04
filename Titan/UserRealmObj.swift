@@ -19,5 +19,6 @@ class UserRealmObj: BaseRealmObj {
     // MARK: - Variable
     var username = "guest"
     var isGuest: Bool = true
-    var groupConnections: [GroupConnectionRealmObj] = []
+    var groupConnections = List<GroupConnectionRealmObj>()
+    
 }

@@ -58,10 +58,7 @@ final class GroupConnectionObj: BaseModel {
         let dbRealmObjs = self.databases.map({ db -> DatabaseRealmObj in
             return db.convertToRealmObj() as! DatabaseRealmObj
         })
-        let list = List<DatabaseRealmObj>()
-        for db in dbRealmObjs {
-            list.append(db)
-        }
+        realmObj.databases.append(objectsIn: dbRealmObjs)
         
         return realmObj
     }

@@ -28,4 +28,18 @@ class BaseRealmObj: Object {
     override static func primaryKey() -> String? {
         return "objectId"
     }
+    
+    
+    //
+    // MARK: - Convertible
+    func convertToModelObj() -> BaseModel {
+        
+        let obj = BaseModel()
+        
+        obj.objectId = self.objectId
+        obj.createdAt = self.createdAt
+        obj.updatedAt = self.updatedAt
+        
+        return obj
+    }
 }

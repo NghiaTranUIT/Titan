@@ -72,6 +72,7 @@
 		BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */; };
 		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
 		BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */; };
+		BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9875611DF3F5B000901CD5 /* UUID+Short.swift */; };
 		BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */; };
 		BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */; };
 		BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */; };
@@ -207,6 +208,7 @@
 		BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
 		BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionGroupCell.xib; sourceTree = "<group>"; };
+		BA9875611DF3F5B000901CD5 /* UUID+Short.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UUID+Short.swift"; sourceTree = "<group>"; };
 		BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCollectionView+Register.swift"; sourceTree = "<group>"; };
 		BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Identifier.swift"; sourceTree = "<group>"; };
 		BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 		BA33F9B21DCF3E4400B60952 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				BA9875601DF3EFBA00901CD5 /* Extension */,
 				BA33F9B51DCF3E5200B60952 /* Objs */,
 				BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */,
 				BA679CD01DD2349D0054EB43 /* RealmKey.swift */,
@@ -473,13 +476,13 @@
 		BA33F9B51DCF3E5200B60952 /* Objs */ = {
 			isa = PBXGroup;
 			children = (
+				BA217FCA1DF32A0D00C5BD88 /* BaseRealmObj.swift */,
 				BA33F9B61DCF3E6800B60952 /* DatabaseRealmObj.swift */,
 				BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */,
 				BA679CD41DD2EC1D0054EB43 /* SSLRealmObj.swift */,
 				BA679CD61DD2EC250054EB43 /* SSHRealmObj.swift */,
 				BAA0A0A01DF2BA5E000D8F23 /* GroupConnectionRealmObj.swift */,
 				BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */,
-				BA217FCA1DF32A0D00C5BD88 /* BaseRealmObj.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */,
 				BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */,
 				BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */,
+				BA9875611DF3F5B000901CD5 /* UUID+Short.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -691,6 +695,13 @@
 				BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */,
 			);
 			name = "Connection Group Header";
+			sourceTree = "<group>";
+		};
+		BA9875601DF3EFBA00901CD5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
@@ -1085,6 +1096,7 @@
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */,
+				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA217FCD1DF32F1B00C5BD88 /* BaseModel+RealmConvertible.swift in Sources */,

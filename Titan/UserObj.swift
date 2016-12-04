@@ -65,10 +65,10 @@ final class UserObj: BaseModel {
         realmObj.updatedAt = self.updatedAt
         realmObj.username = self.username
         realmObj.isGuest = self.isGuest
-        realmObj.groupConnections = self.groupConnections.map({ groupObj -> GroupConnectionRealmObj in
+        let groups = self.groupConnections.map({ groupObj -> GroupConnectionRealmObj in
             return groupObj.convertToRealmObj() as! GroupConnectionRealmObj
         })
-        
+        realmObj.groupConnections.append(objectsIn: groups)
         return realmObj
     }
 }
@@ -81,7 +81,7 @@ extension UserObj {
     /// Init GUEST User
     fileprivate class func guestUser() -> UserObj {
         let guestUser = UserObj()
-        guestUser.objectId = "guestID"
+        guestUser.objectId = "GuestUser"
         guestUser.isGuest = true
         return guestUser
     }

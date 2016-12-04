@@ -39,4 +39,28 @@ class GroupColorObj: BaseModel {
                                                  ]
     
     static let defaultColor = GroupColorObj.defaultColors.first!
+    
+    
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return GroupColorRealmObj.self
+        }
+    }
+    
+    
+    //
+    // MARK: - Override
+    override func convertToRealmObj() -> BaseRealmObj {
+        
+        let realmObj = GroupColorRealmObj()
+        
+        realmObj.createdAt = self.createdAt
+        realmObj.objectId = self.objectId
+        realmObj.updatedAt = self.updatedAt
+        
+        realmObj.colorHex = self.color.toHexString()
+        
+        return realmObj
+    }
 }

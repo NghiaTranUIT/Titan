@@ -31,7 +31,7 @@ class DatabaseRealmObj: BaseRealmObj {
     
     //
     // MARK: - Public
-    func convertToModelObj() -> DatabaseObj {
+    override func convertToModelObj() -> BaseModel {
         return DatabaseObj()
     }
 }

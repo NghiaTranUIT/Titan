@@ -35,7 +35,7 @@ class BaseModel: Mappable, CustomStringConvertible {
     //
     // MARK: - Init
     init() {
-        self.objectId = UUID().uuidString
+        self.objectId = UUID.shortUUID()
         self.createdAt = Date()
         self.updatedAt = Date()
     }

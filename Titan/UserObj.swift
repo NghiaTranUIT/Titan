@@ -10,12 +10,25 @@ import Foundation
 import RxSwift
 import RealmSwift
 
+//
+// MARK: - UserObj
 final class UserObj: BaseModel {
+    
     
     //
     // MARK: - Variable
     var username = "guest"
     var isGuest: Bool = true
+    var groupConnections: [GroupConnectionObj] = []
+    
+    
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return UserRealmObj.self
+        }
+    }
+    
     
     //
     // MARK: - Current User
@@ -38,6 +51,25 @@ final class UserObj: BaseModel {
         }
         
         return Static.instance
+    }
+    
+    
+    //
+    // MARK: - Override
+    override func convertToRealmObj() -> BaseRealmObj {
+        
+        let realmObj = UserRealmObj()
+        
+        realmObj.objectId = self.objectId
+        realmObj.createdAt = self.createdAt
+        realmObj.updatedAt = self.updatedAt
+        realmObj.username = self.username
+        realmObj.isGuest = self.isGuest
+        realmObj.groupConnections = self.groupConnections.map({ groupObj -> GroupConnectionRealmObj in
+            return groupObj.convertToRealmObj() as! GroupConnectionRealmObj
+        })
+        
+        return realmObj
     }
 }
 

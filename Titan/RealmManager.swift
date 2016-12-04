@@ -47,4 +47,24 @@ final class RealmManager {
             fullfll(results)
         }
     }
+    
+    
+    /// Is Exist
+    func isExist<T: Object>(type: T.Type, ID: String) -> Promise<Results<T>> {
+        return Promise { fullfll, reject in
+            let results = self.realm.objects(type).filter("\(Constants.Obj.ObjectId) = '\(ID)'")
+            fullfll(results)
+        }
+    }
+    
+    
+    /// Save
+    func save(obj: Object) -> Promise<Void> {
+        return Promise { fullfll, reject in
+            try! self.realm.write {
+                self.realm.add(obj, update: true)
+            }
+            fullfll(())
+        }
+    }
 }

@@ -8,7 +8,12 @@
 
 import Cocoa
 import ObjectMapper
+import PromiseKit
+import RealmSwift
 
+
+//
+// MARK: - GroupConnectionObj
 final class GroupConnectionObj: BaseModel {
     
     
@@ -17,6 +22,14 @@ final class GroupConnectionObj: BaseModel {
     var name: String! = ""
     var color: GroupColorObj!
     var databases: [DatabaseObj] = []
+    
+    
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return GroupConnectionRealmObj.self
+        }
+    }
     
     
     //
@@ -29,6 +42,29 @@ final class GroupConnectionObj: BaseModel {
         self.databases <- map[Constants.Obj.GroupConnection.Databases]
     }
     
+    
+    /// Convert
+    override func convertToRealmObj() -> BaseRealmObj {
+        
+        let realmObj = GroupConnectionRealmObj()
+        
+        realmObj.objectId = self.objectId
+        realmObj.createdAt = self.createdAt
+        realmObj.updatedAt = self.updatedAt
+        realmObj.name = self.name
+        realmObj.color = self.color.convertToRealmObj() as! GroupColorRealmObj
+        
+        // Databases
+        let dbRealmObjs = self.databases.map({ db -> DatabaseRealmObj in
+            return db.convertToRealmObj() as! DatabaseRealmObj
+        })
+        let list = List<DatabaseRealmObj>()
+        for db in dbRealmObjs {
+            list.append(db)
+        }
+        
+        return realmObj
+    }
     
     //
     // MARK: - Default 

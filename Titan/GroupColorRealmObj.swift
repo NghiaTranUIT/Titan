@@ -9,7 +9,9 @@
 import Foundation
 import RealmSwift
 
-final class GroupColorRealmObj: Object {
+//
+// MARK: - GroupColorRealmObj
+final class GroupColorRealmObj: BaseRealmObj {
     
     
     //

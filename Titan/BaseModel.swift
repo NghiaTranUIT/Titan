@@ -8,22 +8,36 @@
 
 import Foundation
 import ObjectMapper
+import PromiseKit
+import RealmSwift
 
+//
+// MARK: - BaseModel
 class BaseModel: Mappable, CustomStringConvertible {
     
     
     //
     // MARK: - Variable
     var objectId: String!
-    var createdAt: NSDate!
-    var updatedAt: NSDate!
+    var createdAt: Date!
+    var updatedAt: Date!
     var className: String!
+    
+    
+    /// Realm Obj class 
+    var realmObjClass: BaseRealmObj.Type {
+        get {
+            return BaseRealmObj.self
+        }
+    }
     
     
     //
     // MARK: - Init
     init() {
-        
+        self.objectId = UUID().uuidString
+        self.createdAt = Date()
+        self.updatedAt = Date()
     }
     
     required init?(map: Map) {
@@ -58,60 +72,21 @@ class BaseModel: Mappable, CustomStringConvertible {
         self.className <- map[Constants.Obj.KeyClassname]
     }
     
-}
-
-
-//
-// MARK: - Mapping model
-extension BaseModel {
-    class func objectForDictionary(_ dictionary: [String: Any], classname c_n: String) -> BaseModel? {
-        
-        if c_n == Constants.Obj.Classname.Database {
-            let model = self.mapperObject(DatabaseObj.self, dictionary: dictionary)
-            
-            return model
-        }
-        
-        return nil
-    }
     
-    private class func mapperObject<T>(_ type: T.Type, dictionary: [String: Any]) -> T? where T: Mappable {
+    //
+    // MARK: - Realm Convertible
+    /// Convert from BaseModel -> RealmObj
+    /// MUST Override on subclass to provide exactly behavior
+    func convertToRealmObj() -> BaseRealmObj {
         
-        guard let model = Mapper<T>().map(JSON: dictionary) else {
-            return nil
-        }
+        let realmObj = BaseRealmObj()
         
-        return model
+        realmObj.objectId = self.objectId
+        realmObj.createdAt = self.createdAt
+        realmObj.updatedAt = self.updatedAt
+        
+        return realmObj
     }
 }
 
 
-//
-// MARK: - Date Transform
-public class APIDateTransform: TransformType {
-
-    public typealias Object = NSDate
-    public typealias JSON = String
-    
-    public init() {}
-    
-    public func transformFromJSON(_ value: Any?) -> NSDate? {
-        if let value = value as? String {
-            return ApplicationManager.sharedInstance.globalDateFormatter.date(from: value) as NSDate?
-        }
-        
-        if let value = value as? NSDate {
-            return value
-        }
-        
-        return nil
-    }
-    
-    public func transformToJSON(_ value: NSDate?) -> String? {
-        if let value = value {
-            return ApplicationManager.sharedInstance.globalDateFormatter.string(from: value as Date)
-        }
-        
-        return nil
-    }
-}

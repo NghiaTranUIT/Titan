@@ -18,7 +18,6 @@ final class DatabaseObj: BaseModel {
     var name: String! = "New Connection"
     var host: String! = "localhost"
     var username: String! = "postgres"
-    var user: UserObj! = UserObj.currentUser
     var password: String! = ""
     var database: String! = "postgres"
     var port: Int! = 5432
@@ -28,6 +27,15 @@ final class DatabaseObj: BaseModel {
     var groupConnection: GroupConnectionObj!
     
     
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return DatabaseRealmObj.self
+        }
+        
+    }
+    
+    
     //
     // MARK: - Override
     override func mapping(map: Map) {
@@ -35,7 +43,6 @@ final class DatabaseObj: BaseModel {
         
         self.name <- map[Constants.Obj.Database.Name]
         self.host <- map[Constants.Obj.Database.Host]
-        self.user <- map[Constants.Obj.Database.User]
         self.password <- map[Constants.Obj.Database.Password]
         self.database <- map[Constants.Obj.Database.Database]
         self.port <- map[Constants.Obj.Database.Port]
@@ -43,6 +50,29 @@ final class DatabaseObj: BaseModel {
         self.ssl <- map[Constants.Obj.Database.ssl]
         self.ssl <- map[Constants.Obj.Database.ssh]
         self.groupConnection <- map[Constants.Obj.Database.groupConnection]
+    }
+    
+    
+    /// To realm obj
+    override func convertToRealmObj() -> BaseRealmObj {
+        
+        let realmObj = DatabaseRealmObj()
+        
+        realmObj.objectId = self.objectId
+        realmObj.createdAt = self.createdAt
+        realmObj.updatedAt = self.updatedAt
+        
+        realmObj.name = self.name
+        realmObj.host = self.host
+        realmObj.username = self.username
+        realmObj.password = self.password
+        realmObj.port = self.port
+        realmObj.saveToKeychain = self.saveToKeychain
+        
+        realmObj.ssl = self.ssl?.convertToRealmObj() as? SSLRealmObj
+        realmObj.ssh = self.ssh?.convertToRealmObj() as? SSHRealmObj
+        
+        return realmObj
     }
     
     

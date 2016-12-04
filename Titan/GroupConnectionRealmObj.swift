@@ -9,7 +9,9 @@
 import Foundation
 import RealmSwift
 
-final class GroupConnectionRealmObj: Object {
+//
+// MARK: - GroupConnectionRealmObj
+final class GroupConnectionRealmObj: BaseRealmObj {
     
     
     //

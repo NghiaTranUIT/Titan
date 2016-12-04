@@ -9,11 +9,15 @@
 import Cocoa
 import RealmSwift
 
-class UserRealmObj: Object {
+
+//
+// MARK: - UserRealmObj
+class UserRealmObj: BaseRealmObj {
   
+    
     //
     // MARK: - Variable
     var username = "guest"
     var isGuest: Bool = true
-    
+    var groupConnections: [GroupConnectionRealmObj] = []
 }

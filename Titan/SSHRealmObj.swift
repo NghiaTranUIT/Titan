@@ -9,6 +9,17 @@
 import Foundation
 import RealmSwift
 
-class SSHRealmObj: Object {
 
+//
+// MARK: - SSHRealmObj
+class SSHRealmObj: BaseRealmObj {
+
+    
+    //
+    // MARK: - Variable
+    var host: String!
+    var user: String!
+    var indentityFile: String!
+    var port: Int!
+    
 }

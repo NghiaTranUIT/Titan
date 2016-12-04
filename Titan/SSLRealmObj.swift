@@ -9,6 +9,18 @@
 import Foundation
 import RealmSwift
 
-class SSLRealmObj: Object {
 
+//
+// MARK: - SSLRealmObj
+class SSLRealmObj: BaseRealmObj {
+
+    
+    //
+    // MARK: - Variable
+    dynamic var clientKeyFile: String!
+    dynamic var clientCertificate: String!
+    dynamic var serverRootCertificate: String!
+    dynamic var certificateRevocationList: String!
+    dynamic var sslCompression = false
+    
 }

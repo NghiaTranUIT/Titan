@@ -11,27 +11,19 @@ import RxSwift
 
 class QueueManager {
     
-    // Share instance
+    
+    /// Share instance
     static let shared = QueueManager()
     
-    // Main queue
+    
+    /// Main queue
     lazy var mainQueue: MainScheduler = {
        return MainScheduler.instance
     }()
     
+    
+    /// Background Queue
     lazy var backgroundQueue: ConcurrentDispatchQueueScheduler = {
         return ConcurrentDispatchQueueScheduler(qos: DispatchQoS.background)
     }()
-}
-
-//
-// MARK: - Queue execution helpers
-extension QueueManager {
-    
-}
-
-//
-// MARK: - Private
-extension QueueManager {
-
 }

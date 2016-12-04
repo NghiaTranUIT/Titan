@@ -15,25 +15,22 @@ class SSHObj: BaseModel {
     //
     // MARK: - Variable
     var host: String!
-    var user: UserObj!
+    var user: String!
     var indentityFile: String!
     var port: Int!
     
     
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return SSLRealmObj.self
+        }
+        
+    }
+    
+    
     //
-    // MARK: - Override
-    required init?(_ map: Map) {
-        super.init(map: map)
-    }
-    
-    required init?(map: Map) {
-        fatalError("init(map:) has not been implemented")
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-    
+    // MARK: - Override    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -41,5 +38,23 @@ class SSHObj: BaseModel {
         self.user <- map[Constants.Obj.SSH.User]
         self.indentityFile <- map[Constants.Obj.SSH.IndentityFile]
         self.port <- map[Constants.Obj.SSH.Port]
+    }
+    
+    
+    /// Convert
+    override func convertToRealmObj() -> BaseRealmObj {
+        
+        let realmObj = SSHRealmObj()
+        
+        realmObj.objectId = self.objectId
+        realmObj.updatedAt = self.updatedAt
+        realmObj.createdAt = self.createdAt
+        
+        realmObj.host = self.host
+        realmObj.user = self.user
+        realmObj.indentityFile = self.indentityFile
+        realmObj.port = self.port
+        
+        return realmObj
     }
 }

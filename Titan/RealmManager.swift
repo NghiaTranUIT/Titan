@@ -7,8 +7,9 @@
 //
 
 import Realm
-import RxSwift
 import RealmSwift
+import PromiseKit
+import Alamofire
 
 final class RealmManager {
     
@@ -29,6 +30,7 @@ final class RealmManager {
     private lazy var realm: Realm = {
         do {
             //return try Realm(configuration: self.secrectRealmConfigure)
+            Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
             return try Realm()
         } catch let error as NSError {
             // If the encryption key is wrong, `error` will say that it's an invalid database
@@ -38,37 +40,43 @@ final class RealmManager {
     }()
     
     
-    //
-    // MARK: - Public
-    
-    /// Fetch all
-    func fetchAll<T: Object>(type: T.Type) -> Observable<Results<T>> {
-        let result = self.realm.objects(type)
-        return Observable.just(result)
+    // Fetch all
+    func fetchAll<T: Object>(type: T.Type) -> Promise<Results<T>> {
+        return Promise { fullfll, reject in
+            let results = self.realm.objects(type)
+            fullfll(results)
+        }
     }
     
     
-    /// First
-    func first<T: Object>(type: T.Type) -> Observable<T> {
-        guard let firstObj = self.realm.objects(type).first else {
-            return Observable.empty()
+    /// Is Exist
+    func isExist<T: Object>(type: T.Type, ID: String) -> Promise<Results<T>> {
+        return Promise { fullfll, reject in
+            let results = self.realm.objects(type).filter("\(Constants.Obj.ObjectId) = '\(ID)'")
+            fullfll(results)
         }
-        return Observable.just(firstObj)
     }
     
     
     /// Save
-    func save<T: Object>(obj: T) -> Observable<T> {
-        return Observable.create({[unowned self] (obs) -> Disposable in
-            
+    func save(obj: Object) -> Promise<Void> {
+        return Promise { fullfll, reject in
             try! self.realm.write {
-                self.realm.add(obj)
+                self.realm.add(obj, update: true)
             }
-            
-            obs.onNext(obj)
-            obs.onCompleted()
-            
-            return Disposables.create()
-        })
+            fullfll(())
+        }
+    }
+    
+    
+    /// Test
+    func testFetchCurrentUser() {
+        let results = self.realm.objects(UserRealmObj.self)
+        let group = results.first!.groupConnections.first!
+        let color = group.color
+        
+        Logger.info("Result = \(results)")
+        Logger.info("group = \(group)")
+        Logger.info("color = \(color)")
     }
 }

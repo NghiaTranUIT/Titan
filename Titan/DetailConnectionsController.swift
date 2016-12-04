@@ -8,7 +8,14 @@
 
 import Cocoa
 import RxSwift
-import RxCocoa
+
+protocol DetailConnectionsControllerOutput {
+    func connectConnection(_ connection: DatabaseObj)
+}
+
+protocol DetailConnectionsControllerDataSource: class {
+    var selectedDatabase: DatabaseObj {get}
+}
 
 class DetailConnectionsController: BaseViewController {
 
@@ -20,11 +27,12 @@ class DetailConnectionsController: BaseViewController {
     @IBOutlet weak var databaseTxt: NSTextField!
     @IBOutlet weak var userSSHCheckBox: NSButton!
     @IBOutlet weak var portTxt: NSTextField!
+    @IBOutlet weak var connectBtn: NSButton!
     
     //
     // MARK: - Variable
-    // View Model
-    let viewModel = DetailConnectionViewModel()
+    var output: DetailConnectionsControllerOutput!
+    weak var dataSource: DetailConnectionsControllerDataSource!
     
     //
     // MARK: - Rx
@@ -33,28 +41,31 @@ class DetailConnectionsController: BaseViewController {
         // Do view setup here.
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.viewModel.active = true
+    override func initCommon() {
+        
+        /// IBAction
+        //self.connectBtn.target = self
+        //self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
     }
     
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
-        self.viewModel.active = false
+    override func setupActions() {
+        
+        /// Config
+        DetailConnectionConfig.shared.configure(viewController: self)
     }
     
-    override func setupBinding() {
+    
+    //
+    // MARK: - IBAction
+    @objc fileprivate func connectConnectionTapped() {
+        self.output.connectConnection(self.dataSource.selectedDatabase)
+    }
+}
+
+//
+// MARK: - DetailConnectionPresenterOutput
+extension DetailConnectionsController: DetailConnectionPresenterOutput {
+    func presentError(with error: NSError) {
         
-        // SSH
-        self.userSSHCheckBox.rx.tap.subscribe { (_) in
-            Logger.info("Tap SSH")
-        }.addDisposableTo(self.disposeBag)
-        
-        // Host Name
-        (self.hostNameTxt.rx.text <-> self.viewModel.hostNameVar).addDisposableTo(self.disposeBag)
-        (self.usernameTxt.rx.text <-> self.viewModel.usernameVar).addDisposableTo(self.disposeBag)
-        (self.passwordTxt.rx.text <-> self.viewModel.passwordVar).addDisposableTo(self.disposeBag)
-        (self.databaseTxt.rx.text <-> self.viewModel.databaseVar).addDisposableTo(self.disposeBag)
-        (self.portTxt.rx.text <-> self.viewModel.portVar).addDisposableTo(self.disposeBag)
     }
 }

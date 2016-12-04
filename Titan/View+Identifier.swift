@@ -23,6 +23,7 @@ protocol Identifier {
     static func xib() -> NSNib?
 }
 
+
 //
 // MARK: - Default Implementation for Identifier
 extension NSView: Identifier {
@@ -41,3 +42,4 @@ extension NSView: Identifier {
         return NSNib(nibNamed: self.identifierView, bundle: nil)
     }
 }
+

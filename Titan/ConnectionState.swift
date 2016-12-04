@@ -13,7 +13,7 @@ import RxSwift
 struct ConnectionState {
     
     /// Connection selected
-    var connections = Variable<[DatabaseObj]>([])
+    var groupConnections = Variable<[GroupConnectionObj]>([])
     var selectedConnection = PublishSubject<DatabaseObj>()
 }
 
@@ -21,23 +21,49 @@ struct ConnectionState {
 // MARK: - Reducer
 extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
-        let state = state ?? ConnectionState()
-        let disposeBag = DisposeBag()
         
+        // Get state
+        let state = state ?? ConnectionState()
+        
+        // Doing
         switch action {
-        case let action as SelectedConnectionAction:
+        case let action as SelectConnectionAction:
             state.selectedConnection.on(.next(action.selectedConnection))
             break
-        case let action as AddNewConnectionToListConnectionAction:
-            var currentConnections = state.connections.value
-            currentConnections.append(action.newConnection)
-            state.connections.value = currentConnections
+        case let action as CreateNewDatabaseAction:
+            
+            /*
+            var groupConnections = state.groupConnections.value
+            
+            // Check
+            if groupConnections.count == 0 {
+                let groupConnectionObj = action.groupConnectionObj
+                groupConnectionObj.databases.append(action.databaseObj)
+                groupConnections.append(groupConnectionObj)
+            } else {
+                var selectedGroup: GroupConnectionObj? = nil
+                for i in groupConnections {
+                    if i.objectId == action.groupConnectionObj.objectId {
+                        selectedGroup = i
+                        break
+                    }
+                }
+                
+                if let selectedGroup = selectedGroup {
+                    selectedGroup.databases.append(action.databaseObj)
+                }
+            }
+            state.groupConnections.value = groupConnections
+            */
+            
             break
-        case _ as GetAllConnectionsAction:
-            DatabaseObj.fetchAll()
-                .asDriver(onErrorJustReturn: [])
-                .drive(state.connections)
-                .addDisposableTo(disposeBag)
+        case let action as AddNewDefaultConnectionAction:
+            var groupConnections = state.groupConnections.value
+            groupConnections.append(action.groupConnectionObj)
+            state.groupConnections.value = groupConnections
+            break
+        case let action as FetchAllGroupConnectionsAction:
+            state.groupConnections.value = action.connections
             break
         default:
             break
@@ -48,16 +74,5 @@ extension ConnectionState {
 }
 
 
-//
-// MARK: - Action
-struct SelectedConnectionAction: Action {
-    var selectedConnection: DatabaseObj
-}
 
-struct AddNewConnectionToListConnectionAction: Action {
-    var newConnection: DatabaseObj
-}
 
-struct GetAllConnectionsAction: Action {
-    
-}

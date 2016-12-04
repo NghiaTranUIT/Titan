@@ -7,19 +7,59 @@
 //
 
 import Cocoa
-import RxSwift
-import RxCocoa
+import ReSwift
 
+
+//
+// MARK: - Output
+/// Send request to Interactor
+protocol ListConnectionsControllerOutput {
+    func fetchAllGroupConnections()
+    func selectConnection(_ connection: DatabaseObj)
+    func addNewConnection()
+}
+
+
+//
+// MARK: - Input
+/// Input for ListController
+/// Called from Presenter if ReduxStore has changed data
+protocol ListConnectionsControllerInput: class {
+    func reloadData()
+}
+
+
+//
+// MARK: - DataSource
+/// Contains main helper to get data source for collection View
+/// Presenter will take responsibile for dataSource
+protocol ListConnectionsControllerDataSource {
+    func numberOfGroupConnections() -> Int
+    func numberOfDatabase(at section: Int) -> Int
+    func database(at indexPath: IndexPath) -> DatabaseObj
+    func groupConnection(at indexPath: IndexPath) -> GroupConnectionObj
+}
+
+
+//
+// MARK: - List Connection Controller
+/// It will present all GroupConnection and all database
+/// Will combine data from local and cloud (if user has already logged-in)
 class ListConnectionsController: BaseViewController {
 
     //
     // MARK: - Variable
-    let viewModel = ListConnectionViewModel()
+    var output: ListConnectionsControllerOutput!
+    var dataSource: ListConnectionsControllerDataSource!
+    
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var addConnectionBtn: NSButton!
+    @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var logoBigContainerView: NSView!
+    @IBOutlet weak var logoContainerView: NSView!
+    @IBOutlet weak var bottomBarView: NSView!
+    @IBOutlet weak var newGroupConnectionBtn: NSButton!
     
     //
     // MARK: - View Cycle
@@ -27,107 +67,127 @@ class ListConnectionsController: BaseViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.viewModel.active = true
-    }
-    
-    override func viewDidDisappear() {
-        super.viewDidDisappear()
-        self.viewModel.active = false
-    }
-    
     override func initCommon() {
+        
+        // Configure
+        ListConnectionConfig.shared.configure(viewController: self)
+        
+        // Appereance
+        self.initAppereance()
+        
+        // Table View
         self.initTableView()
+    }
+    
+    private func initAppereance() {
+        
+        // Background color
+        self.logoContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
+        self.logoBigContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
+        self.collectionView.backgroundColors = [ThemeObj.share.primaryMenuColor]
+        self.bottomBarView.backgroundColor = ThemeObj.share.primaryMainAppColor
+        self.newGroupConnectionBtn.backgroundColor = ThemeObj.share.primaryMainAppColor
+        self.newGroupConnectionBtn.textColor = NSColor.white
+        
+        // Remove border
+        self.collectionView.wantsLayer = true
+        self.collectionView.layer?.borderWidth = 0
     }
     
     private func initTableView() {
         
         // Data Source
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
         
         // Register
-        self.tableView.registerView(ConnectionCell.self)
+        self.collectionView.registerCell(ConnectionCell.self)
+        self.collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
         
-        // Trigger selected
-        self.tableView.target = self
-        self.tableView.doubleAction = #selector(ListConnectionsController.openDatabaseClicked(sender:))
+        // Layout
+        self.collectionView.enclosingScrollView?.contentInsets = NSEdgeInsetsMake(24, 0, 0, 0)
+        
+        // Flow layout
+        let flowLayout = NSCollectionViewFlowLayout()
+        let width = self.collectionView.frame.size.width
+        flowLayout.itemSize = CGSize(width: width, height: 32)
+        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 20, 0)
+        flowLayout.headerReferenceSize = CGSize(width: width, height: 36)
+        flowLayout.sectionHeadersPinToVisibleBounds = false
+        flowLayout.sectionFootersPinToVisibleBounds = false
     }
     
-    override func setupBinding() {
-        
-        // Fetch connections
-        self.viewModel.delegate = self
-        self.viewModel.fetchConnections()
-        
-        // Add new connection
-        self.viewModel.addNewConnection = self.addConnectionBtn.rx.tap.map({ (_) -> DatabaseObj in
-            // Create default db
-            return DatabaseObj.defaultDatabase()
-        })
+    override func setupActions() {
+    
+        // Fetch all connection
+        self.output.fetchAllGroupConnections()
+    }
+    
+    @IBAction func newGroupConnectionBtnTapped(_ sender: Any) {
+        self.output.addNewConnection()
     }
 }
+
+//
+// MARK: - ViewModel Delegate
+extension ListConnectionsController: ListConnectionsControllerInput {
+    func reloadData() {
+        self.collectionView.reloadData()
+    }
+}
+
+//
+// MARK: - Data Source
+extension ListConnectionsController: NSCollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        return self.dataSource.numberOfGroupConnections()
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dataSource.numberOfDatabase(at: section)
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+        
+        // Database cell
+        let databaseObj = self.dataSource.database(at: indexPath)
+        return self.connectionCell(with: databaseObj, for: collectionView, indexPath: indexPath)
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> NSView {
+        let groupConnection = self.dataSource.groupConnection(at: indexPath)
+        return self.groupConnectionHeader(with: groupConnection, for: collectionView, indexPath: indexPath)
+    }
+}
+
+
+//
+// MARK: - Delegate
+extension ListConnectionsController: NSCollectionViewDelegate {
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+    
+        // Select
+        let selectedDb = self.dataSource.database(at: indexPaths.first!)
+        self.output.selectConnection(selectedDb)
+    }
+}
+
 
 //
 // MARK: - Private
 extension ListConnectionsController {
-    @objc fileprivate func openDatabaseClicked(sender: AnyObject) {
-        
-        // Prevent select multi connections
-        guard self.tableView.selectedRow == 1 else {
-            return
-        }
-        
-        // Bind to View model
-        let selectedIndexPath = IndexPath(item: self.tableView.selectedRow, section: 0)
-        let selectedItemObserable = Variable<IndexPath>(selectedIndexPath)
-        self.viewModel.selectedIndexPath = selectedItemObserable.asObservable()
-    }
-}
-
-
-//
-// MARK: - ViewModel Delegate
-extension ListConnectionsController: ListConnectionViewModelDelegate {
-    func ListConnectionViewModelShouldReload(sender: ListConnectionViewModel) {
-        self.tableView.reloadData()
-    }
-}
-
-extension ListConnectionsController: NSTableViewDataSource {
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel.numberOfConnection()
-    }
     
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 30
-    }
-}
-
-extension ListConnectionsController: NSTableViewDelegate {
-    
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
-        // Return if col is not first col
-        guard tableColumn == tableView.tableColumns[0] else {
-            return nil
-        }
-        
-        // Get model
-        let databaseObj = self.viewModel.connection(atRow: row)
-        return self.connectionListCell(with: databaseObj, for: tableView)
-    }
-    
-    private func connectionListCell(with databaseObj: DatabaseObj, for tableView: NSTableView) -> NSView {
-        let cell = tableView.make(withIdentifier: ConnectionCell.identifierView, owner: nil) as! ConnectionCell
-        
+    fileprivate func connectionCell(with databaseObj: DatabaseObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSCollectionViewItem {
+        let cell = collectionView.makeItem(withIdentifier: ConnectionCell.identifierView, for: indexPath) as! ConnectionCell
         cell.configureCell(with: databaseObj)
-        
         return cell
     }
     
-    func tableViewSelectionDidChange(_ notification: Notification) {
-        
+    fileprivate func groupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {
+        let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
+        header.configureCellWith(groupConnectionObj: groupConnectionObj)
+        return header
     }
 }

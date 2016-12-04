@@ -7,11 +7,10 @@
 //
 
 import Cocoa
-import RxSwift
-import RxCocoa
 import ReSwift
 import Alamofire
 import ObjectMapper
+import PromiseKit
 
 //
 // MARK: - Request protocol
@@ -31,7 +30,7 @@ protocol Request: Action, URLRequestConvertible {
     
     var parameterEncoding: ParameterEncoding {get}
     
-    func toAlamofireObservable() -> Observable<Result<T>>
+    func toAlamofireObservable() -> Promise<T>
     
     init()
 }
@@ -93,43 +92,35 @@ extension Request {
         }
     }
     
-    func toAlamofireObservable() -> Observable<Result<T>> {
-        return Observable.create { (o) -> Disposable in
-            
+    func toAlamofireObservable() -> Promise<T> {
+        
+        return Promise { fulfill, reject in
             guard let urlRequest = try? self.asURLRequest() else {
-                o.onError(Result<NSError>.defaultErrorResult)
-                o.onCompleted()
-                return Disposables.create()
+                reject(NSError.unknowError())
+                return
             }
             
-            let request = Alamofire.request(urlRequest)
+            Alamofire.request(urlRequest)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: ["application/json"])
                 .responseJSON(completionHandler: { (response) in
                     
                     // Check error
                     if let error = response.result.error {
-                        o.onError(Result<T>.Failure(error))
-                        o.onCompleted()
+                        reject(error as NSError)
                         return
                     }
                     
                     // Check Response
                     guard let data = response.result.value else {
-                        o.onError(Result<T>.defaultErrorResult)
-                        o.onCompleted()
+                        reject(NSError.jsonMapperError())
                         return
                     }
                     
                     // Parse here
                     let result = JSONDecoder.shared.decodeObject(data) as! T
-                    o.onNext(Result<T>.Success(result))
-                    o.onCompleted()
+                    fulfill(result)
                 })
-            
-            return Disposables.create {
-                request.cancel()
-            }
         }
     }
     

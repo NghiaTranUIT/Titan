@@ -21,20 +21,16 @@ class SSLObj: BaseModel {
     var sslCompression: Bool!
     
     
+    /// Realm Obj class
+    override var realmObjClass: BaseRealmObj.Type {
+        get {
+            return SSLRealmObj.self
+        }
+        
+    }
+    
     //
     // MARK: - Override
-    required init?(_ map: Map) {
-        super.init(map: map)
-    }
-    
-    required init?(map: Map) {
-        fatalError("init(map:) has not been implemented")
-    }
-    
-    required init() {
-        fatalError("init() has not been implemented")
-    }
-    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -43,6 +39,24 @@ class SSLObj: BaseModel {
         self.serverRootCertificate <- map[Constants.Obj.SSL.ServerRootCertificate]
         self.certificateRevocationList <- map[Constants.Obj.SSL.CertificateRevocationList]
         self.sslCompression <- map[Constants.Obj.SSL.SSLCompression]
+    }
+    
+    
+    /// Convert
+    override func convertToRealmObj() -> BaseRealmObj {
+        let realmObj = SSLRealmObj()
+        
+        realmObj.objectId = self.objectId
+        realmObj.updatedAt = self.updatedAt
+        realmObj.createdAt = self.createdAt
+        
+        realmObj.clientKeyFile = self.clientKeyFile
+        realmObj.clientCertificate = self.clientCertificate
+        realmObj.serverRootCertificate = self.serverRootCertificate
+        realmObj.certificateRevocationList = self.certificateRevocationList
+        realmObj.sslCompression = self.sslCompression
+        
+        return realmObj
     }
     
 }

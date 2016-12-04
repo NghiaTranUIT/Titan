@@ -8,20 +8,36 @@
 
 import Foundation
 import ObjectMapper
+import PromiseKit
+import RealmSwift
 
+//
+// MARK: - BaseModel
 class BaseModel: Mappable, CustomStringConvertible {
+    
     
     //
     // MARK: - Variable
-    var objectId: String = "guestID"
-    var createdAt: NSDate!
-    var updatedAt: NSDate!
+    var objectId: String!
+    var createdAt: Date!
+    var updatedAt: Date!
     var className: String!
+    
+    
+    /// Realm Obj class 
+    var realmObjClass: BaseRealmObj.Type {
+        get {
+            return BaseRealmObj.self
+        }
+    }
+    
     
     //
     // MARK: - Init
-    required init() {
-        
+    init() {
+        self.objectId = UUID.shortUUID()
+        self.createdAt = Date()
+        self.updatedAt = Date()
     }
     
     required init?(map: Map) {
@@ -47,6 +63,7 @@ class BaseModel: Mappable, CustomStringConvertible {
         }
     }
     
+    
     /// Mapping function
     func mapping(map: Map) {
         self.objectId <- map[Constants.Obj.ObjectId]
@@ -55,58 +72,49 @@ class BaseModel: Mappable, CustomStringConvertible {
         self.className <- map[Constants.Obj.KeyClassname]
     }
     
-}
-
-//
-// MARK: - Mapping model
-extension BaseModel {
-    class func objectForDictionary(_ dictionary: [String: Any], classname c_n: String) -> BaseModel? {
+    
+    //
+    // MARK: - Realm Convertible
+    /// Convert from BaseModel -> RealmObj
+    /// MUST Override on subclass to provide exactly behavior
+    func convertToRealmObj() -> BaseRealmObj {
         
-        if c_n == Constants.Obj.Classname.Database {
-            let model = self.mapperObject(DatabaseObj.self, dictionary: dictionary)
-            
-            return model
-        }
+        let realmObj = BaseRealmObj()
         
-        return nil
+        realmObj.objectId = self.objectId
+        realmObj.createdAt = self.createdAt
+        realmObj.updatedAt = self.updatedAt
+        
+        return realmObj
     }
     
-    private class func mapperObject<T>(_ type: T.Type, dictionary: [String: Any]) -> T? where T: Mappable {
-        
-        guard let model = Mapper<T>().map(JSON: dictionary) else {
-            return nil
-        }
-        
-        return model
-    }
-}
-
-//
-// MARK: - Date Transform
-public class APIDateTransform: TransformType {
-
-    public typealias Object = NSDate
-    public typealias JSON = String
     
-    public init() {}
-    
-    public func transformFromJSON(_ value: Any?) -> NSDate? {
-        if let value = value as? String {
-            return ApplicationManager.sharedInstance.globalDateFormatter.date(from: value) as NSDate?
-        }
+    /// Save
+    func save() -> Promise<Void> {
         
-        if let value = value as? NSDate {
-            return value
-        }
+        // Convert to realm obj
+        let realmObj = self.convertToRealmObj()
         
-        return nil
+        // Save to realm
+        return RealmManager.sharedManager.save(obj: realmObj)
     }
     
-    public func transformToJSON(_ value: NSDate?) -> String? {
-        if let value = value {
-            return ApplicationManager.sharedInstance.globalDateFormatter.string(from: value as Date)
-        }
+    
+    /// Fetch
+    func fetch() -> Promise<BaseModel?> {
         
-        return nil
+        // Fetch from realm
+        return RealmManager.sharedManager.fetchAll(type: self.realmObjClass)
+            .then { (result) -> Promise<BaseModel?> in
+                guard let realmObj = result.first as? UserRealmObj else {
+                    return Promise<BaseModel?>(value: nil)
+                }
+                
+                // Convert to model
+                let obj = realmObj.convertToModelObj()
+                return Promise<BaseModel?>(value: obj)
+        }
     }
 }
+
+

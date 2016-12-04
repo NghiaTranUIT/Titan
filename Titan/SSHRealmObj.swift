@@ -17,9 +17,9 @@ class SSHRealmObj: BaseRealmObj {
     
     //
     // MARK: - Variable
-    var host: String!
-    var user: String!
-    var indentityFile: String!
-    var port: Int!
+    dynamic var host: String!
+    dynamic var user: String!
+    dynamic var indentityFile: String!
+    var port: Int = 22
     
 }

@@ -67,4 +67,16 @@ final class RealmManager {
             fullfll(())
         }
     }
+    
+    
+    /// Test
+    func testFetchCurrentUser() {
+        let results = self.realm.objects(UserRealmObj.self)
+        let group = results.first!.groupConnections.first!
+        let color = group.color
+        
+        Logger.info("Result = \(results)")
+        Logger.info("group = \(group)")
+        Logger.info("color = \(color)")
+    }
 }

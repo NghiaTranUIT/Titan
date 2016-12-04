@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 import RealmSwift
+import PromiseKit
+
 
 //
 // MARK: - UserObj
@@ -54,6 +56,18 @@ final class UserObj: BaseModel {
     }
     
     
+    /// Convert to currentUser
+    private func convertToCurrentUser(user: UserObj) {
+        
+        // LOCK
+        objc_sync_enter(self)
+        defer {objc_sync_exit(self)}
+        
+        // Convert
+        Static.instance = user
+    }
+    
+    
     //
     // MARK: - Override
     override func convertToRealmObj() -> BaseRealmObj {
@@ -70,6 +84,20 @@ final class UserObj: BaseModel {
         })
         realmObj.groupConnections.append(objectsIn: groups)
         return realmObj
+    }
+    
+    
+    /// Fetch
+    override func fetch() -> Promise<BaseModel?> {
+        return super.fetch().then { (obj) -> Promise<BaseModel?> in
+            
+            // Convert to current user
+            let user = obj as! UserObj
+            self.convertToCurrentUser(user: user)
+            
+            // return
+            return Promise<BaseModel?>(value: user)
+        }
     }
 }
 

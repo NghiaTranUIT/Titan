@@ -57,13 +57,13 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         let worker = FetchAllGroupConnectionsWorker()
         
         // Execute
-        worker.execute().then {[unowned self] dbs -> Void in
+        worker.execute().then {[unowned self] groups -> Void in
             
             // Check if there is no connection
             // Create new one
             // Focus too
-            if dbs.count == 0 {
-                self.addNewConnection()
+            if groups.count == 0 {
+                //self.addNewConnection()
             }
         }
         .catch { error in

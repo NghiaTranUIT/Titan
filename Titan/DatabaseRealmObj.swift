@@ -16,16 +16,16 @@ class DatabaseRealmObj: BaseRealmObj {
     
     //
     // MARK: - Variable
-    var name: String!
-    var host: String!
-    var username: String!
-    var user: UserRealmObj!
-    var password: String!
-    var database: String!
-    var port: Int = 5432
-    var saveToKeychain = false
-    var ssl: SSLRealmObj?
-    var ssh: SSHRealmObj?
+    dynamic var name: String!
+    dynamic var host: String!
+    dynamic var username: String!
+    dynamic var user: UserRealmObj!
+    dynamic var password: String!
+    dynamic var database: String!
+    dynamic var port: Int = 5432
+    dynamic var saveToKeychain = false
+    dynamic var ssl: SSLRealmObj?
+    dynamic var ssh: SSHRealmObj?
     var groupConnection = LinkingObjects(fromType: GroupConnectionRealmObj.self, property: "databases")
     
     

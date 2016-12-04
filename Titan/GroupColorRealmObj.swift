@@ -16,7 +16,7 @@ final class GroupColorRealmObj: BaseRealmObj {
     
     //
     // MARK: - Variable
-    var colorHex: String!
+    dynamic var colorHex: String!
     
     
     //

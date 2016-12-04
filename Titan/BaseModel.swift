@@ -87,6 +87,34 @@ class BaseModel: Mappable, CustomStringConvertible {
         
         return realmObj
     }
+    
+    
+    /// Save
+    func save() -> Promise<Void> {
+        
+        // Convert to realm obj
+        let realmObj = self.convertToRealmObj()
+        
+        // Save to realm
+        return RealmManager.sharedManager.save(obj: realmObj)
+    }
+    
+    
+    /// Fetch
+    func fetch() -> Promise<BaseModel?> {
+        
+        // Fetch from realm
+        return RealmManager.sharedManager.fetchAll(type: self.realmObjClass)
+            .then { (result) -> Promise<BaseModel?> in
+                guard let realmObj = result.first as? UserRealmObj else {
+                    return Promise<BaseModel?>(value: nil)
+                }
+                
+                // Convert to model
+                let obj = realmObj.convertToModelObj()
+                return Promise<BaseModel?>(value: obj)
+        }
+    }
 }
 
 

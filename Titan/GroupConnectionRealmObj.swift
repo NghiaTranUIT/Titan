@@ -16,8 +16,8 @@ final class GroupConnectionRealmObj: BaseRealmObj {
     
     //
     // MARK: - Variable
-    var name: String! = ""
-    var color: GroupColorRealmObj!
+    dynamic var name: String! = ""
+    dynamic var color: GroupColorRealmObj!
     var databases = List<DatabaseRealmObj>()
     
     

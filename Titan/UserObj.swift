@@ -48,23 +48,29 @@ final class UserObj: BaseModel {
         
         // Executing
         if Static.instance == nil {
+            
+            // Get from disk
+            // Sync
+            let userObj = RealmManager.sharedManager.fetchCurrentUser()
+            
+            // Turn to currentUsr
+            if let userObj = userObj {
+                Static.instance = userObj
+                return Static.instance
+            }
+            
+            // Create Guest User
             let guestUser = UserObj.guestUser()
             Static.instance = guestUser
+            
+            // Save
+            _ = Static.instance.save().then(execute: { _ -> Void in
+                
+            })
+
         }
         
         return Static.instance
-    }
-    
-    
-    /// Convert to currentUser
-    private func convertToCurrentUser(user: UserObj) {
-        
-        // LOCK
-        objc_sync_enter(self)
-        defer {objc_sync_exit(self)}
-        
-        // Convert
-        Static.instance = user
     }
     
     
@@ -85,20 +91,6 @@ final class UserObj: BaseModel {
         realmObj.groupConnections.append(objectsIn: groups)
         return realmObj
     }
-    
-    
-    /// Fetch
-    override func fetch() -> Promise<BaseModel?> {
-        return super.fetch().then { (obj) -> Promise<BaseModel?> in
-            
-            // Convert to current user
-            let user = obj as! UserObj
-            self.convertToCurrentUser(user: user)
-            
-            // return
-            return Promise<BaseModel?>(value: user)
-        }
-    }
 }
 
 
@@ -109,7 +101,7 @@ extension UserObj {
     /// Init GUEST User
     fileprivate class func guestUser() -> UserObj {
         let guestUser = UserObj()
-        guestUser.objectId = "GuestUser"
+        guestUser.objectId = Constants.Obj.User.GuestUserObjectId
         guestUser.isGuest = true
         return guestUser
     }

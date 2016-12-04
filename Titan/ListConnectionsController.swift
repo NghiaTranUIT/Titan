@@ -141,7 +141,8 @@ extension ListConnectionsController: ListConnectionsControllerInput {
 extension ListConnectionsController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        return self.dataSource.numberOfGroupConnections()
+        let count = self.dataSource.numberOfGroupConnections()
+        return count
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -179,12 +180,16 @@ extension ListConnectionsController: NSCollectionViewDelegate {
 // MARK: - Private
 extension ListConnectionsController {
     
+    
+    /// Database cell
     fileprivate func connectionCell(with databaseObj: DatabaseObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSCollectionViewItem {
         let cell = collectionView.makeItem(withIdentifier: ConnectionCell.identifierView, for: indexPath) as! ConnectionCell
         cell.configureCell(with: databaseObj)
         return cell
     }
     
+    
+    /// Group Connection header
     fileprivate func groupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {
         let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
         header.configureCellWith(groupConnectionObj: groupConnectionObj)

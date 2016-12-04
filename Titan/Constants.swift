@@ -96,7 +96,7 @@ struct Constants {
         // MARK: - Base
         static let CreatedAt = "created_at"
         static let UpdatedAt = "updated_at"
-        static let ObjectId = "id"
+        static let ObjectId = "objectId"
         static let KeyClassname = "c_n"
         static let IsProcess = "_is_procress"
         
@@ -109,6 +109,7 @@ struct Constants {
         //
         // MARK: - User
         struct User {
+            static let GuestUserObjectId = "GuestUser"
             static let Username = "username"
             static let Setting = "setting"
             static let Database = "database"

@@ -69,6 +69,22 @@ final class RealmManager {
     }
     
     
+    /// Fetch current user
+    func fetchCurrentUser() -> UserObj? {
+        
+        // Where user.objectId = Guest
+        let results = self.realm.objects(UserRealmObj.self).filter("\(Constants.Obj.ObjectId) = '\(Constants.Obj.User.GuestUserObjectId)'")
+        
+        // Get
+        guard let obj = results.first else {
+            return nil
+        }
+        
+        // Convert
+        return obj.convertToModelObj() as? UserObj
+    }
+    
+    
     /// Test
     func testFetchCurrentUser() {
         let results = self.realm.objects(UserRealmObj.self)

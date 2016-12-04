@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import PromiseKit
+
 
 protocol ListConnectionInteractorInput: ListConnectionsControllerOutput {
     
@@ -17,6 +19,8 @@ protocol ListConnectionInteractorOutput {
 }
 
 
+//
+// MARK: - ListConnectionInteractor
 class ListConnectionInteractor {
     
     //
@@ -29,6 +33,7 @@ class ListConnectionInteractor {
     fileprivate var fetchConnectionWorker: FetchAllGroupConnectionsWorker!
     fileprivate var selecteConnectionWorker: SelectConnectionWorker!
     fileprivate var createNewGroupConnectionWorker: CreateNewDefaultGroupConnectionWorker!
+    fileprivate var createNewDatabaseWorker: CreateNewDatabaseWorker!
 }
 
 
@@ -42,7 +47,7 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         let worker = CreateNewDefaultGroupConnectionWorker()
         
         // Execute
-        worker.execute().then { db -> Void in
+        worker.execute().then { group -> Void in
             // Nothing
         }
         .catch { error in
@@ -57,13 +62,19 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         let worker = FetchAllGroupConnectionsWorker()
         
         // Execute
-        worker.execute().then {[unowned self] groups -> Void in
+        worker.execute().then { groups -> Void in
             
             // Check if there is no connection
             // Create new one
             // Focus too
             if groups.count == 0 {
-                //self.addNewConnection()
+                let worker = CreateNewDefaultGroupConnectionWorker()
+                worker.execute().then(execute: { group -> Promise<DatabaseObj> in
+                    let worker = CreateNewDatabaseWorker(groupConnectionObj: group)
+                    return worker.execute()
+                }).catch(execute: {[unowned self] error in
+                    self.output.presentError(error as NSError)
+                })
             }
         }
         .catch { error in

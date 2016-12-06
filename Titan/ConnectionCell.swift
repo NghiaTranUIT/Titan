@@ -30,6 +30,7 @@ class ConnectionCell: NSCollectionViewItem {
     //
     // MARK: - Public
     func configureCell(with databaseObj: DatabaseObj) {
+        
         self.connectionLbl.stringValue = databaseObj.name
     }
 }

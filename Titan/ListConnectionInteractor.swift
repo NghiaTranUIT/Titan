@@ -64,6 +64,7 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         // Execute
         worker.execute().then { groups -> Void in
             
+            
             // Check if there is no connection
             // Create new one
             // Focus too
@@ -76,6 +77,15 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
                     self.output.presentError(error as NSError)
                 })
             }
+            else if groups.count > 0 || groups.first!.databases.count == 0 {
+                let worker = CreateNewDatabaseWorker(groupConnectionObj: groups.first!)
+                worker.execute().then(execute: { (_) -> Void in
+                    
+                }).catch(execute: { (_) in
+                    
+                })
+            }
+ 
         }
         .catch { error in
             self.output.presentError(error as NSError)

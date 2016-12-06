@@ -67,9 +67,11 @@ class ConnectionGroupCell: NSView {
         // Store
         self.currentObj = groupConnectionObj
         
+        Logger.error("\(groupConnectionObj)")
+        
         // Setup
-        self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
-        self.titleLbl.stringValue = groupConnectionObj.name
+        //self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
+        //self.titleLbl.stringValue = groupConnectionObj.name
         
     }
 }

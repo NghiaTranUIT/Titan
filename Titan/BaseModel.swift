@@ -13,7 +13,7 @@ import RealmSwift
 
 //
 // MARK: - BaseModel
-class BaseModel: Mappable, CustomStringConvertible {
+class BaseModel: Mappable {
     
     
     //
@@ -50,16 +50,6 @@ class BaseModel: Mappable, CustomStringConvertible {
         guard map.JSON[Constants.Obj.KeyClassname] != nil else {
             Logger.error("Can't create obj in BaseModel. Missing ClassName")
             return nil
-        }
-    }
-    
-    
-    //
-    // MARK: - JSON Helper
-    /// Get pretty JSON print
-    var description: String {
-        get {
-            return Mapper().toJSONString(self, prettyPrint: true)!
         }
     }
     

@@ -15,7 +15,7 @@ import PromiseKit
 // MARK: - Action
 struct CreateNewDatabaseAction: Action {
     var databaseObj: DatabaseObj!
-    var groupConnectionobj: GroupConnectionObj!
+    var groupConnectionObj: GroupConnectionObj!
 }
 
 
@@ -45,7 +45,7 @@ class CreateNewDatabaseWorker: AsyncWorker {
         defaultDb.groupConnection = self.groupConnectionObj
         
         // Action
-        let action = CreateNewDatabaseAction(databaseObj: defaultDb, groupConnectionobj: self.groupConnectionObj)
+        let action = CreateNewDatabaseAction(databaseObj: defaultDb, groupConnectionObj: self.groupConnectionObj)
         mainStore.dispatch(action)
         
         // Return

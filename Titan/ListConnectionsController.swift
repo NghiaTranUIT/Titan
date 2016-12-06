@@ -115,6 +115,7 @@ class ListConnectionsController: BaseViewController {
         flowLayout.headerReferenceSize = CGSize(width: width, height: 36)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
+        self.collectionView.collectionViewLayout = flowLayout
     }
     
     override func setupActions() {

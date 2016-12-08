@@ -685,7 +685,7 @@
                 <splitViewController title="Connections" id="3Iq-ti-Kel" customClass="MainConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="255" behavior="contentList" id="S1u-xb-kBm"/>
-                        <splitViewItem holdingPriority="260" behavior="sidebar" id="e3u-SX-Cfx"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="e3u-SX-Cfx"/>
                     </splitViewItems>
                     <splitView key="splitView" misplaced="YES" dividerStyle="thin" vertical="YES" id="nTr-OS-KlC">
                         <rect key="frame" x="0.0" y="0.0" width="1200" height="718"/>
@@ -824,7 +824,7 @@
             <objects>
                 <viewController id="ud0-9A-E9q" customClass="DetailConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="OL5-Se-uLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="772" height="557"/>
+                        <rect key="frame" x="0.0" y="0.0" width="865" height="557"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>

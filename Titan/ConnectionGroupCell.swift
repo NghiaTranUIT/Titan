@@ -21,7 +21,7 @@ protocol ConnectionGroupCellDelegate: class {
 
 //
 // MARK: - ConnectionGroupCell
-class ConnectionGroupCell: BaseView {
+class ConnectionGroupCell: NSView {
     
     
     //
@@ -45,7 +45,7 @@ class ConnectionGroupCell: BaseView {
     }
     
     
-    // Prepare
+    /// Prepare
     override func prepareForReuse() {
         super.prepareForReuse()
     }
@@ -67,12 +67,9 @@ class ConnectionGroupCell: BaseView {
         // Store
         self.currentObj = groupConnectionObj
         
-        Logger.error("\(groupConnectionObj)")
-        
         // Setup
         self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
         self.titleLbl.stringValue = groupConnectionObj.name
-        
     }
 }
 

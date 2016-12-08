@@ -8,15 +8,11 @@
 
 import Cocoa
 
-
-//
-// MARK: - BaseView
-class BaseView: NSView {
-
+extension NSView {
     
     //
     // MARK: - View Cycle
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         // Common
@@ -25,15 +21,14 @@ class BaseView: NSView {
         // Appearance
         self.initAppearance()
     }
+}
+
+extension NSView: BaseViewAbility {
     
-    
-    /// Init common
     func initCommon() {
         
     }
     
-    
-    /// Setup appearance
     func initAppearance() {
         
     }

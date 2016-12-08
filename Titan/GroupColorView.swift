@@ -11,7 +11,7 @@ import Cocoa
 
 //
 // MARK: - GroupColorView
-class GroupColorView: BaseView {
+class GroupColorView: NSView {
 
     //
     // MARK: - View Cycle
@@ -21,6 +21,9 @@ class GroupColorView: BaseView {
         
     }
     
+    override func initCommon() {
+        
+    }
     
     /// Appearance
     override func initAppearance() {

@@ -21,7 +21,7 @@ protocol ConnectionGroupCellDelegate: class {
 
 //
 // MARK: - ConnectionGroupCell
-class ConnectionGroupCell: NSView {
+class ConnectionGroupCell: BaseView {
     
     
     //
@@ -70,8 +70,8 @@ class ConnectionGroupCell: NSView {
         Logger.error("\(groupConnectionObj)")
         
         // Setup
-        //self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
-        //self.titleLbl.stringValue = groupConnectionObj.name
+        self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
+        self.titleLbl.stringValue = groupConnectionObj.name
         
     }
 }

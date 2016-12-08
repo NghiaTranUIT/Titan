@@ -11,8 +11,24 @@ import Cocoa
 
 //
 // MARK: - GroupColorView
-class GroupColorView: NSView {
+class GroupColorView: BaseView {
 
+    //
+    // MARK: - View Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
+    
+    /// Appearance
+    override func initAppearance() {
+        
+        // Corner
+        self.wantsLayer = true
+        self.layer?.cornerRadius = self.bounds.size.height / 2
+    }
     
     //
     // MARK: - Public

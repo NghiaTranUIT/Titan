@@ -41,7 +41,6 @@
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
 		BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */; };
 		BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */; };
-		BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */; };
 		BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF361DACD43C009AE139 /* MainAppState.swift */; };
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
@@ -180,7 +179,6 @@
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionsController.swift; sourceTree = "<group>"; };
 		BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
 		BA4AFF361DACD43C009AE139 /* MainAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
@@ -578,9 +576,8 @@
 			isa = PBXGroup;
 			children = (
 				BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */,
-				BA4AFF1C1DAC96A9009AE139 /* BaseSplitViewController.swift */,
-				BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */,
 				BAE354F31DF9381C0066FB4D /* BaseView.swift */,
+				BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1102,7 +1099,6 @@
 				BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
-				BA4AFF1D1DAC96A9009AE139 /* BaseSplitViewController.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BAA0A0A51DF2D644000D8F23 /* GroupColorRealmObj.swift in Sources */,

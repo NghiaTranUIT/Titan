@@ -15,25 +15,55 @@ import Foundation
 /// So BaseAbility will contain all things BaseClass does, but it's flexible
 /// We don't need create BaseView, BaseCollectionViewCell, Base .....
 /// Just conform this protocol
-protocol BaseAbility {
+ protocol BaseAbility: class {
+    
+    
+    /// Init all relative methods below
+    /// An helper method
+    func initBaseAbility()
     
     
     /// Init Common
     /// Intent to do everything common here
-    /// func initCommon() will call after awakeFromNib() if it's from NSView
-    /// Or call from ViewDidLoad if it's Controller
     func initCommon()
     
     
-    /// Appearance
+    /// UIs
     /// To do all things about UIs
-    func initAppearance()
+    func initUIs()
     
     
+    /// Binding
     func initBinding()
     
+    
+    /// Action
     func initActions()
 }
 
+
+//
+// MARK: - Default Extension
+/*
+ The reason we why can't override ViewController's ViewDidLoad in extenstion, 'cause Swift protocol don't allow we do that
+ So we need create seperate method to call it manaully
+ */
+extension BaseAbility {
+    
+    
+    /// Make default implement of initBaseAbility to call all relative methods.
+    /// We must call method in where we need. Ex: ViewController's ViewDidLoad
+    /// NSView's AwakeFromNib
+    func initBaseAbility() {
+        
+        self.initCommon()
+        
+        self.initUIs()
+        
+        self.initBinding()
+        
+        self.initActions()
+    }
+}
 
 

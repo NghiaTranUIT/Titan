@@ -17,7 +17,7 @@ protocol DetailConnectionsControllerDataSource: class {
     var selectedDatabase: DatabaseObj {get}
 }
 
-class DetailConnectionsController: BaseViewController {
+class DetailConnectionsController: NSViewController {
 
     //
     // MARK: - Outlet
@@ -39,6 +39,9 @@ class DetailConnectionsController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        // Base
+        self.initBaseAbility()
     }
     
     override func initCommon() {
@@ -48,7 +51,7 @@ class DetailConnectionsController: BaseViewController {
         //self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
     }
     
-    override func setupActions() {
+    override func initActions() {
         
         /// Config
         DetailConnectionConfig.shared.configure(viewController: self)

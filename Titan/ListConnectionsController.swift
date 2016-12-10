@@ -45,7 +45,7 @@ protocol ListConnectionsControllerDataSource {
 // MARK: - List Connection Controller
 /// It will present all GroupConnection and all database
 /// Will combine data from local and cloud (if user has already logged-in)
-class ListConnectionsController: BaseViewController {
+class ListConnectionsController: NSViewController {
 
     //
     // MARK: - Variable
@@ -65,18 +65,14 @@ class ListConnectionsController: BaseViewController {
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initBaseAbility()
     }
     
     override func initCommon() {
         
         // Configure
         ListConnectionConfig.shared.configure(viewController: self)
-        
-        // Appereance
-        self.initAppereance()
-        
-        // Table View
-        self.initTableView()
     }
     
     private func initAppereance() {
@@ -92,6 +88,10 @@ class ListConnectionsController: BaseViewController {
         // Remove border
         self.collectionView.wantsLayer = true
         self.collectionView.layer?.borderWidth = 0
+    }
+    
+    override func initUIs() {
+        self.initTableView()
     }
     
     private func initTableView() {
@@ -118,7 +118,7 @@ class ListConnectionsController: BaseViewController {
         self.collectionView.collectionViewLayout = flowLayout
     }
     
-    override func setupActions() {
+    override func initActions() {
     
         // Fetch all connection
         self.output.fetchAllGroupConnections()

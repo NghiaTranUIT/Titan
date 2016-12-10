@@ -11,16 +11,17 @@
   <a href="https://github.com/NghiaTranUIT/Responsive-Interaction-Control">Responsive Interaction Control</a>
 </p>
 
+  
 Titan
 ------------
   
 The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% Free and open-source.
-
+  
 ![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
 [![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)[![codecov.io](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master/graphs/badge.svg)](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master)
 ![License](https://img.shields.io/npm/l/express.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-osx-green.svg?style=flat)
-
+  
 Why postgresql ?
 ------------
   
@@ -103,4 +104,4 @@ Titan is available under the MIT license. See the LICENSE file for more info.
 Limit
 ------------
 
-Althought TITAN publish under MIT license. But I won't ever encourage if someone use it for commercial purpose, or use it for final test in Unversity 😎
+Althought TITAN publish under MIT license. But I won't ever encourage if someone use it for commercial purpose, or copy it for final test in University 😎

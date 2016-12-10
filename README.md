@@ -58,6 +58,19 @@ It's whole new project, I intent to apply what I'm learning.
 *   Realm
 *   ...
 
+Plan
+------------
+
+- [x] Sketch
+- [x] Base Foundation (50%)
+- [ ] Smart Query
+- [ ] Basic Query Recommendation System
+- [ ] Export Ruby Migration 
+- [ ] Multi-tabs, Multi-databases
+- [ ] Cloud
+- [ ] Support Object-oriented Programming
+- [ ] Write Test 
+
 Sketch
 ------------
 https://github.com/NghiaTranUIT/titan-sketch
@@ -77,6 +90,7 @@ Supported Platform  :  macosx  iphonesimulator  iphoneos
 Valid  Architecture :  i386  x86_64  armv7  arm64  armv7s  
 * Select framework target  and *Build*
   
+
 Reference
 ------------
 1. http://blog.benjamin-encz.de/post/real-world-flux-ios/

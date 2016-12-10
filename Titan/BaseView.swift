@@ -8,7 +8,15 @@
 
 import Cocoa
 
+
+//
+// MARK: - Override awakeFromNib
+/// We shouldn't create too many BaseView like what we did before.
+/// It's redundancy if we create many BaseView, ex: BaseView, BaseCollectionViewCell, BaseTableViewCell, ...
+/// Just conform BaseAbility
+/// Less code - less bug
 extension NSView {
+    
     
     //
     // MARK: - View Cycle
@@ -23,13 +31,16 @@ extension NSView {
     }
 }
 
-extension NSView: BaseViewAbility {
+
+//
+// MARK: - BaseAbility
+extension NSView: BaseAbility {
     
-    func initCommon() {
-        
-    }
     
-    func initAppearance() {
-        
-    }
+    /// Do common things here
+    func initCommon() {}
+    
+    
+    /// Do UIs things here
+    func initAppearance() {}
 }

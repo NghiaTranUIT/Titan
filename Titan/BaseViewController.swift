@@ -8,33 +8,37 @@
 
 import Cocoa
 
-class BaseViewController: NSViewController {
+
+extension NSViewController {
     
     //
     // MARK: - View Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    open func viewDidLoad() {
+        self.viewDidLoad()
         
         self.initCommon()
         
-        self.setupBinding()
+        self.initBinding()
         
-        self.setupActions()
+        self.initActions()
     }
     
-    
-    /// All common things
-    func initCommon() {
-        // Do Nothing
+    override open func view(_ view: NSView, stringForToolTip tag: NSToolTipTag, point: NSPoint, userData data: UnsafeMutableRawPointer?) -> String {
+        
     }
+}
+
+
+extension NSViewController: BaseAbility {
     
-    func setupBinding() {
-        // Do nothing
-    }
+    /// Do common things here
+    func initCommon() {}
     
     
-    /// Setup all action heres
-    func setupActions() {
-        // Do nothing
-    }
+    /// Do UIs things here
+    func initAppearance() {}
+    
+    func initBinding() {}
+    
+    func initActions() {}
 }

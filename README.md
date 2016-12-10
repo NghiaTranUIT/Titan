@@ -58,7 +58,7 @@ It's whole new project, I intent to apply what I'm learning.
 *   Realm
 *   ...
 
-Plan
+Roadmap
 ------------
 
 - [x] Sketch

@@ -18,7 +18,8 @@ class GroupColorView: NSView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        // Base ability
+        self.initBaseAbility()
     }
     
     override func initCommon() {
@@ -26,7 +27,7 @@ class GroupColorView: NSView {
     }
     
     /// Appearance
-    override func initAppearance() {
+    override func initUIs() {
         
         // Corner
         self.wantsLayer = true

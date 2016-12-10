@@ -66,6 +66,7 @@ class ListConnectionsController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Base Ability
         self.initBaseAbility()
     }
     
@@ -75,7 +76,7 @@ class ListConnectionsController: NSViewController {
         ListConnectionConfig.shared.configure(viewController: self)
     }
     
-    private func initAppereance() {
+    override func initUIs() {
         
         // Background color
         self.logoContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
@@ -88,9 +89,7 @@ class ListConnectionsController: NSViewController {
         // Remove border
         self.collectionView.wantsLayer = true
         self.collectionView.layer?.borderWidth = 0
-    }
-    
-    override func initUIs() {
+        
         self.initTableView()
     }
     

@@ -20,20 +20,25 @@ class ConnectionCell: NSCollectionViewItem {
     
     //
     // MARK: - View Cycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        self.initBaseAbility()
     }
     
+    
+    /// Common
     override func initCommon() {
         
     }
     
+    
     /// Appearance
-    override func initAppearance() {
+    override func initUIs() {
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = NSColor.clear.cgColor
     }
+    
     
     //
     // MARK: - Public

@@ -48,9 +48,6 @@ extension NSView: BaseAbility {
         
     }
     
-    /// Appearance
-    func initAppearance() {}
-    
     
     /// UIs
     func initUIs() {}

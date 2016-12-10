@@ -48,10 +48,6 @@ extension NSViewController: BaseAbility {
     }
     
     /// Appearance
-    func initAppearance() {}
-    
-    
-    /// UIs
     func initUIs() {}
     
     

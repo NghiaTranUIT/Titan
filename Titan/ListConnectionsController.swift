@@ -45,7 +45,7 @@ protocol ListConnectionsControllerDataSource {
 // MARK: - List Connection Controller
 /// It will present all GroupConnection and all database
 /// Will combine data from local and cloud (if user has already logged-in)
-class ListConnectionsController: BaseViewController {
+class ListConnectionsController: NSViewController {
 
     //
     // MARK: - Variable
@@ -65,18 +65,14 @@ class ListConnectionsController: BaseViewController {
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initBaseAbility()
     }
     
     override func initCommon() {
         
         // Configure
         ListConnectionConfig.shared.configure(viewController: self)
-        
-        // Appereance
-        self.initAppereance()
-        
-        // Table View
-        self.initTableView()
     }
     
     private func initAppereance() {
@@ -92,6 +88,10 @@ class ListConnectionsController: BaseViewController {
         // Remove border
         self.collectionView.wantsLayer = true
         self.collectionView.layer?.borderWidth = 0
+    }
+    
+    override func initUIs() {
+        self.initTableView()
     }
     
     private func initTableView() {
@@ -115,9 +115,10 @@ class ListConnectionsController: BaseViewController {
         flowLayout.headerReferenceSize = CGSize(width: width, height: 36)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
+        self.collectionView.collectionViewLayout = flowLayout
     }
     
-    override func setupActions() {
+    override func initActions() {
     
         // Fetch all connection
         self.output.fetchAllGroupConnections()
@@ -141,7 +142,8 @@ extension ListConnectionsController: ListConnectionsControllerInput {
 extension ListConnectionsController: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        return self.dataSource.numberOfGroupConnections()
+        let count = self.dataSource.numberOfGroupConnections()
+        return count
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -179,12 +181,16 @@ extension ListConnectionsController: NSCollectionViewDelegate {
 // MARK: - Private
 extension ListConnectionsController {
     
+    
+    /// Database cell
     fileprivate func connectionCell(with databaseObj: DatabaseObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSCollectionViewItem {
         let cell = collectionView.makeItem(withIdentifier: ConnectionCell.identifierView, for: indexPath) as! ConnectionCell
         cell.configureCell(with: databaseObj)
         return cell
     }
     
+    
+    /// Group Connection header
     fileprivate func groupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {
         let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
         header.configureCellWith(groupConnectionObj: groupConnectionObj)

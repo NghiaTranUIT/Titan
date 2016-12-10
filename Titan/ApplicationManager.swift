@@ -28,12 +28,16 @@ class ApplicationManager: NSObject {
     
     //
     // MARK: Public
+    
+    /// SDK
     func initAllSDKs() {
         
         // Fabric
         self.initFabric()
     }
     
+    
+    /// Common
     func initCommon(window: NSWindow?) {
         
         // Logger
@@ -45,7 +49,9 @@ class ApplicationManager: NSObject {
         // App Version Checker
         _ = AppVersionManager.sharedInstance
     }
+    
 }
+
 
 //
 // MARK: - Private
@@ -57,6 +63,7 @@ extension ApplicationManager {
     }
 }
 
+
 // MARK:
 // MARK: Fabric
 extension ApplicationManager {
@@ -64,6 +71,7 @@ extension ApplicationManager {
         Fabric.with([Crashlytics.self])
     }
 }
+
 
 // MARK:
 // MARK: Logger

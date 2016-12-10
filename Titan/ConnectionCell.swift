@@ -12,24 +12,39 @@ class ConnectionCell: NSCollectionViewItem {
 
     //
     // MARK: - Outlet
- 
+    
     
     //
     // MARK: - Variable
-    // Connection Lbl
-    @IBOutlet weak var connectionLbl: NSTextField!
     
     
     //
     // MARK: - View Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
-
+    
+    override func initCommon() {
+        
+    }
+    
+    /// Appearance
+    override func initAppearance() {
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.clear.cgColor
+    }
     
     //
     // MARK: - Public
     func configureCell(with databaseObj: DatabaseObj) {
-        self.connectionLbl.stringValue = databaseObj.name
+        
+        self.textField!.stringValue = databaseObj.name
+    }
+    
+    
+    /// Database Btn Tapped
+    @IBAction func databaseBtnTapped(_ sender: NSButton) {
+        
     }
 }

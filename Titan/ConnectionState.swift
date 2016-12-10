@@ -32,29 +32,22 @@ extension ConnectionState {
             break
         case let action as CreateNewDatabaseAction:
             
-            /*
-            var groupConnections = state.groupConnections.value
+            let groupConnections = state.groupConnections.value
+            let selectedGroupConnection = action.groupConnectionObj
+            let newDatabaseObj = action.databaseObj
             
-            // Check
-            if groupConnections.count == 0 {
-                let groupConnectionObj = action.groupConnectionObj
-                groupConnectionObj.databases.append(action.databaseObj)
-                groupConnections.append(groupConnectionObj)
-            } else {
-                var selectedGroup: GroupConnectionObj? = nil
-                for i in groupConnections {
-                    if i.objectId == action.groupConnectionObj.objectId {
-                        selectedGroup = i
-                        break
-                    }
-                }
-                
-                if let selectedGroup = selectedGroup {
-                    selectedGroup.databases.append(action.databaseObj)
-                }
+            // Fitler
+            let groups = groupConnections.filter({ (obj) -> Bool in
+                return selectedGroupConnection!.objectId == obj.objectId
+            })
+            
+            // Add
+            if let group = groups.first {
+                group.databases.append(newDatabaseObj!)
             }
+            
+            // Save
             state.groupConnections.value = groupConnections
-            */
             
             break
         case let action as AddNewDefaultConnectionAction:

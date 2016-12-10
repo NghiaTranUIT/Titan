@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainConnectionController: BaseSplitViewController {
+class MainConnectionController: NSSplitViewController {
 
     //
     // MARK: - Variable
@@ -20,12 +20,10 @@ class MainConnectionController: BaseSplitViewController {
         super.viewDidLoad()
         
         // Common
-        self.initCommon()
+        self.initBaseAbility()
     }
-    
-    //
-    // MARK: - Private
-    private func initCommon() {
+
+    override func initCommon() {
         
         // Want layer
         self.view.wantsLayer = true

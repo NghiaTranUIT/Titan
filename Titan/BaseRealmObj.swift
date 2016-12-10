@@ -26,7 +26,7 @@ class BaseRealmObj: Object {
     /// Obj must have primary key to support "Update" depend on primary key
     /// https://realm.io/docs/swift/latest/#updating-objects
     override static func primaryKey() -> String? {
-        return "objectId"
+        return Constants.Obj.ObjectId
     }
     
     

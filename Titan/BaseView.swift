@@ -1,8 +1,8 @@
 //
-//  BaseViewController.swift
+//  BaseView.swift
 //  Titan
 //
-//  Created by Nghia Tran on 10/11/16.
+//  Created by Nghia Tran on 12/8/16.
 //  Copyright © 2016 fe. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import Cocoa
 
 
 //
-// MARK: - Confrom BaseAbility
-/// The main purpose is we don't perfer BaseViewController
-/// If create BaseViewController, we also need to create BaseSplitViewController, BaseNavigationController 
-/// -> Redundancy code
-
+// MARK: - Override awakeFromNib
+/// We shouldn't create too many BaseView like what we did before.
+/// It's redundancy if we create many BaseView, ex: BaseView, BaseCollectionViewCell, BaseTableViewCell, ...
+/// Just conform BaseAbility
+/// Less code - less bug
 
 /*
  # Tried 1
@@ -35,12 +35,13 @@ import Cocoa
  - Conform BaseAbility protocol
  - Implement default methods
  -> Results: 'Override method' worked
- 'Don't need BaseView, BaseCollectionView, Base ....'
+             'Don't need BaseView, BaseCollectionView, Base ....'
  
  */
 
-extension NSViewController: BaseAbility {
 
+extension NSView: BaseAbility {
+    
     
     /// Common
     func initCommon() {

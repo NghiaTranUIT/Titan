@@ -22,7 +22,7 @@ The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% Free an
 ![License](https://img.shields.io/npm/l/express.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-osx-green.svg?style=flat)
   
-Why postgresql ?
+Why?
 ------------
   
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack developer.  
@@ -42,7 +42,7 @@ I decied to write my own Postgresql client - called as **Titan**.
   
 It's best time to apply what I learn to real product.
 
-Technology
+Technologies
 ------------
   
 It's whole new project, I intent to apply what I'm learning.
@@ -101,7 +101,7 @@ License
 
 Titan is available under the MIT license. See the LICENSE file for more info.
 
-Limit
+Limitation
 ------------
 
 Althought TITAN publish under MIT license. But I won't ever encourage if someone use it for commercial purpose, or copy it for final test in University 😎

@@ -6,7 +6,7 @@
 <p align="center">
   <a href="http://nghiatran.me">Mad lab</a> &bull;
   <b>Titan</b> &bull;
-  <a href="https://github.com/NghiaTranUIT/FeSpinner">FeSpinner</a> &bull;
+  <a href="https://github.com/NghiaTranUIT/FeSpinner">FeSpinner</a>
   <br> &nbsp;
   <a href="https://github.com/NghiaTranUIT/iOS-Awesome-Starter-Kit/edit/master/README.md">iOS Awesome Starter Kit</a> &bull;
   <a href="https://github.com/NghiaTranUIT/FeSlideFilter">FeSlideFilter</a> &bull;
@@ -72,6 +72,7 @@ Roadmap
 - [ ] Cloud
 - [ ] Support Object-oriented Programming
 - [ ] Write Test 
+- [ ] Rename script
 
 Sketch
 ------------

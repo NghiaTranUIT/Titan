@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11761"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -665,7 +665,7 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="Titan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="1200" height="718"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -705,14 +705,14 @@
             <objects>
                 <viewController id="2ek-Ha-6V0" customClass="ListConnectionsController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="jZl-GI-tqf">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="252" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="pJh-Zf-avb">
-                                <rect key="frame" x="0.0" y="556" width="335" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="252" height="44"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="F2N-j8-Men">
-                                        <rect key="frame" x="129" y="0.0" width="78" height="44"/>
+                                        <rect key="frame" x="87" y="0.0" width="78" height="44"/>
                                         <subviews>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xI5-WO-hsS">
                                                 <rect key="frame" x="0.0" y="9" width="26" height="26"/>
@@ -720,10 +720,10 @@
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pEb-B1-t3s">
                                                 <rect key="frame" x="32" y="10" width="44" height="24"/>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="TITAN" id="aUl-me-zv1">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="TITAN" id="aUl-me-zv1">
                                                     <font key="font" size="14" name="OpenSans-Semibold"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
@@ -744,13 +744,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="44" width="335" height="512"/>
+                                <rect key="frame" x="0.0" y="0.0" width="252" height="556"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="512"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="252" height="556"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="512"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="252" height="556"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -761,11 +761,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="RwG-VW-nJ3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RwG-VW-nJ3"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="m9c-lI-YAg"/>
                                 </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y1r-Y8-Ryd">
-                                    <rect key="frame" x="0.0" y="796" width="250" height="16"/>
+                                    <rect key="frame" x="0.0" y="496" width="252" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="i3u-4i-vyz">
@@ -773,51 +773,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="dZO-de-GZX">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-xb-NoS">
-                                        <rect key="frame" x="86" y="8" width="163" height="33"/>
-                                        <buttonCell key="cell" type="bevel" title="New Connection" bezelStyle="regularSquare" alignment="center" inset="2" id="C3u-Ow-z0B">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="20" name="OpenSans-Semibold"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="newGroupConnectionBtnTapped:" target="2ek-Ha-6V0" id="091-Cf-wXd"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="dkN-xb-NoS" firstAttribute="top" secondItem="dZO-de-GZX" secondAttribute="top" constant="3" id="4be-Ji-7gM"/>
-                                    <constraint firstAttribute="height" constant="44" id="S8Q-HE-GGn"/>
-                                    <constraint firstItem="dkN-xb-NoS" firstAttribute="centerX" secondItem="dZO-de-GZX" secondAttribute="centerX" id="rbA-DM-hKd"/>
-                                </constraints>
-                            </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="dZO-de-GZX" firstAttribute="top" secondItem="Zim-d1-wOh" secondAttribute="bottom" id="2kL-jH-nZL"/>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="9E8-fy-nKI"/>
-                            <constraint firstItem="dZO-de-GZX" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="B7J-De-ZCs"/>
                             <constraint firstAttribute="trailing" secondItem="Zim-d1-wOh" secondAttribute="trailing" id="IHF-MG-m9n"/>
                             <constraint firstAttribute="trailing" secondItem="pJh-Zf-avb" secondAttribute="trailing" id="KAM-MN-qS3"/>
-                            <constraint firstAttribute="bottom" secondItem="dZO-de-GZX" secondAttribute="bottom" id="eDU-hh-TNf"/>
-                            <constraint firstAttribute="trailing" secondItem="dZO-de-GZX" secondAttribute="trailing" id="eSV-0W-8YL"/>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="bottom" id="jhR-Nn-WvT"/>
+                            <constraint firstAttribute="bottom" secondItem="Zim-d1-wOh" secondAttribute="bottom" id="lNh-6d-cGD"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="top" secondItem="jZl-GI-tqf" secondAttribute="top" id="o2u-Nu-yMe"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="pKw-Rh-4EV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomBarView" destination="dZO-de-GZX" id="C7n-Gl-0Ji"/>
                         <outlet property="collectionView" destination="Sd0-jl-BuX" id="2Bh-zK-lTA"/>
                         <outlet property="logoBigContainerView" destination="pJh-Zf-avb" id="r0T-vp-C8M"/>
                         <outlet property="logoContainerView" destination="F2N-j8-Men" id="DZs-mQ-h9p"/>
-                        <outlet property="newGroupConnectionBtn" destination="dkN-xb-NoS" id="q7U-0S-w2n"/>
                     </connections>
                 </viewController>
                 <customObject id="MXc-ct-AtT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.5" y="776"/>
+            <point key="canvasLocation" x="823" y="618"/>
         </scene>
         <!--Detail Connections Controller-->
         <scene sceneID="FEN-jZ-SSZ">

@@ -86,6 +86,8 @@
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
 		BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */; };
 		BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */; };
+		BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */; };
+		BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */; };
@@ -107,13 +109,12 @@
 		BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE94ADC1DDCC34200B203A5 /* libpq.framework */; };
 		BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */; };
 		BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */; };
-		BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* Request.swift */; };
+		BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* Requestable.swift */; };
 		BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */; };
 		BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
-		BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */; };
 		BAFF52C21DCE271600B566F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF52C11DCE271600B566F7 /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +229,8 @@
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_cell@2x.jpg"; sourceTree = "<group>"; };
+		BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionDataSource.swift; sourceTree = "<group>"; };
+		BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVerticalFlowLayout.swift; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
 		BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabConnectionController.swift; sourceTree = "<group>"; };
@@ -247,7 +250,7 @@
 		BAE94ADC1DDCC34200B203A5 /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libpq.framework; path = TitanKit/libpq.framework; sourceTree = "<group>"; };
 		BAEE19201DAE7BF800C3CD3E /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BAEE19221DAE7C0D00C3CD3E /* UserObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserObj.swift; sourceTree = "<group>"; };
-		BAEE19251DAE989F00C3CD3E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		BAEE19251DAE989F00C3CD3E /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchListConnectionsRequest.swift; sourceTree = "<group>"; };
 		BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,7 +258,6 @@
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Connection.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -507,7 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
-				BAEE19251DAE989F00C3CD3E /* Request.swift */,
+				BAEE19251DAE989F00C3CD3E /* Requestable.swift */,
 				BAEE19241DAE987F00C3CD3E /* Request */,
 			);
 			name = Networking;
@@ -532,6 +534,8 @@
 		BA4AFF111DAC925D009AE139 /* List Connections */ = {
 			isa = PBXGroup;
 			children = (
+				BAB8C8A11E20B80000B39B16 /* Flow */,
+				BAB8C8A01E20ACD100B39B16 /* Data Source */,
 				BA320A451DDDF51C00C0E82B /* Workers */,
 				BA222E531DADF77A00834F3E /* View */,
 				BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */,
@@ -568,7 +572,6 @@
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA33F9B21DCF3E4400B60952 /* Realm */,
 				BAFF52C01DCE270B00B566F7 /* Router */,
-				BAF869AC1DC2FBB500E21BF4 /* JSON Decoder */,
 				BA8E0BDE1DB0E47300B9BDD7 /* App Version */,
 				BA8E0BCF1DB0D38300B9BDD7 /* Application */,
 				BA344FDD1DAE76BA0005A566 /* Logger */,
@@ -723,6 +726,22 @@
 			name = "Group Color View";
 			sourceTree = "<group>";
 		};
+		BAB8C8A01E20ACD100B39B16 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */,
+			);
+			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		BAB8C8A11E20B80000B39B16 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */,
+			);
+			name = Flow;
+			sourceTree = "<group>";
+		};
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,14 +879,6 @@
 				BAEFE7C51D97BE810081A5FE /* Info.plist */,
 			);
 			path = Titan;
-			sourceTree = "<group>";
-		};
-		BAF869AC1DC2FBB500E21BF4 /* JSON Decoder */ = {
-			isa = PBXGroup;
-			children = (
-				BAF869AD1DC2FBC500E21BF4 /* JSONDecoder.swift */,
-			);
-			name = "JSON Decoder";
 			sourceTree = "<group>";
 		};
 		BAFF52C01DCE270B00B566F7 /* Router */ = {
@@ -1121,6 +1132,7 @@
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
+				BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
 				BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */,
@@ -1132,6 +1144,7 @@
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
+				BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
@@ -1140,7 +1153,6 @@
 				BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */,
 				BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */,
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
-				BAF869AE1DC2FBC500E21BF4 /* JSONDecoder.swift in Sources */,
 				BAE354F41DF9381C0066FB4D /* BaseView.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
@@ -1177,7 +1189,7 @@
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
-				BAEE19261DAE989F00C3CD3E /* Request.swift in Sources */,
+				BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */,
 				BA679CD51DD2EC1D0054EB43 /* SSLRealmObj.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
 				BAD0D3A01DE2B0FB0081F28F /* MainTabState.swift in Sources */,

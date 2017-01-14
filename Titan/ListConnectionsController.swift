@@ -14,7 +14,7 @@ import ReSwift
 // MARK: - Output
 /// Send request to Interactor
 protocol ListConnectionsControllerOutput {
-    func fetchAllGroupConnections()
+    func fetchAllConnections()
     func selectConnection(_ connection: DatabaseObj)
     func addNewConnection()
 }
@@ -58,8 +58,6 @@ class ListConnectionsController: NSViewController {
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var logoBigContainerView: NSView!
     @IBOutlet weak var logoContainerView: NSView!
-    @IBOutlet weak var bottomBarView: NSView!
-    @IBOutlet weak var newGroupConnectionBtn: NSButton!
     
     //
     // MARK: - View Cycle
@@ -74,53 +72,30 @@ class ListConnectionsController: NSViewController {
         
         // Configure
         ListConnectionConfig.shared.configure(viewController: self)
+        
+        // Collection View
+        self.initCollectionView()
     }
     
     override func initUIs() {
         
         // Background color
-        self.logoContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
-        self.logoBigContainerView.backgroundColor = ThemeObj.share.secondaryMenuColor
-        self.collectionView.backgroundColors = [ThemeObj.share.primaryMenuColor]
-        self.bottomBarView.backgroundColor = ThemeObj.share.primaryMainAppColor
-        self.newGroupConnectionBtn.backgroundColor = ThemeObj.share.primaryMainAppColor
-        self.newGroupConnectionBtn.textColor = NSColor.white
+        self.logoContainerView.backgroundColor = NSColor(hexString: "#1799DD")
+        self.logoBigContainerView.backgroundColor = NSColor(hexString: "#1799DD")
+        self.collectionView.backgroundColors = [NSColor.white]
         
         // Remove border
         self.collectionView.wantsLayer = true
         self.collectionView.layer?.borderWidth = 0
         
-        self.initTableView()
-    }
-    
-    private func initTableView() {
+        // Text
         
-        // Data Source
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-        
-        // Register
-        self.collectionView.registerCell(ConnectionCell.self)
-        self.collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
-        
-        // Layout
-        self.collectionView.enclosingScrollView?.contentInsets = NSEdgeInsetsMake(24, 0, 0, 0)
-        
-        // Flow layout
-        let flowLayout = NSCollectionViewFlowLayout()
-        let width = self.collectionView.frame.size.width
-        flowLayout.itemSize = CGSize(width: width, height: 32)
-        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 20, 0)
-        flowLayout.headerReferenceSize = CGSize(width: width, height: 36)
-        flowLayout.sectionHeadersPinToVisibleBounds = false
-        flowLayout.sectionFootersPinToVisibleBounds = false
-        self.collectionView.collectionViewLayout = flowLayout
     }
     
     override func initActions() {
     
         // Fetch all connection
-        self.output.fetchAllGroupConnections()
+        self.output.fetchAllConnections()
     }
     
     @IBAction func newGroupConnectionBtnTapped(_ sender: Any) {
@@ -194,5 +169,31 @@ extension ListConnectionsController {
         let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
         header.configureCellWith(groupConnectionObj: groupConnectionObj)
         return header
+    }
+    
+    
+    /// Collection View
+    fileprivate func initCollectionView() {
+        
+        // Data Source
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+        
+        // Register
+        self.collectionView.registerCell(ConnectionCell.self)
+        self.collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
+        
+        // Layout
+        self.collectionView.enclosingScrollView?.contentInsets = EdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        
+        // Flow layout
+        let flowLayout = NSCollectionViewFlowLayout()
+        let width = self.collectionView.frame.size.width
+        flowLayout.itemSize = CGSize(width: 250, height: 31)
+        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 6, 0)
+        flowLayout.headerReferenceSize = CGSize(width: width, height: 31)
+        flowLayout.sectionHeadersPinToVisibleBounds = false
+        flowLayout.sectionFootersPinToVisibleBounds = false
+        self.collectionView.collectionViewLayout = flowLayout
     }
 }

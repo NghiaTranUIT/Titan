@@ -10,6 +10,7 @@ import Cocoa
 import ReSwift
 import PromiseKit
 
+
 //
 // MARK: - Action
 struct FetchAllGroupConnectionsAction: Action {

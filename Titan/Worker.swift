@@ -30,5 +30,8 @@ protocol AsyncWorker: Worker {
 //
 // MARK: - Sync Worker
 protocol SyncWorker: Worker {
-    func execute()
+    
+    associatedtype T
+    
+    func execute() -> T
 }

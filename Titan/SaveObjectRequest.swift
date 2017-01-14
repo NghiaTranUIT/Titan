@@ -8,24 +8,31 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
-class SaveObjectRequest<Object> {
-    required init() {}
-}
 
-extension SaveObjectRequest: Request {
+class SaveObjectRequest<Object: BaseMappable>: Requestable {
     
     typealias T = Object
     
-    var httpMethod: HTTPMethod {
-        get {
-            return .get
-        }
+    
+    //
+    // MARK: - Variable
+    var param: Parameters?
+    var httpMethod: HTTPMethod {get {return .post}}
+    var endpoint: String {get {return Constants.Endpoint.SaveObject}}
+    
+    
+    //
+    // MARK: - Init
+    init(param: Parameters?) {
+        self.param = param
     }
     
-    var endpoint: String {
-        get {
-            return Constants.Endpoint.GetListConnectionFromCloudURL
-        }
+    
+    /// Decode
+    func decode(data: Any) -> T? {
+        guard let data = data as? [String: Any] else {return nil}
+        return Mapper<T>().map(JSON: data)
     }
 }

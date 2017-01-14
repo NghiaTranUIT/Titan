@@ -14,7 +14,7 @@ import PromiseKit
 
 //
 // MARK: - Request protocol
-protocol Request: Action, URLRequestConvertible {
+protocol Requestable: Action, URLRequestConvertible {
     
     associatedtype T
     
@@ -24,7 +24,7 @@ protocol Request: Action, URLRequestConvertible {
     
     var httpMethod: HTTPMethod {get}
     
-    var param: Parameters? {get set}
+    var param: Parameters? {get}
     
     var addionalHeader: HeaderParameter? {get}
     
@@ -32,12 +32,12 @@ protocol Request: Action, URLRequestConvertible {
     
     func toAlamofireObservable() -> Promise<T>
     
-    init()
+    func decode(data: Any) -> T?
 }
 
 //
 // MARK: - Conform URLConvitible from Alamofire
-extension Request {
+extension Requestable {
     func asURLRequest() -> URLRequest {
         return self.buildURLRequest()
     }
@@ -45,52 +45,19 @@ extension Request {
 
 //
 // MARK: - Default implementation
-extension Request {
+extension Requestable {
     
     typealias Parameters = [String: Any]
     typealias HeaderParameter = [String: String]
     typealias JSONDictionary = [String: Any]
     
-    var basePath: String {
-        get {
-            return Constants.Endpoint.BaseURL
-        }
-    }
-    
-    var param: Parameters? {
-        get {
-            return nil
-        }
-        set {
-            param = newValue
-        }
-    }
-    
-    var addionalHeader: HeaderParameter? {
-        get {
-            return nil
-        }
-    }
-    
-    var defaultHeader: HeaderParameter {
-        get {
-            return ["Accept": "application/json"]
-        }
-    }
-    
-    var urlPath: String {
-        return basePath + endpoint
-    }
-    
-    var url: URL {
-        return URL(string: urlPath)!
-    }
-    
-    var parameterEncoding: ParameterEncoding {
-        get {
-            return JSONEncoding.default
-        }
-    }
+    var basePath: String {get {return Constants.Endpoint.BaseURL}}
+    var param: Parameters? {get {return nil}}
+    var addionalHeader: HeaderParameter? {get {return nil}}
+    var defaultHeader: HeaderParameter {get {return ["Accept": "application/json"]}}
+    var urlPath: String {return basePath + endpoint}
+    var url: URL {return URL(string: urlPath)!}
+    var parameterEncoding: ParameterEncoding {get {return JSONEncoding.default}}
     
     func toAlamofireObservable() -> Promise<T> {
         
@@ -118,15 +85,15 @@ extension Request {
                     }
                     
                     // Parse here
-                    let result = JSONDecoder.shared.decodeObject(data) as! T
+                    guard let result = self.decode(data: data) else {
+                        reject(NSError.jsonMapperError())
+                        return
+                    }
+                    
+                    // Fill
                     fulfill(result)
                 })
         }
-    }
-    
-    init(param: Parameters?) {
-        self.init()
-        self.param = param
     }
     
     func buildURLRequest() -> URLRequest {

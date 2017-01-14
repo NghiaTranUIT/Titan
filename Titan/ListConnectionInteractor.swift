@@ -58,7 +58,7 @@ extension ListConnectionInteractor: ListConnectionInteractorInput {
         self.createNewGroupConnectionWorker = worker
     }
     
-    func fetchAllGroupConnections() {
+    func fetchAllConnections() {
         let worker = FetchAllGroupConnectionsWorker()
         
         // Execute

@@ -32,19 +32,7 @@ class ConnectionCell: NSCollectionViewItem {
         
         // Base
         self.initBaseAbility()
-    }
-    
-    
-    /// Common
-    override func initCommon() {
-        
-    }
-    
-    
-    /// Appearance
-    override func initUIs() {
-        self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.clear.cgColor
+        self.view.backgroundColor = NSColor.red
     }
     
     

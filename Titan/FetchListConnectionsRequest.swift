@@ -7,33 +7,27 @@
 //
 
 import Cocoa
-import RxSwift
 import Alamofire
 import ReSwift
-
-class FetchListConnectionsRequest {
-    required init() {}
-}
+import ObjectMapper
 
 
-//
-// MARK: - Network
-extension FetchListConnectionsRequest: Request {
+class FetchListConnectionsRequest: Requestable {
     
     typealias T = [DatabaseObj]
     
-    var httpMethod: HTTPMethod {
-        get {
-            return .get
-        }
-    }
+    //
+    // MARK: - Variable
+    var httpMethod: HTTPMethod {get {return .get}}
+    var endpoint: String {get {return Constants.Endpoint.GetListConnectionFromCloudURL}}
     
-    var endpoint: String {
-        get {
-            return Constants.Endpoint.GetListConnectionFromCloudURL
-        }
+    
+    /// Decode
+    func decode(data: Any) -> T? {
+        return Mapper<DatabaseObj>().mapArray(JSONObject: data) ?? []
     }
 }
+
 
 //
 // MARK: - Action

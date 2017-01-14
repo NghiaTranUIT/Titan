@@ -51,15 +51,15 @@ extension ThemeObj {
         theme.name = "Default"
         
         // Main App
-        theme.primaryMainAppColor = NSColor(hexString: "#2ECC71")
+        theme.primaryMainAppColor = NSColor(hexString: "#1799DD")
         
         // Text
-        theme.primaryTextColor = NSColor(hexString: "#22272A")
-        theme.secondaryTextColor = NSColor(hexString: "#B9B9B9")
+        theme.primaryTextColor = NSColor(hexString: "#606872")
+        theme.secondaryTextColor = NSColor(hexString: "#8D9298")
         theme.quaternaryTextColor = NSColor(hexString: "#7A7D86")
         
         // Menu
-        theme.primaryMenuColor = NSColor(hexString: "#31383E")
+        theme.primaryMenuColor = NSColor.white
         theme.secondaryMenuColor = NSColor(hexString: "#22272A")
         theme.quaternaryMenuColor = NSColor(hexString: "#F1F1F1")
         

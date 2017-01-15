@@ -88,6 +88,7 @@
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
 		BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */; };
+		BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA311E2B8C86006909D9 /* NotificationManager.swift */; };
 		BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */; };
 		BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */; };
 		BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */; };
@@ -235,6 +236,7 @@
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
 		BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSHView.xib; sourceTree = "<group>"; };
+		BAADCA311E2B8C86006909D9 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionDataSource.swift; sourceTree = "<group>"; };
@@ -580,6 +582,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAADCA301E2B8C79006909D9 /* Notification */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA33F9B21DCF3E4400B60952 /* Realm */,
 				BAFF52C01DCE270B00B566F7 /* Router */,
@@ -760,6 +763,14 @@
 				BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */,
 			);
 			name = "SSH View";
+			sourceTree = "<group>";
+		};
+		BAADCA301E2B8C79006909D9 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				BAADCA311E2B8C86006909D9 /* NotificationManager.swift */,
+			);
+			name = Notification;
 			sourceTree = "<group>";
 		};
 		BAB8C8A01E20ACD100B39B16 /* Data Source */ = {
@@ -1171,6 +1182,7 @@
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
 				BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */,
+				BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
 				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
 				BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */,

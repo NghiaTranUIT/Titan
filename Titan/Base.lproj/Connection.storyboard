@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="mHl-Oc-5fu">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -660,25 +660,6 @@
             </objects>
             <point key="canvasLocation" x="11" y="-120"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
-            <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Titan" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="1200" height="718"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="1200" height="718"/>
-                    </window>
-                    <connections>
-                        <segue destination="3Iq-ti-Kel" kind="relationship" relationship="window.shadowedContentViewController" id="ykw-HW-RDT"/>
-                    </connections>
-                </windowController>
-                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-62" y="864"/>
-        </scene>
         <!--Connections-->
         <scene sceneID="jBH-7V-Tnd">
             <objects>
@@ -810,13 +791,8 @@
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="DEm-TK-C7Y">
                                 <rect key="frame" x="0.0" y="0.0" width="865" height="513"/>
                                 <subviews>
-                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f48-6H-JHM">
-                                        <rect key="frame" x="-250" y="-243" width="1280" height="800"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="screen_detail" id="JA6-o4-Xyp"/>
-                                    </imageView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="LOc-Qt-BRU">
-                                        <rect key="frame" x="215" y="391" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="445" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys4-YJ-4ZO">
                                                 <rect key="frame" x="19" y="12" width="73" height="20"/>
@@ -852,7 +828,7 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="5mS-xw-Voe">
-                                        <rect key="frame" x="215" y="347" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="401" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77A-jd-AX2">
                                                 <rect key="frame" x="55" y="12" width="37" height="20"/>
@@ -888,7 +864,7 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="BH6-ym-XoO">
-                                        <rect key="frame" x="215" y="303" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="357" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPb-HQ-T6j">
                                                 <rect key="frame" x="17" y="12" width="75" height="20"/>
@@ -924,7 +900,7 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="SaU-cz-23Y">
-                                        <rect key="frame" x="215" y="259" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="313" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUB-F9-zmo">
                                                 <rect key="frame" x="21" y="12" width="71" height="20"/>
@@ -960,7 +936,7 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="P7r-te-ZEy">
-                                        <rect key="frame" x="215" y="215" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="269" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-Op-X2h">
                                                 <rect key="frame" x="23" y="12" width="69" height="20"/>
@@ -996,7 +972,7 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="RoQ-kE-wVr">
-                                        <rect key="frame" x="215" y="171" width="581" height="44"/>
+                                        <rect key="frame" x="142" y="225" width="581" height="44"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESv-tD-Uk4">
                                                 <rect key="frame" x="34" y="12" width="58" height="20"/>
@@ -1015,6 +991,9 @@
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" size="14" name="SFUIText-Semibold"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="sshCheckBoxBtnTapped:" target="ud0-9A-E9q" id="hC3-0R-px6"/>
+                                                        </connections>
                                                     </button>
                                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="72w-Vb-nwQ">
                                                         <rect key="frame" x="66" y="4" width="137" height="20"/>
@@ -1022,6 +1001,9 @@
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                             <font key="font" size="14" name="SFUIText-Semibold"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="saveInKeyChainBtnTapped:" target="ud0-9A-E9q" id="pDW-r0-px5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1045,18 +1027,18 @@
                                     </customView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="RoQ-kE-wVr" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="0we-ES-BPT"/>
-                                    <constraint firstItem="P7r-te-ZEy" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="27L-8g-H2O"/>
                                     <constraint firstItem="SaU-cz-23Y" firstAttribute="top" secondItem="BH6-ym-XoO" secondAttribute="bottom" id="9Pt-ph-paZ"/>
-                                    <constraint firstItem="LOc-Qt-BRU" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="Dvm-AB-4mL"/>
+                                    <constraint firstItem="SaU-cz-23Y" firstAttribute="leading" secondItem="BH6-ym-XoO" secondAttribute="leading" id="Bkt-Sg-HJk"/>
+                                    <constraint firstItem="P7r-te-ZEy" firstAttribute="leading" secondItem="SaU-cz-23Y" secondAttribute="leading" id="DeB-tr-LSl"/>
+                                    <constraint firstItem="BH6-ym-XoO" firstAttribute="leading" secondItem="5mS-xw-Voe" secondAttribute="leading" id="H9p-di-KyJ"/>
+                                    <constraint firstItem="5mS-xw-Voe" firstAttribute="leading" secondItem="LOc-Qt-BRU" secondAttribute="leading" id="L5z-Zi-OIT"/>
                                     <constraint firstItem="BH6-ym-XoO" firstAttribute="top" secondItem="5mS-xw-Voe" secondAttribute="bottom" id="L9q-OS-Oay"/>
                                     <constraint firstItem="P7r-te-ZEy" firstAttribute="top" secondItem="SaU-cz-23Y" secondAttribute="bottom" id="LM0-Es-rWD"/>
+                                    <constraint firstItem="LOc-Qt-BRU" firstAttribute="centerX" secondItem="DEm-TK-C7Y" secondAttribute="centerX" id="Zwd-pX-wSV"/>
                                     <constraint firstItem="RoQ-kE-wVr" firstAttribute="top" secondItem="P7r-te-ZEy" secondAttribute="bottom" id="bzG-Iq-nOA"/>
                                     <constraint firstItem="5mS-xw-Voe" firstAttribute="top" secondItem="LOc-Qt-BRU" secondAttribute="bottom" id="cjy-gj-R2m"/>
-                                    <constraint firstItem="LOc-Qt-BRU" firstAttribute="top" secondItem="DEm-TK-C7Y" secondAttribute="top" constant="78" id="iaw-76-kof"/>
-                                    <constraint firstItem="5mS-xw-Voe" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="m0Y-ya-qLC"/>
-                                    <constraint firstItem="SaU-cz-23Y" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="qp1-zo-TOL"/>
-                                    <constraint firstItem="BH6-ym-XoO" firstAttribute="leading" secondItem="DEm-TK-C7Y" secondAttribute="leading" constant="215" id="vgh-XI-T8S"/>
+                                    <constraint firstItem="LOc-Qt-BRU" firstAttribute="top" secondItem="DEm-TK-C7Y" secondAttribute="top" constant="24" id="iaw-76-kof"/>
+                                    <constraint firstItem="RoQ-kE-wVr" firstAttribute="leading" secondItem="P7r-te-ZEy" secondAttribute="leading" id="paT-fw-zpz"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -1071,18 +1053,42 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="databaseTxt" destination="nhs-yM-747" id="C0y-um-qqp"/>
+                        <outlet property="hostNameTxt" destination="FUm-sr-c03" id="QWa-SJ-VS6"/>
+                        <outlet property="nicknameTxt" destination="wqS-hp-oaE" id="Zms-5Q-io7"/>
+                        <outlet property="passwordTxt" destination="YVZ-mq-VYP" id="aGm-pc-Zuq"/>
+                        <outlet property="saveInKeyChainCheckBoxBtn" destination="72w-Vb-nwQ" id="NFa-tb-UtQ"/>
+                        <outlet property="sshCheckboxBtn" destination="Tzk-Ys-w08" id="VBV-VC-xXY"/>
                         <outlet property="topBarView" destination="nLw-bj-h6D" id="Wif-Gs-hAJ"/>
+                        <outlet property="usernameTxt" destination="U2U-eE-rTQ" id="Yto-vZ-7DO"/>
                     </connections>
                 </viewController>
                 <customObject id="Lyo-2b-IBD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1503.5" y="604.5"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="Kvb-cY-XZD">
+            <objects>
+                <windowController id="mHl-Oc-5fu" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="dFW-TK-zED">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                    </window>
+                    <connections>
+                        <segue destination="3Iq-ti-Kel" kind="relationship" relationship="window.shadowedContentViewController" id="Ob5-11-gFs"/>
+                    </connections>
+                </windowController>
+                <customObject id="vA6-Gc-L7s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="986"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_checkbox" width="18" height="18"/>
         <image name="icon_checkbox_selected" width="16" height="16"/>
         <image name="icon_titan" width="26" height="26"/>
-        <image name="screen_detail" width="1280" height="800"/>
     </resources>
 </document>

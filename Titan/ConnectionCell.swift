@@ -59,6 +59,8 @@ class ConnectionCell: NSCollectionViewItem {
         self.isSelected = !self.isSelected
         
         guard let databaseObj = self.databaseObj else {return}
+        guard self.isSelected == true else {return}
+        
         self.delegate?.ConnectionCellDidSelectedCell(sender: self, databaseObj: databaseObj, isSelected: self.isSelected)
     }
 }

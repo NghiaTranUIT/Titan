@@ -39,6 +39,10 @@ import Foundation
     
     /// Action
     func initActions()
+    
+    
+    /// Observer
+    func initObserver()
 }
 
 
@@ -63,6 +67,8 @@ extension BaseAbility {
         self.initBinding()
         
         self.initActions()
+        
+        self.initObserver()
     }
 }
 

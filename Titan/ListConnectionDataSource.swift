@@ -149,7 +149,7 @@ extension ListConnectionDataSource: NSCollectionViewDelegate {
 // MARK: - ConnectionCellDelegate
 extension ListConnectionDataSource: ConnectionCellDelegate {
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool) {
-        
+        self.delegate?.ListConnectionDataSourceDidSelectedDatabase(databaseObj)
     }
 }
 

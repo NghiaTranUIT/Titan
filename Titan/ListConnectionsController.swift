@@ -90,6 +90,9 @@ extension ListConnectionsController: ListConnectionPresenterOutput {
     
     func didSelectedDatabase(_ databaseObj: DatabaseObj) {
         
+        // Prepare Layout in Detail Connection 
+        let userInfo: [String: Any] = ["selectedDatabase": databaseObj]
+        NotificationManager.postNotificationOnMainThreadType(.prepareLayoutForSelectedDatabase, object: nil, userInfo: userInfo)
     }
     
     func handleError(_ error: NSError) {

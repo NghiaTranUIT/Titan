@@ -58,4 +58,7 @@ extension NSViewController: BaseAbility {
     /// Action
     func initActions() {}
     
+    
+    /// Observer
+    func initObserver() {}
 }

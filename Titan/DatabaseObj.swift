@@ -15,13 +15,13 @@ final class DatabaseObj: BaseModel {
     
     //
     // MARK: - Variable
-    var name: String! = "New Connection"
-    var host: String! = "localhost"
-    var username: String! = "postgres"
-    var password: String! = ""
-    var database: String! = "postgres"
-    var port: Int! = 5432
-    var saveToKeychain: Bool! = false
+    var name: String = "New Connection"
+    var host: String = "localhost"
+    var username: String = "postgres"
+    var password: String = ""
+    var database: String = "postgres"
+    var port: Int = 5432
+    var saveToKeychain: Bool = true
     var ssl: SSLObj?
     var ssh: SSHObj?
     var groupConnection: GroupConnectionObj!

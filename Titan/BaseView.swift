@@ -44,9 +44,7 @@ extension NSView: BaseAbility {
     
     
     /// Common
-    func initCommon() {
-        
-    }
+    func initCommon() {}
     
     
     /// UIs
@@ -60,4 +58,7 @@ extension NSView: BaseAbility {
     /// Action
     func initActions() {}
     
+    
+    /// Observer
+    func initObserver() {}
 }

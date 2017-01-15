@@ -15,6 +15,7 @@ def important_pods
     pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :tag => '2.1.0'
     pod 'RxSwift',    '= 3.0.0-rc.1'
     pod 'DynamicColor', '~> 3.1.0'
+    pod 'KVOController'
     
     # Realm
     pod 'RealmSwift'

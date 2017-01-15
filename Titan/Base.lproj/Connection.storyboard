@@ -719,7 +719,7 @@
                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_titan" id="cLr-iE-ZNA"/>
                                             </imageView>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pEb-B1-t3s">
-                                                <rect key="frame" x="32" y="7" width="55" height="30"/>
+                                                <rect key="frame" x="32" y="10" width="55" height="30"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="TITAN" id="aUl-me-zv1">
                                                     <font key="font" size="18" name="OpenSans-Semibold"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -728,7 +728,7 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="pEb-B1-t3s" firstAttribute="centerY" secondItem="F2N-j8-Men" secondAttribute="centerY" id="Hsp-dS-QEy"/>
+                                            <constraint firstItem="pEb-B1-t3s" firstAttribute="centerY" secondItem="F2N-j8-Men" secondAttribute="centerY" constant="-3" id="Hsp-dS-QEy"/>
                                             <constraint firstItem="pEb-B1-t3s" firstAttribute="leading" secondItem="xI5-WO-hsS" secondAttribute="trailing" constant="8" id="RHK-yp-hsV"/>
                                             <constraint firstAttribute="width" constant="90" id="ab4-Qy-1dK"/>
                                             <constraint firstItem="xI5-WO-hsS" firstAttribute="leading" secondItem="F2N-j8-Men" secondAttribute="leading" id="dm0-xk-tJ1"/>
@@ -744,13 +744,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="556"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="556"/>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" allowsMultipleSelection="YES" id="Sd0-jl-BuX">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -763,12 +763,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="RwG-VW-nJ3"/>
                                 </constraints>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="y1r-Y8-Ryd">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="y1r-Y8-Ryd">
                                     <rect key="frame" x="0.0" y="540" width="250" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="i3u-4i-vyz">
-                                    <rect key="frame" x="234" y="0.0" width="16" height="512"/>
+                                    <rect key="frame" x="234" y="0.0" width="16" height="544"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -777,7 +777,7 @@
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="9E8-fy-nKI"/>
                             <constraint firstAttribute="trailing" secondItem="Zim-d1-wOh" secondAttribute="trailing" id="IHF-MG-m9n"/>
                             <constraint firstAttribute="trailing" secondItem="pJh-Zf-avb" secondAttribute="trailing" id="KAM-MN-qS3"/>
-                            <constraint firstItem="Zim-d1-wOh" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="bottom" id="jhR-Nn-WvT"/>
+                            <constraint firstItem="Zim-d1-wOh" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="bottom" constant="12" id="jhR-Nn-WvT"/>
                             <constraint firstAttribute="bottom" secondItem="Zim-d1-wOh" secondAttribute="bottom" id="lNh-6d-cGD"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="top" secondItem="jZl-GI-tqf" secondAttribute="top" id="o2u-Nu-yMe"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="pKw-Rh-4EV"/>
@@ -814,6 +814,9 @@
                             <constraint firstAttribute="trailing" secondItem="nLw-bj-h6D" secondAttribute="trailing" id="ZJJ-uw-ZRq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="topBarView" destination="nLw-bj-h6D" id="Wif-Gs-hAJ"/>
+                    </connections>
                 </viewController>
                 <customObject id="Lyo-2b-IBD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

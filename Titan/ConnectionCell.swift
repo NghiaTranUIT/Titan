@@ -8,12 +8,18 @@
 
 import Cocoa
 
+protocol ConnectionCellDelegate: class {
+    func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool)
+}
+
 class ConnectionCell: NSCollectionViewItem {
 
     
     //
     // MARK: - Variable
     fileprivate var databaseObj: DatabaseObj?
+    weak var delegate: ConnectionCellDelegate?
+    
     
     //
     // MARK: - Outlet
@@ -41,6 +47,19 @@ class ConnectionCell: NSCollectionViewItem {
     func configureCell(with databaseObj: DatabaseObj) {
         self.databaseObj = databaseObj
         self.setupData()
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            self.setupSelectionState()
+        }
+    }
+    
+    @IBAction func cellSelectedBtnTApped(_ sender: Any) {
+        self.isSelected = !self.isSelected
+        
+        guard let databaseObj = self.databaseObj else {return}
+        self.delegate?.ConnectionCellDidSelectedCell(sender: self, databaseObj: databaseObj, isSelected: self.isSelected)
     }
 }
 

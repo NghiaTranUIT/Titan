@@ -9,68 +9,52 @@
 import Cocoa
 import RxSwift
 
-protocol ListConnectionPresenterInput: ListConnectionInteractorOutput {
-    
+protocol ListConnectionPresenterOutput: class {
+    func didSelectedDatabase(_ databaseObj: DatabaseObj)
+    func handleError(_ error: NSError)
+    func reloadData()
 }
 
 class ListConnectionPresenter {
 
     //
     // MARK: - Variable
-    weak var output: ListConnectionsControllerInput! {
-        didSet {
-            self.initCommon()
-        }
-    }
+    weak var output: ListConnectionPresenterOutput?
     
+    // List connection Data source
+    fileprivate lazy var dataSource: ListConnectionDataSource = {
+       let data = ListConnectionDataSource()
+        data.delegate = self
+        return data
+    }()
     
-    /// Dispose Bag
-    private let disposeBad = DisposeBag()
-    
-    
-    /// Group Connection
-    fileprivate var groupConnections: Variable<[GroupConnectionObj]> {
-        return mainStore.state.connectionState!.groupConnections
-    }
-    
-    
-    /// Obserable
-    fileprivate func initCommon() {
-        self.groupConnections.asObservable().subscribe { (groups) in
-            Logger.info("Found \(groups.element?.count) group connections")
-            self.output.reloadData()
-        }
-        .addDisposableTo(self.disposeBad)
-    }
 }
 
+
 //
-// MARK: - ListConnectionPresenterInput
-extension ListConnectionPresenter: ListConnectionPresenterInput {
+// MARK: - ListConnectionInteractorOutput
+extension ListConnectionPresenter: ListConnectionInteractorOutput {
     
     func presentError(_ error: NSError) {
-        
+        self.output?.handleError(error)
     }
-
 }
 
-//
-// MARK: - ListConnectionsControllerDataSource
-extension ListConnectionPresenter: ListConnectionsControllerDataSource {
-    func numberOfGroupConnections() -> Int {
-        return self.groupConnections.value.count
-    }
-    
-    func numberOfDatabase(at section: Int) -> Int {
-        return self.groupConnections.value[section].databases.count
-    }
-    
-    func groupConnection(at indexPath: IndexPath) -> GroupConnectionObj {
-        return self.groupConnections.value[indexPath.section]
-    }
-    
-    func database(at indexPath: IndexPath) -> DatabaseObj {
-        return self.groupConnections.value[indexPath.section].databases[indexPath.item]
-    }
 
+//
+// MARK: - Data Source
+extension ListConnectionPresenter: ListConnectionsControllerDataSource {
+    func dataSourceForListConnection() -> ListConnectionDataSource {
+        return self.dataSource
+    }
+}
+
+extension ListConnectionPresenter: ListConnectionDataSourceDelegate {
+    func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
+        self.output?.didSelectedDatabase(databaseObj)
+    }
+    
+    func ListConnectionDataSourceReloadData() {
+        self.output?.reloadData()
+    }
 }

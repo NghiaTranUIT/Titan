@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.0.1)
   - DynamicColor (3.1.0)
+  - KVOController (1.2.0)
   - Nimble (5.0.0)
   - ObjectMapper (2.1.0)
   - Quick (0.10.0)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - DynamicColor (~> 3.1.0)
+  - KVOController
   - Nimble (~> 5.0.0)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.1.0`)
   - Quick (~> 0.10.0)
@@ -49,6 +51,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   ObjectMapper: e5e0f8aef8590fc2ddcde7f27eddb255863ee6e9
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
@@ -58,6 +61,6 @@ SPEC CHECKSUMS:
   RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: b8882453f11f5c6160adc31429fdeb9e97b1eb5a
+PODFILE CHECKSUM: 8848972a499295359de8cb5009c8efee3f065b6f
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1

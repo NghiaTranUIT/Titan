@@ -28,6 +28,8 @@ class DetailConnectionsController: NSViewController {
     @IBOutlet weak var userSSHCheckBox: NSButton!
     @IBOutlet weak var portTxt: NSTextField!
     @IBOutlet weak var connectBtn: NSButton!
+    @IBOutlet weak var topBarView: NSView!
+    
     
     //
     // MARK: - Variable
@@ -49,6 +51,12 @@ class DetailConnectionsController: NSViewController {
         /// IBAction
         //self.connectBtn.target = self
         //self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
+    }
+    
+    override func initUIs() {
+        
+        // Top bar Background
+        self.topBarView.backgroundColor = NSColor(hexString: "1799DD")
     }
     
     override func initActions() {

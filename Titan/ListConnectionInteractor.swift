@@ -10,10 +10,6 @@ import Cocoa
 import PromiseKit
 
 
-protocol ListConnectionInteractorInput: ListConnectionsControllerOutput {
-    
-}
-
 protocol ListConnectionInteractorOutput {
     func presentError(_ error: NSError)
 }
@@ -39,7 +35,7 @@ class ListConnectionInteractor {
 
 //
 // MARK: - ListConnectionInteractorInput
-extension ListConnectionInteractor: ListConnectionInteractorInput {
+extension ListConnectionInteractor: ListConnectionsControllerOutput {
     
     func addNewConnection() {
         

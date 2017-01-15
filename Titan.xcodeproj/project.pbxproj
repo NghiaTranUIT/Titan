@@ -84,6 +84,10 @@
 		BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */; };
 		BAA0A0A51DF2D644000D8F23 /* GroupColorRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */; };
 		BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */; };
+		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
+		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
+		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
+		BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */; };
 		BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */; };
 		BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */; };
 		BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */; };
@@ -227,6 +231,10 @@
 		BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupColorObj.swift; sourceTree = "<group>"; };
 		BAA0A0A41DF2D644000D8F23 /* GroupColorRealmObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupColorRealmObj.swift; sourceTree = "<group>"; };
 		BAA666CC1DD84D9A0017124F /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
+		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
+		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
+		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
+		BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSHView.xib; sourceTree = "<group>"; };
 		BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionDataSource.swift; sourceTree = "<group>"; };
@@ -344,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */,
+				BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */,
 				BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */,
 				BA9875651DF43C5500901CD5 /* screen_group_2@2x.jpg */,
 				BA9875631DF414FC00901CD5 /* screen_group@2x.jpg */,
@@ -549,6 +558,7 @@
 		BA4AFF141DAC9297009AE139 /* Detail Connection */ = {
 			isa = PBXGroup;
 			children = (
+				BAADCA2A1E2B6E3F006909D9 /* View */,
 				BA320A541DDDF67700C0E82B /* Worker */,
 				BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */,
 				BA320A4E1DDDF56900C0E82B /* DetailConnectionInteractor.swift */,
@@ -561,6 +571,7 @@
 		BA4AFF171DAC9672009AE139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAADCA271E2B5BF9006909D9 /* Check Box */,
 				BA9875671DF4442D00901CD5 /* Group Color View */,
 			);
 			name = Views;
@@ -724,6 +735,31 @@
 				BA9875681DF4449700901CD5 /* GroupColorView.swift */,
 			);
 			name = "Group Color View";
+			sourceTree = "<group>";
+		};
+		BAADCA271E2B5BF9006909D9 /* Check Box */ = {
+			isa = PBXGroup;
+			children = (
+				BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */,
+			);
+			name = "Check Box";
+			sourceTree = "<group>";
+		};
+		BAADCA2A1E2B6E3F006909D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAADCA2B1E2B6E43006909D9 /* SSH View */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BAADCA2B1E2B6E43006909D9 /* SSH View */ = {
+			isa = PBXGroup;
+			children = (
+				BAADCA2C1E2B6E53006909D9 /* SSHView.swift */,
+				BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */,
+			);
+			name = "SSH View";
 			sourceTree = "<group>";
 		};
 		BAB8C8A01E20ACD100B39B16 /* Data Source */ = {
@@ -1008,7 +1044,9 @@
 				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
+				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
+				BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1156,6 +1194,7 @@
 				BAE354F41DF9381C0066FB4D /* BaseView.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
+				BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA217FCD1DF32F1B00C5BD88 /* BaseModel+RealmConvertible.swift in Sources */,
@@ -1201,6 +1240,7 @@
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,
 				BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */,
+				BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

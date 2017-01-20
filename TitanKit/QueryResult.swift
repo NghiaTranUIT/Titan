@@ -33,7 +33,7 @@ open class QueryResult {
     
     /// Status
     public let resultStatus: ResultStatus!
-    public let errorMessage: String!
+    public let resultMessage: String!
     
     
     //
@@ -85,7 +85,7 @@ open class QueryResult {
     public init(_ resultPtr: OpaquePointer?) {
         self.resultPtr = resultPtr
         self.resultStatus = ResultStatus(resultPtr)
-        self.errorMessage = ResultStatus.getErrorMessage(resultPtr)
+        self.resultMessage = self.resultStatus.toString()
     }
     
     deinit {

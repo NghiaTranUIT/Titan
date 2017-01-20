@@ -31,7 +31,7 @@ public struct ConnectionResult: Error {
     
     
     /// Init with connection Pointer
-    init(connectionPtr: OpaquePointer?) {
+    init(connectionPtr: OpaquePointer?, connectionParam: ConnectionParam) {
         let status = ConnectionStatus(connectionPtr)
         let msg = ConnectionStatus.getErrorMessage(with: connectionPtr)
         self.status = status
@@ -39,7 +39,7 @@ public struct ConnectionResult: Error {
         
         // Init Connection
         if self.status == .CONNECTION_OK {
-            self.connection = Connection(connectionPtr: connectionPtr!)
+            self.connection = Connection(connectionPtr: connectionPtr!, connectionParam: connectionParam)
         }
     }
     

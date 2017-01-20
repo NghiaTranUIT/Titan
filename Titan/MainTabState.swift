@@ -17,7 +17,7 @@ struct MainTabState {
 //
 // MARK: - Reducer
 extension MainTabState {
-    static func reducer(action: Action, state: MainTabState?) -> MainTabState {
+    static func reducer(action: Action, state: MainTabStatme?) -> MainTabState {
         
         // Get state
         let state = state ?? MainTabState()

@@ -33,18 +33,22 @@ open class QueryResultRow {
     //
     // MARK: - Variable
     /// ColName <-> Value
-    public var results: [String: Any?] = [:]
+    public var results: [String: Any] = [:]
     
+    
+    public subscript(colName: String) -> Any? {
+        return self.results[colName]
+    }
     
     //
     // MARK: - Init
-    public init(_ results: [String: Any?]) {
+    public init(_ results: [String: Any]) {
         self.results = results
     }
     
     
     public class func resultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer) -> QueryResultRow {
-        var results: [String: Any?] = [:]
+        var results: [String: Any] = [:]
         
         for col in 0..<Int32(colIndex.count) {
             
@@ -56,7 +60,7 @@ open class QueryResultRow {
                 // Set Null
                 // Note that PQgetvalue will return an empty string, not a null pointer, for a null field.
                 // Ref: https://www.postgresql.org/docs/9.1/static/libpq-exec.html
-                results[nameCol] = nil
+                results[nameCol] = NSNull()
                 continue
             }
             
@@ -96,5 +100,12 @@ open class QueryResultRow {
         }
         
         return QueryResultRow(results)
+    }
+}
+
+
+extension QueryResultRow: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return "\(self.results)"
     }
 }

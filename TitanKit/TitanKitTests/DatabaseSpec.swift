@@ -33,7 +33,6 @@ class DatabaseSpec: QuickSpec {
                     let result = database.connectDatabase(withParam: validParam)
                     expect(result.connection).toNot(beNil())
                     expect(result.status) == ConnectionStatus.CONNECTION_OK
-                    
                 })
             })
             

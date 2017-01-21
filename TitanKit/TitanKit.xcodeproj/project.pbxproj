@@ -23,6 +23,7 @@
 		BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999EB1DDC673400296441 /* QueryResultRow.swift */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BABDF8991E331B4F006603BA /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF8981E331B4F006603BA /* Field.swift */; };
+		BABDF89B1E332C70006603BA /* ColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF89A1E332C70006603BA /* ColumnType.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
 		BACFCCAE1DDAF95800EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC911DDAF89400EFB0BA /* TitanKit.framework */; };
@@ -62,6 +63,7 @@
 		BA1999EB1DDC673400296441 /* QueryResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultRow.swift; sourceTree = "<group>"; };
 		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
 		BABDF8981E331B4F006603BA /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		BABDF89A1E332C70006603BA /* ColumnType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnType.swift; sourceTree = "<group>"; };
 		BACFCC911DDAF89400EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCC941DDAF89400EFB0BA /* TitanKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanKit.h; sourceTree = "<group>"; };
 		BACFCC951DDAF89400EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BA1999E91DDC508000296441 /* ResultStatus.swift */,
 				BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */,
 				BA1999EB1DDC673400296441 /* QueryResultRow.swift */,
+				BABDF89A1E332C70006603BA /* ColumnType.swift */,
 			);
 			name = Result;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
 				BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */,
 				BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */,
+				BABDF89B1E332C70006603BA /* ColumnType.swift in Sources */,
 				BA0ACAFC1E321FB2001AD35A /* Presentable.swift in Sources */,
 				BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */,
 				BABDF8991E331B4F006603BA /* Field.swift in Sources */,

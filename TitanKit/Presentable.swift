@@ -23,7 +23,7 @@ protocol Presentable {
     
     var rawData: String {get}
     
-    var realData: Any? {get}
+    var realData: Any {get}
     
     var isNull: Bool {get}
 }

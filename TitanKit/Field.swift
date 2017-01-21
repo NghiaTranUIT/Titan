@@ -31,8 +31,8 @@ open class Field: Presentable {
     
     
     /// Real data
-    fileprivate lazy var _realData: Any? = self.parseRealData()
-    var realData: Any? {
+    fileprivate lazy var _realData: Any = self.parseRealData()
+    var realData: Any {
         get {
             return self._realData
         }
@@ -82,16 +82,18 @@ extension Field {
         self.decoder = Decoder(resultPtr: resultPtr, colType: colType, rowIndex: rowIndex, colIndex: colIndex)
         
         // Is Null
-        if decoder.isNull() {
+        guard decoder.isNull() == false else {
             self._isNull = true
+            return
         }
         
         // Raw data
         self._rawData = decoder.getRawData()
+        print(self._rawData)
         
     }
     
-    fileprivate func parseRealData() -> Any? {
+    fileprivate func parseRealData() -> Any {
         
         // Is null
         guard self.isNull == false else {

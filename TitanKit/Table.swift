@@ -73,13 +73,18 @@ open class Table {
     }
     
     init(resultRow: QueryResultRow) {
-        self.tableCatalog = resultRow["table_catalog"]
-        let schema = resultRow["table_catalog"] as! String
+        self.tableCatalog = resultRow["table_catalog"]!.rawData
+        let schema = resultRow["table_catalog"]!.rawData
         self.tableSchema = TableSchema(rawValue: schema) ?? TableSchema.none
-        self.tableName = resultRow["table_name"] as? String
-        let type = resultRow["table_type"] as! String
+        self.tableName = resultRow["table_name"]!.rawData
+        let type = resultRow["table_type"]!.rawData
         self.tableType = TableType(rawValue: type) ?? TableType.none
-        self.isInsertableInto = resultRow["is_insertable_into"] as? Bool
-        self.isTyped = resultRow["is_typed"] as? Bool
+        
+        // Trick 
+        // Store as formation_schema.yes_or_no -> Varchar
+        // Need to stupid compare and parsing to boolean
+        self.isInsertableInto = (resultRow["is_insertable_into"]!.realData as? String) == "YES"
+        self.isTyped = (resultRow["is_typed"]!.realData as? String) == "YES"
+    
     }
 }

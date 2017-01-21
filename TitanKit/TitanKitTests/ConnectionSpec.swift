@@ -51,7 +51,7 @@ class ConnectionSpec: QuickSpec {
                     expect(tables.count) > 0
                     expect(userTable).notTo(beNil())
                     expect(userTable!.isInsertableInto).to(equal(true))
-                    
+                    expect(userTable!.tableName).to(equal("users"))
                 })
             })
         }

@@ -112,7 +112,7 @@ extension QueryResult {
         
         // Get value
         for rowIndex in 0..<self.numberOfRows {
-            let row = QueryResultRow.resultRow(atRowIndex: Int32(rowIndex),
+            let row = QueryResultRow.buildResultRow(atRowIndex: Int32(rowIndex),
                                                colIndex: self.columnsName,
                                                colTypes: self.columnTypes,
                                                resultPtr: resultPtr)
@@ -133,11 +133,7 @@ extension QueryResult {
         
         for i in 0..<Int32(self.numberOfColumns) {
             let typeId = PQftype(resultPtr, i)
-            
-            guard let type = ColumnType(rawValue: typeId) else {
-                types.append(ColumnType.unsupport)
-                continue
-            }
+            let type = ColumnType.build(rawValue: typeId)
             types.append(type)
         }
         

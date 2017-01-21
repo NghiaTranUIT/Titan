@@ -73,7 +73,7 @@ open class Table {
     }
     
     init(resultRow: QueryResultRow) {
-        self.tableCatalog = resultRow["table_catalog"] as? String
+        self.tableCatalog = resultRow["table_catalog"]
         let schema = resultRow["table_catalog"] as! String
         self.tableSchema = TableSchema(rawValue: schema) ?? TableSchema.none
         self.tableName = resultRow["table_name"] as? String

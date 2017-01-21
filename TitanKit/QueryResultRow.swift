@@ -22,7 +22,27 @@ public enum ColumnType: UInt32 {
     case text = 25
     case singleFloat = 700
     case doubleFloat = 701
-    case unsupport = 999
+    case varchar = 1043
+    case byte = 17
+    case char = 18
+    case json = 114
+    case date = 1082
+    case time = 1083
+    case timestamp = 1114
+    case unsupport = 0
+    
+    
+    /// Build
+    public static func build(rawValue: UInt32) -> ColumnType {
+        let newValue = ColumnType(rawValue: rawValue) ?? .unsupport
+        
+        // Log
+        if newValue == .unsupport {
+            Logger.error("Didn't support colType = \(rawValue)")
+        }
+        
+        return newValue
+    }
 }
 
 
@@ -33,70 +53,32 @@ open class QueryResultRow {
     //
     // MARK: - Variable
     /// ColName <-> Value
-    public var results: [String: Any] = [:]
+    public var results: [String: Field] = [:]
     
     
-    public subscript(colName: String) -> Any? {
+    public subscript(colName: String) -> Field? {
         return self.results[colName]
     }
     
     //
     // MARK: - Init
-    public init(_ results: [String: Any]) {
+    public init(_ results: [String: Field]) {
         self.results = results
     }
     
     
-    public class func resultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer) -> QueryResultRow {
-        var results: [String: Any] = [:]
+    public class func buildResultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer) -> QueryResultRow {
         
-        for col in 0..<Int32(colIndex.count) {
+        var results: [String: Field] = [:]
+        
+        for i in 0..<colIndex.count {
             
-            // Name col
-            let nameCol = colIndex[Int(col)]
+            let nameCol = colIndex[i]
+            let colType = colTypes[i]
+            let field = Field(resultPtr: resultPtr, colType: colType, rowIndex: Int(rowIndex), colIndex: i)
             
-            // Check null
-            if PQgetisnull(resultPtr, rowIndex, col) == 1 {
-                // Set Null
-                // Note that PQgetvalue will return an empty string, not a null pointer, for a null field.
-                // Ref: https://www.postgresql.org/docs/9.1/static/libpq-exec.html
-                results[nameCol] = NSNull()
-                continue
-            }
-            
-            // Get raw value
-            let rawData = String(cString: PQgetvalue(resultPtr, rowIndex, col))
-            
-            // Convert data type
-            guard colTypes[Int(col)] != .unsupport else {
-                // Return String if the type is unsupport
-                results[nameCol] = rawData
-                continue
-            }
-            
-            // Convert normal data
-            var value: Any!
-            switch colTypes[Int(col)] {
-            case .boolean:
-                value = rawData == "t" ? true : false
-            case .int16:
-                value = Int16(rawData)
-            case .int32:
-                value = Int32(rawData)
-            case .int64:
-                value = Int64(rawData)
-            case .text:
-                value = rawData
-            case .singleFloat:
-                value = Float(rawData)
-            case .doubleFloat:
-                value = Double(rawData)
-            default:
-                break
-            }
-            
-            // Set data
-            results[nameCol] = value
+            // Save
+            results[nameCol] = field
         }
         
         return QueryResultRow(results)

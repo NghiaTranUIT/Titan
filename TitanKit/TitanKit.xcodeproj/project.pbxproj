@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		BA0ACAED1E31CDFF001AD35A /* QuerySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAEC1E31CDFF001AD35A /* QuerySpec.swift */; };
 		BA0ACAF01E320266001AD35A /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAEF1E320266001AD35A /* Table.swift */; };
+		BA0ACAF31E3216CE001AD35A /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAF21E3216CE001AD35A /* Decodable.swift */; };
+		BA0ACAF51E32172E001AD35A /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAF41E32172E001AD35A /* Decoder.swift */; };
+		BA0ACAF81E32195C001AD35A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAF71E32195C001AD35A /* Logger.swift */; };
+		BA0ACAFC1E321FB2001AD35A /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0ACAFB1E321FB2001AD35A /* Presentable.swift */; };
 		BA1999A11DDB4CB700296441 /* ConnectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */; };
 		BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */; };
 		BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */; };
@@ -18,6 +22,7 @@
 		BA1999EA1DDC508000296441 /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E91DDC508000296441 /* ResultStatus.swift */; };
 		BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999EB1DDC673400296441 /* QueryResultRow.swift */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
+		BABDF8991E331B4F006603BA /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF8981E331B4F006603BA /* Field.swift */; };
 		BACFCC961DDAF89400EFB0BA /* TitanKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BACFCC941DDAF89400EFB0BA /* TitanKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BACFCCA21DDAF91F00EFB0BA /* libpq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCCA11DDAF91F00EFB0BA /* libpq.framework */; };
 		BACFCCAE1DDAF95800EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC911DDAF89400EFB0BA /* TitanKit.framework */; };
@@ -44,6 +49,10 @@
 		9F55BF8E95F917D836A9B1CD /* Pods-TitanKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA0ACAEC1E31CDFF001AD35A /* QuerySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuerySpec.swift; sourceTree = "<group>"; };
 		BA0ACAEF1E320266001AD35A /* Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		BA0ACAF21E3216CE001AD35A /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		BA0ACAF41E32172E001AD35A /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		BA0ACAF71E32195C001AD35A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BA0ACAFB1E321FB2001AD35A /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSpec.swift; sourceTree = "<group>"; };
 		BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseSpec.swift; sourceTree = "<group>"; };
 		BA1999A41DDB4E3700296441 /* ParamConnection+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParamConnection+Helper.swift"; sourceTree = "<group>"; };
@@ -52,6 +61,7 @@
 		BA1999E91DDC508000296441 /* ResultStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStatus.swift; sourceTree = "<group>"; };
 		BA1999EB1DDC673400296441 /* QueryResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultRow.swift; sourceTree = "<group>"; };
 		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
+		BABDF8981E331B4F006603BA /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		BACFCC911DDAF89400EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACFCC941DDAF89400EFB0BA /* TitanKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanKit.h; sourceTree = "<group>"; };
 		BACFCC951DDAF89400EFB0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +113,32 @@
 				BA0ACAEF1E320266001AD35A /* Table.swift */,
 			);
 			name = Table;
+			sourceTree = "<group>";
+		};
+		BA0ACAF11E3216A4001AD35A /* Decode */ = {
+			isa = PBXGroup;
+			children = (
+				BA0ACAF21E3216CE001AD35A /* Decodable.swift */,
+				BA0ACAF41E32172E001AD35A /* Decoder.swift */,
+			);
+			name = Decode;
+			sourceTree = "<group>";
+		};
+		BA0ACAF61E321954001AD35A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BA0ACAF71E32195C001AD35A /* Logger.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		BA0ACAF91E321F7C001AD35A /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				BA0ACAFB1E321FB2001AD35A /* Presentable.swift */,
+				BABDF8981E331B4F006603BA /* Field.swift */,
+			);
+			name = Value;
 			sourceTree = "<group>";
 		};
 		BA1999A61DDB4E3A00296441 /* Helper */ = {
@@ -185,6 +221,9 @@
 		BACFCCA41DDAF93600EFB0BA /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA0ACAF91E321F7C001AD35A /* Value */,
+				BA0ACAF61E321954001AD35A /* Common */,
+				BA0ACAF11E3216A4001AD35A /* Decode */,
 				BA0ACAEE1E320238001AD35A /* Table */,
 				BA1999EF1DDC677F00296441 /* Query */,
 				BA1999EE1DDC677900296441 /* Connection */,
@@ -386,9 +425,14 @@
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
 				BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */,
 				BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */,
+				BA0ACAFC1E321FB2001AD35A /* Presentable.swift in Sources */,
 				BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */,
+				BABDF8991E331B4F006603BA /* Field.swift in Sources */,
+				BA0ACAF31E3216CE001AD35A /* Decodable.swift in Sources */,
 				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
+				BA0ACAF81E32195C001AD35A /* Logger.swift in Sources */,
 				BA0ACAF01E320266001AD35A /* Table.swift in Sources */,
+				BA0ACAF51E32172E001AD35A /* Decoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

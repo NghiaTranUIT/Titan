@@ -89,7 +89,6 @@ extension Field {
         
         // Raw data
         self._rawData = decoder.getRawData()
-        print(self._rawData)
         
     }
     

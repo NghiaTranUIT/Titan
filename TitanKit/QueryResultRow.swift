@@ -17,7 +17,7 @@ open class QueryResultRow {
     //
     // MARK: - Variable
     /// ColName <-> Value
-    public var results: [String: Field] = [:]
+    fileprivate var results: [String: Field] = [:]
     
     
     public subscript(colName: String) -> Field? {

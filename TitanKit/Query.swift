@@ -9,12 +9,12 @@
 import Foundation
 import libpq
 
-
 /// Type result
 public enum QueryResultFormat: Int32 {
     case text = 0
     case binary = 1
 }
+
 
 /// Represent for Query string
 public struct Query {
@@ -24,18 +24,15 @@ public struct Query {
     public let string: String
     fileprivate let param: Parameter!
     
-    
     /// Param Count
     public var paramCount: Int32 {
         get { return self.param.paramCount}
     }
     
-    
     /// Param type
     public var paramType: UnsafePointer<Oid>? {
         get {return self.param.paramType}
     }
-    
     
     /// Param Value
     public var paramValue: UnsafePointer<UnsafePointer<Int8>?> {
@@ -44,18 +41,15 @@ public struct Query {
         }
     }
     
-    
     // Param Length
     public var paramLength: UnsafePointer<Int32>? {
         get { return self.param.paramLength }
     }
     
-    
     // Param format
     public var paramFormat: UnsafePointer<Int32>? {
         get { return self.param.paramFormat }
     }
-    
     
     /// Result format
     public var resultFormat: QueryResultFormat {
@@ -72,7 +66,6 @@ extension Query: ExpressibleByStringLiteral {
     public typealias StringLiteralType = String
     public typealias ExtendedGraphemeClusterLiteralType = String
     public typealias UnicodeScalarLiteralType = String
-    
     
     /// Implement require methods
     public init(_ string: String, param: [CustomStringConvertible] = []) {
@@ -91,7 +84,6 @@ extension Query: ExpressibleByStringLiteral {
     public init(unicodeScalarLiteral value: String) {
         self.init(value)
     }
-    
 }
 
 //

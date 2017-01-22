@@ -14,7 +14,6 @@ open class QueryResult {
     //
     // MARK: - Variable
     
-    
     /// Result Pointer
     /*
     Returns a PGresult pointer or possibly a NULL pointer.
@@ -30,15 +29,12 @@ open class QueryResult {
     */
     public var resultPtr: OpaquePointer?
     
-    
     /// Status
     public let resultStatus: ResultStatus!
     public let resultMessage: String!
     
-    
     //
     // MARK: - Query Result
-    
     
     // Number of col
     public lazy var numberOfColumns: Int = {
@@ -46,25 +42,20 @@ open class QueryResult {
         return Int(PQnfields(resultPtr))
     }()
     
-    
     /// Number of row
     public lazy var numberOfRows: Int = {
         guard let resultPtr = self.resultPtr else {return 0}
         return Int(PQntuples(resultPtr))
     }()
     
-    
     /// Rows
     public lazy var rows: [QueryResultRow] = self.getRows()
-    
     
     /// Col name at index
     public lazy var columnsName: [String] = self.getColumnsName()
     
-    
     /// Type of colums
     lazy var columnTypes: [ColumnType] = self.getTypeOfColIndex()
-    
     
     /// Command Status
     public lazy var commandStatus: String = {
@@ -72,13 +63,11 @@ open class QueryResult {
         return String(cString:PQcmdStatus(resultPtr))
     }()
     
-    
     /// Rows affected
     public lazy var rowsAffected: String = {
         guard let resultPtr = self.resultPtr else {return ""}
         return String(cString:PQcmdTuples(resultPtr))
     }()
-    
     
     //
     // MARK: - Init
@@ -97,7 +86,6 @@ open class QueryResult {
 //
 // MARK: - Private
 extension QueryResult {
-    
     
     /// Lazy get Row
     fileprivate func getRows() -> [QueryResultRow] {
@@ -123,7 +111,6 @@ extension QueryResult {
         return rows
     }
     
-    
     /// Lazy get type of cols
     fileprivate func getTypeOfColIndex() -> [ColumnType] {
         guard let resultPtr = self.resultPtr else {return []}
@@ -139,7 +126,6 @@ extension QueryResult {
         
         return types
     }
-    
     
     /// Lazy get col name
     fileprivate func getColumnsName() -> [String] {

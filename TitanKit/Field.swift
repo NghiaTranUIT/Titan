@@ -8,12 +8,10 @@
 
 import Foundation
 
-
 //
 // MARK: - Field
 /// Represent data for field
 open class Field: Presentable {
-    
     
     //
     // MARK: - Variable
@@ -29,7 +27,6 @@ open class Field: Presentable {
         }
     }
     
-    
     /// Real data
     fileprivate lazy var _realData: Any = self.parseRealData()
     var realData: Any {
@@ -37,7 +34,6 @@ open class Field: Presentable {
             return self._realData
         }
     }
-    
     
     /// Raw data
     /// Intent for presentation in Field cell
@@ -52,7 +48,6 @@ open class Field: Presentable {
         }
     }
     
-    
     /// Determine if current value is <null>
     /// Store it as NSNull
     fileprivate var _isNull: Bool = false
@@ -61,7 +56,6 @@ open class Field: Presentable {
             return self._isNull
         }
     }
-    
     
     //
     // MARK: - Init

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 // MARK: - Logger
 /// Internal Logger

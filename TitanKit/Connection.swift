@@ -15,10 +15,8 @@ open class Connection {
     // MARK: - Variable
     private let connectionPtr: OpaquePointer!
     
-    
     /// Param
     private let connectionParam: ConnectionParam!
-    
     
     /// Public table
     public lazy var publicTables: [Table] = self.fetchAllTables()
@@ -30,7 +28,6 @@ open class Connection {
         self.connectionParam = connectionParam
     }
     
-    
     //
     // MARK: - Public
     
@@ -38,7 +35,6 @@ open class Connection {
     open func closeConnection() {
         PQfinish(self.connectionPtr)
     }
-    
     
     /// Execute query
     open func execute(query: Query) -> QueryResult {
@@ -54,15 +50,11 @@ open class Connection {
         
         return QueryResult(queryResultPtr)
     }
-    
-    
 }
-
 
 //
 // MARK: - Private
 extension Connection {
-    
     
     /// Fetch all table
     fileprivate func fetchAllTables() -> [Table] {

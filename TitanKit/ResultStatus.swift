@@ -24,7 +24,6 @@ public enum ResultStatus {
     case PGRES_SINGLE_TUPLE
     case UNKNOW
     
-    
     //
     // MARK: - Init
     public init(_ resultPtr: OpaquePointer?) {
@@ -83,24 +82,34 @@ public enum ResultStatus {
         switch self {
         case .PGRES_BAD_RESPONSE:
             return "The server's response was not understood"
+            
         case .PGRES_COMMAND_OK:
             return "Successful completion of a command returning no data."
+            
         case .PGRES_COPY_BOTH:
             return "Copy In/Out (to and from server) data transfer started. This is currently used only for streaming replication."
+            
         case .PGRES_COPY_IN:
             return "Copy In (to server) data transfer started."
+            
         case .PGRES_COPY_OUT:
             return "Copy Out (from server) data transfer started."
+            
         case .PGRES_EMPTY_QUERY:
             return "The string sent to the server was empty."
+            
         case .PGRES_FATAL_ERROR:
             return "A fatal error occurred."
+            
         case .PGRES_NONFATAL_ERROR:
             return "A nonfatal error (a notice or warning) occurred."
+            
         case .PGRES_SINGLE_TUPLE:
             return "Successful completion of a command returning data"
+            
         case .PGRES_TUPLES_OK:
             return "Successful completion of a command returning data"
+            
         case .UNKNOW:
             return "Unknow error"
         }

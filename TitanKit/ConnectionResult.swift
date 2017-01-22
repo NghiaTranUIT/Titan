@@ -11,24 +11,19 @@ import libpq
 
 public struct ConnectionResult: Error {
     
-    
     /// status
     public var status: ConnectionStatus = .UNKNOW
-    
     
     // Message error
     public var msgError = "Unknow"
     
-    
     /// Connection
     public var connection: Connection? = nil
-    
     
     /// Default init
     init() {
         
     }
-    
     
     /// Init with connection Pointer
     init(connectionPtr: OpaquePointer?, connectionParam: ConnectionParam) {

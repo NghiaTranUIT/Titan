@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 // MARK: - Col type for Postgres
 // The OIDs of the built-in data types are defined
@@ -30,7 +29,6 @@ public enum ColumnType: UInt32 {
     case time = 1083
     case timestamp = 1114
     case unsupport = 0
-    
     
     /// Build
     public static func build(rawValue: UInt32) -> ColumnType {

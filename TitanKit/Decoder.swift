@@ -10,13 +10,11 @@
 import Foundation
 import libpq
 
-
 //
 // MARK: - Decoder
 /// It's default decoder
 /// Parse raw data to QueryResultRow
 public struct Decoder {
-    
     
     //
     // MARK: - Variable
@@ -24,7 +22,6 @@ public struct Decoder {
     fileprivate let colType: ColumnType!
     fileprivate let colIndex: Int!
     fileprivate let rowIndex: Int!
-    
     
     //
     // MARK: - Init
@@ -35,7 +32,6 @@ public struct Decoder {
         self.rowIndex = rowIndex
     }
 }
-
 
 //
 // MARK: - Decodable

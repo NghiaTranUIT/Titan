@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 // MARK: - TableSchema
 public enum TableSchema: String {
@@ -17,7 +16,6 @@ public enum TableSchema: String {
     case informationSchema  = "information_shema"
     case none
 }
-
 
 //
 // MARK: - TableType
@@ -29,37 +27,29 @@ public enum TableType: String {
     case none
 }
 
-
 //
 // MARK: - Represent Table in PostgreSQL
 open class Table {
-    
     
     //
     // MARK: - Variable
     /// Catolog name
     public let tableCatalog: String?
     
-    
     /// Table Schema
     public var tableSchema: TableSchema = TableSchema.none
-    
     
     /// Table Name
     public let tableName: String?
     
-    
     /// Table Type
     public var tableType: TableType = TableType.none
-    
     
     /// Is insertable
     public let isInsertableInto: Bool?
     
-    
     /// Is Typed
     public let isTyped: Bool?
-    
     
     //
     // MARK: - Init

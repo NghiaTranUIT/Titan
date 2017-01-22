@@ -9,7 +9,6 @@
 import Foundation
 import libpq
 
-
 //
 // MARK: - Query Result Row
 open class QueryResultRow {
@@ -18,7 +17,6 @@ open class QueryResultRow {
     // MARK: - Variable
     /// ColName <-> Value
     fileprivate var results: [String: Field] = [:]
-    
     
     public subscript(colName: String) -> Field? {
         return self.results[colName]
@@ -30,8 +28,8 @@ open class QueryResultRow {
         self.results = results
     }
     
-    
-    public class func buildResultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer) -> QueryResultRow {
+    public class func buildResultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer)
+        -> QueryResultRow {
         
         var results: [String: Field] = [:]
         
@@ -48,7 +46,6 @@ open class QueryResultRow {
         return QueryResultRow(results)
     }
 }
-
 
 extension QueryResultRow: CustomDebugStringConvertible {
     public var debugDescription: String {

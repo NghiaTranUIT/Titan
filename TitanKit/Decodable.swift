@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 // MARK: - Decoeable
 /// Convert raw value with colIndex, colType,... to QueryResultRow

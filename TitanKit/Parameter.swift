@@ -16,22 +16,17 @@ public struct Parameter {
     /// Param Value
     public let paramValue: UnsafePointer<UnsafePointer<Int8>?>!
     
-    
     /// Param Count
     public var paramCount: Int32 = 0
-    
     
     /// Param Type
     public var paramType: UnsafePointer<Oid>? = nil
     
-    
     /// Param Length
     public var paramLength: UnsafePointer<Int32>? = nil
     
-    
     // Param format
     public var paramFormat: UnsafePointer<Int32>? = nil
-    
     
     //
     // MARK: - Init

@@ -49,8 +49,7 @@ class QuerySpec: QuickSpec {
                 })
             })
             
-            context("Select boolean", { 
-                
+            context("Select boolean", {
                 it("Success", closure: { 
                     
                     let connection = connectionResult.connection!

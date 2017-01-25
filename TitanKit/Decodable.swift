@@ -13,18 +13,14 @@ import Foundation
 /// Convert raw value with colIndex, colType,... to QueryResultRow
 public protocol Decodable {
     
-    
     /// Init
     init(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int)
-    
     
     /// Determine if is null
     func isNull() -> Bool
     
-    
     /// Get raw data
     func getRawData() -> String
-    
     
     /// Parse RawData -> RealData
     func decodeRawData(_ rawData: String, colType: ColumnType) -> Any

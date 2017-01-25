@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA157917636353D0B4B1B208 /* Pods_TitanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */; };
 		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
 		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
@@ -152,6 +153,7 @@
 		0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.release.xcconfig"; sourceTree = "<group>"; };
 		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
 		72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TitanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FEF1D98C81900B616AB /* TitanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanTests.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Connection.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -277,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA157917636353D0B4B1B208 /* Pods_TitanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +322,8 @@
 			children = (
 				26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */,
 				0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */,
+				8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */,
+				F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -943,9 +949,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA035FF41D98C81900B616AB /* Build configuration list for PBXNativeTarget "TitanTests" */;
 			buildPhases = (
+				470861443CDF92601A9F8AC7 /* [CP] Check Pods Manifest.lock */,
 				BA035FE91D98C81900B616AB /* Sources */,
 				BA035FEA1D98C81900B616AB /* Frameworks */,
 				BA035FEB1D98C81900B616AB /* Resources */,
+				D38C2BCCA4060F1EB70044CD /* [CP] Embed Pods Frameworks */,
+				8DE72496C898585C52FF59C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1079,6 +1088,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		470861443CDF92601A9F8AC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		57F4E16020241BAD36B43039 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1092,6 +1116,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Titan/Pods-Titan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DE72496C898585C52FF59C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A07488668F6C7C0FACFCF264 /* [CP] Check Pods Manifest.lock */ = {
@@ -1148,6 +1187,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 48438097844d37346710771b376f5ce5ddd8babb 1444772a1049cc846e7d4bc0110004b35273ecfb80e64e2396957b6a14387f82";
+		};
+		D38C2BCCA4060F1EB70044CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1280,6 +1334,7 @@
 /* Begin XCBuildConfiguration section */
 		BA035FF51D98C81900B616AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1296,6 +1351,7 @@
 		};
 		BA035FF61D98C81900B616AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";

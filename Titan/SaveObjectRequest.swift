@@ -15,7 +15,6 @@ class SaveObjectRequest<Object: BaseMappable>: Requestable {
     
     typealias T = Object
     
-    
     //
     // MARK: - Variable
     var param: Parameters?

@@ -13,16 +13,13 @@ import PromiseKit
 // MARK: - Store
 protocol BaseModelStore {
     
-    
     /// Save
     /// Save to Disk + Cloud
     func save() -> Promise<Void>
     
-    
     /// Fetch
     func fetch() -> Promise<BaseModel?>
 }
-
 
 extension BaseModel {
     

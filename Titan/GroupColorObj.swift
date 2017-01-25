@@ -18,7 +18,6 @@ class GroupColorObj: BaseModel {
     // MARK: - Variable
     var color: NSColor!
     
-    
     //
     // MARK: - Init
     init(color: NSColor) {
@@ -30,7 +29,6 @@ class GroupColorObj: BaseModel {
         fatalError("init(map:) has not been implemented")
     }
     
-    
     //
     // MARK: - Default
     static let defaultColors: [GroupColorObj] = [GroupColorObj(color: NSColor(hexString: "#2ECC71")),
@@ -39,7 +37,6 @@ class GroupColorObj: BaseModel {
                                                  ]
     
     static let defaultColor = GroupColorObj.defaultColors.first!
-    
     
     /// Realm Obj class
     override var realmObjClass: BaseRealmObj.Type {

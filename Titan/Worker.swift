@@ -16,7 +16,6 @@ protocol Worker {
     
 }
 
-
 //
 // MARK: - Async Worker
 protocol AsyncWorker: Worker {
@@ -25,7 +24,6 @@ protocol AsyncWorker: Worker {
     
     func execute() -> Promise<T>
 }
-
 
 //
 // MARK: - Sync Worker

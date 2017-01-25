@@ -13,14 +13,12 @@ import Cocoa
 // MARK: - Default Implementation for Identifier
 extension NSViewController: Identifier {
     
-    
     /// ID View
     static var identifierView: String {
         get {
             return String(describing: self)
         }
     }
-    
     
     /// XIB
     static func xib() -> NSNib? {

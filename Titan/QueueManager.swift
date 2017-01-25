@@ -11,7 +11,6 @@ import RxSwift
 
 class QueueManager {
     
-    
     /// Share instance
     static let shared = QueueManager()
     
@@ -20,7 +19,6 @@ class QueueManager {
     lazy var mainQueue: MainScheduler = {
        return MainScheduler.instance
     }()
-    
     
     /// Background Queue
     lazy var backgroundQueue: ConcurrentDispatchQueueScheduler = {

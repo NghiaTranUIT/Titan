@@ -20,16 +20,17 @@ struct ConnectionState {
 //
 // MARK: - Reducer
 extension ConnectionState {
+    
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         
         // Get state
         let state = state ?? ConnectionState()
         
-        // Doing
+        // Switch
         switch action {
         case let action as SelectConnectionAction:
             state.selectedConnection.on(.next(action.selectedConnection))
-            break
+            
         case let action as CreateNewDatabaseAction:
             
             let groupConnections = state.groupConnections.value
@@ -49,19 +50,18 @@ extension ConnectionState {
             // Save
             state.groupConnections.value = groupConnections
             
-            break
         case let action as AddNewDefaultConnectionAction:
             var groupConnections = state.groupConnections.value
             groupConnections.append(action.groupConnectionObj)
             state.groupConnections.value = groupConnections
-            break
+            
+            
         case let action as FetchAllGroupConnectionsAction:
             state.groupConnections.value = action.connections
-            break
+            
         default:
             break
         }
-        
         return state
     }
 }

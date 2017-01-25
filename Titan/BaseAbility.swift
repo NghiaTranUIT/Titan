@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 //
 // MARK: - BaseAbility
 /// I don't prefer to way to subclass BaseClass
@@ -17,34 +16,27 @@ import Foundation
 /// Just conform this protocol
  protocol BaseAbility: class {
     
-    
     /// Init all relative methods below
     /// An helper method
     func initBaseAbility()
-    
     
     /// Init Common
     /// Intent to do everything common here
     func initCommon()
     
-    
     /// UIs
     /// To do all things about UIs
     func initUIs()
     
-    
     /// Binding
     func initBinding()
-    
     
     /// Action
     func initActions()
     
-    
     /// Observer
     func initObserver()
 }
-
 
 //
 // MARK: - Default Extension
@@ -53,7 +45,6 @@ import Foundation
  So we need create seperate method to call it manaully
  */
 extension BaseAbility {
-    
     
     /// Make default implement of initBaseAbility to call all relative methods.
     /// We must call method in where we need. Ex: ViewController's ViewDidLoad

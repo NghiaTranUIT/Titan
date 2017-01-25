@@ -11,11 +11,9 @@ import ObjectMapper
 import PromiseKit
 import RealmSwift
 
-
 //
 // MARK: - GroupConnectionObj
 final class GroupConnectionObj: BaseModel {
-    
     
     //
     // MARK: - Variable
@@ -31,7 +29,6 @@ final class GroupConnectionObj: BaseModel {
         }
     }
     
-    
     //
     // MARK: - Override
     override func mapping(map: Map) {
@@ -41,7 +38,6 @@ final class GroupConnectionObj: BaseModel {
         self.color <- map[Constants.Obj.GroupConnection.Color]
         self.databases <- map[Constants.Obj.GroupConnection.Databases]
     }
-    
     
     /// Convert
     override func convertToRealmObj() -> BaseRealmObj {

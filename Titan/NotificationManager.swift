@@ -10,14 +10,11 @@ import Foundation
 
 enum NotificationType {
     
-    
     // Preifx
     private static let NotificationPrefix = "com.fe.titan"
     
-    
     // Enum
     case prepareLayoutForSelectedDatabase
-    
     
     // To String
     func toString() -> String {

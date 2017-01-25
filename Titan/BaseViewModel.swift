@@ -13,10 +13,6 @@ import RxSwift
 class BaseViewModel: RxViewModel {
     
     //
-    // MARK: - Variable
-    
-    
-    //
     // MARK: - Init
     override init() {
         super.init()

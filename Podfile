@@ -27,14 +27,21 @@ def test_pods
     pod 'Nimble', '~> 5.0.0'
 end
 
-# macOS
+# Titan
 target "Titan" do
   project 'Titan.xcodeproj'
   platform :osx, '10.12'
   important_pods
 end
 
-# Titan Kit
+# Titan Test
+target "TitanTests" do
+    project 'Titan.xcodeproj'
+    platform :osx, '10.12'
+    test_pods
+end
+
+# Titan Kit Test
 target "TitanKitTests" do
     project './TitanKit/TitanKit.xcodeproj'
     platform :osx, '10.12'

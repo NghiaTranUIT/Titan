@@ -15,7 +15,6 @@ import Foundation
 // 8 Charactter
 extension UUID {
     
-    
     /// Short UUID
     static func shortUUID() -> String {
         let uuid = UUID().uuidString

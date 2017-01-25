@@ -14,10 +14,8 @@ import Cocoa
 // Easily to get ViewID and XIB file
 protocol Identifier {
     
-    
     /// ID view
     static var identifierView: String {get}
-    
     
     /// XIB - init XIB from identifierView
     static func xib() -> NSNib?
@@ -28,14 +26,12 @@ protocol Identifier {
 // MARK: - Default Implementation for Identifier
 extension NSView: Identifier {
     
-    
     /// ID View
     static var identifierView: String {
         get {
             return String(describing: self)
         }
     }
-    
     
     /// XIB
     static func xib() -> NSNib? {

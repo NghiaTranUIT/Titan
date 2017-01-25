@@ -9,7 +9,6 @@
 import Foundation
 import Cocoa
 
-
 //
 // MARK: - Background Color
 extension NSView {
@@ -18,10 +17,7 @@ extension NSView {
     /// Set wantsLayer = true for layer-backed
     var backgroundColor: NSColor? {
         get {
-            guard let color = self.layer?.backgroundColor else {
-                return nil
-            }
-            
+            guard let color = self.layer?.backgroundColor else {return nil}
             return NSColor(cgColor: color)
         }
         set {

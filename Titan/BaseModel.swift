@@ -62,7 +62,6 @@ class BaseModel: Mappable {
         self.className <- map[Constants.Obj.KeyClassname]
     }
     
-    
     //
     // MARK: - Realm Convertible
     /// Convert from BaseModel -> RealmObj
@@ -77,7 +76,6 @@ class BaseModel: Mappable {
         
         return realmObj
     }
-    
     
     /// Save
     func save() -> Promise<Void> {

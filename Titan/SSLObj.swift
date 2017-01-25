@@ -11,7 +11,6 @@ import ObjectMapper
 
 class SSLObj: BaseModel {
 
-    
     //
     // MARK: - Variable
     var clientKeyFile: String!
@@ -19,7 +18,6 @@ class SSLObj: BaseModel {
     var serverRootCertificate: String!
     var certificateRevocationList: String!
     var sslCompression: Bool!
-    
     
     /// Realm Obj class
     override var realmObjClass: BaseRealmObj.Type {
@@ -40,7 +38,6 @@ class SSLObj: BaseModel {
         self.certificateRevocationList <- map[Constants.Obj.SSL.CertificateRevocationList]
         self.sslCompression <- map[Constants.Obj.SSL.SSLCompression]
     }
-    
     
     /// Convert
     override func convertToRealmObj() -> BaseRealmObj {

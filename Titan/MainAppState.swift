@@ -14,14 +14,11 @@ struct MainAppState: StateType {
     //
     // MARK: - States
     
-    
     /// Connection lis state
     let connectionState: ConnectionState?
     
-    
     /// Main tab state
     let mainTabState: MainTabState?
-    
     
     /// Detail Tab state
     let detailTabState: DetailTabState?

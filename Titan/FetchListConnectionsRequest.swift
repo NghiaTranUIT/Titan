@@ -21,7 +21,6 @@ class FetchListConnectionsRequest: Requestable {
     var httpMethod: HTTPMethod {get {return .get}}
     var endpoint: String {get {return Constants.Endpoint.GetListConnectionFromCloudURL}}
     
-    
     /// Decode
     func decode(data: Any) -> T? {
         return Mapper<DatabaseObj>().mapArray(JSONObject: data) ?? []

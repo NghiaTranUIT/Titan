@@ -11,14 +11,12 @@ import ObjectMapper
 
 class SSHObj: BaseModel {
 
-    
     //
     // MARK: - Variable
     var host: String!
     var user: String!
     var indentityFile: String!
     var port: Int!
-    
     
     /// Realm Obj class
     override var realmObjClass: BaseRealmObj.Type {
@@ -27,7 +25,6 @@ class SSHObj: BaseModel {
         }
         
     }
-    
     
     //
     // MARK: - Override    
@@ -39,7 +36,6 @@ class SSHObj: BaseModel {
         self.indentityFile <- map[Constants.Obj.SSH.IndentityFile]
         self.port <- map[Constants.Obj.SSH.Port]
     }
-    
     
     /// Convert
     override func convertToRealmObj() -> BaseRealmObj {

@@ -10,27 +10,23 @@ import Cocoa
 import ReSwift
 import PromiseKit
 
-
 //
 // MARK: - Action
 struct FetchAllGroupConnectionsAction: Action {
     var connections: [GroupConnectionObj]
 }
 
-
 //
 // MARK: - Worker
 class FetchAllGroupConnectionsWorker: AsyncWorker {
     
-    
     /// Type
     typealias T = [GroupConnectionObj]
-    
     
     /// Execute
     func execute() -> Promise<T> {
         
-        return UserObj.currentUser.fetch().then(execute: { (_) -> Promise<T> in
+        return UserObj.currentUser.fetch().then(execute: { _ -> Promise<T> in
             
             let groups = UserObj.currentUser.groupConnections
             let action = FetchAllGroupConnectionsAction(connections: groups)

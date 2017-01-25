@@ -31,6 +31,7 @@
 		BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */; };
 		BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */; };
 		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
+		BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3358311E38A6F500745515 /* Promise+Then.swift */; };
 		BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AD1DCF371400B60952 /* RxViewModel.swift */; };
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
@@ -178,6 +179,7 @@
 		BA320A551DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAllGroupConnectionsWorker.swift; sourceTree = "<group>"; };
 		BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectConnectionWorker.swift; sourceTree = "<group>"; };
 		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		BA3358311E38A6F500745515 /* Promise+Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Then.swift"; sourceTree = "<group>"; };
 		BA33F9AD1DCF371400B60952 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
 		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				BAA0A0981DF26812000D8F23 /* NSView+BackgroundColor.swift */,
 				BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */,
 				BA9875611DF3F5B000901CD5 /* UUID+Short.swift */,
+				BA3358311E38A6F500745515 /* Promise+Then.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1268,6 +1271,7 @@
 				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */,
+				BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
 				BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */,

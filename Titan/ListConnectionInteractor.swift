@@ -30,11 +30,8 @@ class ListConnectionInteractor {
 extension ListConnectionInteractor: ListConnectionsControllerOutput {
     
     func addNewConnection() {
-        
-        // Worker
+
         let worker = CreateNewDefaultGroupConnectionWorker()
-        
-        // Execute
         worker.execute()
         .then(on: DispatchQueue.main) { _ -> Void in
             
@@ -46,6 +43,25 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
     
     func fetchAllConnections() {
         
+        let worker = FetchAllGroupConnectionsWorker()
+        worker.execute()
+        .thenOnMainThread { groups -> Void in
+            
+            // Create default
+            if groups.count == 0 {
+                self.createDefaultGroupDatabase()
+                return
+            }
+            
+            // Have Group, but no database
+            if groups.count > 0 || groups.first!.databases.count == 0 {
+                self.createNewDatabase(with: groups.first!)
+                return
+            }
+        }
+        .catch { error in
+            self.output.presentError(error as NSError)
+        }
     }
     
     func selectConnection(_ connection: DatabaseObj) {
@@ -58,13 +74,28 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
 // MARK: - Private
 extension ListConnectionInteractor {
     
-    fileprivate func createNewGroupConnection() -> Promise<GroupConnectionObj> {
+    fileprivate func createDefaultGroupDatabase() {
+        
         let worker = CreateNewDefaultGroupConnectionWorker()
-        return worker.execute()
+        worker.execute()
+        .thenOnMainTheard(execute: { group -> Promise<DatabaseObj> in
+            return CreateNewDatabaseWorker(groupConnectionObj: group).execute()
+        })
+        .then(on: DispatchQueue.main, execute: { (databaseObj) -> Void in
+            
+        })
+        .catch(execute: {[unowned self] error in
+            self.output.presentError(error as NSError)
+        })
     }
     
-    fileprivate func createNewDatabase(with groupObj: GroupConnectionObj) -> Promise<DatabaseObj> {
+    fileprivate func createNewDatabase(with groupObj: GroupConnectionObj) {
+        
         let worker = CreateNewDatabaseWorker(groupConnectionObj: groupObj)
-        return worker.execute()
+        worker.execute().then(execute: { _ -> Void in
+            
+        }).catch(execute: { (_) in
+            
+        })
     }
 }

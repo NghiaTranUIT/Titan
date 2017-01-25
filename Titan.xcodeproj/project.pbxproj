@@ -10,7 +10,6 @@
 		AA157917636353D0B4B1B208 /* Pods_TitanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */; };
 		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
-		BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FEF1D98C81900B616AB /* TitanTests.swift */; };
 		BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */; };
 		BA217FC71DF3276A00C5BD88 /* BaseModel+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC61DF3276A00C5BD88 /* BaseModel+Mapping.swift */; };
 		BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC81DF3278900C5BD88 /* BaseModel+Store.swift */; };
@@ -32,6 +31,7 @@
 		BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */; };
 		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
 		BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3358311E38A6F500745515 /* Promise+Then.swift */; };
+		BA3358361E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */; };
 		BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AD1DCF371400B60952 /* RxViewModel.swift */; };
 		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
@@ -47,7 +47,6 @@
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
 		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
-		BA5350B61DE18F5A0017225E /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5350B51DE18F5A0017225E /* PromiseKit.framework */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
 		BA679CD31DD2EC110054EB43 /* UserRealmObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD21DD2EC110054EB43 /* UserRealmObj.swift */; };
@@ -157,7 +156,6 @@
 		8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA035FEF1D98C81900B616AB /* TitanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitanTests.swift; sourceTree = "<group>"; };
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA217FC61DF3276A00C5BD88 /* BaseModel+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+Mapping.swift"; sourceTree = "<group>"; };
@@ -180,6 +178,7 @@
 		BA320A571DDDF8D000C0E82B /* SelectConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectConnectionWorker.swift; sourceTree = "<group>"; };
 		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		BA3358311E38A6F500745515 /* Promise+Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Then.swift"; sourceTree = "<group>"; };
+		BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAllGroupConnectionsWorker_Test.swift; sourceTree = "<group>"; };
 		BA33F9AD1DCF371400B60952 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
 		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -195,7 +194,6 @@
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
 		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		BA5350B51DE18F5A0017225E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
@@ -295,7 +293,6 @@
 				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
 				BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */,
 				BAE94ADE1DDCC35300B203A5 /* libpq.framework in Frameworks */,
-				BA5350B61DE18F5A0017225E /* PromiseKit.framework in Frameworks */,
 				BA8E0BD51DB0DE8200B9BDD7 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				BAE94ADC1DDCC34200B203A5 /* libpq.framework */,
-				BA5350B51DE18F5A0017225E /* PromiseKit.framework */,
 				BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */,
 				BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */,
 				BA8E0BD41DB0DE8200B9BDD7 /* Crashlytics.framework */,
@@ -404,7 +400,7 @@
 		BA035FEE1D98C81900B616AB /* TitanTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA035FEF1D98C81900B616AB /* TitanTests.swift */,
+				BA3358331E38A96100745515 /* List Connection */,
 				BA035FF11D98C81900B616AB /* Info.plist */,
 			);
 			path = TitanTests;
@@ -468,6 +464,22 @@
 			isa = PBXGroup;
 			children = (
 				BA320A5A1DDDFF0A00C0E82B /* Worker.swift */,
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
+		BA3358331E38A96100745515 /* List Connection */ = {
+			isa = PBXGroup;
+			children = (
+				BA3358341E38A96800745515 /* Worker */,
+			);
+			name = "List Connection";
+			sourceTree = "<group>";
+		};
+		BA3358341E38A96800745515 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -1213,7 +1225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA035FF01D98C81900B616AB /* TitanTests.swift in Sources */,
+				BA3358361E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1344,6 +1356,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TitanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.TitanTests;
@@ -1361,6 +1377,10 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TitanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fe.TitanTests;
@@ -1468,7 +1488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
@@ -1494,7 +1514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C68ED6D47BC7265994DF666 /* Pods-Titan.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";

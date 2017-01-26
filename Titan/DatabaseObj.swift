@@ -7,21 +7,23 @@
 //
 
 import ObjectMapper
+import Realm
+import RealmSwift
 
 final class DatabaseObj: BaseModel {
 
     //
     // MARK: - Variable
-    var name: String = "New Connection"
-    var host: String = "localhost"
-    var username: String = "postgres"
-    var password: String = ""
-    var database: String = "postgres"
-    var port: Int = 5432
-    var saveToKeychain: Bool = true
-    var ssl: SSLObj?
-    var ssh: SSHObj?
-    weak var groupConnection: GroupConnectionObj?
+    dynamic var name: String = "New Connection"
+    dynamic var host: String = "localhost"
+    dynamic var username: String = "postgres"
+    dynamic var password: String = ""
+    dynamic var database: String = "postgres"
+    dynamic var port: Int = 5432
+    dynamic var saveToKeychain: Bool = true
+    dynamic var ssl: SSLObj?
+    dynamic var ssh: SSHObj?
+    let groupConnection = LinkingObjects(fromType: GroupConnectionObj.self, property: "databases")
 
     /// Default database
     class func defaultDatabase() -> DatabaseObj {
@@ -46,6 +48,9 @@ final class DatabaseObj: BaseModel {
         self.saveToKeychain <- map[Constants.Obj.Database.SaveToKeyChain]
         self.ssl <- map[Constants.Obj.Database.ssl]
         self.ssl <- map[Constants.Obj.Database.ssh]
-        self.groupConnection <- map[Constants.Obj.Database.groupConnection]
+        
+        // Don't map group connetion
+        // It intents for Inverse Linking from Realm
+        //self.groupConnection <- map[Constants.Obj.Database.groupConnection]
     }
 }

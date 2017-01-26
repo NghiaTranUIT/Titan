@@ -8,11 +8,9 @@
 
 import Cocoa
 import RxSwift
-import KVOController
-
+import RealmSwift
 
 protocol ListConnectionDataSourceDelegate: class {
-    func ListConnectionDataSourceReloadData()
     func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj)
 }
 
@@ -21,8 +19,11 @@ class ListConnectionDataSource: NSObject {
     //
     // MARK: - Variable
     weak var delegate: ListConnectionDataSourceDelegate?
-    weak var collectionView: NSCollectionView?
-    fileprivate var kvo: FBKVOController?
+    fileprivate var notificationToken: NotificationToken? = nil
+    var collectionView: NSCollectionView! {didSet{self.setupCollectionView()}}
+    var groupConnections: List<GroupConnectionObj> {
+        return mainStore.state.connectionState!.groupConnections
+    }
     
     //
     // MARK: - Init
@@ -31,35 +32,40 @@ class ListConnectionDataSource: NSObject {
         self.initCommon()
     }
     
-    /// Dispose Bag
-    private let disposeBad = DisposeBag()
-    
-    
-    /// Group Connection
-    fileprivate var groupConnections: Variable<[GroupConnectionObj]> {
-        return mainStore.state.connectionState!.groupConnections
+    deinit {
+        self.notificationToken?.stop()
     }
-    
     
     /// Obserable
     fileprivate func initCommon() {
-        self.groupConnections.asObservable().subscribe { (groups) in
-            Logger.info("Found \(groups.element?.count) group connections")
-            self.delegate?.ListConnectionDataSourceReloadData()
+        
+        // Group connection
+        self.notificationToken = mainStore.state.connectionState?.groupConnections
+        .addNotificationBlock({[weak self] changed in
+            guard let `self` = self else {return}
+            guard let collectionView = self.collectionView else {return}
             
-        }
-        .addDisposableTo(self.disposeBad)
+            switch changed {
+            case .initial:
+                collectionView.reloadData()
+            
+            case .error(let error):
+                Logger.error(error)
+                
+            case .update(_, _, _, _):
+                collectionView.reloadData()
+            }
+        })
     }
     
-    func setupCollectionView(_ collectionView: NSCollectionView) {
-        self.collectionView = collectionView
+    func setupCollectionView() {
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         // Register
-        collectionView.registerCell(ConnectionCell.self)
-        collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
+        self.collectionView.registerCell(ConnectionCell.self)
+        self.collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
         
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
@@ -69,10 +75,10 @@ class ListConnectionDataSource: NSObject {
         flowLayout.headerReferenceSize = CGSize(width: width, height: 31)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
-        collectionView.collectionViewLayout = flowLayout
+        self.collectionView.collectionViewLayout = flowLayout
         
         // Reload
-        collectionView.reloadData()
+        self.collectionView.reloadData()
     }
 }
 
@@ -104,25 +110,25 @@ extension ListConnectionDataSource {
 extension ListConnectionDataSource: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        let count = self.groupConnections.value.count
+        let count = self.groupConnections.count
         return count
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        let group = self.groupConnections.value[section]
+        let group = self.groupConnections[section]
         return group.databases.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
         // Database cell
-        let group = self.groupConnections.value[indexPath.section]
+        let group = self.groupConnections[indexPath.section]
         let databaseObj = group.databases[indexPath.item]
         return self.connectionCell(with: databaseObj, for: collectionView, indexPath: indexPath)
     }
     
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> NSView {
-        let group = self.groupConnections.value[indexPath.section]
+        let group = self.groupConnections[indexPath.section]
         return self.groupConnectionHeader(with: group, for: collectionView, indexPath: indexPath)
     }
 }
@@ -138,7 +144,7 @@ extension ListConnectionDataSource: NSCollectionViewDelegate {
         guard let indexPath = indexPaths.first else {return}
         
         // Select
-        let group = self.groupConnections.value[indexPath.section]
+        let group = self.groupConnections[indexPath.section]
         let databaseObj = group.databases[indexPath.item]
         self.delegate?.ListConnectionDataSourceDidSelectedDatabase(databaseObj)
     }

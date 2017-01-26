@@ -17,9 +17,9 @@ final class GroupConnectionObj: BaseModel {
     
     //
     // MARK: - Variable
-    var name: String! = ""
-    var color: GroupColorObj!
-    var databases: [DatabaseObj] = []
+    dynamic var name: String! = ""
+    dynamic var color: GroupColorObj!
+    let databases = List<DatabaseObj>()
     
     //
     // MARK: - Override
@@ -28,7 +28,10 @@ final class GroupConnectionObj: BaseModel {
         
         self.name <- map[Constants.Obj.GroupConnection.Name]
         self.color <- map[Constants.Obj.GroupConnection.Color]
-        self.databases <- map[Constants.Obj.GroupConnection.Databases]
+        
+        // Don't map database
+        // It intents for Reverse Linking from Realm
+        //self.databases <- map[Constants.Obj.GroupConnection.Databases]
     }
     
     //

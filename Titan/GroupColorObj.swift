@@ -16,7 +16,7 @@ class GroupColorObj: BaseModel {
     
     //
     // MARK: - Variable
-    var color: NSColor!
+    dynamic var color: NSColor!
     
     //
     // MARK: - Init

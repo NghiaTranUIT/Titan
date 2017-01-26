@@ -12,8 +12,8 @@ class QueryObj: BaseModel {
 
     //
     // MARK: - Variable
-    var name: String!
-    var content: String!
+    dynamic var name: String!
+    dynamic var content: String!
     
     //
     // MARK: - Override

@@ -12,11 +12,11 @@ class SSLObj: BaseModel {
 
     //
     // MARK: - Variable
-    var clientKeyFile: String!
-    var clientCertificate: String!
-    var serverRootCertificate: String!
-    var certificateRevocationList: String!
-    var sslCompression: Bool!
+    dynamic var clientKeyFile: String!
+    dynamic var clientCertificate: String!
+    dynamic var serverRootCertificate: String!
+    dynamic var certificateRevocationList: String!
+    dynamic var sslCompression: Bool = false
     
     //
     // MARK: - Override

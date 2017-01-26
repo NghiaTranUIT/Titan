@@ -19,11 +19,6 @@ protocol ListConnectionsControllerOutput {
     func addNewConnection()
 }
 
-protocol ListConnectionsControllerDataSource {
-    func dataSourceForListConnection() -> ListConnectionDataSource
-}
-
-
 //
 // MARK: - List Connection Controller
 /// It will present all GroupConnection and all database
@@ -33,7 +28,9 @@ class ListConnectionsController: NSViewController {
     //
     // MARK: - Variable
     var output: ListConnectionsControllerOutput!
-    var dataSource: ListConnectionsControllerDataSource!
+    fileprivate lazy var dataSource: ListConnectionDataSource! = {
+        return ListConnectionDataSource()
+    }()
     
     //
     // MARK: - OUTLET
@@ -109,10 +106,16 @@ extension ListConnectionsController: ListConnectionPresenterOutput {
 // MARK: - Private
 extension ListConnectionsController {
     
-    /// Collection View
     fileprivate func initCollectionView() {
-        
-        let dataSource = self.dataSource.dataSourceForListConnection()
-        dataSource.setupCollectionView(self.collectionView)
+        self.dataSource.collectionView = self.collectionView
+    }
+}
+
+//
+// MARK: - Data Source Delegate
+extension ListConnectionsController: ListConnectionDataSourceDelegate {
+    
+    func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
+        self.didSelectedDatabase(databaseObj)
     }
 }

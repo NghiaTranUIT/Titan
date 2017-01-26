@@ -15,19 +15,12 @@ protocol ListConnectionPresenterOutput: class {
     func reloadData()
 }
 
+
 class ListConnectionPresenter {
 
     //
     // MARK: - Variable
     weak var output: ListConnectionPresenterOutput?
-    
-    // List connection Data source
-    fileprivate lazy var dataSource: ListConnectionDataSource = {
-       let data = ListConnectionDataSource()
-        data.delegate = self
-        return data
-    }()
-    
 }
 
 
@@ -40,21 +33,3 @@ extension ListConnectionPresenter: ListConnectionInteractorOutput {
     }
 }
 
-
-//
-// MARK: - Data Source
-extension ListConnectionPresenter: ListConnectionsControllerDataSource {
-    func dataSourceForListConnection() -> ListConnectionDataSource {
-        return self.dataSource
-    }
-}
-
-extension ListConnectionPresenter: ListConnectionDataSourceDelegate {
-    func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
-        self.output?.didSelectedDatabase(databaseObj)
-    }
-    
-    func ListConnectionDataSourceReloadData() {
-        self.output?.reloadData()
-    }
-}

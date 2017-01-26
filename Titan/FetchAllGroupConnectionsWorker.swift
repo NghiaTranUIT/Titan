@@ -9,11 +9,13 @@
 import Cocoa
 import ReSwift
 import PromiseKit
+import RealmSwift
+import Realm
 
 //
 // MARK: - Action
 struct FetchAllGroupConnectionsAction: Action {
-    var connections: [GroupConnectionObj]
+    var connections: List<GroupConnectionObj>!
 }
 
 //
@@ -21,7 +23,7 @@ struct FetchAllGroupConnectionsAction: Action {
 class FetchAllGroupConnectionsWorker: AsyncWorker {
     
     /// Type
-    typealias T = [GroupConnectionObj]
+    typealias T = List<GroupConnectionObj>
     
     /// Execute
     func execute() -> Promise<T> {

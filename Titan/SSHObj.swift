@@ -13,10 +13,10 @@ class SSHObj: BaseModel {
 
     //
     // MARK: - Variable
-    var host: String!
-    var user: String!
-    var indentityFile: String!
-    var port: Int!
+    dynamic var host: String!
+    dynamic var user: String!
+    dynamic var indentityFile: String!
+    dynamic var port: Int = 22
     
     //
     // MARK: - Mapping

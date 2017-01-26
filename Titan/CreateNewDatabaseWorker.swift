@@ -10,7 +10,6 @@ import Foundation
 import ReSwift
 import PromiseKit
 
-
 //
 // MARK: - Action
 struct CreateNewDatabaseAction: Action {
@@ -41,7 +40,6 @@ class CreateNewDatabaseWorker: AsyncWorker {
         let defaultDb = DatabaseObj.defaultDatabase()
         
         // Assign to group
-        defaultDb.groupConnection = self.groupConnectionObj
         self.groupConnectionObj.databases.append(defaultDb)
         
         // Action

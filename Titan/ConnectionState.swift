@@ -9,11 +9,14 @@
 import Foundation
 import ReSwift
 import RxSwift
+import RealmSwift
 
+//
+// MARK: - State
 struct ConnectionState {
     
     /// Connection selected
-    var groupConnections = Variable<[GroupConnectionObj]>([])
+    var groupConnections = List<GroupConnectionObj>()
     var selectedConnection = PublishSubject<DatabaseObj>()
 }
 
@@ -33,31 +36,30 @@ extension ConnectionState {
             
         case let action as CreateNewDatabaseAction:
             
-            let groupConnections = state.groupConnections.value
-            let selectedGroupConnection = action.groupConnectionObj
-            let newDatabaseObj = action.databaseObj
+            let group = state.groupConnections
+            let selectedGroup = action.groupConnectionObj!
+            let newDatabaseObj = action.databaseObj!
             
             // Fitler
-            let groups = groupConnections.filter({ (obj) -> Bool in
-                return selectedGroupConnection!.objectId == obj.objectId
+            let groups = group.filter({ (obj) -> Bool in
+                return selectedGroup.objectId == obj.objectId
             })
             
             // Add
             if let group = groups.first {
-                group.databases.append(newDatabaseObj!)
+                group.databases.append(newDatabaseObj)
             }
             
-            // Save
-            state.groupConnections.value = groupConnections
-            
         case let action as AddNewDefaultConnectionAction:
-            var groupConnections = state.groupConnections.value
-            groupConnections.append(action.groupConnectionObj)
-            state.groupConnections.value = groupConnections
-            
+            let group = state.groupConnections
+            group.append(action.groupConnectionObj)
             
         case let action as FetchAllGroupConnectionsAction:
-            state.groupConnections.value = action.connections
+            
+            // Append contentOf error
+            for group in action.connections {
+                state.groupConnections.append(group)
+            }
             
         default:
             break

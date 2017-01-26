@@ -24,6 +24,5 @@ class ListConnectionConfig {
         
         // View controller
         viewController.output = interactor
-        viewController.dataSource = presenter
     }
 }

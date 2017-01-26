@@ -14,25 +14,25 @@ class ThemeObj: BaseModel {
     
     //
     // MARK: - Variable
-    var name: String!
+    dynamic var name: String!
     
     // App
-    var primaryMainAppColor: NSColor!
+    dynamic var primaryMainAppColor: NSColor!
     
     // Text
-    var primaryTextColor: NSColor! // Always is White
-    var secondaryTextColor: NSColor! // Like gray
-    var quaternaryTextColor: NSColor! // heavy gray on black menu
+    dynamic var primaryTextColor: NSColor! // Always is White
+    dynamic var secondaryTextColor: NSColor! // Like gray
+    dynamic var quaternaryTextColor: NSColor! // heavy gray on black menu
     
     // Menu 
-    var primaryMenuColor: NSColor! // Color of menu
-    var secondaryMenuColor: NSColor! // Color for LOGO + Top Bar
-    var quaternaryMenuColor: NSColor! // Color for side menu (like white-gray)
+    dynamic var primaryMenuColor: NSColor! // Color of menu
+    dynamic var secondaryMenuColor: NSColor! // Color for LOGO + Top Bar
+    dynamic var quaternaryMenuColor: NSColor! // Color for side menu (like white-gray)
     
     // Alert
-    var errorColor: NSColor!
-    var acceptColor: NSColor!
-    var alertMenuColor: NSColor!
+    dynamic var errorColor: NSColor!
+    dynamic var acceptColor: NSColor!
+    dynamic var alertMenuColor: NSColor!
     
     //
     // MARK: - Singleton

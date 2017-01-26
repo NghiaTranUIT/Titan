@@ -16,9 +16,9 @@ final class UserObj: BaseModel {
     
     //
     // MARK: - Variable
-    var username = "guest"
-    var isGuest: Bool = true
-    var groupConnections: [GroupConnectionObj] = []
+    dynamic var username = "guest"
+    dynamic var isGuest: Bool = true
+    let groupConnections = List<GroupConnectionObj>()
     
     //
     // MARK: - Current User

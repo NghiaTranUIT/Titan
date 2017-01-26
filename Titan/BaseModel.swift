@@ -18,9 +18,9 @@ class BaseModel: Object {
     
     //
     // MARK: - Variable
-    var objectId: String!
-    var createdAt: Date!
-    var updatedAt: Date!
+    dynamic var objectId: String!
+    dynamic var createdAt: Date!
+    dynamic var updatedAt: Date!
     
     /// Make objectId is primary key
     /// Obj must have primary key to support "Update" depend on primary key

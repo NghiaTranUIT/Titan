@@ -43,6 +43,7 @@ class CreateNewDatabaseWorker: AsyncWorker {
         
         // Assign to group
         defaultDb.groupConnection = self.groupConnectionObj
+        self.groupConnectionObj.databases.append(defaultDb)
         
         // Action
         let action = CreateNewDatabaseAction(databaseObj: defaultDb, groupConnectionObj: self.groupConnectionObj)

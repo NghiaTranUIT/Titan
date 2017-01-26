@@ -92,10 +92,10 @@ extension ListConnectionInteractor {
     fileprivate func createNewDatabase(with groupObj: GroupConnectionObj) {
         
         let worker = CreateNewDatabaseWorker(groupConnectionObj: groupObj)
-        worker.execute().then(execute: { _ -> Void in
-            
-        }).catch(execute: { (_) in
-            
+        worker.execute().then(execute: { databaseObj -> Void in
+            Logger.debug(databaseObj)
+        }).catch(execute: { error in
+            Logger.error(error)
         })
     }
 }

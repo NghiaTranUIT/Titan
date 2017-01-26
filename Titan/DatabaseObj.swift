@@ -24,7 +24,7 @@ final class DatabaseObj: BaseModel {
     var saveToKeychain: Bool = true
     var ssl: SSLObj?
     var ssh: SSHObj?
-    var groupConnection: GroupConnectionObj!
+    weak var groupConnection: GroupConnectionObj?
     
     
     /// Realm Obj class

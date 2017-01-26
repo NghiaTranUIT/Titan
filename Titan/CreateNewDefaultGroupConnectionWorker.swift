@@ -42,7 +42,8 @@ class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
         user.groupConnections.append(group)
         
         // Save
-        return user.save().then(execute: { Void -> Promise<T> in
+        return RealmManager.sharedManager.save(obj: user)
+        .then(execute: { Void -> Promise<T> in
             return Promise(value: group)
         })
     }

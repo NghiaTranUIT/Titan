@@ -6,7 +6,6 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Cocoa
 import ObjectMapper
 
 class SSLObj: BaseModel {
@@ -19,14 +18,6 @@ class SSLObj: BaseModel {
     var certificateRevocationList: String!
     var sslCompression: Bool!
     
-    /// Realm Obj class
-    override var realmObjClass: BaseRealmObj.Type {
-        get {
-            return SSLRealmObj.self
-        }
-        
-    }
-    
     //
     // MARK: - Override
     override func mapping(map: Map) {
@@ -38,22 +29,4 @@ class SSLObj: BaseModel {
         self.certificateRevocationList <- map[Constants.Obj.SSL.CertificateRevocationList]
         self.sslCompression <- map[Constants.Obj.SSL.SSLCompression]
     }
-    
-    /// Convert
-    override func convertToRealmObj() -> BaseRealmObj {
-        let realmObj = SSLRealmObj()
-        
-        realmObj.objectId = self.objectId
-        realmObj.updatedAt = self.updatedAt
-        realmObj.createdAt = self.createdAt
-        
-        realmObj.clientKeyFile = self.clientKeyFile
-        realmObj.clientCertificate = self.clientCertificate
-        realmObj.serverRootCertificate = self.serverRootCertificate
-        realmObj.certificateRevocationList = self.certificateRevocationList
-        realmObj.sslCompression = self.sslCompression
-        
-        return realmObj
-    }
-    
 }

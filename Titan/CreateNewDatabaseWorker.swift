@@ -18,7 +18,6 @@ struct CreateNewDatabaseAction: Action {
     var groupConnectionObj: GroupConnectionObj!
 }
 
-
 //
 // MARK: - Worker
 class CreateNewDatabaseWorker: AsyncWorker {

@@ -6,7 +6,6 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Cocoa
 import ObjectMapper
 
 class QueryObj: BaseModel {
@@ -16,7 +15,6 @@ class QueryObj: BaseModel {
     var name: String!
     var content: String!
     
-    
     //
     // MARK: - Override
     override func mapping(map: Map) {
@@ -25,5 +23,4 @@ class QueryObj: BaseModel {
         self.name <- map[Constants.Obj.Query.Name]
         self.content <- map[Constants.Obj.Query.Content]
     }
-    
 }

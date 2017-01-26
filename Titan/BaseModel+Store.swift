@@ -20,8 +20,3 @@ protocol BaseModelStore {
     /// Fetch
     func fetch() -> Promise<BaseModel?>
 }
-
-extension BaseModel {
-    
-
-}

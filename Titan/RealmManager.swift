@@ -17,14 +17,12 @@ final class RealmManager {
     // MARK: - Variable
     static let sharedManager = RealmManager()
     
-    
     /// Private Realm Configuration
     /// It get secret key from Keychain
     private lazy var secrectRealmConfigure: Realm.Configuration = {
         let configuration = Realm.Configuration(encryptionKey: RealmKey.getSecrectRealmKey())
         return configuration
     }()
-    
     
     /// Realm Default
     private lazy var realm: Realm = {
@@ -39,7 +37,6 @@ final class RealmManager {
         }
     }()
     
-    
     // Fetch all
     func fetchAll<T: Object>(type: T.Type) -> Promise<Results<T>> {
         return Promise { fullfll, reject in
@@ -48,7 +45,6 @@ final class RealmManager {
         }
     }
     
-    
     /// Is Exist
     func isExist<T: Object>(type: T.Type, ID: String) -> Promise<Results<T>> {
         return Promise { fullfll, reject in
@@ -56,7 +52,6 @@ final class RealmManager {
             fullfll(results)
         }
     }
-    
     
     /// Save
     func save(obj: Object) -> Promise<Void> {
@@ -68,31 +63,17 @@ final class RealmManager {
         }
     }
     
-    
     /// Fetch current user
     func fetchCurrentUser() -> UserObj? {
         
         // Where user.objectId = Guest
-        let results = self.realm.objects(UserRealmObj.self).filter("\(Constants.Obj.ObjectId) = '\(Constants.Obj.User.GuestUserObjectId)'")
+        let results = self.realm.objects(UserObj.self).filter("\(Constants.Obj.ObjectId) = '\(Constants.Obj.User.GuestUserObjectId)'")
         
         // Get
         guard let obj = results.first else {
             return nil
         }
         
-        // Convert
-        return obj.convertToModelObj() as? UserObj
-    }
-    
-    
-    /// Test
-    func testFetchCurrentUser() {
-        let results = self.realm.objects(UserRealmObj.self)
-        let group = results.first!.groupConnections.first!
-        let color = group.color
-        
-        Logger.info("Result = \(results)")
-        Logger.info("group = \(group)")
-        Logger.info("color = \(color)")
+        return obj
     }
 }

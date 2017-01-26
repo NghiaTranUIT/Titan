@@ -16,20 +16,20 @@ class GroupColorObj: BaseModel {
     
     //
     // MARK: - Variable
-    dynamic var color: NSColor!
+    dynamic var color: String!
     
     //
     // MARK: - Init
-    convenience init(color: NSColor) {
+    convenience init(color: String) {
         self.init()
         self.color = color
     }
 
     //
     // MARK: - Default
-    static let defaultColors: [GroupColorObj] = [GroupColorObj(color: NSColor(hexString: "#2ECC71")),
-                                                 GroupColorObj(color: NSColor(hexString: "#00B0D9")),
-                                                 GroupColorObj(color: NSColor(hexString: "#EE5B5B")),
+    static let defaultColors: [GroupColorObj] = [GroupColorObj(color: "#2ECC71"),
+                                                 GroupColorObj(color: "#00B0D9"),
+                                                 GroupColorObj(color: "#EE5B5B"),
                                                  ]
     
     static let defaultColor = GroupColorObj.defaultColors.first!

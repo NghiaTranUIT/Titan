@@ -28,8 +28,8 @@ class ListConnectionsController: NSViewController {
     //
     // MARK: - Variable
     var output: ListConnectionsControllerOutput!
-    fileprivate lazy var dataSource: ListConnectionDataSource! = {
-        return ListConnectionDataSource()
+    fileprivate lazy var dataSource: GroupDatabaseDataSource! = {
+        return GroupDatabaseDataSource()
     }()
     
     //
@@ -113,9 +113,9 @@ extension ListConnectionsController {
 
 //
 // MARK: - Data Source Delegate
-extension ListConnectionsController: ListConnectionDataSourceDelegate {
+extension ListConnectionsController: GroupDatabaseDataSourceDelegate {
     
-    func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
+    func GroupDatabaseDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
         self.didSelectedDatabase(databaseObj)
     }
 }

@@ -11,6 +11,8 @@ import RealmSwift
 import PromiseKit
 import Alamofire
 
+typealias EmptyBlock = ()->()
+
 final class RealmManager {
     
     //
@@ -25,7 +27,7 @@ final class RealmManager {
     }()
     
     /// Realm Default
-    private lazy var realm: Realm = {
+    fileprivate lazy var realm: Realm = {
         do {
             //return try Realm(configuration: self.secrectRealmConfigure)
             Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
@@ -75,5 +77,18 @@ final class RealmManager {
         }
         
         return obj
+    }
+}
+
+//
+// MARK: - Write transaction helper
+extension RealmManager {
+    
+    /// Write sync to realm-database
+    /// It will write sync in current thread
+    func writeSync(_ block: EmptyBlock) {
+        self.realm.beginWrite()
+        block()
+        try! self.realm.commitWrite()
     }
 }

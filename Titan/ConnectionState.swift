@@ -47,18 +47,25 @@ extension ConnectionState {
             
             // Add
             if let group = groups.first {
-                group.databases.append(newDatabaseObj)
+                RealmManager.sharedManager.writeSync {
+                    group.databases.append(newDatabaseObj)
+                }
             }
             
         case let action as AddNewDefaultConnectionAction:
             let group = state.groupConnections
-            group.append(action.groupConnectionObj)
+            
+            RealmManager.sharedManager.writeSync {
+                group.append(action.groupConnectionObj)
+            }
             
         case let action as FetchAllGroupConnectionsAction:
             
             // Append contentOf error
-            for group in action.connections {
-                state.groupConnections.append(group)
+            RealmManager.sharedManager.writeSync {
+                for group in action.connections {
+                    state.groupConnections.append(group)
+                }
             }
             
         default:

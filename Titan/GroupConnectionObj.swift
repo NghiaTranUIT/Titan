@@ -22,16 +22,16 @@ final class GroupConnectionObj: BaseModel {
     let databases = List<DatabaseObj>()
     
     //
-    // MARK: - Override
+    // MARK: - Mpaaing
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return GroupConnectionObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
         self.name <- map[Constants.Obj.GroupConnection.Name]
         self.color <- map[Constants.Obj.GroupConnection.Color]
-        
-        // Don't map database
-        // It intents for Reverse Linking from Realm
-        //self.databases <- map[Constants.Obj.GroupConnection.Databases]
     }
     
     //

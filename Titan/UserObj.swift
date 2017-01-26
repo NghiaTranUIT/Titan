@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import PromiseKit
+import ObjectMapper
 
 //
 // MARK: - UserObj
@@ -59,6 +60,10 @@ final class UserObj: BaseModel {
         }
         
         return Static.instance
+    }
+    
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return UserObj()
     }
 }
 

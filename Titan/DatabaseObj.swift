@@ -24,7 +24,7 @@ final class DatabaseObj: BaseModel {
     dynamic var ssl: SSLObj?
     dynamic var ssh: SSHObj?
     let groupConnection = LinkingObjects(fromType: GroupConnectionObj.self, property: "databases")
-
+    
     /// Default database
     class func defaultDatabase() -> DatabaseObj {
         let db = DatabaseObj()
@@ -36,7 +36,12 @@ final class DatabaseObj: BaseModel {
         return db
     }
     
-    /// Mapping
+    //
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return DatabaseObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

@@ -84,7 +84,7 @@
 		BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA311E2B8C86006909D9 /* NotificationManager.swift */; };
 		BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */; };
 		BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */; };
-		BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */; };
+		BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift */; };
 		BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -225,7 +225,7 @@
 		BAADCA311E2B8C86006909D9 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_cell@2x.jpg"; sourceTree = "<group>"; };
-		BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionDataSource.swift; sourceTree = "<group>"; };
+		BAB8C89E1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDatabaseDataSource.swift; sourceTree = "<group>"; };
 		BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVerticalFlowLayout.swift; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
@@ -756,7 +756,7 @@
 		BAB8C8A01E20ACD100B39B16 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
-				BAB8C89E1E20ACCD00B39B16 /* ListConnectionDataSource.swift */,
+				BAB8C89E1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -1221,7 +1221,7 @@
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
-				BAB8C89F1E20ACCD00B39B16 /* ListConnectionDataSource.swift in Sources */,
+				BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,

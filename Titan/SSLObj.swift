@@ -19,7 +19,11 @@ class SSLObj: BaseModel {
     dynamic var sslCompression: Bool = false
     
     //
-    // MARK: - Override
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return SSLObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

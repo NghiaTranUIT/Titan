@@ -16,7 +16,11 @@ class QueryObj: BaseModel {
     dynamic var content: String!
     
     //
-    // MARK: - Override
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return QueryObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

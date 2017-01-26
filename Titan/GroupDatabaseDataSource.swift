@@ -1,5 +1,5 @@
 //
-//  ListConnectionDataSource.swift
+//  GroupDatabaseDataSource.swift
 //  Titan
 //
 //  Created by Nghia Tran on 1/7/17.
@@ -10,15 +10,15 @@ import Cocoa
 import RxSwift
 import RealmSwift
 
-protocol ListConnectionDataSourceDelegate: class {
-    func ListConnectionDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj)
+protocol GroupDatabaseDataSourceDelegate: class {
+    func GroupDatabaseDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj)
 }
 
-class ListConnectionDataSource: NSObject {
+class GroupDatabaseDataSource: NSObject {
     
     //
     // MARK: - Variable
-    weak var delegate: ListConnectionDataSourceDelegate?
+    weak var delegate: GroupDatabaseDataSourceDelegate?
     fileprivate var notificationToken: NotificationToken? = nil
     var collectionView: NSCollectionView! {didSet{self.setupCollectionView()}}
     var groupConnections: List<GroupConnectionObj> {
@@ -29,7 +29,7 @@ class ListConnectionDataSource: NSObject {
     // MARK: - Init
     override init() {
         super.init()
-        self.initCommon()
+        //self.initCommon()
     }
     
     deinit {
@@ -85,7 +85,7 @@ class ListConnectionDataSource: NSObject {
 
 //
 // MARK: - Private
-extension ListConnectionDataSource {
+extension GroupDatabaseDataSource {
     
     /// Database cell
     fileprivate func connectionCell(with databaseObj: DatabaseObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSCollectionViewItem {
@@ -107,7 +107,7 @@ extension ListConnectionDataSource {
 
 //
 // MARK: - Collection View Data Source
-extension ListConnectionDataSource: NSCollectionViewDataSource {
+extension GroupDatabaseDataSource: NSCollectionViewDataSource {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         let count = self.groupConnections.count
@@ -136,7 +136,7 @@ extension ListConnectionDataSource: NSCollectionViewDataSource {
 
 //
 // MARK: - Collection View Delegate
-extension ListConnectionDataSource: NSCollectionViewDelegate {
+extension GroupDatabaseDataSource: NSCollectionViewDelegate {
     
     /// Did Select
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
@@ -146,16 +146,16 @@ extension ListConnectionDataSource: NSCollectionViewDelegate {
         // Select
         let group = self.groupConnections[indexPath.section]
         let databaseObj = group.databases[indexPath.item]
-        self.delegate?.ListConnectionDataSourceDidSelectedDatabase(databaseObj)
+        self.delegate?.GroupDatabaseDataSourceDidSelectedDatabase(databaseObj)
     }
 }
 
 
 //
 // MARK: - ConnectionCellDelegate
-extension ListConnectionDataSource: ConnectionCellDelegate {
+extension GroupDatabaseDataSource: ConnectionCellDelegate {
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool) {
-        self.delegate?.ListConnectionDataSourceDidSelectedDatabase(databaseObj)
+        self.delegate?.GroupDatabaseDataSourceDidSelectedDatabase(databaseObj)
     }
 }
 

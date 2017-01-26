@@ -18,9 +18,9 @@ class BaseModel: Object {
     
     //
     // MARK: - Variable
-    dynamic var objectId: String!
-    dynamic var createdAt: Date!
-    dynamic var updatedAt: Date!
+    dynamic var objectId: String! = UUID.shortUUID()
+    dynamic var createdAt: Date! = Date()
+    dynamic var updatedAt: Date! = Date()
     
     /// Make objectId is primary key
     /// Obj must have primary key to support "Update" depend on primary key
@@ -30,40 +30,11 @@ class BaseModel: Object {
     }
     
     //
-    // MARK: - Init
-    required init() {
-        super.init()
-        self.objectId = UUID.shortUUID()
-        self.createdAt = Date()
-        self.updatedAt = Date()
-    }
-    
-    convenience required init?(map: Map) {
-        
-        guard map.JSON[Constants.Obj.ObjectId] != nil else {
-            Logger.error("Can't create obj in BaseModel. Missing ObjectId")
-            return nil
-        }
-        
-        guard map.JSON[Constants.Obj.KeyClassname] != nil else {
-            Logger.error("Can't create obj in BaseModel. Missing ClassName")
-            return nil
-        }
-        
-        self.init()
-    }
-    
-    required convenience init(value: Any, schema: RLMSchema) {
-        self.init(value: value, schema: schema)
-    }
-    
-    required convenience init(realm: RLMRealm, schema: RLMObjectSchema) {
-        self.init(realm: realm, schema: schema)
-    }
-    
-    //
     // MARK: - Mapping
-    /// Mapping function
+    class func objectForMapping(map: Map) -> BaseMappable? {
+        return BaseModel()
+    }
+    
     func mapping(map: Map) {
         self.objectId <- map[Constants.Obj.ObjectId]
         self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
@@ -72,6 +43,6 @@ class BaseModel: Object {
 }
 
 //
-// MARK: - Mappable
-extension BaseModel: Mappable {}
+// MARK: - StaticMappable
+extension BaseModel: StaticMappable {}
 

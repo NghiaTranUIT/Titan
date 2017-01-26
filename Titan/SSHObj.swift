@@ -17,9 +17,13 @@ class SSHObj: BaseModel {
     dynamic var user: String!
     dynamic var indentityFile: String!
     dynamic var port: Int = 22
-    
+
     //
     // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return SSHObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         

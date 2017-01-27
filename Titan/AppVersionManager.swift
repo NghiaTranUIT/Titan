@@ -8,12 +8,13 @@
 
 import Cocoa
 
+//
+// MARK: - App Version
 final class AppVersionManager {
     
     //
     // MARK: - Variable
     static let sharedInstance = AppVersionManager()
-    
     
     //
     // MARK: - Init
@@ -21,7 +22,6 @@ final class AppVersionManager {
         self.setupConfiguration()
     }
 }
-
 
 //
 // MARK: - Private

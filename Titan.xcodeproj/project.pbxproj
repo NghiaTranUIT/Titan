@@ -30,11 +30,11 @@
 		BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A5A1DDDFF0A00C0E82B /* Worker.swift */; };
 		BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3358311E38A6F500745515 /* Promise+Then.swift */; };
 		BA3358361E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */; };
-		BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AD1DCF371400B60952 /* RxViewModel.swift */; };
-		BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */; };
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
+		BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
+		BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
 		BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
@@ -43,7 +43,6 @@
 		BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF361DACD43C009AE139 /* MainAppState.swift */; };
 		BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF381DACD489009AE139 /* ConnectionState.swift */; };
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
-		BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
 		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
@@ -169,11 +168,10 @@
 		BA320A5A1DDDFF0A00C0E82B /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		BA3358311E38A6F500745515 /* Promise+Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Then.swift"; sourceTree = "<group>"; };
 		BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchAllGroupConnectionsWorker_Test.swift; sourceTree = "<group>"; };
-		BA33F9AD1DCF371400B60952 /* RxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
-		BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable_Operations.swift; sourceTree = "<group>"; };
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
+		BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultGroupConnectionWorker.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		BA4AFF361DACD43C009AE139 /* MainAppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppState.swift; sourceTree = "<group>"; };
 		BA4AFF381DACD489009AE139 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		BA4AFF3B1DACD502009AE139 /* MainReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainReducer.swift; sourceTree = "<group>"; };
-		BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
@@ -265,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA157917636353D0B4B1B208 /* Pods_TitanTests.framework in Frameworks */,
+				BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */,
 				BA8E0BD61DB0DE8200B9BDD7 /* Crashlytics.framework in Frameworks */,
 				BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */,
 				B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */,
@@ -287,6 +286,7 @@
 		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */,
 				BAE94ADC1DDCC34200B203A5 /* libpq.framework */,
 				BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */,
 				BA8E0BD31DB0DE8200B9BDD7 /* Fabric.framework */,
@@ -470,18 +470,8 @@
 		BA33F9AB1DCF370800B60952 /* Github */ = {
 			isa = PBXGroup;
 			children = (
-				BA33F9AC1DCF370C00B60952 /* RxViewModel */,
 			);
 			name = Github;
-			sourceTree = "<group>";
-		};
-		BA33F9AC1DCF370C00B60952 /* RxViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				BA33F9AF1DCF371900B60952 /* Observable_Operations.swift */,
-				BA33F9AD1DCF371400B60952 /* RxViewModel.swift */,
-			);
-			name = RxViewModel;
 			sourceTree = "<group>";
 		};
 		BA33F9B11DCF3E3400B60952 /* Shared */ = {
@@ -587,7 +577,6 @@
 			children = (
 				BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */,
 				BAE354F31DF9381C0066FB4D /* BaseView.swift */,
-				BA4AFF3F1DACDCF0009AE139 /* BaseViewModel.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -977,7 +966,6 @@
 				TargetAttributes = {
 					BA035FEC1D98C81900B616AB = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = D54Y88Y9CY;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BAEFE7B81D97BE810081A5FE;
 					};
@@ -1211,7 +1199,6 @@
 				BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */,
 				BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
-				BA33F9B01DCF371900B60952 /* Observable_Operations.swift in Sources */,
 				BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */,
 				BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */,
 				BAE354F61DF96E080066FB4D /* BaseAbility.swift in Sources */,
@@ -1255,14 +1242,12 @@
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BAD0D3941DE2B0970081F28F /* ColumnDatabasePresenter.swift in Sources */,
-				BA4AFF401DACDCF0009AE139 /* BaseViewModel.swift in Sources */,
 				BAD0D3A21DE2B1050081F28F /* DetailTabState.swift in Sources */,
 				BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
-				BA33F9AE1DCF371400B60952 /* RxViewModel.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
@@ -1305,12 +1290,13 @@
 			baseConfigurationReference = 8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = TitanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -1326,12 +1312,13 @@
 			baseConfigurationReference = F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = TitanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -1443,7 +1430,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
@@ -1469,7 +1456,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Titan/Titan.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = D54Y88Y9CY;

@@ -7,12 +7,9 @@
 //
 
 import Cocoa
-import RxSwift
 
 protocol ListConnectionPresenterOutput: class {
-    func didSelectedDatabase(_ databaseObj: DatabaseObj)
     func handleError(_ error: NSError)
-    func reloadData()
 }
 
 

@@ -7,11 +7,10 @@
 //
 
 import Cocoa
-import RxSwift
 import RealmSwift
 
 protocol GroupDatabaseDataSourceDelegate: class {
-    func GroupDatabaseDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj)
+    
 }
 
 class GroupDatabaseDataSource: NSObject {
@@ -102,6 +101,11 @@ extension GroupDatabaseDataSource {
         header.configureCellWith(groupConnectionObj: groupConnectionObj)
         return header
     }
+    
+    fileprivate func selectedDatabase(_ databaseObj: DatabaseObj) {
+        let worker = SelectConnectionWorker(selectedDb: databaseObj)
+        worker.execute()
+    }
 }
 
 
@@ -146,7 +150,7 @@ extension GroupDatabaseDataSource: NSCollectionViewDelegate {
         // Select
         let group = self.groupConnections[indexPath.section]
         let databaseObj = group.databases[indexPath.item]
-        self.delegate?.GroupDatabaseDataSourceDidSelectedDatabase(databaseObj)
+        self.selectedDatabase(databaseObj)
     }
 }
 
@@ -155,7 +159,7 @@ extension GroupDatabaseDataSource: NSCollectionViewDelegate {
 // MARK: - ConnectionCellDelegate
 extension GroupDatabaseDataSource: ConnectionCellDelegate {
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool) {
-        self.delegate?.GroupDatabaseDataSourceDidSelectedDatabase(databaseObj)
+        self.selectedDatabase(databaseObj)
     }
 }
 

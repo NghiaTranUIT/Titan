@@ -58,6 +58,13 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
                 self.createNewDatabase(with: groups.first!)
                 return
             }
+            
+            // If have group, have databases -> Select first database
+            if groups.count == 1 && groups.first!.databases.count > 0 {
+                self.selectConnection(groups.first!.databases.first!)
+                return
+            }
+            
         }
         .catch { error in
             self.output.presentError(error as NSError)

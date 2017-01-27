@@ -9,17 +9,40 @@
 import XCTest
 import Quick
 import Nimble
+import RealmSwift
+import ReSwift
+
 @testable import Titan
 
 class FetchAllGroupConnectionsWorker_Test: QuickSpec {
-
+    
     override func spec() {
         
-        describe("Fetch database") {
-            context("Empty connection", closure: { 
-                it("Success", closure: { 
+        var realmManager: RealmManager!
+        var state = mainStore
+        
+        beforeEach {
+            Realm.Configuration.defaultConfiguration.inMemoryIdentifier = "Realm-testing"
+            let realm = try! Realm()
+            realmManager = RealmManager(realm: realm)
+        }
+
+        describe("Create realm memory - Dependency injection") {
+            it("success", closure: { 
+                expect(realmManager).notTo(beNil())
+            })
+        }
+        
+        describe("Store disaptch action") {
+            it("FetchAllGroupConnectionsAction is disaptched", closure: {
+                
+                let worker = FetchAllGroupConnectionsWorker()
+                worker
+                .execute()
+                .then(execute: { _ -> Void in
                     
-                    expect(true).to(equal(true))
+                })
+                .catch(execute: { _ in
                     
                 })
             })

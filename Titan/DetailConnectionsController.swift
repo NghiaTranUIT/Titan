@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import RxSwift
 
 protocol DetailConnectionsControllerOutput {
     func connectConnection(_ connection: DatabaseObj)

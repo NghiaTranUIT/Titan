@@ -85,19 +85,8 @@ class ListConnectionsController: NSViewController {
 // MARK: - ViewModel Delegate
 extension ListConnectionsController: ListConnectionPresenterOutput {
     
-    func didSelectedDatabase(_ databaseObj: DatabaseObj) {
-        
-        // Prepare Layout in Detail Connection 
-        let userInfo: [String: Any] = ["selectedDatabase": databaseObj]
-        NotificationManager.postNotificationOnMainThreadType(.prepareLayoutForSelectedDatabase, object: nil, userInfo: userInfo)
-    }
-    
     func handleError(_ error: NSError) {
         
-    }
-    
-    func reloadData() {
-        self.collectionView.reloadData()
     }
 }
 
@@ -115,7 +104,4 @@ extension ListConnectionsController {
 // MARK: - Data Source Delegate
 extension ListConnectionsController: GroupDatabaseDataSourceDelegate {
     
-    func GroupDatabaseDataSourceDidSelectedDatabase(_ databaseObj: DatabaseObj) {
-        self.didSelectedDatabase(databaseObj)
-    }
 }

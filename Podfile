@@ -13,7 +13,6 @@ def important_pods
     pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git', :tag => '2.1.0'
     pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
     pod 'ObjectMapper', '~> 2.2'
-    pod 'RxSwift',    '= 3.0.0-rc.1'
     pod 'DynamicColor', '~> 3.1.0'
     pod 'KVOController'
     

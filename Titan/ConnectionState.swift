@@ -8,7 +8,6 @@
 
 import Foundation
 import ReSwift
-import RxSwift
 import RealmSwift
 
 //
@@ -17,7 +16,7 @@ struct ConnectionState {
     
     /// Connection selected
     var groupConnections = List<GroupConnectionObj>()
-    var selectedConnection = PublishSubject<DatabaseObj>()
+    var selectedConnection: DatabaseObj!
 }
 
 //
@@ -32,7 +31,12 @@ extension ConnectionState {
         // Switch
         switch action {
         case let action as SelectConnectionAction:
-            state.selectedConnection.on(.next(action.selectedConnection))
+            
+            state.selectedConnection = action.selectedConnection
+        
+            // Post notification
+            let userInfo: [String: Any] = ["selectedDatabase": state.selectedConnection]
+            NotificationManager.postNotificationOnMainThreadType(.prepareLayoutForSelectedDatabase, object: nil, userInfo: userInfo)
             
         case let action as CreateNewDatabaseAction:
             

@@ -27,18 +27,17 @@ final class RealmManager {
     }()
     
     /// Realm Default
-    fileprivate lazy var realm: Realm = {
-        do {
-            //return try Realm(configuration: self.secrectRealmConfigure)
-            Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
-            return try Realm()
-        } catch let error as NSError {
-            // If the encryption key is wrong, `error` will say that it's an invalid database
-            Logger.error("Error opening realm: \(error)")
-            fatalError("Error opening realm: \(error)")
-        }
-    }()
+    fileprivate var realm: Realm!
     
+    //
+    // MARK: - Initializer
+    // Independcy injection -> For testing
+    init(realm: Realm? = RealmManager.defaultRealm) {
+        self.realm = realm
+    }
+    
+    //
+    // MARK: - Action
     // Fetch all
     func fetchAll<T: Object>(type: T.Type) -> Promise<Results<T>> {
         return Promise { fullfll, reject in
@@ -90,5 +89,22 @@ extension RealmManager {
         self.realm.beginWrite()
         block()
         try! self.realm.commitWrite()
+    }
+}
+
+//
+// MARK: - Private
+extension RealmManager {
+    
+    fileprivate static var defaultRealm: Realm {
+        do {
+            //return try Realm(configuration: self.secrectRealmConfigure)
+            Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
+            return try Realm()
+        } catch let error as NSError {
+            // If the encryption key is wrong, `error` will say that it's an invalid database
+            Logger.error("Error opening realm: \(error)")
+            fatalError("Error opening realm: \(error)")
+        }
     }
 }

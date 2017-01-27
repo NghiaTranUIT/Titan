@@ -41,7 +41,7 @@ class GroupColorView: NSView {
     func configureWith(groupColorObj: GroupColorObj) {
         
         // Render color
-        self.backgroundColor = groupColorObj.color
+        self.backgroundColor = NSColor(hexString: groupColorObj.color)
     }
     
 }

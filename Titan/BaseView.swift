@@ -42,22 +42,18 @@ import Cocoa
 
 extension NSView: BaseAbility {
     
-    
     /// Common
-    func initCommon() {
-        
-    }
-    
+    func initCommon() {}
     
     /// UIs
     func initUIs() {}
     
-    
     /// Binding
     func initBinding() {}
-    
     
     /// Action
     func initActions() {}
     
+    /// Observer
+    func initObserver() {}
 }

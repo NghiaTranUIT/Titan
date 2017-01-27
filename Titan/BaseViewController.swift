@@ -41,7 +41,6 @@ import Cocoa
 
 extension NSViewController: BaseAbility {
 
-    
     /// Common
     func initCommon() {
         
@@ -50,12 +49,12 @@ extension NSViewController: BaseAbility {
     /// Appearance
     func initUIs() {}
     
-    
     /// Binding
     func initBinding() {}
-    
     
     /// Action
     func initActions() {}
     
+    /// Observer
+    func initObserver() {}
 }

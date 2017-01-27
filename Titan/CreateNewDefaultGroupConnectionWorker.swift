@@ -37,13 +37,7 @@ class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
         let action = AddNewDefaultConnectionAction(groupConnectionObj: group)
         mainStore.dispatch(action)
         
-        // Add
-        let user = UserObj.currentUser
-        user.groupConnections.append(group)
-        
-        // Save
-        return user.save().then(execute: { Void -> Promise<T> in
-            return Promise(value: group)
-        })
+        // Return
+        return Promise(value: group)
     }
 }

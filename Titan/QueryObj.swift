@@ -6,24 +6,25 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Cocoa
 import ObjectMapper
 
 class QueryObj: BaseModel {
 
     //
     // MARK: - Variable
-    var name: String!
-    var content: String!
-    
+    dynamic var name: String!
+    dynamic var content: String!
     
     //
-    // MARK: - Override
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return QueryObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
         self.name <- map[Constants.Obj.Query.Name]
         self.content <- map[Constants.Obj.Query.Content]
     }
-    
 }

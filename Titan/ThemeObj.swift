@@ -14,29 +14,30 @@ class ThemeObj: BaseModel {
     
     //
     // MARK: - Variable
-    var name: String!
+    dynamic var name: String!
     
     // App
-    var primaryMainAppColor: NSColor!
+    dynamic var primaryMainAppColor: String!
     
     // Text
-    var primaryTextColor: NSColor! // Always is White
-    var secondaryTextColor: NSColor! // Like gray
-    var quaternaryTextColor: NSColor! // heavy gray on black menu
+    dynamic var primaryTextColor: String! // Always is White
+    dynamic var secondaryTextColor: String! // Like gray
+    dynamic var quaternaryTextColor: String! // heavy gray on black menu
     
     // Menu 
-    var primaryMenuColor: NSColor! // Color of menu
-    var secondaryMenuColor: NSColor! // Color for LOGO + Top Bar
-    var quaternaryMenuColor: NSColor! // Color for side menu (like white-gray)
+    dynamic var primaryMenuColor: String! // Color of menu
+    dynamic var secondaryMenuColor: String! // Color for LOGO + Top Bar
+    dynamic var quaternaryMenuColor: String! // Color for side menu (like white-gray)
     
     // Alert
-    var errorColor: NSColor!
-    var acceptColor: NSColor!
-    var alertMenuColor: NSColor!
+    dynamic var errorColor: String!
+    dynamic var acceptColor: String!
+    dynamic var alertMenuColor: String!
     
     //
     // MARK: - Singleton
     static let share = ThemeObj.defaultTheme()
+
 }
 
 //
@@ -51,22 +52,22 @@ extension ThemeObj {
         theme.name = "Default"
         
         // Main App
-        theme.primaryMainAppColor = NSColor(hexString: "#2ECC71")
+        theme.primaryMainAppColor = "#1799DD"
         
         // Text
-        theme.primaryTextColor = NSColor(hexString: "#22272A")
-        theme.secondaryTextColor = NSColor(hexString: "#B9B9B9")
-        theme.quaternaryTextColor = NSColor(hexString: "#7A7D86")
+        theme.primaryTextColor = "#606872"
+        theme.secondaryTextColor = "#8D9298"
+        theme.quaternaryTextColor = "#7A7D86"
         
         // Menu
-        theme.primaryMenuColor = NSColor(hexString: "#31383E")
-        theme.secondaryMenuColor = NSColor(hexString: "#22272A")
-        theme.quaternaryMenuColor = NSColor(hexString: "#F1F1F1")
+        theme.primaryMenuColor = "#000000"
+        theme.secondaryMenuColor = "#22272A"
+        theme.quaternaryMenuColor = "#F1F1F1"
         
         // Alert
-        theme.errorColor = NSColor(hexString: "#EE5B5B")
-        theme.acceptColor = NSColor(hexString: "#00AEDE")
-        theme.alertMenuColor = NSColor(hexString: "#FFFAE7")
+        theme.errorColor = "#EE5B5B"
+        theme.acceptColor = "#00AEDE"
+        theme.alertMenuColor = "#FFFAE7"
         
         return theme
     }

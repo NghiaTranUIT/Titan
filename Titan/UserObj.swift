@@ -7,37 +7,25 @@
 //
 
 import Foundation
-import RxSwift
 import RealmSwift
 import PromiseKit
-
+import ObjectMapper
 
 //
 // MARK: - UserObj
 final class UserObj: BaseModel {
     
-    
     //
     // MARK: - Variable
-    var username = "guest"
-    var isGuest: Bool = true
-    var groupConnections: [GroupConnectionObj] = []
-    
-    
-    /// Realm Obj class
-    override var realmObjClass: BaseRealmObj.Type {
-        get {
-            return UserRealmObj.self
-        }
-    }
-    
+    dynamic var username = "guest"
+    dynamic var isGuest: Bool = true
+    let groupConnections = List<GroupConnectionObj>()
     
     //
     // MARK: - Current User
     private struct Static {
         static var instance: UserObj!
     }
-    
     
     /// Share instance
     class var currentUser : UserObj {
@@ -48,6 +36,8 @@ final class UserObj: BaseModel {
         
         // Executing
         if Static.instance == nil {
+            
+            Logger.info("---Fetching Current User---")
             
             // Get from disk
             // Sync
@@ -64,35 +54,21 @@ final class UserObj: BaseModel {
             Static.instance = guestUser
             
             // Save
-            _ = Static.instance.save().then(execute: { _ -> Void in
-                
+            RealmManager.sharedManager
+            .save(obj: Static.instance)
+            .then(execute: { _ -> Void in})
+            .catch(execute: { error in
+                Logger.error(error)
             })
-
         }
         
         return Static.instance
     }
     
-    
-    //
-    // MARK: - Override
-    override func convertToRealmObj() -> BaseRealmObj {
-        
-        let realmObj = UserRealmObj()
-        
-        realmObj.objectId = self.objectId
-        realmObj.createdAt = self.createdAt
-        realmObj.updatedAt = self.updatedAt
-        realmObj.username = self.username
-        realmObj.isGuest = self.isGuest
-        let groups = self.groupConnections.map({ groupObj -> GroupConnectionRealmObj in
-            return groupObj.convertToRealmObj() as! GroupConnectionRealmObj
-        })
-        realmObj.groupConnections.append(objectsIn: groups)
-        return realmObj
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return UserObj()
     }
 }
-
 
 //
 // MARK: - Private

@@ -23,7 +23,6 @@ public enum ConnectionStatus {
     case CONNECTION_NEEDED
     case UNKNOW
     
-    
     //
     // MARK: - Public
     public init(_ connectionPtr: OpaquePointer?) {
@@ -68,6 +67,7 @@ public enum ConnectionStatus {
             self = .CONNECTION_NEEDED
             return
         }
+        
         self = .UNKNOW
     }
     

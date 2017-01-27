@@ -13,17 +13,16 @@ struct DetailTabState {
 
 }
 
-
 //
 // MARK: - Reducer
 extension DetailTabState {
+    
     static func reducer(action: Action, state: DetailTabState?) -> DetailTabState {
         
         // Get state
         let state = state ?? DetailTabState()
         
         // Doing
-        
         
         // Return
         return state

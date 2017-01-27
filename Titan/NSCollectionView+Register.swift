@@ -13,13 +13,11 @@ import Cocoa
 // MARK: - Register View
 extension NSCollectionView {
     
-    
     /// Helper register cell
     /// The View must conform Identifier protocol
     func registerCell<T: Identifier>(_ viewType: T.Type) {
         self.register(viewType.xib(), forItemWithIdentifier: viewType.identifierView)
     }
-    
     
     /// Register Supplementary
     func registerSupplementary<T: Identifier>(_ supplementaryType: T.Type, kind: String) {

@@ -15,8 +15,12 @@ open class Database {
     // MARK: - Variable
     
     /// Connections pool
-    fileprivate var connections: [Connection] = []
-    
+    fileprivate var _connections: [Connection] = []
+    var connections: [Connection] {
+        get {
+            return self._connections
+        }
+    }
     
     // Share instance
     static let share = Database()
@@ -26,7 +30,7 @@ open class Database {
     // MARK: - Init
     deinit {
         // Close all connection
-        
+        self.closeAllConnection()
     }
     
     //
@@ -42,16 +46,18 @@ open class Database {
         }
         
         // Get status
-        let result = ConnectionResult(connectionPtr: connectionPtr)
+        let result = ConnectionResult(connectionPtr: connectionPtr, connectionParam: param)
         
         // Store
         if let connection = result.connection {
-            self.connections.append(connection)
+            self._connections.append(connection)
         }
         
         // Return
         return result
     }
+    
+
 }
 
 
@@ -63,6 +69,6 @@ extension Database {
         for connection in self.connections {
             connection.closeConnection()
         }
-        self.connections.removeAll()
+        self._connections.removeAll()
     }
 }

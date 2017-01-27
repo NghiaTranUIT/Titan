@@ -11,12 +11,13 @@ import RealmSwift
 import PromiseKit
 import Alamofire
 
+typealias EmptyBlock = ()->()
+
 final class RealmManager {
     
     //
     // MARK: - Variable
     static let sharedManager = RealmManager()
-    
     
     /// Private Realm Configuration
     /// It get secret key from Keychain
@@ -25,21 +26,18 @@ final class RealmManager {
         return configuration
     }()
     
-    
     /// Realm Default
-    private lazy var realm: Realm = {
-        do {
-            //return try Realm(configuration: self.secrectRealmConfigure)
-            Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
-            return try Realm()
-        } catch let error as NSError {
-            // If the encryption key is wrong, `error` will say that it's an invalid database
-            Logger.error("Error opening realm: \(error)")
-            fatalError("Error opening realm: \(error)")
-        }
-    }()
+    fileprivate var realm: Realm!
     
+    //
+    // MARK: - Initializer
+    // Independcy injection -> For testing
+    init(realm: Realm? = RealmManager.defaultRealm) {
+        self.realm = realm
+    }
     
+    //
+    // MARK: - Action
     // Fetch all
     func fetchAll<T: Object>(type: T.Type) -> Promise<Results<T>> {
         return Promise { fullfll, reject in
@@ -48,7 +46,6 @@ final class RealmManager {
         }
     }
     
-    
     /// Is Exist
     func isExist<T: Object>(type: T.Type, ID: String) -> Promise<Results<T>> {
         return Promise { fullfll, reject in
@@ -56,7 +53,6 @@ final class RealmManager {
             fullfll(results)
         }
     }
-    
     
     /// Save
     func save(obj: Object) -> Promise<Void> {
@@ -68,31 +64,47 @@ final class RealmManager {
         }
     }
     
-    
     /// Fetch current user
     func fetchCurrentUser() -> UserObj? {
         
         // Where user.objectId = Guest
-        let results = self.realm.objects(UserRealmObj.self).filter("\(Constants.Obj.ObjectId) = '\(Constants.Obj.User.GuestUserObjectId)'")
+        let results = self.realm.objects(UserObj.self).filter("\(Constants.Obj.ObjectId) = '\(Constants.Obj.User.GuestUserObjectId)'")
         
         // Get
         guard let obj = results.first else {
             return nil
         }
         
-        // Convert
-        return obj.convertToModelObj() as? UserObj
+        return obj
     }
+}
+
+//
+// MARK: - Write transaction helper
+extension RealmManager {
     
+    /// Write sync to realm-database
+    /// It will write sync in current thread
+    func writeSync(_ block: EmptyBlock) {
+        self.realm.beginWrite()
+        block()
+        try! self.realm.commitWrite()
+    }
+}
+
+//
+// MARK: - Private
+extension RealmManager {
     
-    /// Test
-    func testFetchCurrentUser() {
-        let results = self.realm.objects(UserRealmObj.self)
-        let group = results.first!.groupConnections.first!
-        let color = group.color
-        
-        Logger.info("Result = \(results)")
-        Logger.info("group = \(group)")
-        Logger.info("color = \(color)")
+    fileprivate static var defaultRealm: Realm {
+        do {
+            //return try Realm(configuration: self.secrectRealmConfigure)
+            Logger.info("Realm = \(Realm.Configuration.defaultConfiguration.fileURL)")
+            return try Realm()
+        } catch let error as NSError {
+            // If the encryption key is wrong, `error` will say that it's an invalid database
+            Logger.error("Error opening realm: \(error)")
+            fatalError("Error opening realm: \(error)")
+        }
     }
 }

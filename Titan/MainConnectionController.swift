@@ -28,6 +28,10 @@ class MainConnectionController: NSSplitViewController {
         // Want layer
         self.view.wantsLayer = true
         self.splitView.wantsLayer = true
+        
+        // Moveable
+        NSApplication.shared().keyWindow?.isMovableByWindowBackground = true
+        NSApplication.shared().keyWindow?.isMovable = true
     }
     
 }

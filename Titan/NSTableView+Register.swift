@@ -13,7 +13,6 @@ import Cocoa
 // MARK: - Register View
 extension NSTableView {
     
-    
     /// Helper register view
     /// The View must conform Identifier protocol
     func registerView<T: Identifier>(_ viewType: T.Type) {

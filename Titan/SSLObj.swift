@@ -6,31 +6,24 @@
 //  Copyright © 2016 fe. All rights reserved.
 //
 
-import Cocoa
 import ObjectMapper
 
 class SSLObj: BaseModel {
 
-    
     //
     // MARK: - Variable
-    var clientKeyFile: String!
-    var clientCertificate: String!
-    var serverRootCertificate: String!
-    var certificateRevocationList: String!
-    var sslCompression: Bool!
-    
-    
-    /// Realm Obj class
-    override var realmObjClass: BaseRealmObj.Type {
-        get {
-            return SSLRealmObj.self
-        }
-        
-    }
+    dynamic var clientKeyFile: String!
+    dynamic var clientCertificate: String!
+    dynamic var serverRootCertificate: String!
+    dynamic var certificateRevocationList: String!
+    dynamic var sslCompression: Bool = false
     
     //
-    // MARK: - Override
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return SSLObj()
+    }
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -40,23 +33,4 @@ class SSLObj: BaseModel {
         self.certificateRevocationList <- map[Constants.Obj.SSL.CertificateRevocationList]
         self.sslCompression <- map[Constants.Obj.SSL.SSLCompression]
     }
-    
-    
-    /// Convert
-    override func convertToRealmObj() -> BaseRealmObj {
-        let realmObj = SSLRealmObj()
-        
-        realmObj.objectId = self.objectId
-        realmObj.updatedAt = self.updatedAt
-        realmObj.createdAt = self.createdAt
-        
-        realmObj.clientKeyFile = self.clientKeyFile
-        realmObj.clientCertificate = self.clientCertificate
-        realmObj.serverRootCertificate = self.serverRootCertificate
-        realmObj.certificateRevocationList = self.certificateRevocationList
-        realmObj.sslCompression = self.sslCompression
-        
-        return realmObj
-    }
-    
 }

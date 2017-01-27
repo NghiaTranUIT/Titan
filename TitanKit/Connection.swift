@@ -15,13 +15,18 @@ open class Connection {
     // MARK: - Variable
     private let connectionPtr: OpaquePointer!
     
+    /// Param
+    private let connectionParam: ConnectionParam!
+    
+    /// Public table
+    public lazy var publicTables: [Table] = self.fetchAllTables()
     
     //
     // MARK: - Init
-    init(connectionPtr: OpaquePointer) {
+    init(connectionPtr: OpaquePointer, connectionParam: ConnectionParam) {
         self.connectionPtr = connectionPtr
+        self.connectionParam = connectionParam
     }
-    
     
     //
     // MARK: - Public
@@ -30,7 +35,6 @@ open class Connection {
     open func closeConnection() {
         PQfinish(self.connectionPtr)
     }
-    
     
     /// Execute query
     open func execute(query: Query) -> QueryResult {
@@ -45,5 +49,24 @@ open class Connection {
                                           query.resultFormat.rawValue)
         
         return QueryResult(queryResultPtr)
+    }
+}
+
+//
+// MARK: - Private
+extension Connection {
+    
+    /// Fetch all table
+    fileprivate func fetchAllTables() -> [Table] {
+        
+        let query: Query = "SELECT * FROM information_schema.tables WHERE table_schema='public'"
+        let result = self.execute(query: query)
+        
+        // Init
+        let tables: [Table] = result.rows.map { (row) -> Table in
+            return Table(resultRow: row)
+        }
+        
+        return tables
     }
 }

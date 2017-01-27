@@ -15,21 +15,17 @@ struct SelectConnectionAction: Action {
     var selectedConnection: DatabaseObj
 }
 
-
 //
 // MARK: - Worker
 class SelectConnectionWorker: SyncWorker {
     
-    
     /// Type
     private var selectedDb: DatabaseObj!
-    
     
     /// Init
     init(selectedDb: DatabaseObj) {
         self.selectedDb = selectedDb
     }
-    
     
     /// Execute
     func execute() {

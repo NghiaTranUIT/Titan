@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import RxSwift
 
 protocol DetailConnectionsControllerOutput {
     func connectConnection(_ connection: DatabaseObj)
@@ -19,20 +18,24 @@ protocol DetailConnectionsControllerDataSource: class {
 
 class DetailConnectionsController: NSViewController {
 
+    
     //
     // MARK: - Outlet
+    @IBOutlet weak var nicknameTxt: NSTextField!
     @IBOutlet weak var hostNameTxt: NSTextField!
     @IBOutlet weak var usernameTxt: NSTextField!
     @IBOutlet weak var passwordTxt: NSTextField!
     @IBOutlet weak var databaseTxt: NSTextField!
-    @IBOutlet weak var userSSHCheckBox: NSButton!
-    @IBOutlet weak var portTxt: NSTextField!
-    @IBOutlet weak var connectBtn: NSButton!
+    @IBOutlet weak var sshCheckboxBtn: NSButton!
+    @IBOutlet weak var saveInKeyChainCheckBoxBtn: NSButton!
+    @IBOutlet weak var topBarView: NSView!
+    
     
     //
     // MARK: - Variable
     var output: DetailConnectionsControllerOutput!
     weak var dataSource: DetailConnectionsControllerDataSource!
+    
     
     //
     // MARK: - Rx
@@ -44,11 +47,18 @@ class DetailConnectionsController: NSViewController {
         self.initBaseAbility()
     }
     
+    deinit {
+        NotificationManager.removeAllObserve(self)
+    }
+    
     override func initCommon() {
         
-        /// IBAction
-        //self.connectBtn.target = self
-        //self.connectBtn.action = #selector(DetailConnectionsController.connectConnectionTapped)
+    }
+    
+    override func initUIs() {
+        
+        // Top bar Background
+        self.topBarView.backgroundColor = NSColor(hexString: "1799DD")
     }
     
     override func initActions() {
@@ -57,11 +67,34 @@ class DetailConnectionsController: NSViewController {
         DetailConnectionConfig.shared.configure(viewController: self)
     }
     
+    override func initObserver() {
+        NotificationManager.observeNotificationType(.prepareLayoutForSelectedDatabase, observer: self, selector: #selector(DetailConnectionsController.prepareLayoutNotification(noti:)), object: nil)
+    }
     
     //
     // MARK: - IBAction
-    @objc fileprivate func connectConnectionTapped() {
+    
+    @IBAction func sshCheckBoxBtnTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func saveInKeyChainBtnTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func connectConnectionTapped(_ sender: Any) {
         self.output.connectConnection(self.dataSource.selectedDatabase)
+    }
+    
+    @objc fileprivate func prepareLayoutNotification(noti: Notification) {
+        guard let databaseObj = noti.userInfo?["selectedDatabase"] as? DatabaseObj else {return}
+        self.nicknameTxt.stringValue = databaseObj.name
+        self.hostNameTxt.stringValue = databaseObj.host
+        self.usernameTxt.stringValue = databaseObj.username
+        self.passwordTxt.stringValue = databaseObj.password
+        self.sshCheckboxBtn.state = databaseObj.ssh != nil ? NSOnState : NSOffState
+        self.saveInKeyChainCheckBoxBtn.state = databaseObj.saveToKeychain ? NSOnState : NSOffState
+        
     }
 }
 

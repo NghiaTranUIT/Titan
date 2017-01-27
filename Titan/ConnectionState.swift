@@ -8,60 +8,69 @@
 
 import Foundation
 import ReSwift
-import RxSwift
+import RealmSwift
 
+//
+// MARK: - State
 struct ConnectionState {
     
     /// Connection selected
-    var groupConnections = Variable<[GroupConnectionObj]>([])
-    var selectedConnection = PublishSubject<DatabaseObj>()
+    var groupConnections = List<GroupConnectionObj>()
+    var selectedConnection: DatabaseObj!
 }
 
 //
 // MARK: - Reducer
 extension ConnectionState {
+    
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         
         // Get state
-        let state = state ?? ConnectionState()
+        var state = state ?? ConnectionState()
         
-        // Doing
+        // Switch
         switch action {
         case let action as SelectConnectionAction:
-            state.selectedConnection.on(.next(action.selectedConnection))
-            break
+            
+            state.selectedConnection = action.selectedConnection
+        
+            // Post notification
+            let userInfo: [String: Any] = ["selectedDatabase": state.selectedConnection]
+            NotificationManager.postNotificationOnMainThreadType(.prepareLayoutForSelectedDatabase, object: nil, userInfo: userInfo)
+            
         case let action as CreateNewDatabaseAction:
             
-            let groupConnections = state.groupConnections.value
-            let selectedGroupConnection = action.groupConnectionObj
-            let newDatabaseObj = action.databaseObj
+            let group = state.groupConnections
+            let selectedGroup = action.groupConnectionObj!
+            let newDatabaseObj = action.databaseObj!
             
             // Fitler
-            let groups = groupConnections.filter({ (obj) -> Bool in
-                return selectedGroupConnection!.objectId == obj.objectId
+            let groups = group.filter({ (obj) -> Bool in
+                return selectedGroup.objectId == obj.objectId
             })
             
             // Add
             if let group = groups.first {
-                group.databases.append(newDatabaseObj!)
+                RealmManager.sharedManager.writeSync {
+                    group.databases.append(newDatabaseObj)
+                }
             }
             
-            // Save
-            state.groupConnections.value = groupConnections
-            
-            break
         case let action as AddNewDefaultConnectionAction:
-            var groupConnections = state.groupConnections.value
-            groupConnections.append(action.groupConnectionObj)
-            state.groupConnections.value = groupConnections
-            break
-        case let action as FetchAllGroupConnectionsAction:
-            state.groupConnections.value = action.connections
-            break
+            let group = state.groupConnections
+            
+            // Save
+            RealmManager.sharedManager.writeSync {
+                group.append(action.groupConnectionObj)
+            }
+            
+        case _ as FetchAllGroupConnectionsAction:
+            // Get from current User
+            state.groupConnections = UserObj.currentUser.groupConnections
+            
         default:
             break
         }
-        
         return state
     }
 }

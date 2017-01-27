@@ -10,101 +10,39 @@ import Foundation
 import ObjectMapper
 import PromiseKit
 import RealmSwift
+import Realm
 
 //
 // MARK: - BaseModel
-class BaseModel: Mappable {
-    
+class BaseModel: Object {
     
     //
     // MARK: - Variable
-    var objectId: String!
-    var createdAt: Date!
-    var updatedAt: Date!
-    var className: String!
+    dynamic var objectId: String! = UUID.shortUUID()
+    dynamic var createdAt: Date! = Date()
+    dynamic var updatedAt: Date! = Date()
     
-    
-    /// Realm Obj class 
-    var realmObjClass: BaseRealmObj.Type {
-        get {
-            return BaseRealmObj.self
-        }
+    /// Make objectId is primary key
+    /// Obj must have primary key to support "Update" depend on primary key
+    /// https://realm.io/docs/swift/latest/#updating-objects
+    override static func primaryKey() -> String? {
+        return Constants.Obj.ObjectId
     }
-    
     
     //
-    // MARK: - Init
-    init() {
-        self.objectId = UUID.shortUUID()
-        self.createdAt = Date()
-        self.updatedAt = Date()
+    // MARK: - Mapping
+    class func objectForMapping(map: Map) -> BaseMappable? {
+        return BaseModel()
     }
     
-    required init?(map: Map) {
-        
-        guard map.JSON[Constants.Obj.ObjectId] != nil else {
-            Logger.error("Can't create obj in BaseModel. Missing ObjectId")
-            return nil
-        }
-        
-        guard map.JSON[Constants.Obj.KeyClassname] != nil else {
-            Logger.error("Can't create obj in BaseModel. Missing ClassName")
-            return nil
-        }
-    }
-    
-    
-    /// Mapping function
     func mapping(map: Map) {
         self.objectId <- map[Constants.Obj.ObjectId]
         self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
         self.updatedAt <- (map[Constants.Obj.UpdatedAt], APIDateTransform())
-        self.className <- map[Constants.Obj.KeyClassname]
-    }
-    
-    
-    //
-    // MARK: - Realm Convertible
-    /// Convert from BaseModel -> RealmObj
-    /// MUST Override on subclass to provide exactly behavior
-    func convertToRealmObj() -> BaseRealmObj {
-        
-        let realmObj = BaseRealmObj()
-        
-        realmObj.objectId = self.objectId
-        realmObj.createdAt = self.createdAt
-        realmObj.updatedAt = self.updatedAt
-        
-        return realmObj
-    }
-    
-    
-    /// Save
-    func save() -> Promise<Void> {
-        
-        // Convert to realm obj
-        let realmObj = self.convertToRealmObj()
-        
-        // Save to realm
-        return RealmManager.sharedManager.save(obj: realmObj)
-    }
-    
-    
-    /// Fetch
-    func fetch() -> Promise<BaseModel?> {
-        
-        // Fetch from realm
-        return RealmManager.sharedManager.fetchAll(type: self.realmObjClass)
-            .then { (result) -> Promise<BaseModel?> in
-                guard let realmObj = result.first as? UserRealmObj else {
-                    return Promise<BaseModel?>(value: nil)
-                }
-                
-                // Convert to model
-                let obj = realmObj.convertToModelObj()
-                return Promise<BaseModel?>(value: obj)
-        }
     }
 }
 
+//
+// MARK: - StaticMappable
+extension BaseModel: StaticMappable {}
 

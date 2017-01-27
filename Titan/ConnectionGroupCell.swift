@@ -13,7 +13,6 @@ import Cocoa
 // MARK: - Delegate
 protocol ConnectionGroupCellDelegate: class {
     
-    
     /// Create new database
     func ConnectionGroupCellShouldCreateNewDatabaseWithGroup(group: GroupConnectionObj)
 }
@@ -26,16 +25,14 @@ class ConnectionGroupCell: NSView {
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var colorView: GroupColorView!
     @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var addDatabaseBtn: NSButton!
-    
     
     
     //
     // MARK: - Variable
     weak var delegate: ConnectionGroupCellDelegate?
-    private var currentObj: GroupConnectionObj!
+    private var groupConnectionObj: GroupConnectionObj!
     
     
     //
@@ -45,16 +42,10 @@ class ConnectionGroupCell: NSView {
     }
     
     
-    /// Prepare
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-    
-    
     //
     // MARK: - Action
     @IBAction func addBtnTapped(_ sender: NSButton) {
-        self.delegate?.ConnectionGroupCellShouldCreateNewDatabaseWithGroup(group: self.currentObj)
+        self.delegate?.ConnectionGroupCellShouldCreateNewDatabaseWithGroup(group: self.groupConnectionObj)
     }
     
     
@@ -63,18 +54,10 @@ class ConnectionGroupCell: NSView {
     
     /// Configure
     func configureCellWith(groupConnectionObj: GroupConnectionObj) {
-        
-        // Store
-        self.currentObj = groupConnectionObj
+        self.groupConnectionObj = groupConnectionObj
         
         // Setup
-        self.colorView.configureWith(groupColorObj: groupConnectionObj.color)
         self.titleLbl.stringValue = groupConnectionObj.name
     }
 }
 
-
-
-extension ConnectionGroupCell: NSCollectionViewSectionHeaderView {
-    
-}

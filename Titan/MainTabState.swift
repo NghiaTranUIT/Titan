@@ -13,7 +13,6 @@ struct MainTabState {
 
 }
 
-
 //
 // MARK: - Reducer
 extension MainTabState {
@@ -23,7 +22,6 @@ extension MainTabState {
         let state = state ?? MainTabState()
         
         // Doing
-        
         
         // Return
         return state

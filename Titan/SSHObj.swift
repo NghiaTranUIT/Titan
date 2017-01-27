@@ -11,26 +11,19 @@ import ObjectMapper
 
 class SSHObj: BaseModel {
 
-    
     //
     // MARK: - Variable
-    var host: String!
-    var user: String!
-    var indentityFile: String!
-    var port: Int!
-    
-    
-    /// Realm Obj class
-    override var realmObjClass: BaseRealmObj.Type {
-        get {
-            return SSLRealmObj.self
-        }
-        
+    dynamic var host: String!
+    dynamic var user: String!
+    dynamic var indentityFile: String!
+    dynamic var port: Int = 22
+
+    //
+    // MARK: - Mapping
+    override class func objectForMapping(map: Map) -> BaseMappable? {
+        return SSHObj()
     }
     
-    
-    //
-    // MARK: - Override    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -38,23 +31,5 @@ class SSHObj: BaseModel {
         self.user <- map[Constants.Obj.SSH.User]
         self.indentityFile <- map[Constants.Obj.SSH.IndentityFile]
         self.port <- map[Constants.Obj.SSH.Port]
-    }
-    
-    
-    /// Convert
-    override func convertToRealmObj() -> BaseRealmObj {
-        
-        let realmObj = SSHRealmObj()
-        
-        realmObj.objectId = self.objectId
-        realmObj.updatedAt = self.updatedAt
-        realmObj.createdAt = self.createdAt
-        
-        realmObj.host = self.host
-        realmObj.user = self.user
-        realmObj.indentityFile = self.indentityFile
-        realmObj.port = self.port
-        
-        return realmObj
     }
 }

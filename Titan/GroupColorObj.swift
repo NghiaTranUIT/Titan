@@ -16,51 +16,21 @@ class GroupColorObj: BaseModel {
     
     //
     // MARK: - Variable
-    var color: NSColor!
-    
+    dynamic var color: String!
     
     //
     // MARK: - Init
-    init(color: NSColor) {
+    convenience init(color: String) {
+        self.init()
         self.color = color
-        super.init()
     }
-    
-    required init?(map: Map) {
-        fatalError("init(map:) has not been implemented")
-    }
-    
-    
+
     //
     // MARK: - Default
-    static let defaultColors: [GroupColorObj] = [GroupColorObj(color: NSColor(hexString: "#2ECC71")),
-                                                 GroupColorObj(color: NSColor(hexString: "#00B0D9")),
-                                                 GroupColorObj(color: NSColor(hexString: "#EE5B5B")),
+    static let defaultColors: [GroupColorObj] = [GroupColorObj(color: "#2ECC71"),
+                                                 GroupColorObj(color: "#00B0D9"),
+                                                 GroupColorObj(color: "#EE5B5B"),
                                                  ]
     
     static let defaultColor = GroupColorObj.defaultColors.first!
-    
-    
-    /// Realm Obj class
-    override var realmObjClass: BaseRealmObj.Type {
-        get {
-            return GroupColorRealmObj.self
-        }
-    }
-    
-    
-    //
-    // MARK: - Override
-    override func convertToRealmObj() -> BaseRealmObj {
-        
-        let realmObj = GroupColorRealmObj()
-        
-        realmObj.createdAt = self.createdAt
-        realmObj.objectId = self.objectId
-        realmObj.updatedAt = self.updatedAt
-        
-        realmObj.colorHex = self.color.toHexString()
-        
-        return realmObj
-    }
 }

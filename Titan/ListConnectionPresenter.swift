@@ -7,70 +7,26 @@
 //
 
 import Cocoa
-import RxSwift
 
-protocol ListConnectionPresenterInput: ListConnectionInteractorOutput {
-    
+protocol ListConnectionPresenterOutput: class {
+    func handleError(_ error: NSError)
 }
+
 
 class ListConnectionPresenter {
 
     //
     // MARK: - Variable
-    weak var output: ListConnectionsControllerInput! {
-        didSet {
-            self.initCommon()
-        }
-    }
-    
-    
-    /// Dispose Bag
-    private let disposeBad = DisposeBag()
-    
-    
-    /// Group Connection
-    fileprivate var groupConnections: Variable<[GroupConnectionObj]> {
-        return mainStore.state.connectionState!.groupConnections
-    }
-    
-    
-    /// Obserable
-    fileprivate func initCommon() {
-        self.groupConnections.asObservable().subscribe { (groups) in
-            Logger.info("Found \(groups.element?.count) group connections")
-            self.output.reloadData()
-        }
-        .addDisposableTo(self.disposeBad)
-    }
+    weak var output: ListConnectionPresenterOutput?
 }
 
+
 //
-// MARK: - ListConnectionPresenterInput
-extension ListConnectionPresenter: ListConnectionPresenterInput {
+// MARK: - ListConnectionInteractorOutput
+extension ListConnectionPresenter: ListConnectionInteractorOutput {
     
     func presentError(_ error: NSError) {
-        
+        self.output?.handleError(error)
     }
-
 }
 
-//
-// MARK: - ListConnectionsControllerDataSource
-extension ListConnectionPresenter: ListConnectionsControllerDataSource {
-    func numberOfGroupConnections() -> Int {
-        return self.groupConnections.value.count
-    }
-    
-    func numberOfDatabase(at section: Int) -> Int {
-        return self.groupConnections.value[section].databases.count
-    }
-    
-    func groupConnection(at indexPath: IndexPath) -> GroupConnectionObj {
-        return self.groupConnections.value[indexPath.section]
-    }
-    
-    func database(at indexPath: IndexPath) -> DatabaseObj {
-        return self.groupConnections.value[indexPath.section].databases[indexPath.item]
-    }
-
-}

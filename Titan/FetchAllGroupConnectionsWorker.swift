@@ -9,34 +9,32 @@
 import Cocoa
 import ReSwift
 import PromiseKit
+import RealmSwift
+import Realm
 
 //
 // MARK: - Action
-struct FetchAllGroupConnectionsAction: Action {
-    var connections: [GroupConnectionObj]
-}
-
+struct FetchAllGroupConnectionsAction: Action {}
 
 //
 // MARK: - Worker
 class FetchAllGroupConnectionsWorker: AsyncWorker {
     
-    
     /// Type
-    typealias T = [GroupConnectionObj]
-    
+    typealias T = List<GroupConnectionObj>
     
     /// Execute
     func execute() -> Promise<T> {
         
-        return UserObj.currentUser.fetch().then(execute: { (_) -> Promise<T> in
-            
-            let groups = UserObj.currentUser.groupConnections
-            let action = FetchAllGroupConnectionsAction(connections: groups)
-            mainStore.dispatch(action)
-            
-            return Promise(value: groups)
-            
-        })
+        // Fetch current User
+        let currentUser = UserObj.currentUser
+        let group = currentUser.groupConnections
+        
+        // Dispatch
+        let action = FetchAllGroupConnectionsAction()
+        mainStore.dispatch(action)
+        
+        // Return
+        return Promise(value: group)
     }
 }

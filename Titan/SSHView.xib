@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe" customClass="SSHView" customModule="Titan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="581" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="FX8-dF-H8f">
+                    <rect key="frame" x="0.0" y="156" width="581" height="44"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiH-Qo-ahR">
+                            <rect key="frame" x="22" y="12" width="70" height="20"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="SSH Host" id="miQ-4z-1bh">
+                                <font key="font" size="14" name="SFUIText-Semibold"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhy-yB-AuN">
+                            <rect key="frame" x="100" y="8" width="461" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="Fli-5y-xBA"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="iVa-Ij-XJ8">
+                                <font key="font" size="14" name="SFUIText-Regular"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <allowedInputSourceLocales>
+                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                </allowedInputSourceLocales>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Vhy-yB-AuN" firstAttribute="leading" secondItem="MiH-Qo-ahR" secondAttribute="trailing" constant="10" id="5zO-gU-mIp"/>
+                        <constraint firstAttribute="height" constant="44" id="Nwm-vH-B4Y"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="WIL-7X-xwW"/>
+                        <constraint firstAttribute="width" constant="581" id="cjJ-DI-YiK"/>
+                        <constraint firstAttribute="trailing" secondItem="Vhy-yB-AuN" secondAttribute="trailing" constant="20" id="clw-w9-oaf"/>
+                        <constraint firstItem="Vhy-yB-AuN" firstAttribute="leading" secondItem="FX8-dF-H8f" secondAttribute="leading" constant="100" id="k4t-nb-54n"/>
+                        <constraint firstItem="Vhy-yB-AuN" firstAttribute="centerY" secondItem="FX8-dF-H8f" secondAttribute="centerY" id="mGW-7y-wvQ"/>
+                        <constraint firstItem="MiH-Qo-ahR" firstAttribute="centerY" secondItem="FX8-dF-H8f" secondAttribute="centerY" id="vl4-gj-2Dl"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="o7b-Xc-GPM">
+                    <rect key="frame" x="0.0" y="112" width="581" height="44"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB7-tu-wLK">
+                            <rect key="frame" x="22" y="12" width="70" height="20"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="SSH User" id="oYl-vc-uR6">
+                                <font key="font" size="14" name="SFUIText-Semibold"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOr-As-GPX">
+                            <rect key="frame" x="100" y="8" width="461" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="G4s-Rh-rhg"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="b6u-22-x1p">
+                                <font key="font" size="14" name="SFUIText-Regular"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <allowedInputSourceLocales>
+                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                </allowedInputSourceLocales>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zOr-As-GPX" secondAttribute="trailing" constant="20" id="13N-aY-N53"/>
+                        <constraint firstItem="zOr-As-GPX" firstAttribute="leading" secondItem="PB7-tu-wLK" secondAttribute="trailing" constant="10" id="405-q1-Rq1"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="CwV-sh-SCP"/>
+                        <constraint firstItem="zOr-As-GPX" firstAttribute="centerY" secondItem="o7b-Xc-GPM" secondAttribute="centerY" id="Yyv-dy-fKo"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="hv5-zE-Z4T"/>
+                        <constraint firstAttribute="width" constant="581" id="mJW-cp-IYj"/>
+                        <constraint firstItem="PB7-tu-wLK" firstAttribute="centerY" secondItem="o7b-Xc-GPM" secondAttribute="centerY" id="nj0-q1-ZWN"/>
+                        <constraint firstAttribute="height" constant="44" id="p0x-1m-btO"/>
+                        <constraint firstItem="zOr-As-GPX" firstAttribute="leading" secondItem="o7b-Xc-GPM" secondAttribute="leading" constant="100" id="yNU-4G-BhE"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="3D6-ZV-cTp">
+                    <rect key="frame" x="0.0" y="68" width="581" height="44"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abl-KE-hXd">
+                            <rect key="frame" x="7" y="12" width="85" height="20"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Identity File" id="69L-Vf-Iez">
+                                <font key="font" size="14" name="SFUIText-Semibold"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALG-gF-hWO">
+                            <rect key="frame" x="100" y="8" width="461" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="Y8z-yd-FU0"/>
+                            </constraints>
+                            <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="~/.ssh/id_rsa" drawsBackground="YES" id="Ftw-S0-678">
+                                <font key="font" size="14" name="SFUIText-Regular"/>
+                                <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <allowedInputSourceLocales>
+                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                </allowedInputSourceLocales>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="581" id="5Vb-dC-lGZ"/>
+                        <constraint firstItem="Abl-KE-hXd" firstAttribute="centerY" secondItem="3D6-ZV-cTp" secondAttribute="centerY" id="8Bt-yh-HC4"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="UzE-su-OTi"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="WUQ-o4-oRx"/>
+                        <constraint firstItem="ALG-gF-hWO" firstAttribute="leading" secondItem="Abl-KE-hXd" secondAttribute="trailing" constant="10" id="g0h-11-ty0"/>
+                        <constraint firstAttribute="height" constant="44" id="kdy-9t-Q4O"/>
+                        <constraint firstItem="ALG-gF-hWO" firstAttribute="centerY" secondItem="3D6-ZV-cTp" secondAttribute="centerY" id="lHX-G2-Ppu"/>
+                        <constraint firstItem="ALG-gF-hWO" firstAttribute="leading" secondItem="3D6-ZV-cTp" secondAttribute="leading" constant="100" id="tLa-u3-ykC"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="wca-wd-4Bc"/>
+                        <constraint firstAttribute="trailing" secondItem="ALG-gF-hWO" secondAttribute="trailing" constant="20" id="wjs-OY-dmT"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="o7b-Xc-GPM" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="6u4-e6-sWw"/>
+                <constraint firstAttribute="trailing" secondItem="FX8-dF-H8f" secondAttribute="trailing" id="FP8-ni-cT0"/>
+                <constraint firstItem="3D6-ZV-cTp" firstAttribute="top" secondItem="o7b-Xc-GPM" secondAttribute="bottom" id="MPo-GE-1oY"/>
+                <constraint firstAttribute="trailing" secondItem="3D6-ZV-cTp" secondAttribute="trailing" id="NMj-DY-Acf"/>
+                <constraint firstItem="3D6-ZV-cTp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="RpI-IK-qAB"/>
+                <constraint firstAttribute="trailing" secondItem="o7b-Xc-GPM" secondAttribute="trailing" id="bXg-58-Xp4"/>
+                <constraint firstItem="FX8-dF-H8f" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="hVZ-dB-1mB"/>
+                <constraint firstItem="o7b-Xc-GPM" firstAttribute="top" secondItem="FX8-dF-H8f" secondAttribute="bottom" id="its-O0-HkA"/>
+                <constraint firstItem="FX8-dF-H8f" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="sLm-sh-5FJ"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

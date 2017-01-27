@@ -39,11 +39,6 @@ class CreateNewDatabaseWorker: AsyncWorker {
         // Create default db
         let defaultDb = DatabaseObj.defaultDatabase()
         
-        // Assign to group
-        RealmManager.sharedManager.writeSync {
-            self.groupConnectionObj.databases.append(defaultDb)
-        }
-        
         // Action
         let action = CreateNewDatabaseAction(databaseObj: defaultDb, groupConnectionObj: self.groupConnectionObj)
         mainStore.dispatch(action)

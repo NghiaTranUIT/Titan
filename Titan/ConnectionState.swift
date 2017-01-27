@@ -27,7 +27,7 @@ extension ConnectionState {
     static func reducer(action: Action, state: ConnectionState?) -> ConnectionState {
         
         // Get state
-        let state = state ?? ConnectionState()
+        var state = state ?? ConnectionState()
         
         // Switch
         switch action {
@@ -55,18 +55,14 @@ extension ConnectionState {
         case let action as AddNewDefaultConnectionAction:
             let group = state.groupConnections
             
+            // Save
             RealmManager.sharedManager.writeSync {
                 group.append(action.groupConnectionObj)
             }
             
-        case let action as FetchAllGroupConnectionsAction:
-            
-            // Append contentOf error
-            RealmManager.sharedManager.writeSync {
-                for group in action.connections {
-                    state.groupConnections.append(group)
-                }
-            }
+        case _ as FetchAllGroupConnectionsAction:
+            // Get from current User
+            state.groupConnections = UserObj.currentUser.groupConnections
             
         default:
             break

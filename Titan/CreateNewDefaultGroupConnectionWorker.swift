@@ -37,16 +37,7 @@ class CreateNewDefaultGroupConnectionWorker: AsyncWorker {
         let action = AddNewDefaultConnectionAction(groupConnectionObj: group)
         mainStore.dispatch(action)
         
-        // Add
-        let user = UserObj.currentUser
-        RealmManager.sharedManager.writeSync {
-            user.groupConnections.append(group)
-        }
-        
-        // Save
-        return RealmManager.sharedManager.save(obj: user)
-        .then(execute: { Void -> Promise<T> in
-            return Promise(value: group)
-        })
+        // Return
+        return Promise(value: group)
     }
 }

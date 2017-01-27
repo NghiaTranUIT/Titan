@@ -14,9 +14,7 @@ import Realm
 
 //
 // MARK: - Action
-struct FetchAllGroupConnectionsAction: Action {
-    var connections: List<GroupConnectionObj>!
-}
+struct FetchAllGroupConnectionsAction: Action {}
 
 //
 // MARK: - Worker
@@ -28,14 +26,15 @@ class FetchAllGroupConnectionsWorker: AsyncWorker {
     /// Execute
     func execute() -> Promise<T> {
         
-        return RealmManager.sharedManager.fetchAll(type: UserObj.self)
-        .then(execute: { _ -> Promise<T> in
-            
-            let groups = UserObj.currentUser.groupConnections
-            let action = FetchAllGroupConnectionsAction(connections: groups)
-            mainStore.dispatch(action)
-            
-            return Promise(value: groups)
-        })
+        // Fetch current User
+        let currentUser = UserObj.currentUser
+        let group = currentUser.groupConnections
+        
+        // Dispatch
+        let action = FetchAllGroupConnectionsAction()
+        mainStore.dispatch(action)
+        
+        // Return
+        return Promise(value: group)
     }
 }

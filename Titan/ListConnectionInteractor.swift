@@ -54,7 +54,7 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
             }
             
             // Have Group, but no database
-            if groups.count > 0 || groups.first!.databases.count == 0 {
+            if groups.count == 1 && groups.first!.databases.count == 0 {
                 self.createNewDatabase(with: groups.first!)
                 return
             }
@@ -77,12 +77,11 @@ extension ListConnectionInteractor {
     fileprivate func createDefaultGroupDatabase() {
         
         let worker = CreateNewDefaultGroupConnectionWorker()
-        worker.execute()
+        worker
+        .execute()
         .thenOnMainTheard(execute: { group -> Promise<DatabaseObj> in
-            return CreateNewDatabaseWorker(groupConnectionObj: group).execute()
-        })
-        .then(on: DispatchQueue.main, execute: { (databaseObj) -> Void in
-            
+            return CreateNewDatabaseWorker(groupConnectionObj: group)
+                .execute()
         })
         .catch(execute: {[unowned self] error in
             self.output.presentError(error as NSError)

@@ -37,6 +37,8 @@ final class UserObj: BaseModel {
         // Executing
         if Static.instance == nil {
             
+            Logger.info("---Fetching Current User---")
+            
             // Get from disk
             // Sync
             let userObj = RealmManager.sharedManager.fetchCurrentUser()
@@ -52,7 +54,8 @@ final class UserObj: BaseModel {
             Static.instance = guestUser
             
             // Save
-            RealmManager.sharedManager.save(obj: Static.instance)
+            RealmManager.sharedManager
+            .save(obj: Static.instance)
             .then(execute: { _ -> Void in})
             .catch(execute: { error in
                 Logger.error(error)

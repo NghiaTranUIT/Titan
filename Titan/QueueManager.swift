@@ -17,6 +17,7 @@ class QueueManager {
     fileprivate lazy var apiQueue: OperationQueue = {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 10
+        queue.qualityOfService = QualityOfService.userInitiated
         queue.name = "com.fe.titan.backgroundQueue"
         return queue
     }()

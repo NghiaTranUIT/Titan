@@ -28,11 +28,12 @@ extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
         let worker = ConnectDatabaseWorker(databaseObj: databaseObj)
         worker
         .execute()
-        .then { _ in
-            //self.output.presentMainAppWithConnection(db)
-        }
+        .then(execute: { _ -> Void in
+            
+        })
         .catch { error in
-                self.output.presentError(with: error as NSError)
+            Logger.error(error)
+            self.output.presentError(with: error as NSError)
         }
     }
     

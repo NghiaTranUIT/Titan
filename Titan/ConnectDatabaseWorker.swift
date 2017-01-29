@@ -27,8 +27,5 @@ class ConnectDatabaseWorker: AsyncWorker {
     func execute() -> Promise<T> {
         return DatabaseManager.shared
         .openConnection(with: self.databaseObj)
-        .then(execute: { _ -> Promise<T> in
-            
-        })
     }
 }

@@ -74,7 +74,7 @@ class DatabaseManager {
                     return
                 }
                 
-                guard result.status != ConnectionStatus.CONNECTION_OK else {
+                guard result.status == ConnectionStatus.CONNECTION_OK else {
                     let error = NSError.errorWithMessage(message: result.msgError)
                     self._connectState = .none
                     reject(error)

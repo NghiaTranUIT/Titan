@@ -9,7 +9,7 @@ workspace 'Titan.xcworkspace'
 
 # Pods
 def important_pods
-    pod 'Alamofire', '4.3.0'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '4.3.0'
     pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git', :tag => '2.1.0'
     pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
     pod 'ObjectMapper', '2.2.2'

@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.3.0)
-  - DynamicColor (3.1.0)
+  - DynamicColor (3.2.1)
   - KVOController (1.2.0)
   - Nimble (5.0.0)
   - ObjectMapper (2.2.2)
@@ -14,17 +14,26 @@ PODS:
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (= 4.3.0)
-  - DynamicColor (= 3.1.0)
-  - KVOController (= 1.2.0)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, tag `4.3.0`)
+  - DynamicColor (from `https://github.com/yannickl/DynamicColor.git`, tag `3.2.1`)
+  - KVOController
   - Nimble (~> 5.0.0)
-  - ObjectMapper (= 2.2.2)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.2.2`)
   - Quick (~> 0.10.0)
   - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 4.3.0
+  DynamicColor:
+    :git: https://github.com/yannickl/DynamicColor.git
+    :tag: 3.2.1
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.2.2
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
@@ -33,6 +42,15 @@ EXTERNAL SOURCES:
     :tag: 1.1.0
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 4.3.0
+  DynamicColor:
+    :git: https://github.com/yannickl/DynamicColor.git
+    :tag: 3.2.1
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.2.2
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
@@ -41,8 +59,8 @@ CHECKOUT OPTIONS:
     :tag: 1.1.0
 
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
-  DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  Alamofire: 1f72088aff8f6b40828dadd61be2e9a31beca01e
+  DynamicColor: 8b4dec01020e2c481848dd8642c2e3c7c780e396
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
@@ -52,6 +70,6 @@ SPEC CHECKSUMS:
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: c33ce6393ae0114281d5a0cb92d7829a5f97f052
+PODFILE CHECKSUM: 75a0b46c60a14e964d53638491077c39078506b8
 
 COCOAPODS: 1.2.0.beta.1

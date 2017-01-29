@@ -12,9 +12,9 @@ def important_pods
     pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '4.3.0'
     pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git', :tag => '2.1.0'
     pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
-    pod 'ObjectMapper', '2.2.2'
-    pod 'DynamicColor', '3.1.0'
-    pod 'KVOController', '1.2.0'
+    pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :tag => '2.2.2'
+    pod 'DynamicColor', :git => 'https://github.com/yannickl/DynamicColor.git', :tag => '3.2.1'
+    pod 'KVOController'
 
     # Can't use Promise kit in pod
     # Always get: Cannot define category for undefined class 'OS_dispatch_queue'

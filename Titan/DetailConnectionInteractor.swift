@@ -27,11 +27,11 @@ extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
     func connectDatabase(_ databaseObj: DatabaseObj) {
         let worker = ConnectDatabaseWorker(databaseObj: databaseObj)
         worker
-            .execute()
-            .then { db in
-                self.output.presentMainAppWithConnection(db)
-            }
-            .catch { error in
+        .execute()
+        .then { _ in
+            //self.output.presentMainAppWithConnection(db)
+        }
+        .catch { error in
                 self.output.presentError(with: error as NSError)
         }
     }

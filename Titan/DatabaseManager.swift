@@ -34,12 +34,8 @@ class DatabaseManager {
     var connectState: ConnectState {
         return self._connectState
     }
-    
     fileprivate var connectionParam: ConnectionParam!
-    
-    //
-    // MARK: - Initializer
-    
+
     //
     // MARK: - Public
     
@@ -63,29 +59,40 @@ class DatabaseManager {
         
         // Connect
         self._connectState = .connecting
-        let param = databaseObj.buildConnectionParam()
         
         return Promise { (fullfill, reject) in
-            let result = self.database.connectDatabase(withParam: param)
             
-            guard result.status != ConnectionStatus.CONNECTION_OK else {
-                let error = NSError.errorWithMessage(message: result.msgError)
-                self._connectState = .none
-                reject(error)
-                return
-            }
-            
-            // Get connection
-            guard let _ = result.connection else {
-                let error = NSError.errorWithMessage(message: result.msgError)
-                self._connectState = .none
-                reject(error)
-                return
-            }
-            
-            // Success
-            self._connectState = .connected
-            fullfill()
+            // Connect
+            let param = databaseObj.buildConnectionParam()
+            let op = ConnectionDatabaseOperation(param: param, database: self.database)
+            op.executeOnBackground(with: { (result, _) in
+                
+                guard let result = result as? ConnectionResult else {
+                    let error = NSError.errorWithMessage(message: "Fatal error")
+                    self._connectState = .none
+                    reject(error)
+                    return
+                }
+                
+                guard result.status != ConnectionStatus.CONNECTION_OK else {
+                    let error = NSError.errorWithMessage(message: result.msgError)
+                    self._connectState = .none
+                    reject(error)
+                    return
+                }
+                
+                // Get connection
+                guard let _ = result.connection else {
+                    let error = NSError.errorWithMessage(message: result.msgError)
+                    self._connectState = .none
+                    reject(error)
+                    return
+                }
+                
+                // Success
+                self._connectState = .connected
+                fullfill()
+            })
         }
     }
     
@@ -118,10 +125,18 @@ class DatabaseManager {
         }
         
         return Promise { (fullfill, reject) in
-            let table = self.currentDbConnection.publicTables
             
-            fullfill(table)
+            let op = FetchTableSchemaInfoOperation(connect: self.currentDbConnection)
+            op.executeOnBackground(with: { (result, _ ) in
+                guard let tables = result as? [Table] else {
+                    let error = NSError.errorWithMessage(message: "Fatal error")
+                    self._connectState = .none
+                    reject(error)
+                    return
+                }
+                
+                fullfill(tables)
+            })
         }
     }
-    
 }

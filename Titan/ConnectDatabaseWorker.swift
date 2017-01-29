@@ -17,7 +17,7 @@ struct ConnectDatabaseAction: Action {
 
 class ConnectDatabaseWorker: AsyncWorker {
 
-    typealias T = DatabaseObj
+    typealias T = Void
     var databaseObj: DatabaseObj!
     
     init(databaseObj: DatabaseObj) {
@@ -25,9 +25,10 @@ class ConnectDatabaseWorker: AsyncWorker {
     }
     
     func execute() -> Promise<T> {
-        
-        let param = self.databaseObj.buildConnectionParam()
-        
-        return Promise(value: T())
+        return DatabaseManager.shared
+        .openConnection(with: self.databaseObj)
+        .then(execute: { _ -> Promise<T> in
+            
+        })
     }
 }

@@ -122,6 +122,11 @@
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
+		BAF13CFB1E3E2832005822AF /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13CFA1E3E2832005822AF /* BaseOperation.swift */; };
+		BAF13CFE1E3E2845005822AF /* ConnectionDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13CFD1E3E2845005822AF /* ConnectionDatabaseOperation.swift */; };
+		BAF13D001E3E2851005822AF /* UpdateUIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13CFF1E3E2851005822AF /* UpdateUIOperation.swift */; };
+		BAF13D041E3E2CF1005822AF /* CloseDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D031E3E2CF1005822AF /* CloseDatabaseOperation.swift */; };
+		BAF13D061E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D051E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift */; };
 		BAFF52C21DCE271600B566F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF52C11DCE271600B566F7 /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +276,11 @@
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEFE7C31D97BE810081A5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Connection.storyboard; sourceTree = "<group>"; };
 		BAEFE7C51D97BE810081A5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF13CFA1E3E2832005822AF /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
+		BAF13CFD1E3E2845005822AF /* ConnectionDatabaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionDatabaseOperation.swift; sourceTree = "<group>"; };
+		BAF13CFF1E3E2851005822AF /* UpdateUIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUIOperation.swift; sourceTree = "<group>"; };
+		BAF13D031E3E2CF1005822AF /* CloseDatabaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseDatabaseOperation.swift; sourceTree = "<group>"; };
+		BAF13D051E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaInfoOperation.swift; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,7 +529,6 @@
 		BA344FD61DAE73830005A566 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
 				BAEE19251DAE989F00C3CD3E /* Requestable.swift */,
 				BAEE19241DAE987F00C3CD3E /* Request */,
 			);
@@ -609,6 +618,8 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAF13D021E3E2C67005822AF /* Queue Manager */,
+				BAF13CF91E3E2816005822AF /* Operation */,
 				BAADCA301E2B8C79006909D9 /* Notification */,
 				BAEE191F1DAE7BE100C3CD3E /* Model Object */,
 				BA33F9B21DCF3E4400B60952 /* Realm */,
@@ -976,6 +987,42 @@
 			path = Titan;
 			sourceTree = "<group>";
 		};
+		BAF13CF91E3E2816005822AF /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				BAF13D011E3E2A0F005822AF /* Sync */,
+				BAF13CFC1E3E2837005822AF /* Async */,
+				BAF13CFA1E3E2832005822AF /* BaseOperation.swift */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
+		BAF13CFC1E3E2837005822AF /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				BAF13CFD1E3E2845005822AF /* ConnectionDatabaseOperation.swift */,
+				BAF13D031E3E2CF1005822AF /* CloseDatabaseOperation.swift */,
+				BAF13D051E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift */,
+			);
+			name = Async;
+			sourceTree = "<group>";
+		};
+		BAF13D011E3E2A0F005822AF /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				BAF13CFF1E3E2851005822AF /* UpdateUIOperation.swift */,
+			);
+			name = Sync;
+			sourceTree = "<group>";
+		};
+		BAF13D021E3E2C67005822AF /* Queue Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
+			);
+			name = "Queue Manager";
+			sourceTree = "<group>";
+		};
 		BAFF52C01DCE270B00B566F7 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,6 +1310,7 @@
 			files = (
 				BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
+				BAF13D041E3E2CF1005822AF /* CloseDatabaseOperation.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */,
@@ -1278,6 +1326,7 @@
 				BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
+				BAF13D061E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
 				BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */,
 				BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */,
@@ -1315,9 +1364,11 @@
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA59E3D01E3D9E2600BDF873 /* DetailConnectionData.swift in Sources */,
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
+				BAF13D001E3E2851005822AF /* UpdateUIOperation.swift in Sources */,
 				BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */,
 				BA59E3CD1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift in Sources */,
 				BAA0A09B1DF268F7000D8F23 /* ThemeObj.swift in Sources */,
+				BAF13CFE1E3E2845005822AF /* ConnectionDatabaseOperation.swift in Sources */,
 				BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BA59E3D31E3DAA4300BDF873 /* GridDatabaseView.swift in Sources */,
@@ -1343,6 +1394,7 @@
 				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
+				BAF13CFB1E3E2832005822AF /* BaseOperation.swift in Sources */,
 				BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,

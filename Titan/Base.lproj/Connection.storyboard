@@ -1037,8 +1037,19 @@
                                             <constraint firstItem="UJd-A7-BYM" firstAttribute="leading" secondItem="ESv-tD-Uk4" secondAttribute="trailing" constant="10" id="x7s-Tm-S8m"/>
                                         </constraints>
                                     </customView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-VO-6ci">
+                                        <rect key="frame" x="387" y="13" width="92" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Isr-ai-2la">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="connectConnectionTapped:" target="ud0-9A-E9q" id="qsX-0M-U2y"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="fhw-VO-6ci" firstAttribute="centerX" secondItem="DEm-TK-C7Y" secondAttribute="centerX" id="7C6-XI-t8O"/>
                                     <constraint firstItem="SaU-cz-23Y" firstAttribute="top" secondItem="BH6-ym-XoO" secondAttribute="bottom" id="9Pt-ph-paZ"/>
                                     <constraint firstItem="SaU-cz-23Y" firstAttribute="leading" secondItem="BH6-ym-XoO" secondAttribute="leading" id="Bkt-Sg-HJk"/>
                                     <constraint firstItem="P7r-te-ZEy" firstAttribute="leading" secondItem="SaU-cz-23Y" secondAttribute="leading" id="DeB-tr-LSl"/>
@@ -1051,6 +1062,7 @@
                                     <constraint firstItem="5mS-xw-Voe" firstAttribute="top" secondItem="LOc-Qt-BRU" secondAttribute="bottom" id="cjy-gj-R2m"/>
                                     <constraint firstItem="LOc-Qt-BRU" firstAttribute="top" secondItem="DEm-TK-C7Y" secondAttribute="top" constant="24" id="iaw-76-kof"/>
                                     <constraint firstItem="RoQ-kE-wVr" firstAttribute="leading" secondItem="P7r-te-ZEy" secondAttribute="leading" id="paT-fw-zpz"/>
+                                    <constraint firstAttribute="bottom" secondItem="fhw-VO-6ci" secondAttribute="bottom" constant="20" id="t3R-Jp-zRQ"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -1065,6 +1077,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectionBtn" destination="fhw-VO-6ci" id="LX5-l6-2Iw"/>
                         <outlet property="databaseTxt" destination="nhs-yM-747" id="C0y-um-qqp"/>
                         <outlet property="hostNameTxt" destination="FUm-sr-c03" id="QWa-SJ-VS6"/>
                         <outlet property="nicknameTxt" destination="wqS-hp-oaE" id="Zms-5Q-io7"/>

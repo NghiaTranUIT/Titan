@@ -1,5 +1,5 @@
 //
-//  DataListController.swift
+//  DetailConnectionController.swift
 //  Titan
 //
 //  Created by Nghia Tran on 11/21/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DataDatabaseController: NSViewController {
+class DetailSplitConnectionController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

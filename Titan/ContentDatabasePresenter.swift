@@ -1,5 +1,5 @@
 //
-//  DataDatabaseConfig.swift
+//  DataDatabasePresenter.swift
 //  Titan
 //
 //  Created by Nghia Tran on 11/21/16.
@@ -8,6 +8,6 @@
 
 import Cocoa
 
-class DataDatabaseConfig: NSObject {
+class ContentDatabasePresenter: NSObject {
 
 }

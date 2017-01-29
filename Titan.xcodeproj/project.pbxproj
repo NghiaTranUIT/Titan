@@ -47,6 +47,8 @@
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA59E3CD1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59E3CC1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift */; };
 		BA59E3D01E3D9E2600BDF873 /* DetailConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59E3CF1E3D9E2600BDF873 /* DetailConnectionData.swift */; };
+		BA59E3D31E3DAA4300BDF873 /* GridDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59E3D21E3DAA4300BDF873 /* GridDatabaseView.swift */; };
+		BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA59E3D51E3DAA5400BDF873 /* GridDatabaseView.xib */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
 		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
 		BA68CB451DBE00150075109D /* Error+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error+Default.swift */; };
@@ -92,14 +94,14 @@
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */; };
 		BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */; };
-		BAD0D38A1DE2AEF10081F28F /* DetailTabConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */; };
-		BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */; };
+		BAD0D38A1DE2AEF10081F28F /* DetailSplitConnectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3891DE2AEF10081F28F /* DetailSplitConnectionController.swift */; };
+		BAD0D38C1DE2AF580081F28F /* ContentDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D38B1DE2AF580081F28F /* ContentDatabaseController.swift */; };
 		BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D38D1DE2AF6C0081F28F /* ColumnDatabaseController.swift */; };
 		BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3911DE2B08E0081F28F /* ColumnDatabaseInteractor.swift */; };
 		BAD0D3941DE2B0970081F28F /* ColumnDatabasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3931DE2B0970081F28F /* ColumnDatabasePresenter.swift */; };
-		BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */; };
-		BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */; };
-		BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */; };
+		BAD0D3971DE2B0B10081F28F /* ContentDatabaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3961DE2B0B10081F28F /* ContentDatabaseInteractor.swift */; };
+		BAD0D3991DE2B0BB0081F28F /* ContentDatabasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3981DE2B0BB0081F28F /* ContentDatabasePresenter.swift */; };
+		BAD0D39C1DE2B0CC0081F28F /* ContentDatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39B1DE2B0CC0081F28F /* ContentDatabaseConfig.swift */; };
 		BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39D1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift */; };
 		BAD0D3A01DE2B0FB0081F28F /* MainTabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D39F1DE2B0FB0081F28F /* MainTabState.swift */; };
 		BAD0D3A21DE2B1050081F28F /* DetailTabState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0D3A11DE2B1050081F28F /* DetailTabState.swift */; };
@@ -188,6 +190,8 @@
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA59E3CC1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveDatabaseObjToDiskWorker.swift; sourceTree = "<group>"; };
 		BA59E3CF1E3D9E2600BDF873 /* DetailConnectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionData.swift; sourceTree = "<group>"; };
+		BA59E3D21E3DAA4300BDF873 /* GridDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridDatabaseView.swift; sourceTree = "<group>"; };
+		BA59E3D51E3DAA5400BDF873 /* GridDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridDatabaseView.xib; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
 		BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveObjectRequest.swift; sourceTree = "<group>"; };
@@ -233,14 +237,14 @@
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
 		BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabConnectionController.swift; sourceTree = "<group>"; };
-		BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabConnectionController.swift; sourceTree = "<group>"; };
-		BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseController.swift; sourceTree = "<group>"; };
+		BAD0D3891DE2AEF10081F28F /* DetailSplitConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSplitConnectionController.swift; sourceTree = "<group>"; };
+		BAD0D38B1DE2AF580081F28F /* ContentDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDatabaseController.swift; sourceTree = "<group>"; };
 		BAD0D38D1DE2AF6C0081F28F /* ColumnDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseController.swift; sourceTree = "<group>"; };
 		BAD0D3911DE2B08E0081F28F /* ColumnDatabaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseInteractor.swift; sourceTree = "<group>"; };
 		BAD0D3931DE2B0970081F28F /* ColumnDatabasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabasePresenter.swift; sourceTree = "<group>"; };
-		BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseInteractor.swift; sourceTree = "<group>"; };
-		BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabasePresenter.swift; sourceTree = "<group>"; };
-		BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDatabaseConfig.swift; sourceTree = "<group>"; };
+		BAD0D3961DE2B0B10081F28F /* ContentDatabaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDatabaseInteractor.swift; sourceTree = "<group>"; };
+		BAD0D3981DE2B0BB0081F28F /* ContentDatabasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDatabasePresenter.swift; sourceTree = "<group>"; };
+		BAD0D39B1DE2B0CC0081F28F /* ContentDatabaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDatabaseConfig.swift; sourceTree = "<group>"; };
 		BAD0D39D1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnDatabaseConfig.swift; sourceTree = "<group>"; };
 		BAD0D39F1DE2B0FB0081F28F /* MainTabState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabState.swift; sourceTree = "<group>"; };
 		BAD0D3A11DE2B1050081F28F /* DetailTabState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabState.swift; sourceTree = "<group>"; };
@@ -365,8 +369,8 @@
 		BA035FC41D97DBB200B616AB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				BAD0D37F1DE2ADD40081F28F /* Detail */,
 				BA4AFF1E1DAC96AD009AE139 /* Connections List */,
+				BAD0D37F1DE2ADD40081F28F /* Detail */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -653,6 +657,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		BA59E3D11E3DAA3500BDF873 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA59E3D41E3DAA4700BDF873 /* Grid Database */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BA59E3D41E3DAA4700BDF873 /* Grid Database */ = {
+			isa = PBXGroup;
+			children = (
+				BA59E3D21E3DAA4300BDF873 /* GridDatabaseView.swift */,
+				BA59E3D51E3DAA5400BDF873 /* GridDatabaseView.xib */,
+			);
+			name = "Grid Database";
+			sourceTree = "<group>";
+		};
 		BA5E7A451DC5BFF700C06751 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,7 +810,7 @@
 				BAD0D3821DE2AE4C0081F28F /* Main */,
 				BAD0D3851DE2AE750081F28F /* Tab */,
 				BAD0D3871DE2AEBA0081F28F /* Column Database */,
-				BAD0D3881DE2AEC70081F28F /* Data Database */,
+				BAD0D3881DE2AEC70081F28F /* Content Database */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -805,7 +826,7 @@
 		BAD0D3851DE2AE750081F28F /* Tab */ = {
 			isa = PBXGroup;
 			children = (
-				BAD0D3891DE2AEF10081F28F /* DetailTabConnectionController.swift */,
+				BAD0D3891DE2AEF10081F28F /* DetailSplitConnectionController.swift */,
 			);
 			name = Tab;
 			sourceTree = "<group>";
@@ -822,16 +843,17 @@
 			name = "Column Database";
 			sourceTree = "<group>";
 		};
-		BAD0D3881DE2AEC70081F28F /* Data Database */ = {
+		BAD0D3881DE2AEC70081F28F /* Content Database */ = {
 			isa = PBXGroup;
 			children = (
+				BA59E3D11E3DAA3500BDF873 /* View */,
 				BAD0D39A1DE2B0BD0081F28F /* Worker */,
-				BAD0D38B1DE2AF580081F28F /* DataDatabaseController.swift */,
-				BAD0D3961DE2B0B10081F28F /* DataDatabaseInteractor.swift */,
-				BAD0D3981DE2B0BB0081F28F /* DataDatabasePresenter.swift */,
-				BAD0D39B1DE2B0CC0081F28F /* DataDatabaseConfig.swift */,
+				BAD0D38B1DE2AF580081F28F /* ContentDatabaseController.swift */,
+				BAD0D3961DE2B0B10081F28F /* ContentDatabaseInteractor.swift */,
+				BAD0D3981DE2B0BB0081F28F /* ContentDatabasePresenter.swift */,
+				BAD0D39B1DE2B0CC0081F28F /* ContentDatabaseConfig.swift */,
 			);
-			name = "Data Database";
+			name = "Content Database";
 			sourceTree = "<group>";
 		};
 		BAD0D3951DE2B09A0081F28F /* Workers */ = {
@@ -1051,6 +1073,7 @@
 				BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */,
 				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
+				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
 				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
@@ -1215,7 +1238,7 @@
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */,
-				BAD0D38A1DE2AEF10081F28F /* DetailTabConnectionController.swift in Sources */,
+				BAD0D38A1DE2AEF10081F28F /* DetailSplitConnectionController.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
@@ -1225,7 +1248,7 @@
 				BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
 				BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */,
-				BAD0D3991DE2B0BB0081F28F /* DataDatabasePresenter.swift in Sources */,
+				BAD0D3991DE2B0BB0081F28F /* ContentDatabasePresenter.swift in Sources */,
 				BAE354F61DF96E080066FB4D /* BaseAbility.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BA217FC71DF3276A00C5BD88 /* BaseModel+Mapping.swift in Sources */,
@@ -1235,7 +1258,7 @@
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
-				BAD0D39C1DE2B0CC0081F28F /* DataDatabaseConfig.swift in Sources */,
+				BAD0D39C1DE2B0CC0081F28F /* ContentDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
 				BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */,
@@ -1243,7 +1266,7 @@
 				BAD0D39E1DE2B0DC0081F28F /* ColumnDatabaseConfig.swift in Sources */,
 				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAE354F41DF9381C0066FB4D /* BaseView.swift in Sources */,
-				BAD0D3971DE2B0B10081F28F /* DataDatabaseInteractor.swift in Sources */,
+				BAD0D3971DE2B0B10081F28F /* ContentDatabaseInteractor.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
 				BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
@@ -1251,7 +1274,7 @@
 				BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */,
 				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
-				BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */,
+				BAD0D38C1DE2AF580081F28F /* ContentDatabaseController.swift in Sources */,
 				BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
 				BA59E3D01E3D9E2600BDF873 /* DetailConnectionData.swift in Sources */,
@@ -1261,6 +1284,7 @@
 				BAA0A09B1DF268F7000D8F23 /* ThemeObj.swift in Sources */,
 				BAD0D3921DE2B08E0081F28F /* ColumnDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
+				BA59E3D31E3DAA4300BDF873 /* GridDatabaseView.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
 				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,
 				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,

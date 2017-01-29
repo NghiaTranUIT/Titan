@@ -25,6 +25,7 @@ class DetailConnectionsController: NSViewController {
     @IBOutlet weak var sshCheckboxBtn: NSButton!
     @IBOutlet weak var saveInKeyChainCheckBoxBtn: NSButton!
     @IBOutlet weak var topBarView: NSView!
+    @IBOutlet weak var connectionBtn: NSButton!
     
     //
     // MARK: - Variable
@@ -47,6 +48,8 @@ class DetailConnectionsController: NSViewController {
     
     override func initCommon() {
         
+        // Focus to Nickname
+        self.nicknameTxt.becomeFirstResponder()
     }
     
     override func initUIs() {

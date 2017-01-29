@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol GroupDatabaseDataSourceDelegate: class {
     func GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(_ group: GroupConnectionObj)
+    func GroupDatabaseDataSourceSaveDatabase(_ databaseObj: DatabaseObj)
 }
 
 class GroupDatabaseDataSource: NSObject {
@@ -142,12 +143,28 @@ extension GroupDatabaseDataSource: NSCollectionViewDelegate {
 //
 // MARK: - ConnectionCellDelegate
 extension GroupDatabaseDataSource: ConnectionCellDelegate {
+    
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool) {
         self.selectedDatabase(databaseObj)
+    }
+    
+    func ConnectionCellShouldResetAllSelectionState() {
+        for visibleCell in self.collectionView.visibleItems() {
+            if let visibleCell = visibleCell as? ConnectionCell,
+                visibleCell.isSelected == true {
+                
+                // Un-select
+                visibleCell.isSelected = false
+                
+                // Save all previous state
+                self.delegate?.GroupDatabaseDataSourceSaveDatabase(visibleCell.databaseObj!)
+            }
+        }
     }
 }
 
 extension GroupDatabaseDataSource: ConnectionGroupCellDelegate {
+    
     func ConnectionGroupCellShouldCreateNewDatabaseWithGroup(group: GroupConnectionObj) {
         self.delegate?.GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(group)
     }

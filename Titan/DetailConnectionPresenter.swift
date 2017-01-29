@@ -31,10 +31,3 @@ extension DetailConnectionPresenter: DetailConnectionInteractorOutput {
         self.output.presentError(with: error)
     }
 }
-
-extension DetailConnectionPresenter: DetailConnectionsControllerDataSource {
-    var selectedDatabase: DatabaseObj {
-        // return from ReduxStore
-        return DatabaseObj()
-    }
-}

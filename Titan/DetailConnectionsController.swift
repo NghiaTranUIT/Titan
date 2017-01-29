@@ -9,15 +9,11 @@
 import Cocoa
 
 protocol DetailConnectionsControllerOutput {
-    func connectConnection(_ connection: DatabaseObj)
-}
-
-protocol DetailConnectionsControllerDataSource: class {
-    var selectedDatabase: DatabaseObj {get}
+    func connectDatabase(_ databaseObj: DatabaseObj)
+    func saveDatabaseObjToDisk(databaseObj: DatabaseObj)
 }
 
 class DetailConnectionsController: NSViewController {
-
     
     //
     // MARK: - Outlet
@@ -30,12 +26,10 @@ class DetailConnectionsController: NSViewController {
     @IBOutlet weak var saveInKeyChainCheckBoxBtn: NSButton!
     @IBOutlet weak var topBarView: NSView!
     
-    
     //
     // MARK: - Variable
     var output: DetailConnectionsControllerOutput!
-    weak var dataSource: DetailConnectionsControllerDataSource!
-    
+    var databaseObj: DatabaseObj!
     
     //
     // MARK: - Rx
@@ -68,12 +62,12 @@ class DetailConnectionsController: NSViewController {
     }
     
     override func initObserver() {
-        NotificationManager.observeNotificationType(.prepareLayoutForSelectedDatabase, observer: self, selector: #selector(DetailConnectionsController.prepareLayoutNotification(noti:)), object: nil)
+        NotificationManager.observeNotificationType(.prepareLayoutForSelectedDatabase, observer: self, selector: #selector(self.prepareLayoutNotification(noti:)), object: nil)
+        NotificationManager.observeNotificationType(.saveCurrentDatabaseObj, observer: self, selector: #selector(self.saveCurrentDatabaseObjNotification(noti:)), object: nil)
     }
     
     //
     // MARK: - IBAction
-    
     @IBAction func sshCheckBoxBtnTapped(_ sender: Any) {
         
     }
@@ -83,18 +77,29 @@ class DetailConnectionsController: NSViewController {
     }
     
     @IBAction func connectConnectionTapped(_ sender: Any) {
-        self.output.connectConnection(self.dataSource.selectedDatabase)
+        self.output.connectDatabase(self.databaseObj)
     }
     
     @objc fileprivate func prepareLayoutNotification(noti: Notification) {
         guard let databaseObj = noti.userInfo?["selectedDatabase"] as? DatabaseObj else {return}
+        self.databaseObj = databaseObj
         self.nicknameTxt.stringValue = databaseObj.name
         self.hostNameTxt.stringValue = databaseObj.host
         self.usernameTxt.stringValue = databaseObj.username
         self.passwordTxt.stringValue = databaseObj.password
         self.sshCheckboxBtn.state = databaseObj.ssh != nil ? NSOnState : NSOffState
         self.saveInKeyChainCheckBoxBtn.state = databaseObj.saveToKeychain ? NSOnState : NSOffState
+    }
+    
+    @objc fileprivate func saveCurrentDatabaseObjNotification(noti: Notification) {
         
+        guard let obj = noti.object as? DatabaseObj else {return}
+        guard obj.objectId == self.databaseObj.objectId else {return}
+        
+        // Map all textfield to database
+        
+        // Save
+        self.output.saveDatabaseObjToDisk(databaseObj: obj)
     }
 }
 

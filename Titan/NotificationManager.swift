@@ -16,6 +16,7 @@ enum NotificationType: String {
     // Enum
     case prepareLayoutForSelectedDatabase
     case groupConnectionChanged
+    case saveCurrentDatabaseObj
     
     // To String
     func toString() -> String {

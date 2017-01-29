@@ -108,4 +108,8 @@ extension ListConnectionsController: GroupDatabaseDataSourceDelegate {
     func GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(_ group: GroupConnectionObj) {
         self.output.createDatabaseIntoGroupObj(group)
     }
+    
+    func GroupDatabaseDataSourceSaveDatabase(_ databaseObj: DatabaseObj) {
+        NotificationManager.postNotificationOnMainThreadType(.saveCurrentDatabaseObj, object: databaseObj, userInfo: nil)
+    }
 }

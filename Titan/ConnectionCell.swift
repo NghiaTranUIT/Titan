@@ -9,6 +9,7 @@
 import Cocoa
 
 protocol ConnectionCellDelegate: class {
+    func ConnectionCellShouldResetAllSelectionState()
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool)
 }
 
@@ -17,7 +18,7 @@ class ConnectionCell: NSCollectionViewItem {
     
     //
     // MARK: - Variable
-    fileprivate var databaseObj: DatabaseObj?
+    var databaseObj: DatabaseObj?
     weak var delegate: ConnectionCellDelegate?
     
     
@@ -56,11 +57,11 @@ class ConnectionCell: NSCollectionViewItem {
     }
     
     @IBAction func cellSelectedBtnTApped(_ sender: Any) {
-        self.isSelected = !self.isSelected
-        
         guard let databaseObj = self.databaseObj else {return}
-        guard self.isSelected == true else {return}
+        guard self.isSelected == false else {return}
         
+        self.delegate?.ConnectionCellShouldResetAllSelectionState()
+        self.isSelected = !self.isSelected
         self.delegate?.ConnectionCellDidSelectedCell(sender: self, databaseObj: databaseObj, isSelected: self.isSelected)
     }
     

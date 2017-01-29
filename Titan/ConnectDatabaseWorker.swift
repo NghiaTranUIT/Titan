@@ -17,11 +17,10 @@ struct ConnectDatabaseAction: Action {
 class ConnectDatabaseWorker: AsyncWorker {
 
     typealias T = DatabaseObj
+    var databaseObj: DatabaseObj!
     
-    var action: Action!
-    
-    required init() {
-        
+    init(databaseObj: DatabaseObj) {
+        self.databaseObj = databaseObj
     }
     
     func execute() -> Promise<T> {

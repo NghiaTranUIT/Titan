@@ -8,10 +8,6 @@
 
 import Cocoa
 
-protocol DetailConnectionInteractorInput: DetailConnectionsControllerOutput {
-    
-}
-
 protocol DetailConnectionInteractorOutput {
     func presentMainAppWithConnection(_ connection: DatabaseObj)
     func presentError(with error: NSError)
@@ -22,20 +18,26 @@ class DetailConnectionInteractor {
     //
     // MARK: - Variable
     var output: DetailConnectionInteractorOutput!
-    var connectDBWorker: ConnectDatabaseWorker!
 }
-
 
 //
 // MARK: - DetailConnectionInteractorInput
-extension DetailConnectionInteractor: DetailConnectionInteractorInput {
-    func connectConnection(_ connection: DatabaseObj) {
-        self.connectDBWorker = ConnectDatabaseWorker()
-        self.connectDBWorker.execute().then { db in
-            self.output.presentMainAppWithConnection(db)
+extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
+    
+    func connectDatabase(_ databaseObj: DatabaseObj) {
+        let worker = ConnectDatabaseWorker(databaseObj: databaseObj)
+        worker
+            .execute()
+            .then { db in
+                self.output.presentMainAppWithConnection(db)
+            }
+            .catch { error in
+                self.output.presentError(with: error as NSError)
         }
-        .catch { error in
-            self.output.presentError(with: error as NSError)
-        }
+    }
+    
+    func saveDatabaseObjToDisk(databaseObj: DatabaseObj) {
+        let worker = SaveDatabaseObjToDiskWorker(databaseObj: databaseObj)
+        worker.execute()
     }
 }

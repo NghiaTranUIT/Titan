@@ -14,11 +14,11 @@ PODS:
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - DynamicColor (~> 3.1.0)
-  - KVOController
+  - Alamofire (= 4.3.0)
+  - DynamicColor (= 3.1.0)
+  - KVOController (= 1.2.0)
   - Nimble (~> 5.0.0)
-  - ObjectMapper (~> 2.2)
+  - ObjectMapper (= 2.2.2)
   - Quick (~> 0.10.0)
   - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
@@ -52,6 +52,6 @@ SPEC CHECKSUMS:
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 0ab2fe2fd2807138b1cd472e5206e88d40a7098b
+PODFILE CHECKSUM: c33ce6393ae0114281d5a0cb92d7829a5f97f052
 
 COCOAPODS: 1.2.0.beta.1

@@ -9,18 +9,18 @@ workspace 'Titan.xcworkspace'
 
 # Pods
 def important_pods
-    pod 'Alamofire', '~> 4.0'
+    pod 'Alamofire', '4.3.0'
     pod 'ReSwift', :git => 'https://github.com/ReSwift/ReSwift.git', :tag => '2.1.0'
     pod 'SwiftyBeaver', :git => 'https://github.com/SwiftyBeaver/SwiftyBeaver.git', :tag => '1.1.0'
-    pod 'ObjectMapper', '~> 2.2'
-    pod 'DynamicColor', '~> 3.1.0'
-    pod 'KVOController'
-    
+    pod 'ObjectMapper', '2.2.2'
+    pod 'DynamicColor', '3.1.0'
+    pod 'KVOController', '1.2.0'
+
     # Can't use Promise kit in pod
     # Always get: Cannot define category for undefined class 'OS_dispatch_queue'
     # (」゜ロ゜)」
     #pod 'PromiseKit', '~> 4.0'
-    
+
     # Realm
     pod 'RealmSwift'
 end

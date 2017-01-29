@@ -43,7 +43,7 @@ So  🤔
 I decied to write my own Postgresql client - called as **Titan**.
   
 It's best time to apply what I learn to real product.
-
+  
 Technologies
 ------------
   
@@ -77,6 +77,10 @@ Roadmap
 Sketch
 ------------
 https://github.com/NghiaTranUIT/titan-sketch
+
+<h3 align="center">
+    <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/connection-detail/Screenshot/screen_titan_1.jpg" width="100%" />
+</h3>
 
 How to build libpg.framework
 ------------

@@ -46,6 +46,7 @@
 		BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF3B1DACD502009AE139 /* MainReducer.swift */; };
 		BA5611E11D9E5ACA00866A56 /* ReSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5611E01D9E5ACA00866A56 /* ReSwift.framework */; };
 		BA59E3CD1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59E3CC1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift */; };
+		BA59E3D01E3D9E2600BDF873 /* DetailConnectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59E3CF1E3D9E2600BDF873 /* DetailConnectionData.swift */; };
 		BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CD01DD2349D0054EB43 /* RealmKey.swift */; };
 		BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */; };
 		BA68CB451DBE00150075109D /* Error+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68CB441DBE00150075109D /* Error+Default.swift */; };
@@ -186,6 +187,7 @@
 		BA5611DC1D9E567D00866A56 /* ReduxKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReduxKit.framework; path = Carthage/Build/Mac/ReduxKit.framework; sourceTree = "<group>"; };
 		BA5611E01D9E5ACA00866A56 /* ReSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReSwift.framework; path = Carthage/Build/Mac/ReSwift.framework; sourceTree = "<group>"; };
 		BA59E3CC1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveDatabaseObjToDiskWorker.swift; sourceTree = "<group>"; };
+		BA59E3CF1E3D9E2600BDF873 /* DetailConnectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailConnectionData.swift; sourceTree = "<group>"; };
 		BA679CD01DD2349D0054EB43 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
 		BA679CD91DD4BFB90054EB43 /* Titan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan.entitlements; sourceTree = "<group>"; };
 		BA679CE91DD707E40054EB43 /* SaveObjectRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveObjectRequest.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 		BA4AFF141DAC9297009AE139 /* Detail Connection */ = {
 			isa = PBXGroup;
 			children = (
+				BA59E3CE1E3D9E1700BDF873 /* Model */,
 				BAADCA2A1E2B6E3F006909D9 /* View */,
 				BA320A541DDDF67700C0E82B /* Worker */,
 				BA4AFF151DAC92AE009AE139 /* DetailConnectionsController.swift */,
@@ -640,6 +643,14 @@
 				BA4AFF3B1DACD502009AE139 /* MainReducer.swift */,
 			);
 			name = Reducer;
+			sourceTree = "<group>";
+		};
+		BA59E3CE1E3D9E1700BDF873 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA59E3CF1E3D9E2600BDF873 /* DetailConnectionData.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BA5E7A451DC5BFF700C06751 /* Font */ = {
@@ -1243,6 +1254,7 @@
 				BAD0D38C1DE2AF580081F28F /* DataDatabaseController.swift in Sources */,
 				BA3358321E38A6F500745515 /* Promise+Then.swift in Sources */,
 				BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */,
+				BA59E3D01E3D9E2600BDF873 /* DetailConnectionData.swift in Sources */,
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
 				BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */,
 				BA59E3CD1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift in Sources */,

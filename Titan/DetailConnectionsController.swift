@@ -10,7 +10,7 @@ import Cocoa
 
 protocol DetailConnectionsControllerOutput {
     func connectDatabase(_ databaseObj: DatabaseObj)
-    func saveDatabaseObjToDisk(databaseObj: DatabaseObj)
+    func saveDatabaseObjToDisk(databaseObj: DatabaseObj, data: DetailConnectionData)
 }
 
 class DetailConnectionsController: NSViewController {
@@ -97,9 +97,10 @@ class DetailConnectionsController: NSViewController {
         guard obj.objectId == self.databaseObj.objectId else {return}
         
         // Map all textfield to database
+        let data = self.buildDetailConnectionData()
         
         // Save
-        self.output.saveDatabaseObjToDisk(databaseObj: obj)
+        self.output.saveDatabaseObjToDisk(databaseObj: self.databaseObj, data: data)
     }
 }
 
@@ -108,5 +109,32 @@ class DetailConnectionsController: NSViewController {
 extension DetailConnectionsController: DetailConnectionPresenterOutput {
     func presentError(with error: NSError) {
         
+    }
+}
+
+//
+// MARK: - Private
+extension DetailConnectionsController {
+    
+    /// Map UI to model
+    fileprivate func buildDetailConnectionData() -> DetailConnectionData {
+        
+        var data = DetailConnectionData()
+        
+        data.nickname = self.nicknameTxt.stringValue
+        data.host = self.hostNameTxt.stringValue
+        data.username = self.usernameTxt.stringValue
+        data.password = self.passwordTxt.stringValue
+        data.saveToKeyChain = self.saveInKeyChainCheckBoxBtn.state == NSOnState ? true : false
+        
+        // SSH
+        if self.sshCheckboxBtn.state == NSOnState {
+            let sshObj = SSHObj()
+            sshObj.host = "localhost"
+            sshObj.user = "nghiatran"
+            data.sshObj = sshObj
+        }
+        
+        return data
     }
 }

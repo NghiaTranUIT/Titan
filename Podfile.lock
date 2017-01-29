@@ -1,15 +1,15 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.3.0)
   - DynamicColor (3.1.0)
   - KVOController (1.2.0)
   - Nimble (5.0.0)
   - ObjectMapper (2.2.2)
   - Quick (0.10.0)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
-  - RealmSwift (2.0.2):
-    - Realm (= 2.0.2)
+  - Realm (2.3.0):
+    - Realm/Headers (= 2.3.0)
+  - Realm/Headers (2.3.0)
+  - RealmSwift (2.3.0):
+    - Realm (= 2.3.0)
   - ReSwift (2.1.0)
   - SwiftyBeaver (1.1.0)
 
@@ -41,14 +41,14 @@ CHECKOUT OPTIONS:
     :tag: 1.1.0
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
-  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Realm: 69d7de9aa569a11eed490aaabc8f2109e3985ecf
+  RealmSwift: dc6f99ea55e59490cec69c860f91932b6bf7efb6
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 

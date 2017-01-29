@@ -14,21 +14,20 @@ class SaveDatabaseObjToDiskWorker: SyncWorker {
     /// Type
     typealias T = Void
     var databaseObj: DatabaseObj!
+    var data: DetailConnectionData!
     
     /// Init
-    init(databaseObj: DatabaseObj) {
+    init(databaseObj: DatabaseObj, data: DetailConnectionData) {
         self.databaseObj = databaseObj
+        self.data = data
     }
     
     /// Execute
     func execute() -> T {
         
-        // Save
-        RealmManager.sharedManager
-        .save(obj: self.databaseObj)
-        .then { _ -> Void in}
-        .catch { error in
-            Logger.error(error)
+        // Map + Save
+        RealmManager.sharedManager.writeSync {
+            self.data.mapDataIntoDatabaseObj(self.databaseObj)
         }
     }
 }

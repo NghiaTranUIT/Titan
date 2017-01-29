@@ -36,8 +36,8 @@ extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
         }
     }
     
-    func saveDatabaseObjToDisk(databaseObj: DatabaseObj) {
-        let worker = SaveDatabaseObjToDiskWorker(databaseObj: databaseObj)
+    func saveDatabaseObjToDisk(databaseObj: DatabaseObj, data: DetailConnectionData) {
+        let worker = SaveDatabaseObjToDiskWorker(databaseObj: databaseObj, data: data)
         worker.execute()
     }
 }

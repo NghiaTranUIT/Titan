@@ -9,6 +9,7 @@
 import Cocoa
 import ReSwift
 import PromiseKit
+import TitanKit
 
 struct ConnectDatabaseAction: Action {
     var selectedDatabase: DatabaseObj!
@@ -24,6 +25,9 @@ class ConnectDatabaseWorker: AsyncWorker {
     }
     
     func execute() -> Promise<T> {
+        
+        let param = self.databaseObj.buildConnectionParam()
+        
         return Promise(value: T())
     }
 }

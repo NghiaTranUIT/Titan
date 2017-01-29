@@ -36,6 +36,8 @@
 		BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A391E3DB4FF00450AA0 /* InspiredQuotation.swift */; };
 		BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */; };
 		BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */ = {isa = PBXBuildFile; fileRef = BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */; };
+		BA393A421E3DD3F700450AA0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A411E3DD3F700450AA0 /* DatabaseManager.swift */; };
+		BA393A441E3DD4C400450AA0 /* Object+Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A431E3DD4C400450AA0 /* Object+Lock.swift */; };
 		BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */; };
@@ -182,6 +184,8 @@
 		BA393A391E3DB4FF00450AA0 /* InspiredQuotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspiredQuotation.swift; sourceTree = "<group>"; };
 		BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+Key.swift"; sourceTree = "<group>"; };
 		BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultQuotation.json; sourceTree = "<group>"; };
+		BA393A411E3DD3F700450AA0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BA393A431E3DD4C400450AA0 /* Object+Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Lock.swift"; sourceTree = "<group>"; };
 		BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingButton.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
@@ -525,6 +529,7 @@
 		BA344FD71DAE73900005A566 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				BA393A411E3DD3F700450AA0 /* DatabaseManager.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -915,6 +920,7 @@
 				BA9875611DF3F5B000901CD5 /* UUID+Short.swift */,
 				BA3358311E38A6F500745515 /* Promise+Then.swift */,
 				BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */,
+				BA393A431E3DD4C400450AA0 /* Object+Lock.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1263,6 +1269,7 @@
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
+				BA393A421E3DD3F700450AA0 /* DatabaseManager.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */,
@@ -1283,6 +1290,7 @@
 				BA68CB451DBE00150075109D /* Error+Default.swift in Sources */,
 				BA679CD11DD2349D0054EB43 /* RealmKey.swift in Sources */,
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
+				BA393A441E3DD4C400450AA0 /* Object+Lock.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
 				BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,

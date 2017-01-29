@@ -9,6 +9,7 @@
 import ObjectMapper
 import Realm
 import RealmSwift
+import TitanKit
 
 final class DatabaseObj: BaseModel {
 
@@ -57,5 +58,15 @@ final class DatabaseObj: BaseModel {
         // Don't map group connetion
         // It intents for Inverse Linking from Realm
         //self.groupConnection <- map[Constants.Obj.Database.groupConnection]
+    }
+}
+
+//
+// MARK: - PostgreSQL
+extension DatabaseObj {
+    
+    func buildConnectionParam() -> ConnectionParam {
+        let param = ConnectionParam(host: self.host, port: String(self.port), options: "", databaseName: self.database, user: self.username, password: self.password)
+        return param
     }
 }

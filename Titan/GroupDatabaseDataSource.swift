@@ -10,7 +10,7 @@ import Cocoa
 import RealmSwift
 
 protocol GroupDatabaseDataSourceDelegate: class {
-    
+    func GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(_ group: GroupConnectionObj)
 }
 
 class GroupDatabaseDataSource: NSObject {
@@ -18,7 +18,6 @@ class GroupDatabaseDataSource: NSObject {
     //
     // MARK: - Variable
     weak var delegate: GroupDatabaseDataSourceDelegate?
-    fileprivate var notificationToken: NotificationToken? = nil
     var collectionView: NSCollectionView! {didSet{self.setupCollectionView()}}
     var groupConnections: List<GroupConnectionObj> {
         return mainStore.state.connectionState!.groupConnections
@@ -28,33 +27,16 @@ class GroupDatabaseDataSource: NSObject {
     // MARK: - Init
     override init() {
         super.init()
-        //self.initCommon()
+        self.initCommon()
     }
     
     deinit {
-        self.notificationToken?.stop()
+        NotificationManager.removeAllObserve(self)
     }
     
     /// Obserable
     fileprivate func initCommon() {
-        
-        // Group connection
-        self.notificationToken = mainStore.state.connectionState?.groupConnections
-        .addNotificationBlock({[weak self] changed in
-            guard let `self` = self else {return}
-            guard let collectionView = self.collectionView else {return}
-            
-            switch changed {
-            case .initial:
-                collectionView.reloadData()
-            
-            case .error(let error):
-                Logger.error(error)
-                
-            case .update(_, _, _, _):
-                collectionView.reloadData()
-            }
-        })
+        NotificationManager.observeNotificationType(.groupConnectionChanged, observer: self, selector: #selector(self.connectionStateChange), object: nil)
     }
     
     func setupCollectionView() {
@@ -79,8 +61,8 @@ class GroupDatabaseDataSource: NSObject {
         // Reload
         self.collectionView.reloadData()
     }
-}
 
+}
 
 //
 // MARK: - Private
@@ -99,6 +81,7 @@ extension GroupDatabaseDataSource {
     fileprivate func groupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {
         let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
         header.configureCellWith(groupConnectionObj: groupConnectionObj)
+        header.delegate = self
         return header
     }
     
@@ -106,8 +89,11 @@ extension GroupDatabaseDataSource {
         let worker = SelectConnectionWorker(selectedDb: databaseObj)
         worker.execute()
     }
+    
+    @objc fileprivate func connectionStateChange() {
+        self.collectionView.reloadData()
+    }
 }
-
 
 //
 // MARK: - Collection View Data Source
@@ -137,7 +123,6 @@ extension GroupDatabaseDataSource: NSCollectionViewDataSource {
     }
 }
 
-
 //
 // MARK: - Collection View Delegate
 extension GroupDatabaseDataSource: NSCollectionViewDelegate {
@@ -154,12 +139,17 @@ extension GroupDatabaseDataSource: NSCollectionViewDelegate {
     }
 }
 
-
 //
 // MARK: - ConnectionCellDelegate
 extension GroupDatabaseDataSource: ConnectionCellDelegate {
     func ConnectionCellDidSelectedCell(sender: ConnectionCell, databaseObj: DatabaseObj, isSelected: Bool) {
         self.selectedDatabase(databaseObj)
+    }
+}
+
+extension GroupDatabaseDataSource: ConnectionGroupCellDelegate {
+    func ConnectionGroupCellShouldCreateNewDatabaseWithGroup(group: GroupConnectionObj) {
+        self.delegate?.GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(group)
     }
 }
 

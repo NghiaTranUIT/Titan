@@ -17,6 +17,7 @@ protocol ListConnectionsControllerOutput {
     func fetchAllConnections()
     func selectConnection(_ connection: DatabaseObj)
     func addNewConnection()
+    func createDatabaseIntoGroupObj(_ groupObj: GroupConnectionObj)
 }
 
 //
@@ -29,7 +30,9 @@ class ListConnectionsController: NSViewController {
     // MARK: - Variable
     var output: ListConnectionsControllerOutput!
     fileprivate lazy var dataSource: GroupDatabaseDataSource! = {
-        return GroupDatabaseDataSource()
+        let data = GroupDatabaseDataSource()
+        data.delegate = self
+        return data
     }()
     
     //
@@ -75,10 +78,9 @@ class ListConnectionsController: NSViewController {
         self.output.fetchAllConnections()
     }
     
-    @IBAction func newGroupConnectionBtnTapped(_ sender: Any) {
+    @IBAction func newDatabaseBtnTapped(_ sender: Any) {
         self.output.addNewConnection()
     }
-
 }
 
 //
@@ -103,5 +105,7 @@ extension ListConnectionsController {
 //
 // MARK: - Data Source Delegate
 extension ListConnectionsController: GroupDatabaseDataSourceDelegate {
-    
+    func GroupDatabaseDataSourceCreateNewDatabaseIntoGroup(_ group: GroupConnectionObj) {
+        self.output.createDatabaseIntoGroupObj(group)
+    }
 }

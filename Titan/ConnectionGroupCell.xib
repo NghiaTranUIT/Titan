@@ -21,15 +21,32 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Qp7-hh-l3P">
+                    <rect key="frame" x="159" y="-1" width="14" height="33"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="icon_add_database" imagePosition="only" alignment="center" alternateImage="icon_add_database_selected" imageScaling="proportionallyDown" inset="2" id="HLB-d7-vxP">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addBtnTapped:" target="SWg-k8-agy" id="U5e-ae-i11"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="Yqv-YL-I1R" firstAttribute="centerY" secondItem="SWg-k8-agy" secondAttribute="centerY" constant="-2" id="Edw-IY-hbn"/>
+                <constraint firstItem="Qp7-hh-l3P" firstAttribute="centerY" secondItem="Yqv-YL-I1R" secondAttribute="centerY" constant="2" id="Fr4-da-STQ"/>
                 <constraint firstItem="Yqv-YL-I1R" firstAttribute="leading" secondItem="SWg-k8-agy" secondAttribute="leading" constant="19" id="HYt-pg-u0Q"/>
+                <constraint firstItem="Qp7-hh-l3P" firstAttribute="leading" secondItem="Yqv-YL-I1R" secondAttribute="trailing" constant="8" id="b4v-N7-kSo"/>
             </constraints>
             <connections>
+                <outlet property="addDatabaseBtn" destination="Qp7-hh-l3P" id="m4F-dR-nkc"/>
                 <outlet property="titleLbl" destination="Yqv-YL-I1R" id="v3A-WH-lq4"/>
             </connections>
-            <point key="canvasLocation" x="-456" y="-526"/>
+            <point key="canvasLocation" x="-456" y="-526.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="icon_add_database" width="14" height="14"/>
+        <image name="icon_add_database_selected" width="14" height="14"/>
+    </resources>
 </document>

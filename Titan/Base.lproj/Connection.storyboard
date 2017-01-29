@@ -725,13 +725,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                <rect key="frame" x="0.0" y="45" width="250" height="499"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="499"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" allowsEmptySelection="NO" allowsMultipleSelection="YES" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="499"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -749,17 +749,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="i3u-4i-vyz">
-                                    <rect key="frame" x="234" y="0.0" width="16" height="544"/>
+                                    <rect key="frame" x="234" y="0.0" width="16" height="499"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pn8-Z1-jB5">
+                                <rect key="frame" x="61" y="5" width="128" height="32"/>
+                                <buttonCell key="cell" type="push" title="New Database" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hZx-qU-6ab">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newDatabaseBtnTapped:" target="2ek-Ha-6V0" id="mwg-L5-jAP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="9E8-fy-nKI"/>
                             <constraint firstAttribute="trailing" secondItem="Zim-d1-wOh" secondAttribute="trailing" id="IHF-MG-m9n"/>
                             <constraint firstAttribute="trailing" secondItem="pJh-Zf-avb" secondAttribute="trailing" id="KAM-MN-qS3"/>
+                            <constraint firstAttribute="bottom" secondItem="Pn8-Z1-jB5" secondAttribute="bottom" constant="12" id="RJi-3n-n9M"/>
+                            <constraint firstItem="Pn8-Z1-jB5" firstAttribute="centerX" secondItem="jZl-GI-tqf" secondAttribute="centerX" id="S8s-UK-4QM"/>
+                            <constraint firstItem="Pn8-Z1-jB5" firstAttribute="top" secondItem="Zim-d1-wOh" secondAttribute="bottom" constant="12" id="aj5-4w-l1r"/>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="bottom" constant="12" id="jhR-Nn-WvT"/>
-                            <constraint firstAttribute="bottom" secondItem="Zim-d1-wOh" secondAttribute="bottom" id="lNh-6d-cGD"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="top" secondItem="jZl-GI-tqf" secondAttribute="top" id="o2u-Nu-yMe"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="pKw-Rh-4EV"/>
                         </constraints>

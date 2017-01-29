@@ -8,20 +8,18 @@
 
 import Foundation
 
-enum NotificationType {
+enum NotificationType: String {
     
     // Preifx
     private static let NotificationPrefix = "com.fe.titan"
     
     // Enum
     case prepareLayoutForSelectedDatabase
+    case groupConnectionChanged
     
     // To String
     func toString() -> String {
-        switch self {
-        case .prepareLayoutForSelectedDatabase:
-            return NotificationType.NotificationPrefix + ".prepareLayoutForSelectedDatabase"
-        }
+        return NotificationType.NotificationPrefix + self.rawValue
     }
 }
 

@@ -56,6 +56,8 @@ extension ConnectionState {
                 }
             }
             
+            NotificationManager.postNotificationOnMainThreadType(.groupConnectionChanged)
+            
         case let action as AddNewDefaultConnectionAction:
             let group = state.groupConnections
             
@@ -65,6 +67,7 @@ extension ConnectionState {
             }
             
         case _ as FetchAllGroupConnectionsAction:
+            
             // Get from current User
             state.groupConnections = UserObj.currentUser.groupConnections
             

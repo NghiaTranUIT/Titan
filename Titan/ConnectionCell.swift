@@ -63,6 +63,16 @@ class ConnectionCell: NSCollectionViewItem {
         
         self.delegate?.ConnectionCellDidSelectedCell(sender: self, databaseObj: databaseObj, isSelected: self.isSelected)
     }
+    
+    override func mouseEntered(with event: NSEvent) {
+        super.mouseEntered(with: event)
+        Logger.info("ENTER")
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        super.mouseExited(with: event)
+        Logger.info("EXIT")
+    }
 }
 
 

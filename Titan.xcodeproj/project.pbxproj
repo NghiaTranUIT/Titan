@@ -35,6 +35,7 @@
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
 		BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
+		BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
 		BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
@@ -172,6 +173,7 @@
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
 		BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
+		BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingButton.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultGroupConnectionWorker.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		BA035FC11D97DB9700B616AB /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				BA4AFF3A1DACD4DE009AE139 /* Reducer */,
 				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
 			);
 			name = "App Delegate";
@@ -519,6 +522,14 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		BA3EEADB1E3B91F200B30D96 /* Tracking Button */ = {
+			isa = PBXGroup;
+			children = (
+				BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */,
+			);
+			name = "Tracking Button";
+			sourceTree = "<group>";
+		};
 		BA4AFF111DAC925D009AE139 /* List Connections */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +561,7 @@
 		BA4AFF171DAC9672009AE139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA3EEADB1E3B91F200B30D96 /* Tracking Button */,
 				BAADCA271E2B5BF9006909D9 /* Check Box */,
 				BA9875671DF4442D00901CD5 /* Group Color View */,
 			);
@@ -604,7 +616,6 @@
 			isa = PBXGroup;
 			children = (
 				BA4AFF351DACD427009AE139 /* State */,
-				BA4AFF3A1DACD4DE009AE139 /* Reducer */,
 			);
 			name = "Redux Store";
 			sourceTree = "<group>";
@@ -1243,6 +1254,7 @@
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BAD0D3941DE2B0970081F28F /* ColumnDatabasePresenter.swift in Sources */,
 				BAD0D3A21DE2B1050081F28F /* DetailTabState.swift in Sources */,
+				BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */,
 				BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,

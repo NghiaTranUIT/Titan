@@ -30,15 +30,7 @@ class ListConnectionInteractor {
 extension ListConnectionInteractor: ListConnectionsControllerOutput {
     
     func addNewConnection() {
-
-        let worker = CreateNewDefaultGroupConnectionWorker()
-        worker.execute()
-        .then(on: DispatchQueue.main) { _ -> Void in
-            
-        }
-        .catch { error in
-            self.output.presentError(error as NSError)
-        }
+        self.createDefaultGroupDatabase()
     }
     
     func fetchAllConnections() {
@@ -75,6 +67,10 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
         let worker = SelectConnectionWorker(selectedDb: connection)
         worker.execute()
     }
+    
+    func createDatabaseIntoGroupObj(_ groupObj: GroupConnectionObj) {
+        self.createNewDatabase(with: groupObj)
+    }
 }
 
 //
@@ -98,7 +94,9 @@ extension ListConnectionInteractor {
     fileprivate func createNewDatabase(with groupObj: GroupConnectionObj) {
         
         let worker = CreateNewDatabaseWorker(groupConnectionObj: groupObj)
-        worker.execute().then(execute: { databaseObj -> Void in
+        worker
+        .execute()
+        .then(execute: { databaseObj -> Void in
             Logger.debug(databaseObj)
         }).catch(execute: { error in
             Logger.error(error)

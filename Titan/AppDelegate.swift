@@ -30,6 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Init Common things
         ApplicationManager.sharedInstance.initCommon(window: NSApplication.shared().mainWindow)
+        
+        // Default Data
+        ApplicationManager.sharedInstance.importDefaultDataIfNeed()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -25,7 +25,6 @@ class ApplicationManager: NSObject {
         return dateFormatter
     }()
     
-    
     //
     // MARK: Public
     
@@ -35,7 +34,6 @@ class ApplicationManager: NSObject {
         // Fabric
         self.initFabric()
     }
-    
     
     /// Common
     func initCommon(window: NSWindow?) {
@@ -50,6 +48,20 @@ class ApplicationManager: NSObject {
         _ = AppVersionManager.sharedInstance
     }
     
+    /// Default data
+    func importDefaultDataIfNeed() {
+        
+        let userDefault = UserDefaults.standard
+        let isFirstTime = userDefault.objectForKey(.isFirstTime) as? Bool
+        guard isFirstTime == nil else {return}
+        
+        // Import built-in quoration into realm database
+        self.importQuotation()
+        
+        // Save
+        userDefault.setObject(true, for: .isFirstTime)
+        userDefault.synchronize()
+    }
 }
 
 
@@ -63,7 +75,6 @@ extension ApplicationManager {
     }
 }
 
-
 // MARK:
 // MARK: Fabric
 extension ApplicationManager {
@@ -71,7 +82,6 @@ extension ApplicationManager {
         Fabric.with([Crashlytics.self])
     }
 }
-
 
 // MARK:
 // MARK: Logger
@@ -81,3 +91,10 @@ extension ApplicationManager {
     }
 }
 
+//
+// MARK: - Default Data
+extension ApplicationManager {
+    fileprivate func importQuotation() {
+        InspiredQuotation.importDefaultQuotation()
+    }
+}

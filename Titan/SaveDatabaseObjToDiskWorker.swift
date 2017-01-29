@@ -26,7 +26,7 @@ class SaveDatabaseObjToDiskWorker: SyncWorker {
     func execute() -> T {
         
         // Map + Save
-        RealmManager.sharedManager.writeSync {
+        RealmManager.sharedManager.writeSync { _ in
             self.data.mapDataIntoDatabaseObj(self.databaseObj)
         }
     }

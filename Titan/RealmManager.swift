@@ -11,7 +11,7 @@ import RealmSwift
 import PromiseKit
 import Alamofire
 
-typealias EmptyBlock = ()->()
+typealias EmptyBlock = (Realm)->()
 
 final class RealmManager {
     
@@ -64,6 +64,7 @@ final class RealmManager {
         }
     }
     
+    
     /// Fetch current user
     func fetchCurrentUser() -> UserObj? {
         
@@ -87,7 +88,7 @@ extension RealmManager {
     /// It will write sync in current thread
     func writeSync(_ block: EmptyBlock) {
         self.realm.beginWrite()
-        block()
+        block(self.realm)
         try! self.realm.commitWrite()
     }
 }

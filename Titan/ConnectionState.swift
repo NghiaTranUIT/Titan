@@ -51,7 +51,7 @@ extension ConnectionState {
             
             // Add
             if let group = groups.first {
-                RealmManager.sharedManager.writeSync {
+                RealmManager.sharedManager.writeSync { _ in
                     group.databases.append(newDatabaseObj)
                 }
             }
@@ -62,7 +62,7 @@ extension ConnectionState {
             let group = state.groupConnections
             
             // Save
-            RealmManager.sharedManager.writeSync {
+            RealmManager.sharedManager.writeSync { _ in
                 group.append(action.groupConnectionObj)
             }
             

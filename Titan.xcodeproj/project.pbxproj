@@ -33,6 +33,9 @@
 		BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */; };
 		BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FDE1DAE76C50005A566 /* Logger.swift */; };
 		BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA344FE01DAE77830005A566 /* SlackReporter.swift */; };
+		BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A391E3DB4FF00450AA0 /* InspiredQuotation.swift */; };
+		BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */; };
+		BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */ = {isa = PBXBuildFile; fileRef = BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */; };
 		BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */; };
@@ -176,6 +179,9 @@
 		BA33F9B31DCF3E4F00B60952 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BA344FDE1DAE76C50005A566 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BA344FE01DAE77830005A566 /* SlackReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackReporter.swift; sourceTree = "<group>"; };
+		BA393A391E3DB4FF00450AA0 /* InspiredQuotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspiredQuotation.swift; sourceTree = "<group>"; };
+		BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefault+Key.swift"; sourceTree = "<group>"; };
+		BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultQuotation.json; sourceTree = "<group>"; };
 		BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingButton.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
@@ -352,6 +358,7 @@
 		BA035FC31D97DBA900B616AB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BA393A3D1E3DB86600450AA0 /* Content */,
 				BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */,
 				BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */,
 				BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */,
@@ -531,6 +538,22 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		BA393A3D1E3DB86600450AA0 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				BA393A3E1E3DB86C00450AA0 /* Quotation */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		BA393A3E1E3DB86C00450AA0 /* Quotation */ = {
+			isa = PBXGroup;
+			children = (
+				BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */,
+			);
+			name = Quotation;
+			sourceTree = "<group>";
+		};
 		BA3EEADB1E3B91F200B30D96 /* Tracking Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +721,7 @@
 				BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */,
 				BAA0A09A1DF268F7000D8F23 /* ThemeObj.swift */,
 				BAA0A0A21DF2D397000D8F23 /* GroupColorObj.swift */,
+				BA393A391E3DB4FF00450AA0 /* InspiredQuotation.swift */,
 			);
 			name = Objs;
 			sourceTree = "<group>";
@@ -890,6 +914,7 @@
 				BAA0A09E1DF2AD36000D8F23 /* NSButton+TextColor.swift */,
 				BA9875611DF3F5B000901CD5 /* UUID+Short.swift */,
 				BA3358311E38A6F500745515 /* Promise+Then.swift */,
+				BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1075,6 +1100,7 @@
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
 				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
+				BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */,
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
 				BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */,
@@ -1229,9 +1255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
+				BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */,
 				BA8E0BE21DB0E67000B9BDD7 /* DatabaseObj.swift in Sources */,
 				BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */,
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,

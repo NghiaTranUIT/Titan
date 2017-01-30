@@ -17,6 +17,7 @@ struct DetailConnectionData {
     var username: String!
     var password: String!
     var saveToKeyChain: Bool!
+    var databaseName: String!
     
     // SSH
     var sshObj: SSHObj?

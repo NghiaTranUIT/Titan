@@ -29,7 +29,7 @@ extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
         worker
         .execute()
         .then(execute: { _ -> Void in
-            
+            Logger.info("Connect DB success")
         })
         .catch { error in
             Logger.error(error)

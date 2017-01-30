@@ -90,6 +90,10 @@ extension ListConnectionsController: ListConnectionPresenterOutput {
     func handleError(_ error: NSError) {
         
     }
+    
+    func shouldSelectCellWithDatabase(_ databaseObj: DatabaseObj) {
+        self.dataSource.trySelectCellWithDatabaseObj(databaseObj)
+    }
 }
 
 

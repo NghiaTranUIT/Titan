@@ -62,7 +62,26 @@ class GroupDatabaseDataSource: NSObject {
         // Reload
         self.collectionView.reloadData()
     }
-
+    
+    func trySelectCellWithDatabaseObj(_ databaseObj: DatabaseObj) {
+        
+        // Filter
+        let visibleCells = self.collectionView.visibleItems().filter { (cell) -> Bool in
+            if let cell = cell as? ConnectionCell {
+                if cell.databaseObj == databaseObj {
+                    return true
+                }
+            }
+            return false
+        }
+        
+        guard visibleCells.count > 0 else {return}
+        
+        // Select
+        for cell in visibleCells {
+            cell.isSelected = true
+        }
+    }
 }
 
 //
@@ -76,7 +95,6 @@ extension GroupDatabaseDataSource {
         cell.configureCell(with: databaseObj)
         return cell
     }
-    
     
     /// Group Connection header
     fileprivate func groupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {

@@ -90,6 +90,7 @@ class DetailConnectionsController: NSViewController {
         self.hostNameTxt.stringValue = databaseObj.host
         self.usernameTxt.stringValue = databaseObj.username
         self.passwordTxt.stringValue = databaseObj.password
+        self.databaseTxt.stringValue = databaseObj.database
         self.sshCheckboxBtn.state = databaseObj.ssh != nil ? NSOnState : NSOffState
         self.saveInKeyChainCheckBoxBtn.state = databaseObj.saveToKeychain ? NSOnState : NSOffState
     }
@@ -128,6 +129,7 @@ extension DetailConnectionsController {
         data.host = self.hostNameTxt.stringValue
         data.username = self.usernameTxt.stringValue
         data.password = self.passwordTxt.stringValue
+        data.databaseName = self.databaseTxt.stringValue
         data.saveToKeyChain = self.saveInKeyChainCheckBoxBtn.state == NSOnState ? true : false
         
         // SSH

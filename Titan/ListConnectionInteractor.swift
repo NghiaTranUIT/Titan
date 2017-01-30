@@ -11,6 +11,7 @@ import PromiseKit
 
 
 protocol ListConnectionInteractorOutput {
+    func shouldSelectCellWithDatabase(_ databaseObj: DatabaseObj)
     func presentError(_ error: NSError)
 }
 
@@ -52,7 +53,7 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
             }
             
             // If have group, have databases -> Select first database
-            if groups.count == 1 && groups.first!.databases.count > 0 {
+            if groups.count >= 1 && groups.first!.databases.count > 0 {
                 self.selectConnection(groups.first!.databases.first!)
                 return
             }
@@ -66,6 +67,9 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
     func selectConnection(_ connection: DatabaseObj) {
         let worker = SelectConnectionWorker(selectedDb: connection)
         worker.execute()
+        
+        // Select
+        self.output.shouldSelectCellWithDatabase(connection)
     }
     
     func createDatabaseIntoGroupObj(_ groupObj: GroupConnectionObj) {

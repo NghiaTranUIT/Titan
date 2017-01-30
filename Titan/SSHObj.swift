@@ -15,7 +15,7 @@ class SSHObj: BaseModel {
     // MARK: - Variable
     dynamic var host: String!
     dynamic var user: String!
-    dynamic var indentityFile: String!
+    dynamic var indentityFile: String = "~/.ssh/id_rsa"
     dynamic var port: Int = 22
 
     //

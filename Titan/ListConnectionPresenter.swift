@@ -10,6 +10,7 @@ import Cocoa
 
 protocol ListConnectionPresenterOutput: class {
     func handleError(_ error: NSError)
+    func shouldSelectCellWithDatabase(_ databaseObj: DatabaseObj)
 }
 
 
@@ -27,6 +28,10 @@ extension ListConnectionPresenter: ListConnectionInteractorOutput {
     
     func presentError(_ error: NSError) {
         self.output?.handleError(error)
+    }
+    
+    func shouldSelectCellWithDatabase(_ databaseObj: DatabaseObj) {
+        self.output?.shouldSelectCellWithDatabase(databaseObj)
     }
 }
 

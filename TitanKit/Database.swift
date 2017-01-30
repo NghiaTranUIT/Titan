@@ -16,18 +16,18 @@ open class Database {
     
     /// Connections pool
     fileprivate var _connections: [Connection] = []
-    var connections: [Connection] {
+    public var connections: [Connection] {
         get {
             return self._connections
         }
     }
     
-    // Share instance
-    static let share = Database()
-    
-    
     //
     // MARK: - Init
+    public init() {
+        
+    }
+    
     deinit {
         // Close all connection
         self.closeAllConnection()
@@ -56,8 +56,6 @@ open class Database {
         // Return
         return result
     }
-    
-
 }
 
 
@@ -65,7 +63,8 @@ open class Database {
 // MARK: - Private
 extension Database {
     
-    fileprivate func closeAllConnection() {
+    /// Close all
+    public func closeAllConnection() {
         for connection in self.connections {
             connection.closeConnection()
         }

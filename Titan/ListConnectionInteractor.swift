@@ -11,6 +11,7 @@ import PromiseKit
 
 
 protocol ListConnectionInteractorOutput {
+    func shouldSelectCellWithDatabase(_ databaseObj: DatabaseObj)
     func presentError(_ error: NSError)
 }
 
@@ -30,15 +31,7 @@ class ListConnectionInteractor {
 extension ListConnectionInteractor: ListConnectionsControllerOutput {
     
     func addNewConnection() {
-
-        let worker = CreateNewDefaultGroupConnectionWorker()
-        worker.execute()
-        .then(on: DispatchQueue.main) { _ -> Void in
-            
-        }
-        .catch { error in
-            self.output.presentError(error as NSError)
-        }
+        self.createDefaultGroupDatabase()
     }
     
     func fetchAllConnections() {
@@ -60,7 +53,7 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
             }
             
             // If have group, have databases -> Select first database
-            if groups.count == 1 && groups.first!.databases.count > 0 {
+            if groups.count >= 1 && groups.first!.databases.count > 0 {
                 self.selectConnection(groups.first!.databases.first!)
                 return
             }
@@ -74,6 +67,13 @@ extension ListConnectionInteractor: ListConnectionsControllerOutput {
     func selectConnection(_ connection: DatabaseObj) {
         let worker = SelectConnectionWorker(selectedDb: connection)
         worker.execute()
+        
+        // Select
+        self.output.shouldSelectCellWithDatabase(connection)
+    }
+    
+    func createDatabaseIntoGroupObj(_ groupObj: GroupConnectionObj) {
+        self.createNewDatabase(with: groupObj)
     }
 }
 
@@ -98,7 +98,9 @@ extension ListConnectionInteractor {
     fileprivate func createNewDatabase(with groupObj: GroupConnectionObj) {
         
         let worker = CreateNewDatabaseWorker(groupConnectionObj: groupObj)
-        worker.execute().then(execute: { databaseObj -> Void in
+        worker
+        .execute()
+        .then(execute: { databaseObj -> Void in
             Logger.debug(databaseObj)
         }).catch(execute: { error in
             Logger.error(error)

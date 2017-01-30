@@ -9,15 +9,11 @@
 import Cocoa
 
 protocol DetailConnectionsControllerOutput {
-    func connectConnection(_ connection: DatabaseObj)
-}
-
-protocol DetailConnectionsControllerDataSource: class {
-    var selectedDatabase: DatabaseObj {get}
+    func connectDatabase(_ databaseObj: DatabaseObj)
+    func saveDatabaseObjToDisk(databaseObj: DatabaseObj, data: DetailConnectionData)
 }
 
 class DetailConnectionsController: NSViewController {
-
     
     //
     // MARK: - Outlet
@@ -29,13 +25,12 @@ class DetailConnectionsController: NSViewController {
     @IBOutlet weak var sshCheckboxBtn: NSButton!
     @IBOutlet weak var saveInKeyChainCheckBoxBtn: NSButton!
     @IBOutlet weak var topBarView: NSView!
-    
+    @IBOutlet weak var connectionBtn: NSButton!
     
     //
     // MARK: - Variable
     var output: DetailConnectionsControllerOutput!
-    weak var dataSource: DetailConnectionsControllerDataSource!
-    
+    var databaseObj: DatabaseObj!
     
     //
     // MARK: - Rx
@@ -53,6 +48,8 @@ class DetailConnectionsController: NSViewController {
     
     override func initCommon() {
         
+        // Focus to Nickname
+        self.nicknameTxt.becomeFirstResponder()
     }
     
     override func initUIs() {
@@ -68,12 +65,12 @@ class DetailConnectionsController: NSViewController {
     }
     
     override func initObserver() {
-        NotificationManager.observeNotificationType(.prepareLayoutForSelectedDatabase, observer: self, selector: #selector(DetailConnectionsController.prepareLayoutNotification(noti:)), object: nil)
+        NotificationManager.observeNotificationType(.prepareLayoutForSelectedDatabase, observer: self, selector: #selector(self.prepareLayoutNotification(noti:)), object: nil)
+        NotificationManager.observeNotificationType(.saveCurrentDatabaseObj, observer: self, selector: #selector(self.saveCurrentDatabaseObjNotification(noti:)), object: nil)
     }
     
     //
     // MARK: - IBAction
-    
     @IBAction func sshCheckBoxBtnTapped(_ sender: Any) {
         
     }
@@ -83,18 +80,31 @@ class DetailConnectionsController: NSViewController {
     }
     
     @IBAction func connectConnectionTapped(_ sender: Any) {
-        self.output.connectConnection(self.dataSource.selectedDatabase)
+        self.output.connectDatabase(self.databaseObj)
     }
     
     @objc fileprivate func prepareLayoutNotification(noti: Notification) {
         guard let databaseObj = noti.userInfo?["selectedDatabase"] as? DatabaseObj else {return}
+        self.databaseObj = databaseObj
         self.nicknameTxt.stringValue = databaseObj.name
         self.hostNameTxt.stringValue = databaseObj.host
         self.usernameTxt.stringValue = databaseObj.username
         self.passwordTxt.stringValue = databaseObj.password
+        self.databaseTxt.stringValue = databaseObj.database
         self.sshCheckboxBtn.state = databaseObj.ssh != nil ? NSOnState : NSOffState
         self.saveInKeyChainCheckBoxBtn.state = databaseObj.saveToKeychain ? NSOnState : NSOffState
+    }
+    
+    @objc fileprivate func saveCurrentDatabaseObjNotification(noti: Notification) {
         
+        guard let obj = noti.object as? DatabaseObj else {return}
+        guard obj.objectId == self.databaseObj.objectId else {return}
+        
+        // Map all textfield to database
+        let data = self.buildDetailConnectionData()
+        
+        // Save
+        self.output.saveDatabaseObjToDisk(databaseObj: self.databaseObj, data: data)
     }
 }
 
@@ -103,5 +113,33 @@ class DetailConnectionsController: NSViewController {
 extension DetailConnectionsController: DetailConnectionPresenterOutput {
     func presentError(with error: NSError) {
         
+    }
+}
+
+//
+// MARK: - Private
+extension DetailConnectionsController {
+    
+    /// Map UI to model
+    fileprivate func buildDetailConnectionData() -> DetailConnectionData {
+        
+        var data = DetailConnectionData()
+        
+        data.nickname = self.nicknameTxt.stringValue
+        data.host = self.hostNameTxt.stringValue
+        data.username = self.usernameTxt.stringValue
+        data.password = self.passwordTxt.stringValue
+        data.databaseName = self.databaseTxt.stringValue
+        data.saveToKeyChain = self.saveInKeyChainCheckBoxBtn.state == NSOnState ? true : false
+        
+        // SSH
+        if self.sshCheckboxBtn.state == NSOnState {
+            let sshObj = SSHObj()
+            sshObj.host = "localhost"
+            sshObj.user = "nghiatran"
+            data.sshObj = sshObj
+        }
+        
+        return data
     }
 }

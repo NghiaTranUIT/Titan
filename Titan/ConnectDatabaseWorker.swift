@@ -9,6 +9,7 @@
 import Cocoa
 import ReSwift
 import PromiseKit
+import TitanKit
 
 struct ConnectDatabaseAction: Action {
     var selectedDatabase: DatabaseObj!
@@ -16,15 +17,15 @@ struct ConnectDatabaseAction: Action {
 
 class ConnectDatabaseWorker: AsyncWorker {
 
-    typealias T = DatabaseObj
+    typealias T = Void
+    var databaseObj: DatabaseObj!
     
-    var action: Action!
-    
-    required init() {
-        
+    init(databaseObj: DatabaseObj) {
+        self.databaseObj = databaseObj
     }
     
     func execute() -> Promise<T> {
-        return Promise(value: T())
+        return DatabaseManager.shared
+        .openConnection(with: self.databaseObj)
     }
 }

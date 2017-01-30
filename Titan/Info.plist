@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSUIPresentationMode</key>
-	<integer>2</integer>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -38,6 +36,8 @@
 	</dict>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<key>LSUIPresentationMode</key>
+	<integer>2</integer>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 fe. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>

@@ -1,30 +1,39 @@
 PODS:
-  - Alamofire (4.0.1)
-  - DynamicColor (3.1.0)
+  - Alamofire (4.3.0)
+  - DynamicColor (3.2.1)
   - KVOController (1.2.0)
   - Nimble (5.0.0)
   - ObjectMapper (2.2.2)
   - Quick (0.10.0)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
-  - RealmSwift (2.0.2):
-    - Realm (= 2.0.2)
+  - Realm (2.4.1):
+    - Realm/Headers (= 2.4.1)
+  - Realm/Headers (2.4.1)
+  - RealmSwift (2.4.1):
+    - Realm (= 2.4.1)
   - ReSwift (2.1.0)
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - DynamicColor (~> 3.1.0)
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, tag `4.3.0`)
+  - DynamicColor (from `https://github.com/yannickl/DynamicColor.git`, tag `3.2.1`)
   - KVOController
   - Nimble (~> 5.0.0)
-  - ObjectMapper (~> 2.2)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, tag `2.2.2`)
   - Quick (~> 0.10.0)
   - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 4.3.0
+  DynamicColor:
+    :git: https://github.com/yannickl/DynamicColor.git
+    :tag: 3.2.1
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.2.2
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
@@ -33,6 +42,15 @@ EXTERNAL SOURCES:
     :tag: 1.1.0
 
 CHECKOUT OPTIONS:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire.git
+    :tag: 4.3.0
+  DynamicColor:
+    :git: https://github.com/yannickl/DynamicColor.git
+    :tag: 3.2.1
+  ObjectMapper:
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+    :tag: 2.2.2
   ReSwift:
     :git: https://github.com/ReSwift/ReSwift.git
     :tag: 2.1.0
@@ -41,17 +59,17 @@ CHECKOUT OPTIONS:
     :tag: 1.1.0
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  Alamofire: 1f72088aff8f6b40828dadd61be2e9a31beca01e
+  DynamicColor: 8b4dec01020e2c481848dd8642c2e3c7c780e396
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
-  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Realm: 37a5198a197598d9ec0e4d1ae2f64924c86eeb9a
+  RealmSwift: d69e431b79a41acdf14c404b868ae1c2458916e1
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 0ab2fe2fd2807138b1cd472e5206e88d40a7098b
+PODFILE CHECKSUM: 75a0b46c60a14e964d53638491077c39078506b8
 
 COCOAPODS: 1.2.0.beta.1

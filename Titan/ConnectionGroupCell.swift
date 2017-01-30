@@ -33,12 +33,15 @@ class ConnectionGroupCell: NSView {
     // MARK: - Variable
     weak var delegate: ConnectionGroupCellDelegate?
     private var groupConnectionObj: GroupConnectionObj!
-    
+    fileprivate var trackingArea: NSTrackingArea?
     
     //
     // MARK: - View Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.initBaseAbility()
+        self.setupTrackingArea()
     }
     
     
@@ -58,6 +61,33 @@ class ConnectionGroupCell: NSView {
         
         // Setup
         self.titleLbl.stringValue = groupConnectionObj.name
+    }
+    
+    override func mouseEntered(with event: NSEvent) {
+        super.mouseEntered(with: event)
+        self.addDatabaseBtn.alphaValue = 1
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        super.mouseExited(with: event)
+        self.addDatabaseBtn.alphaValue = 0
+    }
+}
+
+//
+// MARK: - Private
+extension ConnectionGroupCell {
+    
+    internal override func initCommon() {
+        super.initCommon()
+        self.addDatabaseBtn.alphaValue = 0
+    }
+    
+    fileprivate func setupTrackingArea() {
+        if self.trackingArea == nil {
+            self.trackingArea = NSTrackingArea(rect: self.bounds, options: [.mouseEnteredAndExited, .activeAlways], owner: self, userInfo: nil)
+            self.addTrackingArea(self.trackingArea!)
+        }
     }
 }
 

@@ -8,6 +8,6 @@
 
 import Cocoa
 
-class DataDatabaseInteractor: NSObject {
+class ContentDatabaseInteractor: NSObject {
 
 }

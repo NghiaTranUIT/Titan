@@ -24,7 +24,6 @@ class DetailConnectionConfig {
         
         // View controller
         viewController.output = interactor
-        viewController.dataSource = presenter
     }
     
 }

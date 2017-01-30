@@ -725,13 +725,13 @@
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zim-d1-wOh">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                <rect key="frame" x="0.0" y="45" width="250" height="499"/>
                                 <clipView key="contentView" drawsBackground="NO" id="hGE-DV-LsB">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="499"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" allowsEmptySelection="NO" allowsMultipleSelection="YES" id="Sd0-jl-BuX">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="544"/>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="Sd0-jl-BuX">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="499"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="gvL-YK-x6O">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -749,17 +749,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="i3u-4i-vyz">
-                                    <rect key="frame" x="234" y="0.0" width="16" height="544"/>
+                                    <rect key="frame" x="234" y="0.0" width="16" height="499"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Pn8-Z1-jB5">
+                                <rect key="frame" x="61" y="5" width="128" height="32"/>
+                                <buttonCell key="cell" type="push" title="New Database" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hZx-qU-6ab">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="newDatabaseBtnTapped:" target="2ek-Ha-6V0" id="mwg-L5-jAP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="9E8-fy-nKI"/>
                             <constraint firstAttribute="trailing" secondItem="Zim-d1-wOh" secondAttribute="trailing" id="IHF-MG-m9n"/>
                             <constraint firstAttribute="trailing" secondItem="pJh-Zf-avb" secondAttribute="trailing" id="KAM-MN-qS3"/>
+                            <constraint firstAttribute="bottom" secondItem="Pn8-Z1-jB5" secondAttribute="bottom" constant="12" id="RJi-3n-n9M"/>
+                            <constraint firstItem="Pn8-Z1-jB5" firstAttribute="centerX" secondItem="jZl-GI-tqf" secondAttribute="centerX" id="S8s-UK-4QM"/>
+                            <constraint firstItem="Pn8-Z1-jB5" firstAttribute="top" secondItem="Zim-d1-wOh" secondAttribute="bottom" constant="12" id="aj5-4w-l1r"/>
                             <constraint firstItem="Zim-d1-wOh" firstAttribute="top" secondItem="pJh-Zf-avb" secondAttribute="bottom" constant="12" id="jhR-Nn-WvT"/>
-                            <constraint firstAttribute="bottom" secondItem="Zim-d1-wOh" secondAttribute="bottom" id="lNh-6d-cGD"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="top" secondItem="jZl-GI-tqf" secondAttribute="top" id="o2u-Nu-yMe"/>
                             <constraint firstItem="pJh-Zf-avb" firstAttribute="leading" secondItem="jZl-GI-tqf" secondAttribute="leading" id="pKw-Rh-4EV"/>
                         </constraints>
@@ -1025,8 +1037,19 @@
                                             <constraint firstItem="UJd-A7-BYM" firstAttribute="leading" secondItem="ESv-tD-Uk4" secondAttribute="trailing" constant="10" id="x7s-Tm-S8m"/>
                                         </constraints>
                                     </customView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fhw-VO-6ci">
+                                        <rect key="frame" x="387" y="13" width="92" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Isr-ai-2la">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="connectConnectionTapped:" target="ud0-9A-E9q" id="qsX-0M-U2y"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="fhw-VO-6ci" firstAttribute="centerX" secondItem="DEm-TK-C7Y" secondAttribute="centerX" id="7C6-XI-t8O"/>
                                     <constraint firstItem="SaU-cz-23Y" firstAttribute="top" secondItem="BH6-ym-XoO" secondAttribute="bottom" id="9Pt-ph-paZ"/>
                                     <constraint firstItem="SaU-cz-23Y" firstAttribute="leading" secondItem="BH6-ym-XoO" secondAttribute="leading" id="Bkt-Sg-HJk"/>
                                     <constraint firstItem="P7r-te-ZEy" firstAttribute="leading" secondItem="SaU-cz-23Y" secondAttribute="leading" id="DeB-tr-LSl"/>
@@ -1039,6 +1062,7 @@
                                     <constraint firstItem="5mS-xw-Voe" firstAttribute="top" secondItem="LOc-Qt-BRU" secondAttribute="bottom" id="cjy-gj-R2m"/>
                                     <constraint firstItem="LOc-Qt-BRU" firstAttribute="top" secondItem="DEm-TK-C7Y" secondAttribute="top" constant="24" id="iaw-76-kof"/>
                                     <constraint firstItem="RoQ-kE-wVr" firstAttribute="leading" secondItem="P7r-te-ZEy" secondAttribute="leading" id="paT-fw-zpz"/>
+                                    <constraint firstAttribute="bottom" secondItem="fhw-VO-6ci" secondAttribute="bottom" constant="20" id="t3R-Jp-zRQ"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -1053,6 +1077,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="connectionBtn" destination="fhw-VO-6ci" id="LX5-l6-2Iw"/>
                         <outlet property="databaseTxt" destination="nhs-yM-747" id="C0y-um-qqp"/>
                         <outlet property="hostNameTxt" destination="FUm-sr-c03" id="QWa-SJ-VS6"/>
                         <outlet property="nicknameTxt" destination="wqS-hp-oaE" id="Zms-5Q-io7"/>
@@ -1070,7 +1095,7 @@
         <!--Window Controller-->
         <scene sceneID="Kvb-cY-XZD">
             <objects>
-                <windowController id="mHl-Oc-5fu" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="MainWindowController" id="mHl-Oc-5fu" customClass="MainWindowController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="dFW-TK-zED">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

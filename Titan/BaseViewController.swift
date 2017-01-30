@@ -42,9 +42,7 @@ import Cocoa
 extension NSViewController: BaseAbility {
 
     /// Common
-    func initCommon() {
-        
-    }
+    func initCommon() {}
     
     /// Appearance
     func initUIs() {}

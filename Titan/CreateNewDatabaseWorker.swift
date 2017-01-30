@@ -21,17 +21,14 @@ struct CreateNewDatabaseAction: Action {
 // MARK: - Worker
 class CreateNewDatabaseWorker: AsyncWorker {
     
-    
     /// Type
     typealias T = DatabaseObj
     var groupConnectionObj: GroupConnectionObj!
-    
     
     /// Init
     init(groupConnectionObj: GroupConnectionObj) {
         self.groupConnectionObj = groupConnectionObj
     }
-    
     
     /// Execute
     func execute() -> Promise<T> {

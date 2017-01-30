@@ -51,20 +51,23 @@ extension ConnectionState {
             
             // Add
             if let group = groups.first {
-                RealmManager.sharedManager.writeSync {
+                RealmManager.sharedManager.writeSync { _ in
                     group.databases.append(newDatabaseObj)
                 }
             }
+            
+            NotificationManager.postNotificationOnMainThreadType(.groupConnectionChanged)
             
         case let action as AddNewDefaultConnectionAction:
             let group = state.groupConnections
             
             // Save
-            RealmManager.sharedManager.writeSync {
+            RealmManager.sharedManager.writeSync { _ in
                 group.append(action.groupConnectionObj)
             }
             
         case _ as FetchAllGroupConnectionsAction:
+            
             // Get from current User
             state.groupConnections = UserObj.currentUser.groupConnections
             

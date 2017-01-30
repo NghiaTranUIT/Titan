@@ -15,8 +15,7 @@ before_install:
   - gem install cocoapods
 
 script:
-  - pod repo update
-  - pod update
+  - pod install
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks

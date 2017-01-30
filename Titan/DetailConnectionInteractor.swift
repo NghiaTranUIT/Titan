@@ -30,6 +30,8 @@ extension DetailConnectionInteractor: DetailConnectionsControllerOutput {
         .execute()
         .then(execute: { _ -> Void in
             Logger.info("Connect DB success")
+            
+            NotificationManager.postNotificationOnMainThreadType(NotificationType.openDetailDatabaseWindow, object: nil, userInfo: nil)
         })
         .catch { error in
             Logger.error(error)

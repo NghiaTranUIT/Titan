@@ -8,11 +8,26 @@
 
 import Cocoa
 
-class MainTabConnectionController: NSTabViewController {
+class MainTabConnectionController: NSViewController {
 
+    //
+    // MARK: - Variable
+    
+    //
+    // MARK: - Outlet
+    
+    // Top bar
+    @IBOutlet weak var topBarView: NSView!
+    
+    //
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        self.initBaseAbility()
     }
     
+    override func initUIs() {
+        self.topBarView.backgroundColor = NSColor(hexString: "#1799DD")
+    }
 }

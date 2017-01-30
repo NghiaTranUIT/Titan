@@ -23,6 +23,12 @@ let mainStore = Store<MainAppState>(reducer: MainReducer(), state: nil, middlewa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    //
+    // MARK: - Variable
+    fileprivate lazy var detailDatabaseWindow: DetailDatabaseWindowController = self.initDetailWindow()
+    
+    //
+    // MARK: - Action
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         // Configure SDKs
@@ -33,11 +39,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Default Data
         ApplicationManager.sharedInstance.importDefaultDataIfNeed()
+        
+        // Observe notificatino
+        self.observeNotification()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    func showDetailWindow() {
+        self.detailDatabaseWindow.showWindow(self)
+    }
+    
+    deinit {
+        NotificationManager.removeAllObserve(self)
+    }
 }
 
+//
+// MARK: - Private
+extension AppDelegate {
+    
+    /// Get detail window
+    fileprivate func initDetailWindow() -> DetailDatabaseWindowController {
+        let storyboard = NSStoryboard(name: "DetailConnection", bundle: nil)
+        return storyboard.instantiateController(withIdentifier: "DetailDatabaseWindowController") as! DetailDatabaseWindowController
+    }
+    
+    /// Obverse
+    fileprivate func observeNotification() {
+        NotificationManager.observeNotificationType(NotificationType.openDetailDatabaseWindow, observer: self, selector: #selector(self.openDetailWindowNotification(noti:)), object: nil)
+    }
+}
+
+//
+// MARK: - Notification
+extension AppDelegate {
+    
+    @objc fileprivate func openDetailWindowNotification(noti: Notification) {
+        
+        NotificationManager.postNotificationOnMainThreadType(NotificationType.closeConnectionWindow)
+        self.showDetailWindow()
+    }
+}

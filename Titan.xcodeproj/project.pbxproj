@@ -127,6 +127,8 @@
 		BAF13D001E3E2851005822AF /* UpdateUIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13CFF1E3E2851005822AF /* UpdateUIOperation.swift */; };
 		BAF13D041E3E2CF1005822AF /* CloseDatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D031E3E2CF1005822AF /* CloseDatabaseOperation.swift */; };
 		BAF13D061E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D051E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift */; };
+		BAF13D091E3F75C4005822AF /* DetailDatabaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D081E3F75C4005822AF /* DetailDatabaseWindowController.swift */; };
+		BAF13D0C1E3F78B3005822AF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D0A1E3F78B3005822AF /* MainWindowController.swift */; };
 		BAFF52C21DCE271600B566F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF52C11DCE271600B566F7 /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +283,8 @@
 		BAF13CFF1E3E2851005822AF /* UpdateUIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUIOperation.swift; sourceTree = "<group>"; };
 		BAF13D031E3E2CF1005822AF /* CloseDatabaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseDatabaseOperation.swift; sourceTree = "<group>"; };
 		BAF13D051E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaInfoOperation.swift; sourceTree = "<group>"; };
+		BAF13D081E3F75C4005822AF /* DetailDatabaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseWindowController.swift; sourceTree = "<group>"; };
+		BAF13D0A1E3F78B3005822AF /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -645,6 +649,7 @@
 		BA4AFF1E1DAC96AD009AE139 /* Connections List */ = {
 			isa = PBXGroup;
 			children = (
+				BAF13D0A1E3F78B3005822AF /* MainWindowController.swift */,
 				BA712E041DC0F1EA00215A94 /* Main Connection */,
 				BA4AFF111DAC925D009AE139 /* List Connections */,
 				BA4AFF141DAC9297009AE139 /* Detail Connection */,
@@ -847,6 +852,7 @@
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BAF13D071E3F75AA005822AF /* Window */,
 				BAD0D3821DE2AE4C0081F28F /* Main */,
 				BAD0D3851DE2AE750081F28F /* Tab */,
 				BAD0D3871DE2AEBA0081F28F /* Column Database */,
@@ -1021,6 +1027,14 @@
 				BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */,
 			);
 			name = "Queue Manager";
+			sourceTree = "<group>";
+		};
+		BAF13D071E3F75AA005822AF /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				BAF13D081E3F75C4005822AF /* DetailDatabaseWindowController.swift */,
+			);
+			name = Window;
 			sourceTree = "<group>";
 		};
 		BAFF52C01DCE270B00B566F7 /* Router */ = {
@@ -1320,6 +1334,7 @@
 				BA393A421E3DD3F700450AA0 /* DatabaseManager.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
+				BAF13D0C1E3F78B3005822AF /* MainWindowController.swift in Sources */,
 				BAD0D38F1DE2AF6C0081F28F /* ColumnDatabaseController.swift in Sources */,
 				BAD0D38A1DE2AEF10081F28F /* DetailSplitConnectionController.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
@@ -1353,6 +1368,7 @@
 				BAE354F41DF9381C0066FB4D /* BaseView.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* ContentDatabaseInteractor.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
+				BAF13D091E3F75C4005822AF /* DetailDatabaseWindowController.swift in Sources */,
 				BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,

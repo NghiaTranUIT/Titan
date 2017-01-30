@@ -17,6 +17,8 @@ enum NotificationType: String {
     case prepareLayoutForSelectedDatabase
     case groupConnectionChanged
     case saveCurrentDatabaseObj
+    case openDetailDatabaseWindow
+    case closeConnectionWindow
     
     // To String
     func toString() -> String {
@@ -42,7 +44,6 @@ class NotificationManager {
         // Remove
         NotificationCenter.default.removeObserver(observer)
     }
-
 }
 
 extension NotificationCenter {

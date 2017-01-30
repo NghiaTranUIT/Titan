@@ -12,7 +12,13 @@ class DetailSplitConnectionController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        // Base
+        self.initBaseAbility()
+    }
+    
+    override func initCommon() {
+        self.view.wantsLayer = true
     }
     
 }

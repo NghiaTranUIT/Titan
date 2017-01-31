@@ -131,6 +131,7 @@
 		BAF13D0C1E3F78B3005822AF /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D0A1E3F78B3005822AF /* MainWindowController.swift */; };
 		BAF13D101E40EEEE005822AF /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D0F1E40EEEE005822AF /* AppPreferences.swift */; };
 		BAF13D121E40F3C3005822AF /* BaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D111E40F3C3005822AF /* BaseWindowController.swift */; };
+		BAF13D151E40F94D005822AF /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D141E40F94D005822AF /* BaseSplitViewController.swift */; };
 		BAFF52C21DCE271600B566F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF52C11DCE271600B566F7 /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -289,6 +290,7 @@
 		BAF13D0A1E3F78B3005822AF /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		BAF13D0F1E40EEEE005822AF /* AppPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
 		BAF13D111E40F3C3005822AF /* BaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWindowController.swift; sourceTree = "<group>"; };
+		BAF13D141E40F94D005822AF /* BaseSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -648,6 +650,7 @@
 				BA4AFF1A1DAC968B009AE139 /* BaseViewController.swift */,
 				BAE354F31DF9381C0066FB4D /* BaseView.swift */,
 				BAF13D111E40F3C3005822AF /* BaseWindowController.swift */,
+				BAF13D141E40F94D005822AF /* BaseSplitViewController.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1437,6 +1440,7 @@
 				BAF13CFB1E3E2832005822AF /* BaseOperation.swift in Sources */,
 				BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
+				BAF13D151E40F94D005822AF /* BaseSplitViewController.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,
 				BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */,
 				BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */,

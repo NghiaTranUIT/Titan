@@ -19,9 +19,13 @@ enum NotificationType: String {
     case saveCurrentDatabaseObj
     case openDetailDatabaseWindow
     case closeConnectionWindow
+    case windowWillClose
     
     // To String
     func toString() -> String {
+        if self.rawValue == NotificationType.windowWillClose.rawValue {
+            return Notification.Name.NSWindowWillClose.rawValue
+        }
         return NotificationType.NotificationPrefix + self.rawValue
     }
 }

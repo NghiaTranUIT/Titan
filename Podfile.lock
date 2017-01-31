@@ -11,7 +11,6 @@ PODS:
   - RealmSwift (2.4.1):
     - Realm (= 2.4.1)
   - ReSwift (2.1.0)
-  - RxSwift (3.0.0-rc.1)
   - SwiftyBeaver (1.1.0)
 
 DEPENDENCIES:
@@ -23,7 +22,6 @@ DEPENDENCIES:
   - Quick (~> 0.10.0)
   - RealmSwift
   - ReSwift (from `https://github.com/ReSwift/ReSwift.git`, tag `2.1.0`)
-  - RxSwift (= 3.0.0-rc.1)
   - SwiftyBeaver (from `https://github.com/SwiftyBeaver/SwiftyBeaver.git`, tag `1.1.0`)
 
 EXTERNAL SOURCES:
@@ -64,9 +62,8 @@ SPEC CHECKSUMS:
   Realm: 37a5198a197598d9ec0e4d1ae2f64924c86eeb9a
   RealmSwift: d69e431b79a41acdf14c404b868ae1c2458916e1
   ReSwift: c13b76cb963c5ab2a137c9c6e74823cef4b81588
-  RxSwift: d7a3819dd71789c473e3cbf1a0c02d58b2692739
   SwiftyBeaver: af90fecea02b46fe073dc8e622362da06886c039
 
-PODFILE CHECKSUM: 59f089f0a94d4723dfa417d06681fcd1b1db66cd
+PODFILE CHECKSUM: ad583711f51d987f68c74c2272db80c31dbb88ae
 
 COCOAPODS: 1.2.0.beta.1

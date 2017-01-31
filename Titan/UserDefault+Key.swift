@@ -12,6 +12,8 @@ import Foundation
 // MARK: - UserDefaults
 enum UserDefaultsKey: String {
     case isFirstTime
+    case mainWindowFrame
+    case dividerPosition
     
     // Add more key here
 }

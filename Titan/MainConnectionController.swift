@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainConnectionController: NSSplitViewController {
+class MainConnectionController: BaseSplitViewController {
 
     //
     // MARK: - Variable
@@ -33,7 +33,6 @@ class MainConnectionController: NSSplitViewController {
         NSApplication.shared().keyWindow?.isMovableByWindowBackground = true
         NSApplication.shared().keyWindow?.isMovable = true
     }
-    
 }
 
 

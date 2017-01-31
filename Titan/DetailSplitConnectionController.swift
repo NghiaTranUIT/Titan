@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DetailSplitConnectionController: NSSplitViewController {
+class DetailSplitConnectionController: BaseSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

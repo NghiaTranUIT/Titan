@@ -18,7 +18,6 @@ enum NotificationType: String {
     case groupConnectionChanged
     case saveCurrentDatabaseObj
     case openDetailDatabaseWindow
-    case closeConnectionWindow
     case windowWillClose
     
     // To String

@@ -12,13 +12,9 @@ class MainWindowController: BaseWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        NotificationManager.observeNotificationType(.closeConnectionWindow, observer: self, selector: #selector(self.closeWindow), object: nil)
     }
     
-    @objc func closeWindow() {
-        self.close()
+    deinit {
+        Logger.debug("List connection window DEINIT")
     }
-    
 }

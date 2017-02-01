@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     //
     // MARK: - Variable
+    fileprivate var listDatabasesWindow: MainWindowController?
     fileprivate lazy var detailDatabaseWindow: DetailDatabaseWindowController = self.initDetailWindow()
     
     //
@@ -42,6 +43,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Observe notificatino
         self.observeNotification()
+        
+        // Show List database window
+        self.listDatabasesWindow = self.initListDatabasesWindow()
+        self.listDatabasesWindow?.showWindow(self)
+        self.listDatabasesWindow!.window?.makeKeyAndOrderFront(self)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -50,6 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func showDetailWindow() {
         self.detailDatabaseWindow.showWindow(self)
+        self.detailDatabaseWindow.window?.makeKeyAndOrderFront(self)
     }
     
     deinit {
@@ -60,6 +67,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //
 // MARK: - Private
 extension AppDelegate {
+    
+    /// Get Main window
+    fileprivate func initListDatabasesWindow() -> MainWindowController {
+        let storyboard = NSStoryboard(name: "Connection", bundle: nil)
+        return storyboard.instantiateController(withIdentifier: "MainWindowController") as! MainWindowController
+    }
     
     /// Get detail window
     fileprivate func initDetailWindow() -> DetailDatabaseWindowController {
@@ -79,7 +92,11 @@ extension AppDelegate {
     
     @objc fileprivate func openDetailWindowNotification(noti: Notification) {
         
-        NotificationManager.postNotificationOnMainThreadType(.closeConnectionWindow)
+        // Open first
         self.showDetailWindow()
+        
+        // Close
+        self.listDatabasesWindow?.close()
+//        self.listDatabasesWindow = nil
     }
 }

@@ -52,6 +52,8 @@ extension BaseWindowController {
         window.styleMask.insert(.fullSizeContentView)
         window.titleVisibility = .hidden
         window.titlebarAppearsTransparent = true
+        
+        self.window?.isReleasedWhenClosed = true
     }
     
     fileprivate func initObserver() {

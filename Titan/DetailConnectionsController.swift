@@ -36,7 +36,6 @@ class DetailConnectionsController: NSViewController {
     // MARK: - Rx
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
         // Base
         self.initBaseAbility()

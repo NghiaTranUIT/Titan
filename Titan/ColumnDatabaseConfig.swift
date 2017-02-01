@@ -8,6 +8,22 @@
 
 import Cocoa
 
-class ColumnDatabaseConfig: NSObject {
-
+class ColumnDatabaseConfig {
+    
+    static let shared = ColumnDatabaseConfig()
+    
+    func configure(viewController: ColumnDatabaseController) {
+        
+        // Presenter
+        let presenter = ColumnDatabasePresenter()
+        presenter.output = viewController
+        
+        // Interactor
+        let interactor = ColumnDatabaseInteractor()
+        interactor.output = presenter
+        
+        // View controller
+        viewController.output = interactor
+    }
+    
 }

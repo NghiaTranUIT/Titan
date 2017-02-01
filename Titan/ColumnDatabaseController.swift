@@ -8,11 +8,34 @@
 
 import Cocoa
 
+protocol ColumnDatabaseControllerOutput {
+    
+}
+
 class ColumnDatabaseController: NSViewController {
 
+    //
+    // MARK: - Variable
+    var output: ColumnDatabaseControllerOutput?
+    
+    //
+    // MARK: - View cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        // Base
+        self.initBaseAbility()
     }
+    
+    override func initCommon() {
+        
+    }
+    
+    
+}
+
+//
+// MARK: - ColumnDatabasePresenterOutput
+extension ColumnDatabaseController: ColumnDatabasePresenterOutput {
     
 }

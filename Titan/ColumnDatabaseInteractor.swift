@@ -8,6 +8,19 @@
 
 import Cocoa
 
-class ColumnDatabaseInteractor: NSObject {
+protocol ColumnDatabaseInteractorOutput {
+    
+}
 
+class ColumnDatabaseInteractor {
+
+    //
+    // MARK: - Variable
+    var output: ColumnDatabaseInteractorOutput?
+}
+
+//
+// MARK: - ColumnDatabaseControllerOutput
+extension ColumnDatabaseInteractor: ColumnDatabaseControllerOutput {
+    
 }

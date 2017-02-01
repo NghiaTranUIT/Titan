@@ -8,6 +8,19 @@
 
 import Cocoa
 
-class ColumnDatabasePresenter: NSObject {
+protocol ColumnDatabasePresenterOutput: class {
+    
+}
 
+class ColumnDatabasePresenter {
+
+    //
+    // MARK: - Variable
+    weak var output: ColumnDatabasePresenterOutput?
+}
+
+//
+// MARK: - ColumnDatabaseInteractorOutput
+extension ColumnDatabasePresenter: ColumnDatabaseInteractorOutput {
+    
 }

@@ -79,7 +79,7 @@ extension AppDelegate {
     
     @objc fileprivate func openDetailWindowNotification(noti: Notification) {
         
-        NotificationManager.postNotificationOnMainThreadType(NotificationType.closeConnectionWindow)
+        NotificationManager.postNotificationOnMainThreadType(.closeConnectionWindow)
         self.showDetailWindow()
     }
 }

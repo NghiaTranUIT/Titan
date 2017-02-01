@@ -16,7 +16,7 @@ class DetailConnectionPresenter {
     
     //
     // MARK: - Variable
-    weak var output: DetailConnectionPresenterOutput!
+    weak var output: DetailConnectionPresenterOutput?
 }
 
 //
@@ -28,6 +28,6 @@ extension DetailConnectionPresenter: DetailConnectionInteractorOutput {
     }
     
     func presentError(with error: NSError) {
-        self.output.presentError(with: error)
+        self.output?.presentError(with: error)
     }
 }

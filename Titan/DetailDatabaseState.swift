@@ -13,6 +13,10 @@ import TitanKit
 struct DetailDatabaseState {
     var selectedConnection: DatabaseObj!
     var tables: [Table] = []
+    var selectedTable: Table!
+    
+    // table on stack
+    var stackTables: [Table] = []
 }
 
 //
@@ -31,10 +35,22 @@ extension DetailDatabaseState {
         case let action as UpdateTablesInfoAction:
             
             state.tables = action.tables
-            mainStore.state.detailDatabaseState?.tables = action.tables
             Logger.info("Found \(action.tables.count) tables")
+           
+        case let action as SelectedTableAction:
             
-            NotificationManager.postNotificationOnMainThreadType(.tableStateChanged)
+            state.selectedTable = action.selectedTable
+            
+        case let action as AddSelectedTableToStackAction:
+            
+            // Add if need
+            let filter = state.stackTables.filter({ (table) -> Bool in
+                return table.tableName! == action.selectedTable.tableName!
+            })
+            
+            if filter.count == 0 {
+                state.stackTables.append(action.selectedTable)
+            }
             
         default:
             break

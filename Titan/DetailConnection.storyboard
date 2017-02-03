@@ -80,7 +80,7 @@
             <objects>
                 <splitViewController id="Uua-Gp-Qor" customClass="DetailSplitConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="260" behavior="sidebar" id="4US-Jn-78A"/>
+                        <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="4US-Jn-78A"/>
                         <splitViewItem holdingPriority="255" behavior="contentList" id="2CG-M9-DTU"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="3Y4-EE-ulg">
@@ -116,7 +116,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="2gD-qP-2Gt">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="2gD-qP-2Gt">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -212,10 +212,10 @@
                         <constraints>
                             <constraint firstItem="ZKy-vS-qVr" firstAttribute="leading" secondItem="l6d-A1-a1g" secondAttribute="leading" id="JJh-10-zCS"/>
                             <constraint firstItem="u9y-gK-UFP" firstAttribute="leading" secondItem="l6d-A1-a1g" secondAttribute="leading" id="ZJn-IT-fhS"/>
+                            <constraint firstItem="ZKy-vS-qVr" firstAttribute="top" secondItem="u9y-gK-UFP" secondAttribute="bottom" id="cvu-e5-7dz"/>
                             <constraint firstAttribute="trailing" secondItem="u9y-gK-UFP" secondAttribute="trailing" id="gUr-gr-eHr"/>
                             <constraint firstItem="u9y-gK-UFP" firstAttribute="top" secondItem="l6d-A1-a1g" secondAttribute="top" id="odb-p5-7SG"/>
                             <constraint firstAttribute="bottom" secondItem="ZKy-vS-qVr" secondAttribute="bottom" id="wfd-WZ-UWo"/>
-                            <constraint firstItem="ZKy-vS-qVr" firstAttribute="top" secondItem="u9y-gK-UFP" secondAttribute="bottom" id="xfg-Ex-sM5"/>
                             <constraint firstAttribute="trailing" secondItem="ZKy-vS-qVr" secondAttribute="trailing" id="yL0-8l-FZZ"/>
                         </constraints>
                     </view>

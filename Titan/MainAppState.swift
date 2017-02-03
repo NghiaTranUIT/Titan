@@ -18,5 +18,5 @@ struct MainAppState: StateType {
     let connectionState: ConnectionState?
 
     // Detail Database State
-    var detailDatabaseState: DetailDatabaseState?
+    let detailDatabaseState: DetailDatabaseState?
 }

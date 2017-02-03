@@ -33,6 +33,9 @@ class FetchTableDatabaseInfoWorker: AsyncWorker {
             let action = UpdateTablesInfoAction(tables: tables)
             mainStore.dispatch(action)
             
+            // Push
+            NotificationManager.postNotificationOnMainThreadType(.tableStateChanged)
+            
             return Promise<Void>(resolvers: { (fullfill, reject) in
                 fullfill()
             })

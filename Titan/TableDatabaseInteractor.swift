@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import TitanKit
 
 protocol TableDatabaseInteractorOutput {
     
@@ -34,5 +35,15 @@ extension TableDatabaseInteractor: TableDatabaseControllerOutput {
         .catch { error in
             
         }
+    }
+    
+    func didSelectTable(_ table: Table) {
+        let worker = SelectedTableWorker(seletedTable: table)
+        worker.execute()
+    }
+    
+    func didDoubleTapTable(_ table: Table) {
+        let worker = SelectedTableWorker(seletedTable: table)
+        worker.execute()
     }
 }

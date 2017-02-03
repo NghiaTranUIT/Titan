@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import TitanKit
 
 protocol TableDatabaseControllerOutput {
     func fetchTablesDatabaseInfo()
+    func didSelectTable(_ table: Table)
+    func didDoubleTapTable(_ table: Table)
 }
 
 class TableDatabaseController: NSViewController {
@@ -62,6 +65,17 @@ extension TableDatabaseController {
     fileprivate func initDataSource() -> TablesDataSource {
         let data = TablesDataSource()
         data.tableView = self.tableView
+        data.delegate = self
         return data
+    }
+}
+
+extension TableDatabaseController: TablesDataSourceDelegate {
+    func TablesDataSourceDidSelectTable(_ table: Table) {
+        self.output?.didSelectTable(table)
+    }
+    
+    func TablesDataSourceDidDoubleTapOnTable(_ table: Table) {
+        self.output?.didDoubleTapTable(table)
     }
 }

@@ -8,6 +8,19 @@
 
 import Cocoa
 
-class ContentDatabaseInteractor: NSObject {
+protocol ContentDatabaseInteractorOutput {
+    
+}
 
+class ContentDatabaseInteractor {
+
+    //
+    // MARK: - Variable
+    var output: ContentDatabaseInteractorOutput?
+}
+
+//
+// MARK: - ContentDatabaseControllerOutput
+extension ContentDatabaseInteractor: ContentDatabaseControllerOutput {
+    
 }

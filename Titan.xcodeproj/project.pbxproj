@@ -95,6 +95,14 @@
 		BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */; };
 		BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01791E447B3400687509 /* TableRowView.swift */; };
 		BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017C1E447DFE00687509 /* GlobalFont.swift */; };
+		BAAD017F1E44846700687509 /* SelectedTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017E1E44846700687509 /* SelectedTableWorker.swift */; };
+		BAAD01831E448A0C00687509 /* TableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01821E448A0C00687509 /* TableStackView.swift */; };
+		BAAD01851E448A1E00687509 /* TableStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01841E448A1E00687509 /* TableStackView.xib */; };
+		BAAD018A1E448F6D00687509 /* StackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01881E448F6D00687509 /* StackTableCell.swift */; };
+		BAAD018B1E448F6D00687509 /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01891E448F6D00687509 /* StackTableCell.xib */; };
+		BAAD018F1E448FA500687509 /* AddTableStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD018D1E448FA500687509 /* AddTableStackCell.swift */; };
+		BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD018E1E448FA500687509 /* AddTableStackCell.xib */; };
+		BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */; };
 		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
@@ -262,6 +270,14 @@
 		BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableCell.xib; sourceTree = "<group>"; };
 		BAAD01791E447B3400687509 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BAAD017C1E447DFE00687509 /* GlobalFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFont.swift; sourceTree = "<group>"; };
+		BAAD017E1E44846700687509 /* SelectedTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableWorker.swift; sourceTree = "<group>"; };
+		BAAD01821E448A0C00687509 /* TableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStackView.swift; sourceTree = "<group>"; };
+		BAAD01841E448A1E00687509 /* TableStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableStackView.xib; sourceTree = "<group>"; };
+		BAAD01881E448F6D00687509 /* StackTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableCell.swift; sourceTree = "<group>"; };
+		BAAD01891E448F6D00687509 /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
+		BAAD018D1E448FA500687509 /* AddTableStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableStackCell.swift; sourceTree = "<group>"; };
+		BAAD018E1E448FA500687509 /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
+		BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTapTableWorker.swift; sourceTree = "<group>"; };
 		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
@@ -731,6 +747,7 @@
 		BA59E3D11E3DAA3500BDF873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAAD01811E4489E600687509 /* TableStackView */,
 				BA59E3D41E3DAA4700BDF873 /* Grid Database */,
 			);
 			name = View;
@@ -870,6 +887,50 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
+		BAAD01801E44894800687509 /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Source";
+			sourceTree = "<group>";
+		};
+		BAAD01811E4489E600687509 /* TableStackView */ = {
+			isa = PBXGroup;
+			children = (
+				BAAD01861E448F5200687509 /* Cells */,
+				BAAD01821E448A0C00687509 /* TableStackView.swift */,
+				BAAD01841E448A1E00687509 /* TableStackView.xib */,
+			);
+			name = TableStackView;
+			sourceTree = "<group>";
+		};
+		BAAD01861E448F5200687509 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BAAD018C1E448F7700687509 /* Add Button */,
+				BAAD01871E448F5800687509 /* StackTableCell */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		BAAD01871E448F5800687509 /* StackTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				BAAD01881E448F6D00687509 /* StackTableCell.swift */,
+				BAAD01891E448F6D00687509 /* StackTableCell.xib */,
+			);
+			name = StackTableCell;
+			sourceTree = "<group>";
+		};
+		BAAD018C1E448F7700687509 /* Add Button */ = {
+			isa = PBXGroup;
+			children = (
+				BAAD018D1E448FA500687509 /* AddTableStackCell.swift */,
+				BAAD018E1E448FA500687509 /* AddTableStackCell.xib */,
+			);
+			name = "Add Button";
+			sourceTree = "<group>";
+		};
 		BAADCA271E2B5BF9006909D9 /* Check Box */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +1025,7 @@
 		BAD0D3881DE2AEC70081F28F /* Content Database */ = {
 			isa = PBXGroup;
 			children = (
+				BAAD01801E44894800687509 /* Data Source */,
 				BA59E3D11E3DAA3500BDF873 /* View */,
 				BAD0D39A1DE2B0BD0081F28F /* Worker */,
 				BAD0D38B1DE2AF580081F28F /* ContentDatabaseController.swift */,
@@ -978,6 +1040,8 @@
 			isa = PBXGroup;
 			children = (
 				BAAD016A1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift */,
+				BAAD017E1E44846700687509 /* SelectedTableWorker.swift */,
+				BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -1252,6 +1316,7 @@
 				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
 				BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */,
 				BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */,
+				BAAD018B1E448F6D00687509 /* StackTableCell.xib in Resources */,
 				BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */,
 				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
@@ -1263,6 +1328,8 @@
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
 				BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */,
+				BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */,
+				BAAD01851E448A1E00687509 /* TableStackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1430,6 +1497,7 @@
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BAF13D0C1E3F78B3005822AF /* MainWindowController.swift in Sources */,
 				BAD0D38F1DE2AF6C0081F28F /* TableDatabaseController.swift in Sources */,
+				BAAD01831E448A0C00687509 /* TableStackView.swift in Sources */,
 				BAD0D38A1DE2AEF10081F28F /* DetailSplitConnectionController.swift in Sources */,
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */,
@@ -1438,6 +1506,7 @@
 				BAF13D061E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainTabConnectionController.swift in Sources */,
 				BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */,
+				BAAD018F1E448FA500687509 /* AddTableStackCell.swift in Sources */,
 				BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */,
 				BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */,
 				BAAD016B1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift in Sources */,
@@ -1488,10 +1557,13 @@
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
 				BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */,
 				BA59E3D31E3DAA4300BDF873 /* GridDatabaseView.swift in Sources */,
+				BAAD018A1E448F6D00687509 /* StackTableCell.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
 				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,
 				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,
+				BAAD017F1E44846700687509 /* SelectedTableWorker.swift in Sources */,
 				BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */,
+				BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */,
 				BA9875691DF4449700901CD5 /* GroupColorView.swift in Sources */,
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,

@@ -8,6 +8,19 @@
 
 import Cocoa
 
-class ContentDatabasePresenter: NSObject {
+protocol ContentDatabasePresenterOutput: class {
+    
+}
 
+class ContentDatabasePresenter {
+    
+    //
+    // MARK: - Variable
+    weak var output: ContentDatabasePresenterOutput?
+}
+
+//
+// MARK: - ContentDatabaseInteractorOutput
+extension ContentDatabasePresenter: ContentDatabaseInteractorOutput {
+    
 }

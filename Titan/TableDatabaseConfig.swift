@@ -25,5 +25,4 @@ class TableDatabaseConfig {
         // View controller
         viewController.output = interactor
     }
-    
 }

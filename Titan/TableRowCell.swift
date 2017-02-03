@@ -41,10 +41,12 @@ class TableRowCell: NSTableCellView {
     override var backgroundStyle: NSBackgroundStyle {
         didSet {
             if self.backgroundStyle == .light {
+                self.tableImageView.image = NSImage(named: "icon_column_table")
                 self.tableTitleLbl.textColor = NSColor(hexString: "#8F949A")
                 self.tableTitleLbl.font = GlobalFont.font(.regular, size: 13)
             }
             else if self.backgroundStyle == .dark {
+                self.tableImageView.image = NSImage(named: "icon_column_table_selected")
                 self.tableTitleLbl.textColor = NSColor(hexString: "#3C4B52")
                 self.tableTitleLbl.font = GlobalFont.font(.bold, size: 13)
             }

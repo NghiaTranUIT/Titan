@@ -9,10 +9,16 @@
 import Cocoa
 import TitanKit
 
+protocol TablesDataSourceDelegate: class {
+    func TablesDataSourceDidSelectTable(_ table: Table)
+    func TablesDataSourceDidDoubleTapOnTable(_ table: Table)
+}
+
 class TablesDataSource: NSObject {
     
     //
     // MARK: - Variable
+    weak var delegate: TablesDataSourceDelegate?
     fileprivate var isFirstTime = true
     var tableView: NSTableView! {didSet{self.setupTableView()}}
     fileprivate var tables: [Table] {
@@ -46,14 +52,26 @@ class TablesDataSource: NSObject {
         self.tableView.registerView(PlaceholderTableCell.self)
         self.tableView.registerView(TableRowCell.self)
         
+        // Make col alwasy fit tableView's width
         self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
         self.tableView.sizeLastColumnToFit()
+        
+        // Double tap
+        self.tableView.doubleAction = #selector(self.doubleTapAction)
+        
         // Reload
         self.tableView.reloadData()
     }
     
     @objc func tableStateChanged() {
         self.tableView.reloadData()
+    }
+    
+    @objc func doubleTapAction() {
+        guard self.tableView.selectedRow >= 0 else {return}
+        
+        let table = self.tables[self.tableView.selectedRow]
+        self.delegate?.TablesDataSourceDidDoubleTapOnTable(table)
     }
 }
 
@@ -92,7 +110,15 @@ extension TablesDataSource: NSTableViewDataSource {
 }
 
 extension TablesDataSource: NSTableViewDelegate {
-
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        guard self.tables.count > 0 else {return false}
+        
+        let table = self.tables[row]
+        self.delegate?.TablesDataSourceDidSelectTable(table)
+        return true
+    }
+    
 }
 
 //

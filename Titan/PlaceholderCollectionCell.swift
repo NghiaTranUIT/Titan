@@ -10,9 +10,35 @@ import Cocoa
 
 class PlaceholderCollectionCell: NSCollectionViewItem {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+    //
+    // MARK: - OUTLET
+    @IBOutlet weak var placeholderTitleLbl: NSTextField!
+    @IBOutlet weak var loaderView: NSProgressIndicator!
+    
+    //
+    // MARK: - View Cycle
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        // Prepare
+        self.loaderView.stopAnimation(nil)
     }
     
+    func configurePlaceholderCell(with title: String, isShowLoader: Bool) {
+        
+        // Loader
+        if isShowLoader {
+            self.loaderView.isHidden = false
+            self.placeholderTitleLbl.isHidden = true
+            self.loaderView.startAnimation(nil)
+        }
+        else {
+            self.loaderView.isHidden = true
+            self.placeholderTitleLbl.isHidden = false
+            self.loaderView.stopAnimation(nil)
+        }
+        
+        // Title
+        self.placeholderTitleLbl.stringValue = title
+    }
 }

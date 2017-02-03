@@ -19,6 +19,7 @@ enum NotificationType: String {
     case saveCurrentDatabaseObj
     case openDetailDatabaseWindow
     case windowWillClose
+    case tableStateChanged
     
     // To String
     func toString() -> String {

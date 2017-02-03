@@ -17,7 +17,7 @@ class TableDatabaseController: NSViewController {
     //
     // MARK: - Variable
     var output: TableDatabaseControllerOutput?
-    fileprivate lazy var dataSource: TablesDataSource = self.initDataSource()
+    fileprivate var dataSource: TablesDataSource!
     
     //
     // MARK: - OUTLET
@@ -39,9 +39,13 @@ class TableDatabaseController: NSViewController {
     
     override func initActions() {
         
+        // Setup data source
+        self.dataSource = self.initDataSource()
+        
         // Fetch column info
         self.output?.fetchTablesDatabaseInfo()
     }
+    
 }
 
 //

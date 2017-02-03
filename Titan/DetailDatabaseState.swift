@@ -33,6 +33,8 @@ extension DetailDatabaseState {
             
             Logger.info("Found \(action.tables.count) tables")
             
+            NotificationManager.postNotificationOnMainThreadType(.tableStateChanged)
+            
         default:
             break
         }

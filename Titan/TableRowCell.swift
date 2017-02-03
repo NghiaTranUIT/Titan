@@ -7,9 +7,14 @@
 //
 
 import Cocoa
+import TitanKit
 
 class TableRowCell: NSCollectionViewItem {
 
+    //
+    // MARK: - Variable
+    fileprivate var table: Table?
+    
     //
     // MARK: - OUTLET
     
@@ -25,7 +30,23 @@ class TableRowCell: NSCollectionViewItem {
         // Do view setup here.
     }
     
+    func configureCell(with table: Table) {
+        self.table = table
+        self.setupData()
+    }
+    
     @IBAction func hoverBtnTapped(_ sender: Any) {
         
+    }
+}
+
+//
+// MARK: - Private
+extension TableRowCell {
+    
+    fileprivate func setupData() {
+        guard let table = self.table else {return}
+        
+        self.tableTitleLbl.stringValue = table.tableName ?? "Unknow"
     }
 }

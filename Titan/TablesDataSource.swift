@@ -13,9 +13,26 @@ class TablesDataSource: NSObject {
     
     //
     // MARK: - Variable
+    fileprivate var isFirstTime = true
     var collectionView: NSCollectionView! {didSet{self.setupCollectionView()}}
     fileprivate var tables: [Table] {
         return mainStore.state.detailDatabaseState!.tables
+    }
+    
+    //
+    // MARK: - Init
+    override init() {
+        super.init()
+        self.initCommon()
+    }
+    
+    deinit {
+        NotificationManager.removeAllObserve(self)
+    }
+    
+    /// Obserable
+    fileprivate func initCommon() {
+        NotificationManager.observeNotificationType(.tableStateChanged, observer: self, selector: #selector(self.tableStateChanged), object: nil)
     }
     
     //
@@ -26,20 +43,23 @@ class TablesDataSource: NSObject {
         self.collectionView.dataSource = self
         
         // Register
-        self.collectionView.registerCell(ConnectionCell.self)
-        self.collectionView.registerSupplementary(ConnectionGroupCell.self, kind: NSCollectionElementKindSectionHeader)
+        self.collectionView.registerCell(PlaceholderCollectionCell.self)
+        self.collectionView.registerCell(TableRowCell.self)
         
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
         let width = collectionView.frame.size.width
-        flowLayout.itemSize = CGSize(width: 250, height: 31)
-        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 6, 0)
-        flowLayout.headerReferenceSize = CGSize(width: width, height: 31)
+        flowLayout.itemSize = CGSize(width: width, height: 32)
+        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 0, 0)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
         self.collectionView.collectionViewLayout = flowLayout
         
         // Reload
+        self.collectionView.reloadData()
+    }
+    
+    @objc func tableStateChanged() {
         self.collectionView.reloadData()
     }
 }
@@ -72,11 +92,16 @@ extension TablesDataSource: NSCollectionViewDataSource {
     }
     
     fileprivate func placeholderCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> PlaceholderCollectionCell {
-        
+        let cell = collectionView.makeItem(withIdentifier: PlaceholderCollectionCell.identifierView, for: indexPath) as! PlaceholderCollectionCell
+        cell.configurePlaceholderCell(with: "No tables", isShowLoader: self.isFirstTime)
+        return cell
     }
     
     fileprivate func tableCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> TableRowCell {
-        
+        let cell = collectionView.makeItem(withIdentifier: TableRowCell.identifierView, for: indexPath) as! TableRowCell
+        let table = self.tables[indexPath.item]
+        cell.configureCell(with: table)
+        return cell
     }
 }
 

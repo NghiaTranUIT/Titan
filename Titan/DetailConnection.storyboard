@@ -96,28 +96,28 @@
             </objects>
             <point key="canvasLocation" x="820" y="693"/>
         </scene>
-        <!--Column Database Controller-->
+        <!--Table Database Controller-->
         <scene sceneID="f5H-dE-5UX">
             <objects>
-                <viewController id="fCF-A4-i3c" customClass="ColumnDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fCF-A4-i3c" customClass="TableDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ssG-JH-zXC">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Bq-dF-KGu">
-                                <rect key="frame" x="0.0" y="256" width="450" height="44"/>
+                                <rect key="frame" x="0.0" y="256" width="250" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FDf-vs-4O7"/>
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T57-Bn-LN8">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Rin-cW-UXG">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="3Tb-R7-7c7">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Q7k-Pa-R1s">
                                                 <size key="itemSize" width="50" height="32"/>
@@ -127,8 +127,11 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FSM-30-pXU">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="R5Y-de-u07"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="FSM-30-pXU">
+                                    <rect key="frame" x="0.0" y="240" width="250" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jyI-d9-xem">

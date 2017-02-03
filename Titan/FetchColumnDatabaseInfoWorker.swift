@@ -25,7 +25,8 @@ class FetchColumnDatabaseInfoWorker: AsyncWorker {
     }
     
     func execute() -> Promise<T> {
-        return DatabaseManager.shared.fetchTableInformation()
+        return DatabaseManager.shared
+        .fetchTableInformation()
         .thenOnMainTheard(execute: { (tables) -> Promise<T> in
             
             // Action

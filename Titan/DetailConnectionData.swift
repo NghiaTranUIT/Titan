@@ -29,6 +29,7 @@ struct DetailConnectionData {
         databaseObj.host = self.host
         databaseObj.username = self.username
         databaseObj.password = self.password
+        databaseObj.database = self.databaseName
         databaseObj.saveToKeychain = self.saveToKeyChain
         databaseObj.ssh = self.sshObj
     }

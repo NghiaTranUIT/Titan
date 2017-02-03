@@ -17,16 +17,39 @@ class TableRowCell: NSTableCellView {
     
     //
     // MARK: - OUTLET
-    
     @IBOutlet weak var tableImageView: NSImageView!
     @IBOutlet weak var tableTitleLbl: NSTextField!
     
+    //
+    // MARK: - View Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // Base
+        self.initBaseAbility()
+    }
+    
+    internal override func initCommon() {
+        
+    }
     
     func configureCell(with table: Table) {
         self.table = table
         self.setupData()
     }
-
+    
+    override var backgroundStyle: NSBackgroundStyle {
+        didSet {
+            if self.backgroundStyle == .light {
+                self.tableTitleLbl.textColor = NSColor(hexString: "#8F949A")
+                self.tableTitleLbl.font = GlobalFont.font(.regular, size: 13)
+            }
+            else if self.backgroundStyle == .dark {
+                self.tableTitleLbl.textColor = NSColor(hexString: "#3C4B52")
+                self.tableTitleLbl.font = GlobalFont.font(.bold, size: 13)
+            }
+        }
+    }
 }
 
 //

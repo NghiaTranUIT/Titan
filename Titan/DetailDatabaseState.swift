@@ -31,7 +31,7 @@ extension DetailDatabaseState {
         case let action as UpdateTablesInfoAction:
             
             state.tables = action.tables
-            
+            mainStore.state.detailDatabaseState?.tables = action.tables
             Logger.info("Found \(action.tables.count) tables")
             
             NotificationManager.postNotificationOnMainThreadType(.tableStateChanged)
@@ -39,6 +39,7 @@ extension DetailDatabaseState {
         default:
             break
         }
+        
         // Return
         return state
     }

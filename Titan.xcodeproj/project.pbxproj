@@ -93,6 +93,8 @@
 		BAAD01731E4444CE00687509 /* screen_columns_row@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */; };
 		BAAD01771E4448A000687509 /* PlaceholderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */; };
 		BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */; };
+		BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01791E447B3400687509 /* TableRowView.swift */; };
+		BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017C1E447DFE00687509 /* GlobalFont.swift */; };
 		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
@@ -258,6 +260,8 @@
 		BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_columns_row@2x.jpg"; sourceTree = "<group>"; };
 		BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTableCell.swift; sourceTree = "<group>"; };
 		BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableCell.xib; sourceTree = "<group>"; };
+		BAAD01791E447B3400687509 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
+		BAAD017C1E447DFE00687509 /* GlobalFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFont.swift; sourceTree = "<group>"; };
 		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
@@ -373,7 +377,6 @@
 		BA035FC11D97DB9700B616AB /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				BA4AFF3A1DACD4DE009AE139 /* Reducer */,
 				BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */,
 			);
 			name = "App Delegate";
@@ -642,6 +645,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAAD017B1E447DF200687509 /* Font */,
 				BAF13D0E1E40EECD005822AF /* App Preferences */,
 				BAF13D021E3E2C67005822AF /* Queue Manager */,
 				BAF13CF91E3E2816005822AF /* Operation */,
@@ -693,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4AFF351DACD427009AE139 /* State */,
+				BA4AFF3A1DACD4DE009AE139 /* Reducer */,
 			);
 			name = "Redux Store";
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 			isa = PBXGroup;
 			children = (
 				BAAD016D1E44437800687509 /* TableRowCell */,
+				BAAD01791E447B3400687509 /* TableRowView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -854,6 +860,14 @@
 				BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */,
 			);
 			name = PlaceholderTableCell;
+			sourceTree = "<group>";
+		};
+		BAAD017B1E447DF200687509 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BAAD017C1E447DFE00687509 /* GlobalFont.swift */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		BAADCA271E2B5BF9006909D9 /* Check Box */ = {
@@ -1452,6 +1466,7 @@
 				BAAD01691E4431F800687509 /* TablesDataSource.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
 				BAF13D091E3F75C4005822AF /* DetailDatabaseWindowController.swift in Sources */,
+				BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */,
 				BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */,
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
@@ -1471,6 +1486,7 @@
 				BAF13CFE1E3E2845005822AF /* ConnectionDatabaseOperation.swift in Sources */,
 				BAD0D3921DE2B08E0081F28F /* TableDatabaseInteractor.swift in Sources */,
 				BA344FE11DAE77830005A566 /* SlackReporter.swift in Sources */,
+				BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */,
 				BA59E3D31E3DAA4300BDF873 /* GridDatabaseView.swift in Sources */,
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
 				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,

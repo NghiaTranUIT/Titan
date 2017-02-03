@@ -46,6 +46,8 @@ class TablesDataSource: NSObject {
         self.tableView.registerView(PlaceholderTableCell.self)
         self.tableView.registerView(TableRowCell.self)
         
+        self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+        self.tableView.sizeLastColumnToFit()
         // Reload
         self.tableView.reloadData()
     }
@@ -75,6 +77,18 @@ extension TablesDataSource: NSTableViewDataSource {
         return self.tableCell(with: tableView, row: row)
     }
     
+    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 26
+    }
+    
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        var rowView = tableView.make(withIdentifier: TableRowView.identifierView, owner: self) as? TableRowView
+        if rowView == nil {
+            rowView = TableRowView()
+            rowView?.identifier = TableRowView.identifierView
+        }
+        return rowView
+    }
 }
 
 extension TablesDataSource: NSTableViewDelegate {

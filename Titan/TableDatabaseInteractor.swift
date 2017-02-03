@@ -8,24 +8,25 @@
 
 import Cocoa
 
-protocol ColumnDatabaseInteractorOutput {
+protocol TableDatabaseInteractorOutput {
     
 }
 
-class ColumnDatabaseInteractor {
+class TableDatabaseInteractor {
 
     //
     // MARK: - Variable
-    var output: ColumnDatabaseInteractorOutput?
+    var output: TableDatabaseInteractorOutput?
 }
 
 //
 // MARK: - ColumnDatabaseControllerOutput
-extension ColumnDatabaseInteractor: ColumnDatabaseControllerOutput {
+extension TableDatabaseInteractor: TableDatabaseControllerOutput {
     
-    func fetchColumnDatabaseInfo() {
+    func fetchTablesDatabaseInfo() {
+        
         let selectedDb = mainStore.state.detailDatabaseState!.selectedConnection
-        let worker = FetchColumnDatabaseInfoWorker(databaseObj: selectedDb!)
+        let worker = FetchTableDatabaseInfoWorker(databaseObj: selectedDb!)
         worker.execute()
         .then { (_) -> Void in
             

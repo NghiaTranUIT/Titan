@@ -8,19 +8,19 @@
 
 import Cocoa
 
-protocol ColumnDatabasePresenterOutput: class {
+protocol TableDatabasePresenterOutput: class {
     
 }
 
-class ColumnDatabasePresenter {
+class TableDatabasePresenter {
 
     //
     // MARK: - Variable
-    weak var output: ColumnDatabasePresenterOutput?
+    weak var output: TableDatabasePresenterOutput?
 }
 
 //
 // MARK: - ColumnDatabaseInteractorOutput
-extension ColumnDatabasePresenter: ColumnDatabaseInteractorOutput {
+extension TableDatabasePresenter: TableDatabaseInteractorOutput {
     
 }

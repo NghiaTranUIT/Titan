@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -110,13 +110,47 @@
                                     <constraint firstAttribute="height" constant="44" id="FDf-vs-4O7"/>
                                 </constraints>
                             </customView>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T57-Bn-LN8">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                <clipView key="contentView" drawsBackground="NO" id="Rin-cW-UXG">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="3Tb-R7-7c7">
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Q7k-Pa-R1s">
+                                                <size key="itemSize" width="50" height="32"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FSM-30-pXU">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jyI-d9-xem">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="T57-Bn-LN8" firstAttribute="leading" secondItem="ssG-JH-zXC" secondAttribute="leading" id="O0G-dS-PNl"/>
                             <constraint firstItem="7Bq-dF-KGu" firstAttribute="leading" secondItem="ssG-JH-zXC" secondAttribute="leading" id="XNA-xw-pFg"/>
                             <constraint firstItem="7Bq-dF-KGu" firstAttribute="top" secondItem="ssG-JH-zXC" secondAttribute="top" id="dRb-Z1-Tul"/>
+                            <constraint firstAttribute="trailing" secondItem="T57-Bn-LN8" secondAttribute="trailing" id="gLo-pi-fSV"/>
+                            <constraint firstAttribute="bottom" secondItem="T57-Bn-LN8" secondAttribute="bottom" id="i9x-v3-Fmd"/>
                             <constraint firstAttribute="trailing" secondItem="7Bq-dF-KGu" secondAttribute="trailing" id="kvd-NI-6su"/>
+                            <constraint firstItem="T57-Bn-LN8" firstAttribute="top" secondItem="7Bq-dF-KGu" secondAttribute="bottom" id="sBB-Sk-DLE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="3Tb-R7-7c7" id="QnX-Uk-Bqv"/>
+                        <outlet property="searchBarView" destination="7Bq-dF-KGu" id="JOf-h7-6Bf"/>
+                    </connections>
                 </viewController>
                 <customObject id="iy9-qj-Xft" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

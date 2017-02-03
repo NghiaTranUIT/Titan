@@ -15,7 +15,7 @@ struct UpdateTablesInfoAction: Action {
     var tables: [Table] = []
 }
 
-class FetchColumnDatabaseInfoWorker: AsyncWorker {
+class FetchTableDatabaseInfoWorker: AsyncWorker {
     
     typealias T = Void
     var databaseObj: DatabaseObj!

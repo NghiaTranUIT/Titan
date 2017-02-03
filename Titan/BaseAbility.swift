@@ -28,9 +28,6 @@ import Foundation
     /// To do all things about UIs
     func initUIs()
     
-    /// Binding
-    func initBinding()
-    
     /// Action
     func initActions()
     
@@ -54,8 +51,6 @@ extension BaseAbility {
         self.initCommon()
         
         self.initUIs()
-        
-        self.initBinding()
         
         self.initActions()
         

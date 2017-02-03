@@ -23,4 +23,15 @@ class ColumnDatabaseInteractor {
 // MARK: - ColumnDatabaseControllerOutput
 extension ColumnDatabaseInteractor: ColumnDatabaseControllerOutput {
     
+    func fetchColumnDatabaseInfo() {
+        let selectedDb = mainStore.state.detailDatabaseState!.selectedConnection
+        let worker = FetchColumnDatabaseInfoWorker(databaseObj: selectedDb!)
+        worker.execute()
+        .then { (_) -> Void in
+            
+        }
+        .catch { error in
+            
+        }
+    }
 }

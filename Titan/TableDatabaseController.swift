@@ -22,7 +22,7 @@ class TableDatabaseController: NSViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var searchBarView: NSView!
-    @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var tableView: NSTableView!
     
     //
     // MARK: - View cycle
@@ -61,7 +61,7 @@ extension TableDatabaseController {
     // Init data source
     fileprivate func initDataSource() -> TablesDataSource {
         let data = TablesDataSource()
-        data.collectionView = self.collectionView
+        data.tableView = self.tableView
         return data
     }
 }

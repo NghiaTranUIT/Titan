@@ -9,7 +9,7 @@
 import Cocoa
 import TitanKit
 
-class TableRowCell: NSCollectionViewItem {
+class TableRowCell: NSTableCellView {
 
     //
     // MARK: - Variable
@@ -20,24 +20,13 @@ class TableRowCell: NSCollectionViewItem {
     
     @IBOutlet weak var tableImageView: NSImageView!
     @IBOutlet weak var tableTitleLbl: NSTextField!
-    @IBOutlet weak var hoverButton: NSButton!
     
-    
-    //
-    // MARK: - View Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
     
     func configureCell(with table: Table) {
         self.table = table
         self.setupData()
     }
-    
-    @IBAction func hoverBtnTapped(_ sender: Any) {
-        
-    }
+
 }
 
 //

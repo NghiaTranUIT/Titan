@@ -14,7 +14,7 @@ class TablesDataSource: NSObject {
     //
     // MARK: - Variable
     fileprivate var isFirstTime = true
-    var collectionView: NSCollectionView! {didSet{self.setupCollectionView()}}
+    var tableView: NSTableView! {didSet{self.setupTableView()}}
     fileprivate var tables: [Table] {
         return mainStore.state.detailDatabaseState!.tables
     }
@@ -37,40 +37,26 @@ class TablesDataSource: NSObject {
     
     //
     // MARK: - Public
-    func setupCollectionView() {
+    func setupTableView() {
         
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         // Register
-        self.collectionView.registerCell(PlaceholderCollectionCell.self)
-        self.collectionView.registerCell(TableRowCell.self)
-        
-        // Flow layout
-        let flowLayout = NSCollectionViewFlowLayout()
-        let width = collectionView.frame.size.width
-        flowLayout.itemSize = CGSize(width: width, height: 32)
-        flowLayout.sectionInset = NSEdgeInsetsMake(0, 0, 0, 0)
-        flowLayout.sectionHeadersPinToVisibleBounds = false
-        flowLayout.sectionFootersPinToVisibleBounds = false
-        self.collectionView.collectionViewLayout = flowLayout
+        self.tableView.registerView(PlaceholderTableCell.self)
+        self.tableView.registerView(TableRowCell.self)
         
         // Reload
-        self.collectionView.reloadData()
+        self.tableView.reloadData()
     }
     
     @objc func tableStateChanged() {
-        self.collectionView.reloadData()
+        self.tableView.reloadData()
     }
 }
 
-extension TablesDataSource: NSCollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: NSCollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+extension TablesDataSource: NSTableViewDataSource {
+    func numberOfRows(in tableView: NSTableView) -> Int {
         
         // placeholderCell cell
         if self.tables.count == 0 {
@@ -80,31 +66,35 @@ extension TablesDataSource: NSCollectionViewDataSource {
         return self.tables.count
     }
     
-    func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        // Placeholder
         if self.tables.count == 0 {
-            return self.placeholderCell(with: collectionView, indexPath: indexPath)
+            return self.placeholderCell(with: tableView, row: row)
         }
         
-        // table
-        return self.tableCell(with: collectionView, indexPath: indexPath)
+        return self.tableCell(with: tableView, row: row)
     }
     
-    fileprivate func placeholderCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> PlaceholderCollectionCell {
-        let cell = collectionView.makeItem(withIdentifier: PlaceholderCollectionCell.identifierView, for: indexPath) as! PlaceholderCollectionCell
+}
+
+extension TablesDataSource: NSTableViewDelegate {
+
+}
+
+//
+// MARK: - Private
+extension TablesDataSource {
+    
+    fileprivate func placeholderCell(with tableView: NSTableView, row: Int) -> PlaceholderTableCell {
+        let cell = tableView.make(withIdentifier: PlaceholderTableCell.identifierView, owner: self) as! PlaceholderTableCell
         cell.configurePlaceholderCell(with: "No tables", isShowLoader: self.isFirstTime)
         return cell
     }
     
-    fileprivate func tableCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> TableRowCell {
-        let cell = collectionView.makeItem(withIdentifier: TableRowCell.identifierView, for: indexPath) as! TableRowCell
-        let table = self.tables[indexPath.item]
+    fileprivate func tableCell(with tableView: NSTableView, row: Int) -> TableRowCell {
+        let cell = tableView.make(withIdentifier: TableRowCell.identifierView, owner: self) as! TableRowCell
+        let table = self.tables[row]
         cell.configureCell(with: table)
         return cell
     }
-}
-
-extension TablesDataSource: NSCollectionViewDelegate {
-    
 }

@@ -91,8 +91,8 @@
 		BAAD01701E4443AE00687509 /* TableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD016E1E4443AE00687509 /* TableRowCell.swift */; };
 		BAAD01711E4443AE00687509 /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD016F1E4443AE00687509 /* TableRowCell.xib */; };
 		BAAD01731E4444CE00687509 /* screen_columns_row@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */; };
-		BAAD01771E4448A000687509 /* PlaceholderCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01751E4448A000687509 /* PlaceholderCollectionCell.swift */; };
-		BAAD01781E4448A000687509 /* PlaceholderCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderCollectionCell.xib */; };
+		BAAD01771E4448A000687509 /* PlaceholderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */; };
+		BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */; };
 		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
@@ -256,8 +256,8 @@
 		BAAD016E1E4443AE00687509 /* TableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowCell.swift; sourceTree = "<group>"; };
 		BAAD016F1E4443AE00687509 /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
 		BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_columns_row@2x.jpg"; sourceTree = "<group>"; };
-		BAAD01751E4448A000687509 /* PlaceholderCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderCollectionCell.swift; sourceTree = "<group>"; };
-		BAAD01761E4448A000687509 /* PlaceholderCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderCollectionCell.xib; sourceTree = "<group>"; };
+		BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTableCell.swift; sourceTree = "<group>"; };
+		BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableCell.xib; sourceTree = "<group>"; };
 		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 		BA4AFF171DAC9672009AE139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAAD01741E44488D00687509 /* Placeholder Collection Cell */,
+				BAAD01741E44488D00687509 /* PlaceholderTableCell */,
 				BA3EEADB1E3B91F200B30D96 /* Tracking Button */,
 				BAADCA271E2B5BF9006909D9 /* Check Box */,
 				BA9875671DF4442D00901CD5 /* Group Color View */,
@@ -847,13 +847,13 @@
 			name = TableRowCell;
 			sourceTree = "<group>";
 		};
-		BAAD01741E44488D00687509 /* Placeholder Collection Cell */ = {
+		BAAD01741E44488D00687509 /* PlaceholderTableCell */ = {
 			isa = PBXGroup;
 			children = (
-				BAAD01751E4448A000687509 /* PlaceholderCollectionCell.swift */,
-				BAAD01761E4448A000687509 /* PlaceholderCollectionCell.xib */,
+				BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */,
+				BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */,
 			);
-			name = "Placeholder Collection Cell";
+			name = PlaceholderTableCell;
 			sourceTree = "<group>";
 		};
 		BAADCA271E2B5BF9006909D9 /* Check Box */ = {
@@ -1241,7 +1241,7 @@
 				BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */,
 				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
-				BAAD01781E4448A000687509 /* PlaceholderCollectionCell.xib in Resources */,
+				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
 				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
 				BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */,
@@ -1400,7 +1400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAD01771E4448A000687509 /* PlaceholderCollectionCell.swift in Sources */,
+				BAAD01771E4448A000687509 /* PlaceholderTableCell.swift in Sources */,
 				BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BAAD01701E4443AE00687509 /* TableRowCell.swift in Sources */,

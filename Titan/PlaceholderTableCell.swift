@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class PlaceholderCollectionCell: NSCollectionViewItem {
+class PlaceholderTableCell: NSTableCellView {
 
     //
     // MARK: - OUTLET

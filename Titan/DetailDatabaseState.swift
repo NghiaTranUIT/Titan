@@ -29,6 +29,7 @@ extension DetailDatabaseState {
             state.selectedConnection = action.selectedDatabase
             
         case let action as UpdateTablesInfoAction:
+            
             state.tables = action.tables
             
             Logger.info("Found \(action.tables.count) tables")

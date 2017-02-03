@@ -6,60 +6,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="ColumnDatabaseRowCel" customModule="Titan" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        <tableCellView identifier="TableRowCell" id="iwh-El-wxD" customClass="TableRowCell" customModule="Titan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="26"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Jj-mQ-iWS">
-                    <rect key="frame" x="24" y="8" width="16" height="16"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_column_table" id="z3h-hL-BiM"/>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2DG-dd-gjY">
+                    <rect key="frame" x="12" y="5" width="16" height="16"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_column_table" id="yIo-Ex-2Jd"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vq-n5-8am">
-                    <rect key="frame" x="50" y="7" width="37" height="24"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="user" id="bAz-OU-0lH">
-                        <font key="font" size="16" name="SFUIText-Regular"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E69-Zl-gLJ">
+                    <rect key="frame" x="38" y="5" width="31" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="user" id="rCr-IH-MqT">
+                        <font key="font" size="13" name="SFUIText-Regular"/>
                         <color key="textColor" red="0.5607843137254902" green="0.58039215686274503" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AZb-H7-hl6">
-                    <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="GvC-Ix-Qie">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="hoverBtnTapped:" target="0PX-Hw-JMc" id="RAq-E9-VcK"/>
-                    </connections>
-                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="8Vq-n5-8am" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="1" id="Eag-hl-DZE"/>
-                <constraint firstAttribute="bottom" secondItem="AZb-H7-hl6" secondAttribute="bottom" id="SSt-zk-I99"/>
-                <constraint firstItem="AZb-H7-hl6" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Scz-Um-cUP"/>
-                <constraint firstItem="8Vq-n5-8am" firstAttribute="leading" secondItem="5Jj-mQ-iWS" secondAttribute="trailing" constant="12" id="TuK-e1-HcI"/>
-                <constraint firstAttribute="trailing" secondItem="AZb-H7-hl6" secondAttribute="trailing" id="bfP-cj-QIB"/>
-                <constraint firstItem="5Jj-mQ-iWS" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="lXJ-lK-Zmr"/>
-                <constraint firstItem="5Jj-mQ-iWS" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="24" id="uFQ-fd-MYr"/>
-                <constraint firstItem="AZb-H7-hl6" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ueh-xX-dBB"/>
+                <constraint firstItem="E69-Zl-gLJ" firstAttribute="leading" secondItem="2DG-dd-gjY" secondAttribute="trailing" constant="12" id="1mY-ek-6Ng"/>
+                <constraint firstItem="2DG-dd-gjY" firstAttribute="centerY" secondItem="iwh-El-wxD" secondAttribute="centerY" id="Add-aO-obi"/>
+                <constraint firstItem="E69-Zl-gLJ" firstAttribute="centerY" secondItem="iwh-El-wxD" secondAttribute="centerY" constant="-1" id="Lqa-hD-PUT"/>
+                <constraint firstItem="2DG-dd-gjY" firstAttribute="leading" secondItem="iwh-El-wxD" secondAttribute="leading" constant="12" id="NEA-mF-PZz"/>
             </constraints>
-            <point key="canvasLocation" x="51" y="146"/>
-        </customView>
-        <collectionViewItem id="0PX-Hw-JMc" customClass="TableRowCell" customModule="Titan" customModuleProvider="target">
             <connections>
-                <outlet property="hoverButton" destination="AZb-H7-hl6" id="frD-KD-nDB"/>
-                <outlet property="tableImageView" destination="5Jj-mQ-iWS" id="X5f-cj-K5l"/>
-                <outlet property="tableTitleLbl" destination="8Vq-n5-8am" id="JIX-7O-LEI"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="7Pp-TW-cxo"/>
+                <outlet property="tableImageView" destination="2DG-dd-gjY" id="GpT-30-Au1"/>
+                <outlet property="tableTitleLbl" destination="E69-Zl-gLJ" id="CSH-qy-RFV"/>
             </connections>
-        </collectionViewItem>
+            <point key="canvasLocation" x="-63" y="24"/>
+        </tableCellView>
     </objects>
     <resources>
         <image name="icon_column_table" width="16" height="16"/>

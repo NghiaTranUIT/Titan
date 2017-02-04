@@ -24,6 +24,6 @@ class StackTableCell: NSCollectionViewItem {
     }
     
     func configureCell(with table: Table) {
-        self.tableTitleLbl.stringValue = table.tableName!
+//        self.tableTitleLbl.stringValue = table.tableName!
     }
 }

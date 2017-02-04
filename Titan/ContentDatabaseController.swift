@@ -34,7 +34,8 @@ class ContentDatabaseController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ContentDatabaseConfig.shared.configure(viewController: self)
+        // Base
+        self.initBaseAbility()
         
         // Init
         self.initStackView()
@@ -42,6 +43,11 @@ class ContentDatabaseController: NSViewController {
     
     deinit {
         NotificationManager.removeAllObserve(self)
+    }
+    
+    override func initCommon() {
+        ContentDatabaseConfig.shared.configure(viewController: self)
+
     }
     
     override func initObserver() {
@@ -69,12 +75,17 @@ extension ContentDatabaseController: ContentDatabasePresenterOutput {
 extension ContentDatabaseController {
     
     fileprivate func initStackView() {
-        var topViews: NSArray? = nil
-        let outputPtr = AutoreleasingUnsafeMutablePointer<NSArray>(&topViews)
-        let _ = TableStackView.xib()!.instantiate(withOwner: self, topLevelObjects: outputPtr)
+        var topViews: NSArray = []
+        let _ = TableStackView.xib()!.instantiate(withOwner: self, topLevelObjects: &topViews)
         
         // Init
-        self.tableStackView = topViews?.lastObject! as! TableStackView
+//        guard let _topViews = topViews else {return}
+        for view in topViews {
+            if let innerView = view as? TableStackView {
+                self.tableStackView = innerView
+                break
+            }
+        }
         
         // Add subview
         self.stackContainerView.addSubview(self.tableStackView)

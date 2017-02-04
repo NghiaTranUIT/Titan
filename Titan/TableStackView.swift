@@ -45,7 +45,7 @@ class TableStackView: NSView {
     }
 }
 
-extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate {
+extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         return 1
@@ -58,7 +58,7 @@ extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
         // Last cell -> Add cell
-        if indexPath.item == self.stackTables.count - 1 {
+        if indexPath.item == self.stackTables.count {
             return self.addStackTableCell(with: collectionView, indexPath: indexPath)
         }
         
@@ -82,14 +82,14 @@ extension TableStackView {
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = NSSize(width: 150, height: 44)
-        flowLayout.estimatedItemSize = NSSize.zero
+        flowLayout.estimatedItemSize = NSSize(width: 150, height: 44)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
+        flowLayout.minimumInteritemSpacing = 0
         self.collectionView.collectionViewLayout = flowLayout
         
-        self.collectionView.minItemSize = NSSize(width: 44, height: 44)
-        self.collectionView.maxItemSize = NSSize.zero
+//        self.collectionView.minItemSize = NSSize(width: 44, height: 44)
+//        self.collectionView.maxItemSize = NSSize.zero
         
         // Reload
         self.collectionView.reloadData()

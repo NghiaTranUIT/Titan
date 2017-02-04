@@ -43,7 +43,7 @@ extension TableDatabaseInteractor: TableDatabaseControllerOutput {
     }
     
     func didDoubleTapTable(_ table: Table) {
-        let worker = SelectedTableWorker(seletedTable: table)
+        let worker = DoubleTapTableWorker(seletedTable: table)
         worker.execute()
     }
 }

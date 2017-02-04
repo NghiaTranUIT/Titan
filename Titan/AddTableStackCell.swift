@@ -20,8 +20,17 @@ class AddTableStackCell: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        self.view.backgroundColor = NSColor.red
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {
+        self.addBtn.isEnabled = false
+    }
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: NSCollectionViewLayoutAttributes) -> NSCollectionViewLayoutAttributes {
+        let layout = super.preferredLayoutAttributesFitting(layoutAttributes)
+        layout.size = NSSize(width: 44, height: 44)
+        return layout
     }
 }

@@ -20,8 +20,6 @@ class AddTableStackCell: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        self.view.backgroundColor = NSColor.red
     }
     
     @IBAction func addBtnTapped(_ sender: Any) {

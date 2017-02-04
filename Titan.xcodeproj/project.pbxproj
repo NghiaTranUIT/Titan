@@ -99,10 +99,10 @@
 		BAAD01831E448A0C00687509 /* TableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01821E448A0C00687509 /* TableStackView.swift */; };
 		BAAD01851E448A1E00687509 /* TableStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01841E448A1E00687509 /* TableStackView.xib */; };
 		BAAD018A1E448F6D00687509 /* StackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01881E448F6D00687509 /* StackTableCell.swift */; };
-		BAAD018B1E448F6D00687509 /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01891E448F6D00687509 /* StackTableCell.xib */; };
 		BAAD018F1E448FA500687509 /* AddTableStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD018D1E448FA500687509 /* AddTableStackCell.swift */; };
 		BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD018E1E448FA500687509 /* AddTableStackCell.xib */; };
 		BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */; };
+		BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01931E462A5000687509 /* StackTableCell.xib */; };
 		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
@@ -274,10 +274,10 @@
 		BAAD01821E448A0C00687509 /* TableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStackView.swift; sourceTree = "<group>"; };
 		BAAD01841E448A1E00687509 /* TableStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableStackView.xib; sourceTree = "<group>"; };
 		BAAD01881E448F6D00687509 /* StackTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableCell.swift; sourceTree = "<group>"; };
-		BAAD01891E448F6D00687509 /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
 		BAAD018D1E448FA500687509 /* AddTableStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableStackCell.swift; sourceTree = "<group>"; };
 		BAAD018E1E448FA500687509 /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
 		BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTapTableWorker.swift; sourceTree = "<group>"; };
+		BAAD01931E462A5000687509 /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
 		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
@@ -917,7 +917,7 @@
 			isa = PBXGroup;
 			children = (
 				BAAD01881E448F6D00687509 /* StackTableCell.swift */,
-				BAAD01891E448F6D00687509 /* StackTableCell.xib */,
+				BAAD01931E462A5000687509 /* StackTableCell.xib */,
 			);
 			name = StackTableCell;
 			sourceTree = "<group>";
@@ -1311,12 +1311,12 @@
 				BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */,
 				BA9875641DF414FC00901CD5 /* screen_group@2x.jpg in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
+				BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */,
 				BAAD01731E4444CE00687509 /* screen_columns_row@2x.jpg in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
 				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
 				BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */,
 				BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */,
-				BAAD018B1E448F6D00687509 /* StackTableCell.xib in Resources */,
 				BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */,
 				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,

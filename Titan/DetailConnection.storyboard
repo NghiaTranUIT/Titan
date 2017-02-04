@@ -219,6 +219,10 @@
                             <constraint firstAttribute="trailing" secondItem="ZKy-vS-qVr" secondAttribute="trailing" id="yL0-8l-FZZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentContainerView" destination="ZKy-vS-qVr" id="lxk-xf-nFw"/>
+                        <outlet property="stackContainerView" destination="u9y-gK-UFP" id="GQy-eg-Ken"/>
+                    </connections>
                 </viewController>
                 <customObject id="X4F-OX-Ypn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

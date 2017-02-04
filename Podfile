@@ -15,7 +15,8 @@ def important_pods
     pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git', :tag => '2.2.2'
     pod 'DynamicColor', '~> 3.1.0'
     pod 'KVOController'
-
+    pod 'SnapKit', '~> 3.1.2'
+    
     # Can't use Promise kit in pod
     # Always get: Cannot define category for undefined class 'OS_dispatch_queue'
     # (」゜ロ゜)」

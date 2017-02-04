@@ -36,6 +36,13 @@ class TableStackView: NSView {
         // Setup Collection
         self.initStackView()
     }
+    
+    //
+    // MARK: - Public
+    
+    func updateStackView() {
+        self.collectionView.reloadData()
+    }
 }
 
 extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate {

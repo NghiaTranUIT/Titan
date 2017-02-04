@@ -28,14 +28,7 @@ class SelectedTableWorker: SyncWorker {
     }
     
     func execute() -> T {
-        
-        // Action
-        let action = SelectedTableAction(selectedTable: self.seletedTable)
-        mainStore.dispatch(action)
-        
-        // Push Changed
-        NotificationManager.postNotificationOnMainThreadType(.selectedTableStateChanged)
-        
+    
         // If no selection -> add to stack
         if mainStore.state.detailDatabaseState!.stackTables.count == 0 {
             
@@ -46,5 +39,12 @@ class SelectedTableWorker: SyncWorker {
             // Push change
             NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
         }
+        
+        // Select table
+        let action = SelectedTableAction(selectedTable: self.seletedTable)
+        mainStore.dispatch(action)
+        
+        // Push Changed
+        NotificationManager.postNotificationOnMainThreadType(.selectedTableStateChanged)
     }
 }

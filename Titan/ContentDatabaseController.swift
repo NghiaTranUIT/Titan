@@ -51,16 +51,11 @@ class ContentDatabaseController: NSViewController {
     }
     
     override func initObserver() {
-        NotificationManager.observeNotificationType(NotificationType.selectedTableStateChanged, observer: self, selector: #selector(self.selectedTableStateChangedNotification), object: nil)
+        NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
         NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
     }
     
-    @objc func selectedTableStateChangedNotification() {
-        
-    }
-    
     @objc func stackTableStateChangedNotification() {
-        
         // Update stack view
         self.tableStackView.updateStackView()
     }

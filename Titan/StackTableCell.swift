@@ -23,7 +23,16 @@ class StackTableCell: NSCollectionViewItem {
         // Do view setup here.
     }
     
-    func configureCell(with table: Table) {
+    override var isSelected: Bool {
+        didSet {
+            self.tableTitleLbl.textColor = isSelected ? NSColor(hexString: "#2D2E30") : NSColor(hexString: "#8F9498")
+            self.tableImageView.image = isSelected ? NSImage(named: "icon_stack_table_selected") : NSImage(named: "icon_stack_table")
+        }
+    }
+    
+    func configureCell(with table: Table, isSelected: Bool = false) {
         self.tableTitleLbl.stringValue = table.tableName!
+        
+        self.isSelected = isSelected
     }
 }

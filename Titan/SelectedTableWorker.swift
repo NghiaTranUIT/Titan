@@ -35,9 +35,6 @@ class SelectedTableWorker: SyncWorker {
             // Dispatch
             let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
             mainStore.dispatch(addStackAction)
-            
-            // Push change
-            NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
         }
         
         // Select table
@@ -45,6 +42,6 @@ class SelectedTableWorker: SyncWorker {
         mainStore.dispatch(action)
         
         // Push Changed
-        NotificationManager.postNotificationOnMainThreadType(.selectedTableStateChanged)
+        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
     }
 }

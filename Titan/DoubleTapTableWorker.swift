@@ -24,11 +24,12 @@ class DoubleTapTableWorker: SyncWorker {
         // Add to stack if need
         let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
         mainStore.dispatch(addStackAction)
-        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
         
         // Select
         let action = SelectedTableAction(selectedTable: self.seletedTable)
         mainStore.dispatch(action)
-        NotificationManager.postNotificationOnMainThreadType(.selectedTableStateChanged)
+        
+        // Post
+        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
     }
 }

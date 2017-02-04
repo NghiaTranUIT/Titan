@@ -13,8 +13,19 @@ class TableStackView: NSView {
 
     //
     // MARK: - Variable
-    var stackTables: [Table] {
+    fileprivate var stackTables: [Table] {
         return mainStore.state.detailDatabaseState!.stackTables
+    }
+    fileprivate var selectedTable: Table {
+        return mainStore.state.detailDatabaseState!.selectedTable
+    }
+    fileprivate var selectedTableIndex: Int {
+        for (i,e) in self.stackTables.enumerated() {
+            if e.tableName! == self.selectedTable.tableName! {
+                return i
+            }
+        }
+        return -1
     }
     
     //
@@ -82,7 +93,7 @@ extension TableStackView {
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.estimatedItemSize = NSSize(width: 150, height: 44)
+        flowLayout.estimatedItemSize = NSSize(width: 250, height: 44)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
         flowLayout.minimumInteritemSpacing = 0
@@ -104,7 +115,8 @@ extension TableStackView {
         let cell = collectionView.makeItem(withIdentifier: StackTableCell.identifierView, for: indexPath) as! StackTableCell
         
         let table = self.stackTables[indexPath.item]
-        cell.configureCell(with: table)
+        let isSelected = indexPath.item == self.selectedTableIndex
+        cell.configureCell(with: table, isSelected: isSelected)
         
         return cell
     }

@@ -89,10 +89,16 @@ extension TableStackView {
     }
     
     fileprivate func addStackTableCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> AddTableStackCell {
-        
+        let cell = collectionView.makeItem(withIdentifier: AddTableStackCell.identifierView, for: indexPath) as! AddTableStackCell
+        return cell
     }
     
     fileprivate func stackTableCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> StackTableCell {
+        let cell = collectionView.makeItem(withIdentifier: StackTableCell.identifierView, for: indexPath) as! StackTableCell
         
+        let table = self.stackTables[indexPath.item]
+        cell.configureCell(with: table)
+        
+        return cell
     }
 }

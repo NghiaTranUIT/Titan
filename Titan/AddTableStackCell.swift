@@ -10,9 +10,18 @@ import Cocoa
 
 class AddTableStackCell: NSCollectionViewItem {
 
+    //
+    // MARK: - OUTLET
+    @IBOutlet weak var addBtn: NSButton!
+    
+    
+    //
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
+    @IBAction func addBtnTapped(_ sender: Any) {
+    }
 }

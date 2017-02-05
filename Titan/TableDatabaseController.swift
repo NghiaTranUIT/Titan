@@ -76,6 +76,7 @@ extension TableDatabaseController {
     fileprivate func initMenuContextView() -> TableSchemeContextMenuView {
         let contextView = TableSchemeContextMenuView.viewFromNib()!
         contextView.contextDelegate = self
+        contextView.delegate = self
         return contextView
     }
 }
@@ -99,10 +100,15 @@ extension TableDatabaseController: ContextMenuTableViewDelegate {
     func customContexMenuView(for event: NSEvent) -> NSMenu? {
         
         let pt = self.tableView.convert(event.locationInWindow, from: nil)
-        let selectedRow = self.tableView.row(at: pt)
-        guard selectedRow >= 0 else {return nil}
-        let seletedTable = self.dataSource.tableAtIndex(selectedRow)
-        self.rightMenuContextView.configureContextView(with: seletedTable)
+        let selectedRowIndex = self.tableView.row(at: pt)
+        guard selectedRowIndex >= 0 else {return nil}
+        guard let selectedRow = self.tableView.rowView(atRow: selectedRowIndex, makeIfNecessary: true)?
+                                .view(atColumn: 0) as? TableRowCell else {return nil}
+        
+        // Update
+        selectedRow.updateRightClickState()
+        let seletedTable = self.dataSource.tableAtIndex(selectedRowIndex)
+        self.rightMenuContextView.configureContextView(with: seletedTable, selectedRow: selectedRow)
         return self.rightMenuContextView
     }
 }
@@ -113,5 +119,14 @@ extension TableDatabaseController: TableSchemeContextMenuViewDelegate {
     
     func TableSchemeContextMenuViewDidTapAction(_ action: TableSchemmaContextAction, table: Table) {
         self.output?.didDoubleTapTable(table)
+    }
+}
+
+extension TableDatabaseController: NSMenuDelegate {
+    func menuDidClose(_ menu: NSMenu) {
+        guard let menu = menu as? TableSchemeContextMenuView else {return}
+        
+        // Reset state
+        menu.selectedRow?.updateRightClickState(isHover: false)
     }
 }

@@ -28,11 +28,13 @@ class TableSchemeContextMenuView: NSMenu {
     // MARK: - Variable
     weak var contextDelegate: TableSchemeContextMenuViewDelegate?
     weak var currentItem: Table?
+    weak var selectedRow: TableRowCell?
     
     //
     // MARK: - Public
-    func configureContextView(with table: Table) {
+    func configureContextView(with table: Table, selectedRow: TableRowCell) {
         self.currentItem = table
+        self.selectedRow = selectedRow
     }
     
     //

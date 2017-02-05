@@ -29,13 +29,9 @@ class TableRowCell: NSTableCellView {
         self.initBaseAbility()
     }
     
-    internal override func initCommon() {
-        
-    }
-    
-    func configureCell(with table: Table) {
-        self.table = table
-        self.setupData()
+    override func initCommon() {
+        self.layer?.borderColor = NSColor.blue.cgColor
+        self.layer?.cornerRadius = 5
     }
     
     override var backgroundStyle: NSBackgroundStyle {
@@ -52,6 +48,17 @@ class TableRowCell: NSTableCellView {
             }
         }
     }
+    
+    //
+    // MARK: - Public
+    func configureCell(with table: Table) {
+        self.table = table
+        self.setupData()
+    }
+    
+    func updateRightClickState(isHover: Bool = true) {
+        self.layer?.borderWidth = isHover ? 1 : 0
+    }
 }
 
 //
@@ -62,5 +69,6 @@ extension TableRowCell {
         guard let table = self.table else {return}
         
         self.tableTitleLbl.stringValue = table.tableName ?? "Unknow"
+        self.layer?.borderWidth = 0
     }
 }

@@ -101,7 +101,8 @@ extension TableDatabaseController: ContextMenuTableViewDelegate {
         let pt = self.tableView.convert(event.locationInWindow, from: nil)
         let selectedRow = self.tableView.row(at: pt)
         guard selectedRow >= 0 else {return nil}
-        
+        let seletedTable = self.dataSource.tableAtIndex(selectedRow)
+        self.rightMenuContextView.configureContextView(with: seletedTable)
         return self.rightMenuContextView
     }
 }

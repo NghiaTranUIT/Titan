@@ -60,15 +60,21 @@ class TablesDataSource: NSObject {
         self.tableView.reloadData()
     }
     
+    // Update
     @objc func tableStateChanged() {
         self.tableView.reloadData()
     }
     
+    // Double tap
     @objc func doubleTapAction() {
         guard self.tableView.selectedRow >= 0 else {return}
         
         let table = self.tables[self.tableView.selectedRow]
         self.delegate?.TablesDataSourceDidDoubleTapOnTable(table)
+    }
+    
+    func tableAtIndex(_ index: Int) -> Table {
+        return self.tables[index]
     }
 }
 

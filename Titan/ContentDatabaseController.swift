@@ -98,7 +98,7 @@ extension ContentDatabaseController {
         guard let selectedTable = self.selectedTable else {return}
         
         let filter = self.gridDatabaseViews.filter { gridView -> Bool in
-            return gridView.table.tableName! == selectedTable.tableName!
+            return gridView.table == selectedTable
         }
         
         // Remove all
@@ -108,10 +108,11 @@ extension ContentDatabaseController {
         
         // Add
         if let gridView = filter.first {
+            gridView.configureGrid(with: selectedTable)
             self.addGridView(gridView)
         } else {
             let gridView = GridDatabaseView.viewFromNib()!
-            gridView.configureGrid(with: self.selectedTable!)
+            gridView.configureGrid(with: selectedTable)
             self.gridDatabaseViews.append(gridView)
             self.addGridView(gridView)
         }

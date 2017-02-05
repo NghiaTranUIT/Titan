@@ -12,6 +12,7 @@ import ReSwift
 
 struct SelectedTableAction: Action {
     var selectedTable: Table!
+    var replaceCurrentTable: Bool
 }
 
 struct AddSelectedTableToStackAction: Action {
@@ -30,15 +31,17 @@ class SelectedTableWorker: SyncWorker {
     func execute() -> T {
     
         // If no selection -> add to stack
+        var replace = false
         if mainStore.state.detailDatabaseState!.stackTables.count == 0 {
             
             // Dispatch
+            replace = true
             let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
             mainStore.dispatch(addStackAction)
         }
         
         // Select table
-        let action = SelectedTableAction(selectedTable: self.seletedTable)
+        let action = SelectedTableAction(selectedTable: self.seletedTable, replaceCurrentTable: true)
         mainStore.dispatch(action)
         
         // Push Changed

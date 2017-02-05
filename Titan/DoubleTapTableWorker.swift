@@ -26,7 +26,7 @@ class DoubleTapTableWorker: SyncWorker {
         mainStore.dispatch(addStackAction)
         
         // Select
-        let action = SelectedTableAction(selectedTable: self.seletedTable)
+        let action = SelectedTableAction(selectedTable: self.seletedTable, replaceCurrentTable: false)
         mainStore.dispatch(action)
         
         // Post

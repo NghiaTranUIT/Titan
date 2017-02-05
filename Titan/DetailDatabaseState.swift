@@ -40,21 +40,31 @@ extension DetailDatabaseState {
         case let action as SelectedTableAction:
             
             // Replace previous selectedTable with new one
-            if let previousTable = state.selectedTable {
-                state.stackTables = state.stackTables.map({ table -> Table in
-                    if table.tableName! == previousTable.tableName! {
-                        return action.selectedTable
-                    }
-                    return table
-                })
+            let contains = state.stackTables.filter({ (table) -> Bool in
+                return table == action.selectedTable
+            })
+            
+            // Only replace if there is no table in stack
+            // && force replace
+            if action.replaceCurrentTable && contains.count == 0 {
+                if let previousTable = state.selectedTable,
+                    previousTable != action.selectedTable {
+                    state.stackTables = state.stackTables.map({ table -> Table in
+                        if table == previousTable {
+                            return action.selectedTable
+                        }
+                        return table
+                    })
+                }
             }
+
             state.selectedTable = action.selectedTable
             
         case let action as AddSelectedTableToStackAction:
             
             // Add if need
             let filter = state.stackTables.filter({ (table) -> Bool in
-                return table.tableName! == action.selectedTable.tableName!
+                return table == action.selectedTable
             })
             
             if filter.count == 0 {

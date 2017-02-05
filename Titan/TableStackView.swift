@@ -18,7 +18,7 @@ class TableStackView: NSView {
     var selectedTableIndex: Int {
         guard let selectedTable = self.selectedTable else {return -1}
         for (i,e) in self.stackTables.enumerated() {
-            if e.tableName! == selectedTable.tableName! {
+            if e == selectedTable {
                 return i
             }
         }
@@ -52,12 +52,14 @@ class TableStackView: NSView {
     func updateStackView() {
         Logger.info("updateStackView")
         self.collectionView.reloadData()
+        Logger.info(self.stackTables)
+        Logger.info("Selected index = \(self.selectedTableIndex)")
     }
     
     // Determine if table is in stack or not
     func isTableInStack(for table: Table) -> Bool {
         let filter = self.stackTables.filter { _table -> Bool in
-            return _table.tableName! == table.tableName!
+            return _table == table
         }
         return filter.count > 0
     }

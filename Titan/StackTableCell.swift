@@ -9,8 +9,17 @@
 import Cocoa
 import TitanKit
 
+protocol StackTableCellDelegate: class {
+    func StackTableCellDidSelectTable(_ table: Table)
+}
+
 class StackTableCell: NSCollectionViewItem {
 
+    //
+    // MARK: - Variable
+    weak var delegate: StackTableCellDelegate?
+    fileprivate var table: Table?
+    
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableImageView: NSImageView!
@@ -31,8 +40,15 @@ class StackTableCell: NSCollectionViewItem {
     }
     
     func configureCell(with table: Table, isSelected: Bool = false) {
+        self.table = table
         self.tableTitleLbl.stringValue = table.tableName!
-        
         self.isSelected = isSelected
+    }
+    
+    @IBAction func actionBtnTapped(_ sender: Any) {
+        guard self.isSelected == false else {return}
+        guard let table = self.table else {return}
+        
+        self.delegate?.StackTableCellDidSelectTable(table)
     }
 }

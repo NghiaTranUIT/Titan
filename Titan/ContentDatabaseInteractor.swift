@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import TitanKit
 
 protocol ContentDatabaseInteractorOutput {
     
@@ -23,4 +24,9 @@ class ContentDatabaseInteractor {
 // MARK: - ContentDatabaseControllerOutput
 extension ContentDatabaseInteractor: ContentDatabaseControllerOutput {
     
+    // Switch Tab
+    func didSwitchTab(with table: Table) {
+        let worker = SelectedTableWorker(seletedTable: table)
+        worker.execute()
+    }
 }

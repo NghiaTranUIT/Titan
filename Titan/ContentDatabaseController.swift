@@ -11,7 +11,7 @@ import SnapKit
 import TitanKit
 
 protocol ContentDatabaseControllerOutput {
-    
+    func didSwitchTab(with table: Table)
 }
 
 class ContentDatabaseController: NSViewController {
@@ -80,6 +80,7 @@ extension ContentDatabaseController {
     fileprivate func initStackView() {
         
         self.tableStackView = TableStackView.viewFromNib()
+        self.tableStackView.delegate = self
         
         // Add subview
         self.tableStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -138,5 +139,11 @@ extension ContentDatabaseController {
         gridView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentContainerView).inset(NSEdgeInsetsZero)
         }
+    }
+}
+
+extension ContentDatabaseController: TableStackViewDelegate {
+    func TableStackViewDidSelectedTable(_ table: Table) {
+        self.output?.didSwitchTab(with: table)
     }
 }

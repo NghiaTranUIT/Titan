@@ -9,10 +9,15 @@
 import Cocoa
 import TitanKit
 
+protocol TableStackViewDelegate: class {
+    func TableStackViewDidSelectedTable(_ table: Table)
+}
+
 class TableStackView: NSView {
 
     //
     // MARK: - Variable
+    weak var delegate: TableStackViewDelegate?
     var stackTables: [Table] {return mainStore.state.detailDatabaseState!.stackTables}
     var selectedTable: Table? {return mainStore.state.detailDatabaseState!.selectedTable}
     var selectedTableIndex: Int {
@@ -129,8 +134,18 @@ extension TableStackView {
         
         let table = self.stackTables[indexPath.item]
         let isSelected = indexPath.item == self.selectedTableIndex
+        cell.delegate = self
         cell.configureCell(with: table, isSelected: isSelected)
         
         return cell
+    }
+}
+
+//
+// MARK: - StackTableCellDelegate
+extension TableStackView: StackTableCellDelegate {
+    
+    func StackTableCellDidSelectTable(_ table: Table) {
+        self.delegate?.TableStackViewDidSelectedTable(table)
     }
 }

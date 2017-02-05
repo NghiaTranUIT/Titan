@@ -5,35 +5,35 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="TableSchemeContextMenuView" customModule="Titan" customModuleProvider="target"/>
+        <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <menu id="b78-aq-64w">
+        <menu id="b78-aq-64w" customClass="TableSchemeContextMenuView" customModule="Titan" customModuleProvider="target">
             <items>
                 <menuItem title="Open in New Tab" id="MeY-Cw-jWk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="openInNewTapBtnTapped:" target="-2" id="rN1-Kt-mGp"/>
+                        <action selector="openInNewTapBtnTapped:" target="b78-aq-64w" id="l17-8D-A59"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Tdp-dV-IUw"/>
                 <menuItem title="Copy Name" id="z8U-Ax-M1I">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="copyNameBtnTapped:" target="-2" id="Z7F-er-B1X"/>
+                        <action selector="copyNameBtnTapped:" target="b78-aq-64w" id="mKG-jR-59j"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="cJd-jO-zRV"/>
                 <menuItem title="Truncate..." id="iUS-ki-EPO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="truncateTableBtnTapped:" target="-2" id="YWC-Ok-ABT"/>
+                        <action selector="truncateTableBtnTapped:" target="b78-aq-64w" id="hCF-Za-GbF"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Delete..." id="Lrs-u3-CJW">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="deleteTableBtnTapped:" target="-2" id="TVp-fd-Oaf"/>
+                        <action selector="deleteTableBtnTapped:" target="b78-aq-64w" id="wfh-bD-MUW"/>
                     </connections>
                 </menuItem>
             </items>

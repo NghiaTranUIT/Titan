@@ -48,9 +48,18 @@ class TableStackView: NSView {
     //
     // MARK: - Public
     
+    // Update layout
     func updateStackView() {
         Logger.info("updateStackView")
         self.collectionView.reloadData()
+    }
+    
+    // Determine if table is in stack or not
+    func isTableInStack(for table: Table) -> Bool {
+        let filter = self.stackTables.filter { _table -> Bool in
+            return _table.tableName! == table.tableName!
+        }
+        return filter.count > 0
     }
 }
 

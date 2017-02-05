@@ -74,10 +74,14 @@ extension TableDatabaseController {
     
     // Menu context
     fileprivate func initMenuContextView() -> TableSchemeContextMenuView {
-        return TableSchemeContextMenuView.viewFromNib()!
+        let contextView = TableSchemeContextMenuView.viewFromNib()!
+        contextView.contextDelegate = self
+        return contextView
     }
 }
 
+//
+// MARK: - TablesDataSourceDelegate
 extension TableDatabaseController: TablesDataSourceDelegate {
     func TablesDataSourceDidSelectTable(_ table: Table) {
         self.output?.didSelectTable(table)
@@ -88,6 +92,8 @@ extension TableDatabaseController: TablesDataSourceDelegate {
     }
 }
 
+//
+// MARK: - ContextMenuTableViewDelegate
 extension TableDatabaseController: ContextMenuTableViewDelegate {
     
     func customContexMenuView(for event: NSEvent) -> NSMenu? {
@@ -97,5 +103,14 @@ extension TableDatabaseController: ContextMenuTableViewDelegate {
         guard selectedRow >= 0 else {return nil}
         
         return self.rightMenuContextView
+    }
+}
+
+//
+// MARK: - TableSchemeContextMenuViewDelegate
+extension TableDatabaseController: TableSchemeContextMenuViewDelegate {
+    
+    func TableSchemeContextMenuViewDidTapAction(_ action: TableSchemmaContextAction, table: Table) {
+        self.output?.didDoubleTapTable(table)
     }
 }

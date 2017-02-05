@@ -116,16 +116,29 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyB-GD-Dbk">
+                    <rect key="frame" x="221" y="128" width="37" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="yTh-Ju-oAg">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="SnQ-3x-iYQ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="0GJ-jV-G2J"/>
                 <constraint firstAttribute="trailing" secondItem="8yT-UO-ZQf" secondAttribute="trailing" id="1uO-dW-7XR"/>
                 <constraint firstAttribute="trailing" secondItem="SnQ-3x-iYQ" secondAttribute="trailing" id="9us-YT-vvY"/>
                 <constraint firstAttribute="bottom" secondItem="SnQ-3x-iYQ" secondAttribute="bottom" id="CBX-cQ-bqQ"/>
+                <constraint firstItem="uyB-GD-Dbk" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Gs0-yE-6Hq"/>
                 <constraint firstItem="SnQ-3x-iYQ" firstAttribute="top" secondItem="8yT-UO-ZQf" secondAttribute="bottom" id="Lsr-hP-qwe"/>
                 <constraint firstItem="8yT-UO-ZQf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="62" id="aAf-Pe-a6v"/>
+                <constraint firstItem="uyB-GD-Dbk" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="nLh-UA-tEm"/>
                 <constraint firstItem="8yT-UO-ZQf" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="sNQ-o3-Qg9"/>
             </constraints>
+            <connections>
+                <outlet property="titleLbl" destination="uyB-GD-Dbk" id="NZR-oS-8Lc"/>
+            </connections>
         </customView>
     </objects>
 </document>

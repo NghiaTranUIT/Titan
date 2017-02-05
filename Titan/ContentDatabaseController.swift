@@ -53,7 +53,6 @@ class ContentDatabaseController: NSViewController {
     
     override func initCommon() {
         ContentDatabaseConfig.shared.configure(viewController: self)
-
     }
     
     override func initObserver() {
@@ -80,7 +79,7 @@ extension ContentDatabaseController {
     
     fileprivate func initStackView() {
         
-        self.tableStackView = TableStackView.viewFromNib()!
+        self.tableStackView = TableStackView.viewFromNib()
         
         // Add subview
         self.tableStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,11 +88,6 @@ extension ContentDatabaseController {
             make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
         }
     }
-    
-    fileprivate func initContentDatabase() {
-        
-    }
-
 }
 
 //
@@ -109,33 +103,39 @@ extension ContentDatabaseController {
         
         // Remove all
         for gridView in self.gridDatabaseViews {
-            if gridView.table.tableName! != selectedTable.tableName! {
-                gridView.removeFromSuperview()
-            }
+            gridView.removeFromSuperview()
         }
         
         // Add
         if let gridView = filter.first {
             self.addGridView(gridView)
         } else {
-            var topViews: NSArray = []
-            let _ = GridDatabaseView.xib()?.instantiate(withOwner: self, topLevelObjects: &topViews)
-            
-            for subView in topViews {
-                if let innerView = subView as? GridDatabaseView {
-                    innerView.configureGrid(with: self.selectedTable!)
-                    self.gridDatabaseViews.append(innerView)
-                    self.addGridView(innerView)
-                }
+            let gridView = GridDatabaseView.viewFromNib()!
+            gridView.configureGrid(with: self.selectedTable!)
+            self.gridDatabaseViews.append(gridView)
+            self.addGridView(gridView)
+        }
+        
+        // Filter again
+        // to removed unncessary view + pointer
+        let removeViews = self.gridDatabaseViews.filter { (innerGridView) -> Bool in
+            return !self.tableStackView.isTableInStack(for: innerGridView.table)
+        }
+        for removeView in removeViews {
+            removeView.removeFromSuperview()
+            if let index = self.gridDatabaseViews.index(of: removeView) {
+                self.gridDatabaseViews.remove(at: index)
             }
         }
     }
     
     fileprivate func addGridView(_ gridView: GridDatabaseView) {
+        guard gridView.superview == nil else {return}
+        
         gridView.translatesAutoresizingMaskIntoConstraints = false
         self.contentContainerView.addSubview(gridView)
         gridView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
+            make.edges.equalTo(self.contentContainerView).inset(NSEdgeInsetsZero)
         }
     }
 }

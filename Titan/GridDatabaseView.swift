@@ -18,6 +18,7 @@ class GridDatabaseView: NSView {
         return _table
     }
     
+    @IBOutlet weak var titleLbl: NSTextField!
     //
     // MARK: - View Cycle
     override func awakeFromNib() {
@@ -32,5 +33,12 @@ class GridDatabaseView: NSView {
     // MARK: - Public
     func configureGrid(with table: Table) {
         self._table = table
+        self.titleLbl.stringValue = table.tableName!
     }
+}
+
+//
+// MARK: - XIBInitializable
+extension GridDatabaseView: XIBInitializable {
+    typealias T = GridDatabaseView
 }

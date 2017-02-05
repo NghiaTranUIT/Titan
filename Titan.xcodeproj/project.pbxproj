@@ -68,6 +68,10 @@
 		BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */; };
 		BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */; };
 		BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */; };
+		BA8FB3091E470F08004D48F5 /* TableSchemeContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB3081E470F08004D48F5 /* TableSchemeContextMenuView.swift */; };
+		BA8FB30B1E470F19004D48F5 /* TableSchemeContextMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8FB30A1E470F19004D48F5 /* TableSchemeContextMenuView.xib */; };
+		BA8FB30E1E4710B2004D48F5 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */; };
+		BA8FB3101E47133F004D48F5 /* NSView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */; };
 		BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */; };
 		BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */; };
 		BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */; };
@@ -243,6 +247,10 @@
 		BA8E0BE31DB0E67800B9BDD7 /* QueryObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryObj.swift; sourceTree = "<group>"; };
 		BA8E0BE51DB0E68A00B9BDD7 /* SSLObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLObj.swift; sourceTree = "<group>"; };
 		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
+		BA8FB3081E470F08004D48F5 /* TableSchemeContextMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSchemeContextMenuView.swift; sourceTree = "<group>"; };
+		BA8FB30A1E470F19004D48F5 /* TableSchemeContextMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSchemeContextMenuView.xib; sourceTree = "<group>"; };
+		BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
+		BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Xib.swift"; sourceTree = "<group>"; };
 		BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionObj.swift; sourceTree = "<group>"; };
 		BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
@@ -650,6 +658,7 @@
 		BA4AFF171DAC9672009AE139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA8FB30C1E471092004D48F5 /* TitanTableView */,
 				BAAD01741E44488D00687509 /* PlaceholderTableCell */,
 				BA3EEADB1E3B91F200B30D96 /* Tracking Button */,
 				BAADCA271E2B5BF9006909D9 /* Check Box */,
@@ -825,6 +834,23 @@
 				BA8E0BDC1DB0E38F00B9BDD7 /* AppVersionManager.swift */,
 			);
 			name = "App Version";
+			sourceTree = "<group>";
+		};
+		BA8FB3071E470EDD004D48F5 /* Context View */ = {
+			isa = PBXGroup;
+			children = (
+				BA8FB3081E470F08004D48F5 /* TableSchemeContextMenuView.swift */,
+				BA8FB30A1E470F19004D48F5 /* TableSchemeContextMenuView.xib */,
+			);
+			name = "Context View";
+			sourceTree = "<group>";
+		};
+		BA8FB30C1E471092004D48F5 /* TitanTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */,
+			);
+			name = TitanTableView;
 			sourceTree = "<group>";
 		};
 		BA9441481DF00EB300EBA623 /* Connection Group Header */ = {
@@ -1011,6 +1037,7 @@
 		BAD0D3871DE2AEBA0081F28F /* Table Database */ = {
 			isa = PBXGroup;
 			children = (
+				BA8FB3071E470EDD004D48F5 /* Context View */,
 				BAAD016C1E44437500687509 /* View */,
 				BAAD01671E4431E200687509 /* Data Source */,
 				BAD0D3951DE2B09A0081F28F /* Workers */,
@@ -1075,6 +1102,7 @@
 				BA3358311E38A6F500745515 /* Promise+Then.swift */,
 				BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */,
 				BA393A431E3DD4C400450AA0 /* Object+Lock.swift */,
+				BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1308,6 +1336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */,
+				BA8FB30B1E470F19004D48F5 /* TableSchemeContextMenuView.xib in Resources */,
 				BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */,
 				BA9875641DF414FC00901CD5 /* screen_group@2x.jpg in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
@@ -1482,10 +1511,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAAD01771E4448A000687509 /* PlaceholderTableCell.swift in Sources */,
+				BA8FB3101E47133F004D48F5 /* NSView+Xib.swift in Sources */,
 				BA393A3A1E3DB4FF00450AA0 /* InspiredQuotation.swift in Sources */,
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BAAD01701E4443AE00687509 /* TableRowCell.swift in Sources */,
 				BAF13D041E3E2CF1005822AF /* CloseDatabaseOperation.swift in Sources */,
+				BA8FB30E1E4710B2004D48F5 /* TitanTableView.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */,
@@ -1571,6 +1602,7 @@
 				BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */,
 				BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
+				BA8FB3091E470F08004D48F5 /* TableSchemeContextMenuView.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,

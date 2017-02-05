@@ -21,11 +21,11 @@ class TableDatabaseController: NSViewController {
     // MARK: - Variable
     var output: TableDatabaseControllerOutput?
     fileprivate var dataSource: TablesDataSource!
-    
+    fileprivate lazy var rightMenuContextView: TableSchemeContextMenuView = self.initMenuContextView()
     //
     // MARK: - OUTLET
     @IBOutlet weak var searchBarView: NSView!
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: TitanTableView!
     
     //
     // MARK: - View cycle
@@ -38,6 +38,9 @@ class TableDatabaseController: NSViewController {
     
     override func initCommon() {
         TableDatabaseConfig.shared.configure(viewController: self)
+        
+        // Context menu
+        self.tableView.contextMenuDelegate = self
     }
     
     override func initActions() {
@@ -68,6 +71,11 @@ extension TableDatabaseController {
         data.delegate = self
         return data
     }
+    
+    // Menu context
+    fileprivate func initMenuContextView() -> TableSchemeContextMenuView {
+        return TableSchemeContextMenuView.viewFromNib()!
+    }
 }
 
 extension TableDatabaseController: TablesDataSourceDelegate {
@@ -77,5 +85,17 @@ extension TableDatabaseController: TablesDataSourceDelegate {
     
     func TablesDataSourceDidDoubleTapOnTable(_ table: Table) {
         self.output?.didDoubleTapTable(table)
+    }
+}
+
+extension TableDatabaseController: ContextMenuTableViewDelegate {
+    
+    func customContexMenuView(for event: NSEvent) -> NSMenu? {
+        
+        let pt = self.tableView.convert(event.locationInWindow, from: nil)
+        let selectedRow = self.tableView.row(at: pt)
+        guard selectedRow >= 0 else {return nil}
+        
+        return self.rightMenuContextView
     }
 }

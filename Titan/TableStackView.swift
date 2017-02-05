@@ -54,6 +54,10 @@ class TableStackView: NSView {
     }
 }
 
+extension TableStackView: XIBInitializable {
+    typealias T = TableStackView
+}
+
 extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: NSCollectionView) -> Int {

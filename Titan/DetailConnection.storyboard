@@ -116,7 +116,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="2gD-qP-2Gt">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="2gD-qP-2Gt" customClass="TitanTableView" customModule="Titan" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -184,7 +184,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBarView" destination="7Bq-dF-KGu" id="JOf-h7-6Bf"/>
-                        <outlet property="tableView" destination="2gD-qP-2Gt" id="2M4-fN-X19"/>
+                        <outlet property="tableView" destination="2gD-qP-2Gt" id="v9A-dI-dIh"/>
                     </connections>
                 </viewController>
                 <customObject id="iy9-qj-Xft" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

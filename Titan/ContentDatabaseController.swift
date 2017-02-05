@@ -79,16 +79,8 @@ extension ContentDatabaseController: ContentDatabasePresenterOutput {
 extension ContentDatabaseController {
     
     fileprivate func initStackView() {
-        var topViews: NSArray = []
-        let _ = TableStackView.xib()!.instantiate(withOwner: self, topLevelObjects: &topViews)
         
-        // Init
-        for view in topViews {
-            if let innerView = view as? TableStackView {
-                self.tableStackView = innerView
-                break
-            }
-        }
+        self.tableStackView = TableStackView.viewFromNib()!
         
         // Add subview
         self.tableStackView.translatesAutoresizingMaskIntoConstraints = false

@@ -23,8 +23,8 @@ protocol Identifier {
 
 
 //
-// MARK: - Default Implementation for Identifier
-extension NSView: Identifier {
+// MARK: - Default Extension
+extension Identifier {
     
     /// ID View
     static var identifierView: String {
@@ -38,4 +38,9 @@ extension NSView: Identifier {
         return NSNib(nibNamed: self.identifierView, bundle: nil)
     }
 }
+
+//
+// MARK: - Default Implementation for Identifier
+extension NSView: Identifier {}
+extension NSMenu: Identifier {}
 

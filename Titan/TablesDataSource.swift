@@ -56,10 +56,6 @@ class TablesDataSource: NSObject {
         self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
         self.tableView.sizeLastColumnToFit()
         
-        // Double tap
-        self.tableView.target = self
-        self.tableView.doubleAction = #selector(self.doubleTapAction)
-        
         // Reload
         self.tableView.reloadData()
     }

@@ -13,7 +13,7 @@ import TitanKit
 struct DetailDatabaseState {
     var selectedConnection: DatabaseObj!
     var tables: [Table] = []
-    var selectedTable: Table!
+    var selectedTable: Table?
     
     // table on stack
     var stackTables: [Table] = []
@@ -39,6 +39,15 @@ extension DetailDatabaseState {
            
         case let action as SelectedTableAction:
             
+            // Replace previous selectedTable with new one
+            if let previousTable = state.selectedTable {
+                state.stackTables = state.stackTables.map({ table -> Table in
+                    if table.tableName! == previousTable.tableName! {
+                        return action.selectedTable
+                    }
+                    return table
+                })
+            }
             state.selectedTable = action.selectedTable
             
         case let action as AddSelectedTableToStackAction:

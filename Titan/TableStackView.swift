@@ -13,15 +13,12 @@ class TableStackView: NSView {
 
     //
     // MARK: - Variable
-    fileprivate var stackTables: [Table] {
-        return mainStore.state.detailDatabaseState!.stackTables
-    }
-    fileprivate var selectedTable: Table {
-        return mainStore.state.detailDatabaseState!.selectedTable
-    }
-    fileprivate var selectedTableIndex: Int {
+    var stackTables: [Table] {return mainStore.state.detailDatabaseState!.stackTables}
+    var selectedTable: Table? {return mainStore.state.detailDatabaseState!.selectedTable}
+    var selectedTableIndex: Int {
+        guard let selectedTable = self.selectedTable else {return -1}
         for (i,e) in self.stackTables.enumerated() {
-            if e.tableName! == self.selectedTable.tableName! {
+            if e.tableName! == selectedTable.tableName! {
                 return i
             }
         }
@@ -52,6 +49,7 @@ class TableStackView: NSView {
     // MARK: - Public
     
     func updateStackView() {
+        Logger.info("updateStackView")
         self.collectionView.reloadData()
     }
 }

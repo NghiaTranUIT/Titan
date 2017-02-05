@@ -8,6 +8,7 @@
 
 import Cocoa
 import SnapKit
+import TitanKit
 
 protocol ContentDatabaseControllerOutput {
     
@@ -19,6 +20,11 @@ class ContentDatabaseController: NSViewController {
     // MARK: - Variable
     fileprivate var tableStackView: TableStackView!
     fileprivate var gridDatabaseViews: [GridDatabaseView] = []
+    
+    //
+    // MARK: - Helper
+    fileprivate var selectedTable: Table? {return self.tableStackView.selectedTable}
+    fileprivate var selectedTableIndex: Int {return self.tableStackView.selectedTableIndex}
     
     //
     // MARK: - OUTLET
@@ -52,12 +58,15 @@ class ContentDatabaseController: NSViewController {
     
     override func initObserver() {
         NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
-        NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
     }
     
     @objc func stackTableStateChangedNotification() {
+        
         // Update stack view
         self.tableStackView.updateStackView()
+        
+        // Grid
+        self.handleGirdView()
     }
 }
 
@@ -74,7 +83,6 @@ extension ContentDatabaseController {
         let _ = TableStackView.xib()!.instantiate(withOwner: self, topLevelObjects: &topViews)
         
         // Init
-//        guard let _topViews = topViews else {return}
         for view in topViews {
             if let innerView = view as? TableStackView {
                 self.tableStackView = innerView
@@ -83,6 +91,7 @@ extension ContentDatabaseController {
         }
         
         // Add subview
+        self.tableStackView.translatesAutoresizingMaskIntoConstraints = false
         self.stackContainerView.addSubview(self.tableStackView)
         self.tableStackView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
@@ -91,5 +100,50 @@ extension ContentDatabaseController {
     
     fileprivate func initContentDatabase() {
         
+    }
+
+}
+
+//
+// MARK: - Grid View
+extension ContentDatabaseController {
+    
+    fileprivate func handleGirdView() {
+        guard let selectedTable = self.selectedTable else {return}
+        
+        let filter = self.gridDatabaseViews.filter { gridView -> Bool in
+            return gridView.table.tableName! == selectedTable.tableName!
+        }
+        
+        // Remove all
+        for gridView in self.gridDatabaseViews {
+            if gridView.table.tableName! != selectedTable.tableName! {
+                gridView.removeFromSuperview()
+            }
+        }
+        
+        // Add
+        if let gridView = filter.first {
+            self.addGridView(gridView)
+        } else {
+            var topViews: NSArray = []
+            let _ = GridDatabaseView.xib()?.instantiate(withOwner: self, topLevelObjects: &topViews)
+            
+            for subView in topViews {
+                if let innerView = subView as? GridDatabaseView {
+                    innerView.configureGrid(with: self.selectedTable!)
+                    self.gridDatabaseViews.append(innerView)
+                    self.addGridView(innerView)
+                }
+            }
+        }
+    }
+    
+    fileprivate func addGridView(_ gridView: GridDatabaseView) {
+        gridView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentContainerView.addSubview(gridView)
+        gridView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
+        }
     }
 }

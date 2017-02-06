@@ -31,11 +31,9 @@ class SelectedTableWorker: SyncWorker {
     func execute() -> T {
     
         // If no selection -> add to stack
-        var replace = false
         if mainStore.state.detailDatabaseState!.stackTables.count == 0 {
             
             // Dispatch
-            replace = true
             let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
             mainStore.dispatch(addStackAction)
         }

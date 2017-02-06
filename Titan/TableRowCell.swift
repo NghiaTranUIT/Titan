@@ -13,7 +13,7 @@ class TableRowCell: NSTableCellView {
 
     //
     // MARK: - Variable
-    fileprivate var table: Table?
+    var table: Table?
     
     //
     // MARK: - OUTLET

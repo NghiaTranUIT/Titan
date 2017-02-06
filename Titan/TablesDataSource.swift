@@ -21,9 +21,8 @@ class TablesDataSource: NSObject {
     weak var delegate: TablesDataSourceDelegate?
     fileprivate var isFirstTime = true
     var tableView: NSTableView! {didSet{self.setupTableView()}}
-    fileprivate var tables: [Table] {
-        return mainStore.state.detailDatabaseState!.tables
-    }
+    fileprivate var tables: [Table] {return mainStore.state.detailDatabaseState!.tables}
+    fileprivate var selectedTable: Table? {return mainStore.state.detailDatabaseState!.selectedTable}
     
     //
     // MARK: - Init
@@ -38,7 +37,8 @@ class TablesDataSource: NSObject {
     
     /// Obserable
     fileprivate func initCommon() {
-        NotificationManager.observeNotificationType(.tableStateChanged, observer: self, selector: #selector(self.tableStateChanged), object: nil)
+        NotificationManager.observeNotificationType(.tableStateChanged, observer: self, selector: #selector(self.tableStateChangedNotification), object: nil)
+        NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
     }
     
     //
@@ -61,8 +61,21 @@ class TablesDataSource: NSObject {
     }
     
     // Update
-    @objc func tableStateChanged() {
+    @objc func tableStateChangedNotification() {
         self.tableView.reloadData()
+    }
+    
+    @objc func stackTableStateChangedNotification() {
+        guard let selectedTable = self.selectedTable else {return}
+        
+        // Selected row manually
+        for (i, table) in self.tables.enumerated() {
+            if table == selectedTable {
+                let index = IndexSet(integer: i)
+                self.tableView.selectRowIndexes(index, byExtendingSelection: false)
+                break
+            }
+        }
     }
     
     // Double tap
@@ -104,10 +117,12 @@ extension TablesDataSource: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         var rowView = tableView.make(withIdentifier: TableRowView.identifierView, owner: self) as? TableRowView
+        
         if rowView == nil {
             rowView = TableRowView()
             rowView?.identifier = TableRowView.identifierView
         }
+
         return rowView
     }
 }
@@ -136,8 +151,10 @@ extension TablesDataSource {
     
     fileprivate func tableCell(with tableView: NSTableView, row: Int) -> TableRowCell {
         let cell = tableView.make(withIdentifier: TableRowCell.identifierView, owner: self) as! TableRowCell
+        
         let table = self.tables[row]
         cell.configureCell(with: table)
+        
         return cell
     }
 }

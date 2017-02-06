@@ -36,7 +36,6 @@ class DetailConnectionsController: NSViewController {
     // MARK: - Rx
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
         
         // Base
         self.initBaseAbility()
@@ -80,6 +79,10 @@ class DetailConnectionsController: NSViewController {
     }
     
     @IBAction func connectConnectionTapped(_ sender: Any) {
+        // Save current first
+        self.saveDatabase()
+        
+        // Connect
         self.output.connectDatabase(self.databaseObj)
     }
     
@@ -96,9 +99,14 @@ class DetailConnectionsController: NSViewController {
     }
     
     @objc fileprivate func saveCurrentDatabaseObjNotification(noti: Notification) {
-        
         guard let obj = noti.object as? DatabaseObj else {return}
         guard obj.objectId == self.databaseObj.objectId else {return}
+        
+        // Save
+        self.saveDatabase()
+    }
+    
+    fileprivate func saveDatabase() {
         
         // Map all textfield to database
         let data = self.buildDetailConnectionData()

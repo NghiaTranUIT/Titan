@@ -8,6 +8,21 @@
 
 import Cocoa
 
-class ContentDatabaseConfig: NSObject {
+class ContentDatabaseConfig {
 
+    static let shared = ContentDatabaseConfig()
+    
+    func configure(viewController: ContentDatabaseController) {
+        
+        // Presenter
+        let presenter = ContentDatabasePresenter()
+        presenter.output = viewController
+        
+        // Interactor
+        let interactor = ContentDatabaseInteractor()
+        interactor.output = presenter
+        
+        // View controller
+        viewController.output = interactor
+    }
 }

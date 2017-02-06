@@ -13,13 +13,16 @@ open class Connection {
     
     //
     // MARK: - Variable
-    private let connectionPtr: OpaquePointer!
+    fileprivate let connectionPtr: OpaquePointer!
     
     /// Param
-    private let connectionParam: ConnectionParam!
+    fileprivate let connectionParam: ConnectionParam!
     
     /// Public table
     public lazy var publicTables: [Table] = self.fetchAllTables()
+    
+    // Database name
+    public lazy var databaseName: String = self.getDatabaseName()
     
     //
     // MARK: - Init
@@ -68,5 +71,10 @@ extension Connection {
         }
         
         return tables
+    }
+    
+    fileprivate func getDatabaseName() -> String {
+        let name = String(cString: PQdb(self.connectionPtr))
+        return name
     }
 }

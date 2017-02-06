@@ -21,6 +21,7 @@
 		BA1999E81DDC412D00296441 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E71DDC412D00296441 /* Parameter.swift */; };
 		BA1999EA1DDC508000296441 /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E91DDC508000296441 /* ResultStatus.swift */; };
 		BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999EB1DDC673400296441 /* QueryResultRow.swift */; };
+		BA8FB3121E473ABC004D48F5 /* UUID+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB3111E473ABC004D48F5 /* UUID+Short.swift */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BABDF8991E331B4F006603BA /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF8981E331B4F006603BA /* Field.swift */; };
 		BABDF89B1E332C70006603BA /* ColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF89A1E332C70006603BA /* ColumnType.swift */; };
@@ -61,6 +62,7 @@
 		BA1999E71DDC412D00296441 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		BA1999E91DDC508000296441 /* ResultStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStatus.swift; sourceTree = "<group>"; };
 		BA1999EB1DDC673400296441 /* QueryResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultRow.swift; sourceTree = "<group>"; };
+		BA8FB3111E473ABC004D48F5 /* UUID+Short.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UUID+Short.swift"; sourceTree = "<group>"; };
 		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
 		BABDF8981E331B4F006603BA /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		BABDF89A1E332C70006603BA /* ColumnType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnType.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BA0ACAF71E32195C001AD35A /* Logger.swift */,
+				BA8FB3111E473ABC004D48F5 /* UUID+Short.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				BA1999EA1DDC508000296441 /* ResultStatus.swift in Sources */,
 				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
 				BA1999E81DDC412D00296441 /* Parameter.swift in Sources */,
+				BA8FB3121E473ABC004D48F5 /* UUID+Short.swift in Sources */,
 				BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */,
 				BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */,
 				BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */,

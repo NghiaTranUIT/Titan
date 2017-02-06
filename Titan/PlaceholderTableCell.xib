@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="EmptyLoaderCollectionCell" customModule="Titan" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="PlaceholderTableCell" id="us0-FW-qcY" customClass="PlaceholderTableCell" customModule="Titan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0F-vo-NJx">
+                    <rect key="frame" x="84" y="15" width="83" height="19"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No contents" id="tPK-gU-vCc">
+                        <font key="font" size="13" name="SFUIText-Regular"/>
+                        <color key="textColor" red="0.5607843137254902" green="0.58039215686274503" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ItT-Tl-aQ1">
+                    <rect key="frame" x="117" y="14" width="16" height="16"/>
+                </progressIndicator>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ItT-Tl-aQ1" firstAttribute="centerY" secondItem="us0-FW-qcY" secondAttribute="centerY" id="3oC-68-NiC"/>
+                <constraint firstItem="Q0F-vo-NJx" firstAttribute="centerY" secondItem="us0-FW-qcY" secondAttribute="centerY" constant="-2" id="A9d-Zy-Z7I"/>
+                <constraint firstItem="ItT-Tl-aQ1" firstAttribute="centerX" secondItem="us0-FW-qcY" secondAttribute="centerX" id="cXe-p7-r9m"/>
+                <constraint firstItem="Q0F-vo-NJx" firstAttribute="centerX" secondItem="us0-FW-qcY" secondAttribute="centerX" id="ijf-85-7Kz"/>
+            </constraints>
+            <connections>
+                <outlet property="loaderView" destination="ItT-Tl-aQ1" id="7am-gh-O4u"/>
+                <outlet property="placeholderTitleLbl" destination="Q0F-vo-NJx" id="Rzv-s4-cbt"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="-5"/>
+        </tableCellView>
+    </objects>
+</document>

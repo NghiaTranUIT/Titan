@@ -18,8 +18,9 @@ enum NotificationType: String {
     case groupConnectionChanged
     case saveCurrentDatabaseObj
     case openDetailDatabaseWindow
-    case closeConnectionWindow
     case windowWillClose
+    case tableStateChanged
+    case stackTableStateChanged
     
     // To String
     func toString() -> String {

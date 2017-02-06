@@ -17,10 +17,11 @@ class ConnectionSpec: QuickSpec {
         
         var database: Database!
         var connectionResult: ConnectionResult!
+        var validParam: ConnectionParam!
         
         beforeEach {
             database = Database()
-            let validParam = ConnectionParam.validConnectionParam
+            validParam =  ConnectionParam.validConnectionParam
             connectionResult = database.connectDatabase(withParam: validParam)
         }
         
@@ -53,6 +54,15 @@ class ConnectionSpec: QuickSpec {
                     expect(userTable!.isInsertableInto).to(equal(true))
                     expect(userTable!.tableName).to(equal("users"))
                 })
+            })
+        }
+        
+        describe("Get Name database") { 
+            it("Sucess", closure: { 
+                let connection = connectionResult.connection!
+                let name = connection.databaseName
+                
+                expect(name).to(equal(validParam.databaseName))
             })
         }
     }

@@ -51,6 +51,9 @@ open class Table {
     /// Is Typed
     public let isTyped: Bool?
     
+    /// ID
+    public let id: String = UUID.shortUUID()
+    
     //
     // MARK: - Init
     init(tableCatalog: String, tableSchema: String, tableName: String, tableType: String, isInsertableInto: Bool, isTyped: Bool) {
@@ -75,6 +78,43 @@ open class Table {
         // Need to stupid compare and parsing to boolean
         self.isInsertableInto = (resultRow["is_insertable_into"]!.realData as? String) == "YES"
         self.isTyped = (resultRow["is_typed"]!.realData as? String) == "YES"
+    }
+}
+
+//
+// MARK: - Private
+extension Table {
     
+    fileprivate func tableDescription() -> String {
+        var debug =  "[Table]:"
+        if let tableName = self.tableName {
+            debug += " name=\(tableName)"
+        }
+        return debug
+    }
+}
+
+//
+// MARK: - CustomStringConvertible
+extension Table: CustomStringConvertible {
+    public var description: String {
+        return self.tableDescription()
+    }
+}
+
+//
+// MARK: - CustomDebugStringConvertible
+extension Table: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return self.tableDescription()
+    }
+}
+
+//
+// MARK: - Equatable
+extension Table: Equatable {
+    
+    public static func ==(lhs: Table, rhs: Table) -> Bool {
+        return lhs.id == rhs.id
     }
 }

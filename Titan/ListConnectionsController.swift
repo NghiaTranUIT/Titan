@@ -50,6 +50,10 @@ class ListConnectionsController: NSViewController {
         self.initBaseAbility()
     }
     
+    deinit {
+        
+    }
+    
     override func initCommon() {
         
         // Configure

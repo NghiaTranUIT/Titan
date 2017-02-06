@@ -18,10 +18,8 @@ struct MainReducer {
 extension MainReducer: Reducer {
     func handleAction(action: Action, state: MainAppState?) -> MainAppState {
         let connectionState = ConnectionState.reducer(action: action, state: state?.connectionState)
-        let mainTabState = MainTabState.reducer(action: action, state: state?.mainTabState)
-        let detailTabState = DetailTabState.reducer(action: action, state: state?.detailTabState)
-        return MainAppState(connectionState: connectionState,
-                            mainTabState: mainTabState,
-                            detailTabState: detailTabState)
+        let detailDatabaseState = DetailDatabaseState.reducer(action: action, state: state?.detailDatabaseState)
+        
+        return MainAppState(connectionState: connectionState, detailDatabaseState: detailDatabaseState)
     }
 }

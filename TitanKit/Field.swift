@@ -19,12 +19,10 @@ open class Field: Presentable {
     /// Decoder
     fileprivate var decoder: Decodable!
     
-    /// Type
-    fileprivate var _type: ColumnType = .unsupport
-    var type: ColumnType {
-        get {
-            return self._type
-        }
+    /// Column
+    fileprivate var _column: ColumnTypeProtocol!
+    var column: ColumnTypeProtocol {
+        return _column
     }
     
     /// Real data
@@ -57,11 +55,16 @@ open class Field: Presentable {
         }
     }
     
+    /// Col type
+    var colType: ColumnType {
+        return self.column.colType
+    }
+    
     //
     // MARK: - Init
-    init(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int) {
-        self._type = colType
-        self.parseData(resultPtr: resultPtr, colType: colType, rowIndex: rowIndex, colIndex: colIndex)
+    init(resultPtr: OpaquePointer, rowIndex: Int, column: Column) {
+        self._column = column
+        self.parseData(resultPtr: resultPtr, rowIndex: rowIndex, column: column)
     }
 }
 
@@ -70,10 +73,10 @@ open class Field: Presentable {
 // MARK: - Private
 extension Field {
     
-    fileprivate func parseData(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int) {
+    fileprivate func parseData(resultPtr: OpaquePointer, rowIndex: Int, column: Column) {
         
         // Decoder
-        self.decoder = Decoder(resultPtr: resultPtr, colType: colType, rowIndex: rowIndex, colIndex: colIndex)
+        self.decoder = Decoder(resultPtr: resultPtr, rowIndex: rowIndex, column: column)
         
         // Is Null
         guard decoder.isNull() == false else {
@@ -94,12 +97,12 @@ extension Field {
         }
         
         // Real data
-        let value = self.decoder.decodeRawData(self.rawData, colType: self.type)
+        let value = self.decoder.decodeRawData(self.rawData, column: self.column)
         return value
     }
     
     fileprivate func desctiptionValue() -> String {
-        return "[\(self.rawData):\(self.type)]"
+        return "[\(self.rawData):\(self._column.colType)]"
     }
 }
 

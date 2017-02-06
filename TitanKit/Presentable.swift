@@ -19,7 +19,7 @@ import Foundation
 /// Whatever we need real data -> Lazy computed it
 protocol Presentable {
     
-    var type: ColumnType {get}
+    var column: ColumnTypeProtocol {get}
     
     var rawData: String {get}
     

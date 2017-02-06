@@ -49,7 +49,7 @@ open class QueryResult {
     }()
     
     /// Rows
-    public lazy var rows: [QueryResultRow] = self.getRows()
+    public lazy var rows: [Row] = self.getRows()
     
     /// Col name at index
     public lazy var columnsName: [String] = self.getColumnsName()
@@ -88,19 +88,19 @@ open class QueryResult {
 extension QueryResult {
     
     /// Lazy get Row
-    fileprivate func getRows() -> [QueryResultRow] {
+    fileprivate func getRows() -> [Row] {
         
         guard let resultPtr = self.resultPtr else {
             return []
         }
         
         // Rows
-        var rows: [QueryResultRow] = []
+        var rows: [Row] = []
         rows.reserveCapacity(self.numberOfRows)
         
         // Get value
         for rowIndex in 0..<self.numberOfRows {
-            let row = QueryResultRow.buildResultRow(atRowIndex: Int32(rowIndex),
+            let row = Row.buildResultRow(atRowIndex: Int32(rowIndex),
                                                colIndex: self.columnsName,
                                                colTypes: self.columnTypes,
                                                resultPtr: resultPtr)

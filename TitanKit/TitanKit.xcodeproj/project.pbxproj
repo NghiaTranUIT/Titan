@@ -20,7 +20,7 @@
 		BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E51DDC3BC900296441 /* ConnectionStatus.swift */; };
 		BA1999E81DDC412D00296441 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E71DDC412D00296441 /* Parameter.swift */; };
 		BA1999EA1DDC508000296441 /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999E91DDC508000296441 /* ResultStatus.swift */; };
-		BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999EB1DDC673400296441 /* QueryResultRow.swift */; };
+		BA1999EC1DDC673400296441 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1999EB1DDC673400296441 /* Row.swift */; };
 		BA8FB3121E473ABC004D48F5 /* UUID+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB3111E473ABC004D48F5 /* UUID+Short.swift */; };
 		BAA8ED901DDB1967006E4E33 /* ConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */; };
 		BABDF8991E331B4F006603BA /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABDF8981E331B4F006603BA /* Field.swift */; };
@@ -34,6 +34,8 @@
 		BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBA1DDAFAF600EFB0BA /* Query.swift */; };
 		BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */; };
 		BAEE575F1E4820CB00EC61E7 /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE575E1E4820CB00EC61E7 /* QueryResultSpec.swift */; };
+		BAEE57611E482F6100EC61E7 /* Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE57601E482F6100EC61E7 /* Column.swift */; };
+		BAEE57631E48349A00EC61E7 /* ColumnTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE57621E48349A00EC61E7 /* ColumnTypeProtocol.swift */; };
 		C6C561B63074AFC1C00CDD08 /* Pods_TitanKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +64,7 @@
 		BA1999E51DDC3BC900296441 /* ConnectionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionStatus.swift; sourceTree = "<group>"; };
 		BA1999E71DDC412D00296441 /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		BA1999E91DDC508000296441 /* ResultStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultStatus.swift; sourceTree = "<group>"; };
-		BA1999EB1DDC673400296441 /* QueryResultRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultRow.swift; sourceTree = "<group>"; };
+		BA1999EB1DDC673400296441 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		BA8FB3111E473ABC004D48F5 /* UUID+Short.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UUID+Short.swift"; sourceTree = "<group>"; };
 		BAA8ED8F1DDB1967006E4E33 /* ConnectionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionResult.swift; sourceTree = "<group>"; };
 		BABDF8981E331B4F006603BA /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		BACFCCBA1DDAFAF600EFB0BA /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionParam.swift; sourceTree = "<group>"; };
 		BAEE575E1E4820CB00EC61E7 /* QueryResultSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultSpec.swift; sourceTree = "<group>"; };
+		BAEE57601E482F6100EC61E7 /* Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Column.swift; sourceTree = "<group>"; };
+		BAEE57621E48349A00EC61E7 /* ColumnTypeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnTypeProtocol.swift; sourceTree = "<group>"; };
 		DA1E65DC560C21B0B02B1171 /* Pods-TitanKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +148,9 @@
 			children = (
 				BA0ACAFB1E321FB2001AD35A /* Presentable.swift */,
 				BABDF8981E331B4F006603BA /* Field.swift */,
+				BA1999EB1DDC673400296441 /* Row.swift */,
+				BAEE57601E482F6100EC61E7 /* Column.swift */,
+				BAEE57621E48349A00EC61E7 /* ColumnTypeProtocol.swift */,
 			);
 			name = Value;
 			sourceTree = "<group>";
@@ -161,7 +168,6 @@
 			children = (
 				BA1999E91DDC508000296441 /* ResultStatus.swift */,
 				BACFCCB61DDAFAE000EFB0BA /* QueryResult.swift */,
-				BA1999EB1DDC673400296441 /* QueryResultRow.swift */,
 				BABDF89A1E332C70006603BA /* ColumnType.swift */,
 			);
 			name = Result;
@@ -429,6 +435,7 @@
 				BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */,
 				BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */,
 				BA1999EA1DDC508000296441 /* ResultStatus.swift in Sources */,
+				BAEE57611E482F6100EC61E7 /* Column.swift in Sources */,
 				BACFCCB71DDAFAE000EFB0BA /* QueryResult.swift in Sources */,
 				BA1999E81DDC412D00296441 /* Parameter.swift in Sources */,
 				BA8FB3121E473ABC004D48F5 /* UUID+Short.swift in Sources */,
@@ -437,11 +444,12 @@
 				BA1999E61DDC3BC900296441 /* ConnectionStatus.swift in Sources */,
 				BABDF89B1E332C70006603BA /* ColumnType.swift in Sources */,
 				BA0ACAFC1E321FB2001AD35A /* Presentable.swift in Sources */,
-				BA1999EC1DDC673400296441 /* QueryResultRow.swift in Sources */,
+				BA1999EC1DDC673400296441 /* Row.swift in Sources */,
 				BABDF8991E331B4F006603BA /* Field.swift in Sources */,
 				BA0ACAF31E3216CE001AD35A /* Decodable.swift in Sources */,
 				BACFCCB51DDAFAD500EFB0BA /* Database.swift in Sources */,
 				BA0ACAF81E32195C001AD35A /* Logger.swift in Sources */,
+				BAEE57631E48349A00EC61E7 /* ColumnTypeProtocol.swift in Sources */,
 				BA0ACAF01E320266001AD35A /* Table.swift in Sources */,
 				BA0ACAF51E32172E001AD35A /* Decoder.swift in Sources */,
 			);

@@ -13,22 +13,20 @@ import libpq
 //
 // MARK: - Decoder
 /// It's default decoder
-/// Parse raw data to QueryResultRow
+/// Parse raw data to Row
 public struct Decoder {
     
     //
     // MARK: - Variable
     fileprivate let resultPtr: OpaquePointer!
-    fileprivate let colType: ColumnType!
-    fileprivate let colIndex: Int!
     fileprivate let rowIndex: Int!
+    fileprivate let column: ColumnTypeProtocol
     
     //
     // MARK: - Init
-    public init(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int) {
+    public init(resultPtr: OpaquePointer, rowIndex: Int, column: ColumnTypeProtocol) {
         self.resultPtr = resultPtr
-        self.colType = colType
-        self.colIndex = colIndex
+        self.column = column
         self.rowIndex = rowIndex
     }
 }
@@ -38,17 +36,17 @@ public struct Decoder {
 extension Decoder: Decodable {
     
     public func isNull() -> Bool {
-        return PQgetisnull(self.resultPtr, Int32(self.rowIndex), Int32(self.colIndex)) == 1
+        return PQgetisnull(self.resultPtr, Int32(self.rowIndex), Int32(self.column.colIndex)) == 1
     }
     
     public func getRawData() -> String {
-        return String(cString: PQgetvalue(self.resultPtr, Int32(self.rowIndex), Int32(self.colIndex)))
+        return String(cString: PQgetvalue(self.resultPtr, Int32(self.rowIndex), Int32(self.column.colIndex)))
     }
     
-    public func decodeRawData(_ rawData: String, colType: ColumnType) -> Any {
+    public func decodeRawData(_ rawData: String, column: ColumnTypeProtocol) -> Any {
         var value: Any!
         
-        switch colType {
+        switch column.colType {
         case .boolean:
             value = rawData == "t" ? true : false
         case .int16:

@@ -58,14 +58,14 @@ class QueryResultSpec: QuickSpec {
                     expect(firstRow).notTo(beNil())
                     
                     // Id
-                    let field_id = firstRow!["id"]
+                    let field_id = firstRow!.field(with: "id")
                     expect(field_id).notTo(beNil())
                     expect(field_id!.rawData) == "32831"
                     expect(field_id!.isNull) == false
                     expect(field_id!.realData as? Int32) == 32831
                     
                     // Fistname
-                    let field_firstName = firstRow!["first_name"]
+                    let field_firstName = firstRow!.field(with: "first_name")
                     expect(field_firstName).notTo(beNil())
                     expect(field_firstName!.rawData) == "NULL"
                     expect(field_firstName!.isNull) == true

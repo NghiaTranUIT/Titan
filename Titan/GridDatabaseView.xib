@@ -137,6 +137,7 @@
                 <constraint firstItem="8yT-UO-ZQf" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="sNQ-o3-Qg9"/>
             </constraints>
             <connections>
+                <outlet property="tableView" destination="clZ-Og-5vJ" id="8yL-Sj-jDD"/>
                 <outlet property="titleLbl" destination="uyB-GD-Dbk" id="NZR-oS-8Lc"/>
             </connections>
         </customView>

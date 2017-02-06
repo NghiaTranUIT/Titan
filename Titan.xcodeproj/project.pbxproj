@@ -139,6 +139,7 @@
 		BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19251DAE989F00C3CD3E /* Requestable.swift */; };
 		BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */; };
 		BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */; };
+		BAEE575D1E48163200EC61E7 /* GridDatabaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE575C1E48163200EC61E7 /* GridDatabaseDataSource.swift */; };
 		BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */; };
 		BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C01D97BE810081A5FE /* Assets.xcassets */; };
 		BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAEFE7C21D97BE810081A5FE /* Connection.storyboard */; };
@@ -316,6 +317,7 @@
 		BAEE19251DAE989F00C3CD3E /* Requestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		BAEE19271DAE98D000C3CD3E /* FetchListConnectionsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchListConnectionsRequest.swift; sourceTree = "<group>"; };
 		BAEE19291DAE9BF200C3CD3E /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
+		BAEE575C1E48163200EC61E7 /* GridDatabaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridDatabaseDataSource.swift; sourceTree = "<group>"; };
 		BAEFE7B91D97BE810081A5FE /* Titan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEFE7BC1D97BE810081A5FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEFE7C01D97BE810081A5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -916,6 +918,7 @@
 		BAAD01801E44894800687509 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
+				BAEE575C1E48163200EC61E7 /* GridDatabaseDataSource.swift */,
 			);
 			name = "Data Source";
 			sourceTree = "<group>";
@@ -1525,6 +1528,7 @@
 				BAFF52C21DCE271600B566F7 /* Router.swift in Sources */,
 				BA393A421E3DD3F700450AA0 /* DatabaseManager.swift in Sources */,
 				BA679CEA1DD707E40054EB43 /* SaveObjectRequest.swift in Sources */,
+				BAEE575D1E48163200EC61E7 /* GridDatabaseDataSource.swift in Sources */,
 				BA4AFF391DACD489009AE139 /* ConnectionState.swift in Sources */,
 				BAF13D0C1E3F78B3005822AF /* MainWindowController.swift in Sources */,
 				BAD0D38F1DE2AF6C0081F28F /* TableDatabaseController.swift in Sources */,

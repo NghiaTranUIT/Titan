@@ -13,12 +13,15 @@ class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
+    fileprivate lazy var dataSource: GridDatabaseDataSource = self.initGridDatabaseDataSource()
     fileprivate var _table: Table!
     var table: Table {
         return _table
     }
     
     @IBOutlet weak var titleLbl: NSTextField!
+    @IBOutlet weak var tableView: NSTableView!
+    
     //
     // MARK: - View Cycle
     override func awakeFromNib() {
@@ -28,6 +31,11 @@ class GridDatabaseView: NSView {
         self.initBaseAbility()
     }
     
+    override func initCommon() {
+        
+        // Data source
+        self.dataSource.tableView = self.tableView
+    }
     
     //
     // MARK: - Public
@@ -41,4 +49,15 @@ class GridDatabaseView: NSView {
 // MARK: - XIBInitializable
 extension GridDatabaseView: XIBInitializable {
     typealias T = GridDatabaseView
+}
+
+//
+// MARK: - Private
+extension GridDatabaseView {
+    
+    // Init Data source {
+    fileprivate func initGridDatabaseDataSource() -> GridDatabaseDataSource {
+        let dataSource = GridDatabaseDataSource()
+        return dataSource
+    }
 }

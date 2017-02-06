@@ -43,3 +43,11 @@ public enum ColumnType: UInt32 {
         return newValue
     }
 }
+
+//
+// MARK: - Equatable
+extension ColumnType: Equatable {
+    public static func ==(lhs: ColumnType, rhs: ColumnType) -> Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+}

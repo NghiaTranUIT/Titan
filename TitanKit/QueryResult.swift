@@ -64,9 +64,9 @@ open class QueryResult {
     }()
     
     /// Rows affected
-    public lazy var rowsAffected: String = {
-        guard let resultPtr = self.resultPtr else {return ""}
-        return String(cString:PQcmdTuples(resultPtr))
+    public lazy var rowsAffected: Int = {
+        guard let resultPtr = self.resultPtr else {return -1}
+        return Int(String(cString:PQcmdTuples(resultPtr))) ?? -1
     }()
     
     //

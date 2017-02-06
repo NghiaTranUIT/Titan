@@ -97,4 +97,24 @@ extension Field {
         let value = self.decoder.decodeRawData(self.rawData, colType: self.type)
         return value
     }
+    
+    fileprivate func desctiptionValue() -> String {
+        return "[\(self.rawData):\(self.type)]"
+    }
+}
+
+//
+// MARK: - CustomDebugStringConvertible
+extension Field: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return self.desctiptionValue()
+    }
+}
+
+//
+// MARK: - CustomStringConvertible
+extension Field: CustomStringConvertible {
+    public var description: String {
+        return self.desctiptionValue()
+    }
 }

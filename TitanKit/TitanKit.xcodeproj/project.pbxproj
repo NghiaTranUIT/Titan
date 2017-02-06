@@ -33,6 +33,7 @@
 		BACFCCB91DDAFAEA00EFB0BA /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */; };
 		BACFCCBB1DDAFAF600EFB0BA /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCBA1DDAFAF600EFB0BA /* Query.swift */; };
 		BACFCCC11DDAFD9F00EFB0BA /* ConnectionParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */; };
+		BAEE575F1E4820CB00EC61E7 /* QueryResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE575E1E4820CB00EC61E7 /* QueryResultSpec.swift */; };
 		C6C561B63074AFC1C00CDD08 /* Pods_TitanKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752856CE883D403BBE6677A7 /* Pods_TitanKitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		BACFCCB81DDAFAEA00EFB0BA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		BACFCCBA1DDAFAF600EFB0BA /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		BACFCCC01DDAFD9F00EFB0BA /* ConnectionParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionParam.swift; sourceTree = "<group>"; };
+		BAEE575E1E4820CB00EC61E7 /* QueryResultSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResultSpec.swift; sourceTree = "<group>"; };
 		DA1E65DC560C21B0B02B1171 /* Pods-TitanKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanKitTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-TitanKitTests/Pods-TitanKitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				BA1999A61DDB4E3A00296441 /* Helper */,
+				BAEE575E1E4820CB00EC61E7 /* QueryResultSpec.swift */,
 				BA1999A01DDB4CB700296441 /* ConnectionSpec.swift */,
 				BA0ACAEC1E31CDFF001AD35A /* QuerySpec.swift */,
 				BA1999A21DDB4D4E00296441 /* DatabaseSpec.swift */,
@@ -450,6 +453,7 @@
 			files = (
 				BA1999A31DDB4D4E00296441 /* DatabaseSpec.swift in Sources */,
 				BA1999A11DDB4CB700296441 /* ConnectionSpec.swift in Sources */,
+				BAEE575F1E4820CB00EC61E7 /* QueryResultSpec.swift in Sources */,
 				BA1999A51DDB4E3700296441 /* ParamConnection+Helper.swift in Sources */,
 				BA0ACAED1E31CDFF001AD35A /* QuerySpec.swift in Sources */,
 			);

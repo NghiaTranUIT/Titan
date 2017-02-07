@@ -12,9 +12,11 @@ import PromiseKit
 
 //
 // MARK: - Worker
-protocol Worker {
+protocol Worker: Equatable {
     
+    var id: String {get}
 }
+
 
 //
 // MARK: - Async Worker
@@ -32,4 +34,21 @@ protocol SyncWorker: Worker {
     associatedtype T
     
     func execute() -> T
+}
+
+//
+// MARK: - Default Worker
+extension Worker {
+    
+    var id: String {
+        return UUID.shortUUID()
+    }
+}
+
+//
+// MARK: - Equatable
+extension Worker {
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

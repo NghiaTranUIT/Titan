@@ -13,12 +13,9 @@ class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
+    var table: Table!
     fileprivate lazy var dataSource: GridDatabaseDataSource = self.initGridDatabaseDataSource()
-    fileprivate var _table: Table!
-    var table: Table {
-        return _table
-    }
-    
+    fileprivate var databaseContent: DatabaseContent?
     @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
@@ -40,8 +37,16 @@ class GridDatabaseView: NSView {
     //
     // MARK: - Public
     func configureGrid(with table: Table) {
-        self._table = table
+        self.table = table
         self.titleLbl.stringValue = table.tableName!
+        
+        // Setup
+        if self.databaseContent == nil {
+            self.databaseContent = DatabaseContent(table: table)
+        }
+        
+        // Fetch first page
+        self.databaseContent!.firstPage()
     }
 }
 

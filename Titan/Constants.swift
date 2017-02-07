@@ -20,8 +20,13 @@ struct Constants {
     //
     // MARK: - Preference
     struct Preference {
+        
+        // Main app
         static let MainWindowFrame = NSRect(x: 100, y: 100, width: 1024, height: 768)
         static let DividerPosition: CGFloat = 260.0
+        
+        // Database
+        static let DefaultLimitQuery: Int = 100
     }
     
     //

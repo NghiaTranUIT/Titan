@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AA157917636353D0B4B1B208 /* Pods_TitanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */; };
 		B77B6CD65F8C93C01B6CF83B /* Pods_Titan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */; };
+		BA02BA421E49BC0900CEE028 /* PostgreQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA411E49BC0900CEE028 /* PostgreQuery.swift */; };
+		BA02BA441E49BE6000CEE028 /* DatabaseContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA431E49BE6000CEE028 /* DatabaseContent.swift */; };
+		BA02BA471E49C57200CEE028 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA461E49C57200CEE028 /* Queue.swift */; };
+		BA02BA491E49C70A00CEE028 /* QueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA481E49C70A00CEE028 /* QueueType.swift */; };
+		BA02BA4D1E49CE6300CEE028 /* BaseAsyncWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA4C1E49CE6300CEE028 /* BaseAsyncWorker.swift */; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
 		BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */; };
 		BA217FC71DF3276A00C5BD88 /* BaseModel+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC61DF3276A00C5BD88 /* BaseModel+Mapping.swift */; };
@@ -186,6 +191,11 @@
 		26A5BB943EAB00AF37CA983D /* Pods-Titan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Titan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Titan/Pods-Titan.debug.xcconfig"; sourceTree = "<group>"; };
 		72F9CC9AF26592C306EDE3E7 /* Pods_TitanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TitanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEA1498E4049CED7E4FB4F6 /* Pods-TitanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA02BA411E49BC0900CEE028 /* PostgreQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreQuery.swift; sourceTree = "<group>"; };
+		BA02BA431E49BE6000CEE028 /* DatabaseContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseContent.swift; sourceTree = "<group>"; };
+		BA02BA461E49C57200CEE028 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		BA02BA481E49C70A00CEE028 /* QueueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueType.swift; sourceTree = "<group>"; };
+		BA02BA4C1E49CE6300CEE028 /* BaseAsyncWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAsyncWorker.swift; sourceTree = "<group>"; };
 		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -392,6 +402,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA02BA401E49BBF100CEE028 /* Database Content */ = {
+			isa = PBXGroup;
+			children = (
+				BA02BA451E49C2B700CEE028 /* Worker */,
+				BA02BA411E49BC0900CEE028 /* PostgreQuery.swift */,
+				BA02BA431E49BE6000CEE028 /* DatabaseContent.swift */,
+			);
+			name = "Database Content";
+			sourceTree = "<group>";
+		};
+		BA02BA451E49C2B700CEE028 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Worker;
+			sourceTree = "<group>";
+		};
 		BA035FC01D97DB9100B616AB /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +559,9 @@
 			isa = PBXGroup;
 			children = (
 				BA320A5A1DDDFF0A00C0E82B /* Worker.swift */,
+				BA02BA461E49C57200CEE028 /* Queue.swift */,
+				BA02BA481E49C70A00CEE028 /* QueueType.swift */,
+				BA02BA4C1E49CE6300CEE028 /* BaseAsyncWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -672,6 +702,7 @@
 		BA4AFF181DAC9678009AE139 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA02BA401E49BBF100CEE028 /* Database Content */,
 				BAAD017B1E447DF200687509 /* Font */,
 				BAF13D0E1E40EECD005822AF /* App Preferences */,
 				BAF13D021E3E2C67005822AF /* Queue Manager */,
@@ -1555,11 +1586,13 @@
 				BA320A4D1DDDF55D00C0E82B /* DetailConnectionPresenter.swift in Sources */,
 				BA393A441E3DD4C400450AA0 /* Object+Lock.swift in Sources */,
 				BAEFE7BD1D97BE810081A5FE /* AppDelegate.swift in Sources */,
+				BA02BA421E49BC0900CEE028 /* PostgreQuery.swift in Sources */,
 				BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */,
 				BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */,
 				BAD0D39C1DE2B0CC0081F28F /* ContentDatabaseConfig.swift in Sources */,
 				BA8E0BE01DB0E65C00B9BDD7 /* SettingObj.swift in Sources */,
 				BA8E0BDD1DB0E38F00B9BDD7 /* AppVersionManager.swift in Sources */,
+				BA02BA441E49BE6000CEE028 /* DatabaseContent.swift in Sources */,
 				BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */,
 				BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */,
 				BAD0D39E1DE2B0DC0081F28F /* TableDatabaseConfig.swift in Sources */,
@@ -1601,10 +1634,12 @@
 				BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */,
 				BA9875691DF4449700901CD5 /* GroupColorView.swift in Sources */,
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,
+				BA02BA491E49C70A00CEE028 /* QueueType.swift in Sources */,
 				BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */,
 				BAD0D3941DE2B0970081F28F /* TableDatabasePresenter.swift in Sources */,
 				BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */,
 				BAA0A09F1DF2AD36000D8F23 /* NSButton+TextColor.swift in Sources */,
+				BA02BA4D1E49CE6300CEE028 /* BaseAsyncWorker.swift in Sources */,
 				BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */,
 				BA8FB3091E470F08004D48F5 /* TableSchemeContextMenuView.swift in Sources */,
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
@@ -1612,6 +1647,7 @@
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */,
+				BA02BA471E49C57200CEE028 /* Queue.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
 				BAD0D3A01DE2B0FB0081F28F /* DetailDatabaseState.swift in Sources */,
 				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,

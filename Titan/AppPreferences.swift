@@ -48,4 +48,18 @@ class AppPreferences {
             return value
         }
     }
+    
+    // Default number row per page in Query
+    var defaultLimitQuery: Int {
+        set {
+            self.defaults.setObject(newValue, for: .defaultLimitQuery)
+            self.defaults.synchronize()
+        }
+        get {
+            guard let value = self.defaults.objectForKey(.defaultLimitQuery) as? Int else {
+                return Constants.Preference.DefaultLimitQuery
+            }
+            return value
+        }
+    }
 }

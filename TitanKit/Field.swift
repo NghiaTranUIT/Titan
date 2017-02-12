@@ -21,13 +21,13 @@ open class Field: Presentable {
     
     /// Column
     fileprivate var _column: ColumnTypeProtocol!
-    var column: ColumnTypeProtocol {
+    public var column: ColumnTypeProtocol {
         return _column
     }
     
     /// Real data
     fileprivate lazy var _realData: Any = self.parseRealData()
-    var realData: Any {
+    public var realData: Any {
         get {
             return self._realData
         }
@@ -37,7 +37,7 @@ open class Field: Presentable {
     /// Intent for presentation in Field cell
     /// We use it to reduce hit performance. Only parse to real data if possible
     fileprivate var _rawData: String = ""
-    var rawData: String {
+    public var rawData: String {
         get {
             if self.isNull {
                 return "NULL"
@@ -49,14 +49,14 @@ open class Field: Presentable {
     /// Determine if current value is <null>
     /// Store it as NSNull
     fileprivate var _isNull: Bool = false
-    var isNull: Bool {
+    public var isNull: Bool {
         get {
             return self._isNull
         }
     }
     
     /// Col type
-    var colType: ColumnType {
+    public var colType: ColumnType {
         return self.column.colType
     }
     

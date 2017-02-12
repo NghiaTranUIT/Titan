@@ -139,4 +139,28 @@ class DatabaseManager {
             })
         }
     }
+    
+    // Fetch query
+    func fetchQuery(_ query: PostgreQuery) -> Promise<QueryResult> {
+        
+        guard self._connectState == .connected else {
+            let error = NSError.errorWithMessage(message: "No database connected")
+            return Promise(error: error)
+        }
+        
+        return Promise { (fullfill, reject) in
+            
+            let op = QueryPostgreSQLOperation(connect: self.currentDbConnection, rawQuery: query.rawQuery)
+            op.executeOnBackground(with: { (result, _ ) in
+                guard let queryResult = result as? QueryResult else {
+                    let error = NSError.errorWithMessage(message: "Fatal error")
+                    self._connectState = .none
+                    reject(error)
+                    return
+                }
+                
+                fullfill(queryResult)
+            })
+        }
+    }
 }

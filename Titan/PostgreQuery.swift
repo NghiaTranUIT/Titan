@@ -13,7 +13,7 @@ class PostgreQuery {
     
     //
     // MARK: - Variable
-    fileprivate var rawQuery: Query!
+    var rawQuery: Query!
     
     //
     // MARK: - Initializer
@@ -29,7 +29,7 @@ class PostgreQuery {
     //
     // MARK: - Builder
     class func buildDefaultQuery(with table: Table, pagination: Pagination) -> PostgreQuery {
-        let raw = Query("SELECT + \(table.tableName!) SKIP \(pagination.skip) LIMIT \(pagination.limit)")
+        let raw = Query("SELECT * FROM \(table.tableName!) OFFSET \(pagination.skip) LIMIT \(pagination.limit)")
         return PostgreQuery(rawQuery: raw)
     }
 }

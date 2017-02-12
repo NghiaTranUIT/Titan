@@ -19,7 +19,6 @@ class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
-    fileprivate lazy var dataSource: GridDatabaseDataSource = self.initGridDatabaseDataSource()
     fileprivate var databaseContent = DatabaseContent()
     fileprivate var mode: GridContentViewMode = .none
     var table: Table? {
@@ -48,7 +47,7 @@ class GridDatabaseView: NSView {
     override func initCommon() {
         
         // Data source
-        self.dataSource.tableView = self.tableView
+        self.databaseContent.tableView = self.tableView
     }
     
     //
@@ -83,10 +82,5 @@ extension GridDatabaseView: XIBInitializable {
 //
 // MARK: - Private
 extension GridDatabaseView {
-    
-    // Init Data source {
-    fileprivate func initGridDatabaseDataSource() -> GridDatabaseDataSource {
-        let dataSource = GridDatabaseDataSource()
-        return dataSource
-    }
+
 }

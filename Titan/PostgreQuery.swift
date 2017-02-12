@@ -16,5 +16,20 @@ class PostgreQuery {
     fileprivate var rawQuery: Query!
     
     //
-    // MARK: - Public
+    // MARK: - Initializer
+    init() {
+        
+    }
+    
+    convenience init(rawQuery: Query){
+        self.init()
+        self.rawQuery = rawQuery
+    }
+    
+    //
+    // MARK: - Builder
+    class func buildDefaultQuery(with table: Table, pagination: Pagination) -> PostgreQuery {
+        let raw = Query("SELECT + \(table.tableName!) SKIP \(pagination.skip) LIMIT \(pagination.limit)")
+        return PostgreQuery(rawQuery: raw)
+    }
 }

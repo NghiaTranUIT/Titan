@@ -13,18 +13,36 @@ class DatabaseContent {
     
     //
     // MARK: - Variable
-    fileprivate var table: Table!
     fileprivate var workerQueue: Queue<BaseAsyncWorker> = Queue<BaseAsyncWorker>()
+    fileprivate var mode = GridContentViewMode.none
+    fileprivate var currentQuery: PostgreQuery?
+    fileprivate let pagination = Pagination()
     
     //
     // MARK: - Initializer
-    init(table: Table) {
-        self.table = table
-    }
     
     //
     // MARK: - Public
-    func firstPage() {
+    func configure(with mode: GridContentViewMode) {
+        
+        self.mode = mode
+        
+        switch self.mode {
+        case .individually(let table):
+            self.currentQuery = PostgreQuery.buildDefaultQuery(with: table, pagination: self.pagination)
+            break
+        case .dynamic:
+            break
+        case .none:
+            break
+        }
+    }
+    
+    func query(_ query: PostgreQuery) {
+        
+    }
+    
+    func fetchFirstPage() {
         
         // Cancel
         self.cancelAllWorker()
@@ -37,9 +55,15 @@ class DatabaseContent {
     // MARK: - Pagination
     func nextPage() {
         
+        // Cancel
+        self.cancelAllWorker()
+        
     }
     
     func previousPage() {
+        
+        // Cancel
+        self.cancelAllWorker()
         
     }
 }
@@ -52,3 +76,4 @@ extension DatabaseContent {
         
     }
 }
+

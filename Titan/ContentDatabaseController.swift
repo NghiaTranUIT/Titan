@@ -109,11 +109,11 @@ extension ContentDatabaseController {
         
         // Add
         if let gridView = filter.first {
-            gridView.configureGrid(with: selectedTable)
+            gridView.configureGridDatabase(with: .individually(selectedTable))
             self.addGridView(gridView)
         } else {
             let gridView = GridDatabaseView.viewFromNib()!
-            gridView.configureGrid(with: selectedTable)
+            gridView.configureGridDatabase(with: .individually(selectedTable))
             self.gridDatabaseViews.append(gridView)
             self.addGridView(gridView)
         }
@@ -121,7 +121,7 @@ extension ContentDatabaseController {
         // Filter again
         // to removed unncessary view + pointer
         let removeViews = self.gridDatabaseViews.filter { (innerGridView) -> Bool in
-            return !self.tableStackView.isTableInStack(for: innerGridView.table)
+            return !self.tableStackView.isTableInStack(for: innerGridView.table!)
         }
         for removeView in removeViews {
             removeView.removeFromSuperview()

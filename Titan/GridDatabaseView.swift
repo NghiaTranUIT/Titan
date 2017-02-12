@@ -9,13 +9,30 @@
 import Cocoa
 import TitanKit
 
+enum GridContentViewMode {
+    case individually(Table)
+    case dynamic
+    case none
+}
+
 class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
-    var table: Table!
     fileprivate lazy var dataSource: GridDatabaseDataSource = self.initGridDatabaseDataSource()
-    fileprivate var databaseContent: DatabaseContent?
+    fileprivate var databaseContent = DatabaseContent()
+    fileprivate var mode: GridContentViewMode = .none
+    var table: Table? {
+        switch self.mode {
+        case .individually(let table):
+            return table
+        default:
+            return nil
+        }
+    }
+    
+    //
+    // MARK: - OUTLET
     @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
@@ -36,17 +53,24 @@ class GridDatabaseView: NSView {
     
     //
     // MARK: - Public
-    func configureGrid(with table: Table) {
-        self.table = table
-        self.titleLbl.stringValue = table.tableName!
+    func configureGridDatabase(with mode: GridContentViewMode) {
         
-        // Setup
-        if self.databaseContent == nil {
-            self.databaseContent = DatabaseContent(table: table)
-        }
+        self.mode = mode
+        
+        // Content
+        self.databaseContent.configure(with: mode)
         
         // Fetch first page
-        self.databaseContent!.firstPage()
+        self.databaseContent.fetchFirstPage()
+    }
+    
+    func query(_ query: PostgreQuery) {
+        
+        // Fetch data with new query
+        self.databaseContent.query(query)
+        
+        // First page
+        self.databaseContent.fetchFirstPage()
     }
 }
 

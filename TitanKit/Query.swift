@@ -55,6 +55,7 @@ public struct Query {
     public var resultFormat: QueryResultFormat {
         get {return .text}
     }
+
 }
 
 //

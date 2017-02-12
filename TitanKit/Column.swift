@@ -27,6 +27,24 @@ open class Column: ColumnTypeProtocol {
         return _colType
     }
     
+    public lazy var textAlignment: NSTextAlignment = {
+        switch self.colType {
+        case .boolean:
+            return .center
+        case .int64:
+            fallthrough
+        case .int16:
+            fallthrough
+        case .int32:
+            fallthrough
+        case .singleFloat:
+            fallthrough
+        case .doubleFloat:
+            return .right
+        default: return .left
+        }
+    }()
+    
     //
     // MARK: - Init
     init() {}
@@ -42,6 +60,10 @@ open class Column: ColumnTypeProtocol {
         col._colName = colName
         return col
     }
+    
+    //
+    // MARK: - Public
+    
 }
 
 extension Column: Hashable {

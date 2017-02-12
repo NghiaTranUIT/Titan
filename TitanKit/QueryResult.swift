@@ -50,12 +50,13 @@ open class QueryResult {
     
     /// Rows
     public lazy var rows: [Row] = self.getRows()
+    public lazy var columns: [Column] = self.getColumns()
     
     /// Col name at index
-    public lazy var columnsName: [String] = self.getColumnsName()
+    fileprivate lazy var columnsName: [String] = self.getColumnsName()
     
     /// Type of colums
-    lazy var columnTypes: [ColumnType] = self.getTypeOfColIndex()
+    fileprivate lazy var columnTypes: [ColumnType] = self.getTypeOfColIndex()
     
     /// Command Status
     public lazy var commandStatus: String = {
@@ -101,14 +102,29 @@ extension QueryResult {
         // Get value
         for rowIndex in 0..<self.numberOfRows {
             let row = Row.buildResultRow(atRowIndex: Int32(rowIndex),
-                                               colIndex: self.columnsName,
-                                               colTypes: self.columnTypes,
-                                               resultPtr: resultPtr)
+                                            columns: self.columns,
+                                          resultPtr: resultPtr)
             rows.append(row)
         }
         
         // Return
         return rows
+    }
+    
+    // Lazy get columns
+    fileprivate func getColumns() -> [Column] {
+        
+        var cols: [Column] = []
+        for i in 0..<self.columnsName.count {
+            
+            let nameCol = self.columnsName[i]
+            let colType = self.columnTypes[i]
+            let col = Column(colName: nameCol, colIndex: i, colType: colType)
+            
+            // Add
+            cols.append(col)
+        }
+        return cols
     }
     
     /// Lazy get type of cols

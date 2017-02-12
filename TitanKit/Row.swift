@@ -27,16 +27,12 @@ open class Row {
         self.results = results
     }
     
-    public class func buildResultRow(atRowIndex rowIndex: Int32, colIndex: [String], colTypes: [ColumnType], resultPtr: OpaquePointer)
-        -> Row {
+    public class func buildResultRow(atRowIndex rowIndex: Int32, columns: [Column], resultPtr: OpaquePointer) -> Row {
         
         var results: [Column: Field] = [:]
         
-        for i in 0..<colIndex.count {
-            
-            let nameCol = colIndex[i]
-            let colType = colTypes[i]
-            let col = Column(colName: nameCol, colIndex: i, colType: colType)
+        for i in 0..<columns.count {
+            let col = columns[i]
             let field = Field(resultPtr: resultPtr, rowIndex: Int(rowIndex), column: col)
             
             // Save

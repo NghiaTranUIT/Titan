@@ -21,7 +21,19 @@ class DatabaseContent: NSObject {
     var tableView: NSTableView! {didSet{self.setupTable()}}
     
     // Data
-    fileprivate var rows: [Row] = []
+    fileprivate var queryResult: QueryResult? {didSet {self.processColumnType()}}
+    fileprivate var rows: [Row] {
+        guard let result = self.queryResult else {
+            return []
+        }
+        return result.rows
+    }
+    fileprivate var columns: [Column] {
+        guard let result = self.queryResult else {
+            return []
+        }
+        return result.columns
+    }
     
     //
     // MARK: - Initializer
@@ -59,9 +71,8 @@ class DatabaseContent: NSObject {
             guard let `self` = self else {return}
             
             // Update
-            self.rows = queryResult.rows
+            self.queryResult = queryResult
             self.tableView.reloadData()
-            
         }
         .catch { error in
             
@@ -92,6 +103,18 @@ extension DatabaseContent {
     fileprivate func cancelAllWorker() {
         
     }
+    
+    fileprivate func processColumnType() {
+        
+        let cols = self.columns.map { column -> NSTableColumn in
+            return TitanTableColumn(column: column)
+        }
+        
+        for col in cols {
+            self.tableView.addTableColumn(col)
+        }
+    
+    }
 }
 
 //
@@ -107,10 +130,6 @@ extension DatabaseContent {
         self.tableView.registerView(PlaceholderTableCell.self)
         self.tableView.registerView(DatabaseValueCell.self)
         
-        // Make col alwasy fit tableView's width
-        self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
-        self.tableView.sizeLastColumnToFit()
-        
         // Reload
         self.tableView.reloadData()
     }
@@ -125,10 +144,14 @@ extension DatabaseContent: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let cell = tableView.make(withIdentifier: DatabaseValueCell.identifierView, owner: nil) as! DatabaseValueCell
+        guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
+
+        let cell = tableView.make(withIdentifier: DatabaseValueCell.identifierView, owner: self) as! DatabaseValueCell
         
+        // Get col
+        let col = tableColumn.column!
         let row = self.rows[row]
-        let field = row.field(with: "id")!
+        let field = row.field(with: col)!
         cell.configureCell(with: field)
         
         return cell
@@ -136,17 +159,6 @@ extension DatabaseContent: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 44
-    }
-    
-    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        var rowView = tableView.make(withIdentifier: TableRowView.identifierView, owner: self) as? TableRowView
-        
-        if rowView == nil {
-            rowView = TableRowView()
-            rowView?.identifier = TableRowView.identifierView
-        }
-        
-        return rowView
     }
 }
 

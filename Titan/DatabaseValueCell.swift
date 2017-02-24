@@ -23,9 +23,21 @@ class DatabaseValueCell: NSTableCellView {
     
     //
     // MARK: - Public
-    func configureCell(with field: Field) {
+    func configureCell(with field: Field, column: Column) {
         
         // Show raw data
         self.titleLbl.stringValue = field.rawData
+        
+        // Layout
+        self.setupLayout(with: column)
+    }
+}
+
+//
+// MARK: - Private
+extension DatabaseValueCell {
+    
+    fileprivate func setupLayout(with column: Column) {
+        self.titleLbl.alignment = column.textAlignment
     }
 }

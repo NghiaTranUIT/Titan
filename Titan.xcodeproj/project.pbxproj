@@ -126,6 +126,7 @@
 		BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC4756A1E50266A002D9F56 /* DatabaseValueCell.xib */; };
 		BAC4756D1E502720002D9F56 /* DatabaseValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4756C1E502720002D9F56 /* DatabaseValueCell.swift */; };
 		BAC4756F1E502F48002D9F56 /* TitanTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4756E1E502F48002D9F56 /* TitanTableColumn.swift */; };
+		BAC475711E5049D2002D9F56 /* NSTableView+Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC475701E5049D2002D9F56 /* NSTableView+Column.swift */; };
 		BACFCC9F1DDAF8EB00EFB0BA /* TitanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; };
 		BACFCCA01DDAF8EB00EFB0BA /* TitanKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */; };
@@ -315,6 +316,7 @@
 		BAC4756A1E50266A002D9F56 /* DatabaseValueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatabaseValueCell.xib; sourceTree = "<group>"; };
 		BAC4756C1E502720002D9F56 /* DatabaseValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseValueCell.swift; sourceTree = "<group>"; };
 		BAC4756E1E502F48002D9F56 /* TitanTableColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableColumn.swift; sourceTree = "<group>"; };
+		BAC475701E5049D2002D9F56 /* NSTableView+Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Column.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
 		BAD0D3831DE2AE6E0081F28F /* MainTabConnectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabConnectionController.swift; sourceTree = "<group>"; };
@@ -1164,6 +1166,7 @@
 				BA393A3B1E3DB63300450AA0 /* UserDefault+Key.swift */,
 				BA393A431E3DD4C400450AA0 /* Object+Lock.swift */,
 				BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */,
+				BAC475701E5049D2002D9F56 /* NSTableView+Column.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1629,6 +1632,7 @@
 				BAF13D121E40F3C3005822AF /* BaseWindowController.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* ContentDatabaseInteractor.swift in Sources */,
 				BAAD01691E4431F800687509 /* TablesDataSource.swift in Sources */,
+				BAC475711E5049D2002D9F56 /* NSTableView+Column.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
 				BAF13D091E3F75C4005822AF /* DetailDatabaseWindowController.swift in Sources */,
 				BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */,

@@ -73,6 +73,8 @@ class DatabaseContent: NSObject {
             // Update
             self.queryResult = queryResult
             self.tableView.reloadData()
+            self.tableView.sizeLastColumnToFit()
+            self.tableView.sizeToFit()
         }
         .catch { error in
             
@@ -106,6 +108,9 @@ extension DatabaseContent {
     
     fileprivate func processColumnType() {
         
+        // Remove all first
+        self.tableView.removeAllColumns()
+        
         let cols = self.columns.map { column -> NSTableColumn in
             return TitanTableColumn(column: column)
         }
@@ -130,8 +135,11 @@ extension DatabaseContent {
         self.tableView.registerView(PlaceholderTableCell.self)
         self.tableView.registerView(DatabaseValueCell.self)
         
+        self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+        
         // Reload
         self.tableView.reloadData()
+        self.tableView.sizeLastColumnToFit()
     }
 }
 
@@ -152,13 +160,13 @@ extension DatabaseContent: NSTableViewDataSource {
         let col = tableColumn.column!
         let row = self.rows[row]
         let field = row.field(with: col)!
-        cell.configureCell(with: field)
+        cell.configureCell(with: field, column: col)
         
         return cell
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 44
+        return 22
     }
 }
 

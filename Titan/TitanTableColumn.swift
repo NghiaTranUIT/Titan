@@ -13,13 +13,14 @@ class TitanTableColumn: NSTableColumn {
 
     //
     // MARK: - Variable
-    var column: Column! {didSet{self.defaultData()}}
+    var column: Column!
     
     //
     // MARK: - Init
     init(column: Column) {
         super.init(identifier: column.colName)
         self.column = column
+        self.defaultData()
     }
     
     required init(coder: NSCoder) {
@@ -33,11 +34,12 @@ class TitanTableColumn: NSTableColumn {
 extension TitanTableColumn {
     fileprivate func defaultData() {
         self.width      = 50
-        self.minWidth   = 20
-        self.maxWidth   = 100
+        self.minWidth   = 200
+        self.maxWidth   = 500
         self.isEditable = false
         self.headerCell.title = self.column.colName
-        self.headerCell.alignment = self.column.textAlignment
+        self.headerCell.alignment = .left
         self.headerCell.lineBreakMode = .byTruncatingMiddle
+        self.resizingMask = .autoresizingMask
     }
 }

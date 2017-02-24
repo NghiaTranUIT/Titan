@@ -10,21 +10,22 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <tableCellView identifier="DatabaseValueCell" id="6ms-6a-ZXU" customClass="DatabaseValueCell" customModule="Titan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="208" height="83"/>
+            <rect key="frame" x="0.0" y="0.0" width="208" height="26"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-B9-9xZ">
-                    <rect key="frame" x="56" y="33" width="97" height="17"/>
-                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="eLU-CU-244">
-                        <font key="font" metaFont="system"/>
+                    <rect key="frame" x="4" y="5" width="200" height="18"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" id="eLU-CU-244">
+                        <font key="font" size="12" name="SFUIText-Regular"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="dZa-B9-9xZ" firstAttribute="centerX" secondItem="6ms-6a-ZXU" secondAttribute="centerX" id="IWA-ut-7ak"/>
-                <constraint firstItem="dZa-B9-9xZ" firstAttribute="centerY" secondItem="6ms-6a-ZXU" secondAttribute="centerY" id="LhG-gJ-4Eh"/>
+                <constraint firstItem="dZa-B9-9xZ" firstAttribute="centerY" secondItem="6ms-6a-ZXU" secondAttribute="centerY" constant="-1" id="MoF-aY-3dh"/>
+                <constraint firstItem="dZa-B9-9xZ" firstAttribute="leading" secondItem="6ms-6a-ZXU" secondAttribute="leading" constant="6" id="UDa-cP-NLk"/>
+                <constraint firstAttribute="trailing" secondItem="dZa-B9-9xZ" secondAttribute="trailing" constant="6" id="hxp-UQ-HIn"/>
             </constraints>
             <connections>
                 <outlet property="textField" destination="dZa-B9-9xZ" id="NpS-Fy-lV6"/>

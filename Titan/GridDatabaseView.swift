@@ -9,16 +9,29 @@
 import Cocoa
 import TitanKit
 
+enum GridContentViewMode {
+    case individually(Table)
+    case dynamic
+    case none
+}
+
 class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
-    fileprivate lazy var dataSource: GridDatabaseDataSource = self.initGridDatabaseDataSource()
-    fileprivate var _table: Table!
-    var table: Table {
-        return _table
+    fileprivate var databaseContent = DatabaseContent()
+    fileprivate var mode: GridContentViewMode = .none
+    var table: Table? {
+        switch self.mode {
+        case .individually(let table):
+            return table
+        default:
+            return nil
+        }
     }
     
+    //
+    // MARK: - OUTLET
     @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
@@ -34,14 +47,29 @@ class GridDatabaseView: NSView {
     override func initCommon() {
         
         // Data source
-        self.dataSource.tableView = self.tableView
+        self.databaseContent.tableView = self.tableView
     }
     
     //
     // MARK: - Public
-    func configureGrid(with table: Table) {
-        self._table = table
-        self.titleLbl.stringValue = table.tableName!
+    func configureGridDatabase(with mode: GridContentViewMode) {
+        
+        self.mode = mode
+        
+        // Content
+        self.databaseContent.configure(with: mode)
+        
+        // Fetch first page
+        self.databaseContent.fetchFirstPage()
+    }
+    
+    func query(_ query: PostgreQuery) {
+        
+        // Fetch data with new query
+        self.databaseContent.query(query)
+        
+        // First page
+        self.databaseContent.fetchFirstPage()
     }
 }
 
@@ -54,10 +82,5 @@ extension GridDatabaseView: XIBInitializable {
 //
 // MARK: - Private
 extension GridDatabaseView {
-    
-    // Init Data source {
-    fileprivate func initGridDatabaseDataSource() -> GridDatabaseDataSource {
-        let dataSource = GridDatabaseDataSource()
-        return dataSource
-    }
+
 }

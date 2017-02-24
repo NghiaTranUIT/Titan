@@ -49,13 +49,14 @@ open class QueryResult {
     }()
     
     /// Rows
-    public lazy var rows: [QueryResultRow] = self.getRows()
+    public lazy var rows: [Row] = self.getRows()
+    public lazy var columns: [Column] = self.getColumns()
     
     /// Col name at index
-    public lazy var columnsName: [String] = self.getColumnsName()
+    fileprivate lazy var columnsName: [String] = self.getColumnsName()
     
     /// Type of colums
-    lazy var columnTypes: [ColumnType] = self.getTypeOfColIndex()
+    fileprivate lazy var columnTypes: [ColumnType] = self.getTypeOfColIndex()
     
     /// Command Status
     public lazy var commandStatus: String = {
@@ -64,9 +65,9 @@ open class QueryResult {
     }()
     
     /// Rows affected
-    public lazy var rowsAffected: String = {
-        guard let resultPtr = self.resultPtr else {return ""}
-        return String(cString:PQcmdTuples(resultPtr))
+    public lazy var rowsAffected: Int = {
+        guard let resultPtr = self.resultPtr else {return -1}
+        return Int(String(cString:PQcmdTuples(resultPtr))) ?? -1
     }()
     
     //
@@ -88,27 +89,42 @@ open class QueryResult {
 extension QueryResult {
     
     /// Lazy get Row
-    fileprivate func getRows() -> [QueryResultRow] {
+    fileprivate func getRows() -> [Row] {
         
         guard let resultPtr = self.resultPtr else {
             return []
         }
         
         // Rows
-        var rows: [QueryResultRow] = []
+        var rows: [Row] = []
         rows.reserveCapacity(self.numberOfRows)
         
         // Get value
         for rowIndex in 0..<self.numberOfRows {
-            let row = QueryResultRow.buildResultRow(atRowIndex: Int32(rowIndex),
-                                               colIndex: self.columnsName,
-                                               colTypes: self.columnTypes,
-                                               resultPtr: resultPtr)
+            let row = Row.buildResultRow(atRowIndex: Int32(rowIndex),
+                                            columns: self.columns,
+                                          resultPtr: resultPtr)
             rows.append(row)
         }
         
         // Return
         return rows
+    }
+    
+    // Lazy get columns
+    fileprivate func getColumns() -> [Column] {
+        
+        var cols: [Column] = []
+        for i in 0..<self.columnsName.count {
+            
+            let nameCol = self.columnsName[i]
+            let colType = self.columnTypes[i]
+            let col = Column(colName: nameCol, colIndex: i, colType: colType)
+            
+            // Add
+            cols.append(col)
+        }
+        return cols
     }
     
     /// Lazy get type of cols

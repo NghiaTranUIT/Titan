@@ -10,11 +10,11 @@ import Foundation
 
 //
 // MARK: - Decoeable
-/// Convert raw value with colIndex, colType,... to QueryResultRow
+/// Convert raw value with colIndex, colType,... to Row
 public protocol Decodable {
     
     /// Init
-    init(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int)
+    init(resultPtr: OpaquePointer, rowIndex: Int, column: ColumnTypeProtocol)
     
     /// Determine if is null
     func isNull() -> Bool
@@ -23,5 +23,5 @@ public protocol Decodable {
     func getRawData() -> String
     
     /// Parse RawData -> RealData
-    func decodeRawData(_ rawData: String, colType: ColumnType) -> Any
+    func decodeRawData(_ rawData: String, column: ColumnTypeProtocol) -> Any
 }

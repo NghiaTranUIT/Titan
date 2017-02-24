@@ -11,9 +11,14 @@ import Foundation
 //
 // MARK: - UserDefaults
 enum UserDefaultsKey: String {
+    
+    // Main app
     case isFirstTime
     case mainWindowFrame
     case dividerPosition
+    
+    // Database
+    case defaultLimitQuery
     
     // Add more key here
 }

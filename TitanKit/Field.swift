@@ -19,17 +19,15 @@ open class Field: Presentable {
     /// Decoder
     fileprivate var decoder: Decodable!
     
-    /// Type
-    fileprivate var _type: ColumnType = .unsupport
-    var type: ColumnType {
-        get {
-            return self._type
-        }
+    /// Column
+    fileprivate var _column: ColumnTypeProtocol!
+    public var column: ColumnTypeProtocol {
+        return _column
     }
     
     /// Real data
     fileprivate lazy var _realData: Any = self.parseRealData()
-    var realData: Any {
+    public var realData: Any {
         get {
             return self._realData
         }
@@ -39,7 +37,7 @@ open class Field: Presentable {
     /// Intent for presentation in Field cell
     /// We use it to reduce hit performance. Only parse to real data if possible
     fileprivate var _rawData: String = ""
-    var rawData: String {
+    public var rawData: String {
         get {
             if self.isNull {
                 return "NULL"
@@ -51,17 +49,22 @@ open class Field: Presentable {
     /// Determine if current value is <null>
     /// Store it as NSNull
     fileprivate var _isNull: Bool = false
-    var isNull: Bool {
+    public var isNull: Bool {
         get {
             return self._isNull
         }
     }
     
+    /// Col type
+    public var colType: ColumnType {
+        return self.column.colType
+    }
+    
     //
     // MARK: - Init
-    init(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int) {
-        self._type = colType
-        self.parseData(resultPtr: resultPtr, colType: colType, rowIndex: rowIndex, colIndex: colIndex)
+    init(resultPtr: OpaquePointer, rowIndex: Int, column: Column) {
+        self._column = column
+        self.parseData(resultPtr: resultPtr, rowIndex: rowIndex, column: column)
     }
 }
 
@@ -70,10 +73,10 @@ open class Field: Presentable {
 // MARK: - Private
 extension Field {
     
-    fileprivate func parseData(resultPtr: OpaquePointer, colType: ColumnType, rowIndex: Int, colIndex: Int) {
+    fileprivate func parseData(resultPtr: OpaquePointer, rowIndex: Int, column: Column) {
         
         // Decoder
-        self.decoder = Decoder(resultPtr: resultPtr, colType: colType, rowIndex: rowIndex, colIndex: colIndex)
+        self.decoder = Decoder(resultPtr: resultPtr, rowIndex: rowIndex, column: column)
         
         // Is Null
         guard decoder.isNull() == false else {
@@ -94,7 +97,27 @@ extension Field {
         }
         
         // Real data
-        let value = self.decoder.decodeRawData(self.rawData, colType: self.type)
+        let value = self.decoder.decodeRawData(self.rawData, column: self.column)
         return value
+    }
+    
+    fileprivate func desctiptionValue() -> String {
+        return "[\(self.rawData):\(self._column.colType)]"
+    }
+}
+
+//
+// MARK: - CustomDebugStringConvertible
+extension Field: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return self.desctiptionValue()
+    }
+}
+
+//
+// MARK: - CustomStringConvertible
+extension Field: CustomStringConvertible {
+    public var description: String {
+        return self.desctiptionValue()
     }
 }

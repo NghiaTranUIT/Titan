@@ -57,12 +57,12 @@ class QuerySpec: QuickSpec {
                     let result = connection.execute(query: query)
                     
                     let row = result.rows.first
-                    let field = row?["bool"]
+                    let field = row?.field(with: "bool")
                     
                     expect(row).notTo(beNil())
                     expect(field).notTo(beNil())
                     expect(field!.rawData).to(equal("t"))
-                    expect(field!.type.rawValue).to(equal(ColumnType.boolean.rawValue))
+                    expect(field!.column.colType.rawValue).to(equal(ColumnType.boolean.rawValue))
                     expect(field!.realData as? Bool).to(beTruthy())
                 })
             })
@@ -74,7 +74,7 @@ class QuerySpec: QuickSpec {
                     let result = connection.execute(query: query)
                     
                     let row = result.rows.first
-                    let field = row?["?column?"]
+                    let field = row?.field(with: "?column?")
                     
                     expect(row).notTo(beNil())
                     expect(field).notTo(beNil())

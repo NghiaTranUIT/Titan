@@ -38,12 +38,8 @@ class QueryResultSpec: QuickSpec {
                     
                     expect(result.resultStatus) == ResultStatus.PGRES_TUPLES_OK
                     expect(result.numberOfColumns) == 4
-                    expect(result.columnsName) == ["id", "first_name", "last_name", "email"]
                     expect(result.numberOfRows) == 10
                     expect(result.rowsAffected) == 10
-                    
-                    let colTypes: [ColumnType] = [ColumnType.int32, ColumnType.varchar, ColumnType.varchar, ColumnType.varchar]
-                    expect(result.columnTypes) == colTypes
                 })
             })
             

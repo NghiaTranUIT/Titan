@@ -24,7 +24,6 @@ class DetailConnectionsController: NSViewController {
     @IBOutlet weak var databaseTxt: NSTextField!
     @IBOutlet weak var sshCheckboxBtn: NSButton!
     @IBOutlet weak var saveInKeyChainCheckBoxBtn: NSButton!
-    @IBOutlet weak var topBarView: NSView!
     @IBOutlet weak var connectionBtn: NSButton!
     
     //
@@ -53,8 +52,6 @@ class DetailConnectionsController: NSViewController {
     
     override func initUIs() {
         
-        // Top bar Background
-        self.topBarView.backgroundColor = NSColor(hexString: "1799DD")
     }
     
     override func initActions() {

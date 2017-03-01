@@ -46,14 +46,17 @@ extension BaseWindowController {
     fileprivate func initCommon() {
         guard let window = self.window else {return}
         
+        // Layer
         if let view = window.contentView {
             view.wantsLayer = true
         }
+        
         window.styleMask.insert(.fullSizeContentView)
-        window.titleVisibility = .hidden
         window.titlebarAppearsTransparent = true
         
-        self.window?.isReleasedWhenClosed = true
+        window.isMovableByWindowBackground = true
+        // Release mode
+        window.isReleasedWhenClosed = true
     }
     
     fileprivate func initObserver() {

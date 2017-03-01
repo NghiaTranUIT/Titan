@@ -21,10 +21,6 @@
 		BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA222E571DADF83500834F3E /* ConnectionCell.xib */; };
 		BA222E5A1DADF8A800834F3E /* View+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA222E591DADF8A800834F3E /* View+Identifier.swift */; };
 		BA2E0CB91E670CA5001F899C /* SwiftyPostgreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2E0CB81E670CA5001F899C /* SwiftyPostgreSQL.framework */; };
-		BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */; };
-		BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */; };
-		BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */; };
-		BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */; };
 		BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */; };
 		BA320A471DDDF52F00C0E82B /* ListConnectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */; };
 		BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */; };
@@ -79,10 +75,6 @@
 		BA8FB30E1E4710B2004D48F5 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */; };
 		BA8FB3101E47133F004D48F5 /* NSView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */; };
 		BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */; };
-		BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */; };
-		BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */; };
-		BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */; };
-		BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */; };
 		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
 		BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */; };
 		BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9875611DF3F5B000901CD5 /* UUID+Short.swift */; };
@@ -186,10 +178,6 @@
 		BA222E571DADF83500834F3E /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
 		BA222E591DADF8A800834F3E /* View+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Identifier.swift"; sourceTree = "<group>"; };
 		BA2E0CB81E670CA5001F899C /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyPostgreSQL.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Titan-dqvycgyihirjulaxnaxseggkehjd/Build/Products/Release/SwiftyPostgreSQL.framework"; sourceTree = "<group>"; };
-		BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionInteractor.swift; sourceTree = "<group>"; };
-		BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionPresenter.swift; sourceTree = "<group>"; };
-		BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionConfig.swift; sourceTree = "<group>"; };
-		BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainConnectionRouter.swift; sourceTree = "<group>"; };
 		BA320A431DDDF51900C0E82B /* ListConnectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionPresenter.swift; sourceTree = "<group>"; };
 		BA320A461DDDF52F00C0E82B /* ListConnectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionInteractor.swift; sourceTree = "<group>"; };
 		BA320A481DDDF53C00C0E82B /* ListConnectionConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionConfig.swift; sourceTree = "<group>"; };
@@ -245,10 +233,6 @@
 		BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
 		BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Xib.swift"; sourceTree = "<group>"; };
 		BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionObj.swift; sourceTree = "<group>"; };
-		BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
 		BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionGroupCell.xib; sourceTree = "<group>"; };
 		BA9875611DF3F5B000901CD5 /* UUID+Short.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UUID+Short.swift"; sourceTree = "<group>"; };
@@ -406,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				BA035FC71D97DCEE00B616AB /* Constants.swift */,
+				BAEFE7C51D97BE810081A5FE /* Info.plist */,
+				BA679CD91DD4BFB90054EB43 /* Titan.entitlements */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -421,6 +407,7 @@
 		BA035FC21D97DBA400B616AB /* Source code */ = {
 			isa = PBXGroup;
 			children = (
+				BAF13D131E40F686005822AF /* Window */,
 				BA4AFF341DACD41D009AE139 /* Redux Store */,
 				BA33F9B11DCF3E3400B60952 /* Shared */,
 				BA4AFF181DAC9678009AE139 /* Models */,
@@ -434,8 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				BA393A3D1E3DB86600450AA0 /* Content */,
-				BA33F9AB1DCF370800B60952 /* Github */,
-				BA5E7A451DC5BFF700C06751 /* Font */,
 				BA8E0BD81DB0E28800B9BDD7 /* Library */,
 				BA035FC61D97DBBE00B616AB /* Storyboard */,
 				BA035FC51D97DBB800B616AB /* Assetes */,
@@ -505,13 +490,6 @@
 			name = "Connection Cell";
 			sourceTree = "<group>";
 		};
-		BA320A3E1DDDF4CC00C0E82B /* Workers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Workers;
-			sourceTree = "<group>";
-		};
 		BA320A451DDDF51C00C0E82B /* Workers */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,13 +535,6 @@
 				BA3358351E38A99A00745515 /* FetchAllGroupConnectionsWorker_Test.swift */,
 			);
 			name = Worker;
-			sourceTree = "<group>";
-		};
-		BA33F9AB1DCF370800B60952 /* Github */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Github;
 			sourceTree = "<group>";
 		};
 		BA33F9B11DCF3E3400B60952 /* Shared */ = {
@@ -711,7 +682,6 @@
 		BA4AFF1E1DAC96AD009AE139 /* Connections List */ = {
 			isa = PBXGroup;
 			children = (
-				BAF13D131E40F686005822AF /* Window */,
 				BA712E041DC0F1EA00215A94 /* Main Connection */,
 				BA4AFF111DAC925D009AE139 /* List Connections */,
 				BA4AFF141DAC9297009AE139 /* Detail Connection */,
@@ -782,17 +752,6 @@
 			name = "Grid Database";
 			sourceTree = "<group>";
 		};
-		BA5E7A451DC5BFF700C06751 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				BA9441401DF00BC700EBA623 /* OpenSans-Bold.ttf */,
-				BA9441411DF00BC700EBA623 /* OpenSans-Light.ttf */,
-				BA9441421DF00BC700EBA623 /* OpenSans-Regular.ttf */,
-				BA9441431DF00BC700EBA623 /* OpenSans-Semibold.ttf */,
-			);
-			name = Font;
-			sourceTree = "<group>";
-		};
 		BA679CE11DD6E5960054EB43 /* Objs */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,12 +773,7 @@
 		BA712E041DC0F1EA00215A94 /* Main Connection */ = {
 			isa = PBXGroup;
 			children = (
-				BA320A3E1DDDF4CC00C0E82B /* Workers */,
 				BA712E051DC0F20E00215A94 /* MainConnectionController.swift */,
-				BA320A3A1DDDF4B000C0E82B /* MainConnectionInteractor.swift */,
-				BA320A3C1DDDF4C800C0E82B /* MainConnectionPresenter.swift */,
-				BA320A3F1DDDF4F600C0E82B /* MainConnectionConfig.swift */,
-				BA320A411DDDF50500C0E82B /* MainConnectionRouter.swift */,
 			);
 			name = "Main Connection";
 			sourceTree = "<group>";
@@ -1177,12 +1131,10 @@
 		BAEFE7BB1D97BE810081A5FE /* Titan */ = {
 			isa = PBXGroup;
 			children = (
-				BA679CD91DD4BFB90054EB43 /* Titan.entitlements */,
 				BA035FC31D97DBA900B616AB /* Resource */,
 				BA035FC01D97DB9100B616AB /* Configuration */,
 				BA035FC11D97DB9700B616AB /* App Delegate */,
 				BA035FC21D97DBA400B616AB /* Source code */,
-				BAEFE7C51D97BE810081A5FE /* Info.plist */,
 			);
 			path = Titan;
 			sourceTree = "<group>";
@@ -1364,19 +1316,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */,
 				BA8FB30B1E470F19004D48F5 /* TableSchemeContextMenuView.xib in Resources */,
 				BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
-				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
 				BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */,
-				BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
-				BA9441441DF00BC700EBA623 /* OpenSans-Bold.ttf in Resources */,
 				BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */,
 				BAAD01711E4443AE00687509 /* TableRowCell.xib in Resources */,
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
@@ -1585,7 +1533,6 @@
 				BAA0A0A31DF2D397000D8F23 /* GroupColorObj.swift in Sources */,
 				BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */,
 				BAD0D39E1DE2B0DC0081F28F /* TableDatabaseConfig.swift in Sources */,
-				BA320A3B1DDDF4B000C0E82B /* MainConnectionInteractor.swift in Sources */,
 				BAE354F41DF9381C0066FB4D /* BaseView.swift in Sources */,
 				BAF13D121E40F3C3005822AF /* BaseWindowController.swift in Sources */,
 				BAD0D3971DE2B0B10081F28F /* ContentDatabaseInteractor.swift in Sources */,
@@ -1598,7 +1545,6 @@
 				BA8E0BE61DB0E68A00B9BDD7 /* SSLObj.swift in Sources */,
 				BA712E061DC0F20E00215A94 /* MainConnectionController.swift in Sources */,
 				BA320A491DDDF53C00C0E82B /* ListConnectionConfig.swift in Sources */,
-				BA320A3D1DDDF4C800C0E82B /* MainConnectionPresenter.swift in Sources */,
 				BAEE192A1DAE9BF200C3CD3E /* QueueManager.swift in Sources */,
 				BAD0D38C1DE2AF580081F28F /* ContentDatabaseController.swift in Sources */,
 				BAC475631E501B71002D9F56 /* Pagination.swift in Sources */,
@@ -1644,11 +1590,9 @@
 				BA02BA471E49C57200CEE028 /* Queue.swift in Sources */,
 				BAA666CD1DD84D9A0017124F /* NSTableView+Register.swift in Sources */,
 				BAD0D3A01DE2B0FB0081F28F /* DetailDatabaseState.swift in Sources */,
-				BA320A401DDDF4F600C0E82B /* MainConnectionConfig.swift in Sources */,
 				BA4AFF1B1DAC968B009AE139 /* BaseViewController.swift in Sources */,
 				BAEE19231DAE7C0D00C3CD3E /* UserObj.swift in Sources */,
 				BAF13CFB1E3E2832005822AF /* BaseOperation.swift in Sources */,
-				BA320A421DDDF50500C0E82B /* MainConnectionRouter.swift in Sources */,
 				BA4AFF3C1DACD502009AE139 /* MainReducer.swift in Sources */,
 				BAF13D151E40F94D005822AF /* BaseSplitViewController.swift in Sources */,
 				BA712E031DC0EC6400215A94 /* ConnectionCell.swift in Sources */,

@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class MainConnectionController: BaseSplitViewController {
+class MainConnectionController: NSViewController {
 
     //
     // MARK: - Variable
-    
+    @IBOutlet weak var topBarView: NSView!
     
     //
     // MARK: - View Cycle
@@ -25,14 +25,12 @@ class MainConnectionController: BaseSplitViewController {
 
     override func initCommon() {
         
+        self.topBarView.backgroundColor = NSColor(hexString: "#9b59b6")
         // Want layer
         self.view.wantsLayer = true
-        self.splitView.wantsLayer = true
         
-        // Moveable
-        NSApplication.shared().keyWindow?.isMovableByWindowBackground = true
-        NSApplication.shared().keyWindow?.isMovable = true
     }
+    
 }
 
 

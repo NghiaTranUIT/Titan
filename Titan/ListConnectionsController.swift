@@ -38,8 +38,6 @@ class ListConnectionsController: NSViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var logoBigContainerView: NSView!
-    @IBOutlet weak var logoContainerView: NSView!
     
     //
     // MARK: - View Cycle
@@ -67,8 +65,6 @@ class ListConnectionsController: NSViewController {
         
         // Background color
         self.view.backgroundColor = NSColor.white
-        self.logoContainerView.backgroundColor = NSColor(hexString: "#1799DD")
-        self.logoBigContainerView.backgroundColor = NSColor(hexString: "#1799DD")
         self.collectionView.backgroundColors = [NSColor.white]
         
         // Remove border

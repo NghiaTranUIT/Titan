@@ -5,6 +5,9 @@
       location = "group:Titan.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Dependencies/Swifty-PostgreSQL/Swifty-PostgreSQL.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -9,7 +9,7 @@
 import Cocoa
 import ReSwift
 import PromiseKit
-import TitanKit
+import SwiftyPostgreSQL
 
 struct ConnectDatabaseAction: Action {
     var selectedDatabase: DatabaseObj!

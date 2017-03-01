@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 
 enum GridContentViewMode {
     case individually(Table)

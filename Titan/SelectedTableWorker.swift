@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 import ReSwift
 
 struct SelectedTableAction: Action {

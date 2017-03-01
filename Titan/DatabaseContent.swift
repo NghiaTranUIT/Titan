@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import TitanKit
+import SwiftyPostgreSQL
 import PromiseKit
+import Cocoa
 
 class DatabaseContent: NSObject {
     

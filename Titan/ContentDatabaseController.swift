@@ -8,7 +8,7 @@
 
 import Cocoa
 import SnapKit
-import TitanKit
+import SwiftyPostgreSQL
 
 protocol ContentDatabaseControllerOutput {
     func didSwitchTab(with table: Table)

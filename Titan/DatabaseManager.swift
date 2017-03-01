@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import TitanKit
+import SwiftyPostgreSQL
 import PromiseKit
 
 enum ConnectState {

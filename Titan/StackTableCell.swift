@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 
 protocol StackTableCellDelegate: class {
     func StackTableCellDidSelectTable(_ table: Table)

@@ -85,8 +85,6 @@
 		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
 		BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */; };
 		BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9875611DF3F5B000901CD5 /* UUID+Short.swift */; };
-		BA9875641DF414FC00901CD5 /* screen_group@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA9875631DF414FC00901CD5 /* screen_group@2x.jpg */; };
-		BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA9875651DF43C5500901CD5 /* screen_group_2@2x.jpg */; };
 		BA9875691DF4449700901CD5 /* GroupColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9875681DF4449700901CD5 /* GroupColorView.swift */; };
 		BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */; };
 		BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */; };
@@ -99,7 +97,6 @@
 		BAAD016B1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD016A1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift */; };
 		BAAD01701E4443AE00687509 /* TableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD016E1E4443AE00687509 /* TableRowCell.swift */; };
 		BAAD01711E4443AE00687509 /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD016F1E4443AE00687509 /* TableRowCell.xib */; };
-		BAAD01731E4444CE00687509 /* screen_columns_row@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */; };
 		BAAD01771E4448A000687509 /* PlaceholderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */; };
 		BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */; };
 		BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01791E447B3400687509 /* TableRowView.swift */; };
@@ -112,13 +109,10 @@
 		BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD018E1E448FA500687509 /* AddTableStackCell.xib */; };
 		BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */; };
 		BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01931E462A5000687509 /* StackTableCell.xib */; };
-		BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
 		BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */; };
 		BAADCA321E2B8C86006909D9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA311E2B8C86006909D9 /* NotificationManager.swift */; };
-		BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */; };
-		BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */; };
 		BAB8C89F1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C89E1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift */; };
 		BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */; };
 		BAC475631E501B71002D9F56 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC475621E501B71002D9F56 /* Pagination.swift */; };
@@ -275,8 +269,6 @@
 		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
 		BA94414B1DF0795D00EBA623 /* ConnectionGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionGroupCell.xib; sourceTree = "<group>"; };
 		BA9875611DF3F5B000901CD5 /* UUID+Short.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UUID+Short.swift"; sourceTree = "<group>"; };
-		BA9875631DF414FC00901CD5 /* screen_group@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group@2x.jpg"; sourceTree = "<group>"; };
-		BA9875651DF43C5500901CD5 /* screen_group_2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_2@2x.jpg"; sourceTree = "<group>"; };
 		BA9875681DF4449700901CD5 /* GroupColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupColorView.swift; sourceTree = "<group>"; };
 		BAA0A0941DF1D210000D8F23 /* NSCollectionView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCollectionView+Register.swift"; sourceTree = "<group>"; };
 		BAA0A0961DF1D65F000D8F23 /* NSViewController+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Identifier.swift"; sourceTree = "<group>"; };
@@ -289,7 +281,6 @@
 		BAAD016A1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableDatabaseInfoWorker.swift; sourceTree = "<group>"; };
 		BAAD016E1E4443AE00687509 /* TableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowCell.swift; sourceTree = "<group>"; };
 		BAAD016F1E4443AE00687509 /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
-		BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_columns_row@2x.jpg"; sourceTree = "<group>"; };
 		BAAD01751E4448A000687509 /* PlaceholderTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTableCell.swift; sourceTree = "<group>"; };
 		BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableCell.xib; sourceTree = "<group>"; };
 		BAAD01791E447B3400687509 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
@@ -302,13 +293,10 @@
 		BAAD018E1E448FA500687509 /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
 		BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTapTableWorker.swift; sourceTree = "<group>"; };
 		BAAD01931E462A5000687509 /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
-		BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_detail@2x.jpg"; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
 		BAADCA2E1E2B6E5E006909D9 /* SSHView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSHView.xib; sourceTree = "<group>"; };
 		BAADCA311E2B8C86006909D9 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_group_cell@2x.jpg"; sourceTree = "<group>"; };
-		BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen_cell@2x.jpg"; sourceTree = "<group>"; };
 		BAB8C89E1E20ACCD00B39B16 /* GroupDatabaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDatabaseDataSource.swift; sourceTree = "<group>"; };
 		BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVerticalFlowLayout.swift; sourceTree = "<group>"; };
 		BAC475621E501B71002D9F56 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -463,12 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				BA393A3D1E3DB86600450AA0 /* Content */,
-				BAB8C89C1E20A75D00B39B16 /* screen_cell@2x.jpg */,
-				BAAD01721E4444CE00687509 /* screen_columns_row@2x.jpg */,
-				BAADCA231E2B39DF006909D9 /* screen_detail@2x.jpg */,
-				BAB8C89A1E20A6DB00B39B16 /* screen_group_cell@2x.jpg */,
-				BA9875651DF43C5500901CD5 /* screen_group_2@2x.jpg */,
-				BA9875631DF414FC00901CD5 /* screen_group@2x.jpg */,
 				BA33F9AB1DCF370800B60952 /* Github */,
 				BA5E7A451DC5BFF700C06751 /* Font */,
 				BA8E0BD81DB0E28800B9BDD7 /* Library */,
@@ -1403,17 +1385,12 @@
 				BA9441451DF00BC700EBA623 /* OpenSans-Light.ttf in Resources */,
 				BA8FB30B1E470F19004D48F5 /* TableSchemeContextMenuView.xib in Resources */,
 				BA94414C1DF0795D00EBA623 /* ConnectionGroupCell.xib in Resources */,
-				BA9875641DF414FC00901CD5 /* screen_group@2x.jpg in Resources */,
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */,
-				BAAD01731E4444CE00687509 /* screen_columns_row@2x.jpg in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
 				BA9441461DF00BC700EBA623 /* OpenSans-Regular.ttf in Resources */,
 				BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */,
-				BAB8C89D1E20A75D00B39B16 /* screen_cell@2x.jpg in Resources */,
 				BA9441471DF00BC700EBA623 /* OpenSans-Semibold.ttf in Resources */,
-				BA9875661DF43C5500901CD5 /* screen_group_2@2x.jpg in Resources */,
-				BAB8C89B1E20A6DB00B39B16 /* screen_group_cell@2x.jpg in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
@@ -1422,7 +1399,6 @@
 				BAAD01711E4443AE00687509 /* TableRowCell.xib in Resources */,
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,
-				BAADCA241E2B39DF006909D9 /* screen_detail@2x.jpg in Resources */,
 				BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */,
 				BAAD01851E448A1E00687509 /* TableStackView.xib in Resources */,
 			);

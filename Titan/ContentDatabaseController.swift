@@ -109,7 +109,6 @@ extension ContentDatabaseController {
         
         // Add
         if let gridView = filter.first {
-//            gridView.configureGridDatabase(with: .individually(selectedTable))
             self.addGridView(gridView)
         } else {
             let gridView = GridDatabaseView.viewFromNib()!

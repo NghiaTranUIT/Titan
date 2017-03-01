@@ -16,13 +16,13 @@ def important_pods
     pod 'DynamicColor', '~> 3.1.0'
     pod 'KVOController'
     pod 'SnapKit', '~> 3.1.2'
-    
+
     # Can't use Promise kit in pod
     # Always get: Cannot define category for undefined class 'OS_dispatch_queue'
     # (」゜ロ゜)」
     #pod 'PromiseKit', '~> 4.0'
     #
-  
+
     # Realm
     pod 'RealmSwift'
 end
@@ -45,13 +45,6 @@ target "TitanTests" do
     project 'Titan.xcodeproj'
     platform :osx, '10.12'
     important_pods
-    test_pods
-end
-
-# Titan Kit Test
-target "TitanKitTests" do
-    project './TitanKit/TitanKit.xcodeproj'
-    platform :osx, '10.12'
     test_pods
 end
 

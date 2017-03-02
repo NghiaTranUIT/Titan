@@ -37,6 +37,11 @@ class BaseWindowController: NSWindowController {
         // Save last previous frame
         AppPreferences.shared.mainWindowFrame = window.frame
     }
+    
+    override func close() {
+        NotificationManager.removeAllObserve(self)
+        super.close()
+    }
 }
 
 //
@@ -53,8 +58,8 @@ extension BaseWindowController {
         
         window.styleMask.insert(.fullSizeContentView)
         window.titlebarAppearsTransparent = true
-        
         window.isMovableByWindowBackground = true
+        
         // Release mode
         window.isReleasedWhenClosed = true
     }

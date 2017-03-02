@@ -95,8 +95,8 @@ extension AppDelegate {
         // Open first
         self.showDetailWindow()
         
-        // Close
-        self.listDatabasesWindow?.close()
-//        self.listDatabasesWindow = nil
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { 
+            self.listDatabasesWindow?.close()
+        }
     }
 }

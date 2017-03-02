@@ -32,7 +32,6 @@ class GridDatabaseView: NSView {
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
     //

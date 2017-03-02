@@ -29,6 +29,10 @@ class TableStackView: NSView {
         }
         return -1
     }
+    fileprivate lazy var resizeCell: StackTableCell = {
+        let cell = StackTableCell.viewFromNib()!
+        return cell
+    }()
     
     //
     // MARK: - OUTLET
@@ -55,10 +59,7 @@ class TableStackView: NSView {
     
     // Update layout
     func updateStackView() {
-        Logger.info("updateStackView")
         self.collectionView.reloadData()
-        Logger.info(self.stackTables)
-        Logger.info("Selected index = \(self.selectedTableIndex)")
     }
     
     // Determine if table is in stack or not
@@ -94,6 +95,18 @@ extension TableStackView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
         // StackTable Cell
         return self.stackTableCell(with: collectionView, indexPath: indexPath)
     }
+    
+    func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+        
+        if indexPath.item == self.stackTables.count {
+            return NSSize(width: 32, height: 32)
+        }
+        
+        // Stack cell
+        let table = self.stackTables[indexPath.item]
+        let width = self.resizeCell.minimumWidthCell(with: table)
+        return NSSize(width: width, height: 32)
+    }
 }
 
 //
@@ -111,14 +124,11 @@ extension TableStackView {
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.estimatedItemSize = NSSize(width: 250, height: 44)
+        flowLayout.itemSize = NSSize(width: 100, height: 32)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
         flowLayout.minimumInteritemSpacing = 0
         self.collectionView.collectionViewLayout = flowLayout
-        
-//        self.collectionView.minItemSize = NSSize(width: 44, height: 44)
-//        self.collectionView.maxItemSize = NSSize.zero
         
         // Reload
         self.collectionView.reloadData()
@@ -139,6 +149,7 @@ extension TableStackView {
         
         return cell
     }
+    
 }
 
 //

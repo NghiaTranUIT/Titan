@@ -1,5 +1,5 @@
 //
-//  MainTabConnectionController.swift
+//  MainDetailConnectionController.swift
 //  Titan
 //
 //  Created by Nghia Tran on 11/21/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainTabConnectionController: NSViewController {
+class MainDetailConnectionController: NSViewController {
 
     //
     // MARK: - Variable
@@ -28,6 +28,6 @@ class MainTabConnectionController: NSViewController {
     }
     
     override func initUIs() {
-        self.topBarView.backgroundColor = NSColor(hexString: "#1799DD")
+        self.topBarView.backgroundColor = NSColor(hexString: "#9b59b6")
     }
 }

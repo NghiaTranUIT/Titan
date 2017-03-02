@@ -74,8 +74,6 @@ class DatabaseContent: NSObject {
             // Update
             self.queryResult = queryResult
             self.tableView.reloadData()
-            self.tableView.sizeLastColumnToFit()
-            self.tableView.sizeToFit()
         }
         .catch { error in
             
@@ -138,7 +136,6 @@ extension DatabaseContent {
         
         // Reload
         self.tableView.reloadData()
-        self.tableView.sizeLastColumnToFit()
     }
 }
 

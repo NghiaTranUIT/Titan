@@ -13,55 +13,14 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="8yT-UO-ZQf">
-                    <rect key="frame" x="62" y="228" width="418" height="44"/>
-                    <clipView key="contentView" id="QjP-LK-ya3">
-                        <rect key="frame" x="0.0" y="0.0" width="418" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" textCompletion="NO" id="xKG-IC-78x">
-                                <rect key="frame" x="0.0" y="0.0" width="418" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="418" height="44"/>
-                                <size key="maxSize" width="418" height="1000"/>
-                                <attributedString key="textStorage">
-                                    <fragment content="WHERE">
-                                        <attributes>
-                                            <font key="NSFont" size="15" name="SFUIText-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <allowedInputSourceLocales>
-                                    <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                </allowedInputSourceLocales>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </clipView>
-                    <constraints>
-                        <constraint firstAttribute="height" priority="250" constant="44" id="bqm-V0-CKr"/>
-                    </constraints>
-                    <edgeInsets key="contentInsets" left="0.0" right="8" top="12" bottom="12"/>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="Ec1-OL-oj6">
-                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jB5-bn-ld7">
-                        <rect key="frame" x="-100" y="-100" width="16" height="42"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                </scrollView>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="SnQ-3x-iYQ">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="228"/>
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="234"/>
                     <clipView key="contentView" drawsBackground="NO" id="JlD-Rt-nXE">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="234"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="sequential" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="b2D-zG-98R" viewBased="YES" id="clZ-Og-5vJ">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="205"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="211"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
@@ -118,15 +77,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amD-Bg-yem">
+                    <rect key="frame" x="20" y="242" width="440" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="SELECT ..." drawsBackground="YES" id="gEk-KE-zYS">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="SnQ-3x-iYQ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="0GJ-jV-G2J"/>
-                <constraint firstAttribute="trailing" secondItem="8yT-UO-ZQf" secondAttribute="trailing" id="1uO-dW-7XR"/>
+                <constraint firstAttribute="trailing" secondItem="amD-Bg-yem" secondAttribute="trailing" constant="20" id="0d2-gP-KPY"/>
+                <constraint firstItem="amD-Bg-yem" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="7FQ-eP-UMk"/>
                 <constraint firstAttribute="trailing" secondItem="SnQ-3x-iYQ" secondAttribute="trailing" id="9us-YT-vvY"/>
                 <constraint firstAttribute="bottom" secondItem="SnQ-3x-iYQ" secondAttribute="bottom" id="CBX-cQ-bqQ"/>
-                <constraint firstItem="SnQ-3x-iYQ" firstAttribute="top" secondItem="8yT-UO-ZQf" secondAttribute="bottom" id="Lsr-hP-qwe"/>
-                <constraint firstItem="8yT-UO-ZQf" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="62" id="aAf-Pe-a6v"/>
-                <constraint firstItem="8yT-UO-ZQf" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="sNQ-o3-Qg9"/>
+                <constraint firstItem="SnQ-3x-iYQ" firstAttribute="top" secondItem="amD-Bg-yem" secondAttribute="bottom" constant="8" id="HIN-ry-q46"/>
+                <constraint firstItem="amD-Bg-yem" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="LAe-RF-Kna"/>
             </constraints>
             <connections>
                 <outlet property="tableView" destination="clZ-Og-5vJ" id="8yL-Sj-jDD"/>

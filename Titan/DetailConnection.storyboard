@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="525" y="-660"/>
         </scene>
-        <!--Main Tab Connection Controller-->
+        <!--Main Detail Connection Controller-->
         <scene sceneID="zN5-ZY-IyS">
             <objects>
-                <viewController storyboardIdentifier="MainTabConnectionController" id="AKs-ww-nvL" customClass="MainTabConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainDetailConnectionController" id="AKs-ww-nvL" customClass="MainDetailConnectionController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7OA-XJ-zQv">
                         <rect key="frame" x="0.0" y="0.0" width="701" height="485"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -73,7 +73,7 @@
                 </viewController>
                 <customObject id="kIv-TM-KR3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="129"/>
+            <point key="canvasLocation" x="526" y="-123"/>
         </scene>
         <!--Detail Split Connection Controller-->
         <scene sceneID="v0e-Tl-pBu">
@@ -84,7 +84,7 @@
                         <splitViewItem holdingPriority="255" behavior="contentList" id="2CG-M9-DTU"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="3Y4-EE-ulg">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="708" height="439"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </splitView>
                     <connections>
@@ -94,30 +94,30 @@
                 </splitViewController>
                 <customObject id="NFF-wJ-Cvy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="693"/>
+            <point key="canvasLocation" x="529" y="513"/>
         </scene>
         <!--Table Database Controller-->
         <scene sceneID="f5H-dE-5UX">
             <objects>
                 <viewController id="fCF-A4-i3c" customClass="TableDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ssG-JH-zXC">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="496"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Bq-dF-KGu">
-                                <rect key="frame" x="0.0" y="256" width="250" height="44"/>
+                                <rect key="frame" x="0.0" y="452" width="250" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FDf-vs-4O7"/>
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYK-3B-rZ4">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
                                 <clipView key="contentView" id="IcH-aW-6uq">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="2gD-qP-2Gt" customClass="TitanTableView" customModule="Titan" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -189,24 +189,24 @@
                 </viewController>
                 <customObject id="iy9-qj-Xft" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="369"/>
+            <point key="canvasLocation" x="292" y="1160"/>
         </scene>
         <!--Content Database Controller-->
         <scene sceneID="lEb-bk-x5f">
             <objects>
                 <viewController id="klR-O1-eTQ" customClass="ContentDatabaseController" customModule="Titan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="l6d-A1-a1g">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="496"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="u9y-gK-UFP">
-                                <rect key="frame" x="0.0" y="256" width="450" height="44"/>
+                                <rect key="frame" x="0.0" y="464" width="450" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="x5B-5A-j2O"/>
+                                    <constraint firstAttribute="height" constant="32" id="x5B-5A-j2O"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZKy-vS-qVr">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="256"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="464"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -226,7 +226,7 @@
                 </viewController>
                 <customObject id="X4F-OX-Ypn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1490" y="874"/>
+            <point key="canvasLocation" x="744" y="1160"/>
         </scene>
     </scenes>
 </document>

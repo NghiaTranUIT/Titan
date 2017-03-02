@@ -104,6 +104,10 @@ extension GridDatabaseView: DatabaseContentDelegate {
     func DatabaseContentDidUpdatedQueryResult(_ queryResult: QueryResult) {
         self.handleStatusBarView()
     }
+    
+    func DatabaseContentDidSelectionChanged(_ selectedRowIndexes: IndexSet, rowAffect: Int) {
+        self.statusBarView.updateSeletionRow(selectedRowIndexes, rowAffect: rowAffect)
+    }
 }
 //
 // MARK: - Status Bar

@@ -45,6 +45,10 @@ class StatusBarView: NSView {
         self.statusLbl.stringValue = "\(rowAffected) rows"
     }
     
+    func updateSeletionRow(_ indexSet: IndexSet, rowAffect: Int) {
+        self.statusLbl.stringValue = "\(indexSet.count) of \(rowAffect) selected"
+    }
+    
     //
     // MARK: - Action
     @IBAction func pageNumberBtnTapped(_ sender: Any) {

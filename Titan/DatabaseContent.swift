@@ -13,6 +13,7 @@ import Cocoa
 
 protocol DatabaseContentDelegate: class {
     func DatabaseContentDidUpdatedQueryResult(_ queryResult: QueryResult)
+    func DatabaseContentDidSelectionChanged(_ selectedRowIndexes: IndexSet, rowAffect: Int)
 }
 
 let NOT_A_ROW = -1
@@ -212,6 +213,11 @@ extension DatabaseContent: NSTableViewDataSource {
 //
 // MARK: - NSTableViewDelegate
 extension DatabaseContent: NSTableViewDelegate {
-    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        
+        // Update status bar
+        let set = self.tableView.selectedRowIndexes
+        self.delegate?.DatabaseContentDidSelectionChanged(set, rowAffect: self.numberRowEffect)
+    }
 }
 

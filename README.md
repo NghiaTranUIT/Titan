@@ -1,58 +1,47 @@
 
 <h3 align="center">
-    <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/master/Screenshot/github_titan@2x.png" width="50%" />
+    <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/master/Screenshot/icon_titan.png" width="30%" />
 </h3>
-  
+
 <p align="center">
   <a href="http://nghiatran.me">Mad lab</a> &bull;
   <b>Titan</b> &bull;
   <a href="https://github.com/NghiaTranUIT/FeSpinner">FeSpinner</a>
-  <br> &nbsp;
+  <br>
+  <a href="https://github.com/NghiaTranUIT/Swifty-PostgreSQL">Swifty PostgreSQL</a> &bull;
   <a href="https://github.com/NghiaTranUIT/iOS-Awesome-Starter-Kit/edit/master/README.md">iOS Awesome Starter Kit</a> &bull;
-  <a href="https://github.com/NghiaTranUIT/FeSlideFilter">FeSlideFilter</a> &bull;
-  <a href="https://github.com/NghiaTranUIT/Responsive-Interaction-Control">Responsive Interaction Control</a>
+  <a href="https://github.com/NghiaTranUIT/FeSlideFilter">FeSlideFilter</a>
 </p>
 
   
 Titan
 ------------
-  
-The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% Free and open-source.
+The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% free and open-source for everyone.
   
 ![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
-[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)[![codecov.io](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master/graphs/badge.svg)](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master)
+[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)
 ![License](https://img.shields.io/npm/l/express.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-osx-green.svg?style=flat)
   
 Why?
 ------------
-  
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack developer.  
-Go-lang for backend. React-FB and redux for frontend, ...
-  
-It's pretty struggle when I tried to find best postgresql client on macOS.
+Go-lang for backend. React-FB and redux for frontend. It's pretty struggle when I tried to find best postgresql client on macOS.
   
 *Postico* is the best one I found, but it's missing  multi-tab, multi-connection in free version.  
 *pgAdmin III* are the worst , GUI  seem like from 80s, and non-retina support.
   
-After tried  and deleted many similar clients.  
-Finally, I prefers *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and didn't support multi-tab too.
+After tried and deleted various similar apps. Finally, I prefer *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and don't support multi-tab.
 
-So  🤔
-  
-I decied to write my own Postgresql client - called as **Titan**.
-  
-It's best time to apply what I learn to real product.
+So 🤔. I make decision to write my own PostgreSQL client - called as **Titan**. It's the best place to apply what I've learnt to real product.
   
 Technologies
 ------------
-  
-It's whole new project, I intent to apply what I'm learning.
+It's whole new project, I intent to use edge-technologies. I could start with MVC and old-fashionate technologies, but it's too boring.
   
 *   Cross-framework  - supported iOS and macOS too
 *   ReSwift (Redux)
-*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding)
-'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
+*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding) 'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
 *   Clearn Swift architecture: VIP model
 *   Networking abstraction layer
 *   Postgresql-driver abstraction layer
@@ -74,29 +63,15 @@ Roadmap
 - [ ] Write Test 
 - [ ] Rename script
 
-Sketch
+Swifty PostgreSQL Driver
 ------------
-https://github.com/NghiaTranUIT/titan-sketch
+Beside Titan, I also develop new [PostgreSQL Dirver](https://github.com/NghiaTranUIT/Swifty-PostgreSQL), integrate flawlessly with Titan. Resueable, testable as well.
 
+Screenshot
+------------
 <h3 align="center">
     <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/connection-detail/Screenshot/screen_titan_1.jpg" width="100%" />
 </h3>
-
-How to build libpg.framework
-------------
-*  Make sure that `xcode-select` points to the correct location by running:
-    `sudo /usr/bin/xcode-select --switch /Applications/Xcode.app/Contents/Developer`
-*  Clone https://github.com/NghiaTranUIT/libpq.framework  
-* Run the script to download and compile OpenSSL:
-    `./build-libssl.sh`  
-* Open `libpq.xcodeproj` with XCode  
-* Select Project  -> Build Setting
-* Make sure we select correct configuration  
-Base SDK :  Latest macOS 10.12  
-Supported Platform  :  macosx  iphonesimulator  iphoneos  
-Valid  Architecture :  i386  x86_64  armv7  arm64  armv7s  
-* Select framework target  and *Build*
-  
 
 Reference
 ------------

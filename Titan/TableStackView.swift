@@ -29,15 +29,17 @@ class TableStackView: NSView {
         }
         return -1
     }
+    var previousTableIndex = -1
+    
     fileprivate lazy var resizeCell: StackTableCell = {
         let cell = StackTableCell.viewFromNib()!
         return cell
     }()
+    fileprivate lazy var indicatorBarView: NSView = self.initIndicatorBarView()
     
     //
     // MARK: - OUTLET
     @IBOutlet weak var collectionView: NSCollectionView!
-    
     
     //
     // MARK: - View Cycle
@@ -60,6 +62,7 @@ class TableStackView: NSView {
     // Update layout
     func updateStackView() {
         self.collectionView.reloadData()
+        self.animateIndicatorView()
     }
     
     // Determine if table is in stack or not
@@ -68,6 +71,34 @@ class TableStackView: NSView {
             return _table == table
         }
         return filter.count > 0
+    }
+    
+    fileprivate func animateIndicatorView() {
+        
+        // Delay 0.1 after collection reloadData()
+        // If we call after reloadData(). For unknown reason, the collectionView hasn't reloaded yet
+        // => Can't get visible cell
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            guard let selectedTable = self.selectedTable else {return}
+            guard let selectedCell = self.stackCellWithTable(selectedTable) else {return}
+            
+            // Update
+            let newFrame = NSRect(x: selectedCell.view.frame.origin.x, y: 0, width: selectedCell.view.frame.width, height: 2)
+            
+            if self.previousTableIndex == -1 || self.previousTableIndex == self.selectedTableIndex {
+                // No animate
+                self.indicatorBarView.frame = newFrame
+            }
+            else {
+                NSAnimationContext.runAnimationGroup({ (context) in
+                    context.duration = 0.13
+                    self.indicatorBarView.animator().frame = newFrame
+                }, completionHandler: nil)
+            }
+            
+            self.previousTableIndex = self.selectedTableIndex
+        }
+
     }
 }
 
@@ -148,6 +179,26 @@ extension TableStackView {
         cell.configureCell(with: table, isSelected: isSelected)
         
         return cell
+    }
+    
+    fileprivate func initIndicatorBarView() -> NSView {
+        let barView = NSView()
+        barView.translatesAutoresizingMaskIntoConstraints = false
+        barView.backgroundColor = NSColor(hexString: "#9b59b6")
+        barView.wantsLayer = true
+        barView.layerContentsRedrawPolicy = .onSetNeedsDisplay
+        self.addSubview(barView)
+        return barView
+    }
+    
+    fileprivate func stackCellWithTable(_ table: Table) -> StackTableCell? {
+        for cell in self.collectionView.visibleItems() {
+            guard let cell = cell as? StackTableCell else {continue}
+            if cell.table == table {
+                return cell
+            }
+        }
+        return nil
     }
     
 }

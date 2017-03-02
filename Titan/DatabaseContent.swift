@@ -11,10 +11,17 @@ import SwiftyPostgreSQL
 import PromiseKit
 import Cocoa
 
+protocol DatabaseContentDelegate: class {
+    func DatabaseContentDidUpdatedQueryResult(_ queryResult: QueryResult)
+}
+
+let NOT_A_ROW = -1
+
 class DatabaseContent: NSObject {
     
     //
     // MARK: - Variable
+    weak var delegate: DatabaseContentDelegate?
     fileprivate var workerQueue: Queue<BaseAsyncWorker> = Queue<BaseAsyncWorker>()
     fileprivate var mode = GridContentViewMode.none
     fileprivate var currentQuery: PostgreQuery?
@@ -22,7 +29,10 @@ class DatabaseContent: NSObject {
     var tableView: NSTableView! {didSet{self.setupTable()}}
     
     // Data
-    fileprivate var queryResult: QueryResult? {didSet {self.processColumnType()}}
+    fileprivate var queryResult: QueryResult? {didSet {
+        self.delegate?.DatabaseContentDidUpdatedQueryResult(queryResult!)
+        self.processColumnType()
+    }}
     fileprivate var rows: [Row] {
         guard let result = self.queryResult else {
             return []
@@ -34,6 +44,10 @@ class DatabaseContent: NSObject {
             return []
         }
         return result.columns
+    }
+    var numberRowEffect: Int {
+        guard let queryResult = self.queryResult else {return 0}
+        return queryResult.rowsAffected
     }
     
     //
@@ -78,6 +92,22 @@ class DatabaseContent: NSObject {
         .catch { error in
             
         }
+    }
+    
+    func userDoubleClicked(_ sender: NSTableView) {
+        
+        // Don't allow multi
+        guard sender.selectedRowIndexes.count == 1 else {return}
+        
+        let row = sender.clickedRow
+        let col = sender.clickedColumn
+        
+        // Not a row
+        guard row != NOT_A_ROW else {return}
+        
+        // Edit TextField
+        let cell = sender.view(atColumn: col, row: row, makeIfNecessary: true) as! DatabaseValueCell
+        let _ = cell.becomeFirstResponder()
     }
     
     //

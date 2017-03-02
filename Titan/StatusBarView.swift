@@ -41,6 +41,10 @@ class StatusBarView: NSView {
         }
     }
     
+    func updateNumberOfRowAffected(_ rowAffected: Int) {
+        self.statusLbl.stringValue = "\(rowAffected) rows"
+    }
+    
     //
     // MARK: - Action
     @IBAction func pageNumberBtnTapped(_ sender: Any) {

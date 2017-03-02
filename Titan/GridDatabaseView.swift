@@ -29,10 +29,12 @@ class GridDatabaseView: NSView {
             return nil
         }
     }
+    fileprivate var statusBarView: StatusBarView!
     
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var containerStatusBarView: NSView!
     
     //
     // MARK: - View Cycle
@@ -46,7 +48,15 @@ class GridDatabaseView: NSView {
     override func initCommon() {
         
         // Data source
+        self.databaseContent.delegate = self
         self.databaseContent.tableView = self.tableView
+        
+        // Status bar
+        self.initStatusBarView()
+        
+        // Double tap 
+        self.tableView.target = self
+        self.tableView.doubleAction = #selector(self.userDoubleClicked(_:))
     }
     
     //
@@ -82,4 +92,29 @@ extension GridDatabaseView: XIBInitializable {
 // MARK: - Private
 extension GridDatabaseView {
 
+    @objc fileprivate func userDoubleClicked(_ sender: NSTableView) {
+        self.databaseContent.userDoubleClicked(sender)
+    }
+}
+
+//
+// MARK: - DatabaseContentDelegate
+extension GridDatabaseView: DatabaseContentDelegate {
+    
+    func DatabaseContentDidUpdatedQueryResult(_ queryResult: QueryResult) {
+        self.handleStatusBarView()
+    }
+}
+//
+// MARK: - Status Bar
+extension GridDatabaseView {
+    
+    fileprivate func initStatusBarView() {
+        self.statusBarView = StatusBarView.viewFromNib()
+        self.statusBarView.configureLayoutWithView(self.containerStatusBarView)
+    }
+    
+    func handleStatusBarView() {
+        self.statusBarView.updateNumberOfRowAffected(self.databaseContent.numberRowEffect)
+    }
 }

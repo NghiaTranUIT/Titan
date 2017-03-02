@@ -23,6 +23,11 @@ class DatabaseValueCell: NSTableCellView {
         self.titleLbl.maximumNumberOfLines = 2
     }
     
+    override func becomeFirstResponder() -> Bool {
+        self.titleLbl.becomeFirstResponder()
+        return super.becomeFirstResponder()
+    }
+    
     //
     // MARK: - Public
     func configureCell(with field: Field, column: Column) {
@@ -34,7 +39,6 @@ class DatabaseValueCell: NSTableCellView {
         } else {
             self.titleLbl.stringValue = field.rawData
         }
-        
         
         // Layout
         self.setupLayout(with: column)

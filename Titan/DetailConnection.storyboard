@@ -206,21 +206,12 @@
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZKy-vS-qVr">
-                                <rect key="frame" x="0.0" y="32" width="450" height="432"/>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="k0n-6z-ClY">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="5sA-2Y-bPh"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="464"/>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="k0n-6z-ClY" firstAttribute="top" secondItem="ZKy-vS-qVr" secondAttribute="bottom" id="1ds-mi-WQf"/>
-                            <constraint firstItem="k0n-6z-ClY" firstAttribute="leading" secondItem="l6d-A1-a1g" secondAttribute="leading" id="2JG-cS-7nc"/>
-                            <constraint firstAttribute="bottom" secondItem="k0n-6z-ClY" secondAttribute="bottom" id="C9c-Na-Zzt"/>
-                            <constraint firstAttribute="trailing" secondItem="k0n-6z-ClY" secondAttribute="trailing" id="DVh-l3-CR4"/>
                             <constraint firstItem="ZKy-vS-qVr" firstAttribute="leading" secondItem="l6d-A1-a1g" secondAttribute="leading" id="JJh-10-zCS"/>
+                            <constraint firstAttribute="bottom" secondItem="ZKy-vS-qVr" secondAttribute="bottom" id="OlA-Yj-Aqr"/>
                             <constraint firstItem="u9y-gK-UFP" firstAttribute="leading" secondItem="l6d-A1-a1g" secondAttribute="leading" id="ZJn-IT-fhS"/>
                             <constraint firstItem="ZKy-vS-qVr" firstAttribute="top" secondItem="u9y-gK-UFP" secondAttribute="bottom" id="cvu-e5-7dz"/>
                             <constraint firstAttribute="trailing" secondItem="u9y-gK-UFP" secondAttribute="trailing" id="gUr-gr-eHr"/>
@@ -229,7 +220,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerStatusBarView" destination="k0n-6z-ClY" id="Nj5-nS-z1Q"/>
                         <outlet property="contentContainerView" destination="ZKy-vS-qVr" id="lxk-xf-nFw"/>
                         <outlet property="stackContainerView" destination="u9y-gK-UFP" id="GQy-eg-Ken"/>
                     </connections>

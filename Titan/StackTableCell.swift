@@ -18,7 +18,7 @@ class StackTableCell: NSCollectionViewItem {
     //
     // MARK: - Variable
     weak var delegate: StackTableCellDelegate?
-    fileprivate var table: Table?
+    var table: Table!
     
     //
     // MARK: - OUTLET
@@ -47,9 +47,8 @@ class StackTableCell: NSCollectionViewItem {
     
     @IBAction func actionBtnTapped(_ sender: Any) {
         guard self.isSelected == false else {return}
-        guard let table = self.table else {return}
         
-        self.delegate?.StackTableCellDidSelectTable(table)
+        self.delegate?.StackTableCellDidSelectTable(self.table)
     }
     
     func minimumWidthCell(with table: Table) -> CGFloat {

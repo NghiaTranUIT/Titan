@@ -1,16 +1,16 @@
 
 <h3 align="center">
-    <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/master/Screenshot/github_titan@2x.png" width="50%" />
+    <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/master/Screenshot/icon_titan.png" width="30%" />
 </h3>
-  
+
 <p align="center">
   <a href="http://nghiatran.me">Mad lab</a> &bull;
   <b>Titan</b> &bull;
   <a href="https://github.com/NghiaTranUIT/FeSpinner">FeSpinner</a>
-  <br> &nbsp;
+  <br>
+  <a href="https://github.com/NghiaTranUIT/Swifty-PostgreSQL">Swifty PostgreSQL</a> &bull;
   <a href="https://github.com/NghiaTranUIT/iOS-Awesome-Starter-Kit/edit/master/README.md">iOS Awesome Starter Kit</a> &bull;
-  <a href="https://github.com/NghiaTranUIT/FeSlideFilter">FeSlideFilter</a> &bull;
-  <a href="https://github.com/NghiaTranUIT/Responsive-Interaction-Control">Responsive Interaction Control</a>
+  <a href="https://github.com/NghiaTranUIT/FeSlideFilter">FeSlideFilter</a>
 </p>
 
   
@@ -74,29 +74,11 @@ Roadmap
 - [ ] Write Test 
 - [ ] Rename script
 
-Sketch
+Screenshot
 ------------
-https://github.com/NghiaTranUIT/titan-sketch
-
 <h3 align="center">
     <img src="https://raw.githubusercontent.com/NghiaTranUIT/Titan-Postgresql/connection-detail/Screenshot/screen_titan_1.jpg" width="100%" />
 </h3>
-
-How to build libpg.framework
-------------
-*  Make sure that `xcode-select` points to the correct location by running:
-    `sudo /usr/bin/xcode-select --switch /Applications/Xcode.app/Contents/Developer`
-*  Clone https://github.com/NghiaTranUIT/libpq.framework  
-* Run the script to download and compile OpenSSL:
-    `./build-libssl.sh`  
-* Open `libpq.xcodeproj` with XCode  
-* Select Project  -> Build Setting
-* Make sure we select correct configuration  
-Base SDK :  Latest macOS 10.12  
-Supported Platform  :  macosx  iphonesimulator  iphoneos  
-Valid  Architecture :  i386  x86_64  armv7  arm64  armv7s  
-* Select framework target  and *Build*
-  
 
 Reference
 ------------

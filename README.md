@@ -16,43 +16,32 @@
   
 Titan
 ------------
-  
-The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% Free and open-source.
+The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% free and open-source for everyone.
   
 ![](https://img.shields.io/badge/Swift-3.0-blue.svg?style=flat)
-[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)[![codecov.io](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master/graphs/badge.svg)](https://codecov.io/gh/NghiaTranUIT/Titan-Postgresql/branch/master)
+[![Build Status](https://api.travis-ci.org/NghiaTranUIT/Titan-Postgresql.svg?branch=master)](https://travis-ci.org/NghiaTranUIT/Titan-Postgresql)
 ![License](https://img.shields.io/npm/l/express.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-osx-green.svg?style=flat)
   
 Why?
 ------------
-  
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack developer.  
-Go-lang for backend. React-FB and redux for frontend, ...
-  
-It's pretty struggle when I tried to find best postgresql client on macOS.
+Go-lang for backend. React-FB and redux for frontend. It's pretty struggle when I tried to find best postgresql client on macOS.
   
 *Postico* is the best one I found, but it's missing  multi-tab, multi-connection in free version.  
 *pgAdmin III* are the worst , GUI  seem like from 80s, and non-retina support.
   
-After tried  and deleted many similar clients.  
-Finally, I prefers *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and didn't support multi-tab too.
+After tried and deleted various similar apps. Finally, I prefer *PSequel*, clean design, straight-forward GUI, but it's still buggy sometime, and don't support multi-tab.
 
-So  🤔
-  
-I decied to write my own Postgresql client - called as **Titan**.
-  
-It's best time to apply what I learn to real product.
+So 🤔. I make decision to write my own PostgreSQL client - called as **Titan**. It's the best place to apply what I've learnt to real product.
   
 Technologies
 ------------
-  
-It's whole new project, I intent to apply what I'm learning.
+It's whole new project, I intent to use edge-technologies. I could start with MVC and old-fashionate technologies, but it's too boring.
   
 *   Cross-framework  - supported iOS and macOS too
 *   ReSwift (Redux)
-*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding)
-'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
+*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding) 'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
 *   Clearn Swift architecture: VIP model
 *   Networking abstraction layer
 *   Postgresql-driver abstraction layer
@@ -73,6 +62,10 @@ Roadmap
 - [ ] Support Object-oriented Programming
 - [ ] Write Test 
 - [ ] Rename script
+
+Swifty PostgreSQL Driver
+------------
+Beside Titan, I also develop new [PostgreSQL Dirver](https://github.com/NghiaTranUIT/Swifty-PostgreSQL), integrate flawlessly with Titan. Resueable, testable as well.
 
 Screenshot
 ------------

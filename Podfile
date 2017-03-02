@@ -48,6 +48,13 @@ target "TitanTests" do
     test_pods
 end
 
+# Swifty-PostgreSQLTests Test
+target "Swifty-PostgreSQLTests" do
+    project './Dependencies/Swifty-PostgreSQL/Swifty-PostgreSQL.xcodeproj'
+    platform :osx, '10.12'
+    test_pods
+end
+
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|

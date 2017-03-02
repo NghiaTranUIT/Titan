@@ -33,13 +33,16 @@ class TitanTableColumn: NSTableColumn {
 // MARK: - Private
 extension TitanTableColumn {
     fileprivate func defaultData() {
-        self.width      = 50
-        self.minWidth   = 200
+        self.minWidth   = 100
         self.maxWidth   = 500
         self.isEditable = false
         self.headerCell.title = self.column.colName
-        self.headerCell.alignment = .left
+        self.headerCell.alignment = self.column.textAlignment
         self.headerCell.lineBreakMode = .byTruncatingMiddle
-        self.resizingMask = .autoresizingMask
+        self.resizingMask = .userResizingMask
+        
+        // Hack to estimate width of column depend on title.
+        // TODO: - Width should be width of cell which largest content
+        self.width      = self.headerCell.cellSize.width + 8
     }
 }

@@ -19,6 +19,8 @@ class DatabaseValueCell: NSTableCellView {
     // MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.titleLbl.maximumNumberOfLines = 2
     }
     
     //
@@ -26,7 +28,13 @@ class DatabaseValueCell: NSTableCellView {
     func configureCell(with field: Field, column: Column) {
         
         // Show raw data
-        self.titleLbl.stringValue = field.rawData
+        if field.isNull {
+            self.titleLbl.placeholderString = field.rawData
+            self.titleLbl.stringValue = ""
+        } else {
+            self.titleLbl.stringValue = field.rawData
+        }
+        
         
         // Layout
         self.setupLayout(with: column)

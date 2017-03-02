@@ -150,7 +150,9 @@ extension DatabaseContent: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
 
-        let cell = tableView.make(withIdentifier: DatabaseValueCell.identifierView, owner: self) as! DatabaseValueCell
+        let cell = tableView.make(withIdentifier: DatabaseValueCell.identifierView, owner: nil) as! DatabaseValueCell
+        
+         print("\(row) \(tableColumn.column!.colName)")
         
         // Get col
         let col = tableColumn.column!
@@ -162,7 +164,7 @@ extension DatabaseContent: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 22
+        return 30
     }
 }
 

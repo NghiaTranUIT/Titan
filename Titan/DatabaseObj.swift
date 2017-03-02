@@ -9,7 +9,7 @@
 import ObjectMapper
 import Realm
 import RealmSwift
-import TitanKit
+import SwiftyPostgreSQL
 
 final class DatabaseObj: BaseModel {
 

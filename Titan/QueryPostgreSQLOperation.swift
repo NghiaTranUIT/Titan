@@ -8,7 +8,7 @@
 
 import Foundation
 
-import TitanKit
+import SwiftyPostgreSQL
 
 class QueryPostgreSQLOperation: BaseOperation {
     

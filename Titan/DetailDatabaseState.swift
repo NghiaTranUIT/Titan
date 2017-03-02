@@ -8,7 +8,7 @@
 
 import Cocoa
 import ReSwift
-import TitanKit
+import SwiftyPostgreSQL
 
 struct DetailDatabaseState {
     var selectedConnection: DatabaseObj!

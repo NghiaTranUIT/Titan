@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 
 protocol StackTableCellDelegate: class {
     func StackTableCellDidSelectTable(_ table: Table)
@@ -22,7 +22,6 @@ class StackTableCell: NSCollectionViewItem {
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableImageView: NSImageView!
     @IBOutlet weak var tableTitleLbl: NSTextField!
     
     //
@@ -35,10 +34,11 @@ class StackTableCell: NSCollectionViewItem {
     override var isSelected: Bool {
         didSet {
             self.tableTitleLbl.textColor = isSelected ? NSColor(hexString: "#2D2E30") : NSColor(hexString: "#8F9498")
-            self.tableImageView.image = isSelected ? NSImage(named: "icon_stack_table_selected") : NSImage(named: "icon_stack_table")
         }
     }
     
+    //
+    // MARK: - Public
     func configureCell(with table: Table, isSelected: Bool = false) {
         self.table = table
         self.tableTitleLbl.stringValue = table.tableName!
@@ -51,4 +51,16 @@ class StackTableCell: NSCollectionViewItem {
         
         self.delegate?.StackTableCellDidSelectTable(table)
     }
+    
+    func minimumWidthCell(with table: Table) -> CGFloat {
+        self.tableTitleLbl.stringValue = table.tableName!
+        let labelSize = self.tableTitleLbl.intrinsicContentSize
+        return labelSize.width + 24
+    }
+}
+
+//
+// MARK: - XIBInitializable
+extension StackTableCell: XIBInitializable {
+    typealias T = StackTableCell
 }

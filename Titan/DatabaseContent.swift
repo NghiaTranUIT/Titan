@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import TitanKit
+import SwiftyPostgreSQL
 import PromiseKit
+import Cocoa
 
 class DatabaseContent: NSObject {
     
@@ -73,8 +74,6 @@ class DatabaseContent: NSObject {
             // Update
             self.queryResult = queryResult
             self.tableView.reloadData()
-            self.tableView.sizeLastColumnToFit()
-            self.tableView.sizeToFit()
         }
         .catch { error in
             
@@ -135,11 +134,8 @@ extension DatabaseContent {
         self.tableView.registerView(PlaceholderTableCell.self)
         self.tableView.registerView(DatabaseValueCell.self)
         
-        self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
-        
         // Reload
         self.tableView.reloadData()
-        self.tableView.sizeLastColumnToFit()
     }
 }
 
@@ -174,5 +170,11 @@ extension DatabaseContent: NSTableViewDataSource {
 // MARK: - NSTableViewDelegate
 extension DatabaseContent: NSTableViewDelegate {
     
+    func tableView(_ tableView: NSTableView, sizeToFitWidthOfColumn column: Int) -> CGFloat {
+        if column == 0 {
+            return 20
+        }
+        return 100
+    }
 }
 

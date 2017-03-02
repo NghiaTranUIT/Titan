@@ -9,7 +9,7 @@
 import Cocoa
 import PromiseKit
 import ReSwift
-import TitanKit
+import SwiftyPostgreSQL
 
 struct UpdateTablesInfoAction: Action {
     var tables: [Table] = []

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 
 enum GridContentViewMode {
     case individually(Table)
@@ -32,7 +32,6 @@ class GridDatabaseView: NSView {
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var titleLbl: NSTextField!
     @IBOutlet weak var tableView: NSTableView!
     
     //

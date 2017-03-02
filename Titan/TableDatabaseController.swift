@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import TitanKit
+import SwiftyPostgreSQL
 
 protocol TableDatabaseControllerOutput {
     func fetchTablesDatabaseInfo()

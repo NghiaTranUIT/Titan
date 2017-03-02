@@ -20,6 +20,8 @@ class ContentDatabaseController: NSViewController {
     // MARK: - Variable
     fileprivate var tableStackView: TableStackView!
     fileprivate var gridDatabaseViews: [GridDatabaseView] = []
+    fileprivate var statusBarView: StatusBarView!
+    
     
     //
     // MARK: - Helper
@@ -30,6 +32,7 @@ class ContentDatabaseController: NSViewController {
     // MARK: - OUTLET
     @IBOutlet weak var stackContainerView: NSView!
     @IBOutlet weak var contentContainerView: NSView!
+    @IBOutlet weak var containerStatusBarView: NSView!
     
     //
     // MARK: - Variable
@@ -45,6 +48,7 @@ class ContentDatabaseController: NSViewController {
         
         // Init
         self.initStackView()
+        self.initStatusBarView()
     }
     
     deinit {
@@ -81,13 +85,12 @@ extension ContentDatabaseController {
         
         self.tableStackView = TableStackView.viewFromNib()
         self.tableStackView.delegate = self
-        
-        // Add subview
-        self.tableStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackContainerView.addSubview(self.tableStackView)
-        self.tableStackView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
-        }
+        self.tableStackView.configureLayoutWithView(self.stackContainerView)
+    }
+    
+    fileprivate func initStatusBarView() {
+        self.statusBarView = StatusBarView.viewFromNib()
+        self.statusBarView.configureLayoutWithView(self.containerStatusBarView)
     }
 }
 

@@ -163,6 +163,17 @@ extension DatabaseContent: NSTableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        var rowView = tableView.make(withIdentifier: ContentRowView.identifierView, owner: self) as? ContentRowView
+        
+        if rowView == nil {
+            rowView = ContentRowView()
+            rowView?.identifier = ContentRowView.identifierView
+        }
+        
+        return rowView
+    }
+    
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 30
     }
@@ -172,11 +183,5 @@ extension DatabaseContent: NSTableViewDataSource {
 // MARK: - NSTableViewDelegate
 extension DatabaseContent: NSTableViewDelegate {
     
-    func tableView(_ tableView: NSTableView, sizeToFitWidthOfColumn column: Int) -> CGFloat {
-        if column == 0 {
-            return 20
-        }
-        return 100
-    }
 }
 

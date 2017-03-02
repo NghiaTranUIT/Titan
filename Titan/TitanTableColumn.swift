@@ -37,7 +37,7 @@ extension TitanTableColumn {
         self.maxWidth   = 500
         self.isEditable = false
         self.headerCell.title = self.column.colName
-        self.headerCell.alignment = self.column.textAlignment
+        self.headerCell.alignment = .left
         self.headerCell.lineBreakMode = .byTruncatingMiddle
         self.resizingMask = .userResizingMask
         

@@ -45,6 +45,10 @@
 		BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */; };
 		BA3F02BD1E67F6C900D070AC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F02BB1E67F6C900D070AC /* Crashlytics.framework */; };
 		BA3F02BE1E67F6C900D070AC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F02BC1E67F6C900D070AC /* Fabric.framework */; };
+		BA3F02C11E682B2200D070AC /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02C01E682B2200D070AC /* StatusBarView.swift */; };
+		BA3F02C31E682B2C00D070AC /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3F02C21E682B2C00D070AC /* StatusBarView.xib */; };
+		BA3F02C51E6850EE00D070AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3F02C41E6850EE00D070AC /* QuartzCore.framework */; };
+		BA3F02C81E68536900D070AC /* ContentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F02C71E68536900D070AC /* ContentRowView.swift */; };
 		BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */; };
 		BA4159F01DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */; };
 		BA4AFF131DAC928B009AE139 /* ListConnectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */; };
@@ -201,6 +205,10 @@
 		BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingButton.swift; sourceTree = "<group>"; };
 		BA3F02BB1E67F6C900D070AC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
 		BA3F02BC1E67F6C900D070AC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
+		BA3F02C01E682B2200D070AC /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		BA3F02C21E682B2C00D070AC /* StatusBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarView.xib; sourceTree = "<group>"; };
+		BA3F02C41E6850EE00D070AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BA3F02C71E68536900D070AC /* ContentRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRowView.swift; sourceTree = "<group>"; };
 		BA4159ED1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA4159EF1DDFF25100F0A82C /* CreateNewDefaultGroupConnectionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDefaultGroupConnectionWorker.swift; sourceTree = "<group>"; };
 		BA4AFF121DAC928B009AE139 /* ListConnectionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListConnectionsController.swift; sourceTree = "<group>"; };
@@ -327,6 +335,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3F02C51E6850EE00D070AC /* QuartzCore.framework in Frameworks */,
 				BA2E0CB91E670CA5001F899C /* SwiftyPostgreSQL.framework in Frameworks */,
 				BA3F02BD1E67F6C900D070AC /* Crashlytics.framework in Frameworks */,
 				BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */,
@@ -342,6 +351,7 @@
 		413CAFF22DEAB4F102132D9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA3F02C41E6850EE00D070AC /* QuartzCore.framework */,
 				BA3F02BB1E67F6C900D070AC /* Crashlytics.framework */,
 				BA3F02BC1E67F6C900D070AC /* Fabric.framework */,
 				BA2E0CB81E670CA5001F899C /* SwiftyPostgreSQL.framework */,
@@ -606,6 +616,23 @@
 			name = "Tracking Button";
 			sourceTree = "<group>";
 		};
+		BA3F02BF1E682B0F00D070AC /* Status Bar View */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F02C01E682B2200D070AC /* StatusBarView.swift */,
+				BA3F02C21E682B2C00D070AC /* StatusBarView.xib */,
+			);
+			name = "Status Bar View";
+			sourceTree = "<group>";
+		};
+		BA3F02C61E68535500D070AC /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				BA3F02C71E68536900D070AC /* ContentRowView.swift */,
+			);
+			name = Row;
+			sourceTree = "<group>";
+		};
 		BA4AFF111DAC925D009AE139 /* List Connections */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +763,7 @@
 		BA59E3D11E3DAA3500BDF873 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA3F02BF1E682B0F00D070AC /* Status Bar View */,
 				BAAD01811E4489E600687509 /* TableStackView */,
 				BA59E3D41E3DAA4700BDF873 /* Grid Database */,
 			);
@@ -745,6 +773,7 @@
 		BA59E3D41E3DAA4700BDF873 /* Grid Database */ = {
 			isa = PBXGroup;
 			children = (
+				BA3F02C61E68535500D070AC /* Row */,
 				BAC475661E50260D002D9F56 /* Cells */,
 				BA59E3D21E3DAA4300BDF873 /* GridDatabaseView.swift */,
 				BA59E3D51E3DAA5400BDF873 /* GridDatabaseView.xib */,
@@ -1322,6 +1351,7 @@
 				BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
 				BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */,
+				BA3F02C31E682B2C00D070AC /* StatusBarView.xib in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
@@ -1505,6 +1535,7 @@
 				BA4AFF161DAC92AE009AE139 /* DetailConnectionsController.swift in Sources */,
 				BAA0A0991DF26812000D8F23 /* NSView+BackgroundColor.swift in Sources */,
 				BAEE19281DAE98D000C3CD3E /* FetchListConnectionsRequest.swift in Sources */,
+				BA3F02C81E68536900D070AC /* ContentRowView.swift in Sources */,
 				BA4AFF371DACD43C009AE139 /* MainAppState.swift in Sources */,
 				BAF13D061E3E2D82005822AF /* FetchTableSchemaInfoOperation.swift in Sources */,
 				BAD0D3841DE2AE6E0081F28F /* MainDetailConnectionController.swift in Sources */,
@@ -1539,6 +1570,7 @@
 				BAAD01691E4431F800687509 /* TablesDataSource.swift in Sources */,
 				BAC475711E5049D2002D9F56 /* NSTableView+Column.swift in Sources */,
 				BA9875621DF3F5B000901CD5 /* UUID+Short.swift in Sources */,
+				BA3F02C11E682B2200D070AC /* StatusBarView.swift in Sources */,
 				BAF13D091E3F75C4005822AF /* DetailDatabaseWindowController.swift in Sources */,
 				BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */,
 				BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */,

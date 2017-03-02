@@ -9,13 +9,13 @@
         <customObject id="-2" userLabel="File's Owner"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <tableCellView identifier="DatabaseValueCell" id="6ms-6a-ZXU" customClass="DatabaseValueCell" customModule="Titan" customModuleProvider="target">
+        <tableCellView identifier="DatabaseValueCell" wantsLayer="YES" id="6ms-6a-ZXU" customClass="DatabaseValueCell" customModule="Titan" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="iFt-Sr-hZu">
+                <textField verticalHuggingPriority="200" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="200" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFt-Sr-hZu">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="Hiiuag asd adga ga ayg dygdyadg yad aysdgasyudgyud" id="JQb-hz-9pl">
+                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title=" Hiiuag as Hi Hii  Hiiuag as Hi Hii" id="JQb-hz-9pl">
                         <font key="font" size="10" name="SFUIText-Regular"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -23,10 +23,10 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="iFt-Sr-hZu" secondAttribute="trailing" constant="2" id="5KW-eX-GAN"/>
-                <constraint firstItem="iFt-Sr-hZu" firstAttribute="top" secondItem="6ms-6a-ZXU" secondAttribute="top" id="WLO-bL-Zar"/>
-                <constraint firstAttribute="bottom" secondItem="iFt-Sr-hZu" secondAttribute="bottom" id="hzh-Sq-BY9"/>
-                <constraint firstItem="iFt-Sr-hZu" firstAttribute="leading" secondItem="6ms-6a-ZXU" secondAttribute="leading" constant="2" id="jA4-9L-b6W"/>
+                <constraint firstAttribute="trailing" secondItem="iFt-Sr-hZu" secondAttribute="trailing" constant="2" id="OBC-yp-Sgp"/>
+                <constraint firstItem="iFt-Sr-hZu" firstAttribute="top" secondItem="6ms-6a-ZXU" secondAttribute="top" id="Ovq-I9-YMU"/>
+                <constraint firstItem="iFt-Sr-hZu" firstAttribute="leading" secondItem="6ms-6a-ZXU" secondAttribute="leading" constant="2" id="elc-JO-LCm"/>
+                <constraint firstAttribute="bottom" secondItem="iFt-Sr-hZu" secondAttribute="bottom" id="kF2-lI-WaX"/>
             </constraints>
             <connections>
                 <outlet property="titleLbl" destination="iFt-Sr-hZu" id="CxH-JE-zdM"/>

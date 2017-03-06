@@ -15,6 +15,8 @@
 		BA02BA491E49C70A00CEE028 /* QueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA481E49C70A00CEE028 /* QueueType.swift */; };
 		BA02BA4D1E49CE6300CEE028 /* BaseAsyncWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02BA4C1E49CE6300CEE028 /* BaseAsyncWorker.swift */; };
 		BA035FC81D97DCEE00B616AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA035FC71D97DCEE00B616AB /* Constants.swift */; };
+		BA0D20751E6D550A002A4986 /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0D20741E6D550A002A4986 /* BaseTableCellView.swift */; };
+		BA0D20781E6D5B34002A4986 /* BoolCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0D20771E6D5B34002A4986 /* BoolCellView.swift */; };
 		BA217FC11DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */; };
 		BA217FC71DF3276A00C5BD88 /* BaseModel+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC61DF3276A00C5BD88 /* BaseModel+Mapping.swift */; };
 		BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA217FC81DF3278900C5BD88 /* BaseModel+Store.swift */; };
@@ -114,8 +116,7 @@
 		BAB8C8A31E20B82B00B39B16 /* GroupVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */; };
 		BAC475631E501B71002D9F56 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC475621E501B71002D9F56 /* Pagination.swift */; };
 		BAC475651E5021A4002D9F56 /* QueryPostgreSQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC475641E5021A4002D9F56 /* QueryPostgreSQLOperation.swift */; };
-		BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC4756A1E50266A002D9F56 /* DatabaseValueCell.xib */; };
-		BAC4756D1E502720002D9F56 /* DatabaseValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4756C1E502720002D9F56 /* DatabaseValueCell.swift */; };
+		BAC4756D1E502720002D9F56 /* TextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4756C1E502720002D9F56 /* TextFieldCellView.swift */; };
 		BAC4756F1E502F48002D9F56 /* TitanTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4756E1E502F48002D9F56 /* TitanTableColumn.swift */; };
 		BAC475711E5049D2002D9F56 /* NSTableView+Column.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC475701E5049D2002D9F56 /* NSTableView+Column.swift */; };
 		BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0D3801DE2AE070081F28F /* DetailConnection.storyboard */; };
@@ -176,6 +177,8 @@
 		BA035FC71D97DCEE00B616AB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA035FED1D98C81900B616AB /* TitanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA035FF11D98C81900B616AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA0D20741E6D550A002A4986 /* BaseTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableCellView.swift; sourceTree = "<group>"; };
+		BA0D20771E6D5B34002A4986 /* BoolCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolCellView.swift; sourceTree = "<group>"; };
 		BA217FC01DF31E2500C5BD88 /* CreateNewDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA217FC61DF3276A00C5BD88 /* BaseModel+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+Mapping.swift"; sourceTree = "<group>"; };
 		BA217FC81DF3278900C5BD88 /* BaseModel+Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseModel+Store.swift"; sourceTree = "<group>"; };
@@ -276,8 +279,7 @@
 		BAB8C8A21E20B82B00B39B16 /* GroupVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVerticalFlowLayout.swift; sourceTree = "<group>"; };
 		BAC475621E501B71002D9F56 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		BAC475641E5021A4002D9F56 /* QueryPostgreSQLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLOperation.swift; sourceTree = "<group>"; };
-		BAC4756A1E50266A002D9F56 /* DatabaseValueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatabaseValueCell.xib; sourceTree = "<group>"; };
-		BAC4756C1E502720002D9F56 /* DatabaseValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseValueCell.swift; sourceTree = "<group>"; };
+		BAC4756C1E502720002D9F56 /* TextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCellView.swift; sourceTree = "<group>"; };
 		BAC4756E1E502F48002D9F56 /* TitanTableColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableColumn.swift; sourceTree = "<group>"; };
 		BAC475701E5049D2002D9F56 /* NSTableView+Column.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Column.swift"; sourceTree = "<group>"; };
 		BACFCC9E1DDAF8EB00EFB0BA /* TitanKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -473,6 +475,22 @@
 			path = TitanTests;
 			sourceTree = "<group>";
 		};
+		BA0D20731E6D54E0002A4986 /* BaseTableCellView */ = {
+			isa = PBXGroup;
+			children = (
+				BA0D20741E6D550A002A4986 /* BaseTableCellView.swift */,
+			);
+			name = BaseTableCellView;
+			sourceTree = "<group>";
+		};
+		BA0D20761E6D5B23002A4986 /* BoolCellView */ = {
+			isa = PBXGroup;
+			children = (
+				BA0D20771E6D5B34002A4986 /* BoolCellView.swift */,
+			);
+			name = BoolCellView;
+			sourceTree = "<group>";
+		};
 		BA217FC51DF3275F00C5BD88 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,6 +683,7 @@
 		BA4AFF171DAC9672009AE139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAC475661E50260D002D9F56 /* Cells */,
 				BA8FB30C1E471092004D48F5 /* TitanTableView */,
 				BAAD01741E44488D00687509 /* PlaceholderTableCell */,
 				BA3EEADB1E3B91F200B30D96 /* Tracking Button */,
@@ -774,7 +793,6 @@
 			isa = PBXGroup;
 			children = (
 				BA3F02C61E68535500D070AC /* Row */,
-				BAC475661E50260D002D9F56 /* Cells */,
 				BA59E3D21E3DAA4300BDF873 /* GridDatabaseView.swift */,
 				BA59E3D51E3DAA5400BDF873 /* GridDatabaseView.xib */,
 			);
@@ -1003,18 +1021,19 @@
 		BAC475661E50260D002D9F56 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BAC475671E502613002D9F56 /* ValueCell */,
+				BA0D20761E6D5B23002A4986 /* BoolCellView */,
+				BA0D20731E6D54E0002A4986 /* BaseTableCellView */,
+				BAC475671E502613002D9F56 /* TextFieldCellView */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		BAC475671E502613002D9F56 /* ValueCell */ = {
+		BAC475671E502613002D9F56 /* TextFieldCellView */ = {
 			isa = PBXGroup;
 			children = (
-				BAC4756C1E502720002D9F56 /* DatabaseValueCell.swift */,
-				BAC4756A1E50266A002D9F56 /* DatabaseValueCell.xib */,
+				BAC4756C1E502720002D9F56 /* TextFieldCellView.swift */,
 			);
-			name = ValueCell;
+			name = TextFieldCellView;
 			sourceTree = "<group>";
 		};
 		BAD0D37F1DE2ADD40081F28F /* Detail */ = {
@@ -1350,7 +1369,6 @@
 				BAEFE7C11D97BE810081A5FE /* Assets.xcassets in Resources */,
 				BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */,
 				BAD0D3811DE2AE070081F28F /* DetailConnection.storyboard in Resources */,
-				BAC4756B1E50266A002D9F56 /* DatabaseValueCell.xib in Resources */,
 				BA3F02C31E682B2C00D070AC /* StatusBarView.xib in Resources */,
 				BA222E581DADF83500834F3E /* ConnectionCell.xib in Resources */,
 				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
@@ -1546,6 +1564,7 @@
 				BAAD016B1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift in Sources */,
 				BA217FC91DF3278900C5BD88 /* BaseModel+Store.swift in Sources */,
 				BAD0D3991DE2B0BB0081F28F /* ContentDatabasePresenter.swift in Sources */,
+				BA0D20751E6D550A002A4986 /* BaseTableCellView.swift in Sources */,
 				BAE354F61DF96E080066FB4D /* BaseAbility.swift in Sources */,
 				BA344FDF1DAE76C50005A566 /* Logger.swift in Sources */,
 				BA217FC71DF3276A00C5BD88 /* BaseModel+Mapping.swift in Sources */,
@@ -1587,6 +1606,7 @@
 				BA4159EE1DDF4E8900F0A82C /* ConnectDatabaseWorker.swift in Sources */,
 				BAF13D001E3E2851005822AF /* UpdateUIOperation.swift in Sources */,
 				BAA0A0971DF1D65F000D8F23 /* NSViewController+Identifier.swift in Sources */,
+				BA0D20781E6D5B34002A4986 /* BoolCellView.swift in Sources */,
 				BA59E3CD1E3D8CA300BDF873 /* SaveDatabaseObjToDiskWorker.swift in Sources */,
 				BAA0A09B1DF268F7000D8F23 /* ThemeObj.swift in Sources */,
 				BAF13CFE1E3E2845005822AF /* ConnectionDatabaseOperation.swift in Sources */,
@@ -1616,7 +1636,7 @@
 				BA8E0BE41DB0E67800B9BDD7 /* QueryObj.swift in Sources */,
 				BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
-				BAC4756D1E502720002D9F56 /* DatabaseValueCell.swift in Sources */,
+				BAC4756D1E502720002D9F56 /* TextFieldCellView.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */,
 				BA02BA471E49C57200CEE028 /* Queue.swift in Sources */,

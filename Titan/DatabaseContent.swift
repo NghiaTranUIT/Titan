@@ -105,9 +105,9 @@ class DatabaseContent: NSObject {
         
         // Not a row
         guard row != NOT_A_ROW else {return}
+        guard let cell = sender.view(atColumn: col, row: row, makeIfNecessary: true) as? TextFieldCellView else {return}
         
         // Edit TextField
-        let cell = sender.view(atColumn: col, row: row, makeIfNecessary: true) as! DatabaseValueCell
         let _ = cell.becomeFirstResponder()
     }
     
@@ -163,7 +163,6 @@ extension DatabaseContent {
     
         // Register
         self.tableView.registerView(PlaceholderTableCell.self)
-        self.tableView.registerView(DatabaseValueCell.self)
         
         // Reload
         self.tableView.reloadData()
@@ -181,17 +180,22 @@ extension DatabaseContent: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
 
-        let cell = tableView.make(withIdentifier: DatabaseValueCell.identifierView, owner: nil) as! DatabaseValueCell
+        let cell = tableView.make(withIdentifier: tableColumn.identifier, owner: self)
         
+        if cell == nil {
+            
+        }
+        
+        return NSView()
          print("\(row) \(tableColumn.column!.colName)")
         
         // Get col
-        let col = tableColumn.column!
-        let row = self.rows[row]
-        let field = row.field(with: col)!
-        cell.configureCell(with: field, column: col)
-        
-        return cell
+//        let col = tableColumn.column!
+//        let row = self.rows[row]
+//        let field = row.field(with: col)!
+//        cell.configureCell(with: field, column: col)
+//        
+//        return cell
     }
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {

@@ -50,6 +50,11 @@ class DatabaseContent: NSObject {
         guard let queryResult = self.queryResult else {return 0}
         return queryResult.rowsAffected
     }
+    func field(at col: Column, row: Int) -> Field {
+        let row = self.rows[row]
+        let field = row.field(with: col)!
+        return field
+    }
     
     //
     // MARK: - Initializer
@@ -179,20 +184,19 @@ extension DatabaseContent: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
-
-        let cell = tableView.make(withIdentifier: tableColumn.identifier, owner: self)
         
-        if cell == nil {
+        let tableCellType = tableColumn.tableViewCellType
+        switch tableCellType {
+        case .switchButton:
+            return self.switchCellCell(tableColumn: tableColumn, row: row)
+            
+        case .textField:
+            return self.textFieldCellView(tableColumn: tableColumn, row: row)
             
         }
         
-        return NSView()
-         print("\(row) \(tableColumn.column!.colName)")
-        
         // Get col
-//        let col = tableColumn.column!
-//        let row = self.rows[row]
-//        let field = row.field(with: col)!
+
 //        cell.configureCell(with: field, column: col)
 //        
 //        return cell
@@ -211,6 +215,29 @@ extension DatabaseContent: NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 30
+    }
+    
+    private func switchCellCell(tableColumn: TitanTableColumn, row: Int) -> BoolCellView {
+        var cell = self.tableView.make(withIdentifier: tableColumn.identifier, owner: self) as? BoolCellView
+        if cell == nil {
+            cell = BoolCellView.viewWithIdentifier(tableColumn.identifier)
+        }
+        
+        cell!.configureCell()
+        return cell!
+    }
+    
+    private func textFieldCellView(tableColumn: TitanTableColumn, row: Int) -> TextFieldCellView {
+        var cell = self.tableView.make(withIdentifier: tableColumn.identifier, owner: self) as? TextFieldCellView
+        if cell == nil {
+            cell = TextFieldCellView.viewWithIdentifier(tableColumn.identifier)
+        }
+        
+        // Configure
+        let col = tableColumn.column!
+        let field = self.field(at: col, row: row)
+        cell!.configureCell(with: field, column: col)
+        return cell!
     }
 }
 

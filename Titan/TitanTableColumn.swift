@@ -9,11 +9,24 @@
 import Cocoa
 import SwiftyPostgreSQL
 
+enum TableViewCellType {
+    case textField
+    case switchButton
+}
+
 class TitanTableColumn: NSTableColumn {
 
     //
     // MARK: - Variable
     var column: Column!
+    var tableViewCellType: TableViewCellType {
+        switch self.column.colType {
+        case .boolean:
+            return TableViewCellType.switchButton
+        default:
+            return TableViewCellType.textField
+        }
+    }
     
     //
     // MARK: - Init
@@ -26,7 +39,7 @@ class TitanTableColumn: NSTableColumn {
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 //

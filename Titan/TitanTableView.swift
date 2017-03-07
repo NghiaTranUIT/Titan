@@ -60,13 +60,6 @@ class TitanTableView: NSTableView {
         self.removeAllColumns()
         self.reloadData()
         
-        // Reconfigure header
-        if let headerView = self.headerView {
-            var frame = headerView.frame
-            frame.size.height = 36
-            headerView.frame = frame
-        }
-        
         // Map to TitanTableColumn
         let cols = columns.map { column -> TitanTableColumn in
             return TitanTableColumn(column: column)
@@ -80,5 +73,13 @@ class TitanTableView: NSTableView {
         
         // FIXME: force layout subview to change header view height
         self.enclosingScrollView?.tile()
+    }
+    
+    func makeColumnsFitContents() {
+        
+        // Interate each columns and fit it
+        for column in self.tableColumns as! [TitanTableColumn] {
+            column.width = column.sizeThatFits(limit: true)
+        }
     }
 }

@@ -19,7 +19,7 @@ class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
-    fileprivate var databaseContent = DatabaseContent()
+    fileprivate var databaseContent: DatabaseContent!
     fileprivate var mode: GridContentViewMode = .none
     var table: Table? {
         switch self.mode {
@@ -48,8 +48,8 @@ class GridDatabaseView: NSView {
     override func initCommon() {
         
         // Data source
+        self.databaseContent = DatabaseContent(tableView: self.tableView)
         self.databaseContent.delegate = self
-        self.databaseContent.tableView = self.tableView
         
         // Status bar
         self.initStatusBarView()

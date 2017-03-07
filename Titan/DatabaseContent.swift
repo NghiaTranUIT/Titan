@@ -27,12 +27,14 @@ class DatabaseContent: NSObject {
     fileprivate var mode = GridContentViewMode.none
     fileprivate var currentQuery: PostgreQuery?
     fileprivate let pagination = Pagination()
-    var tableView: TitanTableView! {didSet{self.setupTable()}}
+    fileprivate var autofittedColumns: [String: Bool] = [:]
+    fileprivate var tableView: TitanTableView!
+    fileprivate var table: Table?
     
     // Data
     fileprivate var queryResult: QueryResult? {didSet {
         self.delegate?.DatabaseContentDidUpdatedQueryResult(queryResult!)
-        self.tableView.setupColumns(self.columns)
+        self.setupDataForTableView()
     }}
     fileprivate var rows: [Row] {
         guard let result = self.queryResult else {return []}
@@ -54,6 +56,11 @@ class DatabaseContent: NSObject {
     
     //
     // MARK: - Initializer
+    init(tableView: TitanTableView) {
+        super.init()
+        self.tableView = tableView
+        self.setupTableDataSource()
+    }
     
     //
     // MARK: - Public
@@ -142,9 +149,35 @@ extension DatabaseContent {
 // MARK: - Private
 extension DatabaseContent {
     
-    fileprivate func setupTable() {
+    fileprivate func setupTableDataSource() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    fileprivate func setupDataForTableView() {
+        
+        // Setup new columns
+        self.tableView.setupColumns(self.columns)
+        
+        // Enable save
+        self.autosaveColumnsWidth()
+    }
+    
+    fileprivate func autosaveColumnsWidth() {
+        guard let table = self.table else {return}
+        let tableName = table.tableName!
+        
+        // Save
+        self.tableView.autosaveName = tableName
+        self.tableView.autosaveTableColumns = true
+        
+        // Calculate size
+        let isStored = self.autofittedColumns[tableName]
+        if isStored == nil {
+            Logger.debug("makeColumnsFitContents on \(tableName)")
+            self.tableView.makeColumnsFitContents()
+            self.autofittedColumns[tableName] = true
+        }
     }
 }
 

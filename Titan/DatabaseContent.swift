@@ -27,23 +27,19 @@ class DatabaseContent: NSObject {
     fileprivate var mode = GridContentViewMode.none
     fileprivate var currentQuery: PostgreQuery?
     fileprivate let pagination = Pagination()
-    var tableView: NSTableView! {didSet{self.setupTable()}}
+    var tableView: TitanTableView! {didSet{self.setupTable()}}
     
     // Data
     fileprivate var queryResult: QueryResult? {didSet {
         self.delegate?.DatabaseContentDidUpdatedQueryResult(queryResult!)
-        self.processColumnType()
+        self.tableView.setupColumns(self.columns)
     }}
     fileprivate var rows: [Row] {
-        guard let result = self.queryResult else {
-            return []
-        }
+        guard let result = self.queryResult else {return []}
         return result.rows
     }
     fileprivate var columns: [Column] {
-        guard let result = self.queryResult else {
-            return []
-        }
+        guard let result = self.queryResult else {return []}
         return result.columns
     }
     var numberRowEffect: Int {
@@ -140,21 +136,6 @@ extension DatabaseContent {
     fileprivate func cancelAllWorker() {
         
     }
-    
-    fileprivate func processColumnType() {
-        
-        // Remove all first
-        self.tableView.removeAllColumns()
-        
-        let cols = self.columns.map { column -> NSTableColumn in
-            return TitanTableColumn(column: column)
-        }
-        
-        for col in cols {
-            self.tableView.addTableColumn(col)
-        }
-    
-    }
 }
 
 //
@@ -162,15 +143,8 @@ extension DatabaseContent {
 extension DatabaseContent {
     
     fileprivate func setupTable() {
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
-    
-        // Register
-        self.tableView.registerView(PlaceholderTableCell.self)
-        
-        // Reload
-        self.tableView.reloadData()
     }
 }
 
@@ -194,12 +168,6 @@ extension DatabaseContent: NSTableViewDataSource {
             return self.textFieldCellView(tableColumn: tableColumn, row: row)
             
         }
-        
-        // Get col
-
-//        cell.configureCell(with: field, column: col)
-//        
-//        return cell
     }
     
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {

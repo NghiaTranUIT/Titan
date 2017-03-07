@@ -33,7 +33,7 @@ class GridDatabaseView: NSView {
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: TitanTableView!
     @IBOutlet weak var containerStatusBarView: NSView!
     
     //

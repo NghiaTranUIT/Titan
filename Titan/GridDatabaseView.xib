@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="b2D-zG-98R" viewBased="YES" id="clZ-Og-5vJ">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="b2D-zG-98R" viewBased="YES" id="clZ-Og-5vJ" customClass="TitanTableView" customModule="Titan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="179"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -105,7 +105,7 @@
             </constraints>
             <connections>
                 <outlet property="containerStatusBarView" destination="h0T-Sc-ZYS" id="Jlr-Su-Pib"/>
-                <outlet property="tableView" destination="clZ-Og-5vJ" id="8yL-Sj-jDD"/>
+                <outlet property="tableView" destination="clZ-Og-5vJ" id="uku-38-gmz"/>
             </connections>
         </customView>
     </objects>

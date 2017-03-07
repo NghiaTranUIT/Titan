@@ -42,6 +42,7 @@
 		BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */ = {isa = PBXBuildFile; fileRef = BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */; };
 		BA393A421E3DD3F700450AA0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A411E3DD3F700450AA0 /* DatabaseManager.swift */; };
 		BA393A441E3DD4C400450AA0 /* Object+Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA393A431E3DD4C400450AA0 /* Object+Lock.swift */; };
+		BA3D08011E6E8A320046A703 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3D08001E6E8A320046A703 /* TitanTableView.swift */; };
 		BA3EEAD91E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADA1E3AEAC700B30D96 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */; };
 		BA3EEADD1E3B922B00B30D96 /* TrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */; };
@@ -78,7 +79,6 @@
 		BA8E0BE81DB0E69100B9BDD7 /* SSHObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */; };
 		BA8FB3091E470F08004D48F5 /* TableSchemeContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB3081E470F08004D48F5 /* TableSchemeContextMenuView.swift */; };
 		BA8FB30B1E470F19004D48F5 /* TableSchemeContextMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8FB30A1E470F19004D48F5 /* TableSchemeContextMenuView.xib */; };
-		BA8FB30E1E4710B2004D48F5 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */; };
 		BA8FB3101E47133F004D48F5 /* NSView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */; };
 		BA94413F1DF007EF00EBA623 /* GroupConnectionObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */; };
 		BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */; };
@@ -204,6 +204,7 @@
 		BA393A3F1E3DB88C00450AA0 /* DefaultQuotation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DefaultQuotation.json; sourceTree = "<group>"; };
 		BA393A411E3DD3F700450AA0 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		BA393A431E3DD4C400450AA0 /* Object+Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Lock.swift"; sourceTree = "<group>"; };
+		BA3D08001E6E8A320046A703 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
 		BA3EEAD81E3AEAC700B30D96 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA3EEADC1E3B922B00B30D96 /* TrackingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingButton.swift; sourceTree = "<group>"; };
 		BA3F02BB1E67F6C900D070AC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
@@ -241,7 +242,6 @@
 		BA8E0BE71DB0E69100B9BDD7 /* SSHObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHObj.swift; sourceTree = "<group>"; };
 		BA8FB3081E470F08004D48F5 /* TableSchemeContextMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSchemeContextMenuView.swift; sourceTree = "<group>"; };
 		BA8FB30A1E470F19004D48F5 /* TableSchemeContextMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSchemeContextMenuView.xib; sourceTree = "<group>"; };
-		BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
 		BA8FB30F1E47133F004D48F5 /* NSView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+Xib.swift"; sourceTree = "<group>"; };
 		BA94413E1DF007EF00EBA623 /* GroupConnectionObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupConnectionObj.swift; sourceTree = "<group>"; };
 		BA9441491DF00EC700EBA623 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
@@ -860,7 +860,7 @@
 		BA8FB30C1E471092004D48F5 /* TitanTableView */ = {
 			isa = PBXGroup;
 			children = (
-				BA8FB30D1E4710B2004D48F5 /* TitanTableView.swift */,
+				BA3D08001E6E8A320046A703 /* TitanTableView.swift */,
 			);
 			name = TitanTableView;
 			sourceTree = "<group>";
@@ -1536,7 +1536,6 @@
 				BA8E0BD11DB0D38F00B9BDD7 /* ApplicationManager.swift in Sources */,
 				BAAD01701E4443AE00687509 /* TableRowCell.swift in Sources */,
 				BAF13D041E3E2CF1005822AF /* CloseDatabaseOperation.swift in Sources */,
-				BA8FB30E1E4710B2004D48F5 /* TitanTableView.swift in Sources */,
 				BA320A4F1DDDF56900C0E82B /* DetailConnectionInteractor.swift in Sources */,
 				BAA0A0951DF1D210000D8F23 /* NSCollectionView+Register.swift in Sources */,
 				BA393A3C1E3DB63300450AA0 /* UserDefault+Key.swift in Sources */,
@@ -1637,6 +1636,7 @@
 				BA320A561DDDF81D00C0E82B /* FetchAllGroupConnectionsWorker.swift in Sources */,
 				BAEE19211DAE7BF800C3CD3E /* BaseModel.swift in Sources */,
 				BAC4756D1E502720002D9F56 /* TextFieldCellView.swift in Sources */,
+				BA3D08011E6E8A320046A703 /* TitanTableView.swift in Sources */,
 				BA94414A1DF00EC700EBA623 /* ConnectionGroupCell.swift in Sources */,
 				BAEE19261DAE989F00C3CD3E /* Requestable.swift in Sources */,
 				BA02BA471E49C57200CEE028 /* Queue.swift in Sources */,

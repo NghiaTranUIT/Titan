@@ -51,7 +51,7 @@ extension BoolCellView {
         self.checkboxBtn.setButtonType(NSButtonType.switch)
         self.addSubview(self.checkboxBtn)
         self.checkboxBtn.snp.makeConstraints { (make) in
-            make.edges.equalTo(self).inset(NSEdgeInsetsZero)
+            make.edges.equalTo(self).inset(EdgeInsets(top: 0, left: 4, bottom: 0, right: 4))
         }
     }
 }

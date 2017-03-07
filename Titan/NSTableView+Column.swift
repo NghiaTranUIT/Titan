@@ -8,14 +8,3 @@
 
 import Foundation
 import Cocoa
-
-extension NSTableView {
-    
-    // Remove all columns
-    func removeAllColumns() {
-        while self.tableColumns.count > 0 {
-            let tableColumn = self.tableColumns.last
-            self.removeTableColumn(tableColumn!)
-        }
-    }
-}

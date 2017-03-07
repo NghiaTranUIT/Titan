@@ -45,6 +45,10 @@ class GridDatabaseView: NSView {
         self.initBaseAbility()
     }
     
+    deinit {
+        Logger.info("[deinit] GridDatabaseView")
+    }
+    
     override func initCommon() {
         
         // Data source

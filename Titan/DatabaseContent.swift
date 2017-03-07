@@ -62,6 +62,10 @@ class DatabaseContent: NSObject {
         self.setupTableDataSource()
     }
     
+    deinit {
+        Logger.info("[deinit] DatabaseContent")
+    }
+    
     //
     // MARK: - Public
     func configure(with mode: GridContentViewMode) {
@@ -164,8 +168,7 @@ extension DatabaseContent {
     }
     
     fileprivate func autosaveColumnsWidth() {
-        guard let table = self.table else {return}
-        let tableName = table.tableName!
+        let tableName = self.currentQuery!.rawString
         
         // Save
         self.tableView.autosaveName = tableName

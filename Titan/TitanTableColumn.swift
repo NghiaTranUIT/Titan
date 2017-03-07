@@ -110,12 +110,12 @@ extension TitanTableColumn {
         case .charArray:
             fallthrough
         case .intArray:
-            return 3
+            return 5
         
         case .json:
             fallthrough
         case .varchar:
-            return 2
+            return 10
             
         default:
             return 1

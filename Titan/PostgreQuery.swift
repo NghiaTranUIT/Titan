@@ -27,6 +27,12 @@ class PostgreQuery {
     }
     
     //
+    // MARK: - Public
+    var rawString: String {
+        return "\(self.rawQuery)"
+    }
+    
+    //
     // MARK: - Builder
     class func buildDefaultQuery(with table: Table, pagination: Pagination) -> PostgreQuery {
         let raw = Query("SELECT * FROM \(table.tableName!) OFFSET \(pagination.skip) LIMIT \(pagination.limit)")

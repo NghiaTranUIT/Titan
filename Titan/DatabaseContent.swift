@@ -175,12 +175,7 @@ extension DatabaseContent {
         self.tableView.autosaveTableColumns = true
         
         // Calculate size
-        let isStored = self.autofittedColumns[tableName]
-        if isStored == nil {
-            Logger.debug("makeColumnsFitContents on \(tableName)")
-            self.tableView.makeColumnsFitContents()
-            self.autofittedColumns[tableName] = true
-        }
+        self.tableView.makeColumnsFitContents()
     }
 }
 
@@ -218,7 +213,7 @@ extension DatabaseContent: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 30
+        return 17
     }
     
     private func switchCellCell(tableColumn: TitanTableColumn, row: Int) -> BoolCellView {

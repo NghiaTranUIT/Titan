@@ -63,6 +63,7 @@ extension TextFieldCellView {
         textField.drawsBackground = false
         textField.cell?.sendsActionOnEndEditing = true
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.lineBreakMode = .byTruncatingTail
         self.addSubview(textField)
         textField.snp.makeConstraints { (make) in
             make.edges.equalTo(self).inset(EdgeInsets(top: 0, left: 4, bottom: 0, right: 4))

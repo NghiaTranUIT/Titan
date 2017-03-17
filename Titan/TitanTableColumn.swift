@@ -76,7 +76,7 @@ class TitanTableColumn: NSTableColumn {
             maxWidth = min(maxWidth, TitanTableColumn.MaxColumnWidth)
         }
         
-        return maxWidth
+        return maxWidth + 8 // + padding
     }
     
 }
@@ -88,7 +88,7 @@ extension TitanTableColumn {
     
     /// Init Default data for columns
     fileprivate func defaultData() {
-        self.minWidth   = 100
+        self.minWidth   = 50
         self.maxWidth   = 500
         self.isEditable = false
         self.headerCell.title = self.column.colName

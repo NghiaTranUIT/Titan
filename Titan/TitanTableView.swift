@@ -80,6 +80,7 @@ class TitanTableView: NSTableView {
         // Interate each columns and fit it
         for column in self.tableColumns as! [TitanTableColumn] {
             column.width = column.sizeThatFits(limit: true)
+            Logger.info("Col \(column.column.colName) = \(column.width)")
         }
     }
 }

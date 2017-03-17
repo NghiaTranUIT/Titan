@@ -151,6 +151,7 @@
 		BAF13D101E40EEEE005822AF /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D0F1E40EEEE005822AF /* AppPreferences.swift */; };
 		BAF13D121E40F3C3005822AF /* BaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D111E40F3C3005822AF /* BaseWindowController.swift */; };
 		BAF13D151E40F94D005822AF /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF13D141E40F94D005822AF /* BaseSplitViewController.swift */; };
+		BAF77B2A1E7B903A007224CA /* TextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF77B291E7B903A007224CA /* TextFieldCellView.xib */; };
 		BAFF52C21DCE271600B566F7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF52C11DCE271600B566F7 /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -318,6 +319,7 @@
 		BAF13D0F1E40EEEE005822AF /* AppPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
 		BAF13D111E40F3C3005822AF /* BaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWindowController.swift; sourceTree = "<group>"; };
 		BAF13D141E40F94D005822AF /* BaseSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
+		BAF77B291E7B903A007224CA /* TextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCellView.xib; sourceTree = "<group>"; };
 		BAFF52C11DCE271600B566F7 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F6311F69C5CC741DB525498C /* Pods-TitanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TitanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TitanTests/Pods-TitanTests.release.xcconfig"; sourceTree = "<group>"; };
 		FDC8BB04FFD7EA4CC9946DE7 /* Pods_Titan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Titan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1032,6 +1034,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC4756C1E502720002D9F56 /* TextFieldCellView.swift */,
+				BAF77B291E7B903A007224CA /* TextFieldCellView.xib */,
 			);
 			name = TextFieldCellView;
 			sourceTree = "<group>";
@@ -1374,6 +1377,7 @@
 				BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */,
 				BA59E3D61E3DAA5400BDF873 /* GridDatabaseView.xib in Resources */,
 				BA393A401E3DB88C00450AA0 /* DefaultQuotation.json in Resources */,
+				BAF77B2A1E7B903A007224CA /* TextFieldCellView.xib in Resources */,
 				BAAD01711E4443AE00687509 /* TableRowCell.xib in Resources */,
 				BAADCA2F1E2B6E5E006909D9 /* SSHView.xib in Resources */,
 				BAEFE7C41D97BE810081A5FE /* Connection.storyboard in Resources */,

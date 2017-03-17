@@ -19,7 +19,7 @@ struct AddSelectedTableToStackAction: Action {
     var selectedTable: Table!
 }
 
-class SelectedTableWorker: SyncWorker {
+class SelectedTableInCurrentTabWorker: SyncWorker {
     
     typealias T = Void
     var seletedTable: Table!
@@ -31,9 +31,9 @@ class SelectedTableWorker: SyncWorker {
     func execute() -> T {
     
         // If no selection -> add to stack
+        var openInNewTap = false
         if mainStore.state.detailDatabaseState!.stackTables.count == 0 {
-            
-            // Dispatch
+            openInNewTap = true
             let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
             mainStore.dispatch(addStackAction)
         }
@@ -43,6 +43,6 @@ class SelectedTableWorker: SyncWorker {
         mainStore.dispatch(action)
         
         // Push Changed
-        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
+        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged, object: nil, userInfo: ["openInNewTap": openInNewTap])
     }
 }

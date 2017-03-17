@@ -10,7 +10,7 @@ import Cocoa
 import SwiftyPostgreSQL
 import ReSwift
 
-class DoubleTapTableWorker: SyncWorker {
+class OpenTableInNewTabWorker: SyncWorker {
     
     typealias T = Void
     var seletedTable: Table!
@@ -30,6 +30,6 @@ class DoubleTapTableWorker: SyncWorker {
         mainStore.dispatch(action)
         
         // Post
-        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged)
+        NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged, object: nil, userInfo: ["openInNewTap": true])
     }
 }

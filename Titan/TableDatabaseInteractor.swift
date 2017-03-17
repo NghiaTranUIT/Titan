@@ -37,13 +37,13 @@ extension TableDatabaseInteractor: TableDatabaseControllerOutput {
         }
     }
     
-    func didSelectTable(_ table: Table) {
-        let worker = SelectedTableWorker(seletedTable: table)
+    func replaceSelectedTable(_ table: Table) {
+        let worker = SelectedTableInCurrentTabWorker(seletedTable: table)
         worker.execute()
     }
     
-    func didDoubleTapTable(_ table: Table) {
-        let worker = DoubleTapTableWorker(seletedTable: table)
+    func openTableInNewTap(_ table: Table) {
+        let worker = OpenTableInNewTabWorker(seletedTable: table)
         worker.execute()
     }
 }

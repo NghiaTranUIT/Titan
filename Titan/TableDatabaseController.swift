@@ -11,8 +11,8 @@ import SwiftyPostgreSQL
 
 protocol TableDatabaseControllerOutput {
     func fetchTablesDatabaseInfo()
-    func didSelectTable(_ table: Table)
-    func didDoubleTapTable(_ table: Table)
+    func replaceSelectedTable(_ table: Table)
+    func openTableInNewTap(_ table: Table)
 }
 
 class TableDatabaseController: NSViewController {
@@ -85,11 +85,11 @@ extension TableDatabaseController {
 // MARK: - TablesDataSourceDelegate
 extension TableDatabaseController: TablesDataSourceDelegate {
     func TablesDataSourceDidSelectTable(_ table: Table) {
-        self.output?.didSelectTable(table)
+        self.output?.replaceSelectedTable(table)
     }
     
     func TablesDataSourceDidDoubleTapOnTable(_ table: Table) {
-        self.output?.didDoubleTapTable(table)
+        // Do nothing
     }
 }
 
@@ -118,7 +118,7 @@ extension TableDatabaseController: ContextMenuTableViewDelegate {
 extension TableDatabaseController: TableSchemeContextMenuViewDelegate {
     
     func TableSchemeContextMenuViewDidTapAction(_ action: TableSchemmaContextAction, table: Table) {
-        self.output?.didDoubleTapTable(table)
+        self.output?.openTableInNewTap(table)
     }
 }
 

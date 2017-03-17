@@ -100,13 +100,13 @@
 		BAAD01781E4448A000687509 /* PlaceholderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */; };
 		BAAD017A1E447B3400687509 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01791E447B3400687509 /* TableRowView.swift */; };
 		BAAD017D1E447DFE00687509 /* GlobalFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017C1E447DFE00687509 /* GlobalFont.swift */; };
-		BAAD017F1E44846700687509 /* SelectedTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017E1E44846700687509 /* SelectedTableWorker.swift */; };
+		BAAD017F1E44846700687509 /* SelectedTableInCurrentTabWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD017E1E44846700687509 /* SelectedTableInCurrentTabWorker.swift */; };
 		BAAD01831E448A0C00687509 /* TableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01821E448A0C00687509 /* TableStackView.swift */; };
 		BAAD01851E448A1E00687509 /* TableStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01841E448A1E00687509 /* TableStackView.xib */; };
 		BAAD018A1E448F6D00687509 /* StackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01881E448F6D00687509 /* StackTableCell.swift */; };
 		BAAD018F1E448FA500687509 /* AddTableStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD018D1E448FA500687509 /* AddTableStackCell.swift */; };
 		BAAD01901E448FA500687509 /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD018E1E448FA500687509 /* AddTableStackCell.xib */; };
-		BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */; };
+		BAAD01921E44957300687509 /* OpenTableInNewTabWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAD01911E44957300687509 /* OpenTableInNewTabWorker.swift */; };
 		BAAD01941E462A5000687509 /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAD01931E462A5000687509 /* StackTableCell.xib */; };
 		BAADCA291E2B5C36006909D9 /* ChecBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */; };
 		BAADCA2D1E2B6E53006909D9 /* SSHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAADCA2C1E2B6E53006909D9 /* SSHView.swift */; };
@@ -263,13 +263,13 @@
 		BAAD01761E4448A000687509 /* PlaceholderTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderTableCell.xib; sourceTree = "<group>"; };
 		BAAD01791E447B3400687509 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BAAD017C1E447DFE00687509 /* GlobalFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFont.swift; sourceTree = "<group>"; };
-		BAAD017E1E44846700687509 /* SelectedTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableWorker.swift; sourceTree = "<group>"; };
+		BAAD017E1E44846700687509 /* SelectedTableInCurrentTabWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableInCurrentTabWorker.swift; sourceTree = "<group>"; };
 		BAAD01821E448A0C00687509 /* TableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStackView.swift; sourceTree = "<group>"; };
 		BAAD01841E448A1E00687509 /* TableStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableStackView.xib; sourceTree = "<group>"; };
 		BAAD01881E448F6D00687509 /* StackTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableCell.swift; sourceTree = "<group>"; };
 		BAAD018D1E448FA500687509 /* AddTableStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableStackCell.swift; sourceTree = "<group>"; };
 		BAAD018E1E448FA500687509 /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
-		BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTapTableWorker.swift; sourceTree = "<group>"; };
+		BAAD01911E44957300687509 /* OpenTableInNewTabWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTableInNewTabWorker.swift; sourceTree = "<group>"; };
 		BAAD01931E462A5000687509 /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
 		BAADCA281E2B5C36006909D9 /* ChecBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecBoxButton.swift; sourceTree = "<group>"; };
 		BAADCA2C1E2B6E53006909D9 /* SSHView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSHView.swift; sourceTree = "<group>"; };
@@ -1097,8 +1097,8 @@
 			isa = PBXGroup;
 			children = (
 				BAAD016A1E4432FF00687509 /* FetchTableDatabaseInfoWorker.swift */,
-				BAAD017E1E44846700687509 /* SelectedTableWorker.swift */,
-				BAAD01911E44957300687509 /* DoubleTapTableWorker.swift */,
+				BAAD017E1E44846700687509 /* SelectedTableInCurrentTabWorker.swift */,
+				BAAD01911E44957300687509 /* OpenTableInNewTabWorker.swift */,
 			);
 			name = Workers;
 			sourceTree = "<group>";
@@ -1618,9 +1618,9 @@
 				BA33F9B41DCF3E4F00B60952 /* RealmManager.swift in Sources */,
 				BA320A5B1DDDFF0A00C0E82B /* Worker.swift in Sources */,
 				BA320A511DDDF57000C0E82B /* DetailConnectionConfig.swift in Sources */,
-				BAAD017F1E44846700687509 /* SelectedTableWorker.swift in Sources */,
+				BAAD017F1E44846700687509 /* SelectedTableInCurrentTabWorker.swift in Sources */,
 				BA320A441DDDF51900C0E82B /* ListConnectionPresenter.swift in Sources */,
-				BAAD01921E44957300687509 /* DoubleTapTableWorker.swift in Sources */,
+				BAAD01921E44957300687509 /* OpenTableInNewTabWorker.swift in Sources */,
 				BA9875691DF4449700901CD5 /* GroupColorView.swift in Sources */,
 				BAC475651E5021A4002D9F56 /* QueryPostgreSQLOperation.swift in Sources */,
 				BA320A581DDDF8D000C0E82B /* SelectConnectionWorker.swift in Sources */,

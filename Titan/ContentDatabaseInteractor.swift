@@ -26,7 +26,7 @@ extension ContentDatabaseInteractor: ContentDatabaseControllerOutput {
     
     // Switch Tab
     func didSwitchTab(with table: Table) {
-        let worker = SelectedTableWorker(seletedTable: table)
+        let worker = SelectedTableInCurrentTabWorker(seletedTable: table)
         worker.execute()
     }
 }

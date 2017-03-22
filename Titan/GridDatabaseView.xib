@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="b2D-zG-98R" viewBased="YES" id="clZ-Og-5vJ" customClass="TitanTableView" customModule="Titan" customModuleProvider="target">
+                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="b2D-zG-98R" viewBased="YES" id="clZ-Og-5vJ" customClass="TitanTableView" customModule="Titan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="179"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

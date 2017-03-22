@@ -59,6 +59,16 @@ class TableStackView: NSView {
     //
     // MARK: - Public
     
+    func configureLayoutWithView(_ view: NSView) {
+        guard self.superview == nil else {return}
+        
+        // Add sub view
+        self.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        self.snp.makeConstraints { (make) in
+            make.edges.equalTo(view).inset(NSEdgeInsetsZero)
+        }
+    }
     // Update layout
     func updateStackView() {
         self.collectionView.reloadData()

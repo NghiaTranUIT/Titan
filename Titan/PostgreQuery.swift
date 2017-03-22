@@ -27,9 +27,28 @@ class PostgreQuery {
     }
     
     //
+    // MARK: - Public
+    var rawString: String {
+        return "\(self.rawQuery)"
+    }
+    
+    //
     // MARK: - Builder
     class func buildDefaultQuery(with table: Table, pagination: Pagination) -> PostgreQuery {
         let raw = Query("SELECT * FROM \(table.tableName!) OFFSET \(pagination.skip) LIMIT \(pagination.limit)")
         return PostgreQuery(rawQuery: raw)
+    }
+}
+
+//
+// MARK: - Private
+extension PostgreQuery {
+    
+    
+    /// Return full count for pagination
+    ///
+    /// - Returns: Query
+    fileprivate class func fullCountQuery() -> String {
+        return ",count(*) OVER() AS titan_full_count"
     }
 }

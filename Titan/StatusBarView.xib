@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="StatusBarView" id="c22-O7-iKe" customClass="StatusBarView" customModule="Titan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="529" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2LB-TJ-Wc0">
+                    <rect key="frame" x="388" y="-2" width="101" height="32"/>
+                    <buttonCell key="cell" type="push" title="Page 1 of 1" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bjr-Jz-gXf">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="pageNumberBtnTapped:" target="c22-O7-iKe" id="R1s-hS-5WW"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wMj-SO-VDM">
+                    <rect key="frame" x="479" y="-2" width="48" height="32"/>
+                    <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JS6-Dd-Vqe">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="nextPageBtnTapped:" target="c22-O7-iKe" id="kKq-o4-XZB"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ela-WQ-EQI">
+                    <rect key="frame" x="350" y="-2" width="48" height="32"/>
+                    <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yUK-1j-sDY">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="previousPageBtnTapped:" target="c22-O7-iKe" id="L7J-Pj-6bw"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eLx-aj-ssX">
+                    <rect key="frame" x="2" y="-2" width="78" height="32"/>
+                    <buttonCell key="cell" type="push" title="+ Row" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1G0-9F-cl5">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addRowBtnTapped:" target="c22-O7-iKe" id="v8Z-Yx-VGK"/>
+                    </connections>
+                </button>
+                <customView horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-i5-QaJ">
+                    <rect key="frame" x="74" y="0.0" width="282" height="32"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzH-iy-WRc">
+                            <rect key="frame" x="117" y="8" width="49" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0 rows" id="o8A-Uv-q2r">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="NzH-iy-WRc" firstAttribute="centerX" secondItem="rM0-i5-QaJ" secondAttribute="centerX" id="Bso-pu-dky"/>
+                        <constraint firstItem="NzH-iy-WRc" firstAttribute="centerY" secondItem="rM0-i5-QaJ" secondAttribute="centerY" id="l0O-oi-E2w"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="wMj-SO-VDM" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="32b-dC-0Lj"/>
+                <constraint firstItem="rM0-i5-QaJ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="4Dh-6X-Ycn"/>
+                <constraint firstAttribute="bottom" secondItem="rM0-i5-QaJ" secondAttribute="bottom" id="BHy-UX-8We"/>
+                <constraint firstItem="2LB-TJ-Wc0" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Mx3-Dg-FcK"/>
+                <constraint firstItem="2LB-TJ-Wc0" firstAttribute="leading" secondItem="ela-WQ-EQI" secondAttribute="trailing" constant="2" id="TCw-nB-J3e"/>
+                <constraint firstItem="ela-WQ-EQI" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="ap0-jE-YXq"/>
+                <constraint firstItem="eLx-aj-ssX" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="gRd-0Q-RWR"/>
+                <constraint firstItem="rM0-i5-QaJ" firstAttribute="leading" secondItem="eLx-aj-ssX" secondAttribute="trailing" id="k6w-lC-16s"/>
+                <constraint firstItem="eLx-aj-ssX" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="8" id="mtS-zN-Plf"/>
+                <constraint firstItem="ela-WQ-EQI" firstAttribute="leading" secondItem="rM0-i5-QaJ" secondAttribute="trailing" id="sfv-X8-xlW"/>
+                <constraint firstAttribute="trailing" secondItem="wMj-SO-VDM" secondAttribute="trailing" constant="8" id="tUa-FH-l2K"/>
+                <constraint firstItem="wMj-SO-VDM" firstAttribute="leading" secondItem="2LB-TJ-Wc0" secondAttribute="trailing" constant="2" id="x0K-KL-TcT"/>
+            </constraints>
+            <connections>
+                <outlet property="addRowBtn" destination="eLx-aj-ssX" id="SFV-oV-Efy"/>
+                <outlet property="nextPageBtn" destination="wMj-SO-VDM" id="J50-KC-Anm"/>
+                <outlet property="pageNumberBtn" destination="2LB-TJ-Wc0" id="07V-Rh-rVI"/>
+                <outlet property="previousPageBtn" destination="ela-WQ-EQI" id="D1P-BU-dOr"/>
+                <outlet property="statusLbl" destination="NzH-iy-WRc" id="isR-ot-7R5"/>
+            </connections>
+            <point key="canvasLocation" x="164.5" y="167"/>
+        </customView>
+    </objects>
+</document>

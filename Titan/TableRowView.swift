@@ -10,6 +10,12 @@ import Cocoa
 
 class TableRowView: NSTableRowView {
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.canDrawSubviewsIntoLayer = true
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 

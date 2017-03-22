@@ -19,7 +19,7 @@ class GridDatabaseView: NSView {
 
     //
     // MARK: - Variable
-    fileprivate var databaseContent = DatabaseContent()
+    fileprivate var databaseContent: DatabaseContent!
     fileprivate var mode: GridContentViewMode = .none
     var table: Table? {
         switch self.mode {
@@ -29,10 +29,12 @@ class GridDatabaseView: NSView {
             return nil
         }
     }
+    fileprivate var statusBarView: StatusBarView!
     
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: TitanTableView!
+    @IBOutlet weak var containerStatusBarView: NSView!
     
     //
     // MARK: - View Cycle
@@ -43,10 +45,22 @@ class GridDatabaseView: NSView {
         self.initBaseAbility()
     }
     
+    deinit {
+        Logger.info("[deinit] GridDatabaseView")
+    }
+    
     override func initCommon() {
         
         // Data source
-        self.databaseContent.tableView = self.tableView
+        self.databaseContent = DatabaseContent(tableView: self.tableView)
+        self.databaseContent.delegate = self
+        
+        // Status bar
+        self.initStatusBarView()
+        
+        // Double tap 
+        self.tableView.target = self
+        self.tableView.doubleAction = #selector(self.userDoubleClicked(_:))
     }
     
     //
@@ -82,4 +96,33 @@ extension GridDatabaseView: XIBInitializable {
 // MARK: - Private
 extension GridDatabaseView {
 
+    @objc fileprivate func userDoubleClicked(_ sender: NSTableView) {
+        self.databaseContent.userDoubleClicked(sender)
+    }
+}
+
+//
+// MARK: - DatabaseContentDelegate
+extension GridDatabaseView: DatabaseContentDelegate {
+    
+    func DatabaseContentDidUpdatedQueryResult(_ queryResult: QueryResult) {
+        self.handleStatusBarView()
+    }
+    
+    func DatabaseContentDidSelectionChanged(_ selectedRowIndexes: IndexSet, rowAffect: Int) {
+        self.statusBarView.updateSeletionRow(selectedRowIndexes, rowAffect: rowAffect)
+    }
+}
+//
+// MARK: - Status Bar
+extension GridDatabaseView {
+    
+    fileprivate func initStatusBarView() {
+        self.statusBarView = StatusBarView.viewFromNib()
+        self.statusBarView.configureLayoutWithView(self.containerStatusBarView)
+    }
+    
+    func handleStatusBarView() {
+        self.statusBarView.updateNumberOfRowAffected(self.databaseContent.numberRowEffect)
+    }
 }

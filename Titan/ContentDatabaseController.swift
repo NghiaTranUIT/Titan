@@ -21,10 +21,14 @@ class ContentDatabaseController: NSViewController {
     fileprivate var tableStackView: TableStackView!
     fileprivate var gridDatabaseViews: [GridDatabaseView] = []
     
+    
     //
     // MARK: - Helper
     fileprivate var selectedTable: Table? {return self.tableStackView.selectedTable}
     fileprivate var selectedTableIndex: Int {return self.tableStackView.selectedTableIndex}
+    fileprivate var visibleGridDatabaseView: GridDatabaseView {
+        return self.gridDatabaseViews[self.selectedTableIndex]
+    }
     
     //
     // MARK: - OUTLET
@@ -56,16 +60,18 @@ class ContentDatabaseController: NSViewController {
     }
     
     override func initObserver() {
-        NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification), object: nil)
+        NotificationManager.observeNotificationType(.stackTableStateChanged, observer: self, selector: #selector(self.stackTableStateChangedNotification(noti:)), object: nil)
     }
     
-    @objc func stackTableStateChangedNotification() {
+    @objc func stackTableStateChangedNotification(noti: Notification) {
         
         // Update stack view
         self.tableStackView.updateStackView()
         
         // Grid
-        self.handleGirdView()
+        let dict = noti.userInfo as! [String: Bool]
+        let isNewTap = dict["openInNewTap"] ?? true
+        self.handleGirdView(isOpenNewTab: isNewTap)
     }
 }
 
@@ -81,13 +87,7 @@ extension ContentDatabaseController {
         
         self.tableStackView = TableStackView.viewFromNib()
         self.tableStackView.delegate = self
-        
-        // Add subview
-        self.tableStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.stackContainerView.addSubview(self.tableStackView)
-        self.tableStackView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.stackContainerView).inset(NSEdgeInsetsZero)
-        }
+        self.tableStackView.configureLayoutWithView(self.stackContainerView)
     }
 }
 
@@ -95,38 +95,22 @@ extension ContentDatabaseController {
 // MARK: - Grid View
 extension ContentDatabaseController {
     
-    fileprivate func handleGirdView() {
+    fileprivate func handleGirdView(isOpenNewTab: Bool) {
         guard let selectedTable = self.selectedTable else {return}
         
-        let filter = self.gridDatabaseViews.filter { gridView -> Bool in
-            return gridView.table == selectedTable
-        }
+        // Hide all
+        self.hideAllGridView()
         
-        // Remove all
-        for gridView in self.gridDatabaseViews {
-            gridView.removeFromSuperview()
-        }
-        
-        // Add
-        if let gridView = filter.first {
-            self.addGridView(gridView)
-        } else {
+        // Handle
+        if isOpenNewTab {
             let gridView = GridDatabaseView.viewFromNib()!
             gridView.configureGridDatabase(with: .individually(selectedTable))
             self.gridDatabaseViews.append(gridView)
             self.addGridView(gridView)
-        }
-        
-        // Filter again
-        // to removed unncessary view + pointer
-        let removeViews = self.gridDatabaseViews.filter { (innerGridView) -> Bool in
-            return !self.tableStackView.isTableInStack(for: innerGridView.table!)
-        }
-        for removeView in removeViews {
-            removeView.removeFromSuperview()
-            if let index = self.gridDatabaseViews.index(of: removeView) {
-                self.gridDatabaseViews.remove(at: index)
-            }
+        } else {
+            let gridView = self.visibleGridDatabaseView
+            gridView.configureGridDatabase(with: .individually(selectedTable))
+            gridView.isHidden = false
         }
     }
     
@@ -138,10 +122,21 @@ extension ContentDatabaseController {
         gridView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.contentContainerView).inset(NSEdgeInsetsZero)
         }
+        
+        gridView.isHidden = false
+    }
+    
+    fileprivate func hideAllGridView() {
+        for gridView in self.gridDatabaseViews {
+            gridView.isHidden = true
+        }
     }
 }
 
+//
+// MARK: - Table Stack
 extension ContentDatabaseController: TableStackViewDelegate {
+    
     func TableStackViewDidSelectedTable(_ table: Table) {
         self.output?.didSwitchTab(with: table)
     }

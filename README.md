@@ -23,7 +23,7 @@ The SMART PostgreSQL client for macOS/iOS. Clean design. Absolutely 100% free an
 ![License](https://img.shields.io/npm/l/express.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-osx-green.svg?style=flat)
   
-Why?
+Movation
 ------------
 At this time I'm wirting. I'm working at Pixai project (feels.com) as full-stack developer.  
 Go-lang for backend. React-FB and redux for frontend. It's pretty struggle when I tried to find best postgresql client on macOS.
@@ -40,13 +40,15 @@ Technologies
 It's whole new project, I intent to use edge-technologies. I could start with MVC and old-fashionate technologies, but it's too boring.
   
 *   Cross-framework  - supported iOS and macOS too
-*   ReSwift (Redux)
+*   ReSwift (Redux): State-management easier.
 *   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding) 'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
+*   New approach for binding functionality: [ReactiveKit/Bond](https://github.com/ReactiveKit/Bond): Not over-skill or huge framework like RxSwift or ReactiveCocoa. The main purpose when using Bound for binding directly from model.
 *   Clearn Swift architecture: VIP model
 *   Networking abstraction layer
-*   Postgresql-driver abstraction layer
+*   [Swifty-PostgreSQL](https://github.com/NghiaTranUIT/Swifty-PostgreSQL): Swifty-PostgreSQL driver, written by Swift 3.0
 *   Swift 3.0
-*   Realm
+*   Realm.io for local storage persistence
+*   macOSX development.
 *   ...
 
 Roadmap

@@ -75,8 +75,9 @@ Screenshot
 
 Reference
 ------------
-1. http://blog.benjamin-encz.de/post/real-world-flux-ios/
-2. http://clean-swift.com/clean-swift-ios-architecture/
+1. Redux: http://blog.benjamin-encz.de/post/real-world-flux-ios/
+2. Clean Swift: http://clean-swift.com/clean-swift-ios-architecture/
+3. Efficient pagination on PostgreSQL: http://leopard.in.ua/2014/10/11/postgresql-paginattion#.WLjjnhhh22w 
 
 Contact
 ------------

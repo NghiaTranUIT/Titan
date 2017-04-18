@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ConnectionCell" customModule="Titan_macOS" customModuleProvider="target">
+            <connections>
+                <outlet property="databaseIconImageView" destination="8Oe-8g-d9Y" id="MOD-5E-TyB"/>
+                <outlet property="titleLbl" destination="soV-gN-aFa" id="JW9-fR-AGG"/>
+                <outlet property="view" destination="GSH-UX-iPS" id="RMB-hT-7vJ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="ConnectionCell" id="GSH-UX-iPS">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Oe-8g-d9Y">
+                    <rect key="frame" x="22" y="9" width="12" height="13"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_database" id="AQt-tV-g2O"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="soV-gN-aFa">
+                    <rect key="frame" x="42" y="7" width="69" height="18"/>
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Localhost" id="FLM-pq-NRM">
+                        <font key="font" metaFont="systemMedium" size="14"/>
+                        <color key="textColor" red="0.55294117649999996" green="0.57254901960000004" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="soV-gN-aFa" secondAttribute="trailing" constant="8" id="70f-6R-7dT"/>
+                <constraint firstItem="soV-gN-aFa" firstAttribute="centerY" secondItem="GSH-UX-iPS" secondAttribute="centerY" id="7su-um-4Es"/>
+                <constraint firstItem="8Oe-8g-d9Y" firstAttribute="centerY" secondItem="GSH-UX-iPS" secondAttribute="centerY" constant="1" id="ICC-eU-JXW"/>
+                <constraint firstItem="8Oe-8g-d9Y" firstAttribute="leading" secondItem="GSH-UX-iPS" secondAttribute="leading" constant="22" id="TTx-QV-qb1"/>
+                <constraint firstItem="soV-gN-aFa" firstAttribute="leading" secondItem="8Oe-8g-d9Y" secondAttribute="trailing" constant="10" id="p9l-6h-BFQ"/>
+            </constraints>
+            <point key="canvasLocation" x="-256" y="58.5"/>
+        </customView>
+        <collectionViewItem id="nHb-MR-jgx" customClass="ConnectionCell" customModule="Titan_macOS" customModuleProvider="target"/>
+    </objects>
+    <resources>
+        <image name="icon_database" width="12" height="13"/>
+    </resources>
+</document>

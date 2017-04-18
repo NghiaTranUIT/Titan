@@ -34,8 +34,7 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-
-Packages/
+# Packages/
 .build/
 
 # CocoaPods
@@ -44,15 +43,23 @@ Packages/
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-
 Pods/
+Podfile.lock
 
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-
 Carthage/Checkouts
 Carthage/Build
+
+TitanCore/Carthage/Checkouts
+TitanCore/Carthage/Build
+
+Titan_macOS/Carthage/Checkouts
+Titan_macOS/Carthage/Build
+
+Swifty-PostgreSQL/Carthage/Checkouts
+Swifty-PostgreSQL/Carthage/Build
 
 # fastlane
 #
@@ -66,5 +73,8 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 
-# Dependencies
-Dependencies/
+# OS Files
+.DS_Store
+
+# Sketch
+Sketch/

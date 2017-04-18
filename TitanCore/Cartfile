@@ -1,0 +1,7 @@
+github "Alamofire/Alamofire" ~> 4.4
+github "realm/realm-cocoa"
+github "Hearst-DD/ObjectMapper" ~> 2.2.5
+github "SwiftyBeaver/SwiftyBeaver" ~> 1.1.4
+github "SnapKit/SnapKit" ~> 3.2.0
+github "ReactiveX/RxSwift" ~> 3.0
+github "kishikawakatsumi/UICKeyChainStore"

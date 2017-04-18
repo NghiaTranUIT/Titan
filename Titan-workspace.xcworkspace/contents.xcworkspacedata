@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Titan_macOS/Titan_macOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TitanCore/TitanCore.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Swifty-PostgreSQL/Swifty-PostgreSQL.xcodeproj">
+   </FileRef>
+</Workspace>

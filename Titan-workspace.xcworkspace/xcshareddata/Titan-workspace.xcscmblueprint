@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D2E370E1309C9103AD37C79F403D87214CAC6B16",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4D04B57B74DE8073C5DB7F95A13C269A0C1EDF3B" : 9223372036854775807,
+    "D2E370E1309C9103AD37C79F403D87214CAC6B16" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B0E4E2D3-A984-4340-8CBD-0EAD640A3C87",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4D04B57B74DE8073C5DB7F95A13C269A0C1EDF3B" : "Titan-v2\/Swifty-PostgreSQL\/",
+    "D2E370E1309C9103AD37C79F403D87214CAC6B16" : "Titan-v2\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Titan-workspace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Titan-workspace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NghiaTranUIT\/Swifty-PostgreSQL.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4D04B57B74DE8073C5DB7F95A13C269A0C1EDF3B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NghiaTranUIT\/titan.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D2E370E1309C9103AD37C79F403D87214CAC6B16"
+    }
+  ]
+}

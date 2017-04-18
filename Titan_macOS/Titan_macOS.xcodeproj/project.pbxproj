@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA1802321E9C935800096445 /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1802311E9C935800096445 /* DetailConnection.storyboard */; };
+		BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802341E9C937A00096445 /* MainWindowController.swift */; };
+		BA1802371E9C93D400096445 /* DetailDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802361E9C93D400096445 /* DetailDatabaseController.swift */; };
+		BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802381E9C940100096445 /* DetailDatabaseWindowController.swift */; };
+		BA1802401E9CDACC00096445 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18023F1E9CDACC00096445 /* StoryboardManager.swift */; };
+		BA1802451E9CDC7B00096445 /* MacBaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802441E9CDC7B00096445 /* MacBaseWindowController.swift */; };
+		BA2B4E8F1E9F71D300468572 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E871E9F70ED00468572 /* RxBlocking.framework */; };
+		BA2B4E901E9F71D300468572 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E881E9F70ED00468572 /* RxCocoa.framework */; };
+		BA2B4E911E9F71D300468572 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E891E9F70ED00468572 /* RxSwift.framework */; };
+		BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E931E9F71D300468572 /* Alamofire.framework */; };
+		BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E941E9F71D300468572 /* ObjectMapper.framework */; };
+		BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E951E9F71D300468572 /* Realm.framework */; };
+		BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E961E9F71D300468572 /* RealmSwift.framework */; };
+		BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E971E9F71D300468572 /* SnapKit.framework */; };
+		BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */; };
+		BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */; };
+		BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */; };
+		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
+		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
+		BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756F31E93422600FCDFB1 /* TitanCore.framework */; };
+		BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */; };
+		BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */; };
+		BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */; };
+		BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23E11E9DFDF20071C794 /* ConnectionGroupCell.swift */; };
+		BAAE23EE1E9E0E490071C794 /* ConnectionGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23ED1E9E0E490071C794 /* ConnectionGroupCell.xib */; };
+		BADDF7231E94F29900F35FF3 /* ConnectionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF7221E94F29900F35FF3 /* ConnectionListController.swift */; };
+		BADDF7261E94F2A300F35FF3 /* ConnectionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF7241E94F2A300F35FF3 /* ConnectionDetailController.swift */; };
+		BADDF7361E94F39B00F35FF3 /* ConnectionSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF7351E94F39B00F35FF3 /* ConnectionSplitController.swift */; };
+		BADDF73C1E94F60300F35FF3 /* ConnectionListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF73B1E94F60300F35FF3 /* ConnectionListDataSource.swift */; };
+		BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BA1802311E9C935800096445 /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
+		BA1802341E9C937A00096445 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		BA1802361E9C93D400096445 /* DetailDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseController.swift; sourceTree = "<group>"; };
+		BA1802381E9C940100096445 /* DetailDatabaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseWindowController.swift; sourceTree = "<group>"; };
+		BA18023E1E9CD83F00096445 /* Titan_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan_macOS.entitlements; sourceTree = "<group>"; };
+		BA18023F1E9CDACC00096445 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		BA1802441E9CDC7B00096445 /* MacBaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacBaseWindowController.swift; sourceTree = "<group>"; };
+		BA2B4E871E9F70ED00468572 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../TitanCore/Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
+		BA2B4E881E9F70ED00468572 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../TitanCore/Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
+		BA2B4E891E9F70ED00468572 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../TitanCore/Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		BA2B4E8A1E9F70ED00468572 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = ../TitanCore/Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
+		BA2B4E931E9F71D300468572 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../TitanCore/Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		BA2B4E941E9F71D300468572 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../TitanCore/Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
+		BA2B4E951E9F71D300468572 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../TitanCore/Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		BA2B4E961E9F71D300468572 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../TitanCore/Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		BA2B4E971E9F71D300468572 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../TitanCore/Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
+		BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../TitanCore/Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
+		BA2B4EA21E9F72F700468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA8756261E923BEF00FCDFB1 /* Titan_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA8756301E923BEF00FCDFB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA8756321E923BEF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyPostgreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA87566B1E924B8400FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA8756F31E93422600FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TitanCore.framework; path = ../TitanCore/build/Debug/TitanCore.framework; sourceTree = "<group>"; };
+		BA8756F51E93442100FCDFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
+		BA8756F61E93442100FCDFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListContainerController.swift; sourceTree = "<group>"; };
+		BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
+		BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
+		BAAE23E11E9DFDF20071C794 /* ConnectionGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionGroupCell.swift; sourceTree = "<group>"; };
+		BAAE23ED1E9E0E490071C794 /* ConnectionGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionGroupCell.xib; sourceTree = "<group>"; };
+		BADDF7221E94F29900F35FF3 /* ConnectionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListController.swift; sourceTree = "<group>"; };
+		BADDF7241E94F2A300F35FF3 /* ConnectionDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionDetailController.swift; sourceTree = "<group>"; };
+		BADDF7351E94F39B00F35FF3 /* ConnectionSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionSplitController.swift; sourceTree = "<group>"; };
+		BADDF73B1E94F60300F35FF3 /* ConnectionListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListDataSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA8756231E923BEF00FCDFB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */,
+				BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */,
+				BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */,
+				BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */,
+				BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */,
+				BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */,
+				BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */,
+				BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */,
+				BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */,
+				BA2B4E8F1E9F71D300468572 /* RxBlocking.framework in Frameworks */,
+				BA2B4E901E9F71D300468572 /* RxCocoa.framework in Frameworks */,
+				BA2B4E911E9F71D300468572 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA1802331E9C936600096445 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				BA1802341E9C937A00096445 /* MainWindowController.swift */,
+			);
+			name = Window;
+			sourceTree = "<group>";
+		};
+		BA18023A1E9C940500096445 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				BA1802381E9C940100096445 /* DetailDatabaseWindowController.swift */,
+			);
+			name = Window;
+			sourceTree = "<group>";
+		};
+		BA1802421E9CDC5A00096445 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				BA1802431E9CDC5E00096445 /* Base */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
+		BA1802431E9CDC5E00096445 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BA1802441E9CDC7B00096445 /* MacBaseWindowController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		BA87561D1E923BEF00FCDFB1 = {
+			isa = PBXGroup;
+			children = (
+				BA8756281E923BEF00FCDFB1 /* Titan_macOS */,
+				BA8756271E923BEF00FCDFB1 /* Products */,
+				BA8756381E923C0500FCDFB1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA8756271E923BEF00FCDFB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA8756261E923BEF00FCDFB1 /* Titan_macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA8756281E923BEF00FCDFB1 /* Titan_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				BA8756771E924D7600FCDFB1 /* Constants */,
+				BA8756741E924D3C00FCDFB1 /* App Delegate */,
+				BA8756731E924D3400FCDFB1 /* Resource */,
+				BA87566F1E924D2300FCDFB1 /* Source Code */,
+			);
+			path = Titan_macOS;
+			sourceTree = "<group>";
+		};
+		BA8756381E923C0500FCDFB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B4EA21E9F72F700468572 /* XCTest.framework */,
+				BA2B4E931E9F71D300468572 /* Alamofire.framework */,
+				BA2B4E941E9F71D300468572 /* ObjectMapper.framework */,
+				BA2B4E951E9F71D300468572 /* Realm.framework */,
+				BA2B4E961E9F71D300468572 /* RealmSwift.framework */,
+				BA2B4E971E9F71D300468572 /* SnapKit.framework */,
+				BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */,
+				BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */,
+				BA2B4E871E9F70ED00468572 /* RxBlocking.framework */,
+				BA2B4E881E9F70ED00468572 /* RxCocoa.framework */,
+				BA2B4E891E9F70ED00468572 /* RxSwift.framework */,
+				BA2B4E8A1E9F70ED00468572 /* RxTest.framework */,
+				BA8756F51E93442100FCDFB1 /* Realm.framework */,
+				BA8756F61E93442100FCDFB1 /* RealmSwift.framework */,
+				BA8756F31E93422600FCDFB1 /* TitanCore.framework */,
+				BA87566B1E924B8400FCDFB1 /* TitanCore.framework */,
+				BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA87566F1E924D2300FCDFB1 /* Source Code */ = {
+			isa = PBXGroup;
+			children = (
+				BA1802421E9CDC5A00096445 /* Share */,
+				BA8756721E924D3000FCDFB1 /* Model */,
+				BA8756711E924D2D00FCDFB1 /* View */,
+				BA8756701E924D2800FCDFB1 /* Controller */,
+			);
+			name = "Source Code";
+			sourceTree = "<group>";
+		};
+		BA8756701E924D2800FCDFB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA8756791E924D9400FCDFB1 /* Detail Database */,
+				BA8756781E924D8300FCDFB1 /* Connection */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BA8756711E924D2D00FCDFB1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BA8756721E924D3000FCDFB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA18023F1E9CDACC00096445 /* StoryboardManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BA8756731E924D3400FCDFB1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BA8756761E924D6B00FCDFB1 /* Assets */,
+				BA8756751E924D4600FCDFB1 /* Xib */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		BA8756741E924D3C00FCDFB1 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		BA8756751E924D4600FCDFB1 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				BA87562F1E923BEF00FCDFB1 /* Main.storyboard */,
+				BA1802311E9C935800096445 /* DetailConnection.storyboard */,
+			);
+			name = Xib;
+			sourceTree = "<group>";
+		};
+		BA8756761E924D6B00FCDFB1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		BA8756771E924D7600FCDFB1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BA18023E1E9CD83F00096445 /* Titan_macOS.entitlements */,
+				BA8756321E923BEF00FCDFB1 /* Info.plist */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		BA8756781E924D8300FCDFB1 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23C81E9DDBC40071C794 /* Main */,
+				BA1802331E9C936600096445 /* Window */,
+				BADDF7341E94F38200F35FF3 /* Split */,
+				BADDF7211E94F28600F35FF3 /* Detail */,
+				BADDF7201E94F27E00F35FF3 /* List */,
+			);
+			name = Connection;
+			sourceTree = "<group>";
+		};
+		BA8756791E924D9400FCDFB1 /* Detail Database */ = {
+			isa = PBXGroup;
+			children = (
+				BA18023A1E9C940500096445 /* Window */,
+				BA1802361E9C93D400096445 /* DetailDatabaseController.swift */,
+			);
+			name = "Detail Database";
+			sourceTree = "<group>";
+		};
+		BAAE23C81E9DDBC40071C794 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		BAAE23DA1E9DFDB40071C794 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23DC1E9DFDCE0071C794 /* Header */,
+				BAAE23DB1E9DFDCB0071C794 /* Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BAAE23DB1E9DFDCB0071C794 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */,
+				BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		BAAE23DC1E9DFDCE0071C794 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23E11E9DFDF20071C794 /* ConnectionGroupCell.swift */,
+				BAAE23ED1E9E0E490071C794 /* ConnectionGroupCell.xib */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		BADDF7201E94F27E00F35FF3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BAAE23DA1E9DFDB40071C794 /* Views */,
+				BADDF73B1E94F60300F35FF3 /* ConnectionListDataSource.swift */,
+				BADDF7221E94F29900F35FF3 /* ConnectionListController.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		BADDF7211E94F28600F35FF3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BADDF7241E94F2A300F35FF3 /* ConnectionDetailController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		BADDF7341E94F38200F35FF3 /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				BADDF7351E94F39B00F35FF3 /* ConnectionSplitController.swift */,
+			);
+			name = Split;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA8756251E923BEF00FCDFB1 /* Titan_macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA8756351E923BEF00FCDFB1 /* Build configuration list for PBXNativeTarget "Titan_macOS" */;
+			buildPhases = (
+				BA8756221E923BEF00FCDFB1 /* Sources */,
+				BA8756231E923BEF00FCDFB1 /* Frameworks */,
+				BA8756241E923BEF00FCDFB1 /* Resources */,
+				BA2B4EA11E9F71E800468572 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Titan_macOS;
+			productName = Titan_macOS;
+			productReference = BA8756261E923BEF00FCDFB1 /* Titan_macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA87561E1E923BEF00FCDFB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = nghiatran;
+				TargetAttributes = {
+					BA8756251E923BEF00FCDFB1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = D54Y88Y9CY;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BA8756211E923BEF00FCDFB1 /* Build configuration list for PBXProject "Titan_macOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA87561D1E923BEF00FCDFB1;
+			productRefGroup = BA8756271E923BEF00FCDFB1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA8756251E923BEF00FCDFB1 /* Titan_macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA8756241E923BEF00FCDFB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1802321E9C935800096445 /* DetailConnection.storyboard in Resources */,
+				BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */,
+				BAAE23EE1E9E0E490071C794 /* ConnectionGroupCell.xib in Resources */,
+				BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */,
+				BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BA2B4EA11E9F71E800468572 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/Alamofire.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/ObjectMapper.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/Realm.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RealmSwift.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/SnapKit.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/SwiftyBeaver.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxBlocking.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxCocoa.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxSwift.framework",
+				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA8756221E923BEF00FCDFB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BADDF73C1E94F60300F35FF3 /* ConnectionListDataSource.swift in Sources */,
+				BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */,
+				BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */,
+				BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */,
+				BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */,
+				BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */,
+				BA1802371E9C93D400096445 /* DetailDatabaseController.swift in Sources */,
+				BADDF7261E94F2A300F35FF3 /* ConnectionDetailController.swift in Sources */,
+				BADDF7361E94F39B00F35FF3 /* ConnectionSplitController.swift in Sources */,
+				BADDF7231E94F29900F35FF3 /* ConnectionListController.swift in Sources */,
+				BA1802451E9CDC7B00096445 /* MacBaseWindowController.swift in Sources */,
+				BA1802401E9CDACC00096445 /* StoryboardManager.swift in Sources */,
+				BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA87562F1E923BEF00FCDFB1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA8756301E923BEF00FCDFB1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA8756331E923BEF00FCDFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA8756341E923BEF00FCDFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		BA8756361E923BEF00FCDFB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Titan_macOS/Titan_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Titan_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fe.nghiatran.TitanMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BA8756371E923BEF00FCDFB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Titan_macOS/Titan_macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = D54Y88Y9CY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Titan_macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fe.nghiatran.TitanMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA8756211E923BEF00FCDFB1 /* Build configuration list for PBXProject "Titan_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA8756331E923BEF00FCDFB1 /* Debug */,
+				BA8756341E923BEF00FCDFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA8756351E923BEF00FCDFB1 /* Build configuration list for PBXNativeTarget "Titan_macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA8756361E923BEF00FCDFB1 /* Debug */,
+				BA8756371E923BEF00FCDFB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA87561E1E923BEF00FCDFB1 /* Project object */;
+}

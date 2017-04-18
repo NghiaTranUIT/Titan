@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="ConnectionGroupCell" id="Sqh-bk-X1s" customClass="ConnectionGroupCell" customModule="Titan_macOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="31"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W8e-Rm-4JV">
+                    <rect key="frame" x="17" y="7" width="120" height="18"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Feels Dashboard" placeholderString="" id="dAJ-ld-wLk">
+                        <font key="font" metaFont="systemBold" size="14"/>
+                        <color key="textColor" red="0.37647058820000001" green="0.40784313729999999" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="guc-0K-bXz">
+                    <rect key="frame" x="143" y="0.0" width="14" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="1iq-sP-f5e"/>
+                        <constraint firstAttribute="width" constant="14" id="34y-cx-CTZ"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="icon_add_database" imagePosition="only" alignment="center" alternateImage="icon_add_database_selected" imageScaling="proportionallyDown" inset="2" id="al9-rr-2Ne">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addBtnTapped:" target="Sqh-bk-X1s" id="Frf-3R-e5s"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="guc-0K-bXz" firstAttribute="centerY" secondItem="Sqh-bk-X1s" secondAttribute="centerY" id="1Fg-C1-HK3"/>
+                <constraint firstItem="W8e-Rm-4JV" firstAttribute="leading" secondItem="Sqh-bk-X1s" secondAttribute="leading" constant="19" id="4I3-le-xIJ"/>
+                <constraint firstItem="W8e-Rm-4JV" firstAttribute="centerY" secondItem="Sqh-bk-X1s" secondAttribute="centerY" id="Elc-YH-rfW"/>
+                <constraint firstItem="guc-0K-bXz" firstAttribute="leading" secondItem="W8e-Rm-4JV" secondAttribute="trailing" constant="8" id="hJ8-vb-D3b"/>
+            </constraints>
+            <connections>
+                <outlet property="addDatabaseBtn" destination="guc-0K-bXz" id="7xO-Kx-z1T"/>
+                <outlet property="titleLbl" destination="W8e-Rm-4JV" id="NgQ-Dk-Nyf"/>
+            </connections>
+            <point key="canvasLocation" x="-456" y="-526.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="icon_add_database" width="14" height="14"/>
+        <image name="icon_add_database_selected" width="14" height="14"/>
+    </resources>
+</document>

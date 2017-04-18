@@ -49,6 +49,19 @@ It's whole new project, I intent to use edge-technologies. I could start with MV
 *   Realm.io for elegant storage persistence
 *   ...
 
+Installation
+------------
+```
+// navigate to prefer folder
+git clone https://github.com/NghiaTranUIT/Titan.git
+
+// navigate to Titan
+git clone https://github.com/NghiaTranUIT/Swifty-PostgreSQL
+
+// navigate to Titan/TitanCore
+carthage update
+```
+
 Titan Refactor 
 ------------
 I created seperate repo for big refactor Titan's structure and logic.   

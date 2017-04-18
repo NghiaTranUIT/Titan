@@ -39,18 +39,21 @@ Technologies
 ------------
 It's whole new project, I intent to use edge-technologies. I could start with MVC and old-fashionate technologies, but it's too boring.
   
-*   Cross-framework  - supported iOS and macOS too
-*   ReSwift (Redux): State-management easier.
-*   ~~RxSwift + MVVM~~ -> I decied to get rid of RxSwift, Rx...stuff, and MVVM (binding) 'cause it's too hard to understand, maintain, implemente new features,.. for the fresher or the guy who take responsibility of this projct in future.
-*   New approach for binding functionality: [ReactiveKit/Bond](https://github.com/ReactiveKit/Bond): Not over-skill or huge framework like RxSwift or ReactiveCocoa. The main purpose when using Bound for binding directly from model.
-*   Clearn Swift architecture: VIP model
-*   Networking abstraction layer
+*   Cross-framework: Support iOS and macOS.
+*   ReSwift: Unidirectional data flow architecture. State-management easier.
+*   RxSwift: Reactive Programming in Swift.
+*   MVVM: Isolate logic code with UI code with MVVM architecture.
+*   Base foundation and networking abstraction layers.
 *   [Swifty-PostgreSQL](https://github.com/NghiaTranUIT/Swifty-PostgreSQL): Swifty-PostgreSQL driver, written by Swift 3.0
 *   Swift 3.0
-*   Realm.io for local storage persistence
-*   macOSX development.
+*   Realm.io for elegant storage persistence
 *   ...
 
+Titan Refactor 
+------------
+I created seperate repo for big refactor Titan's structure and logic.   
+You can check the progress at [Titan](https://github.com/NghiaTranUIT/titan)
+   
 Roadmap
 ------------
 
@@ -67,7 +70,7 @@ Roadmap
 
 Swifty PostgreSQL Driver
 ------------
-Beside Titan, I also develop new [PostgreSQL Dirver](https://github.com/NghiaTranUIT/Swifty-PostgreSQL), integrate flawlessly with Titan. Resueable, testable as well.
+Beside Titan, I also develop [PostgreSQL Dirver](https://github.com/NghiaTranUIT/Swifty-PostgreSQL), integrate flawlessly with Titan. Resueable, testable as well.
 
 Screenshot
 ------------

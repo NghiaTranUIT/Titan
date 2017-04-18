@@ -19,6 +19,7 @@
 		BA18023D1E9C94E400096445 /* DefaultQuotation.json in Resources */ = {isa = PBXBuildFile; fileRef = BA18023C1E9C94E400096445 /* DefaultQuotation.json */; };
 		BA22A2B51E9D356900C2CB93 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */; };
 		BA2B4E861E9F645700468572 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B4E851E9F645700468572 /* BaseCollectionView.swift */; };
+		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA8756171E923BCF00FCDFB1 /* TitanCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8756151E923BCF00FCDFB1 /* TitanCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA8756E61E933FCB00FCDFB1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756DD1E933FCB00FCDFB1 /* Alamofire.framework */; };
 		BA8756E91E933FCB00FCDFB1 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756E01E933FCB00FCDFB1 /* ObjectMapper.framework */; };
@@ -91,6 +92,7 @@
 		BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		BA2B4E851E9F645700468572 /* BaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		BA2B4EA41E9F731F00468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA8756121E923BCF00FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8756151E923BCF00FCDFB1 /* TitanCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanCore.h; sourceTree = "<group>"; };
 		BA8756161E923BCF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				BA1802261E9C89D600096445 /* CreateNewDefaultGroupConnectionWorker.swift */,
 				BA1802281E9C8A7900096445 /* CreateNewDatabaseWorker.swift */,
 				BA18022A1E9C8C5800096445 /* SelectConnectionWorker.swift */,
+				BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -232,6 +235,13 @@
 				BA2B4E851E9F645700468572 /* BaseCollectionView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BA776E691EA6174500DB7857 /* PostgreSQL  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "PostgreSQL ";
 			sourceTree = "<group>";
 		};
 		BA8756081E923BCF00FCDFB1 = {
@@ -406,6 +416,7 @@
 		BA8757241E934AC600FCDFB1 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BA776E691EA6174500DB7857 /* PostgreSQL  */,
 				BA18022E1E9C902200096445 /* Notification */,
 				BA8757341E934FB900FCDFB1 /* Font */,
 				BA87572F1E934E5C00FCDFB1 /* App Version */,
@@ -638,6 +649,7 @@
 				BA8757141E93485100FCDFB1 /* DatabaseObj.swift in Sources */,
 				BA8757021E93471E00FCDFB1 /* BaseModel.swift in Sources */,
 				BA8757121E93484100FCDFB1 /* SettingObj.swift in Sources */,
+				BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */,
 				BAAE23EA1E9E00620071C794 /* NSCollectionView+Register.swift in Sources */,
 				BA179F511EA3A63200720760 /* ActivityIndicator.swift in Sources */,
 				BA87571F1E93489700FCDFB1 /* QueryObj.swift in Sources */,

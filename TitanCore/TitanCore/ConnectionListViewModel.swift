@@ -107,7 +107,6 @@ open class ConnectionListViewModel: BaseViewModel, ConnectionListViewModelType, 
         .addDisposableTo(self.disposeBag)
         
     }
-    
 }
 
 //

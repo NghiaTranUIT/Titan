@@ -590,7 +590,6 @@
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;
@@ -613,7 +612,6 @@
 				DEVELOPMENT_TEAM = D54Y88Y9CY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;

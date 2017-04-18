@@ -9,20 +9,66 @@
 import Foundation
 
 //
+// MARK: - Operation Result
+/// Warrper for failed or successfully
+public enum OperationResult<T> {
+    
+    // Case
+    case failed(NSError)
+    case success(T)
+    
+    //
+    // MARK: - Init
+    public static func buildResult<T>(_ operation: BaseOperation<T>) -> OperationResult<T> {
+        
+        // Success
+        if let response = operation.response {
+            return OperationResult<T>.success(response)
+        }
+        
+        // Error
+        if let error = operation.error {
+            return OperationResult<T>.failed(error)
+        }
+        
+        // Unknow
+        return OperationResult<T>.failed(NSError.unknowError)
+    }
+}
+
+//
 // MARK: - BaseOperation
-class BaseOperation<Element>: Operation {
+open class BaseOperation<Element>: Operation {
+    
+    public typealias BaseOperationCompletionBlock = (OperationResult<Element>) -> ()
     
     //
     // MARK: - Variable
     public var response: Element?
     public var error: NSError?
     public var uuid = UUID.shortUUID()
+    public var baseCompletionBlock: BaseOperationCompletionBlock? {
+        didSet {
+            guard let block = self.baseCompletionBlock else {
+                self.completionBlock = nil
+                return
+            }
+            
+            // Execute on main thread
+            self.completionBlock = {
+                let result = OperationResult<Element>.buildResult(self)
+                block(result)
+            }
+        }
+    }
     
     //
     // MARK: - Override
     deinit {
         self.error = nil
         self.response = nil
+        self.baseCompletionBlock = nil
+        self.completionBlock = nil
     }
     
     /// Execute
@@ -50,13 +96,14 @@ class BaseOperation<Element>: Operation {
             if _finished != newValue {
                 willChangeValue(forKey: "isFinished")
                 _finished = newValue
+            
                 didChangeValue(forKey: "isFinished")
             }
         }
     }
     
     /// Async
-    override var isAsynchronous: Bool {
+    override open var isAsynchronous: Bool {
         return true
     }
     
@@ -67,7 +114,7 @@ class BaseOperation<Element>: Operation {
     }
     
     /// Main
-    override func main() {
+    override open func main() {
         
         // Executing
         self.isExecuting = true;
@@ -81,6 +128,8 @@ class BaseOperation<Element>: Operation {
     
     /// Failed
     func handleError(_ error: NSError?) {
+        self.response = nil
+        self.error = error
         self.finishOperation()
     }
     

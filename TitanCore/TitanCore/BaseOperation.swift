@@ -47,7 +47,7 @@ open class BaseOperation<Element>: Operation {
     public var response: Element?
     public var error: NSError?
     public var uuid = UUID.shortUUID()
-    public var baseCompletionBlock: BaseOperationCompletionBlock? {
+    fileprivate var baseCompletionBlock: BaseOperationCompletionBlock? {
         didSet {
             guard let block = self.baseCompletionBlock else {
                 self.completionBlock = nil
@@ -149,5 +149,19 @@ open class BaseOperation<Element>: Operation {
         }
         
         return false
+    }
+}
+
+//
+// MARK: - Healper
+extension BaseOperation {
+    
+    func executeOnBackground(block: BaseOperationCompletionBlock? = nil) {
+        
+        // Copy block
+        self.baseCompletionBlock = block
+        
+        // Execute on background
+        QueueManager.shared
     }
 }

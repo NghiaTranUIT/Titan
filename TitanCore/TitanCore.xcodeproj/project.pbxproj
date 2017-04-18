@@ -23,6 +23,7 @@
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
 		BA776E711EA61B1100DB7857 /* ConnectPostgreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */; };
+		BA776E741EA61F5400DB7857 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E731EA61F5400DB7857 /* QueueManager.swift */; };
 		BA8756171E923BCF00FCDFB1 /* TitanCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8756151E923BCF00FCDFB1 /* TitanCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA8756E61E933FCB00FCDFB1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756DD1E933FCB00FCDFB1 /* Alamofire.framework */; };
 		BA8756E91E933FCB00FCDFB1 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756E01E933FCB00FCDFB1 /* ObjectMapper.framework */; };
@@ -99,6 +100,7 @@
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPostgreOperation.swift; sourceTree = "<group>"; };
+		BA776E731EA61F5400DB7857 /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		BA8756121E923BCF00FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8756151E923BCF00FCDFB1 /* TitanCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanCore.h; sourceTree = "<group>"; };
 		BA8756161E923BCF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 				BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */,
 			);
 			name = Operations;
+			sourceTree = "<group>";
+		};
+		BA776E721EA61F4800DB7857 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				BA776E731EA61F5400DB7857 /* QueueManager.swift */,
+			);
+			name = Queue;
 			sourceTree = "<group>";
 		};
 		BA8756081E923BCF00FCDFB1 = {
@@ -433,6 +443,7 @@
 		BA8757241E934AC600FCDFB1 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				BA776E721EA61F4800DB7857 /* Queue */,
 				BA776E691EA6174500DB7857 /* PostgreSQL  */,
 				BA18022E1E9C902200096445 /* Notification */,
 				BA8757341E934FB900FCDFB1 /* Font */,
@@ -696,6 +707,7 @@
 				BA8756FF1E93464F00FCDFB1 /* BaseViewModel.swift in Sources */,
 				BA87570E1E93481000FCDFB1 /* UUID+Helper.swift in Sources */,
 				BA1802291E9C8A7900096445 /* CreateNewDatabaseWorker.swift in Sources */,
+				BA776E741EA61F5400DB7857 /* QueueManager.swift in Sources */,
 				BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */,
 				BA87572E1E934E1600FCDFB1 /* ApplicationManager.swift in Sources */,
 				BAAE23E41E9DFFD80071C794 /* NSView+Xib.swift in Sources */,

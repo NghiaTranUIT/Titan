@@ -40,7 +40,7 @@ open class PostgreSQLManager {
     // MARK: - Public
     
     // Open connection
-    func openConnection(with databaseObj: DatabaseObj) -> Driver<Void> {
+    func openConnection(with databaseObj: DatabaseObj) -> Observable<Void> {
         
         // Lock
         objc_sync_exit(self._connectState)
@@ -49,56 +49,61 @@ open class PostgreSQLManager {
         // Guard
         if self._connectState == .connecting {
             let error = NSError.errorWithMessage(message: "Database is connecting")
-            return Driver.error(error)
+            return Observable.error(error)
         }
         
         guard self._connectState == .none else {
             let error = NSError.errorWithMessage(message: "Database is connected")
-            return Driver.error(error)
+            return Observable.error(error)
         }
         
         // Connect
         self._connectState = .connecting
         
         // Observer
-        Observable<Void>.create {[weak self] (observer) -> Disposable in
+        return Observable<Void>.create {[unowned self] (observer) -> Disposable in
             
-            // Connect
+            // Connect postgreSQL on background
             let param = databaseObj.buildConnectionParam()
-            let op = ConnectionDatabaseOperation(param: param, database: self.database)
-            op.executeOnBackground(with: { (result, _) in
+            let op = ConnectPostgreOperation(param: param, database: self.database)
+            op.executeOnBackground(block: { (resultOperation) in
                 
-                guard let result = result as? ConnectionResult else {
-                    let error = NSError.errorWithMessage(message: "Fatal error")
-                    self._connectState = .none
-                    reject(error)
-                    return
+                switch resultOperation {
+                case .failed(let error):
+                    
+                    // Error
+                    observer.onError(error)
+                    
+                case .success(let result):
+                    
+                    // Check result pointer
+                    guard result.status == ConnectionStatus.CONNECTION_OK else {
+                        let error = NSError.errorWithMessage(message: result.msgError)
+                        self._connectState = .none
+                        observer.onError(error)
+                        return
+                    }
+    
+                    // Check connection pointer
+                    guard let _ = result.connection else {
+                        let error = NSError.errorWithMessage(message: result.msgError)
+                        self._connectState = .none
+                        observer.onError(error)
+                        return
+                    }
+                    
+                    // All success
+                    observer.onNext()
+                    observer.onCompleted()
                 }
-                
-                guard result.status == ConnectionStatus.CONNECTION_OK else {
-                    let error = NSError.errorWithMessage(message: result.msgError)
-                    self._connectState = .none
-                    reject(error)
-                    return
-                }
-                
-                // Get connection
-                guard let _ = result.connection else {
-                    let error = NSError.errorWithMessage(message: result.msgError)
-                    self._connectState = .none
-                    reject(error)
-                    return
-                }
-                
-                // Success
-                self._connectState = .connected
-                fullfill()
             })
-
+            
+            // Dispose
+            return Disposables.create()
         }
     }
     
-    // Close all
+    /// Close crrent connection
     func closeConnection() -> Observable<Void> {
         
         // Lock
@@ -107,14 +112,21 @@ open class PostgreSQLManager {
         
         guard self._connectState == .connected else {
             let error = NSError.errorWithMessage(message: "No database connected")
-            return Promise(error: error)
+            return Observable.error(error)
         }
         
-        return Promise(resolvers: { (fullfill, reject) in
+        // Observer
+        return Observable<Void>.create {[unowned self] (observer) -> Disposable in
+            
+            // Close
             self.database.closeAllConnection()
             self._connectState = .none
-            fullfill()
-        })
-        
+            
+            // Success
+            observer.onNext()
+            observer.onCompleted()
+            
+            return Disposables.create()
+        }
     }
 }

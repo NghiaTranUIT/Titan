@@ -23,7 +23,7 @@ public protocol ConnectionDetailViewModelInput {
 public protocol ConnectionDetailViewModelOutput {
     
     // Selected database
-    var selectedDatabaseObserver: Observable<DatabaseObj?> { get }
+    var selectedDatabaseVariable: Variable<DatabaseObj?> { get }
 }
 
 //
@@ -41,11 +41,11 @@ open class ConnectionDetailViewModel: BaseViewModel, ConnectionDetailViewModelTy
     
     //
     // MARK: - Output
-    public var selectedDatabaseObserver: Observable<DatabaseObj?> {return self._selectedDatabaseObserver}
+    public var selectedDatabaseVariable: Variable<DatabaseObj?> {return self._selectedDatabaseVariable}
     
     //
     // MARK: - Variable
-    fileprivate var _selectedDatabaseObserver: Observable<DatabaseObj?>!
+    fileprivate var _selectedDatabaseVariable: Variable<DatabaseObj?>!
     
     //
     // MARK: - Init
@@ -64,9 +64,8 @@ extension ConnectionDetailViewModel {
     fileprivate func binding() {
         
         // Selected database
-        self._selectedDatabaseObserver = MainStore.globalStore.connectionStore
+        self._selectedDatabaseVariable = MainStore.globalStore.connectionStore
             .selectedDatabase
-            .asObservable()
         
         // Connect selected database
         self.connectDatabasePublisher.flatMap { (_) -> Observable<Void> in

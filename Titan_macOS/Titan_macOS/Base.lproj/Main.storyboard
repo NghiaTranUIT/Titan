@@ -1034,6 +1034,16 @@
                             <constraint firstItem="aBV-Cx-h5E" firstAttribute="top" secondItem="y61-X2-UI0" secondAttribute="top" id="pMT-M3-feR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectionBtn" destination="DOW-3s-0XV" id="j2a-Sy-WgC"/>
+                        <outlet property="databaseTxt" destination="rGh-aE-NoW" id="MxQ-25-DjH"/>
+                        <outlet property="hostNameTxt" destination="3TZ-ag-bus" id="f7E-hw-dlt"/>
+                        <outlet property="nicknameTxt" destination="VNI-AM-2Jy" id="XZL-MK-gZn"/>
+                        <outlet property="passwordTxt" destination="uxF-Nl-0gb" id="WZX-z4-D9o"/>
+                        <outlet property="saveInKeyChainCheckBoxBtn" destination="Hqy-Gt-xEA" id="dty-Z7-o14"/>
+                        <outlet property="sshCheckboxBtn" destination="5Iv-Im-6IJ" id="JQv-MY-09o"/>
+                        <outlet property="usernameTxt" destination="BP9-sC-pyB" id="3DV-Oj-Qh6"/>
+                    </connections>
                 </viewController>
                 <customObject id="1Ja-a5-sqY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

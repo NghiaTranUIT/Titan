@@ -25,6 +25,7 @@
 		BA776E711EA61B1100DB7857 /* ConnectPostgreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */; };
 		BA776E741EA61F5400DB7857 /* QueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E731EA61F5400DB7857 /* QueueManager.swift */; };
 		BA776E761EA7070900DB7857 /* DetailDatabaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E751EA7070900DB7857 /* DetailDatabaseStore.swift */; };
+		BA776E7A1EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E791EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift */; };
 		BA8756171E923BCF00FCDFB1 /* TitanCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BA8756151E923BCF00FCDFB1 /* TitanCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA8756E61E933FCB00FCDFB1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756DD1E933FCB00FCDFB1 /* Alamofire.framework */; };
 		BA8756E91E933FCB00FCDFB1 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756E01E933FCB00FCDFB1 /* ObjectMapper.framework */; };
@@ -103,6 +104,7 @@
 		BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectPostgreOperation.swift; sourceTree = "<group>"; };
 		BA776E731EA61F5400DB7857 /* QueueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueManager.swift; sourceTree = "<group>"; };
 		BA776E751EA7070900DB7857 /* DetailDatabaseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseStore.swift; sourceTree = "<group>"; };
+		BA776E791EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Obserable+TwoWayBinding.swift"; sourceTree = "<group>"; };
 		BA8756121E923BCF00FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8756151E923BCF00FCDFB1 /* TitanCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanCore.h; sourceTree = "<group>"; };
 		BA8756161E923BCF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */,
 				BAAE23E31E9DFFD80071C794 /* NSView+Xib.swift */,
 				BAAE23E51E9DFFF20071C794 /* View+Identity.swift */,
+				BA776E791EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 			files = (
 				BADDF7331E94F36700F35FF3 /* ConnectionDetailViewModel.swift in Sources */,
 				BA18022B1E9C8C5800096445 /* SelectConnectionWorker.swift in Sources */,
+				BA776E7A1EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift in Sources */,
 				BA1802231E9C843600096445 /* Worker.swift in Sources */,
 				BA8757201E93489700FCDFB1 /* SSHObj.swift in Sources */,
 				BA8757101E93483200FCDFB1 /* UserObj.swift in Sources */,

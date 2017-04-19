@@ -29,7 +29,7 @@ class DetailDatabaseController: BaseViewController {
     fileprivate func binding() {
         
         // Update layout if select database
-        self.viewModel.output.selectedDatabaseObserver
+        self.viewModel.output.selectedDatabaseVariable.asObservable()
         .subscribe(onNext: {[weak self] (databaseObj) in
             guard let `self` = self else {return}
             guard let databaseObj = databaseObj else {return}

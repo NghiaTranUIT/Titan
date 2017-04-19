@@ -40,7 +40,7 @@ class ConnectionDetailController: BaseViewController {
     fileprivate func binding() {
         
         // Update layout if select database
-        self.viewModel.output.selectedDatabaseObserver
+        self.viewModel.output.selectedDatabaseVariable.asObservable()
             .subscribe(onNext: {[weak self] (databaseObj) in
                 guard let `self` = self else {return}
                 guard let databaseObj = databaseObj else {return}
@@ -69,6 +69,10 @@ extension ConnectionDetailController {
     }
     
     fileprivate func updateLayout(with databaseObj: DatabaseObj) {
-        
+        self.nicknameTxt.stringValue = databaseObj.name
+        self.hostNameTxt.stringValue = databaseObj.host
+        self.usernameTxt.stringValue = databaseObj.username
+        self.passwordTxt.stringValue = databaseObj.password
+        self.databaseTxt.stringValue = databaseObj.database
     }
 }

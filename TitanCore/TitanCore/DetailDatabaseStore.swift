@@ -29,7 +29,7 @@ open class DetailDatabaseStore: ReduxStore {
         switch action {
             
         case let action as ConnectDatabaseAction:
-            self.connectedDatabase.value = action.selectedDatabase
+            self.connectedDatabase = Variable<DatabaseObj>(action.selectedDatabase)
             
         default:
             

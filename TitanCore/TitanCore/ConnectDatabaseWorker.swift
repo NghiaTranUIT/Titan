@@ -33,6 +33,7 @@ public struct ConnectDatabaseWorker: AsyncWorker {
     func observable() -> Observable<T> {
         
         return PostgreSQLManager.shared.openConnection(with: self.databaseObj)
+            .observeOn(MainScheduler.instance)
         .map({ _ -> Void in
             
             // Dispatch action

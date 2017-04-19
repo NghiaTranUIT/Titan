@@ -162,6 +162,6 @@ extension BaseOperation {
         self.baseCompletionBlock = block
         
         // Execute on background
-        QueueManager.shared
+        QueueManager.shared.executeOperationOnBackgroundThread(self)
     }
 }

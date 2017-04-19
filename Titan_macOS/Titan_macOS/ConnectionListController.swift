@@ -85,6 +85,11 @@ extension ConnectionListController {
         self.createGroupBtn.rx.tap
         .bind(to: self.viewModel.input.createGroupDatabasePublisher)
         .addDisposableTo(self.disposeBase)
+        
+        // Create new database
+        self.dataSource.createDatabasePublisher
+        .bind(to: self.viewModel.input.createDatabaseInGroupPublisher)
+        .addDisposableTo(self.disposeBase)
     }
 }
 

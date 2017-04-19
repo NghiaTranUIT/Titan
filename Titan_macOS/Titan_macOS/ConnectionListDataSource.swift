@@ -8,6 +8,7 @@
 
 import Cocoa
 import TitanCore
+import RxSwift
 
 //
 // MARK: - ConnectionListDataSource
@@ -15,6 +16,7 @@ class ConnectionListDataSource: BaseCollectionViewDataSource {
     
     //
     // MARK: - Variable
+    var createDatabasePublisher = PublishSubject<GroupConnectionObj>()
     
     //
     // MARK: - Init
@@ -98,8 +100,13 @@ extension ConnectionListDataSource {
     fileprivate func getGroupConnectionHeader(with groupConnectionObj: GroupConnectionObj, for collectionView: NSCollectionView, indexPath: IndexPath) -> NSView {
         let header = collectionView.makeSupplementaryView(ofKind: NSCollectionElementKindSectionHeader, withIdentifier: ConnectionGroupCell.identifierView, for: indexPath) as! ConnectionGroupCell
         header.configureCellWith(groupConnectionObj: groupConnectionObj)
-        //header.delegate = self
+        header.delegate = self
         return header
     }
+}
 
+extension ConnectionListDataSource: ConnectionGroupCellDelegate {
+    func ConnectionGroupCellShouldCreateNewDatabase(into group: GroupConnectionObj) {
+        self.createDatabasePublisher.onNext(group)
+    }
 }

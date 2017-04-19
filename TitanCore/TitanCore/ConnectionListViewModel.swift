@@ -93,8 +93,10 @@ open class ConnectionListViewModel: BaseViewModel, ConnectionListViewModelType, 
             return self.createNewDatabaseWorker(with: groupObj)
         }
         
+        
         // Reload
         self._reloadDataDriver = Observable.merge([createGroupObserver, createDbObserver]).asDriver(onErrorJustReturn: ())
+        
         
         // Selected
         self.selectedDatabasePublisher

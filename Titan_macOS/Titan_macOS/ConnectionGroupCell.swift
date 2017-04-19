@@ -9,6 +9,10 @@
 import Cocoa
 import TitanCore
 
+protocol ConnectionGroupCellDelegate: class {
+    func ConnectionGroupCellShouldCreateNewDatabase(into group: GroupConnectionObj)
+}
+
 class ConnectionGroupCell: NSView {
 
     //
@@ -20,6 +24,7 @@ class ConnectionGroupCell: NSView {
     // MARK: - Variable
     private var groupConnectionObj: GroupConnectionObj!
     fileprivate var trackingArea: NSTrackingArea?
+    weak var delegate: ConnectionGroupCellDelegate?
     
     //
     // MARK: - View Cycle
@@ -32,7 +37,7 @@ class ConnectionGroupCell: NSView {
     //
     // MARK: - Action
     @IBAction func addBtnTapped(_ sender: NSButton) {
-        
+        self.delegate?.ConnectionGroupCellShouldCreateNewDatabase(into: self.groupConnectionObj)
     }
     
     //

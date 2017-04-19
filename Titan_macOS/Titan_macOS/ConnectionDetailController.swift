@@ -23,10 +23,52 @@ class ConnectionDetailController: BaseViewController {
     @IBOutlet weak var connectionBtn: NSButton!
     
     //
+    // MARK: - Variable
+    fileprivate var viewModel: ConnectionDetailViewModel!
+    
+    //
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        // Init
+        self.initCommon()
+        self.initViewModel()
+        self.binding()
     }
     
+    fileprivate func binding() {
+        
+        // Update layout if select database
+        self.viewModel.output.selectedDatabaseObserver
+            .subscribe(onNext: {[weak self] (databaseObj) in
+                guard let `self` = self else {return}
+                guard let databaseObj = databaseObj else {return}
+                
+                // Update layout
+                self.updateLayout(with: databaseObj)
+            })
+            .addDisposableTo(self.disposeBase)
+        
+        // Connect database
+        self.connectionBtn.rx.tap.bind(to: self.viewModel.input.connectDatabasePublisher)
+        .addDisposableTo(self.disposeBase)
+    }
+}
+
+//
+// MARK: - Private
+extension ConnectionDetailController {
+    
+    fileprivate func initCommon() {
+        
+    }
+    
+    fileprivate func initViewModel() {
+        self.viewModel = ConnectionDetailViewModel()
+    }
+    
+    fileprivate func updateLayout(with databaseObj: DatabaseObj) {
+        
+    }
 }

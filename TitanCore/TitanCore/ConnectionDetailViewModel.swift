@@ -69,6 +69,27 @@ extension ConnectionDetailViewModel {
             .asObservable()
         
         // Connect selected database
-        
+        self.connectDatabasePublisher.flatMap { (_) -> Observable<Void> in
+            return self.getConnectDatabaseWorker()
+        }
+        .subscribe(onNext: { (_) in
+            
+            // Push notification to switch new window
+            NotificationManager.postNotificationOnMainThreadType(.openDetailDatabaseWindow)
+            
+        }, onError: { (error) in
+            Logger.error("Error connect DB \(error)")
+        })
+        .addDisposableTo(self.disposeBag)
+    }
+}
+
+//
+// MARK: - Worker
+extension ConnectionDetailViewModel {
+    fileprivate func getConnectDatabaseWorker() -> Observable<Void> {
+        let databaseObj = MainStore.globalStore.connectionStore.selectedDatabase.value!
+        let worker = ConnectDatabaseWorker(databaseObj: databaseObj)
+        return worker.observable()
     }
 }

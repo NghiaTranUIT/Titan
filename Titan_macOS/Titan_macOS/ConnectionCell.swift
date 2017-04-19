@@ -54,6 +54,7 @@ extension ConnectionCell {
         // Title
         self.titleLbl.stringValue = databaseObj.name
         
+        
         // Select state
         self.setupSelectionState()
     }

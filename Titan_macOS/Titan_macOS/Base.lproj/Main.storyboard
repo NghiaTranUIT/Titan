@@ -721,13 +721,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRJ-wd-fzv">
-                                <rect key="frame" x="0.0" y="0.0" width="335" height="594"/>
+                                <rect key="frame" x="0.0" y="37" width="335" height="557"/>
                                 <clipView key="contentView" drawsBackground="NO" id="YNR-Bg-9Pk">
-                                    <rect key="frame" x="1" y="1" width="333" height="592"/>
+                                    <rect key="frame" x="1" y="1" width="333" height="555"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="7rK-uo-fQE" customClass="BaseCollectionView" customModule="TitanCore">
-                                            <rect key="frame" x="0.0" y="0.0" width="333" height="592"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="555"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="Ot8-Pl-5sq">
                                                 <size key="itemSize" width="50" height="50"/>
@@ -742,13 +742,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="fec-VU-zpf">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="318" y="1" width="16" height="555"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pel-FH-GAs">
+                                <rect key="frame" x="104" y="1" width="128" height="32"/>
+                                <buttonCell key="cell" type="push" title="Create Groups" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="PQC-6s-aNq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="pRJ-wd-fzv" secondAttribute="bottom" id="3j3-1t-p4J"/>
+                            <constraint firstItem="pel-FH-GAs" firstAttribute="centerX" secondItem="N4k-C0-yL7" secondAttribute="centerX" id="PSa-nU-0Zf"/>
+                            <constraint firstItem="pel-FH-GAs" firstAttribute="top" secondItem="pRJ-wd-fzv" secondAttribute="bottom" constant="8" id="csl-zD-LC1"/>
+                            <constraint firstAttribute="bottom" secondItem="pel-FH-GAs" secondAttribute="bottom" constant="8" id="hlC-cE-fj8"/>
                             <constraint firstItem="pRJ-wd-fzv" firstAttribute="top" secondItem="N4k-C0-yL7" secondAttribute="top" id="rfI-Yc-Hkl"/>
                             <constraint firstItem="pRJ-wd-fzv" firstAttribute="leading" secondItem="N4k-C0-yL7" secondAttribute="leading" id="vQD-di-OvV"/>
                             <constraint firstAttribute="trailing" secondItem="pRJ-wd-fzv" secondAttribute="trailing" id="xZm-Kc-gB4"/>
@@ -756,6 +765,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="7rK-uo-fQE" id="uV4-zN-1RR"/>
+                        <outlet property="createGroupBtn" destination="pel-FH-GAs" id="3Xy-KD-thE"/>
                     </connections>
                 </viewController>
                 <customObject id="7XF-nL-FWl" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

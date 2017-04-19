@@ -19,7 +19,6 @@ open class ConnectionStore: ReduxStore {
     // MARK: - Variable
     public var groupConnections = Variable<List<GroupConnectionObj>>(List<GroupConnectionObj>())
     public var selectedDatabase = Variable<DatabaseObj?>(nil)
-    public var addedNewDatabaseBehavior = Variable<Bool>(false)
     
     // Story type
     public var storyType: StoreType {
@@ -62,9 +61,6 @@ open class ConnectionStore: ReduxStore {
                     group.databases.append(newDatabaseObj)
                 }
             }
-            
-            // Notify
-            self.addedNewDatabaseBehavior.value = true
             
         case let action as AddNewDefaultConnectionAction:
             let group = self.groupConnections.value

@@ -8,6 +8,7 @@
 
 import Cocoa
 import TitanCore
+import RxSwift
 
 class TableListDatabaseController: BaseViewController {
 
@@ -52,6 +53,20 @@ extension TableListDatabaseController {
     }
     
     fileprivate func binding() {
+        
+        
+        // Reload
+        self.viewModel.output.tablesVariable.asObservable()
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.tableView.reloadData()
+        })
+        .addDisposableTo(self.disposeBase)
+        
+        
+        // Fetch scheme
+        self.viewModel.input.fetchTableSchemaPublisher.onNext()
         
     }
 }

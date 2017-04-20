@@ -55,9 +55,15 @@ open class BaseOperation<Element>: Operation {
             }
             
             // Execute on main thread
-            self.completionBlock = {
+            self.completionBlock = { [unowned self] in
+                
                 let result = OperationResult<Element>.buildResult(self)
-                block(result)
+                
+                // Workaround
+                DispatchQueue.main.async {
+                    
+                    block(result)
+                }
             }
         }
     }

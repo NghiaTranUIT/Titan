@@ -93,6 +93,7 @@ open class PostgreSQLManager {
                     }
                     
                     // All success
+                    self._connectState = .connected
                     observer.onNext()
                     observer.onCompleted()
                 }

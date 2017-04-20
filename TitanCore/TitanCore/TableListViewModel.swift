@@ -10,22 +10,22 @@ import Cocoa
 import RxSwift
 import RxCocoa
 
-protocol TableListViewModelType {
+public protocol TableListViewModelType {
     var input: TableListViewModelInput { get }
     var output: TableListViewModelOutput { get }
 }
 
-protocol TableListViewModelInput {
+public protocol TableListViewModelInput {
     var fetchTableSchemaPublisher: PublishSubject<Void> {get}
 }
 
-protocol TableListViewModelOutput {
+public protocol TableListViewModelOutput {
     var reloadTableViewDriver: Driver<Void> {get}
 }
 
 //
 // MARK: - TableListViewModel
-class TableListViewModel: BaseViewModel, TableListViewModelType, TableListViewModelInput, TableListViewModelOutput {
+open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListViewModelInput, TableListViewModelOutput {
 
     //
     // MARK: - Type
@@ -57,7 +57,7 @@ class TableListViewModel: BaseViewModel, TableListViewModelType, TableListViewMo
         // Fetch table schema
         self.fetchTableSchemaPublisher
         .flatMap { (_) -> Observable<Void> in
-            
+            return FetchTableSchemaWorker().observable()
         }
         .subscribe()
         .addDisposableTo(self.disposeBag)

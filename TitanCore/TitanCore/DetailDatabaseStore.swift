@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import SwiftyPostgreSQL
 
 //
 // MARK: - DetailDatabaseStore
@@ -16,6 +17,7 @@ open class DetailDatabaseStore: ReduxStore {
     //
     // MARK: - Variable
     public var connectedDatabase: Variable<DatabaseObj>!
+    public var tables = Variable<[Table]>([])
     
     // Story type
     public var storyType: StoreType {
@@ -30,6 +32,9 @@ open class DetailDatabaseStore: ReduxStore {
             
         case let action as ConnectDatabaseAction:
             self.connectedDatabase = Variable<DatabaseObj>(action.selectedDatabase)
+            
+        case let action as FetchTableSchemaAction:
+            self.tables.value = action.tables
             
         default:
             

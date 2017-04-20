@@ -9,7 +9,7 @@
 import Cocoa
 import TitanCore
 
-class ConnectionListContainerController: NSViewController {
+class ConnectionListContainerController: BaseViewController {
 
     //
     // MARK: - OUTLET

@@ -11,6 +11,7 @@ import Cocoa
 public enum StoreType {
     case mainStore
     case connectionStore
+    case detailDatabaseStore
 }
 
 class MainStore: ReduxStore {
@@ -27,6 +28,7 @@ class MainStore: ReduxStore {
     //
     // MARK: - Sub store
     lazy var connectionStore: ConnectionStore = {return ConnectionStore()}()
+    lazy var detailDatabaseStore: DetailDatabaseStore = {return DetailDatabaseStore()}()
     
     //
     // MARK: - Dispatch Action
@@ -37,6 +39,10 @@ class MainStore: ReduxStore {
         
         // Dispatch
         subStore.handleAction(action)
+    }
+    
+    class func dispatch(_ action: Action) {
+        self.globalStore.dispatch(action)
     }
     
     func handleAction(_ action: Action) {
@@ -54,6 +60,9 @@ extension MainStore {
         switch action.storeType {
         case .mainStore:
             return self
+            
+        case .detailDatabaseStore:
+            return self.detailDatabaseStore
             
         case .connectionStore:
             return self.connectionStore

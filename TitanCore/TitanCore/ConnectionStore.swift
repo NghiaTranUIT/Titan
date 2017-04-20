@@ -19,7 +19,7 @@ open class ConnectionStore: ReduxStore {
     // MARK: - Variable
     public var groupConnections = Variable<List<GroupConnectionObj>>(List<GroupConnectionObj>())
     public var selectedDatabase = Variable<DatabaseObj?>(nil)
-    public var addedNewDatabaseBehavior = Variable<Bool>(false)
+    public var tempDatabaseData: DatabaseData?
     
     // Story type
     public var storyType: StoreType {
@@ -42,8 +42,17 @@ open class ConnectionStore: ReduxStore {
         
         case let action as SelectConnectionAction:
             
+            // Save before switch
+            self.saveTempDatabaseToCurrentDatabaseAction()
+            
             // Get
             self.selectedDatabase.value = action.selectedConnection
+            
+        case let action as UpdateDatabaseTempWorkerAction:
+            self.tempDatabaseData = action.tempData
+        
+        case _ as SaveTempDatabaseToCurrentDatabaseAction:
+            self.saveTempDatabaseToCurrentDatabaseAction()
             
         case let action as CreateNewDatabaseAction:
             
@@ -63,9 +72,6 @@ open class ConnectionStore: ReduxStore {
                 }
             }
             
-            // Notify
-            self.addedNewDatabaseBehavior.value = true
-            
         case let action as AddNewDefaultConnectionAction:
             let group = self.groupConnections.value
             
@@ -79,6 +85,27 @@ open class ConnectionStore: ReduxStore {
             // Do nothing
             assert(true, "Fotgo new action = \(action)")
             break
+        }
+    }
+}
+
+//
+// MARK: - Private
+extension ConnectionStore {
+    
+    fileprivate func saveTempDatabaseToCurrentDatabaseAction() {
+        
+        guard let databaseObj = self.selectedDatabase.value else {return}
+        guard let temp = self.tempDatabaseData else {return}
+        
+        Logger.info("Save data = \(temp)")
+        
+        RealmManager.sharedManager.writeSync { _ in
+            databaseObj.name = temp.nickName
+            databaseObj.database = temp.databaseName
+            databaseObj.username = temp.username
+            databaseObj.password = temp.password
+            databaseObj.host = temp.hostName
         }
     }
 }

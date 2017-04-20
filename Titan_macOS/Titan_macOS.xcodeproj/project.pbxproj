@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA1802321E9C935800096445 /* DetailConnection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1802311E9C935800096445 /* DetailConnection.storyboard */; };
 		BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802341E9C937A00096445 /* MainWindowController.swift */; };
-		BA1802371E9C93D400096445 /* DetailDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802361E9C93D400096445 /* DetailDatabaseController.swift */; };
 		BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802381E9C940100096445 /* DetailDatabaseWindowController.swift */; };
 		BA1802401E9CDACC00096445 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA18023F1E9CDACC00096445 /* StoryboardManager.swift */; };
 		BA1802451E9CDC7B00096445 /* MacBaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1802441E9CDC7B00096445 /* MacBaseWindowController.swift */; };
@@ -23,6 +22,10 @@
 		BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E971E9F71D300468572 /* SnapKit.framework */; };
 		BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */; };
 		BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */; };
+		BA776E7D1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */; };
+		BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */; };
+		BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */; };
+		BA776E881EA71B2A00DB7857 /* ContentDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E861EA71B2A00DB7857 /* ContentDatabaseController.swift */; };
 		BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */; };
 		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
 		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
@@ -42,7 +45,6 @@
 /* Begin PBXFileReference section */
 		BA1802311E9C935800096445 /* DetailConnection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailConnection.storyboard; sourceTree = "<group>"; };
 		BA1802341E9C937A00096445 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		BA1802361E9C93D400096445 /* DetailDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseController.swift; sourceTree = "<group>"; };
 		BA1802381E9C940100096445 /* DetailDatabaseWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseWindowController.swift; sourceTree = "<group>"; };
 		BA18023E1E9CD83F00096445 /* Titan_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Titan_macOS.entitlements; sourceTree = "<group>"; };
 		BA18023F1E9CDACC00096445 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
@@ -59,6 +61,10 @@
 		BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../TitanCore/Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		BA2B4EA21E9F72F700468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseContainerController.swift; sourceTree = "<group>"; };
+		BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseSplitController.swift; sourceTree = "<group>"; };
+		BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseController.swift; sourceTree = "<group>"; };
+		BA776E861EA71B2A00DB7857 /* ContentDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentDatabaseController.swift; sourceTree = "<group>"; };
 		BA8756261E923BEF00FCDFB1 /* Titan_macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Titan_macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +139,38 @@
 				BA1802441E9CDC7B00096445 /* MacBaseWindowController.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		BA776E7B1EA71A6200DB7857 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		BA776E7E1EA71ABB00DB7857 /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */,
+			);
+			name = Split;
+			sourceTree = "<group>";
+		};
+		BA776E811EA71AF200DB7857 /* Table List */ = {
+			isa = PBXGroup;
+			children = (
+				BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */,
+			);
+			name = "Table List";
+			sourceTree = "<group>";
+		};
+		BA776E821EA71AF600DB7857 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				BA776E861EA71B2A00DB7857 /* ContentDatabaseController.swift */,
+			);
+			name = Content;
 			sourceTree = "<group>";
 		};
 		BA87561D1E923BEF00FCDFB1 = {
@@ -280,8 +318,11 @@
 		BA8756791E924D9400FCDFB1 /* Detail Database */ = {
 			isa = PBXGroup;
 			children = (
+				BA776E821EA71AF600DB7857 /* Content */,
+				BA776E811EA71AF200DB7857 /* Table List */,
+				BA776E7E1EA71ABB00DB7857 /* Split */,
+				BA776E7B1EA71A6200DB7857 /* Main */,
 				BA18023A1E9C940500096445 /* Window */,
-				BA1802361E9C93D400096445 /* DetailDatabaseController.swift */,
 			);
 			name = "Detail Database";
 			sourceTree = "<group>";
@@ -461,18 +502,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADDF73C1E94F60300F35FF3 /* ConnectionListDataSource.swift in Sources */,
+				BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */,
 				BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */,
 				BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */,
 				BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */,
 				BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */,
 				BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */,
-				BA1802371E9C93D400096445 /* DetailDatabaseController.swift in Sources */,
 				BADDF7261E94F2A300F35FF3 /* ConnectionDetailController.swift in Sources */,
+				BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */,
 				BADDF7361E94F39B00F35FF3 /* ConnectionSplitController.swift in Sources */,
 				BADDF7231E94F29900F35FF3 /* ConnectionListController.swift in Sources */,
 				BA1802451E9CDC7B00096445 /* MacBaseWindowController.swift in Sources */,
 				BA1802401E9CDACC00096445 /* StoryboardManager.swift in Sources */,
 				BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */,
+				BA776E881EA71B2A00DB7857 /* ContentDatabaseController.swift in Sources */,
+				BA776E7D1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

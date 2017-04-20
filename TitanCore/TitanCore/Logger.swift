@@ -95,4 +95,6 @@ extension NSError {
     class func errorWithMessage(message: String) -> NSError {
         return NSError(domain: "com.fe.feels", code: 999, userInfo: [NSLocalizedDescriptionKey: message])
     }
+    
+    static let unknowError = NSError.errorWithMessage(message: "Unknow error")
 }

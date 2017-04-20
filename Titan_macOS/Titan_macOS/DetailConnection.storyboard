@@ -1,7 +1,66 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Detail Database Container Controller-->
+        <scene sceneID="MnO-VK-ism">
+            <objects>
+                <viewController storyboardIdentifier="DetailDatabaseContainerController" id="Euh-7E-7GA" customClass="DetailDatabaseContainerController" customModule="Titan_macOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Hjc-wp-Ohp">
+                        <rect key="frame" x="0.0" y="0.0" width="701" height="485"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="TN9-0Q-cpT">
+                                <rect key="frame" x="0.0" y="441" width="701" height="44"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkV-np-fo5">
+                                        <rect key="frame" x="332" y="13" width="37" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="SMR-xp-Sz7">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="KkV-np-fo5" firstAttribute="centerY" secondItem="TN9-0Q-cpT" secondAttribute="centerY" id="A1f-aG-8Rk"/>
+                                    <constraint firstItem="KkV-np-fo5" firstAttribute="centerX" secondItem="TN9-0Q-cpT" secondAttribute="centerX" id="PtS-ZM-ZOW"/>
+                                    <constraint firstAttribute="height" constant="44" id="h3F-xn-Jpp"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="TN9-0Q-cpT" firstAttribute="top" secondItem="Hjc-wp-Ohp" secondAttribute="top" id="3FB-1m-zyb"/>
+                            <constraint firstAttribute="trailing" secondItem="TN9-0Q-cpT" secondAttribute="trailing" id="58Z-hc-03U"/>
+                            <constraint firstItem="TN9-0Q-cpT" firstAttribute="leading" secondItem="Hjc-wp-Ohp" secondAttribute="leading" id="K3g-0D-q6j"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="OMy-vS-s4W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525.5" y="-123.5"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="sAl-5T-hbO">
+            <objects>
+                <windowController storyboardIdentifier="DetailDatabaseWindowController" id="LuU-6d-dMV" customClass="DetailDatabaseWindowController" customModule="Titan_macOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="DFs-4q-L4f">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+                    </window>
+                    <connections>
+                        <segue destination="Euh-7E-7GA" kind="relationship" relationship="window.shadowedContentViewController" id="rLj-dT-Zws"/>
+                    </connections>
+                </windowController>
+                <customObject id="a5i-uj-4x6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525" y="-660"/>
+        </scene>
+    </scenes>
 </document>

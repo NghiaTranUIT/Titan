@@ -16,12 +16,12 @@ public protocol ConnectionListViewModelInput {
     var selectedDatabasePublisher: PublishSubject<IndexPath> { get }
     var createGroupDatabasePublisher: PublishSubject<Void> { get }
     var createDatabaseInGroupPublisher: PublishSubject<GroupConnectionObj> { get }
-    
 }
 
 public protocol ConnectionListViewModelOutput {
     var isLoading: Driver<Bool> { get }
     var groupConnectionsVariable: Variable<List<GroupConnectionObj>> { get }
+    var reloadDataDriver: Driver<Void> {get}
 }
 
 public protocol ConnectionListViewModelType {
@@ -53,6 +53,8 @@ open class ConnectionListViewModel: BaseViewModel, ConnectionListViewModelType, 
     public var groupConnectionsVariable: Variable<List<GroupConnectionObj>> {
         return MainStore.globalStore.connectionStore.groupConnections
     }
+    fileprivate var _reloadDataDriver: Driver<Void>!
+    public var reloadDataDriver: Driver<Void> {return self._reloadDataDriver}
     
     //
     // MARK: - Init
@@ -77,19 +79,24 @@ open class ConnectionListViewModel: BaseViewModel, ConnectionListViewModelType, 
         }.subscribe()
         .addDisposableTo(self.disposeBag)
         
+        
         // Create new Group
-        self.createGroupDatabasePublisher
+        let createGroupObserver = self.createGroupDatabasePublisher
         .flatMap { (_) -> Observable<Void> in
             return self.createDefaultGroupDatabaseWorker()
-        }.subscribe()
-        .addDisposableTo(self.disposeBag)
+        }
+        
         
         // Create new database into group
-        self.createDatabaseInGroupPublisher
+        let createDbObserver = self.createDatabaseInGroupPublisher
         .flatMap { (groupObj) -> Observable<Void> in
             return self.createNewDatabaseWorker(with: groupObj)
-        }.subscribe()
-        .addDisposableTo(self.disposeBag)
+        }
+        
+        
+        // Reload
+        self._reloadDataDriver = Observable.merge([createGroupObserver, createDbObserver]).asDriver(onErrorJustReturn: ())
+        
         
         // Selected
         self.selectedDatabasePublisher
@@ -107,7 +114,6 @@ open class ConnectionListViewModel: BaseViewModel, ConnectionListViewModelType, 
         .addDisposableTo(self.disposeBag)
         
     }
-    
 }
 
 //

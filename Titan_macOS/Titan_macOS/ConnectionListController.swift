@@ -14,6 +14,7 @@ class ConnectionListController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var createGroupBtn: NSButton!
     
     //
     // MARK: - Variable
@@ -53,11 +54,18 @@ extension ConnectionListController {
     fileprivate func binding() {
         
         // Reload data
-        self.viewModel.groupConnectionsVariable.asObservable()
-            .filter({ (groups) -> Bool in
-                return groups.count > 0
-            })
-            .subscribe(onNext: { _ in
+        self.viewModel.groupConnectionsVariable
+        .asDriver()
+        .filter({ (groups) -> Bool in
+            return groups.count > 0
+        })
+        .drive(onNext: { (_) in
+            self.collectionView.reloadData()
+        })
+        .addDisposableTo(self.disposeBase)
+        
+        self.viewModel.reloadDataDriver
+        .drive(onNext: { (_) in
             self.collectionView.reloadData()
         })
         .addDisposableTo(self.disposeBase)
@@ -73,6 +81,15 @@ extension ConnectionListController {
         })
         .addDisposableTo(self.disposeBase)
         
+        // Create new group
+        self.createGroupBtn.rx.tap
+        .bind(to: self.viewModel.input.createGroupDatabasePublisher)
+        .addDisposableTo(self.disposeBase)
+        
+        // Create new database
+        self.dataSource.createDatabasePublisher
+        .bind(to: self.viewModel.input.createDatabaseInGroupPublisher)
+        .addDisposableTo(self.disposeBase)
     }
 }
 

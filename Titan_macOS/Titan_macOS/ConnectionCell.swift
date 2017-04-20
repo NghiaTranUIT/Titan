@@ -8,12 +8,14 @@
 
 import Cocoa
 import TitanCore
+import RxSwift
 
 class ConnectionCell: NSCollectionViewItem {
 
     //
     // MARK: - Variable
     var databaseObj: DatabaseObj?
+    fileprivate var disposeBag: DisposeBag?
     
     //
     // MARK: - Outlet
@@ -41,6 +43,12 @@ class ConnectionCell: NSCollectionViewItem {
             self.setupSelectionState()
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.disposeBag = nil
+    }
 }
 
 //
@@ -52,7 +60,15 @@ extension ConnectionCell {
         guard let databaseObj = self.databaseObj else {return}
         
         // Title
-        self.titleLbl.stringValue = databaseObj.name
+        self.disposeBag = DisposeBag()
+        
+        // Name
+        databaseObj.rx.observeWeakly(String.self, "name")
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { (text) in
+            self.titleLbl.stringValue = text ?? ""
+        }).addDisposableTo(self.disposeBag!)
+        
         
         // Select state
         self.setupSelectionState()

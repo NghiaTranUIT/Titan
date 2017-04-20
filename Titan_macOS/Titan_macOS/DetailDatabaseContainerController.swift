@@ -19,7 +19,8 @@ class DetailDatabaseContainerController: BaseViewController {
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        self.initCommon()
     }
     
 }

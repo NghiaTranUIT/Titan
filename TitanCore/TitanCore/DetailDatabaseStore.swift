@@ -19,7 +19,7 @@ open class DetailDatabaseStore: ReduxStore {
     public var connectedDatabase: Variable<DatabaseObj>!
     public var tables = Variable<[Table]>([])
     public var stackTables: [Table] = []
-    public var selectedTable: Table?
+    public var selectedTable = Variable<Table?>(nil)
     
     // Story type
     public var storyType: StoreType {
@@ -49,7 +49,7 @@ open class DetailDatabaseStore: ReduxStore {
             // Only replace if there is no table in stack
             // && force replace
             if action.replaceCurrentTable && contains.count == 0 {
-                if let previousTable = self.selectedTable,
+                if let previousTable = self.selectedTable.value,
                     previousTable != action.selectedTable {
                     
                     self.stackTables = self.stackTables.map({ table -> Table in
@@ -60,6 +60,9 @@ open class DetailDatabaseStore: ReduxStore {
                     })
                 }
             }
+            
+            // Add
+            self.selectedTable.value = action.selectedTable
             
         default:
             

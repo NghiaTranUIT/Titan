@@ -167,6 +167,13 @@
 			name = "Placeholder Cell";
 			sourceTree = "<group>";
 		};
+		BA4FBC0D1EA9027500A067E9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		BA776E7B1EA71A6200DB7857 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +280,7 @@
 		BA8756711E924D2D00FCDFB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA4FBC0D1EA9027500A067E9 /* New Group */,
 				BA4B9DB81EA8BBF100210DD6 /* Placeholder Cell */,
 			);
 			name = View;

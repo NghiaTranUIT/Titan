@@ -17,19 +17,14 @@ struct SaveTempDatabaseToCurrentDatabaseAction: Action {
 
 //
 // MARK: - Worker
-public struct SaveTempDatabaseToCurrentDatabaseWorker: AsyncWorker {
+public struct SaveTempDatabaseToCurrentDatabaseWorker: SyncWorker {
     
     /// Type
     typealias T = Void
     
     /// Execute
-    func observable() -> Observable<T> {
-        return Observable.create({ (observer) -> Disposable in
-            
-            let action = SaveTempDatabaseToCurrentDatabaseAction()
-            MainStore.globalStore.dispatch(action)
-            
-            return Disposables.create()
-        })
+    func execute() {
+        let action = SaveTempDatabaseToCurrentDatabaseAction()
+        MainStore.globalStore.dispatch(action)
     }
 }

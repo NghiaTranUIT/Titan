@@ -24,6 +24,7 @@
 		BA4B9DAB1EA8A4BA00210DD6 /* TableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */; };
 		BA4B9DAD1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */; };
 		BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */; };
+		BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -107,6 +108,7 @@
 		BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListViewModel.swift; sourceTree = "<group>"; };
 		BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaWorker.swift; sourceTree = "<group>"; };
 		BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaOperation.swift; sourceTree = "<group>"; };
+		BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableWorker.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */,
 				BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */,
 				BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */,
+				BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				BA18022D1E9C8FF200096445 /* BaseWindowController.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,
 				BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */,
+				BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */,
 				BAAE23CC1E9DDC780071C794 /* NSView+BackgroundColor.swift in Sources */,
 				BA4B9DA71EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift in Sources */,
 				BADDF7451E94FAFA00F35FF3 /* ReduxStore.swift in Sources */,

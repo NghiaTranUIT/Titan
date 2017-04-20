@@ -18,6 +18,8 @@ open class DetailDatabaseStore: ReduxStore {
     // MARK: - Variable
     public var connectedDatabase: Variable<DatabaseObj>!
     public var tables = Variable<[Table]>([])
+    public var stackTables: [Table] = []
+    public var selectedTable: Table?
     
     // Story type
     public var storyType: StoreType {
@@ -35,6 +37,29 @@ open class DetailDatabaseStore: ReduxStore {
             
         case let action as FetchTableSchemaAction:
             self.tables.value = action.tables
+            
+        case let action as AddSelectedTableToStackAction:
+            self.stackTables.append(action.selectedTable)
+        
+        case let action as SelectedTableAction:
+            
+            // Replace previous selectedTable with new one
+            let contains = self.stackTables.filter({$0 == action.selectedTable})
+            
+            // Only replace if there is no table in stack
+            // && force replace
+            if action.replaceCurrentTable && contains.count == 0 {
+                if let previousTable = self.selectedTable,
+                    previousTable != action.selectedTable {
+                    
+                    self.stackTables = self.stackTables.map({ table -> Table in
+                        if table == previousTable {
+                            return action.selectedTable
+                        }
+                        return table
+                    })
+                }
+            }
             
         default:
             

@@ -18,6 +18,8 @@ public protocol TableListViewModelType {
 
 public protocol TableListViewModelInput {
     var fetchTableSchemaPublisher: PublishSubject<Void> {get}
+    var selectedTablePublisher: PublishSubject<IndexPath> {get}
+    var openTableInNewTabPublisher: PublishSubject<Table> {get}
 }
 
 public protocol TableListViewModelOutput {
@@ -37,6 +39,9 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
     //
     // MARK: - Input
     public var fetchTableSchemaPublisher = PublishSubject<Void>()
+    public var selectedTablePublisher = PublishSubject<IndexPath>()
+    public var openTableInNewTabPublisher = PublishSubject<Table>()
+    
     //
     // MARK: - Output
     public var reloadTableViewDriver: Driver<Void> {return self._reloadTableViewDriver}
@@ -66,5 +71,23 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
         }
         .subscribe()
         .addDisposableTo(self.disposeBag)
+        
+        // Selected
+        self.selectedTablePublisher.map { (indexPath) -> Table in
+            return self.tablesVariable.value[indexPath.item]
+        }
+        .do(onNext: { table in
+            SelectedTableInCurrentTabWorker(seletedTable: table).execute()
+        })
+        .subscribe()
+        .addDisposableTo(self.disposeBag)
+        
+        // Open in new tab
+        self.openTableInNewTabPublisher
+        .do(onNext: { table in
+            
+        })
+        .subscribe().addDisposableTo(self.disposeBag)
+        
     }
 }

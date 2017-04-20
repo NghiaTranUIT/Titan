@@ -58,8 +58,9 @@ extension TableListDatabaseController {
         // Reload
         self.viewModel.output.tablesVariable.asObservable()
         .observeOn(MainScheduler.instance)
-        .subscribe(onNext: {[weak self] _ in
+        .subscribe(onNext: {[weak self] (tables) in
             guard let `self` = self else {return}
+            Logger.info("Table schema = \(tables.count)")
             self.tableView.reloadData()
         })
         .addDisposableTo(self.disposeBase)

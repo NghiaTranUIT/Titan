@@ -21,6 +21,9 @@
 		BA2B4E861E9F645700468572 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B4E851E9F645700468572 /* BaseCollectionView.swift */; };
 		BA4B9DA71EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */; };
 		BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */; };
+		BA4B9DAB1EA8A4BA00210DD6 /* TableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */; };
+		BA4B9DAD1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */; };
+		BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -74,7 +77,6 @@
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
-		BADDF71F1E94EFB800F35FF3 /* SwiftyPostgreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADDF71E1E94EFB800F35FF3 /* SwiftyPostgreSQL.framework */; };
 		BADDF72A1E94F2CA00F35FF3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF7291E94F2CA00F35FF3 /* BaseViewController.swift */; };
 		BADDF72C1E94F2DB00F35FF3 /* BaseSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF72B1E94F2DB00F35FF3 /* BaseSplitViewController.swift */; };
 		BADDF7311E94F35500F35FF3 /* ConnectionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDF7301E94F35500F35FF3 /* ConnectionListViewModel.swift */; };
@@ -102,6 +104,9 @@
 		BA2B4EA41E9F731F00468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDatabaseTempWorker.swift; sourceTree = "<group>"; };
 		BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTempDatabaseToCurrentDatabaseWorker.swift; sourceTree = "<group>"; };
+		BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListViewModel.swift; sourceTree = "<group>"; };
+		BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaWorker.swift; sourceTree = "<group>"; };
+		BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaOperation.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -112,20 +117,8 @@
 		BA8756121E923BCF00FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA8756151E923BCF00FCDFB1 /* TitanCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitanCore.h; sourceTree = "<group>"; };
 		BA8756161E923BCF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA8756C21E929F7800FCDFB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		BA8756C41E92A10400FCDFB1 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = ../Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
-		BA8756C51E92A10400FCDFB1 /* Diff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Diff.framework; path = ../Carthage/Build/Mac/Diff.framework; sourceTree = "<group>"; };
-		BA8756C61E92A10400FCDFB1 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
-		BA8756C71E92A10400FCDFB1 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = ../Carthage/Build/Mac/ReactiveKit.framework; sourceTree = "<group>"; };
-		BA8756C81E92A10400FCDFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		BA8756C91E92A10400FCDFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
-		BA8756CA1E92A10400FCDFB1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = ../Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
-		BA8756CB1E92A10400FCDFB1 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		BA8756DD1E933FCB00FCDFB1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		BA8756DE1E933FCB00FCDFB1 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/Mac/Bond.framework; sourceTree = "<group>"; };
-		BA8756DF1E933FCB00FCDFB1 /* Diff.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Diff.framework; path = Carthage/Build/Mac/Diff.framework; sourceTree = "<group>"; };
 		BA8756E01E933FCB00FCDFB1 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/Mac/ObjectMapper.framework; sourceTree = "<group>"; };
-		BA8756E11E933FCB00FCDFB1 /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/Mac/ReactiveKit.framework; sourceTree = "<group>"; };
 		BA8756E21E933FCB00FCDFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
 		BA8756E31E933FCB00FCDFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		BA8756E41E933FCB00FCDFB1 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
@@ -150,15 +143,12 @@
 		BA87571B1E93489700FCDFB1 /* ThemeObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeObj.swift; sourceTree = "<group>"; };
 		BA8757251E934AD400FCDFB1 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BA8757271E934AF700FCDFB1 /* RealmKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKeys.swift; sourceTree = "<group>"; };
-		BA8757291E934CEA00FCDFB1 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
 		BA87572D1E934E1600FCDFB1 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		BA8757301E934E6700FCDFB1 /* AppVersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionManager.swift; sourceTree = "<group>"; };
 		BA8757321E934E8600FCDFB1 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		BA8757351E934FC100FCDFB1 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		BA8757371E9351D500FCDFB1 /* CommonDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataSourceProtocol.swift; sourceTree = "<group>"; };
 		BAAE23CB1E9DDC780071C794 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
-		BAAE23CD1E9DDF8D0071C794 /* DynamicColor.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColor.framework; path = Carthage/Build/iOS/DynamicColor.framework; sourceTree = "<group>"; };
-		BAAE23CF1E9DE1420071C794 /* DynamicColorMacOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DynamicColorMacOS.framework; path = Carthage/Build/Mac/DynamicColorMacOS.framework; sourceTree = "<group>"; };
 		BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		BAAE23D31E9DEA850071C794 /* BaseCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		BAAE23D51E9DEBAE0071C794 /* BaseTableViewDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewDataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -173,7 +163,6 @@
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
 		BAD83ADF1E9B79E9000F6813 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/Mac/RxTest.framework; sourceTree = "<group>"; };
-		BADDF71E1E94EFB800F35FF3 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyPostgreSQL.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Titan-workspace-giunqhvetblyasacegghgnxmxrmd/Build/Products/Debug/SwiftyPostgreSQL.framework"; sourceTree = "<group>"; };
 		BADDF7291E94F2CA00F35FF3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BADDF72B1E94F2DB00F35FF3 /* BaseSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSplitViewController.swift; sourceTree = "<group>"; };
 		BADDF7301E94F35500F35FF3 /* ConnectionListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListViewModel.swift; sourceTree = "<group>"; };
@@ -193,7 +182,6 @@
 				BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */,
 				BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */,
 				BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */,
-				BADDF71F1E94EFB800F35FF3 /* SwiftyPostgreSQL.framework in Frameworks */,
 				BA8756E61E933FCB00FCDFB1 /* Alamofire.framework in Frameworks */,
 				BA22A2B51E9D356900C2CB93 /* UICKeyChainStore.framework in Frameworks */,
 				BA8756E91E933FCB00FCDFB1 /* ObjectMapper.framework in Frameworks */,
@@ -218,6 +206,7 @@
 				BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */,
 				BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */,
 				BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */,
+				BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -268,6 +257,7 @@
 			children = (
 				BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */,
 				BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */,
+				BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -357,6 +347,7 @@
 			children = (
 				BADDF7301E94F35500F35FF3 /* ConnectionListViewModel.swift */,
 				BADDF7321E94F36700F35FF3 /* ConnectionDetailViewModel.swift */,
+				BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */,
 			);
 			name = "View model";
 			sourceTree = "<group>";
@@ -383,33 +374,17 @@
 			isa = PBXGroup;
 			children = (
 				BA2B4EA41E9F731F00468572 /* XCTest.framework */,
-				BAAE23CF1E9DE1420071C794 /* DynamicColorMacOS.framework */,
-				BAAE23CD1E9DDF8D0071C794 /* DynamicColor.framework */,
 				BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */,
 				BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */,
 				BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */,
 				BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */,
 				BAD83ADF1E9B79E9000F6813 /* RxTest.framework */,
-				BADDF71E1E94EFB800F35FF3 /* SwiftyPostgreSQL.framework */,
-				BA8757291E934CEA00FCDFB1 /* PromiseKit.framework */,
 				BA8756DD1E933FCB00FCDFB1 /* Alamofire.framework */,
-				BA8756DE1E933FCB00FCDFB1 /* Bond.framework */,
-				BA8756DF1E933FCB00FCDFB1 /* Diff.framework */,
 				BA8756E01E933FCB00FCDFB1 /* ObjectMapper.framework */,
-				BA8756E11E933FCB00FCDFB1 /* ReactiveKit.framework */,
 				BA8756E21E933FCB00FCDFB1 /* Realm.framework */,
 				BA8756E31E933FCB00FCDFB1 /* RealmSwift.framework */,
 				BA8756E41E933FCB00FCDFB1 /* SnapKit.framework */,
 				BA8756E51E933FCB00FCDFB1 /* SwiftyBeaver.framework */,
-				BA8756C41E92A10400FCDFB1 /* Bond.framework */,
-				BA8756C51E92A10400FCDFB1 /* Diff.framework */,
-				BA8756C61E92A10400FCDFB1 /* ObjectMapper.framework */,
-				BA8756C71E92A10400FCDFB1 /* ReactiveKit.framework */,
-				BA8756C81E92A10400FCDFB1 /* Realm.framework */,
-				BA8756C91E92A10400FCDFB1 /* RealmSwift.framework */,
-				BA8756CA1E92A10400FCDFB1 /* SnapKit.framework */,
-				BA8756CB1E92A10400FCDFB1 /* SwiftyBeaver.framework */,
-				BA8756C21E929F7800FCDFB1 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -697,6 +672,7 @@
 				BA179F511EA3A63200720760 /* ActivityIndicator.swift in Sources */,
 				BA87571F1E93489700FCDFB1 /* QueryObj.swift in Sources */,
 				BA87570A1E9347BE00FCDFB1 /* Logger.swift in Sources */,
+				BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */,
 				BA8757261E934AD400FCDFB1 /* RealmManager.swift in Sources */,
 				BADDF7481E94FD3B00F35FF3 /* UpdateGroupConnectionAction.swift in Sources */,
 				BA1802301E9C902B00096445 /* NotificationManager.swift in Sources */,
@@ -704,9 +680,11 @@
 				BADDF72C1E94F2DB00F35FF3 /* BaseSplitViewController.swift in Sources */,
 				BAAE23D61E9DEBAE0071C794 /* BaseTableViewDataSourceProtocol.swift in Sources */,
 				BADDF72A1E94F2CA00F35FF3 /* BaseViewController.swift in Sources */,
+				BA4B9DAD1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift in Sources */,
 				BADDF73F1E94F9CD00F35FF3 /* MainStore.swift in Sources */,
 				BAAE23E61E9DFFF20071C794 /* View+Identity.swift in Sources */,
 				BAAE23EC1E9E00620071C794 /* NSViewController+Identifier.swift in Sources */,
+				BA4B9DAB1EA8A4BA00210DD6 /* TableListViewModel.swift in Sources */,
 				BA87570C1E9347C500FCDFB1 /* SlackReporter.swift in Sources */,
 				BAAE23F11E9E1D880071C794 /* AutosizeVerticalFlowLayout.swift in Sources */,
 				BAAE23D21E9DE36F0071C794 /* NSColor+Hex.swift in Sources */,

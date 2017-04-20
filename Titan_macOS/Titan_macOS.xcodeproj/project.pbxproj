@@ -29,7 +29,6 @@
 		BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */; };
 		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
 		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
-		BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756F31E93422600FCDFB1 /* TitanCore.framework */; };
 		BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */; };
 		BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */; };
 		BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */; };
@@ -72,9 +71,6 @@
 		BA8756321E923BEF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyPostgreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA87566B1E924B8400FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA8756F31E93422600FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TitanCore.framework; path = ../TitanCore/build/Debug/TitanCore.framework; sourceTree = "<group>"; };
-		BA8756F51E93442100FCDFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		BA8756F61E93442100FCDFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListContainerController.swift; sourceTree = "<group>"; };
 		BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
@@ -92,7 +88,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */,
-				BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */,
 				BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */,
 				BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */,
 				BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */,
@@ -216,9 +211,6 @@
 				BA2B4E881E9F70ED00468572 /* RxCocoa.framework */,
 				BA2B4E891E9F70ED00468572 /* RxSwift.framework */,
 				BA2B4E8A1E9F70ED00468572 /* RxTest.framework */,
-				BA8756F51E93442100FCDFB1 /* Realm.framework */,
-				BA8756F61E93442100FCDFB1 /* RealmSwift.framework */,
-				BA8756F31E93422600FCDFB1 /* TitanCore.framework */,
 				BA87566B1E924B8400FCDFB1 /* TitanCore.framework */,
 				BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */,
 			);

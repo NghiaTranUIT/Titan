@@ -11,9 +11,24 @@ import TitanCore
 
 class DetailDatabaseContainerController: BaseViewController {
 
+    //
+    // MARK: - OUTLET
+    @IBOutlet weak var topBarView: NSView!
+    
+    //
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
     }
     
+}
+
+//
+// MARK: - Private
+extension DetailDatabaseContainerController {
+    
+    fileprivate func initCommon() {
+        self.topBarView.backgroundColor = NSColor(hexString: "#9b59b6")
+    }
 }

@@ -129,4 +129,35 @@ open class PostgreSQLManager {
             return Disposables.create()
         }
     }
+    
+    /// Fetch table schema
+    func fetchTableSchema() -> Observable<[Table]> {
+        
+        guard self._connectState == .connected else {
+            let error = NSError.errorWithMessage(message: "No database connected")
+            return Observable.error(error)
+        }
+        
+        return Observable<[Table]>.create({ observer -> Disposable in
+            
+            let op = FetchTableSchemaOperation(connect: self.currentDbConnection)
+            op.executeOnBackground(block: { resultOperation in
+                
+                switch resultOperation {
+                case .failed(let error):
+                    
+                    // Error
+                    observer.onError(error)
+                    
+                case .success(let result):
+                    
+                    // All success
+                    observer.onNext(result)
+                    observer.onCompleted()
+                }
+            })
+            
+            return Disposables.create()
+        })
+    }
 }

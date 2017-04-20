@@ -85,7 +85,7 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
         // Open in new tab
         self.openTableInNewTabPublisher
         .do(onNext: { table in
-            
+            OpenTableInNewTabWorker(seletedTable: table).execute()
         })
         .subscribe().addDisposableTo(self.disposeBag)
         

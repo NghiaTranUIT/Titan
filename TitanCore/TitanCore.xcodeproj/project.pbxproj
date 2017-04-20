@@ -25,6 +25,7 @@
 		BA4B9DAD1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */; };
 		BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */; };
 		BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */; };
+		BA4FBC0A1EA8D27800A067E9 /* OpenTableInNewTabWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC091EA8D27800A067E9 /* OpenTableInNewTabWorker.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -109,6 +110,7 @@
 		BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaWorker.swift; sourceTree = "<group>"; };
 		BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTableSchemaOperation.swift; sourceTree = "<group>"; };
 		BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTableWorker.swift; sourceTree = "<group>"; };
+		BA4FBC091EA8D27800A067E9 /* OpenTableInNewTabWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTableInNewTabWorker.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */,
 				BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */,
 				BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */,
+				BA4FBC091EA8D27800A067E9 /* OpenTableInNewTabWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				BA18022B1E9C8C5800096445 /* SelectConnectionWorker.swift in Sources */,
 				BA776E7A1EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift in Sources */,
 				BA1802231E9C843600096445 /* Worker.swift in Sources */,
+				BA4FBC0A1EA8D27800A067E9 /* OpenTableInNewTabWorker.swift in Sources */,
 				BA8757201E93489700FCDFB1 /* SSHObj.swift in Sources */,
 				BA8757101E93483200FCDFB1 /* UserObj.swift in Sources */,
 				BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */,

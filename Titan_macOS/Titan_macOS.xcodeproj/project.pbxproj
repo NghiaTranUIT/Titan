@@ -27,6 +27,7 @@
 		BA4B9DB71EA8BB3F00210DD6 /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */; };
 		BA4B9DBA1EA8BBFF00210DD6 /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */; };
 		BA4B9DBC1EA8BC1F00210DD6 /* PlaceholderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */; };
+		BA4B9DBE1EA8BECE00210DD6 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */; };
 		BA776E7D1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */; };
 		BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */; };
 		BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */; };
@@ -70,6 +71,7 @@
 		BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
 		BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
 		BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderCell.xib; sourceTree = "<group>"; };
+		BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseContainerController.swift; sourceTree = "<group>"; };
 		BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseSplitController.swift; sourceTree = "<group>"; };
 		BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				BA4B9DB41EA8BB0500210DD6 /* TableRowCell.swift */,
 				BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */,
+				BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */,
 				BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */,
 				BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */,
+				BA4B9DBE1EA8BECE00210DD6 /* TableRowView.swift in Sources */,
 				BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */,
 				BA4B9DB11EA8AE5F00210DD6 /* TableListDatabaseSource.swift in Sources */,
 				BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */,

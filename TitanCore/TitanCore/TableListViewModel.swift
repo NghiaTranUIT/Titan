@@ -9,6 +9,7 @@
 import Cocoa
 import RxSwift
 import RxCocoa
+import SwiftyPostgreSQL
 
 public protocol TableListViewModelType {
     var input: TableListViewModelInput { get }
@@ -20,6 +21,7 @@ public protocol TableListViewModelInput {
 }
 
 public protocol TableListViewModelOutput {
+    var tablesVariable: Variable<[Table]> {get}
     var reloadTableViewDriver: Driver<Void> {get}
 }
 
@@ -38,6 +40,9 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
     //
     // MARK: - Output
     public var reloadTableViewDriver: Driver<Void> {return self._reloadTableViewDriver}
+    public var tablesVariable: Variable<[Table]> {
+        return MainStore.globalStore.detailDatabaseStore.tables
+    }
     
     //
     // MARK: - Variable

@@ -109,7 +109,7 @@ extension ConnectionListController: BaseCollectionViewDataSourceProtocol {
     }
     
     // Item at index path
-    func CommonDataSourceItem(at indexPath: IndexPath) -> BaseModel {
+    func CommonDataSourceItem(at indexPath: IndexPath) -> Any {
         return self.viewModel[indexPath.section]
     }
     

@@ -60,18 +60,23 @@ extension TableListDatabaseController {
 // MARK: - BaseTableViewDataSourceProtocol
 extension TableListDatabaseController: BaseTableViewDataSourceProtocol{
     
-    func CommonDataSourceViewFor(_ tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        
+    func CommonDataSourceNumberOfItem(at section: Int) -> Int {
+        return self.viewModel.output.tablesVariable.value.count
     }
     
-    // Row view for row
-    func CommonDataSourceRowView(for row: Int) -> NSTableRowView? {
-        
+    // Number of section
+    func CommonDataSourceNumberOfSection() -> Int {
+        return 1
+    }
+    
+    // Item at index path
+    func CommonDataSourceItem(at indexPath: IndexPath) -> Any {
+        return self.viewModel.output.tablesVariable.value[indexPath.item]
     }
     
     // Height for row
     func CommonDataSourceHeight(for row: Int) -> CGFloat {
-        
+        return 26.0
     }
     
     // didSelect

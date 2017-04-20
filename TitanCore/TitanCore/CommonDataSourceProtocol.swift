@@ -20,5 +20,5 @@ public protocol CommonDataSourceProtocol: class {
     func CommonDataSourceNumberOfSection() -> Int
     
     // Item at index path
-    func CommonDataSourceItem(at indexPath: IndexPath) -> BaseModel
+    func CommonDataSourceItem(at indexPath: IndexPath) -> Any
 }

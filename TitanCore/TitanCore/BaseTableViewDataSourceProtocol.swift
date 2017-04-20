@@ -29,21 +29,21 @@ public protocol BaseTableViewDataSourceProtocol: CommonDataSourceProtocol {
 
 //
 // MARK: - Extension for Optional method
-extension BaseTableViewDataSourceProtocol {
+public extension BaseTableViewDataSourceProtocol {
     
-    func CommonDataSourceHeight(for row: Int) -> CGFloat {
+    public func CommonDataSourceHeight(for row: Int) -> CGFloat {
         return 44.0
     }
     
-    func CommonDataSourceDidSelectedRow(at indexPath: IndexPath) {
+    public func CommonDataSourceDidSelectedRow(at indexPath: IndexPath) {
         // Do nothings
     }
     
-    func CommonDataSourceRowView(for row: Int) -> NSTableRowView? {
+    public func CommonDataSourceRowView(for row: Int) -> NSTableRowView? {
         return nil
     }
     
-    func CommonDataSourceViewFor(_ tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    public func CommonDataSourceViewFor(_ tableColumn: NSTableColumn?, row: Int) -> NSView? {
         return nil
     }
 }

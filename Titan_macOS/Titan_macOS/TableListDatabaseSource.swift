@@ -8,6 +8,7 @@
 
 import Foundation
 import TitanCore
+import SwiftyPostgreSQL
 
 class TableListDatabaseSource: BaseTableViewDataSource {
     
@@ -22,7 +23,9 @@ class TableListDatabaseSource: BaseTableViewDataSource {
     //
     // MARK: - Override
     override func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if self.tables.count == 0 {
+        let count = self.delegate!.CommonDataSourceNumberOfItem(at: 0)
+        
+        if count == 0 {
             return self.placeholderCell(with: tableView, row: row)
         }
         
@@ -58,5 +61,20 @@ extension TableListDatabaseSource {
         
         // Reload
         self.tableView.reloadData()
+    }
+    
+    fileprivate func placeholderCell(with tableView: NSTableView, row: Int) -> PlaceholderCell {
+        let cell = tableView.make(withIdentifier: PlaceholderCell.identifierView, owner: self) as! PlaceholderCell
+        cell.configurePlaceholderCell(with: "No tables", isShowLoader: true)
+        return cell
+    }
+    
+    fileprivate func tableCell(with tableView: NSTableView, row: Int) -> TableRowCell {
+        let cell = tableView.make(withIdentifier: TableRowCell.identifierView, owner: self) as! TableRowCell
+        
+        let table = self.delegate!.CommonDataSourceItem(at: IndexPath(item: row, section: 0)) as! Table
+        cell.configureCell(with: table)
+        
+        return cell
     }
 }

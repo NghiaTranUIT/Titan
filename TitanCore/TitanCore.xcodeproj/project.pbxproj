@@ -19,6 +19,8 @@
 		BA18023D1E9C94E400096445 /* DefaultQuotation.json in Resources */ = {isa = PBXBuildFile; fileRef = BA18023C1E9C94E400096445 /* DefaultQuotation.json */; };
 		BA22A2B51E9D356900C2CB93 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */; };
 		BA2B4E861E9F645700468572 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B4E851E9F645700468572 /* BaseCollectionView.swift */; };
+		BA4B9DA71EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */; };
+		BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -98,6 +100,8 @@
 		BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		BA2B4E851E9F645700468572 /* BaseCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		BA2B4EA41E9F731F00468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDatabaseTempWorker.swift; sourceTree = "<group>"; };
+		BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTempDatabaseToCurrentDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				BA1802281E9C8A7900096445 /* CreateNewDatabaseWorker.swift */,
 				BA18022A1E9C8C5800096445 /* SelectConnectionWorker.swift */,
 				BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */,
+				BA4B9DA61EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift */,
+				BA4B9DA81EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -723,7 +729,9 @@
 				BADDF7311E94F35500F35FF3 /* ConnectionListViewModel.swift in Sources */,
 				BA18022D1E9C8FF200096445 /* BaseWindowController.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,
+				BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */,
 				BAAE23CC1E9DDC780071C794 /* NSView+BackgroundColor.swift in Sources */,
+				BA4B9DA71EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift in Sources */,
 				BADDF7451E94FAFA00F35FF3 /* ReduxStore.swift in Sources */,
 				BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */,
 				BA8757041E93474400FCDFB1 /* Constants.swift in Sources */,

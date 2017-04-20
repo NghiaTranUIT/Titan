@@ -49,6 +49,9 @@ class ConnectionDetailController: BaseViewController {
             
             // Update layout
             self.updateLayout(with: databaseObj)
+            
+            // Save temp
+            self.viewModel.input.databaseDataPublisher.onNext(self.generateDatabaseData())
         })
         .addDisposableTo(self.disposeBase)
         
@@ -66,9 +69,10 @@ class ConnectionDetailController: BaseViewController {
         let passwordOb = self.passwordTxt.rx.text.asObservable()
         let databaseOb = self.databaseTxt.rx.text.asObservable()
         
+        // Save
         Observable.combineLatest([nickOb, hostOb, databaseOb, usernameOb, passwordOb])
-        .map { texts -> DatabaseData in
-            return DatabaseData(nickName: texts[0], hostName: texts[1], databaseName: texts[2], username: texts[3], password: texts[4])
+        .map {[unowned self] texts -> DatabaseData in
+            return self.generateDatabaseData()
         }
         .bind(to: self.viewModel.input.databaseDataPublisher)
         .addDisposableTo(self.disposeBase)
@@ -93,5 +97,9 @@ extension ConnectionDetailController {
         self.usernameTxt.stringValue = databaseObj.username
         self.passwordTxt.stringValue = databaseObj.password
         self.databaseTxt.stringValue = databaseObj.database
+    }
+    
+    fileprivate func generateDatabaseData() -> DatabaseData {
+        return DatabaseData(nickName: self.nicknameTxt.stringValue, hostName: self.hostNameTxt.stringValue, databaseName: self.databaseTxt.stringValue, username: self.usernameTxt.stringValue, password: self.passwordTxt.stringValue)
     }
 }

@@ -9,23 +9,6 @@
 import Cocoa
 import RxSwift
 
-
-public struct DatabaseData {
-    public var nickName: String!
-    public var hostName: String!
-    public var databaseName: String!
-    public var username: String!
-    public var password: String!
-    
-    public init(nickName: String?, hostName: String?, databaseName: String?, username: String?, password: String? ) {
-        self.nickName = nickName ?? ""
-        self.hostName = hostName ?? ""
-        self.databaseName = databaseName ?? ""
-        self.username = username ?? ""
-        self.password = password ?? ""
-    }
-}
-
 //
 // MARK: - Protocol
 public protocol ConnectionDetailViewModelType {
@@ -86,35 +69,31 @@ extension ConnectionDetailViewModel {
         self._selectedDatabaseVariable = MainStore.globalStore.connectionStore
             .selectedDatabase
         
+
         // Connect selected database
-        self.connectDatabasePublisher.flatMap { (_) -> Observable<Void> in
+        self.connectDatabasePublisher
+        .do(onNext: { _ in
+            let action = SaveTempDatabaseToCurrentDatabaseAction()
+            MainStore.dispatch(action)
+        })
+        .flatMap { (_) -> Observable<Void> in
             return self.getConnectDatabaseWorker()
         }
         .subscribe(onNext: { (_) in
-            
-            // Push notification to switch new window
             NotificationManager.postNotificationOnMainThreadType(.openDetailDatabaseWindow)
-            
         }, onError: { (error) in
             Logger.error("Error connect DB \(error)")
         })
         .addDisposableTo(self.disposeBag)
         
-        // Save
-        self.databaseDataPublisher.subscribe(onNext: { (data) in
-            guard let databaseObj = self._selectedDatabaseVariable.value else {return}
-            
-            // Save
-            databaseObj.writeRealm({ (obj: DatabaseObj) in
-                obj.name = data.nickName
-                obj.database = data.databaseName
-                obj.username = data.username
-                obj.password = data.password
-                obj.host = data.hostName
-            })
-            
-        }).addDisposableTo(self.disposeBag)
         
+        // Create temp data
+        self.databaseDataPublisher
+        .flatMap({ (data) -> Observable<DatabaseData> in
+            return UpdateDatabaseTempWorker(tempData: data).observable()
+        })
+        .subscribe()
+        .addDisposableTo(self.disposeBag)
     }
 }
 

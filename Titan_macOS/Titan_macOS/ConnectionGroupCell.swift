@@ -31,6 +31,7 @@ class ConnectionGroupCell: NSView {
     override func awakeFromNib() {
         super.awakeFromNib()
     
+        self.addDatabaseBtn.alphaValue = 0.0
         self.setupTrackingArea()
     }
     

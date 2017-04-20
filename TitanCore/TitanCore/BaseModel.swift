@@ -41,6 +41,12 @@ open class BaseModel: Object {
         self.createdAt <- (map[Constants.Obj.CreatedAt], APIDateTransform())
         self.updatedAt <- (map[Constants.Obj.UpdatedAt], APIDateTransform())
     }
+    
+    public func writeRealm<T>(_ block: (T)->()) {
+        RealmManager.sharedManager.writeSync { _ in
+            block(self as! T)
+        }
+    }
 }
 
 //

@@ -9,6 +9,23 @@
 import Cocoa
 import RxSwift
 
+
+public struct DatabaseData {
+    public var nickName: String!
+    public var hostName: String!
+    public var databaseName: String!
+    public var username: String!
+    public var password: String!
+    
+    public init(nickName: String?, hostName: String?, databaseName: String?, username: String?, password: String? ) {
+        self.nickName = nickName ?? ""
+        self.hostName = hostName ?? ""
+        self.databaseName = databaseName ?? ""
+        self.username = username ?? ""
+        self.password = password ?? ""
+    }
+}
+
 //
 // MARK: - Protocol
 public protocol ConnectionDetailViewModelType {
@@ -18,6 +35,7 @@ public protocol ConnectionDetailViewModelType {
 
 public protocol ConnectionDetailViewModelInput {
     var connectDatabasePublisher: PublishSubject<Void> { get }
+    var databaseDataPublisher: PublishSubject<DatabaseData> {get}
 }
 
 public protocol ConnectionDetailViewModelOutput {
@@ -38,6 +56,7 @@ open class ConnectionDetailViewModel: BaseViewModel, ConnectionDetailViewModelTy
     //
     // MARK: - Input
     public var connectDatabasePublisher = PublishSubject<Void>()
+    public var databaseDataPublisher = PublishSubject<DatabaseData>()
     
     //
     // MARK: - Output
@@ -80,6 +99,22 @@ extension ConnectionDetailViewModel {
             Logger.error("Error connect DB \(error)")
         })
         .addDisposableTo(self.disposeBag)
+        
+        // Save
+        self.databaseDataPublisher.subscribe(onNext: { (data) in
+            guard let databaseObj = self._selectedDatabaseVariable.value else {return}
+            
+            // Save
+            databaseObj.writeRealm({ (obj: DatabaseObj) in
+                obj.name = data.nickName
+                obj.database = data.databaseName
+                obj.username = data.username
+                obj.password = data.password
+                obj.host = data.hostName
+            })
+            
+        }).addDisposableTo(self.disposeBag)
+        
     }
 }
 

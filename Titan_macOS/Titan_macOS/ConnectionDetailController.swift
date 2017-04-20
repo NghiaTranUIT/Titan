@@ -8,6 +8,7 @@
 
 import Cocoa
 import TitanCore
+import RxSwift
 
 class ConnectionDetailController: BaseViewController {
 
@@ -40,18 +41,36 @@ class ConnectionDetailController: BaseViewController {
     fileprivate func binding() {
         
         // Update layout if select database
-        self.viewModel.output.selectedDatabaseVariable.asObservable()
-            .subscribe(onNext: {[weak self] (databaseObj) in
-                guard let `self` = self else {return}
-                guard let databaseObj = databaseObj else {return}
-                
-                // Update layout
-                self.updateLayout(with: databaseObj)
-            })
-            .addDisposableTo(self.disposeBase)
+        self.viewModel.output.selectedDatabaseVariable
+        .asObservable()
+        .subscribe(onNext: {[weak self] (databaseObj) in
+            guard let `self` = self else {return}
+            guard let databaseObj = databaseObj else {return}
+            
+            // Update layout
+            self.updateLayout(with: databaseObj)
+        })
+        .addDisposableTo(self.disposeBase)
+        
         
         // Connect database
-        self.connectionBtn.rx.tap.bind(to: self.viewModel.input.connectDatabasePublisher)
+        self.connectionBtn.rx.tap
+        .bind(to: self.viewModel.input.connectDatabasePublisher)
+        .addDisposableTo(self.disposeBase)
+        
+        
+        // Data
+        let nickOb = self.nicknameTxt.rx.text.asObservable()
+        let hostOb = self.hostNameTxt.rx.text.asObservable()
+        let usernameOb = self.usernameTxt.rx.text.asObservable()
+        let passwordOb = self.passwordTxt.rx.text.asObservable()
+        let databaseOb = self.databaseTxt.rx.text.asObservable()
+        
+        Observable.combineLatest([nickOb, hostOb, databaseOb, usernameOb, passwordOb])
+        .map { texts -> DatabaseData in
+            return DatabaseData(nickName: texts[0], hostName: texts[1], databaseName: texts[2], username: texts[3], password: texts[4])
+        }
+        .bind(to: self.viewModel.input.databaseDataPublisher)
         .addDisposableTo(self.disposeBase)
     }
 }

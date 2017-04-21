@@ -8,12 +8,16 @@
 
 import Cocoa
 
-class GridDatabaseView: NSView {
+open class GridDatabaseView: NSView {
 
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
+    //
+    // MARK: - OUTLET
+    @IBOutlet weak var tableView: TitanTableView!
+    @IBOutlet weak var containerStatusBarView: NSView!
+}
 
-        // Drawing code here.
-    }
-    
+//
+// MARK: - XIBInitializable
+extension GridDatabaseView: XIBInitializable {
+    public typealias T = GridDatabaseView
 }

@@ -33,7 +33,7 @@ class SelectedTableInCurrentTabWorker: SyncWorker {
     func execute() {
         
         // If no selection -> add to stack
-        if MainStore.globalStore.detailDatabaseStore.stackTables.count == 0 {
+        if MainStore.globalStore.detailDatabaseStore.stackTables.value.count == 0 {
             let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
             MainStore.dispatch(addStackAction)
         }

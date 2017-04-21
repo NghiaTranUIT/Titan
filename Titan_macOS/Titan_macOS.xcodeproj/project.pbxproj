@@ -35,6 +35,7 @@
 		BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */; };
 		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
 		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
+		BAA228181EA9C256009B3B41 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA228171EA9C256009B3B41 /* SnapKit.framework */; };
 		BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */; };
 		BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */; };
 		BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */; };
@@ -83,6 +84,7 @@
 		BA8756321E923BEF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyPostgreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA87566B1E924B8400FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA228171EA9C256009B3B41 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 		BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListContainerController.swift; sourceTree = "<group>"; };
 		BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA228181EA9C256009B3B41 /* SnapKit.framework in Frameworks */,
 				BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */,
 				BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */,
 				BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */,
@@ -239,6 +242,7 @@
 		BA8756381E923C0500FCDFB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAA228171EA9C256009B3B41 /* SnapKit.framework */,
 				BA2B4EA21E9F72F700468572 /* XCTest.framework */,
 				BA2B4E931E9F71D300468572 /* Alamofire.framework */,
 				BA2B4E941E9F71D300468572 /* ObjectMapper.framework */,
@@ -523,6 +527,7 @@
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxCocoa.framework",
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxSwift.framework",
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SnapKit.framework",
 			);
 			outputPaths = (
 			);
@@ -675,6 +680,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -697,6 +703,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

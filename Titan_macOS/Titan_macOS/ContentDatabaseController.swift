@@ -8,9 +8,16 @@
 
 import Cocoa
 import TitanCore
+import SnapKit
 
 class ContentDatabaseController: BaseViewController {
 
+    //
+    // MARK: - OUTLET
+    @IBOutlet weak var containerStackView: NSView!
+    @IBOutlet weak var containerGridView: NSView!
+    
+    
     //
     // MARK: - Variable
     fileprivate var viewModel: ContentDatabaseViewModel!
@@ -47,7 +54,18 @@ extension ContentDatabaseController {
     fileprivate func binding() {
         
         // Reload
-        self.viewModel.output.reloadDatabaseContentDriver.drive(onNext: { _ in
+        self.viewModel.output.selectedGridTableChangedDriver.drive(onNext: { gridView in
+            
+            // Remove all
+            for view in self.viewModel.output.gridDatabaseViewVariable.value {
+                view.removeFromSuperview()
+            }
+            
+            // Add 
+            guard let gridView = gridView else {return}
+            gridView.snp.makeConstraints({ (make) in
+                make.edges.equalTo(self.containerGridView)
+            })
             
         }).addDisposableTo(self.disposeBase)
     }

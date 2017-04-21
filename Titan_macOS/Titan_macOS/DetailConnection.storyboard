@@ -218,6 +218,10 @@
                             <constraint firstAttribute="trailing" secondItem="nDn-gH-FNl" secondAttribute="trailing" id="t69-8V-cYy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerGridView" destination="EhF-Rt-nBU" id="RRP-oG-exd"/>
+                        <outlet property="containerStackView" destination="nDn-gH-FNl" id="zby-BW-vOD"/>
+                    </connections>
                 </viewController>
                 <customObject id="Bs0-K9-6Y2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

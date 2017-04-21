@@ -71,6 +71,8 @@
 		BA8757331E934E8600FCDFB1 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8757321E934E8600FCDFB1 /* UserDefaults+Keys.swift */; };
 		BA8757361E934FC100FCDFB1 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8757351E934FC100FCDFB1 /* FontManager.swift */; };
 		BA8757381E9351D500FCDFB1 /* CommonDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8757371E9351D500FCDFB1 /* CommonDataSourceProtocol.swift */; };
+		BAA228141EA9B3E2009B3B41 /* Variable+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA228131EA9B3E2009B3B41 /* Variable+Helper.swift */; };
+		BAA228161EA9B8BB009B3B41 /* GridDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */; };
 		BAAE23CC1E9DDC780071C794 /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23CB1E9DDC780071C794 /* NSView+BackgroundColor.swift */; };
 		BAAE23D21E9DE36F0071C794 /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */; };
 		BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23D31E9DEA850071C794 /* BaseCollectionViewDataSource.swift */; };
@@ -164,6 +166,8 @@
 		BA8757321E934E8600FCDFB1 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		BA8757351E934FC100FCDFB1 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		BA8757371E9351D500FCDFB1 /* CommonDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataSourceProtocol.swift; sourceTree = "<group>"; };
+		BAA228131EA9B3E2009B3B41 /* Variable+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Variable+Helper.swift"; sourceTree = "<group>"; };
+		BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridDatabaseViewModel.swift; sourceTree = "<group>"; };
 		BAAE23CB1E9DDC780071C794 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		BAAE23D31E9DEA850071C794 /* BaseCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 				BADDF7321E94F36700F35FF3 /* ConnectionDetailViewModel.swift */,
 				BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */,
 				BA4FBC0B1EA8FE8400A067E9 /* ContentDatabaseViewModel.swift */,
+				BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */,
 			);
 			name = "View model";
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				BAAE23E31E9DFFD80071C794 /* NSView+Xib.swift */,
 				BAAE23E51E9DFFF20071C794 /* View+Identity.swift */,
 				BA776E791EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift */,
+				BAA228131EA9B3E2009B3B41 /* Variable+Helper.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 				BA8756FD1E93463000FCDFB1 /* BaseTableViewDataSource.swift in Sources */,
 				BADDF7411E94F9D400F35FF3 /* ConnectionStore.swift in Sources */,
 				BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */,
+				BAA228161EA9B8BB009B3B41 /* GridDatabaseViewModel.swift in Sources */,
 				BA8757381E9351D500FCDFB1 /* CommonDataSourceProtocol.swift in Sources */,
 				BA8757071E93477500FCDFB1 /* BaseModel+Mapping.swift in Sources */,
 				BA8757331E934E8600FCDFB1 /* UserDefaults+Keys.swift in Sources */,
@@ -774,6 +781,7 @@
 				BAAE23E41E9DFFD80071C794 /* NSView+Xib.swift in Sources */,
 				BAAE23D91E9DEC390071C794 /* BaseCollectionViewDataSourceProtocol.swift in Sources */,
 				BADDF7311E94F35500F35FF3 /* ConnectionListViewModel.swift in Sources */,
+				BAA228141EA9B3E2009B3B41 /* Variable+Helper.swift in Sources */,
 				BA4FBC171EA9032800A067E9 /* TitanTableView.swift in Sources */,
 				BA18022D1E9C8FF200096445 /* BaseWindowController.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,

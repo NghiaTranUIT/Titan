@@ -24,7 +24,8 @@ public protocol ContentDatabaseViewModelInput {
 }
 
 public protocol ContentDatabaseViewModelOutput {
-    var reloadDatabaseContentDriver: Driver<Table?>! {get}
+    var selectedGridTableChangedDriver: Driver<GridDatabaseView?>! {get}
+    var gridDatabaseViewVariable: Variable<[GridDatabaseView]> {get}
 }
 
 //
@@ -41,7 +42,10 @@ open class ContentDatabaseViewModel: BaseViewModel, ContentDatabaseViewModelType
     
     //
     // MARK: - Output
-    public var reloadDatabaseContentDriver: Driver<Table?>!
+    public var selectedGridTableChangedDriver: Driver<GridDatabaseView?>!
+    public var gridDatabaseViewVariable: Variable<[GridDatabaseView]> {
+        return MainStore.globalStore.detailDatabaseStore.gridDatabaseViews
+    }
     
     //
     // MARK: - Init
@@ -54,6 +58,6 @@ open class ContentDatabaseViewModel: BaseViewModel, ContentDatabaseViewModelType
     fileprivate func binding() {
         
         // Fetch data from selected
-        self.reloadDatabaseContentDriver = MainStore.globalStore.detailDatabaseStore.selectedTable.asDriver()
+        self.selectedGridTableChangedDriver = MainStore.globalStore.detailDatabaseStore.selectedGridDatabaseView.asDriver(onErrorJustReturn: nil)
     }
 }

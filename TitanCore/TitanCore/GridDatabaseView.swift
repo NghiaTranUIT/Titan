@@ -22,6 +22,8 @@ open class GridDatabaseView: NSView {
     public var table: Table! {didSet{
         self.initViewModel()
         self.binding()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         }}
     fileprivate var viewModel: GridDatabaseViewModel!
     fileprivate var disposeBag = DisposeBag()
@@ -47,8 +49,7 @@ open class GridDatabaseView: NSView {
 extension GridDatabaseView {
     
     fileprivate func initCommon() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        
     }
     
     fileprivate func initViewModel() {
@@ -117,11 +118,11 @@ extension GridDatabaseView {
 // MARK: - NSTableViewDataSource
 extension GridDatabaseView: NSTableViewDataSource {
     
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.rows.count
+    public func numberOfRows(in tableView: NSTableView) -> Int {
+        return self.viewModel.queryResult.value.rows.count
     }
     
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
         
         let tableCellType = tableColumn.tableViewCellType
@@ -135,7 +136,7 @@ extension GridDatabaseView: NSTableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+    public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         var rowView = tableView.make(withIdentifier: ContentRowView.identifierView, owner: self) as? ContentRowView
         
         if rowView == nil {
@@ -146,7 +147,7 @@ extension GridDatabaseView: NSTableViewDataSource {
         return rowView
     }
     
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    public func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 17
     }
     
@@ -168,7 +169,7 @@ extension GridDatabaseView: NSTableViewDataSource {
         
         // Configure
         let col = tableColumn.column!
-        let field = self.field(at: col, row: row)
+        let field = self.viewModel.field(at: col, row: row)
         cell!.configureCell(with: field, column: col)
         return cell!
     }
@@ -177,11 +178,11 @@ extension GridDatabaseView: NSTableViewDataSource {
 //
 // MARK: - NSTableViewDelegate
 extension GridDatabaseView: NSTableViewDelegate {
-    func tableViewSelectionDidChange(_ notification: Notification) {
+    public func tableViewSelectionDidChange(_ notification: Notification) {
         
         // Update status bar
         let set = self.tableView.selectedRowIndexes
-        self.delegate?.DatabaseContentDidSelectionChanged(set, rowAffect: self.numberRowEffect)
+//        self.delegate?.DatabaseContentDidSelectionChanged(set, rowAffect: self.numberRowEffect)
     }
 }
 

@@ -71,4 +71,10 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
         .bind(to: self.queryResult)
         .addDisposableTo(self.disposeBag)
     }
+    
+    public func field(at col: Column, row: Int) -> Field {
+        let row = self.queryResult.value.rows[row]
+        let field = row.field(with: col)!
+        return field
+    }
 }

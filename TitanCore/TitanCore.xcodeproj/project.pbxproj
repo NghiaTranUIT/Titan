@@ -90,6 +90,11 @@
 		BABCE0611EAE053500A2D08A /* QueryPostgreSQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */; };
 		BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */; };
 		BABCE0651EAE08EB00A2D08A /* TitanTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */; };
+		BABCE06B1EAE0A9E00A2D08A /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0671EAE0A9E00A2D08A /* BaseTableCellView.swift */; };
+		BABCE06C1EAE0A9E00A2D08A /* BoolCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0681EAE0A9E00A2D08A /* BoolCellView.swift */; };
+		BABCE06D1EAE0A9E00A2D08A /* TextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */; };
+		BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */; };
+		BABCE0701EAE0C4F00A2D08A /* ContentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -191,6 +196,11 @@
 		BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLOperation.swift; sourceTree = "<group>"; };
 		BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLWorker.swift; sourceTree = "<group>"; };
 		BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableColumn.swift; sourceTree = "<group>"; };
+		BABCE0671EAE0A9E00A2D08A /* BaseTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableCellView.swift; sourceTree = "<group>"; };
+		BABCE0681EAE0A9E00A2D08A /* BoolCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolCellView.swift; sourceTree = "<group>"; };
+		BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCellView.swift; sourceTree = "<group>"; };
+		BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCellView.xib; sourceTree = "<group>"; };
+		BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRowView.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -320,6 +330,7 @@
 		BA4FBC151EA9031500A067E9 /* TitanTableView */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE0661EAE0A6B00A2D08A /* Views */,
 				BA4FBC161EA9032800A067E9 /* TitanTableView.swift */,
 				BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */,
 			);
@@ -580,6 +591,18 @@
 			name = "Flow Layer";
 			sourceTree = "<group>";
 		};
+		BABCE0661EAE0A6B00A2D08A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BABCE0671EAE0A9E00A2D08A /* BaseTableCellView.swift */,
+				BABCE0681EAE0A9E00A2D08A /* BoolCellView.swift */,
+				BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */,
+				BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */,
+				BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BADDF7281E94F2BE00F35FF3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +726,7 @@
 			files = (
 				BA18023D1E9C94E400096445 /* DefaultQuotation.json in Resources */,
 				BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */,
+				BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */,
 				BA4FBC141EA902D800A067E9 /* GridDatabaseView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BABCE06C1EAE0A9E00A2D08A /* BoolCellView.swift in Sources */,
 				BADDF7331E94F36700F35FF3 /* ConnectionDetailViewModel.swift in Sources */,
 				BA18022B1E9C8C5800096445 /* SelectConnectionWorker.swift in Sources */,
 				BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */,
@@ -788,8 +813,11 @@
 				BA8756FD1E93463000FCDFB1 /* BaseTableViewDataSource.swift in Sources */,
 				BADDF7411E94F9D400F35FF3 /* ConnectionStore.swift in Sources */,
 				BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */,
+				BABCE0701EAE0C4F00A2D08A /* ContentRowView.swift in Sources */,
+				BABCE06D1EAE0A9E00A2D08A /* TextFieldCellView.swift in Sources */,
 				BAA228161EA9B8BB009B3B41 /* GridDatabaseViewModel.swift in Sources */,
 				BA8757381E9351D500FCDFB1 /* CommonDataSourceProtocol.swift in Sources */,
+				BABCE06B1EAE0A9E00A2D08A /* BaseTableCellView.swift in Sources */,
 				BABCE0611EAE053500A2D08A /* QueryPostgreSQLOperation.swift in Sources */,
 				BA8757071E93477500FCDFB1 /* BaseModel+Mapping.swift in Sources */,
 				BA8757331E934E8600FCDFB1 /* UserDefaults+Keys.swift in Sources */,

@@ -9,11 +9,11 @@
 import Foundation
 import SwiftyPostgreSQL
 
-class PostgreQuery {
+open class PostgreQuery {
     
     //
     // MARK: - Variable
-    var rawQuery: Query!
+    public private(set) var rawQuery: Query!
     
     //
     // MARK: - Initializer

@@ -89,6 +89,7 @@
 		BABCE05F1EAE04D800A2D08A /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE05E1EAE04D800A2D08A /* Pagination.swift */; };
 		BABCE0611EAE053500A2D08A /* QueryPostgreSQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */; };
 		BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */; };
+		BABCE0651EAE08EB00A2D08A /* TitanTableColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -189,6 +190,7 @@
 		BABCE05E1EAE04D800A2D08A /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLOperation.swift; sourceTree = "<group>"; };
 		BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLWorker.swift; sourceTree = "<group>"; };
+		BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableColumn.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4FBC161EA9032800A067E9 /* TitanTableView.swift */,
+				BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */,
 			);
 			name = TitanTableView;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */,
 				BAAE23EA1E9E00620071C794 /* NSCollectionView+Register.swift in Sources */,
 				BA179F511EA3A63200720760 /* ActivityIndicator.swift in Sources */,
+				BABCE0651EAE08EB00A2D08A /* TitanTableColumn.swift in Sources */,
 				BA87571F1E93489700FCDFB1 /* QueryObj.swift in Sources */,
 				BA87570A1E9347BE00FCDFB1 /* Logger.swift in Sources */,
 				BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */,

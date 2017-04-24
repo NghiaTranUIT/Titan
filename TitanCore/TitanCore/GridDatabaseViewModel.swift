@@ -47,6 +47,7 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     // MARK: - Variable
     fileprivate var table: Table!
     fileprivate var pagination = Pagination()
+    public private(set) var query: PostgreQuery!
     
     //
     // MARK: - Init
@@ -63,8 +64,8 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
         // Fetch default query
         self.fetchDatabaseFromTablePublisher.flatMap { _ -> Observable<QueryResult> in
             // Default query
-            let query = PostgreQuery.buildDefaultQuery(with: self.table, pagination: self.pagination)
-            let worker = QueryPostgreSQLWorker(query: query)
+            self.query = PostgreQuery.buildDefaultQuery(with: self.table, pagination: self.pagination)
+            let worker = QueryPostgreSQLWorker(query: self.query)
             return worker.observable()
         }
         .bind(to: self.queryResult)

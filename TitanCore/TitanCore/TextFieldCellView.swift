@@ -10,32 +10,32 @@ import Cocoa
 import SwiftyPostgreSQL
 import SnapKit
 
-class TextFieldCellView: BaseTableCellView {
+open class TextFieldCellView: BaseTableCellView {
 
     //
     // MARK: - Init
-    required init(frame frameRect: NSRect) {
+    required public init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
         // Setup layout
         self.setupLayout()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         // Setup layout
         self.setupLayout()
     }
     
-    override func becomeFirstResponder() -> Bool {
+    override open func becomeFirstResponder() -> Bool {
         self.textField?.becomeFirstResponder()
         return super.becomeFirstResponder()
     }
     
     //
     // MARK: - Public
-    func configureCell(with field: Field, column: Column) {
+    public func configureCell(with field: Field, column: Column) {
         
         guard let textField = self.textField else {return}
         

@@ -19,15 +19,11 @@
 		BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E941E9F71D300468572 /* ObjectMapper.framework */; };
 		BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E951E9F71D300468572 /* Realm.framework */; };
 		BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E961E9F71D300468572 /* RealmSwift.framework */; };
-		BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E971E9F71D300468572 /* SnapKit.framework */; };
 		BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */; };
 		BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */; };
 		BA4B9DB11EA8AE5F00210DD6 /* TableListDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */; };
-		BA4B9DB51EA8BB0500210DD6 /* TableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB41EA8BB0500210DD6 /* TableRowCell.swift */; };
-		BA4B9DB71EA8BB3F00210DD6 /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */; };
 		BA4B9DBA1EA8BBFF00210DD6 /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */; };
 		BA4B9DBC1EA8BC1F00210DD6 /* PlaceholderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */; };
-		BA4B9DBE1EA8BECE00210DD6 /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */; };
 		BA776E7D1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */; };
 		BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */; };
 		BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */; };
@@ -69,11 +65,8 @@
 		BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		BA2B4EA21E9F72F700468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseSource.swift; sourceTree = "<group>"; };
-		BA4B9DB41EA8BB0500210DD6 /* TableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowCell.swift; sourceTree = "<group>"; };
-		BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
 		BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
 		BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderCell.xib; sourceTree = "<group>"; };
-		BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseContainerController.swift; sourceTree = "<group>"; };
 		BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseSplitController.swift; sourceTree = "<group>"; };
 		BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseController.swift; sourceTree = "<group>"; };
@@ -109,7 +102,6 @@
 				BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */,
 				BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */,
 				BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */,
-				BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */,
 				BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */,
 				BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */,
 				BA2B4E8F1E9F71D300468572 /* RxBlocking.framework in Frameworks */,
@@ -153,16 +145,6 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
-		BA4B9DB31EA8BAE600210DD6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BA4B9DB41EA8BB0500210DD6 /* TableRowCell.swift */,
-				BA4B9DB61EA8BB3F00210DD6 /* TableRowCell.xib */,
-				BA4B9DBD1EA8BECE00210DD6 /* TableRowView.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		BA4B9DB81EA8BBF100210DD6 /* Placeholder Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +180,6 @@
 		BA776E811EA71AF200DB7857 /* Table List */ = {
 			isa = PBXGroup;
 			children = (
-				BA4B9DB31EA8BAE600210DD6 /* Views */,
 				BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */,
 				BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */,
 			);
@@ -501,7 +482,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1802321E9C935800096445 /* DetailConnection.storyboard in Resources */,
-				BA4B9DB71EA8BB3F00210DD6 /* TableRowCell.xib in Resources */,
 				BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */,
 				BA4B9DBC1EA8BC1F00210DD6 /* PlaceholderCell.xib in Resources */,
 				BAAE23EE1E9E0E490071C794 /* ConnectionGroupCell.xib in Resources */,
@@ -529,7 +509,6 @@
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxCocoa.framework",
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/RxSwift.framework",
 				"$(SRCROOT)/../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/SnapKit.framework",
 			);
 			outputPaths = (
 			);
@@ -548,11 +527,9 @@
 				BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */,
 				BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */,
 				BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */,
-				BA4B9DBE1EA8BECE00210DD6 /* TableRowView.swift in Sources */,
 				BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */,
 				BA4B9DB11EA8AE5F00210DD6 /* TableListDatabaseSource.swift in Sources */,
 				BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */,
-				BA4B9DB51EA8BB0500210DD6 /* TableRowCell.swift in Sources */,
 				BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */,
 				BADDF7261E94F2A300F35FF3 /* ConnectionDetailController.swift in Sources */,
 				BA4B9DBA1EA8BBFF00210DD6 /* PlaceholderCell.swift in Sources */,
@@ -682,7 +659,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -705,7 +681,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../TitanCore/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = Titan_macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

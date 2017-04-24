@@ -95,6 +95,11 @@
 		BABCE06D1EAE0A9E00A2D08A /* TextFieldCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */; };
 		BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */; };
 		BABCE0701EAE0C4F00A2D08A /* ContentRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */; };
+		BABCE0721EAE115100A2D08A /* TableSchemeContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0711EAE115100A2D08A /* TableSchemeContextMenuView.swift */; };
+		BABCE0741EAE119400A2D08A /* TableSchemeContextMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0731EAE119400A2D08A /* TableSchemeContextMenuView.xib */; };
+		BABCE0791EAE122700A2D08A /* TableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0761EAE122700A2D08A /* TableRowCell.swift */; };
+		BABCE07A1EAE122700A2D08A /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0771EAE122700A2D08A /* TableRowCell.xib */; };
+		BABCE07B1EAE122700A2D08A /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0781EAE122700A2D08A /* TableRowView.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -201,6 +206,11 @@
 		BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCellView.swift; sourceTree = "<group>"; };
 		BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCellView.xib; sourceTree = "<group>"; };
 		BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentRowView.swift; sourceTree = "<group>"; };
+		BABCE0711EAE115100A2D08A /* TableSchemeContextMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSchemeContextMenuView.swift; sourceTree = "<group>"; };
+		BABCE0731EAE119400A2D08A /* TableSchemeContextMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSchemeContextMenuView.xib; sourceTree = "<group>"; };
+		BABCE0761EAE122700A2D08A /* TableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowCell.swift; sourceTree = "<group>"; };
+		BABCE0771EAE122700A2D08A /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
+		BABCE0781EAE122700A2D08A /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -330,9 +340,11 @@
 		BA4FBC151EA9031500A067E9 /* TitanTableView */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE0751EAE119700A2D08A /* Menu context */,
 				BABCE0661EAE0A6B00A2D08A /* Views */,
 				BA4FBC161EA9032800A067E9 /* TitanTableView.swift */,
 				BABCE0641EAE08EB00A2D08A /* TitanTableColumn.swift */,
+				BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */,
 			);
 			name = TitanTableView;
 			sourceTree = "<group>";
@@ -594,13 +606,24 @@
 		BABCE0661EAE0A6B00A2D08A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE0761EAE122700A2D08A /* TableRowCell.swift */,
+				BABCE0771EAE122700A2D08A /* TableRowCell.xib */,
+				BABCE0781EAE122700A2D08A /* TableRowView.swift */,
 				BABCE0671EAE0A9E00A2D08A /* BaseTableCellView.swift */,
 				BABCE0681EAE0A9E00A2D08A /* BoolCellView.swift */,
 				BABCE0691EAE0A9E00A2D08A /* TextFieldCellView.swift */,
 				BABCE06A1EAE0A9E00A2D08A /* TextFieldCellView.xib */,
-				BABCE06F1EAE0C4F00A2D08A /* ContentRowView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BABCE0751EAE119700A2D08A /* Menu context */ = {
+			isa = PBXGroup;
+			children = (
+				BABCE0711EAE115100A2D08A /* TableSchemeContextMenuView.swift */,
+				BABCE0731EAE119400A2D08A /* TableSchemeContextMenuView.xib */,
+			);
+			name = "Menu context";
 			sourceTree = "<group>";
 		};
 		BADDF7281E94F2BE00F35FF3 /* Base */ = {
@@ -725,6 +748,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA18023D1E9C94E400096445 /* DefaultQuotation.json in Resources */,
+				BABCE07A1EAE122700A2D08A /* TableRowCell.xib in Resources */,
+				BABCE0741EAE119400A2D08A /* TableSchemeContextMenuView.xib in Resources */,
 				BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */,
 				BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */,
 				BA4FBC141EA902D800A067E9 /* GridDatabaseView.xib in Resources */,
@@ -835,11 +860,14 @@
 				BA4FBC171EA9032800A067E9 /* TitanTableView.swift in Sources */,
 				BA18022D1E9C8FF200096445 /* BaseWindowController.swift in Sources */,
 				BABCE05D1EAE04B100A2D08A /* PostgreQuery.swift in Sources */,
+				BABCE0791EAE122700A2D08A /* TableRowCell.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,
 				BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */,
+				BABCE07B1EAE122700A2D08A /* TableRowView.swift in Sources */,
 				BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */,
 				BAAE23CC1E9DDC780071C794 /* NSView+BackgroundColor.swift in Sources */,
 				BA4B9DA71EA89B6D00210DD6 /* UpdateDatabaseTempWorker.swift in Sources */,
+				BABCE0721EAE115100A2D08A /* TableSchemeContextMenuView.swift in Sources */,
 				BADDF7451E94FAFA00F35FF3 /* ReduxStore.swift in Sources */,
 				BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */,
 				BA8757041E93474400FCDFB1 /* Constants.swift in Sources */,

@@ -9,7 +9,7 @@
 import Cocoa
 import SwiftyPostgreSQL
 
-protocol ContextMenuTableViewDelegate: class {
+public protocol ContextMenuTableViewDelegate: class {
     
     // Provide custom Context Menu View
     func customContexMenuView(for event: NSEvent) -> NSMenu?
@@ -21,7 +21,7 @@ open class TitanTableView: NSTableView {
     
     //
     // MARK: - Variable
-    weak var contextMenuDelegate: ContextMenuTableViewDelegate?
+    public weak var contextMenuDelegate: ContextMenuTableViewDelegate?
     
     //
     // MARK: - View Cycle

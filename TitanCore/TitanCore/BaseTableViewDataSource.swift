@@ -13,11 +13,11 @@ open class BaseTableViewDataSource: NSObject {
     //
     // MARK: - Variable
     public weak var delegate: BaseTableViewDataSourceProtocol?
-    public private(set) var tableView: NSTableView!
+    public private(set) var tableView: TitanTableView!
     
     //
     // MARK: - Initialization
-    public init(tableView: NSTableView) {
+    public init(tableView: TitanTableView) {
         super.init()
         
         self.tableView = tableView

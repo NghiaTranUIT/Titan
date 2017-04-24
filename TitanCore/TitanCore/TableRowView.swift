@@ -8,21 +8,15 @@
 
 import Cocoa
 
-class TableRowView: NSTableRowView {
+open class TableRowView: NSTableRowView {
     
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         self.canDrawSubviewsIntoLayer = true
     }
     
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-        
-        // Drawing code here.
-    }
-    
-    override func drawSelection(in dirtyRect: NSRect) {
+    override open func drawSelection(in dirtyRect: NSRect) {
         super.drawSelection(in: dirtyRect)
         
         NSColor(hexString: "#F4F5F9").setFill()

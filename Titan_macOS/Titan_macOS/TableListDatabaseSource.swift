@@ -13,8 +13,12 @@ import SwiftyPostgreSQL
 class TableListDatabaseSource: BaseTableViewDataSource {
     
     //
+    // MARK: - Variable
+    fileprivate lazy var rightMenuContextView: TableSchemeContextMenuView = self.initMenuContextView()
+    
+    //
     // MARK: - Init
-    override init(tableView: NSTableView) {
+    override init(tableView: TitanTableView) {
         super.init(tableView: tableView)
         
         self.initTableView()
@@ -52,15 +56,26 @@ extension TableListDatabaseSource {
     fileprivate func initTableView() {
         
         // Register
-        self.tableView.registerView(TableRowCell.self)
+        self.tableView.registerView(TableRowCell.self, bundleType: BundleType.core)
         self.tableView.registerView(PlaceholderCell.self)
         
         // Make col alwasy fit tableView's width
         self.tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
         self.tableView.sizeLastColumnToFit()
         
+        // Context menu
+        self.tableView.contextMenuDelegate = self
+        
         // Reload
         self.tableView.reloadData()
+    }
+    
+    // Menu context
+    fileprivate func initMenuContextView() -> TableSchemeContextMenuView {
+        let contextView = TableSchemeContextMenuView.viewFromNib(with: .core)!
+        contextView.contextDelegate = self
+        contextView.delegate = self
+        return contextView
     }
     
     fileprivate func placeholderCell(with tableView: NSTableView, row: Int) -> PlaceholderCell {
@@ -76,5 +91,45 @@ extension TableListDatabaseSource {
         cell.configureCell(with: table)
         
         return cell
+    }
+}
+
+//
+// MARK: - TableSchemeContextMenuViewDelegate
+extension TableListDatabaseSource: TableSchemeContextMenuViewDelegate {
+    
+    func TableSchemeContextMenuViewDidTapAction(_ action: TableSchemmaContextAction, table: Table) {
+        
+    }
+}
+
+
+extension TableListDatabaseSource: NSMenuDelegate {
+    func menuDidClose(_ menu: NSMenu) {
+        guard let menu = menu as? TableSchemeContextMenuView else {return}
+        
+        // Reset state
+        menu.selectedRow?.updateRightClickState(isHover: false)
+    }
+}
+
+
+//
+// MARK: - ContextMenuTableViewDelegate
+extension TableListDatabaseSource: ContextMenuTableViewDelegate {
+    
+    func customContexMenuView(for event: NSEvent) -> NSMenu? {
+        
+        let pt = self.tableView.convert(event.locationInWindow, from: nil)
+        let selectedRowIndex = self.tableView.row(at: pt)
+        guard selectedRowIndex >= 0 else {return nil}
+        guard let selectedRow = self.tableView.rowView(atRow: selectedRowIndex, makeIfNecessary: true)?
+            .view(atColumn: 0) as? TableRowCell else {return nil}
+        
+        // Update
+        selectedRow.updateRightClickState()
+        let seletedTable = self.delegate!.CommonDataSourceItem(at: IndexPath(item: selectedRowIndex, section: 0)) as! Table
+        self.rightMenuContextView.configureContextView(with: seletedTable, selectedRow: selectedRow)
+        return self.rightMenuContextView
     }
 }

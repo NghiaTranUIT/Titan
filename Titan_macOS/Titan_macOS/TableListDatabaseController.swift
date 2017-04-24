@@ -14,7 +14,7 @@ class TableListDatabaseController: BaseViewController {
 
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: TitanTableView!
     
     
     //

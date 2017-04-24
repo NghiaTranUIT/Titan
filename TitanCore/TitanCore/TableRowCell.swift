@@ -7,14 +7,17 @@
 //
 
 import Cocoa
-import TitanCore
 import SwiftyPostgreSQL
 
-class TableRowCell: NSTableCellView {
+open class TableRowCell: NSTableCellView {
 
     //
     // MARK: - Variable
     var table: Table?
+    
+    public static var bundleType: BundleType {
+        return .core
+    }
     
     //
     // MARK: - OUTLET
@@ -23,7 +26,7 @@ class TableRowCell: NSTableCellView {
     
     //
     // MARK: - View Cycle
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
     }
     
@@ -32,7 +35,7 @@ class TableRowCell: NSTableCellView {
         self.layer?.cornerRadius = 5
     }
     
-    override var backgroundStyle: NSBackgroundStyle {
+    override open var backgroundStyle: NSBackgroundStyle {
         didSet {
             if self.backgroundStyle == .light {
                 self.tableImageView.image = NSImage(named: "icon_column_table")
@@ -47,12 +50,12 @@ class TableRowCell: NSTableCellView {
     
     //
     // MARK: - Public
-    func configureCell(with table: Table) {
+    public func configureCell(with table: Table) {
         self.table = table
         self.setupData()
     }
     
-    func updateRightClickState(isHover: Bool = true) {
+    public func updateRightClickState(isHover: Bool = true) {
         self.layer?.borderWidth = isHover ? 1 : 0
     }
 }

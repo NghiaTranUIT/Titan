@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class BoolCellView: BaseTableCellView {
+open class BoolCellView: BaseTableCellView {
 
     //
     // MARK: - OUTLEt
@@ -16,14 +16,14 @@ class BoolCellView: BaseTableCellView {
     
     //
     // MARK: - Init
-    required init(frame frameRect: NSRect) {
+    required public init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
         // Setup layout
         self.setupLayout()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         // Setup layout
@@ -32,7 +32,7 @@ class BoolCellView: BaseTableCellView {
     
     //
     // MARK: - Public
-    func configureCell() {
+    public func configureCell() {
         
     }
     

@@ -97,6 +97,6 @@ extension TableListDatabaseController: BaseTableViewDataSourceProtocol{
     
     // didSelect
     func CommonDataSourceDidSelectedRow(at indexPath: IndexPath) {
-        
+        self.viewModel.input.selectedTablePublisher.onNext(indexPath)
     }
 }

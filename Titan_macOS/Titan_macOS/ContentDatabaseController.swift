@@ -63,6 +63,7 @@ extension ContentDatabaseController {
             
             // Add 
             guard let gridView = gridView else {return}
+            self.containerGridView.addSubview(gridView)
             gridView.snp.makeConstraints({ (make) in
                 make.edges.equalTo(self.containerGridView)
             })

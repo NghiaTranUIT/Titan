@@ -78,5 +78,16 @@ extension BaseTableViewDataSource: NSTableViewDelegate {
         
         return delegate.CommonDataSourceHeight(for: row)
     }
-
+    
+    open func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        return true
+    }
+    
+    public func tableViewSelectionDidChange(_ notification: Notification) {
+        guard let delegate = self.delegate else {
+            return
+        }
+        
+        delegate.CommonDataSourceDidSelectedRow(at: IndexPath(item: self.tableView.selectedRow, section: 0  ))
+    }
 }

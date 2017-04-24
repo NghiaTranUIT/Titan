@@ -36,6 +36,7 @@
 		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
 		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
 		BAA228181EA9C256009B3B41 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA228171EA9C256009B3B41 /* SnapKit.framework */; };
+		BAA2281B1EA9C6E1009B3B41 /* TitanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA87566B1E924B8400FCDFB1 /* TitanCore.framework */; };
 		BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */; };
 		BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */; };
 		BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */; };
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA2281B1EA9C6E1009B3B41 /* TitanCore.framework in Frameworks */,
 				BAA228181EA9C256009B3B41 /* SnapKit.framework in Frameworks */,
 				BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */,
 				BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */,

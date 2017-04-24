@@ -73,6 +73,7 @@
 		BA8757381E9351D500FCDFB1 /* CommonDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8757371E9351D500FCDFB1 /* CommonDataSourceProtocol.swift */; };
 		BAA228141EA9B3E2009B3B41 /* Variable+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA228131EA9B3E2009B3B41 /* Variable+Helper.swift */; };
 		BAA228161EA9B8BB009B3B41 /* GridDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */; };
+		BAA2281A1EA9C6C9009B3B41 /* SwiftyPostgreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA228191EA9C6C9009B3B41 /* SwiftyPostgreSQL.framework */; };
 		BAAE23CC1E9DDC780071C794 /* NSView+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23CB1E9DDC780071C794 /* NSView+BackgroundColor.swift */; };
 		BAAE23D21E9DE36F0071C794 /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */; };
 		BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23D31E9DEA850071C794 /* BaseCollectionViewDataSource.swift */; };
@@ -168,6 +169,7 @@
 		BA8757371E9351D500FCDFB1 /* CommonDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonDataSourceProtocol.swift; sourceTree = "<group>"; };
 		BAA228131EA9B3E2009B3B41 /* Variable+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Variable+Helper.swift"; sourceTree = "<group>"; };
 		BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridDatabaseViewModel.swift; sourceTree = "<group>"; };
+		BAA228191EA9C6C9009B3B41 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyPostgreSQL.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Titan-workspace-frababoydyxcysbdftrvghcgxztn/Build/Products/Debug/SwiftyPostgreSQL.framework"; sourceTree = "<group>"; };
 		BAAE23CB1E9DDC780071C794 /* NSView+BackgroundColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+BackgroundColor.swift"; sourceTree = "<group>"; };
 		BAAE23D11E9DE36F0071C794 /* NSColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
 		BAAE23D31E9DEA850071C794 /* BaseCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA2281A1EA9C6C9009B3B41 /* SwiftyPostgreSQL.framework in Frameworks */,
 				BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */,
 				BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */,
 				BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */,
@@ -442,6 +445,7 @@
 		BA8756921E9255ED00FCDFB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAA228191EA9C6C9009B3B41 /* SwiftyPostgreSQL.framework */,
 				BA2B4EA41E9F731F00468572 /* XCTest.framework */,
 				BA22A2B41E9D356900C2CB93 /* UICKeyChainStore.framework */,
 				BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */,

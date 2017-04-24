@@ -18,7 +18,7 @@ open class GridDatabaseView: NSView {
     
     //
     // MARK: - Variable
-    public var table: Table!
+    public var table: Table! {didSet{self.initViewModel()}}
     fileprivate var viewModel: GridDatabaseViewModel!
     
     //
@@ -34,14 +34,7 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
-        self.initViewModel()
     }
-}
-
-//
-// MARK: - XIBInitializable
-extension GridDatabaseView: XIBInitializable {
-    public typealias T = GridDatabaseView
 }
 
 //
@@ -54,5 +47,20 @@ extension GridDatabaseView {
     
     fileprivate func initViewModel() {
         self.viewModel = GridDatabaseViewModel(with: self.table)
+    }
+    
+    class func viewFromNib() -> GridDatabaseView? {
+        
+        var topViews: NSArray = []
+        let xib = NSNib(nibNamed: "GridDatabaseView", bundle: Bundle(identifier: "com.fe.nghiatran.TitanCore"))
+        let _ = xib?.instantiate(withOwner: self, topLevelObjects: &topViews)
+        
+        for subView in topViews {
+            if let innerView = subView as? GridDatabaseView {
+                return innerView
+            }
+        }
+        
+        return nil
     }
 }

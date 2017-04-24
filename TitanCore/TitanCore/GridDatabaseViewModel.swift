@@ -9,6 +9,7 @@
 
 import Foundation
 import SwiftyPostgreSQL
+import RxSwift
 
 //
 // MARK: - Type
@@ -18,11 +19,11 @@ public protocol GridDatabaseViewModelType {
 }
 
 public protocol GridDatabaseViewModelInput {
-    
+    var fetchDatabaseFromTablePublisher: PublishSubject<Void> {get}
 }
 
 public protocol GridDatabaseViewModelOutput {
-    
+    var queryResult: Variable<QueryResult> {get}
 }
 
 //
@@ -36,13 +37,16 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     
     //
     // MARK: - Input
+    public var fetchDatabaseFromTablePublisher = PublishSubject<Void>()
     
     //
     // MARK: - Output
+    public var queryResult = Variable<QueryResult>(QueryResult(nil))
     
     //
     // MARK: - Variable
     fileprivate var table: Table!
+    fileprivate var pagination = Pagination()
     
     //
     // MARK: - Init
@@ -50,5 +54,20 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
         super.init()
         
         self.table = table
+        
+        self.binding()
+    }
+    
+    fileprivate func binding() {
+        
+        // Fetch default query
+        self.fetchDatabaseFromTablePublisher.flatMap { _ -> Observable<QueryResult> in
+            // Default query
+            let query = PostgreQuery.buildDefaultQuery(with: self.table, pagination: self.pagination)
+            let worker = QueryPostgreSQLWorker(query: query)
+            return worker.observable()
+        }
+        .bind(to: self.queryResult)
+        .addDisposableTo(self.disposeBag)
     }
 }

@@ -8,6 +8,7 @@
 
 import Cocoa
 import SwiftyPostgreSQL
+import RxSwift
 
 open class GridDatabaseView: NSView {
 
@@ -18,8 +19,12 @@ open class GridDatabaseView: NSView {
     
     //
     // MARK: - Variable
-    public var table: Table! {didSet{self.initViewModel()}}
+    public var table: Table! {didSet{
+        self.initViewModel()
+        self.binding()
+        }}
     fileprivate var viewModel: GridDatabaseViewModel!
+    fileprivate var disposeBag = DisposeBag()
     
     //
     // MARK: - Init
@@ -62,5 +67,31 @@ extension GridDatabaseView {
         }
         
         return nil
+    }
+    
+    fileprivate func binding() {
+        
+        // Fetch default query
+        self.viewModel.input.fetchDatabaseFromTablePublisher.onNext()
+        
+        // Reload if have new query Result
+        self.viewModel.output.queryResult.asDriver().drive(onNext: { _ in
+            self.tableView.reloadData()
+        }).addDisposableTo(self.disposeBag)
+        .addDisposableTo(self.dispo)
+    }
+}
+
+//
+// MARK: - Grid view
+extension GridDatabaseView {
+    
+    fileprivate func setupDataForTableView() {
+        
+        // Setup new columns
+        self.tableView.setupColumns(self.columns)
+        
+        // Enable save
+        self.autosaveColumnsWidth()
     }
 }

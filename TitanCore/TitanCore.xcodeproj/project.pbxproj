@@ -85,6 +85,10 @@
 		BAAE23EB1E9E00620071C794 /* NSTableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23E81E9E00620071C794 /* NSTableView+Register.swift */; };
 		BAAE23EC1E9E00620071C794 /* NSViewController+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23E91E9E00620071C794 /* NSViewController+Identifier.swift */; };
 		BAAE23F11E9E1D880071C794 /* AutosizeVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23F01E9E1D880071C794 /* AutosizeVerticalFlowLayout.swift */; };
+		BABCE05D1EAE04B100A2D08A /* PostgreQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE05C1EAE04B100A2D08A /* PostgreQuery.swift */; };
+		BABCE05F1EAE04D800A2D08A /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE05E1EAE04D800A2D08A /* Pagination.swift */; };
+		BABCE0611EAE053500A2D08A /* QueryPostgreSQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */; };
+		BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -181,6 +185,10 @@
 		BAAE23E81E9E00620071C794 /* NSTableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTableView+Register.swift"; sourceTree = "<group>"; };
 		BAAE23E91E9E00620071C794 /* NSViewController+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSViewController+Identifier.swift"; sourceTree = "<group>"; };
 		BAAE23F01E9E1D880071C794 /* AutosizeVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutosizeVerticalFlowLayout.swift; sourceTree = "<group>"; };
+		BABCE05C1EAE04B100A2D08A /* PostgreQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreQuery.swift; sourceTree = "<group>"; };
+		BABCE05E1EAE04D800A2D08A /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLOperation.swift; sourceTree = "<group>"; };
+		BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryPostgreSQLWorker.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 				BA4B9DAC1EA8A6BA00210DD6 /* FetchTableSchemaWorker.swift */,
 				BA4FBC071EA8CD5100A067E9 /* SelectedTableWorker.swift */,
 				BA4FBC091EA8D27800A067E9 /* OpenTableInNewTabWorker.swift */,
+				BABCE0621EAE05C900A2D08A /* QueryPostgreSQLWorker.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 				BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */,
 				BA776E701EA61B1100DB7857 /* ConnectPostgreOperation.swift */,
 				BA4B9DAE1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift */,
+				BABCE0601EAE053500A2D08A /* QueryPostgreSQLOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -438,6 +448,8 @@
 				BA8757191E93489700FCDFB1 /* SSHObj.swift */,
 				BA87571A1E93489700FCDFB1 /* SSLObj.swift */,
 				BA87571B1E93489700FCDFB1 /* ThemeObj.swift */,
+				BABCE05C1EAE04B100A2D08A /* PostgreQuery.swift */,
+				BABCE05E1EAE04D800A2D08A /* Pagination.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -727,6 +739,7 @@
 			files = (
 				BADDF7331E94F36700F35FF3 /* ConnectionDetailViewModel.swift in Sources */,
 				BA18022B1E9C8C5800096445 /* SelectConnectionWorker.swift in Sources */,
+				BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */,
 				BA776E7A1EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift in Sources */,
 				BA1802231E9C843600096445 /* Worker.swift in Sources */,
 				BA4FBC0A1EA8D27800A067E9 /* OpenTableInNewTabWorker.swift in Sources */,
@@ -773,6 +786,7 @@
 				BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */,
 				BAA228161EA9B8BB009B3B41 /* GridDatabaseViewModel.swift in Sources */,
 				BA8757381E9351D500FCDFB1 /* CommonDataSourceProtocol.swift in Sources */,
+				BABCE0611EAE053500A2D08A /* QueryPostgreSQLOperation.swift in Sources */,
 				BA8757071E93477500FCDFB1 /* BaseModel+Mapping.swift in Sources */,
 				BA8757331E934E8600FCDFB1 /* UserDefaults+Keys.swift in Sources */,
 				BA87571D1E93489700FCDFB1 /* GroupConnectionObj.swift in Sources */,
@@ -788,6 +802,7 @@
 				BAA228141EA9B3E2009B3B41 /* Variable+Helper.swift in Sources */,
 				BA4FBC171EA9032800A067E9 /* TitanTableView.swift in Sources */,
 				BA18022D1E9C8FF200096445 /* BaseWindowController.swift in Sources */,
+				BABCE05D1EAE04B100A2D08A /* PostgreQuery.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,
 				BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */,
 				BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */,
@@ -797,6 +812,7 @@
 				BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */,
 				BA8757041E93474400FCDFB1 /* Constants.swift in Sources */,
 				BA8757361E934FC100FCDFB1 /* FontManager.swift in Sources */,
+				BABCE05F1EAE04D800A2D08A /* Pagination.swift in Sources */,
 				BA8757281E934AF700FCDFB1 /* RealmKeys.swift in Sources */,
 				BAAE23EB1E9E00620071C794 /* NSTableView+Register.swift in Sources */,
 				BA4FBC0C1EA8FE8400A067E9 /* ContentDatabaseViewModel.swift in Sources */,

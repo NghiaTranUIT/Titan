@@ -76,7 +76,7 @@ extension ConnectionDetailViewModel {
             let action = SaveTempDatabaseToCurrentDatabaseAction()
             MainStore.dispatch(action)
         })
-        .flatMap { (_) -> Observable<Void> in
+        .flatMap {[unowned self] (_) -> Observable<Void> in
             return self.getConnectDatabaseWorker()
         }
         .subscribe(onNext: { (_) in

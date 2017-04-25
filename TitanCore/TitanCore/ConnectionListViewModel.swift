@@ -142,7 +142,7 @@ extension ConnectionListViewModel {
     fileprivate func fetchDatabaseWorker() -> Observable<Void> {
         let worker = FetchAllGroupConnectionsWorker()
         return worker.observable().trackActivity(self._isLoading)
-            .flatMap { (groups) -> Observable<Void> in
+            .flatMap {[unowned self] (groups) -> Observable<Void> in
                 
                 // Create default
                 if groups.count == 0 {

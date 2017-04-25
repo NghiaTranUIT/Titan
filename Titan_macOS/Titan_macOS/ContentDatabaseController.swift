@@ -54,7 +54,8 @@ extension ContentDatabaseController {
     fileprivate func binding() {
         
         // Reload
-        self.viewModel.output.selectedGridTableChangedDriver.drive(onNext: { gridView in
+        self.viewModel.output.selectedGridTableChangedDriver.drive(onNext: {[weak self] gridView in
+            guard let `self` = self else {return}
             
             // Add 
             guard let gridView = gridView else {return}

@@ -37,7 +37,7 @@ open class DetailDatabaseStore: ReduxStore {
         
         // Selected Grid
         self.selectedGridDatabaseView = self.selectedTable.asObservable()
-        .flatMap({ (views) -> Observable<GridDatabaseView?> in
+        .flatMap({[unowned self] (views) -> Observable<GridDatabaseView?> in
             guard let selected = self.selectedTable.value else {
                 return Observable<GridDatabaseView?>.just(nil)
             }

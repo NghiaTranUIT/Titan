@@ -73,7 +73,7 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
         .addDisposableTo(self.disposeBag)
         
         // Selected
-        self.selectedTablePublisher.map { (indexPath) -> Table in
+        self.selectedTablePublisher.map {[unowned self] (indexPath) -> Table in
             return self.tablesVariable.value[indexPath.item]
         }
         .do(onNext: { table in

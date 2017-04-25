@@ -25,6 +25,7 @@ public protocol TableListViewModelInput {
 public protocol TableListViewModelOutput {
     var tablesVariable: Variable<[Table]> {get}
     var reloadTableViewDriver: Driver<Void> {get}
+    var selectedTableDriver: Driver<Table?> {get}
 }
 
 //
@@ -48,6 +49,7 @@ open class TableListViewModel: BaseViewModel, TableListViewModelType, TableListV
     public var tablesVariable: Variable<[Table]> {
         return MainStore.globalStore.detailDatabaseStore.tables
     }
+    public var selectedTableDriver: Driver<Table?> {return MainStore.globalStore.detailDatabaseStore.selectedTable.asDriver()}
     
     //
     // MARK: - Variable

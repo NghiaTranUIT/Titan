@@ -9,6 +9,7 @@
 import Cocoa
 import TitanCore
 import RxSwift
+import SwiftyPostgreSQL
 
 class TableListDatabaseController: BaseViewController {
 
@@ -46,6 +47,7 @@ extension TableListDatabaseController {
     fileprivate func initDataSource() {
         self.dataSource = TableListDatabaseSource(tableView: self.tableView)
         self.dataSource.delegate = self
+        self.dataSource.menuDelegate = self
     }
     
     fileprivate func initViewModel() {
@@ -66,6 +68,22 @@ extension TableListDatabaseController {
         .addDisposableTo(self.disposeBase)
         
         
+        // Select auto from StackView
+        self.viewModel.output.selectedTableDriver.drive(onNext: {[weak self] (selectedTable) in
+            guard let `self` = self else {return}
+            guard let selectedTable = selectedTable else {return}
+            
+            // Selected row manually
+            for (i, table) in self.viewModel.output.tablesVariable.value.enumerated() {
+                if table == selectedTable {
+                    let index = IndexSet(integer: i)
+                    self.tableView.selectRowIndexes(index, byExtendingSelection: false)
+                    break
+                }
+            }
+            
+        }).addDisposableTo(self.disposeBase)
+    
         // Fetch scheme
         self.viewModel.input.fetchTableSchemaPublisher.onNext()
         
@@ -98,5 +116,12 @@ extension TableListDatabaseController: BaseTableViewDataSourceProtocol{
     // didSelect
     func CommonDataSourceDidSelectedRow(at indexPath: IndexPath) {
         self.viewModel.input.selectedTablePublisher.onNext(indexPath)
+    }
+}
+
+extension TableListDatabaseController: TableListDatabaseSourceDelegate {
+    
+    func shouldOpenTableInNewTab(_ table: Table) {
+        self.viewModel.input.openTableInNewTabPublisher.onNext(table)
     }
 }

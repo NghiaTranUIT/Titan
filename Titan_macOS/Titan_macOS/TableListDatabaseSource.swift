@@ -10,11 +10,16 @@ import Foundation
 import TitanCore
 import SwiftyPostgreSQL
 
+protocol TableListDatabaseSourceDelegate: class {
+    func shouldOpenTableInNewTab(_ table: Table)
+}
+
 class TableListDatabaseSource: BaseTableViewDataSource {
     
     //
     // MARK: - Variable
     fileprivate lazy var rightMenuContextView: TableSchemeContextMenuView = self.initMenuContextView()
+    weak var menuDelegate: TableListDatabaseSourceDelegate?
     
     //
     // MARK: - Init
@@ -99,7 +104,8 @@ extension TableListDatabaseSource {
 extension TableListDatabaseSource: TableSchemeContextMenuViewDelegate {
     
     func TableSchemeContextMenuViewDidTapAction(_ action: TableSchemmaContextAction, table: Table) {
-        
+        Logger.info("Open in new tab = \(table.tableName)")
+        self.menuDelegate?.shouldOpenTableInNewTab(table)
     }
 }
 

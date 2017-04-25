@@ -18,6 +18,7 @@ public protocol StackTableViewModelType {
 
 public protocol StackTableViewModelInput {
     var previousTableIndex: Int {get set}
+    var selectedTablePublisher: PublishSubject<IndexPath> {get}
 }
 
 public protocol StackTableViewModelOutput {
@@ -41,6 +42,7 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
         get {return self._previousTableIndex}
         set {self._previousTableIndex = newValue}
     }
+    public var selectedTablePublisher = PublishSubject<IndexPath>()
     
     //
     // MARK: - Output
@@ -62,5 +64,14 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
         // Stack table
         self.stackTableDriver = MainStore.globalStore.detailDatabaseStore.stackTables.asDriver()
         
+        // Selected table
+        self.selectedTablePublisher.map {[unowned self] (indexPath) -> Table in
+            return self.stackTableVariable.value[indexPath.item]
+        }
+        .do(onNext: { table in
+                SelectedTableInCurrentTabWorker(seletedTable: table).execute()
+        })
+        .subscribe()
+        .addDisposableTo(self.disposeBag)
     }
 }

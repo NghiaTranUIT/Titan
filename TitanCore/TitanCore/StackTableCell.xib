@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,28 +21,14 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="5ZE-wF-rtN">
-                    <rect key="frame" x="0.0" y="0.0" width="63" height="32"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="aGR-qA-c0E">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="actionBtnTapped:" target="V7W-7f-a9q" id="15z-hH-vTy"/>
-                    </connections>
-                </button>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="5ZE-wF-rtN" secondAttribute="trailing" id="0uh-MU-kjs"/>
-                <constraint firstItem="5ZE-wF-rtN" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="7bz-ZO-thP"/>
-                <constraint firstItem="5ZE-wF-rtN" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="A2b-yo-kZf"/>
                 <constraint firstAttribute="trailing" secondItem="M4T-Gr-VpO" secondAttribute="trailing" constant="12" id="ZxD-jw-mC7"/>
                 <constraint firstItem="M4T-Gr-VpO" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="12" id="fCn-Is-Dv4"/>
-                <constraint firstAttribute="bottom" secondItem="5ZE-wF-rtN" secondAttribute="bottom" id="fq8-CT-kyB"/>
                 <constraint firstItem="M4T-Gr-VpO" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" constant="-2" id="oyG-tJ-y5T"/>
             </constraints>
         </customView>
-        <collectionViewItem id="V7W-7f-a9q" customClass="StackTableCell" customModule="Titan" customModuleProvider="target">
+        <collectionViewItem id="V7W-7f-a9q" customClass="StackTableCell" customModule="TitanCore" customModuleProvider="target">
             <connections>
                 <outlet property="tableTitleLbl" destination="M4T-Gr-VpO" id="cay-0C-nXl"/>
                 <outlet property="view" destination="c22-O7-iKe" id="3rZ-sS-zRT"/>

@@ -151,6 +151,14 @@ extension StackTableView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
         
         return cell
     }
+    
+    public func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let selectedIndexPath = indexPaths.first else {return}
+        guard selectedIndexPath.item != self.viewModel.stackTableVariable.value.count else {return}
+        
+        // Selected table
+        self.viewModel.input.selectedTablePublisher.onNext(selectedIndexPath)
+    }
 }
 
 extension StackTableView {

@@ -72,6 +72,12 @@ extension StackTableView {
             self.animateIndicatorView()
         })
         .addDisposableTo(self.disposeBag)
+        
+        // Animate bottom bar
+        self.viewModel.output.selectedTableVariable.asDriver().drive(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.animateIndicatorView()
+        }).addDisposableTo(self.disposeBag)
     }
     
     fileprivate func initCollectionView() {

@@ -8,6 +8,7 @@
 
 import Cocoa
 import RxSwift
+import SwiftyPostgreSQL
 
 open class StackTableView: NSView {
     
@@ -66,6 +67,9 @@ extension StackTableView {
         self.viewModel.output.stackTableDriver.drive(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             self.collectionView.reloadData()
+            
+            // Animate bottom bar
+            self.animateIndicatorView()
         })
         .addDisposableTo(self.disposeBag)
     }
@@ -147,5 +151,53 @@ extension StackTableView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
         
         return cell
     }
+}
+
+extension StackTableView {
     
+    // Determine if table is in stack or not
+    func isTableInStack(for table: Table) -> Bool {
+        let filter = self.viewModel.output.stackTableVariable.value.filter { _table -> Bool in
+            return _table == table
+        }
+        return filter.count > 0
+    }
+    
+    fileprivate func animateIndicatorView() {
+        
+        // Delay 0.1 after collection reloadData()
+        // If we call after reloadData(). For unknown reason, the collectionView hasn't reloaded yet
+        // => Can't get visible cell
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            guard let selectedTable = self.viewModel.output.selectedTableVariable.value else {return}
+            guard let selectedCell = self.stackCellWithTable(selectedTable) else {return}
+            
+            // Update
+            let newFrame = NSRect(x: selectedCell.view.frame.origin.x, y: 0, width: selectedCell.view.frame.width, height: 2)
+            
+            if self.viewModel.input.previousTableIndex == -1 ||
+                self.viewModel.input.previousTableIndex == self.viewModel.output.selectedIndex {
+                // No animate
+                self.indicatorBarView.frame = newFrame
+            }
+            else {
+                NSAnimationContext.runAnimationGroup({ (context) in
+                    context.duration = 0.13
+                    self.indicatorBarView.animator().frame = newFrame
+                }, completionHandler: nil)
+            }
+            
+            self.viewModel.previousTableIndex = self.viewModel.output.selectedIndex
+        }
+    }
+    
+    fileprivate func stackCellWithTable(_ table: Table) -> StackTableCell? {
+        for cell in self.collectionView.visibleItems() {
+            guard let cell = cell as? StackTableCell else {continue}
+            if cell.table == table {
+                return cell
+            }
+        }
+        return nil
+    }
 }

@@ -17,12 +17,13 @@ public protocol StackTableViewModelType {
 }
 
 public protocol StackTableViewModelInput {
-    
+    var previousTableIndex: Int {get set}
 }
 
 public protocol StackTableViewModelOutput {
     var stackTableDriver: Driver<[Table]>! {get}
     var stackTableVariable: Variable<[Table]> {get}
+    var selectedTableVariable: Variable<Table?> {get}
     var selectedIndex: Int {get}
 }
 
@@ -35,12 +36,18 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
     
     //
     // MARK: - Input
+    fileprivate var _previousTableIndex = -1
+    public var previousTableIndex: Int {
+        get {return self._previousTableIndex}
+        set {self._previousTableIndex = newValue}
+    }
     
     //
     // MARK: - Output
     public var stackTableDriver: Driver<[Table]>!
     public var stackTableVariable: Variable<[Table]> { return MainStore.globalStore.detailDatabaseStore.stackTables }
     public var selectedIndex: Int {return MainStore.globalStore.detailDatabaseStore.selectedIndexStackView}
+    public var selectedTableVariable: Variable<Table?> {return MainStore.globalStore.detailDatabaseStore.selectedTable}
     
     //
     // MARK: - Init

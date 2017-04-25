@@ -339,8 +339,8 @@
 		BA8756791E924D9400FCDFB1 /* Detail Database */ = {
 			isa = PBXGroup;
 			children = (
-				BA776E821EA71AF600DB7857 /* Content */,
 				BA776E811EA71AF200DB7857 /* Table List */,
+				BA776E821EA71AF600DB7857 /* Content */,
 				BA776E7E1EA71ABB00DB7857 /* Split */,
 				BA776E7B1EA71A6200DB7857 /* Main */,
 				BA18023A1E9C940500096445 /* Window */,

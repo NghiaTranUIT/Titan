@@ -35,6 +35,7 @@ open class DetailDatabaseStore: ReduxStore {
     // MARK: - Init
     init() {
         
+        // Selected Grid
         self.selectedGridDatabaseView = self.selectedTable.asObservable()
         .flatMap({ (views) -> Observable<GridDatabaseView?> in
             guard let selected = self.selectedTable.value else {
@@ -46,6 +47,12 @@ open class DetailDatabaseStore: ReduxStore {
             }
             return Observable<GridDatabaseView?>.just(nil)
         })
+        
+        // Test
+        self.gridDatabaseViews.asObservable().do(onNext: { (gridViews) in
+            Logger.debug("GridView count = \(gridViews.count)")
+        }).subscribe()
+        .addDisposableTo(self.disposeBag)
     }
     
     //
@@ -88,31 +95,32 @@ open class DetailDatabaseStore: ReduxStore {
                     //FIXME:
                     // Work around temporary
                     var temp = self.stackTables.value
+                    var _temp = self.gridDatabaseViews.value
+                    var replaceIndex = -1
+                    
                     for i in 0..<temp.count {
                         let table = temp[i]
                         if table == previousTable {
-                            
-                            // Replace table
-                            temp[i] = action.selectedTable
-                            
-                            // Replace grid view
-                            let databaseView = GridDatabaseView.viewNib(with: action.selectedTable)
-                            var _temp = self.gridDatabaseViews.value
-                            _temp[i] = databaseView
-                            self.gridDatabaseViews.value = _temp
-                            
+                            replaceIndex = i
                             break
                         }
                     }
                     
-                    self.stackTables.value = temp
+                    if replaceIndex != -1 {
+                        // Replace table
+                        temp[replaceIndex] = action.selectedTable
+                        
+                        // Clear
+                        let old = _temp[replaceIndex]
+                        old.removeFromSuperview()
+                        
+                        // Replace grid view
+                        let databaseView = GridDatabaseView.viewNib(with: action.selectedTable)
+                        _temp[replaceIndex] = databaseView
+                    }
                     
-                    self.stackTables.value = self.stackTables.value.map({ table -> Table in
-                        if table == previousTable {
-                            return action.selectedTable
-                        }
-                        return table
-                    })
+                    self.gridDatabaseViews.value = _temp
+                    self.stackTables.value = temp
                 }
             }
             

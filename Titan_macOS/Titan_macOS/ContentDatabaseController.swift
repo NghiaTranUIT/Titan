@@ -56,11 +56,6 @@ extension ContentDatabaseController {
         // Reload
         self.viewModel.output.selectedGridTableChangedDriver.drive(onNext: { gridView in
             
-            // Remove all
-            for view in self.viewModel.output.gridDatabaseViewVariable.value {
-                view.removeFromSuperview()
-            }
-            
             // Add 
             guard let gridView = gridView else {return}
             self.containerGridView.addSubview(gridView)

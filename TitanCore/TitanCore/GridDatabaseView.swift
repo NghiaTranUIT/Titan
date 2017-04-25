@@ -25,7 +25,7 @@ open class GridDatabaseView: NSView {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         }}
-    fileprivate var viewModel: GridDatabaseViewModel!
+    fileprivate var viewModel: GridDatabaseViewModel?
     fileprivate var disposeBag = DisposeBag()
     
     //
@@ -41,6 +41,15 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
+    }
+    
+    deinit {
+        Logger.info("GridDatabaseView Deinit")
+    }
+    
+    open override func removeFromSuperview() {
+         super.removeFromSuperview()
+        Logger.info("\(self.table.tableName) removeFromSuperview" )
     }
 }
 
@@ -73,11 +82,14 @@ extension GridDatabaseView {
     
     fileprivate func binding() {
         
+        guard let viewModel = self.viewModel else {return}
+        
         // Fetch default query
-        self.viewModel.input.fetchDatabaseFromTablePublisher.onNext()
+        viewModel.input.fetchDatabaseFromTablePublisher.onNext()
         
         // Reload if have new query Result
-        self.viewModel.output.queryResult.asDriver().drive(onNext: { _ in
+        viewModel.output.queryResult.asDriver().drive(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
             
             // Setup colums and data
             self.setupDataForTableView()
@@ -94,16 +106,19 @@ extension GridDatabaseView {
 extension GridDatabaseView {
     
     fileprivate func setupDataForTableView() {
+        guard let viewModel = self.viewModel else {return}
         
         // Setup new columns
-        self.tableView.setupColumns(self.viewModel.queryResult.value.columns)
+        self.tableView.setupColumns(viewModel.queryResult.value.columns)
         
         // Enable save
         self.autosaveColumnsWidth()
     }
     
     fileprivate func autosaveColumnsWidth() {
-        let tableName = self.viewModel.query.rawString
+        guard let viewModel = self.viewModel else {return}
+        
+        let tableName = viewModel.query.rawString
         
         // Save
         self.tableView.autosaveName = tableName
@@ -119,7 +134,7 @@ extension GridDatabaseView {
 extension GridDatabaseView: NSTableViewDataSource {
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel.queryResult.value.rows.count
+        return self.viewModel!.queryResult.value.rows.count
     }
     
     public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -169,7 +184,7 @@ extension GridDatabaseView: NSTableViewDataSource {
         
         // Configure
         let col = tableColumn.column!
-        let field = self.viewModel.field(at: col, row: row)
+        let field = self.viewModel!.field(at: col, row: row)
         cell!.configureCell(with: field, column: col)
         return cell!
     }

@@ -59,10 +59,15 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
         self.binding()
     }
     
+    deinit {
+        Logger.info("GridDatabaseViewModel Deinit")
+    }
+    
     fileprivate func binding() {
         
         // Fetch default query
-        self.fetchDatabaseFromTablePublisher.flatMap { _ -> Observable<QueryResult> in
+        self.fetchDatabaseFromTablePublisher.flatMap {[unowned self] _ -> Observable<QueryResult> in
+            
             // Default query
             self.query = PostgreQuery.buildDefaultQuery(with: self.table, pagination: self.pagination)
             let worker = QueryPostgreSQLWorker(query: self.query)

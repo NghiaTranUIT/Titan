@@ -20,6 +20,7 @@ open class DetailDatabaseStore: ReduxStore {
     public var tables = Variable<[Table]>([])
     public var stackTables = Variable<[Table]>([])
     public var selectedIndexStackTables = Variable<Int>(-1)
+    public var selectedTable = Variable<Table?>(nil)
     
     // View
     public var gridDatabaseViews = Variable<[GridDatabaseView]>([])
@@ -38,11 +39,18 @@ open class DetailDatabaseStore: ReduxStore {
         
         // Selected Grid
         self.selectedGridDatabaseView = self.selectedIndexStackTables.asObservable()
-        .map({ selectedIndex -> GridDatabaseView? in
+        .map({[unowned self] selectedIndex -> GridDatabaseView? in
             guard selectedIndex != -1 && selectedIndex < self.gridDatabaseViews.value.count else {return nil}
             return self.gridDatabaseViews.value[selectedIndex]
         })
         
+        // Selected table
+        self.selectedIndexStackTables.asObservable()
+        .map {[unowned self] (selectedIndex) -> Table? in
+            guard selectedIndex != -1 else {return nil}
+            return self.stackTables.value[selectedIndex]
+        }.bind(to: self.selectedTable)
+        .addDisposableTo(self.disposeBag)
         
         // Test
         self.gridDatabaseViews.asObservable().do(onNext: { (gridViews) in

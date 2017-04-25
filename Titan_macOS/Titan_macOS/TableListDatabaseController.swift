@@ -22,6 +22,7 @@ class TableListDatabaseController: BaseViewController {
     // MARK: - Variable
     fileprivate var viewModel: TableListViewModel!
     fileprivate var dataSource: TableListDatabaseSource!
+    fileprivate var isSelectedAuto = false
     
     //
     // MARK: - View Cycle
@@ -69,20 +70,24 @@ extension TableListDatabaseController {
         
         
         // Select auto from StackView
-//        self.viewModel.output.selectedTableDriver.drive(onNext: {[weak self] (selectedTable) in
-//            guard let `self` = self else {return}
-//            guard let selectedTable = selectedTable else {return}
-//            
-//            // Selected row manually
-//            for (i, table) in self.viewModel.output.tablesVariable.value.enumerated() {
-//                if table === selectedTable {
-//                    let index = IndexSet(integer: i)
-//                    self.tableView.selectRowIndexes(index, byExtendingSelection: false)
-//                    break
-//                }
-//            }
-//            
-//        }).addDisposableTo(self.disposeBase)
+        self.viewModel.output.selectedTableDriver.drive(onNext: {[weak self] (selectedTable) in
+            guard let `self` = self else {return}
+            guard let selectedTable = selectedTable else {return}
+            
+            // Selected row manually
+            for (i, table) in self.viewModel.output.tablesVariable.value.enumerated() {
+                if table === selectedTable {
+                    let index = IndexSet(integer: i)
+                    
+                    // Don't trigger selection delegation if select auto from view model
+                    self.isSelectedAuto = true
+                    self.tableView.selectRowIndexes(index, byExtendingSelection: false)
+                    self.isSelectedAuto = false
+                    break
+                }
+            }
+            
+        }).addDisposableTo(self.disposeBase)
     
         // Fetch scheme
         self.viewModel.input.fetchTableSchemaPublisher.onNext()
@@ -115,6 +120,9 @@ extension TableListDatabaseController: BaseTableViewDataSourceProtocol{
     
     // didSelect
     func CommonDataSourceDidSelectedRow(at indexPath: IndexPath) {
+        // Prevent trigger if select cell automatic from Model
+        // Not from User
+        guard self.isSelectedAuto == false else {return}
         self.viewModel.input.selectedTablePublisher.onNext(indexPath)
     }
 }

@@ -25,7 +25,7 @@ open class GridDatabaseView: NSView {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         }}
-    fileprivate var viewModel: GridDatabaseViewModel?
+    fileprivate var viewModel: GridDatabaseViewModel!
     fileprivate var disposeBag = DisposeBag()
     
     //
@@ -48,7 +48,7 @@ open class GridDatabaseView: NSView {
     }
     
     open override func removeFromSuperview() {
-         super.removeFromSuperview()
+        super.removeFromSuperview()
         Logger.info("\(self.table.tableName) removeFromSuperview" )
     }
 }
@@ -82,13 +82,11 @@ extension GridDatabaseView {
     
     fileprivate func binding() {
         
-        guard let viewModel = self.viewModel else {return}
-        
         // Fetch default query
-        viewModel.input.fetchDatabaseFromTablePublisher.onNext()
+        self.viewModel.input.fetchDatabaseFromTablePublisher.onNext()
         
         // Reload if have new query Result
-        viewModel.output.queryResult.asDriver().drive(onNext: {[weak self] _ in
+        self.viewModel.output.queryResult.asDriver().drive(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             
             // Setup colums and data
@@ -106,8 +104,6 @@ extension GridDatabaseView {
 extension GridDatabaseView {
     
     fileprivate func setupDataForTableView() {
-        guard let viewModel = self.viewModel else {return}
-        
         // Setup new columns
         self.tableView.setupColumns(viewModel.queryResult.value.columns)
         
@@ -116,8 +112,6 @@ extension GridDatabaseView {
     }
     
     fileprivate func autosaveColumnsWidth() {
-        guard let viewModel = self.viewModel else {return}
-        
         let tableName = viewModel.query.rawString
         
         // Save

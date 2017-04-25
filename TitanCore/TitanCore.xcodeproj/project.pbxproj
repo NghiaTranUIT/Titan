@@ -100,6 +100,7 @@
 		BABCE0791EAE122700A2D08A /* TableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0761EAE122700A2D08A /* TableRowCell.swift */; };
 		BABCE07A1EAE122700A2D08A /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0771EAE122700A2D08A /* TableRowCell.xib */; };
 		BABCE07B1EAE122700A2D08A /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0781EAE122700A2D08A /* TableRowView.swift */; };
+		BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -211,6 +212,7 @@
 		BABCE0761EAE122700A2D08A /* TableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowCell.swift; sourceTree = "<group>"; };
 		BABCE0771EAE122700A2D08A /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
 		BABCE0781EAE122700A2D08A /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
+		BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewModel.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				BA4B9DAA1EA8A4BA00210DD6 /* TableListViewModel.swift */,
 				BA4FBC0B1EA8FE8400A067E9 /* ContentDatabaseViewModel.swift */,
 				BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */,
+				BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */,
 			);
 			name = "View model";
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */,
 				BA8757261E934AD400FCDFB1 /* RealmManager.swift in Sources */,
 				BADDF7481E94FD3B00F35FF3 /* UpdateGroupConnectionAction.swift in Sources */,
+				BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */,
 				BA1802301E9C902B00096445 /* NotificationManager.swift in Sources */,
 				BA4FBC121EA902B100A067E9 /* GridDatabaseView.swift in Sources */,
 				BA8757311E934E6700FCDFB1 /* AppVersionManager.swift in Sources */,

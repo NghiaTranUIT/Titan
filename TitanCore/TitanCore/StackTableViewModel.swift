@@ -24,8 +24,7 @@ public protocol StackTableViewModelInput {
 public protocol StackTableViewModelOutput {
     var stackTableDriver: Driver<[Table]>! {get}
     var stackTableVariable: Variable<[Table]> {get}
-    var selectedTableVariable: Variable<Table?> {get}
-    var selectedIndex: Int {get}
+    var selectedIndexVariable: Variable<Int> {get}
 }
 
 public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackTableViewModelInput, StackTableViewModelOutput {
@@ -48,8 +47,7 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
     // MARK: - Output
     public var stackTableDriver: Driver<[Table]>!
     public var stackTableVariable: Variable<[Table]> { return MainStore.globalStore.detailDatabaseStore.stackTables }
-    public var selectedIndex: Int {return MainStore.globalStore.detailDatabaseStore.selectedIndexStackView}
-    public var selectedTableVariable: Variable<Table?> {return MainStore.globalStore.detailDatabaseStore.selectedTable}
+    public var selectedIndexVariable: Variable<Int> {return MainStore.globalStore.detailDatabaseStore.selectedIndexStackTables}
     
     //
     // MARK: - Init
@@ -65,11 +63,10 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
         self.stackTableDriver = MainStore.globalStore.detailDatabaseStore.stackTables.asDriver()
         
         // Selected table
-        self.selectedTablePublisher.map {[unowned self] (indexPath) -> Table in
-            return self.stackTableVariable.value[indexPath.item]
-        }
-        .do(onNext: { table in
-                SelectedTableInCurrentTabWorker(seletedTable: table).execute()
+        self.selectedTablePublisher
+        .do(onNext: { indexPath in
+            let action = SelectedIndexInStackViewAction(selectedIndex: indexPath.item)
+            MainStore.dispatch(action)
         })
         .subscribe()
         .addDisposableTo(self.disposeBag)

@@ -10,18 +10,22 @@ import Foundation
 import SwiftyPostgreSQL
 import RxSwift
 
-struct SelectedTableAction: Action {
-    var selectedTable: Table!
-    var replaceCurrentTable: Bool
-    var storeType: StoreType {return .detailDatabaseStore}
-}
-
-struct AddSelectedTableToStackAction: Action {
+struct ReplaceTableAction: Action {
     var selectedTable: Table!
     var storeType: StoreType {return .detailDatabaseStore}
 }
 
-class SelectedTableInCurrentTabWorker: SyncWorker {
+struct SelectedIndexInStackViewAction: Action {
+    var selectedIndex: Int!
+    var storeType: StoreType {return .detailDatabaseStore}
+}
+
+struct AddTableToStackAction: Action {
+    var selectedTable: Table!
+    var storeType: StoreType {return .detailDatabaseStore}
+}
+
+class ReplaceTableInCurrentTabWorker: SyncWorker {
     
     typealias T = Void
     var seletedTable: Table!
@@ -34,15 +38,13 @@ class SelectedTableInCurrentTabWorker: SyncWorker {
         
         // If no selection -> add to stack
         if MainStore.globalStore.detailDatabaseStore.stackTables.value.count == 0 {
-            let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
+            let addStackAction = AddTableToStackAction(selectedTable: self.seletedTable)
             MainStore.dispatch(addStackAction)
         }
-        
-        // Select table
-        let action = SelectedTableAction(selectedTable: self.seletedTable, replaceCurrentTable: true)
-        MainStore.dispatch(action)
-        
-        // Push Changed
-        //NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged, object: nil, userInfo: ["openInNewTap": openInNewTap])
+        else {
+            // REplace table
+            let action = ReplaceTableAction(selectedTable: self.seletedTable)
+            MainStore.dispatch(action)
+        }
     }
 }

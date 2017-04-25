@@ -19,20 +19,12 @@ open class DetailDatabaseStore: ReduxStore {
     public var connectedDatabase: Variable<DatabaseObj>!
     public var tables = Variable<[Table]>([])
     public var stackTables = Variable<[Table]>([])
-    public var selectedTable = Variable<Table?>(nil)
+    public var selectedIndexStackTables = Variable<Int>(-1)
     
     // View
     public var gridDatabaseViews = Variable<[GridDatabaseView]>([])
     public var selectedGridDatabaseView: Observable<GridDatabaseView?>!
-    public var selectedIndexStackView: Int {
-        guard let table = self.selectedTable.value else {return -1}
-        for (i, e) in self.stackTables.value.enumerated() {
-            if e == table {
-                return i
-            }
-        }
-        return -1
-    }
+    
     
     // Story type
     public var storyType: StoreType {
@@ -45,16 +37,10 @@ open class DetailDatabaseStore: ReduxStore {
     init() {
         
         // Selected Grid
-        self.selectedGridDatabaseView = self.selectedTable.asObservable()
-        .flatMap({[unowned self] (views) -> Observable<GridDatabaseView?> in
-            guard let selected = self.selectedTable.value else {
-                return Observable<GridDatabaseView?>.just(nil)
-            }
-            
-            for item in self.gridDatabaseViews.value where item.table == selected {
-                return Observable<GridDatabaseView?>.just(item)
-            }
-            return Observable<GridDatabaseView?>.just(nil)
+        self.selectedGridDatabaseView = self.selectedIndexStackTables.asObservable()
+        .map({ selectedIndex -> GridDatabaseView? in
+            guard selectedIndex != -1 && selectedIndex < self.gridDatabaseViews.value.count else {return nil}
+            return self.gridDatabaseViews.value[selectedIndex]
         })
         
         
@@ -77,13 +63,12 @@ open class DetailDatabaseStore: ReduxStore {
         case let action as FetchTableSchemaAction:
             self.tables.value = action.tables
             
-        case let action as AddSelectedTableToStackAction:
+        case let action as AddTableToStackAction:
             
             // Add & notify
             var temp = self.stackTables.value
             temp.append(action.selectedTable)
             self.stackTables.value = temp
-            
             
             // Create new grid database view
             let databaseView = GridDatabaseView.viewNib(with: action.selectedTable)
@@ -91,51 +76,35 @@ open class DetailDatabaseStore: ReduxStore {
             _temp.append(databaseView)
             self.gridDatabaseViews.value = _temp
             
-        case let action as SelectedTableAction:
+            // Selected index -> Last item
+            self.selectedIndexStackTables.value = temp.count - 1
             
-            // Replace previous selectedTable with new one
-            let contains = self.stackTables.value.filter({$0 == action.selectedTable})
+        case let action as ReplaceTableAction:
             
-            // Only replace if there is no table in stack
-            // && force replace
-            if action.replaceCurrentTable && contains.count == 0 {
-                if let previousTable = self.selectedTable.value,
-                    previousTable != action.selectedTable {
-                    
-                    //FIXME:
-                    // Work around temporary
-                    var temp = self.stackTables.value
-                    var _temp = self.gridDatabaseViews.value
-                    var replaceIndex = -1
-                    
-                    for i in 0..<temp.count {
-                        let table = temp[i]
-                        if table == previousTable {
-                            replaceIndex = i
-                            break
-                        }
-                    }
-                    
-                    if replaceIndex != -1 {
-                        // Replace table
-                        temp[replaceIndex] = action.selectedTable
-                        
-                        // Clear
-                        let old = _temp[replaceIndex]
-                        old.removeFromSuperview()
-                        
-                        // Replace grid view
-                        let databaseView = GridDatabaseView.viewNib(with: action.selectedTable)
-                        _temp[replaceIndex] = databaseView
-                    }
-                    
-                    self.gridDatabaseViews.value = _temp
-                    self.stackTables.value = temp
-                }
-            }
+            //FIXME:
+            // Work around temporary
+            var temp = self.stackTables.value
+            var _temp = self.gridDatabaseViews.value
+            let replaceIndex = self.selectedIndexStackTables.value
             
-            // Add
-            self.selectedTable.value = action.selectedTable
+            // Replace table
+            temp[replaceIndex] = action.selectedTable
+            
+            // Clear
+            let old = _temp[replaceIndex]
+            old.removeFromSuperview()
+            
+            // Replace grid view
+            let databaseView = GridDatabaseView.viewNib(with: action.selectedTable)
+            _temp[replaceIndex] = databaseView
+            
+            // New value
+            self.gridDatabaseViews.value = _temp
+            self.stackTables.value = temp
+            self.selectedIndexStackTables.value = replaceIndex
+            
+        case let action as SelectedIndexInStackViewAction:
+            self.selectedIndexStackTables.value = action.selectedIndex
             
         default:
             

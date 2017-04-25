@@ -20,16 +20,9 @@ class OpenTableInNewTabWorker: SyncWorker {
     
     func execute() {
         
-        // Add to stack if need
-        let addStackAction = AddSelectedTableToStackAction(selectedTable: self.seletedTable)
+        // Add to stack and select
+        let addStackAction = AddTableToStackAction(selectedTable: self.seletedTable)
         MainStore.dispatch(addStackAction)
-        
-        // Select
-        let action = SelectedTableAction(selectedTable: self.seletedTable, replaceCurrentTable: false)
-        MainStore.dispatch(action)
-        
-        // Post
-        //NotificationManager.postNotificationOnMainThreadType(.stackTableStateChanged, object: nil, userInfo: ["openInNewTap": true])
     }
     
 }

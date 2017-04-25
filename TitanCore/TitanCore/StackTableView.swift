@@ -74,7 +74,7 @@ extension StackTableView {
         .addDisposableTo(self.disposeBag)
         
         // Animate bottom bar
-        self.viewModel.output.selectedTableVariable.asDriver().drive(onNext: {[weak self] _ in
+        self.viewModel.output.selectedIndexVariable.asDriver().drive(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             self.animateIndicatorView()
         }).addDisposableTo(self.disposeBag)
@@ -151,7 +151,7 @@ extension StackTableView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
         let cell = collectionView.makeItem(withIdentifier: StackTableCell.identifierView, for: indexPath) as! StackTableCell
         
         let table = self.viewModel.stackTableVariable.value[indexPath.item]
-        let isSelected = indexPath.item == self.viewModel.output.selectedIndex
+        let isSelected = indexPath.item == self.viewModel.output.selectedIndexVariable.value
         //cell.delegate = self
         cell.configureCell(with: table, isSelected: isSelected)
         
@@ -159,7 +159,8 @@ extension StackTableView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
     }
     
     public func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        guard let selectedIndexPath = indexPaths.first else {return}
+        let selection = indexPaths as NSSet
+        guard let selectedIndexPath = selection.allObjects.last as? IndexPath else {return}
         guard selectedIndexPath.item != self.viewModel.stackTableVariable.value.count else {return}
         
         // Selected table
@@ -183,35 +184,19 @@ extension StackTableView {
         // If we call after reloadData(). For unknown reason, the collectionView hasn't reloaded yet
         // => Can't get visible cell
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            guard let selectedTable = self.viewModel.output.selectedTableVariable.value else {return}
-            guard let selectedCell = self.stackCellWithTable(selectedTable) else {return}
+            let selectedIndex = self.viewModel.output.selectedIndexVariable.value
+            guard selectedIndex != -1 else {return}
+            guard let selectedCell = self.collectionView.item(at: IndexPath(item: selectedIndex, section: 0)) as? StackTableCell else {return}
             
             // Update
             let newFrame = NSRect(x: selectedCell.view.frame.origin.x, y: 0, width: selectedCell.view.frame.width, height: 2)
             
-            if self.viewModel.input.previousTableIndex == -1 ||
-                self.viewModel.input.previousTableIndex == self.viewModel.output.selectedIndex {
-                // No animate
-                self.indicatorBarView.frame = newFrame
-            }
-            else {
-                NSAnimationContext.runAnimationGroup({ (context) in
-                    context.duration = 0.13
-                    self.indicatorBarView.animator().frame = newFrame
-                }, completionHandler: nil)
-            }
-            
-            self.viewModel.previousTableIndex = self.viewModel.output.selectedIndex
+            // Animate
+            NSAnimationContext.runAnimationGroup({ (context) in
+                context.duration = 0.13
+                self.indicatorBarView.animator().frame = newFrame
+            }, completionHandler: nil)
+        
         }
-    }
-    
-    fileprivate func stackCellWithTable(_ table: Table) -> StackTableCell? {
-        for cell in self.collectionView.visibleItems() {
-            guard let cell = cell as? StackTableCell else {continue}
-            if cell.table == table {
-                return cell
-            }
-        }
-        return nil
     }
 }

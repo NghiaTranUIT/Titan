@@ -69,20 +69,20 @@ extension TableListDatabaseController {
         
         
         // Select auto from StackView
-        self.viewModel.output.selectedTableDriver.drive(onNext: {[weak self] (selectedTable) in
-            guard let `self` = self else {return}
-            guard let selectedTable = selectedTable else {return}
-            
-            // Selected row manually
-            for (i, table) in self.viewModel.output.tablesVariable.value.enumerated() {
-                if table == selectedTable {
-                    let index = IndexSet(integer: i)
-                    self.tableView.selectRowIndexes(index, byExtendingSelection: false)
-                    break
-                }
-            }
-            
-        }).addDisposableTo(self.disposeBase)
+//        self.viewModel.output.selectedTableDriver.drive(onNext: {[weak self] (selectedTable) in
+//            guard let `self` = self else {return}
+//            guard let selectedTable = selectedTable else {return}
+//            
+//            // Selected row manually
+//            for (i, table) in self.viewModel.output.tablesVariable.value.enumerated() {
+//                if table === selectedTable {
+//                    let index = IndexSet(integer: i)
+//                    self.tableView.selectRowIndexes(index, byExtendingSelection: false)
+//                    break
+//                }
+//            }
+//            
+//        }).addDisposableTo(self.disposeBase)
     
         // Fetch scheme
         self.viewModel.input.fetchTableSchemaPublisher.onNext()

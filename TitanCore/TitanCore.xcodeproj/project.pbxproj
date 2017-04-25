@@ -101,6 +101,10 @@
 		BABCE07A1EAE122700A2D08A /* TableRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0771EAE122700A2D08A /* TableRowCell.xib */; };
 		BABCE07B1EAE122700A2D08A /* TableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0781EAE122700A2D08A /* TableRowView.swift */; };
 		BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */; };
+		BABCE0831EAF056D00A2D08A /* AddTableStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE07F1EAF056D00A2D08A /* AddTableStackCell.swift */; };
+		BABCE0841EAF056D00A2D08A /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0801EAF056D00A2D08A /* AddTableStackCell.xib */; };
+		BABCE0851EAF056D00A2D08A /* StackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0811EAF056D00A2D08A /* StackTableCell.swift */; };
+		BABCE0861EAF056D00A2D08A /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0821EAF056D00A2D08A /* StackTableCell.xib */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -213,6 +217,10 @@
 		BABCE0771EAE122700A2D08A /* TableRowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableRowCell.xib; sourceTree = "<group>"; };
 		BABCE0781EAE122700A2D08A /* TableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowView.swift; sourceTree = "<group>"; };
 		BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableViewModel.swift; sourceTree = "<group>"; };
+		BABCE07F1EAF056D00A2D08A /* AddTableStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableStackCell.swift; sourceTree = "<group>"; };
+		BABCE0801EAF056D00A2D08A /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
+		BABCE0811EAF056D00A2D08A /* StackTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableCell.swift; sourceTree = "<group>"; };
+		BABCE0821EAF056D00A2D08A /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -354,6 +362,7 @@
 		BA4FBC181EA905C900A067E9 /* Stack View */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE07E1EAF055100A2D08A /* Views */,
 				BA4FBC191EA905ED00A067E9 /* StackTableView.swift */,
 				BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */,
 			);
@@ -629,6 +638,17 @@
 			name = "Menu context";
 			sourceTree = "<group>";
 		};
+		BABCE07E1EAF055100A2D08A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BABCE07F1EAF056D00A2D08A /* AddTableStackCell.swift */,
+				BABCE0801EAF056D00A2D08A /* AddTableStackCell.xib */,
+				BABCE0811EAF056D00A2D08A /* StackTableCell.swift */,
+				BABCE0821EAF056D00A2D08A /* StackTableCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		BADDF7281E94F2BE00F35FF3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,8 +771,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA18023D1E9C94E400096445 /* DefaultQuotation.json in Resources */,
+				BABCE0861EAF056D00A2D08A /* StackTableCell.xib in Resources */,
 				BABCE07A1EAE122700A2D08A /* TableRowCell.xib in Resources */,
 				BABCE0741EAE119400A2D08A /* TableSchemeContextMenuView.xib in Resources */,
+				BABCE0841EAF056D00A2D08A /* AddTableStackCell.xib in Resources */,
 				BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */,
 				BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */,
 				BA4FBC141EA902D800A067E9 /* GridDatabaseView.xib in Resources */,
@@ -794,6 +816,7 @@
 			files = (
 				BABCE06C1EAE0A9E00A2D08A /* BoolCellView.swift in Sources */,
 				BADDF7331E94F36700F35FF3 /* ConnectionDetailViewModel.swift in Sources */,
+				BABCE0831EAF056D00A2D08A /* AddTableStackCell.swift in Sources */,
 				BA18022B1E9C8C5800096445 /* SelectConnectionWorker.swift in Sources */,
 				BABCE0631EAE05C900A2D08A /* QueryPostgreSQLWorker.swift in Sources */,
 				BA776E7A1EA70F3D00DB7857 /* Obserable+TwoWayBinding.swift in Sources */,
@@ -866,6 +889,7 @@
 				BABCE05D1EAE04B100A2D08A /* PostgreQuery.swift in Sources */,
 				BABCE0791EAE122700A2D08A /* TableRowCell.swift in Sources */,
 				BA1802211E9C83E600096445 /* AppPreferences.swift in Sources */,
+				BABCE0851EAF056D00A2D08A /* StackTableCell.swift in Sources */,
 				BA4B9DA91EA89CDF00210DD6 /* SaveTempDatabaseToCurrentDatabaseWorker.swift in Sources */,
 				BABCE07B1EAE122700A2D08A /* TableRowView.swift in Sources */,
 				BA4FBC081EA8CD5100A067E9 /* SelectedTableWorker.swift in Sources */,

@@ -15,6 +15,10 @@ open class StackTableView: NSView {
     // MARK: - OUTLET
     @IBOutlet weak var collectionView: NSCollectionView!
     fileprivate lazy var indicatorBarView: NSView = self.initIndicatorBarView()
+    fileprivate lazy var resizeCell: StackTableCell = {
+        let cell = StackTableCell.viewFromNib(with: .core)!
+        return cell
+    }()
     
     //
     // MARK: - Variable
@@ -30,6 +34,7 @@ open class StackTableView: NSView {
         self.initCommon()
         self.initViewModel()
         self.initCollectionView()
+        self.binding()
     }
     
     deinit {
@@ -70,8 +75,8 @@ extension StackTableView {
         self.collectionView.dataSource = self
         
         // Register
-        self.collectionView.registerCell(AddTableStackCell.self)
-        self.collectionView.registerCell(StackTableCell.self)
+        self.collectionView.registerCell(AddTableStackCell.self, bundle: .core)
+        self.collectionView.registerCell(StackTableCell.self, bundle: .core)
         
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
@@ -135,9 +140,9 @@ extension StackTableView: NSCollectionViewDataSource, NSCollectionViewDelegate, 
     fileprivate func stackTableCell(with collectionView: NSCollectionView, indexPath: IndexPath) -> StackTableCell {
         let cell = collectionView.makeItem(withIdentifier: StackTableCell.identifierView, for: indexPath) as! StackTableCell
         
-        let table = self.stackTables[indexPath.item]
-        let isSelected = indexPath.item == self.selectedTableIndex
-        cell.delegate = self
+        let table = self.viewModel.stackTableVariable.value[indexPath.item]
+        let isSelected = indexPath.item == self.viewModel.output.selectedIndex
+        //cell.delegate = self
         cell.configureCell(with: table, isSelected: isSelected)
         
         return cell

@@ -23,6 +23,7 @@ public protocol StackTableViewModelInput {
 public protocol StackTableViewModelOutput {
     var stackTableDriver: Driver<[Table]>! {get}
     var stackTableVariable: Variable<[Table]> {get}
+    var selectedIndex: Int {get}
 }
 
 public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackTableViewModelInput, StackTableViewModelOutput {
@@ -39,6 +40,7 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
     // MARK: - Output
     public var stackTableDriver: Driver<[Table]>!
     public var stackTableVariable: Variable<[Table]> { return MainStore.globalStore.detailDatabaseStore.stackTables }
+    public var selectedIndex: Int {return MainStore.globalStore.detailDatabaseStore.selectedIndexStackView}
     
     //
     // MARK: - Init
@@ -52,5 +54,6 @@ public class StackTableViewModel: BaseViewModel, StackTableViewModelType, StackT
         
         // Stack table
         self.stackTableDriver = MainStore.globalStore.detailDatabaseStore.stackTables.asDriver()
+        
     }
 }

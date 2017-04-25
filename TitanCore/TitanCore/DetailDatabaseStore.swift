@@ -24,6 +24,15 @@ open class DetailDatabaseStore: ReduxStore {
     // View
     public var gridDatabaseViews = Variable<[GridDatabaseView]>([])
     public var selectedGridDatabaseView: Observable<GridDatabaseView?>!
+    public var selectedIndexStackView: Int {
+        guard let table = self.selectedTable.value else {return -1}
+        for (i, e) in self.stackTables.value.enumerated() {
+            if e == table {
+                return i
+            }
+        }
+        return -1
+    }
     
     // Story type
     public var storyType: StoreType {
@@ -47,6 +56,7 @@ open class DetailDatabaseStore: ReduxStore {
             }
             return Observable<GridDatabaseView?>.just(nil)
         })
+        
         
         // Test
         self.gridDatabaseViews.asObservable().do(onNext: { (gridViews) in

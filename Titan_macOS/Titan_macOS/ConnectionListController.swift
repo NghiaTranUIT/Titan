@@ -59,13 +59,15 @@ extension ConnectionListController {
         .filter({ (groups) -> Bool in
             return groups.count > 0
         })
-        .drive(onNext: { (_) in
+        .drive(onNext: {[weak self] (_) in
+            guard let `self` = self else {return}
             self.collectionView.reloadData()
         })
         .addDisposableTo(self.disposeBase)
         
         self.viewModel.reloadDataDriver
-        .drive(onNext: { (_) in
+        .drive(onNext: {[weak self]  (_) in
+            guard let `self` = self else {return}
             self.collectionView.reloadData()
         })
         .addDisposableTo(self.disposeBase)
@@ -109,7 +111,7 @@ extension ConnectionListController: BaseCollectionViewDataSourceProtocol {
     }
     
     // Item at index path
-    func CommonDataSourceItem(at indexPath: IndexPath) -> BaseModel {
+    func CommonDataSourceItem(at indexPath: IndexPath) -> Any {
         return self.viewModel[indexPath.section]
     }
     

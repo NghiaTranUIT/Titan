@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AddTableStackCell" customModule="Titan" customModuleProvider="target">
+            <connections>
+                <outlet property="addBtn" destination="Lej-hg-ZXu" id="48d-S5-iIO"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="AddTableStackCell" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-hg-ZXu">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="pas-Ul-0If"/>
+                        <constraint firstAttribute="height" constant="44" id="qje-jp-uCt"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="icon_stack_table_add" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="NjD-rM-rce">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="addBtnTapped:" target="-2" id="s24-qD-yQR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Lej-hg-ZXu" secondAttribute="bottom" id="3Kp-7t-4xN"/>
+                <constraint firstAttribute="trailing" secondItem="Lej-hg-ZXu" secondAttribute="trailing" id="8BV-qL-khX"/>
+                <constraint firstItem="Lej-hg-ZXu" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Sci-N8-y8k"/>
+                <constraint firstItem="Lej-hg-ZXu" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="gnt-b4-hKG"/>
+            </constraints>
+        </customView>
+        <collectionViewItem id="Ffn-AZ-woc" customClass="AddTableStackCell" customModule="Titan" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="k37-tf-00O"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="icon_stack_table_add" width="19" height="19"/>
+    </resources>
+</document>

@@ -15,7 +15,7 @@ public extension NSTableView {
     
     /// Helper register view
     /// The View must conform Identifier protocol
-    func registerView<T: Identifier>(_ viewType: T.Type) {
-        self.register(viewType.xib(), forIdentifier: viewType.identifierView)
+    func registerView<T: Identifier>(_ viewType: T.Type, bundleType: BundleType = .app) {
+        self.register(viewType.xib(with: bundleType), forIdentifier: viewType.identifierView)
     }
 }

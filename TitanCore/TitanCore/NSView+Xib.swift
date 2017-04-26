@@ -15,17 +15,17 @@ public protocol XIBInitializable {
     
     associatedtype T
     
-    static func viewFromNib() -> T?
+    static func viewFromNib(with bundle: BundleType) -> T?
 }
 
 //
 // MARK: - Default Extension
 public extension XIBInitializable where Self: Identifier {
     
-    static func viewFromNib() -> T? {
+    static func viewFromNib(with bundle: BundleType) -> T? {
         
         var topViews: NSArray = []
-        let _ = self.xib()?.instantiate(withOwner: self, topLevelObjects: &topViews)
+        let _ = self.xib(with: bundle)?.instantiate(withOwner: self, topLevelObjects: &topViews)
         
         for subView in topViews {
             if let innerView = subView as? T {

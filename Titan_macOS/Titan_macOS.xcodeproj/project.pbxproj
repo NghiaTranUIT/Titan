@@ -19,9 +19,11 @@
 		BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E941E9F71D300468572 /* ObjectMapper.framework */; };
 		BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E951E9F71D300468572 /* Realm.framework */; };
 		BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E961E9F71D300468572 /* RealmSwift.framework */; };
-		BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E971E9F71D300468572 /* SnapKit.framework */; };
 		BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */; };
 		BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */; };
+		BA4B9DB11EA8AE5F00210DD6 /* TableListDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */; };
+		BA4B9DBA1EA8BBFF00210DD6 /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */; };
+		BA4B9DBC1EA8BC1F00210DD6 /* PlaceholderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */; };
 		BA776E7D1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */; };
 		BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */; };
 		BA776E851EA71B1D00DB7857 /* TableListDatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */; };
@@ -29,7 +31,7 @@
 		BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8756291E923BEF00FCDFB1 /* AppDelegate.swift */; };
 		BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA87562D1E923BEF00FCDFB1 /* Assets.xcassets */; };
 		BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA87562F1E923BEF00FCDFB1 /* Main.storyboard */; };
-		BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8756F31E93422600FCDFB1 /* TitanCore.framework */; };
+		BAA2281B1EA9C6E1009B3B41 /* TitanCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA87566B1E924B8400FCDFB1 /* TitanCore.framework */; };
 		BAAE23CA1E9DDBDD0071C794 /* ConnectionListContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */; };
 		BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */; };
 		BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */; };
@@ -61,6 +63,9 @@
 		BA2B4E981E9F71D300468572 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../TitanCore/Carthage/Build/Mac/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		BA2B4E991E9F71D300468572 /* UICKeyChainStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UICKeyChainStore.framework; path = ../TitanCore/Carthage/Build/Mac/UICKeyChainStore.framework; sourceTree = "<group>"; };
 		BA2B4EA21E9F72F700468572 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseSource.swift; sourceTree = "<group>"; };
+		BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
+		BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceholderCell.xib; sourceTree = "<group>"; };
 		BA776E7C1EA71A7F00DB7857 /* DetailDatabaseContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseContainerController.swift; sourceTree = "<group>"; };
 		BA776E7F1EA71ACF00DB7857 /* DetailDatabaseSplitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDatabaseSplitController.swift; sourceTree = "<group>"; };
 		BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListDatabaseController.swift; sourceTree = "<group>"; };
@@ -72,9 +77,7 @@
 		BA8756321E923BEF00FCDFB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyPostgreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA87566B1E924B8400FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TitanCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA8756F31E93422600FCDFB1 /* TitanCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TitanCore.framework; path = ../TitanCore/build/Debug/TitanCore.framework; sourceTree = "<group>"; };
-		BA8756F51E93442100FCDFB1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		BA8756F61E93442100FCDFB1 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
+		BAA228171EA9C256009B3B41 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 		BAAE23C91E9DDBDD0071C794 /* ConnectionListContainerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionListContainerController.swift; sourceTree = "<group>"; };
 		BAAE23DD1E9DFDDE0071C794 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		BAAE23DE1E9DFDDE0071C794 /* ConnectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectionCell.xib; sourceTree = "<group>"; };
@@ -91,13 +94,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA2281B1EA9C6E1009B3B41 /* TitanCore.framework in Frameworks */,
 				BAF764191E94A3B2001A6545 /* SwiftyPostgreSQL.framework in Frameworks */,
-				BA8756F41E93422600FCDFB1 /* TitanCore.framework in Frameworks */,
 				BA2B4E9A1E9F71D300468572 /* Alamofire.framework in Frameworks */,
 				BA2B4E9B1E9F71D300468572 /* ObjectMapper.framework in Frameworks */,
 				BA2B4E9C1E9F71D300468572 /* Realm.framework in Frameworks */,
 				BA2B4E9D1E9F71D300468572 /* RealmSwift.framework in Frameworks */,
-				BA2B4E9E1E9F71D300468572 /* SnapKit.framework in Frameworks */,
 				BA2B4E9F1E9F71D300468572 /* SwiftyBeaver.framework in Frameworks */,
 				BA2B4EA01E9F71D300468572 /* UICKeyChainStore.framework in Frameworks */,
 				BA2B4E8F1E9F71D300468572 /* RxBlocking.framework in Frameworks */,
@@ -141,6 +143,22 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		BA4B9DB81EA8BBF100210DD6 /* Placeholder Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BA4B9DB91EA8BBFF00210DD6 /* PlaceholderCell.swift */,
+				BA4B9DBB1EA8BC1F00210DD6 /* PlaceholderCell.xib */,
+			);
+			name = "Placeholder Cell";
+			sourceTree = "<group>";
+		};
+		BA4FBC0D1EA9027500A067E9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		BA776E7B1EA71A6200DB7857 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +178,7 @@
 		BA776E811EA71AF200DB7857 /* Table List */ = {
 			isa = PBXGroup;
 			children = (
+				BA4B9DB01EA8AE5F00210DD6 /* TableListDatabaseSource.swift */,
 				BA776E841EA71B1D00DB7857 /* TableListDatabaseController.swift */,
 			);
 			name = "Table List";
@@ -204,6 +223,7 @@
 		BA8756381E923C0500FCDFB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAA228171EA9C256009B3B41 /* SnapKit.framework */,
 				BA2B4EA21E9F72F700468572 /* XCTest.framework */,
 				BA2B4E931E9F71D300468572 /* Alamofire.framework */,
 				BA2B4E941E9F71D300468572 /* ObjectMapper.framework */,
@@ -216,9 +236,6 @@
 				BA2B4E881E9F70ED00468572 /* RxCocoa.framework */,
 				BA2B4E891E9F70ED00468572 /* RxSwift.framework */,
 				BA2B4E8A1E9F70ED00468572 /* RxTest.framework */,
-				BA8756F51E93442100FCDFB1 /* Realm.framework */,
-				BA8756F61E93442100FCDFB1 /* RealmSwift.framework */,
-				BA8756F31E93422600FCDFB1 /* TitanCore.framework */,
 				BA87566B1E924B8400FCDFB1 /* TitanCore.framework */,
 				BA8756671E924B6D00FCDFB1 /* SwiftyPostgreSQL.framework */,
 			);
@@ -248,6 +265,8 @@
 		BA8756711E924D2D00FCDFB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA4FBC0D1EA9027500A067E9 /* New Group */,
+				BA4B9DB81EA8BBF100210DD6 /* Placeholder Cell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -318,8 +337,8 @@
 		BA8756791E924D9400FCDFB1 /* Detail Database */ = {
 			isa = PBXGroup;
 			children = (
-				BA776E821EA71AF600DB7857 /* Content */,
 				BA776E811EA71AF200DB7857 /* Table List */,
+				BA776E821EA71AF600DB7857 /* Content */,
 				BA776E7E1EA71ABB00DB7857 /* Split */,
 				BA776E7B1EA71A6200DB7857 /* Main */,
 				BA18023A1E9C940500096445 /* Window */,
@@ -462,6 +481,7 @@
 			files = (
 				BA1802321E9C935800096445 /* DetailConnection.storyboard in Resources */,
 				BA87562E1E923BEF00FCDFB1 /* Assets.xcassets in Resources */,
+				BA4B9DBC1EA8BC1F00210DD6 /* PlaceholderCell.xib in Resources */,
 				BAAE23EE1E9E0E490071C794 /* ConnectionGroupCell.xib in Resources */,
 				BA8756311E923BEF00FCDFB1 /* Main.storyboard in Resources */,
 				BAAE23E01E9DFDDE0071C794 /* ConnectionCell.xib in Resources */,
@@ -506,9 +526,11 @@
 				BAAE23E21E9DFDF20071C794 /* ConnectionGroupCell.swift in Sources */,
 				BA87562A1E923BEF00FCDFB1 /* AppDelegate.swift in Sources */,
 				BA1802351E9C937A00096445 /* MainWindowController.swift in Sources */,
+				BA4B9DB11EA8AE5F00210DD6 /* TableListDatabaseSource.swift in Sources */,
 				BAAE23DF1E9DFDDE0071C794 /* ConnectionCell.swift in Sources */,
 				BA1802391E9C940100096445 /* DetailDatabaseWindowController.swift in Sources */,
 				BADDF7261E94F2A300F35FF3 /* ConnectionDetailController.swift in Sources */,
+				BA4B9DBA1EA8BBFF00210DD6 /* PlaceholderCell.swift in Sources */,
 				BA776E801EA71ACF00DB7857 /* DetailDatabaseSplitController.swift in Sources */,
 				BADDF7361E94F39B00F35FF3 /* ConnectionSplitController.swift in Sources */,
 				BADDF7231E94F29900F35FF3 /* ConnectionListController.swift in Sources */,

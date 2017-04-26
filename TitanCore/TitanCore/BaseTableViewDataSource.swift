@@ -13,33 +13,35 @@ open class BaseTableViewDataSource: NSObject {
     //
     // MARK: - Variable
     public weak var delegate: BaseTableViewDataSourceProtocol?
-    fileprivate var tableView: NSTableView!
+    public private(set) var tableView: TitanTableView!
     
     //
     // MARK: - Initialization
-    public init(tableView: NSTableView) {
+    public init(tableView: TitanTableView) {
         super.init()
         
         self.tableView = tableView
         self.initTableView()
     }
+
 }
 
 //
 // MARK: - Private
 extension BaseTableViewDataSource {
-    
+
     fileprivate func initTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
+    
 }
 
 //
 // MARK: - Table View
 extension BaseTableViewDataSource: NSTableViewDataSource {
     
-    public func numberOfRows(in tableView: NSTableView) -> Int {
+    open func numberOfRows(in tableView: NSTableView) -> Int {
         guard let delegate = self.delegate else {
             return 0;
         }
@@ -52,7 +54,8 @@ extension BaseTableViewDataSource: NSTableViewDataSource {
 //
 // MARK: - Delegate TableView
 extension BaseTableViewDataSource: NSTableViewDelegate {
-    public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    
+    open func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let delegate = self.delegate else {
             return nil
         }
@@ -60,7 +63,7 @@ extension BaseTableViewDataSource: NSTableViewDelegate {
         return delegate.CommonDataSourceViewFor(tableColumn, row: row)
     }
     
-    public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+    open func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
         guard let delegate = self.delegate else {
             return nil
         }
@@ -68,12 +71,23 @@ extension BaseTableViewDataSource: NSTableViewDelegate {
         return delegate.CommonDataSourceRowView(for: row)
     }
     
-    public func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+    open func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         guard let delegate = self.delegate else {
             return 44.0
         }
         
         return delegate.CommonDataSourceHeight(for: row)
     }
-
+    
+    open func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        return true
+    }
+    
+    public func tableViewSelectionDidChange(_ notification: Notification) {
+        guard let delegate = self.delegate else {
+            return
+        }
+        
+        delegate.CommonDataSourceDidSelectedRow(at: IndexPath(item: self.tableView.selectedRow, section: 0  ))
+    }
 }

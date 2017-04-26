@@ -8,6 +8,20 @@
 
 import Foundation
 
+public enum BundleType {
+    case app
+    case core
+    
+    public var bundleName: String {
+        switch self {
+        case .app:
+            return "com.fe.nghiatran.TitanMacOS"
+        case .core:
+            return "com.fe.nghiatran.TitanCore"
+        }
+    }
+}
+
 //
 // MARK: - Identifier
 // Easily to get ViewID and XIB file
@@ -17,7 +31,7 @@ public protocol Identifier {
     static var identifierView: String {get}
     
     /// XIB - init XIB from identifierView
-    static func xib() -> NSNib?
+    static func xib(with bundleType: BundleType) -> NSNib?
 }
 
 
@@ -33,8 +47,9 @@ public extension Identifier {
     }
     
     /// XIB
-    static func xib() -> NSNib? {
-        return NSNib(nibNamed: self.identifierView, bundle: nil)
+    static func xib(with bundleType: BundleType) -> NSNib? {
+        let bundle = Bundle(identifier: bundleType.bundleName)
+        return NSNib(nibNamed: self.identifierView, bundle: bundle)
     }
 }
 

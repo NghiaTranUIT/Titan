@@ -256,8 +256,8 @@
 		BA8756701E924D2800FCDFB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA8756791E924D9400FCDFB1 /* Detail Database */,
 				BA8756781E924D8300FCDFB1 /* Connection */,
+				BA8756791E924D9400FCDFB1 /* Detail Database */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

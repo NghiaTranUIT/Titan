@@ -13,7 +13,11 @@ class DetailDatabaseContainerController: BaseViewController {
 
     //
     // MARK: - OUTLET
-    @IBOutlet weak var topBarView: NSView!
+    @IBOutlet weak var stackViewContainer: NSView!
+    
+    //
+    // MARK: - Variable
+    fileprivate var stackView: StackTableView!
     
     //
     // MARK: - View Cycle
@@ -21,8 +25,8 @@ class DetailDatabaseContainerController: BaseViewController {
         super.viewDidLoad()
         
         self.initCommon()
+        self.initStackView()
     }
-    
 }
 
 //
@@ -30,6 +34,16 @@ class DetailDatabaseContainerController: BaseViewController {
 extension DetailDatabaseContainerController {
     
     fileprivate func initCommon() {
-        self.topBarView.backgroundColor = NSColor(hexString: "#9b59b6")
+        
+    }
+    
+    fileprivate func initStackView() {
+        let stackView = StackTableView.viewFromNib(with: .core)!
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.stackViewContainer.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.stackViewContainer)
+        }
+        self.stackView = stackView
     }
 }

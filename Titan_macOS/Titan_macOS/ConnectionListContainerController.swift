@@ -23,7 +23,6 @@ class ConnectionListContainerController: BaseViewController {
         // Init
         self.initCommon()
     }
-    
 }
 
 //

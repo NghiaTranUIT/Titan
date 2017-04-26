@@ -15,25 +15,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="TN9-0Q-cpT">
-                                <rect key="frame" x="0.0" y="441" width="701" height="44"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkV-np-fo5">
-                                        <rect key="frame" x="332" y="13" width="37" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="SMR-xp-Sz7">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="448" width="701" height="37"/>
                                 <constraints>
-                                    <constraint firstItem="KkV-np-fo5" firstAttribute="centerY" secondItem="TN9-0Q-cpT" secondAttribute="centerY" id="A1f-aG-8Rk"/>
-                                    <constraint firstItem="KkV-np-fo5" firstAttribute="centerX" secondItem="TN9-0Q-cpT" secondAttribute="centerX" id="PtS-ZM-ZOW"/>
-                                    <constraint firstAttribute="height" constant="44" id="h3F-xn-Jpp"/>
+                                    <constraint firstAttribute="height" constant="37" id="h3F-xn-Jpp"/>
                                 </constraints>
                             </customView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="Ppj-GG-NTu">
-                                <rect key="frame" x="0.0" y="0.0" width="701" height="441"/>
+                                <rect key="frame" x="0.0" y="0.0" width="701" height="448"/>
                                 <connections>
                                     <segue destination="5yq-uU-J4H" kind="embed" id="10n-6N-Pal"/>
                                 </connections>
@@ -50,7 +38,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="topBarView" destination="TN9-0Q-cpT" id="L1W-Cz-6TI"/>
+                        <outlet property="stackViewContainer" destination="TN9-0Q-cpT" id="LDO-i9-jR3"/>
                     </connections>
                 </viewController>
                 <customObject id="OMy-vS-s4W" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -105,19 +93,19 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="fWa-4r-6eG">
-                                <rect key="frame" x="0.0" y="452" width="250" height="44"/>
+                                <rect key="frame" x="0.0" y="446" width="250" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="2j5-H6-dwA"/>
+                                    <constraint firstAttribute="height" constant="50" id="2j5-H6-dwA"/>
                                 </constraints>
                             </customView>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1q8-SL-Nkg">
-                                <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="446"/>
                                 <clipView key="contentView" id="XTB-ep-v29">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="446"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" rowHeight="32" viewBased="YES" id="O2P-ps-1Yi" customClass="TitanTableView" customModule="TitanCore">
-                                            <rect key="frame" x="0.0" y="0.0" width="250" height="452"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="446"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -199,13 +187,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="nDn-gH-FNl">
-                                <rect key="frame" x="0.0" y="464" width="450" height="32"/>
+                                <rect key="frame" x="0.0" y="446" width="450" height="50"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m54-ct-2aQ">
+                                        <rect key="frame" x="-6" y="22" width="81" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="euc-H2-MYL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="ixG-hr-ztg"/>
+                                    <constraint firstAttribute="height" constant="50" id="ixG-hr-ztg"/>
                                 </constraints>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="EhF-Rt-nBU">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="464"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="446"/>
                             </customView>
                         </subviews>
                         <constraints>

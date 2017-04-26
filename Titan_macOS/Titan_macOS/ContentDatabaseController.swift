@@ -16,7 +16,6 @@ class ContentDatabaseController: BaseViewController {
     // MARK: - OUTLET
     @IBOutlet weak var containerStackView: NSView!
     @IBOutlet weak var containerGridView: NSView!
-    fileprivate var stackView: StackTableView!
     
     //
     // MARK: - Variable
@@ -32,9 +31,7 @@ class ContentDatabaseController: BaseViewController {
         self.initDataSource()
         self.initViewModel()
         self.binding()
-        self.initStackView()
     }
-    
 }
 
 //
@@ -46,6 +43,7 @@ extension ContentDatabaseController {
     }
     
     fileprivate func initDataSource() {
+        
     }
     
     fileprivate func initViewModel() {
@@ -66,15 +64,5 @@ extension ContentDatabaseController {
             })
             
         }).addDisposableTo(self.disposeBase)
-    }
-    
-    fileprivate func initStackView() {
-        let stackView = StackTableView.viewFromNib(with: BundleType.core)!
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.containerStackView.addSubview(stackView)
-        stackView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.containerStackView)
-        }
-        self.stackView = stackView
     }
 }

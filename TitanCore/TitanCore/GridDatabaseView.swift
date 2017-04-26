@@ -16,6 +16,7 @@ open class GridDatabaseView: NSView {
     // MARK: - OUTLET
     @IBOutlet weak var tableView: TitanTableView!
     @IBOutlet weak var containerStatusBarView: NSView!
+    fileprivate var statusBarView: StatusBarView!
     
     //
     // MARK: - Variable
@@ -41,6 +42,7 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
+        self.initStatusBarView()
     }
     
     deinit {
@@ -58,11 +60,20 @@ open class GridDatabaseView: NSView {
 extension GridDatabaseView {
     
     fileprivate func initCommon() {
-        
+    
     }
     
     fileprivate func initViewModel() {
         self.viewModel = GridDatabaseViewModel(with: self.table)
+    }
+    
+    fileprivate func initStatusBarView() {
+        self.statusBarView = StatusBarView.viewFromNib(with: .core)!
+        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        self.containerStatusBarView.addSubview(self.statusBarView)
+        self.statusBarView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.containerStatusBarView)
+        }
     }
     
     class func viewFromNib() -> GridDatabaseView? {
@@ -96,6 +107,14 @@ extension GridDatabaseView {
             self.tableView.reloadData()
         })
         .addDisposableTo(self.disposeBag)
+        
+        // Status bar
+        self.viewModel.output.queryResult.asObservable().subscribe(onNext: {[weak self] (queryResult) in
+            guard let `self` = self else {return}
+            
+            // NOtify
+            self.statusBarView.queryResultPublisher.onNext(queryResult)
+        }).addDisposableTo(self.disposeBag)
     }
 }
 
@@ -104,6 +123,7 @@ extension GridDatabaseView {
 extension GridDatabaseView {
     
     fileprivate func setupDataForTableView() {
+        
         // Setup new columns
         self.tableView.setupColumns(viewModel.queryResult.value.columns)
         

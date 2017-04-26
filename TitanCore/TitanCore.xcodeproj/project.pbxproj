@@ -105,6 +105,9 @@
 		BABCE0841EAF056D00A2D08A /* AddTableStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0801EAF056D00A2D08A /* AddTableStackCell.xib */; };
 		BABCE0851EAF056D00A2D08A /* StackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0811EAF056D00A2D08A /* StackTableCell.swift */; };
 		BABCE0861EAF056D00A2D08A /* StackTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE0821EAF056D00A2D08A /* StackTableCell.xib */; };
+		BABCE0891EAF4F9800A2D08A /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE0881EAF4F9800A2D08A /* StatusBarView.swift */; };
+		BABCE08B1EAF4FA400A2D08A /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BABCE08A1EAF4FA400A2D08A /* StatusBarView.xib */; };
+		BABCE08D1EAF502100A2D08A /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABCE08C1EAF502100A2D08A /* StatusBarViewModel.swift */; };
 		BAD83AE01E9B79E9000F6813 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */; };
 		BAD83AE11E9B79E9000F6813 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */; };
 		BAD83AE21E9B79E9000F6813 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */; };
@@ -221,6 +224,9 @@
 		BABCE0801EAF056D00A2D08A /* AddTableStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddTableStackCell.xib; sourceTree = "<group>"; };
 		BABCE0811EAF056D00A2D08A /* StackTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableCell.swift; sourceTree = "<group>"; };
 		BABCE0821EAF056D00A2D08A /* StackTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableCell.xib; sourceTree = "<group>"; };
+		BABCE0881EAF4F9800A2D08A /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		BABCE08A1EAF4FA400A2D08A /* StatusBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusBarView.xib; sourceTree = "<group>"; };
+		BABCE08C1EAF502100A2D08A /* StatusBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewModel.swift; sourceTree = "<group>"; };
 		BAD83ADC1E9B79E9000F6813 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/Mac/RxBlocking.framework; sourceTree = "<group>"; };
 		BAD83ADD1E9B79E9000F6813 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		BAD83ADE1E9B79E9000F6813 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 		BA4FBC0F1EA9028D00A067E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE0871EAF4F8000A2D08A /* Status View */,
 				BA4FBC181EA905C900A067E9 /* Stack View */,
 				BA4FBC151EA9031500A067E9 /* TitanTableView */,
 				BA4FBC101EA9029600A067E9 /* Grid Database View */,
@@ -468,6 +475,7 @@
 				BA4FBC0B1EA8FE8400A067E9 /* ContentDatabaseViewModel.swift */,
 				BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */,
 				BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */,
+				BABCE08C1EAF502100A2D08A /* StatusBarViewModel.swift */,
 			);
 			name = "View model";
 			sourceTree = "<group>";
@@ -649,6 +657,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		BABCE0871EAF4F8000A2D08A /* Status View */ = {
+			isa = PBXGroup;
+			children = (
+				BABCE0881EAF4F9800A2D08A /* StatusBarView.swift */,
+				BABCE08A1EAF4FA400A2D08A /* StatusBarView.xib */,
+			);
+			name = "Status View";
+			sourceTree = "<group>";
+		};
 		BADDF7281E94F2BE00F35FF3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +793,7 @@
 				BABCE0741EAE119400A2D08A /* TableSchemeContextMenuView.xib in Resources */,
 				BABCE0841EAF056D00A2D08A /* AddTableStackCell.xib in Resources */,
 				BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */,
+				BABCE08B1EAF4FA400A2D08A /* StatusBarView.xib in Resources */,
 				BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */,
 				BA4FBC141EA902D800A067E9 /* GridDatabaseView.xib in Resources */,
 			);
@@ -845,6 +863,7 @@
 				BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */,
 				BA8757261E934AD400FCDFB1 /* RealmManager.swift in Sources */,
 				BADDF7481E94FD3B00F35FF3 /* UpdateGroupConnectionAction.swift in Sources */,
+				BABCE0891EAF4F9800A2D08A /* StatusBarView.swift in Sources */,
 				BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */,
 				BA1802301E9C902B00096445 /* NotificationManager.swift in Sources */,
 				BA4FBC121EA902B100A067E9 /* GridDatabaseView.swift in Sources */,
@@ -877,6 +896,7 @@
 				BA8756FF1E93464F00FCDFB1 /* BaseViewModel.swift in Sources */,
 				BA87570E1E93481000FCDFB1 /* UUID+Helper.swift in Sources */,
 				BA1802291E9C8A7900096445 /* CreateNewDatabaseWorker.swift in Sources */,
+				BABCE08D1EAF502100A2D08A /* StatusBarViewModel.swift in Sources */,
 				BA776E741EA61F5400DB7857 /* QueueManager.swift in Sources */,
 				BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */,
 				BA87572E1E934E1600FCDFB1 /* ApplicationManager.swift in Sources */,

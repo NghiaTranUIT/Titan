@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="StatusBarView" id="aWZ-hY-1Hy" customClass="StatusBarView" customModule="TitanCore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="529" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DTd-3l-dZ0">
+                    <rect key="frame" x="388" y="-2" width="101" height="32"/>
+                    <buttonCell key="cell" type="push" title="Page 1 of 1" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mNJ-9j-rxx">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="G04-9T-meA">
+                    <rect key="frame" x="479" y="-2" width="48" height="32"/>
+                    <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mNn-wF-lVd">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-6a-22J">
+                    <rect key="frame" x="350" y="-2" width="48" height="32"/>
+                    <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gtv-5c-kuD">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aKg-Zw-dKN">
+                    <rect key="frame" x="2" y="-2" width="78" height="32"/>
+                    <buttonCell key="cell" type="push" title="+ Row" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="En2-tM-Z6q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <customView horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="MgU-Zo-ho6">
+                    <rect key="frame" x="74" y="0.0" width="282" height="32"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6j-v5-59Z">
+                            <rect key="frame" x="117" y="8" width="49" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0 rows" id="ZDL-YG-5G1">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="B6j-v5-59Z" firstAttribute="centerX" secondItem="MgU-Zo-ho6" secondAttribute="centerX" id="Of4-u5-awm"/>
+                        <constraint firstItem="B6j-v5-59Z" firstAttribute="centerY" secondItem="MgU-Zo-ho6" secondAttribute="centerY" id="jds-Wo-qod"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="aKg-Zw-dKN" firstAttribute="leading" secondItem="aWZ-hY-1Hy" secondAttribute="leading" constant="8" id="BwG-Xp-wL5"/>
+                <constraint firstAttribute="bottom" secondItem="MgU-Zo-ho6" secondAttribute="bottom" id="Dcy-BX-jAP"/>
+                <constraint firstItem="aKg-Zw-dKN" firstAttribute="centerY" secondItem="aWZ-hY-1Hy" secondAttribute="centerY" id="M2R-7o-wQs"/>
+                <constraint firstItem="G04-9T-meA" firstAttribute="leading" secondItem="DTd-3l-dZ0" secondAttribute="trailing" constant="2" id="N91-Zb-LEK"/>
+                <constraint firstItem="DTd-3l-dZ0" firstAttribute="centerY" secondItem="aWZ-hY-1Hy" secondAttribute="centerY" id="Ou5-gJ-KBi"/>
+                <constraint firstItem="MgU-Zo-ho6" firstAttribute="top" secondItem="aWZ-hY-1Hy" secondAttribute="top" id="SOs-Ke-XSZ"/>
+                <constraint firstItem="MgU-Zo-ho6" firstAttribute="leading" secondItem="aKg-Zw-dKN" secondAttribute="trailing" id="TNp-Ww-hXr"/>
+                <constraint firstItem="eiv-6a-22J" firstAttribute="leading" secondItem="MgU-Zo-ho6" secondAttribute="trailing" id="gms-Jt-H6r"/>
+                <constraint firstAttribute="trailing" secondItem="G04-9T-meA" secondAttribute="trailing" constant="8" id="iEY-yI-sSz"/>
+                <constraint firstItem="DTd-3l-dZ0" firstAttribute="leading" secondItem="eiv-6a-22J" secondAttribute="trailing" constant="2" id="nfG-yW-eZX"/>
+                <constraint firstItem="eiv-6a-22J" firstAttribute="centerY" secondItem="aWZ-hY-1Hy" secondAttribute="centerY" id="qQV-lz-tak"/>
+                <constraint firstItem="G04-9T-meA" firstAttribute="centerY" secondItem="aWZ-hY-1Hy" secondAttribute="centerY" id="wmH-Ks-Svu"/>
+            </constraints>
+            <connections>
+                <outlet property="addRowBtn" destination="aKg-Zw-dKN" id="rlw-Hy-B8V"/>
+                <outlet property="nextPageBtn" destination="G04-9T-meA" id="E32-XT-3Fp"/>
+                <outlet property="pageNumberBtn" destination="DTd-3l-dZ0" id="o6I-5b-Rhl"/>
+                <outlet property="previousPageBtn" destination="eiv-6a-22J" id="sp5-9I-bbP"/>
+                <outlet property="statusLbl" destination="B6j-v5-59Z" id="IYI-Ad-Ny7"/>
+            </connections>
+            <point key="canvasLocation" x="164.5" y="167"/>
+        </customView>
+    </objects>
+</document>

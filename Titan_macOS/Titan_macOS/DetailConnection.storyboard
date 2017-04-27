@@ -200,6 +200,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="13"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="rowBtnTapped:" target="Fuf-Vk-sCT" id="4jH-u8-sN9"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-Q3-Ilk" customClass="HoverButton" customModule="TitanCore">
                                         <rect key="frame" x="62" y="0.0" width="84" height="50"/>
@@ -210,6 +213,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="13"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="structureBtnTapped:" target="Fuf-Vk-sCT" id="JV6-wN-ANI"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2GO-Hc-Fip" customClass="HoverButton" customModule="TitanCore">
                                         <rect key="frame" x="146" y="0.0" width="76" height="50"/>
@@ -220,6 +226,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="13"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="indexBtnTapped:" target="Fuf-Vk-sCT" id="7M2-Uq-lT4"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W0D-W4-vXc" customClass="HoverButton" customModule="TitanCore">
                                         <rect key="frame" x="222" y="0.0" width="93" height="50"/>
@@ -230,6 +239,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="13"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="sqlQueryBtnTapped:" target="Fuf-Vk-sCT" id="4Zr-qu-3wv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -265,6 +277,10 @@
                     <connections>
                         <outlet property="containerButtonsView" destination="nDn-gH-FNl" id="bln-9Y-jBJ"/>
                         <outlet property="containerGridView" destination="EhF-Rt-nBU" id="RRP-oG-exd"/>
+                        <outlet property="indexBtn" destination="2GO-Hc-Fip" id="SRd-3g-QAD"/>
+                        <outlet property="rowsBtn" destination="m54-ct-2aQ" id="sEy-2Q-OY4"/>
+                        <outlet property="sqlQueryBtn" destination="W0D-W4-vXc" id="Evc-CH-ac5"/>
+                        <outlet property="structureBtn" destination="Ium-Q3-Ilk" id="gCZ-30-jaX"/>
                     </connections>
                 </viewController>
                 <customObject id="Bs0-K9-6Y2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import RxSwift
 
 //
 // MARK: - HoverButton
@@ -15,12 +16,8 @@ open class HoverButton: NSButton {
     
     //
     // MARK: - Variable
+    fileprivate var disposeBag = DisposeBag()
     fileprivate var trackingArea: NSTrackingArea?
-    override open var state: Int {
-        didSet {
-            Logger.info("State change = \(self.state)")
-        }
-    }
     
     //
     // MARK: - Init    
@@ -29,6 +26,12 @@ open class HoverButton: NSButton {
         
         self.setupTrackingArea()
         self.updateColorAnimator(false)
+        
+        self.rx.state.subscribe(onNext: {[weak self] (state) in
+            guard let `self` = self else {return}
+            self.isSelected = state == NSOnState
+        })
+        .addDisposableTo(self.disposeBag)
     }
     
     //
@@ -53,8 +56,10 @@ open class HoverButton: NSButton {
     }
     
     fileprivate func updateColorAnimator(_ isEntered: Bool) {
-        let color = isEntered ? NSColor.white : NSColor(hexString: "#d6cce2")
-        self.setTextColor(color)
+        if !self.isSelected {
+            let color = isEntered ? NSColor.white : NSColor(hexString: "#d6cce2")
+            self.setTextColor(color)
+        }
     }
     
     //
@@ -70,5 +75,18 @@ open class HoverButton: NSButton {
         
         let attributedTitle = NSAttributedString(string: title, attributes: attributes)
         self.attributedTitle = attributedTitle
+    }
+    
+    public var isSelected: Bool = false {
+        didSet {
+            if isSelected {
+                self.backgroundColor = NSColor.white
+                self.setTextColor(NSColor.black)
+            }
+            else {
+                self.backgroundColor = NSColor.clear
+                self.setTextColor(NSColor(hexString: "#d6cce2"))
+            }
+        }
     }
 }

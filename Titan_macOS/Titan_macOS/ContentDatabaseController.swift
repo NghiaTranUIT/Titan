@@ -16,6 +16,10 @@ class ContentDatabaseController: BaseViewController {
     // MARK: - OUTLET
     @IBOutlet weak var containerButtonsView: NSView!
     @IBOutlet weak var containerGridView: NSView!
+    @IBOutlet weak var rowsBtn: HoverButton!
+    @IBOutlet weak var structureBtn: HoverButton!
+    @IBOutlet weak var indexBtn: HoverButton!
+    @IBOutlet weak var sqlQueryBtn: HoverButton!
     
     //
     // MARK: - Variable
@@ -32,6 +36,27 @@ class ContentDatabaseController: BaseViewController {
         self.initViewModel()
         self.binding()
     }
+    
+    @IBAction func rowBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func structureBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func indexBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func sqlQueryBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+
 }
 
 //
@@ -64,5 +89,12 @@ extension ContentDatabaseController {
             })
             
         }).addDisposableTo(self.disposeBase)
+    }
+    
+    fileprivate func resetAllState() {
+        self.rowsBtn.state = NSOffState
+        self.indexBtn.state = NSOffState
+        self.structureBtn.state = NSOffState
+        self.sqlQueryBtn.state = NSOffState
     }
 }

@@ -32,6 +32,7 @@
 		BA4FBC171EA9032800A067E9 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC161EA9032800A067E9 /* TitanTableView.swift */; };
 		BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC191EA905ED00A067E9 /* StackTableView.swift */; };
 		BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */; };
+		BA6ACAB01EB19D5300B37CE7 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -149,6 +150,7 @@
 		BA4FBC161EA9032800A067E9 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
 		BA4FBC191EA905ED00A067E9 /* StackTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableView.swift; sourceTree = "<group>"; };
 		BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableView.xib; sourceTree = "<group>"; };
+		BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 		BA4FBC0F1EA9028D00A067E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BA6ACAAE1EB19D3E00B37CE7 /* Buttons */,
 				BABCE0871EAF4F8000A2D08A /* Status View */,
 				BA4FBC181EA905C900A067E9 /* Stack View */,
 				BA4FBC151EA9031500A067E9 /* TitanTableView */,
@@ -374,6 +377,14 @@
 				BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */,
 			);
 			name = "Stack View";
+			sourceTree = "<group>";
+		};
+		BA6ACAAE1EB19D3E00B37CE7 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */,
+			);
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		BA776E691EA6174500DB7857 /* PostgreSQL  */ = {
@@ -899,6 +910,7 @@
 				BABCE08D1EAF502100A2D08A /* StatusBarViewModel.swift in Sources */,
 				BA776E741EA61F5400DB7857 /* QueueManager.swift in Sources */,
 				BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */,
+				BA6ACAB01EB19D5300B37CE7 /* HoverButton.swift in Sources */,
 				BA87572E1E934E1600FCDFB1 /* ApplicationManager.swift in Sources */,
 				BAAE23E41E9DFFD80071C794 /* NSView+Xib.swift in Sources */,
 				BAAE23D91E9DEC390071C794 /* BaseCollectionViewDataSourceProtocol.swift in Sources */,

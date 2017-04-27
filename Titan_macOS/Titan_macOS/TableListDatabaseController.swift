@@ -16,7 +16,7 @@ class TableListDatabaseController: BaseViewController {
     //
     // MARK: - OUTLET
     @IBOutlet weak var tableView: TitanTableView!
-    
+    @IBOutlet weak var topBarView: NSView!
     
     //
     // MARK: - Variable
@@ -42,7 +42,7 @@ class TableListDatabaseController: BaseViewController {
 extension TableListDatabaseController {
     
     fileprivate func initCommon() {
-        
+        self.topBarView.backgroundColor = NSColor(hexString: "#79589f")
     }
     
     fileprivate func initDataSource() {

@@ -14,7 +14,7 @@ class ContentDatabaseController: BaseViewController {
 
     //
     // MARK: - OUTLET
-    @IBOutlet weak var containerStackView: NSView!
+    @IBOutlet weak var containerButtonsView: NSView!
     @IBOutlet weak var containerGridView: NSView!
     
     //
@@ -39,7 +39,7 @@ class ContentDatabaseController: BaseViewController {
 extension ContentDatabaseController {
     
     fileprivate func initCommon() {
-        
+        self.containerButtonsView.backgroundColor = NSColor(hexString: "#70599b")
     }
     
     fileprivate func initDataSource() {

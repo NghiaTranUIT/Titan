@@ -209,9 +209,6 @@ extension GridDatabaseView: NSTableViewDataSource {
 extension GridDatabaseView: NSTableViewDelegate {
     public func tableViewSelectionDidChange(_ notification: Notification) {
         
-        // Update status bar
-        let set = self.tableView.selectedRowIndexes
-//        self.delegate?.DatabaseContentDidSelectionChanged(set, rowAffect: self.numberRowEffect)
     }
 }
 

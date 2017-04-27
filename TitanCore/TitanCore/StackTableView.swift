@@ -91,7 +91,7 @@ extension StackTableView {
         // Flow layout
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = NSSize(width: 100, height: 32)
+        flowLayout.itemSize = NSSize(width: 100, height: 37)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         flowLayout.sectionFootersPinToVisibleBounds = false
         flowLayout.minimumInteritemSpacing = 0

@@ -32,7 +32,7 @@ open class GridDatabaseView: NSView {
     //
     // MARK: - Init
     public class func viewNib(with table: Table) -> GridDatabaseView {
-        let view = GridDatabaseView.viewFromNib()!
+        let view = GridDatabaseView.viewFromNib(with: .core)!
         view.table = table
         return view
     }
@@ -47,11 +47,6 @@ open class GridDatabaseView: NSView {
     
     deinit {
         Logger.info("GridDatabaseView Deinit")
-    }
-    
-    open override func removeFromSuperview() {
-        super.removeFromSuperview()
-        Logger.info("\(self.table.tableName) removeFromSuperview" )
     }
 }
 
@@ -74,21 +69,6 @@ extension GridDatabaseView {
         self.statusBarView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.containerStatusBarView)
         }
-    }
-    
-    class func viewFromNib() -> GridDatabaseView? {
-        
-        var topViews: NSArray = []
-        let xib = NSNib(nibNamed: "GridDatabaseView", bundle: Bundle(identifier: "com.fe.nghiatran.TitanCore"))
-        let _ = xib?.instantiate(withOwner: self, topLevelObjects: &topViews)
-        
-        for subView in topViews {
-            if let innerView = subView as? GridDatabaseView {
-                return innerView
-            }
-        }
-        
-        return nil
     }
     
     fileprivate func binding() {
@@ -125,21 +105,7 @@ extension GridDatabaseView {
     fileprivate func setupDataForTableView() {
         
         // Setup new columns
-        self.tableView.setupColumns(viewModel.queryResult.value.columns)
-        
-        // Enable save
-        self.autosaveColumnsWidth()
-    }
-    
-    fileprivate func autosaveColumnsWidth() {
-        let tableName = viewModel.query.rawString
-        
-        // Save
-        self.tableView.autosaveName = tableName
-        self.tableView.autosaveTableColumns = true
-        
-        // Calculate size
-        self.tableView.makeColumnsFitContents()
+        self.tableView.prepareColumns(viewModel.queryResult.value.columns)
     }
 }
 
@@ -148,59 +114,31 @@ extension GridDatabaseView {
 extension GridDatabaseView: NSTableViewDataSource {
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel!.queryResult.value.rows.count
+        return self.viewModel.queryResult.value.rows.count
     }
     
-    public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    public func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
         
-        let tableCellType = tableColumn.tableViewCellType
-        switch tableCellType {
-        case .switchButton:
-            return self.switchCellCell(tableColumn: tableColumn, row: row)
-            
-        case .textField:
-            return self.textFieldCellView(tableColumn: tableColumn, row: row)
-            
-        }
-    }
-    
-    public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        var rowView = tableView.make(withIdentifier: ContentRowView.identifierView, owner: self) as? ContentRowView
-        
-        if rowView == nil {
-            rowView = ContentRowView()
-            rowView?.identifier = ContentRowView.identifierView
-        }
-        
-        return rowView
-    }
-    
-    public func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 17
-    }
-    
-    private func switchCellCell(tableColumn: TitanTableColumn, row: Int) -> BoolCellView {
-        var cell = self.tableView.make(withIdentifier: tableColumn.identifier, owner: self) as? BoolCellView
-        if cell == nil {
-            cell = BoolCellView.viewWithIdentifier(tableColumn.identifier)
-        }
-        
-        cell!.configureCell()
-        return cell!
-    }
-    
-    private func textFieldCellView(tableColumn: TitanTableColumn, row: Int) -> TextFieldCellView {
-        var cell = self.tableView.make(withIdentifier: tableColumn.identifier, owner: self) as? TextFieldCellView
-        if cell == nil {
-            cell = TextFieldCellView.viewWithIdentifier(tableColumn.identifier)
-        }
-        
-        // Configure
         let col = tableColumn.column!
-        let field = self.viewModel!.field(at: col, row: row)
-        cell!.configureCell(with: field, column: col)
-        return cell!
+        let field = self.viewModel.field(at: col, row: row)
+        return field.rawData
+    }
+    
+    public func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
+        guard let cell = cell as? NSTextFieldCell else {return}
+        guard let tableColumn = tableColumn as? TitanTableColumn else {return}
+        
+        let col = tableColumn.column!
+        let field = self.viewModel.field(at: col, row: row)
+        
+        // Show raw data
+        if field.isNull {
+            cell.placeholderString = field.rawData
+            cell.stringValue = ""
+        } else {
+            cell.stringValue = field.rawData
+        }
     }
 }
 
@@ -212,3 +150,6 @@ extension GridDatabaseView: NSTableViewDelegate {
     }
 }
 
+extension GridDatabaseView: XIBInitializable {
+    public typealias T = GridDatabaseView
+}

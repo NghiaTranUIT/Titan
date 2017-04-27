@@ -46,7 +46,7 @@ open class TitanTableView: NSTableView {
     
     
     /// Remove all columns
-    func removeAllColumns() {
+    public func removeAllColumns() {
         while self.tableColumns.count > 0 {
             let tableColumn = self.tableColumns.last
             self.removeTableColumn(tableColumn!)
@@ -56,7 +56,7 @@ open class TitanTableView: NSTableView {
     /// Setup NSTableView with columns
     ///
     /// - Parameter columns: Array of col from SwifyPostgreSQL
-    func setupColumns(_ columns: [Column]) {
+    public func prepareColumns(_ columns: [Column]) {
         
         // Remove all first
         self.removeAllColumns()
@@ -71,19 +71,18 @@ open class TitanTableView: NSTableView {
         for col in cols {
             self.addTableColumn(col)
         }
+        self.makeColumnsFitContents()
         self.endUpdates()
         
         // FIXME: force layout subview to change header view height
         self.enclosingScrollView?.tile()
     }
     
-    func makeColumnsFitContents() {
+    public func makeColumnsFitContents() {
         
         // Interate each columns and fit it
         for column in self.tableColumns as! [TitanTableColumn] {
             column.width = column.sizeThatFits(limit: true)
         }
-    }
-
-    
+    }    
 }

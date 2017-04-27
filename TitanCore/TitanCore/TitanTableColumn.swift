@@ -20,6 +20,7 @@ class TitanTableColumn: NSTableColumn {
     // MARK: - Variable
     fileprivate static let DefaultColumnWidth: CGFloat = 100.0
     fileprivate static let MaxColumnWidth: CGFloat = 200.0
+    fileprivate let fontAtt: [String: Any] = [NSFontAttributeName: NSFont.systemFont(ofSize: 13)]
     
     var column: Column!
     var tableViewCellType: TableViewCellType {
@@ -45,13 +46,10 @@ class TitanTableColumn: NSTableColumn {
     
     
     /// Calculate size that fit the contents
-    ///
-    /// - Parameter limit: <#limit description#>
     func sizeThatFits(limit: Bool) -> CGFloat {
         guard let tableView = self.tableView else {return TitanTableColumn.DefaultColumnWidth}
         
         let rowsToConsider = self.numberRowsConsider
-        let columnIndex = tableView.tableColumns.index(of: self) ?? 0
         
         // Reload if need
         if tableView.numberOfRows == 0  {
@@ -62,8 +60,8 @@ class TitanTableColumn: NSTableColumn {
         var maxWidth: CGFloat = 0
         let rowInterate = min(rowsToConsider, tableView.numberOfRows)
         for rowIndex in 0..<rowInterate {
-            if let tableCellView = tableView.view(atColumn: columnIndex, row: rowIndex, makeIfNecessary: true) {
-                maxWidth = max(maxWidth, tableCellView.fittingSize.width)
+            if let tableCellView = tableView.dataSource?.tableView!(tableView, objectValueFor: self, row: rowIndex) as? NSString {
+                maxWidth = max(maxWidth, tableCellView.size(withAttributes: fontAtt).width)
             }
         }
         
@@ -72,6 +70,7 @@ class TitanTableColumn: NSTableColumn {
         
         maxWidth = max(maxWidth + 10, headerSize.width * 1.1)
         
+        // Limit
         if limit {
             maxWidth = min(maxWidth, TitanTableColumn.MaxColumnWidth)
         }
@@ -110,12 +109,12 @@ extension TitanTableColumn {
         case .charArray:
             fallthrough
         case .intArray:
-            return 5
+            return 1
             
         case .json:
             fallthrough
         case .varchar:
-            return 10
+            return 2
             
         default:
             return 1

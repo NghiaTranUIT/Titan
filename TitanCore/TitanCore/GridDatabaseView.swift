@@ -55,23 +55,19 @@ open class GridDatabaseView: NSView {
     }
     
     @IBAction func rowBtnTapped(_ sender: HoverButton) {
-        self.resetAllState()
-        sender.state = NSOnState
+        self.resetAllState(sender)
     }
     
     @IBAction func structureBtnTapped(_ sender: HoverButton) {
-        self.resetAllState()
-        sender.state = NSOnState
+        self.resetAllState(sender)
     }
     
     @IBAction func indexBtnTapped(_ sender: HoverButton) {
-        self.resetAllState()
-        sender.state = NSOnState
+        self.resetAllState(sender)
     }
     
     @IBAction func sqlQueryBtnTapped(_ sender: HoverButton) {
-        self.resetAllState()
-        sender.state = NSOnState
+        self.resetAllState(sender)
     }
 }
 
@@ -81,6 +77,7 @@ extension GridDatabaseView {
     
     fileprivate func initCommon() {
         self.containerButtonsView.backgroundColor = NSColor(hexString: "#70599b")
+        self.rowsBtn.state = NSOnState
     }
     
     fileprivate func initViewModel() {
@@ -102,7 +99,7 @@ extension GridDatabaseView {
         self.viewModel.input.fetchDatabaseFromTablePublisher.onNext()
         
         // Reload if have new query Result
-        self.viewModel.output.queryResult.asDriver().drive(onNext: {[weak self] _ in
+        self.viewModel.output.queryResultVariable.asDriver().drive(onNext: {[weak self] _ in
             guard let `self` = self else {return}
             
             // Setup colums and data
@@ -114,19 +111,51 @@ extension GridDatabaseView {
         .addDisposableTo(self.disposeBag)
         
         // Status bar
-        self.viewModel.output.queryResult.asObservable().subscribe(onNext: {[weak self] (queryResult) in
+        self.viewModel.output.queryResultVariable.asObservable().subscribe(onNext: {[weak self] (queryResult) in
             guard let `self` = self else {return}
             
             // NOtify
             self.statusBarView.queryResultPublisher.onNext(queryResult)
         }).addDisposableTo(self.disposeBag)
+        
+        // Tap
+        self.rowsBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.resetAllState(self.rowsBtn)
+        }).addDisposableTo(self.disposeBag)
+        
+        self.structureBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.resetAllState(self.structureBtn)
+        }).addDisposableTo(self.disposeBag)
+        
+        self.indexBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.resetAllState(self.indexBtn)
+        }).addDisposableTo(self.disposeBag)
+        
+        self.sqlQueryBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
+            guard let `self` = self else {return}
+            self.resetAllState(self.sqlQueryBtn)
+        }).addDisposableTo(self.disposeBag)
+        
+        // Change state
+        self.viewModel.output.stateVariable.asDriver().drive(onNext: { (state) in
+            
+        })
+        .addDisposableTo(self.disposeBag)
+        
     }
     
-    fileprivate func resetAllState() {
-        self.rowsBtn.state = NSOffState
-        self.indexBtn.state = NSOffState
-        self.structureBtn.state = NSOffState
-        self.sqlQueryBtn.state = NSOffState
+    fileprivate func resetAllState(_ sender: HoverButton) {
+        let btns = [self.rowsBtn, self.indexBtn, self.structureBtn, self.sqlQueryBtn].filter { (btn) -> Bool in
+            return btn !== sender
+        }
+        
+        for btn in btns {
+            btn!.state = NSOffState
+        }
+        sender.state = NSOnState
     }
 }
 
@@ -137,7 +166,7 @@ extension GridDatabaseView {
     fileprivate func setupDataForTableView() {
         
         // Setup new columns
-        self.tableView.prepareColumns(viewModel.queryResult.value.columns)
+        self.tableView.prepareColumns(viewModel.queryResultVariable.value.columns)
     }
 }
 
@@ -146,7 +175,7 @@ extension GridDatabaseView {
 extension GridDatabaseView: NSTableViewDataSource {
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel.queryResult.value.rows.count
+        return self.viewModel.queryResultVariable.value.rows.count
     }
     
     public func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {

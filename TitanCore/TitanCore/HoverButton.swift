@@ -18,6 +18,11 @@ open class HoverButton: NSButton {
     // MARK: - Variable
     fileprivate var disposeBag = DisposeBag()
     fileprivate var trackingArea: NSTrackingArea?
+    override open var state: Int {
+        didSet{
+            self.isSelected = state == NSOnState
+        }
+    }
     
     //
     // MARK: - Init    
@@ -26,12 +31,6 @@ open class HoverButton: NSButton {
         
         self.setupTrackingArea()
         self.updateColorAnimator(false)
-        
-        self.rx.state.subscribe(onNext: {[weak self] (state) in
-            guard let `self` = self else {return}
-            self.isSelected = state == NSOnState
-        })
-        .addDisposableTo(self.disposeBag)
     }
     
     //

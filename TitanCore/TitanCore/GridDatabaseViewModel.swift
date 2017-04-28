@@ -23,7 +23,15 @@ public protocol GridDatabaseViewModelInput {
 }
 
 public protocol GridDatabaseViewModelOutput {
-    var queryResult: Variable<QueryResult> {get}
+    var queryResultVariable: Variable<QueryResult> {get}
+    var stateVariable: Variable<GridDatabaseViewModelState> {get}
+}
+
+public enum GridDatabaseViewModelState {
+    case row
+    case structure
+    case index
+    case sqlQuery
 }
 
 //
@@ -41,7 +49,8 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     
     //
     // MARK: - Output
-    public var queryResult = Variable<QueryResult>(QueryResult(nil))
+    public var queryResultVariable = Variable<QueryResult>(QueryResult(nil))
+    public var stateVariable = Variable<GridDatabaseViewModelState>(.row)
     
     //
     // MARK: - Variable
@@ -73,12 +82,12 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
             let worker = QueryPostgreSQLWorker(query: self.query)
             return worker.observable()
         }
-        .bind(to: self.queryResult)
+        .bind(to: self.queryResultVariable)
         .addDisposableTo(self.disposeBag)
     }
     
     public func field(at col: Column, row: Int) -> Field {
-        let row = self.queryResult.value.rows[row]
+        let row = self.queryResultVariable.value.rows[row]
         let field = row.field(with: col)!
         return field
     }

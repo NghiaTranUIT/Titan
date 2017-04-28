@@ -172,6 +172,10 @@
             <connections>
                 <outlet property="containerButtonsView" destination="rkC-Fu-hcJ" id="OfR-Qh-YIi"/>
                 <outlet property="containerStatusBarView" destination="72C-jx-nvF" id="F1E-eL-ubj"/>
+                <outlet property="indexBtn" destination="ugT-Qf-CUR" id="hVl-PM-ho9"/>
+                <outlet property="rowsBtn" destination="ECU-IC-XMn" id="EOy-Ge-Vdw"/>
+                <outlet property="sqlQueryBtn" destination="V1K-wS-MGn" id="caj-xp-wcR"/>
+                <outlet property="structureBtn" destination="o2i-aW-aHA" id="e5W-Rv-7bn"/>
                 <outlet property="tableView" destination="Lz9-Zj-0Zx" id="ezC-ln-CNV"/>
             </connections>
             <point key="canvasLocation" x="74" y="116.5"/>

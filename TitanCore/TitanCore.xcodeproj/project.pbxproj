@@ -33,6 +33,10 @@
 		BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC191EA905ED00A067E9 /* StackTableView.swift */; };
 		BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */; };
 		BA6ACAB01EB19D5300B37CE7 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */; };
+		BA6ACAE41EB33B7F00B37CE7 /* RowsDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */; };
+		BA6ACAE61EB33B8900B37CE7 /* StructureDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */; };
+		BA6ACAE81EB33BAD00B37CE7 /* IndexDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */; };
+		BA6ACAEA1EB33BB700B37CE7 /* SQLQueryDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -151,6 +155,10 @@
 		BA4FBC191EA905ED00A067E9 /* StackTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableView.swift; sourceTree = "<group>"; };
 		BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableView.xib; sourceTree = "<group>"; };
 		BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
+		BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowsDatabaseView.swift; sourceTree = "<group>"; };
+		BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureDatabaseView.swift; sourceTree = "<group>"; };
+		BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexDatabaseView.swift; sourceTree = "<group>"; };
+		BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLQueryDatabaseView.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -351,6 +359,7 @@
 		BA4FBC101EA9029600A067E9 /* Grid Database View */ = {
 			isa = PBXGroup;
 			children = (
+				BA6ACADE1EB33B3A00B37CE7 /* Views */,
 				BA4FBC111EA902B100A067E9 /* GridDatabaseView.swift */,
 				BA4FBC131EA902D800A067E9 /* GridDatabaseView.xib */,
 			);
@@ -385,6 +394,49 @@
 				BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */,
 			);
 			name = Buttons;
+			sourceTree = "<group>";
+		};
+		BA6ACADE1EB33B3A00B37CE7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAE21EB33B5100B37CE7 /* SQL Query */,
+				BA6ACAE11EB33B4D00B37CE7 /* Indexes */,
+				BA6ACAE01EB33B4500B37CE7 /* Structure */,
+				BA6ACADF1EB33B4000B37CE7 /* Rows */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BA6ACADF1EB33B4000B37CE7 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */,
+			);
+			name = Rows;
+			sourceTree = "<group>";
+		};
+		BA6ACAE01EB33B4500B37CE7 /* Structure */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */,
+			);
+			name = Structure;
+			sourceTree = "<group>";
+		};
+		BA6ACAE11EB33B4D00B37CE7 /* Indexes */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */,
+			);
+			name = Indexes;
+			sourceTree = "<group>";
+		};
+		BA6ACAE21EB33B5100B37CE7 /* SQL Query */ = {
+			isa = PBXGroup;
+			children = (
+				BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */,
+			);
+			name = "SQL Query";
 			sourceTree = "<group>";
 		};
 		BA776E691EA6174500DB7857 /* PostgreSQL  */ = {
@@ -894,6 +946,8 @@
 				BA776E761EA7070900DB7857 /* DetailDatabaseStore.swift in Sources */,
 				BA8756FD1E93463000FCDFB1 /* BaseTableViewDataSource.swift in Sources */,
 				BADDF7411E94F9D400F35FF3 /* ConnectionStore.swift in Sources */,
+				BA6ACAE61EB33B8900B37CE7 /* StructureDatabaseView.swift in Sources */,
+				BA6ACAEA1EB33BB700B37CE7 /* SQLQueryDatabaseView.swift in Sources */,
 				BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */,
 				BABCE0701EAE0C4F00A2D08A /* ContentRowView.swift in Sources */,
 				BABCE06D1EAE0A9E00A2D08A /* TextFieldCellView.swift in Sources */,
@@ -912,6 +966,7 @@
 				BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */,
 				BA6ACAB01EB19D5300B37CE7 /* HoverButton.swift in Sources */,
 				BA87572E1E934E1600FCDFB1 /* ApplicationManager.swift in Sources */,
+				BA6ACAE41EB33B7F00B37CE7 /* RowsDatabaseView.swift in Sources */,
 				BAAE23E41E9DFFD80071C794 /* NSView+Xib.swift in Sources */,
 				BAAE23D91E9DEC390071C794 /* BaseCollectionViewDataSourceProtocol.swift in Sources */,
 				BADDF7311E94F35500F35FF3 /* ConnectionListViewModel.swift in Sources */,
@@ -931,6 +986,7 @@
 				BADDF7451E94FAFA00F35FF3 /* ReduxStore.swift in Sources */,
 				BAAE23D41E9DEA850071C794 /* BaseCollectionViewDataSource.swift in Sources */,
 				BA8757041E93474400FCDFB1 /* Constants.swift in Sources */,
+				BA6ACAE81EB33BAD00B37CE7 /* IndexDatabaseView.swift in Sources */,
 				BA8757361E934FC100FCDFB1 /* FontManager.swift in Sources */,
 				BABCE05F1EAE04D800A2D08A /* Pagination.swift in Sources */,
 				BA8757281E934AF700FCDFB1 /* RealmKeys.swift in Sources */,

@@ -16,4 +16,10 @@ class DetailDatabaseSplitController: BaseSplitViewController {
         // Do view setup here.
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        // Size of divider
+        self.splitView.setPosition(200, ofDividerAt: 0)
+    }
 }

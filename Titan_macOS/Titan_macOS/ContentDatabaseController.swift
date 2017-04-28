@@ -20,7 +20,6 @@ class ContentDatabaseController: BaseViewController {
     // MARK: - Variable
     fileprivate var viewModel: ContentDatabaseViewModel!
     
-    
     //
     // MARK: - View Cycle
     override func viewDidLoad() {

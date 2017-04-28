@@ -14,9 +14,6 @@ open class GridDatabaseView: NSView {
 
     //
     // MARK: - OUTLET
-    @IBOutlet weak var tableView: TitanTableView!
-    @IBOutlet weak var containerStatusBarView: NSView!
-    fileprivate var statusBarView: StatusBarView!
     @IBOutlet weak var rowsBtn: HoverButton!
     @IBOutlet weak var structureBtn: HoverButton!
     @IBOutlet weak var indexBtn: HoverButton!
@@ -26,12 +23,7 @@ open class GridDatabaseView: NSView {
     
     //
     // MARK: - Variable
-    public var table: Table! {didSet{
-        self.initViewModel()
-        self.binding()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        }}
+    public var table: Table!
     fileprivate var viewModel: GridDatabaseViewModel!
     fileprivate var disposeBag = DisposeBag()
     
@@ -54,7 +46,7 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
-        self.initStatusBarView()
+        self.binding()
     }
     
     deinit {
@@ -72,42 +64,10 @@ extension GridDatabaseView {
     }
     
     fileprivate func initViewModel() {
-        self.viewModel = GridDatabaseViewModel(with: self.table)
-    }
-    
-    fileprivate func initStatusBarView() {
-        self.statusBarView = StatusBarView.viewFromNib(with: .core)!
-        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
-        self.containerStatusBarView.addSubview(self.statusBarView)
-        self.statusBarView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.containerStatusBarView)
-        }
+        self.viewModel = GridDatabaseViewModel()
     }
     
     fileprivate func binding() {
-        
-        // Fetch default query
-        self.viewModel.input.fetchDatabaseFromTablePublisher.onNext()
-        
-        // Reload if have new query Result
-        self.viewModel.output.queryResultVariable.asDriver().drive(onNext: {[weak self] _ in
-            guard let `self` = self else {return}
-            
-            // Setup colums and data
-            self.setupDataForTableView()
-            
-            // Reload
-            self.tableView.reloadData()
-        })
-        .addDisposableTo(self.disposeBag)
-        
-        // Status bar
-        self.viewModel.output.queryResultVariable.asObservable().subscribe(onNext: {[weak self] (queryResult) in
-            guard let `self` = self else {return}
-            
-            // NOtify
-            self.statusBarView.queryResultPublisher.onNext(queryResult)
-        }).addDisposableTo(self.disposeBag)
         
         // Tap
         self.rowsBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
@@ -162,6 +122,7 @@ extension GridDatabaseView {
         case .row:
             if self.rowsView == nil {
                 self.rowsView = self.lazyLoadView(viewType: RowsDatabaseView.self)
+                self.rowsView!.table = self.table
             }
             self.rowsView?.isHidden = false
         
@@ -203,58 +164,6 @@ extension GridDatabaseView {
         return view
     }
 
-}
-
-//
-// MARK: - Grid view
-extension GridDatabaseView {
-    
-    fileprivate func setupDataForTableView() {
-        
-        // Setup new columns
-        self.tableView.prepareColumns(viewModel.queryResultVariable.value.columns)
-    }
-}
-
-//
-// MARK: - NSTableViewDataSource
-extension GridDatabaseView: NSTableViewDataSource {
-    
-    public func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.viewModel.queryResultVariable.value.rows.count
-    }
-    
-    public func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        guard let tableColumn = tableColumn as? TitanTableColumn else {return nil}
-        
-        let col = tableColumn.column!
-        let field = self.viewModel.field(at: col, row: row)
-        return field.rawData
-    }
-    
-    public func tableView(_ tableView: NSTableView, willDisplayCell cell: Any, for tableColumn: NSTableColumn?, row: Int) {
-        guard let cell = cell as? NSTextFieldCell else {return}
-        guard let tableColumn = tableColumn as? TitanTableColumn else {return}
-        
-        let col = tableColumn.column!
-        let field = self.viewModel.field(at: col, row: row)
-        
-        // Show raw data
-        if field.isNull {
-            cell.placeholderString = field.rawData
-            cell.stringValue = ""
-        } else {
-            cell.stringValue = field.rawData
-        }
-    }
-}
-
-//
-// MARK: - NSTableViewDelegate
-extension GridDatabaseView: NSTableViewDelegate {
-    public func tableViewSelectionDidChange(_ notification: Notification) {
-        
-    }
 }
 
 extension GridDatabaseView: XIBInitializable {

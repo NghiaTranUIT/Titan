@@ -41,6 +41,7 @@
 		BA6ACAEE1EB342D800B37CE7 /* StructureDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAED1EB342D800B37CE7 /* StructureDatabaseView.xib */; };
 		BA6ACAF01EB342F400B37CE7 /* IndexDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAEF1EB342F400B37CE7 /* IndexDatabaseView.xib */; };
 		BA6ACAF21EB3430E00B37CE7 /* SQLQueryDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAF11EB3430E00B37CE7 /* SQLQueryDatabaseView.xib */; };
+		BA6ACAF41EB3436B00B37CE7 /* RowDatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAF31EB3436B00B37CE7 /* RowDatabaseViewModel.swift */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -167,6 +168,7 @@
 		BA6ACAED1EB342D800B37CE7 /* StructureDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StructureDatabaseView.xib; sourceTree = "<group>"; };
 		BA6ACAEF1EB342F400B37CE7 /* IndexDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexDatabaseView.xib; sourceTree = "<group>"; };
 		BA6ACAF11EB3430E00B37CE7 /* SQLQueryDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLQueryDatabaseView.xib; sourceTree = "<group>"; };
+		BA6ACAF31EB3436B00B37CE7 /* RowDatabaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowDatabaseViewModel.swift; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 				BAA228151EA9B8BB009B3B41 /* GridDatabaseViewModel.swift */,
 				BABCE07C1EAEFF7C00A2D08A /* StackTableViewModel.swift */,
 				BABCE08C1EAF502100A2D08A /* StatusBarViewModel.swift */,
+				BA6ACAF31EB3436B00B37CE7 /* RowDatabaseViewModel.swift */,
 			);
 			name = "View model";
 			sourceTree = "<group>";
@@ -941,6 +944,7 @@
 				BA87570A1E9347BE00FCDFB1 /* Logger.swift in Sources */,
 				BA4B9DAF1EA8A7DB00210DD6 /* FetchTableSchemaOperation.swift in Sources */,
 				BA8757261E934AD400FCDFB1 /* RealmManager.swift in Sources */,
+				BA6ACAF41EB3436B00B37CE7 /* RowDatabaseViewModel.swift in Sources */,
 				BADDF7481E94FD3B00F35FF3 /* UpdateGroupConnectionAction.swift in Sources */,
 				BABCE0891EAF4F9800A2D08A /* StatusBarView.swift in Sources */,
 				BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */,

@@ -19,11 +19,10 @@ public protocol GridDatabaseViewModelType {
 }
 
 public protocol GridDatabaseViewModelInput {
-    var fetchDatabaseFromTablePublisher: PublishSubject<Void> {get}
+    
 }
 
 public protocol GridDatabaseViewModelOutput {
-    var queryResultVariable: Variable<QueryResult> {get}
     var stateVariable: Variable<GridDatabaseViewModelState> {get}
 }
 
@@ -45,26 +44,16 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     
     //
     // MARK: - Input
-    public var fetchDatabaseFromTablePublisher = PublishSubject<Void>()
     
     //
     // MARK: - Output
-    public var queryResultVariable = Variable<QueryResult>(QueryResult(nil))
     public var stateVariable = Variable<GridDatabaseViewModelState>(.row)
     
     //
-    // MARK: - Variable
-    fileprivate var table: Table!
-    fileprivate var pagination = Pagination()
-    public private(set) var query: PostgreQuery!
-    
-    //
     // MARK: - Init
-    public init(with table: Table) {
+    public override init() {
         super.init()
-        
-        self.table = table
-        
+    
         self.binding()
     }
     
@@ -73,22 +62,7 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     }
     
     fileprivate func binding() {
-        
-        // Fetch default query
-        self.fetchDatabaseFromTablePublisher.flatMap {[unowned self] _ -> Observable<QueryResult> in
-            
-            // Default query
-            self.query = PostgreQuery.buildDefaultQuery(with: self.table, pagination: self.pagination)
-            let worker = QueryPostgreSQLWorker(query: self.query)
-            return worker.observable()
-        }
-        .bind(to: self.queryResultVariable)
-        .addDisposableTo(self.disposeBag)
+
     }
     
-    public func field(at col: Column, row: Int) -> Field {
-        let row = self.queryResultVariable.value.rows[row]
-        let field = row.field(with: col)!
-        return field
-    }
 }

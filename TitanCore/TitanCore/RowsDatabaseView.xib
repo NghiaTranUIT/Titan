@@ -95,6 +95,10 @@
                 <constraint firstItem="Hop-Ug-sJd" firstAttribute="top" secondItem="Baz-An-PHK" secondAttribute="bottom" id="kdE-aL-x6u"/>
                 <constraint firstItem="Hop-Ug-sJd" firstAttribute="top" secondItem="Baz-An-PHK" secondAttribute="bottom" id="nnA-pb-c6E"/>
             </constraints>
+            <connections>
+                <outlet property="containerStatusBarView" destination="Hop-Ug-sJd" id="KRf-Ha-0R8"/>
+                <outlet property="tableView" destination="OZc-FF-lXP" id="iVM-7p-sds"/>
+            </connections>
         </customView>
     </objects>
 </document>

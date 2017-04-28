@@ -4,7 +4,6 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Detail Database Container Controller-->
@@ -188,99 +187,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="496"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="nDn-gH-FNl">
-                                <rect key="frame" x="0.0" y="446" width="450" height="50"/>
-                                <subviews>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m54-ct-2aQ" customClass="HoverButton" customModule="TitanCore">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="mXS-sK-Zqw"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Rows" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="euc-H2-MYL">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="systemMedium" size="13"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="rowBtnTapped:" target="Fuf-Vk-sCT" id="4jH-u8-sN9"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-Q3-Ilk" customClass="HoverButton" customModule="TitanCore">
-                                        <rect key="frame" x="62" y="0.0" width="84" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="fgi-v1-zgc"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Structure" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="UQS-68-RCY">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="systemMedium" size="13"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="structureBtnTapped:" target="Fuf-Vk-sCT" id="JV6-wN-ANI"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2GO-Hc-Fip" customClass="HoverButton" customModule="TitanCore">
-                                        <rect key="frame" x="146" y="0.0" width="76" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="76" id="EzZ-Zg-bXO"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Indexes" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="dx9-my-8KE">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="systemMedium" size="13"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="indexBtnTapped:" target="Fuf-Vk-sCT" id="7M2-Uq-lT4"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W0D-W4-vXc" customClass="HoverButton" customModule="TitanCore">
-                                        <rect key="frame" x="222" y="0.0" width="93" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="93" id="luG-4x-dxI"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="SQL Query" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Yzn-Ga-ImK">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="systemMedium" size="13"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="sqlQueryBtnTapped:" target="Fuf-Vk-sCT" id="4Zr-qu-3wv"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="2GO-Hc-Fip" secondAttribute="bottom" id="0Ur-A8-AJn"/>
-                                    <constraint firstItem="Ium-Q3-Ilk" firstAttribute="leading" secondItem="m54-ct-2aQ" secondAttribute="trailing" id="3OP-4s-22K"/>
-                                    <constraint firstItem="W0D-W4-vXc" firstAttribute="top" secondItem="nDn-gH-FNl" secondAttribute="top" id="7nB-1N-kpF"/>
-                                    <constraint firstItem="W0D-W4-vXc" firstAttribute="leading" secondItem="2GO-Hc-Fip" secondAttribute="trailing" id="EUJ-9P-02F"/>
-                                    <constraint firstAttribute="bottom" secondItem="W0D-W4-vXc" secondAttribute="bottom" id="GHQ-gQ-Eg0"/>
-                                    <constraint firstItem="m54-ct-2aQ" firstAttribute="top" secondItem="nDn-gH-FNl" secondAttribute="top" id="Kds-3n-vJX"/>
-                                    <constraint firstAttribute="bottom" secondItem="m54-ct-2aQ" secondAttribute="bottom" id="L5z-yF-eNH"/>
-                                    <constraint firstItem="m54-ct-2aQ" firstAttribute="leading" secondItem="nDn-gH-FNl" secondAttribute="leading" id="ORo-dM-miw"/>
-                                    <constraint firstItem="Ium-Q3-Ilk" firstAttribute="top" secondItem="nDn-gH-FNl" secondAttribute="top" id="WxN-sS-bdI"/>
-                                    <constraint firstItem="2GO-Hc-Fip" firstAttribute="top" secondItem="nDn-gH-FNl" secondAttribute="top" id="fIA-XO-juT"/>
-                                    <constraint firstAttribute="height" constant="50" id="ixG-hr-ztg"/>
-                                    <constraint firstItem="2GO-Hc-Fip" firstAttribute="leading" secondItem="Ium-Q3-Ilk" secondAttribute="trailing" id="ttB-gi-GWJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ium-Q3-Ilk" secondAttribute="bottom" id="vt1-Nh-I7j"/>
-                                </constraints>
-                            </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="EhF-Rt-nBU">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="446"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="496"/>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="nDn-gH-FNl" firstAttribute="leading" secondItem="i5q-WW-s2a" secondAttribute="leading" id="7Ze-X6-moT"/>
+                            <constraint firstItem="EhF-Rt-nBU" firstAttribute="top" secondItem="i5q-WW-s2a" secondAttribute="top" id="3M4-Gw-QF9"/>
                             <constraint firstAttribute="bottom" secondItem="EhF-Rt-nBU" secondAttribute="bottom" id="O65-lF-dlS"/>
-                            <constraint firstItem="nDn-gH-FNl" firstAttribute="top" secondItem="i5q-WW-s2a" secondAttribute="top" id="SQZ-Ho-9mI"/>
                             <constraint firstAttribute="trailing" secondItem="EhF-Rt-nBU" secondAttribute="trailing" id="dj6-A9-jH8"/>
-                            <constraint firstItem="EhF-Rt-nBU" firstAttribute="top" secondItem="nDn-gH-FNl" secondAttribute="bottom" id="kV3-5q-cHt"/>
                             <constraint firstItem="EhF-Rt-nBU" firstAttribute="leading" secondItem="i5q-WW-s2a" secondAttribute="leading" id="osl-3r-9u0"/>
-                            <constraint firstAttribute="trailing" secondItem="nDn-gH-FNl" secondAttribute="trailing" id="t69-8V-cYy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerButtonsView" destination="nDn-gH-FNl" id="bln-9Y-jBJ"/>
                         <outlet property="containerGridView" destination="EhF-Rt-nBU" id="RRP-oG-exd"/>
-                        <outlet property="indexBtn" destination="2GO-Hc-Fip" id="SRd-3g-QAD"/>
-                        <outlet property="rowsBtn" destination="m54-ct-2aQ" id="sEy-2Q-OY4"/>
-                        <outlet property="sqlQueryBtn" destination="W0D-W4-vXc" id="Evc-CH-ac5"/>
-                        <outlet property="structureBtn" destination="Ium-Q3-Ilk" id="gCZ-30-jaX"/>
                     </connections>
                 </viewController>
                 <customObject id="Bs0-K9-6Y2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

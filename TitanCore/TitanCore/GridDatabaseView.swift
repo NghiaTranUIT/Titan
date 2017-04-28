@@ -17,6 +17,11 @@ open class GridDatabaseView: NSView {
     @IBOutlet weak var tableView: TitanTableView!
     @IBOutlet weak var containerStatusBarView: NSView!
     fileprivate var statusBarView: StatusBarView!
+    @IBOutlet weak var rowsBtn: HoverButton!
+    @IBOutlet weak var structureBtn: HoverButton!
+    @IBOutlet weak var indexBtn: HoverButton!
+    @IBOutlet weak var sqlQueryBtn: HoverButton!
+    @IBOutlet weak var containerButtonsView: NSView!
     
     //
     // MARK: - Variable
@@ -48,6 +53,26 @@ open class GridDatabaseView: NSView {
     deinit {
         Logger.info("GridDatabaseView Deinit")
     }
+    
+    @IBAction func rowBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func structureBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func indexBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
+    
+    @IBAction func sqlQueryBtnTapped(_ sender: HoverButton) {
+        self.resetAllState()
+        sender.state = NSOnState
+    }
 }
 
 //
@@ -55,7 +80,7 @@ open class GridDatabaseView: NSView {
 extension GridDatabaseView {
     
     fileprivate func initCommon() {
-    
+        self.containerButtonsView.backgroundColor = NSColor(hexString: "#70599b")
     }
     
     fileprivate func initViewModel() {
@@ -95,6 +120,13 @@ extension GridDatabaseView {
             // NOtify
             self.statusBarView.queryResultPublisher.onNext(queryResult)
         }).addDisposableTo(self.disposeBag)
+    }
+    
+    fileprivate func resetAllState() {
+        self.rowsBtn.state = NSOffState
+        self.indexBtn.state = NSOffState
+        self.structureBtn.state = NSOffState
+        self.sqlQueryBtn.state = NSOffState
     }
 }
 

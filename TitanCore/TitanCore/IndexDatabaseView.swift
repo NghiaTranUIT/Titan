@@ -17,3 +17,7 @@ class IndexDatabaseView: NSView {
     }
     
 }
+
+extension IndexDatabaseView: XIBInitializable {
+    typealias T = IndexDatabaseView
+}

@@ -37,6 +37,10 @@
 		BA6ACAE61EB33B8900B37CE7 /* StructureDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */; };
 		BA6ACAE81EB33BAD00B37CE7 /* IndexDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */; };
 		BA6ACAEA1EB33BB700B37CE7 /* SQLQueryDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */; };
+		BA6ACAEC1EB3429300B37CE7 /* RowsDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAEB1EB3429300B37CE7 /* RowsDatabaseView.xib */; };
+		BA6ACAEE1EB342D800B37CE7 /* StructureDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAED1EB342D800B37CE7 /* StructureDatabaseView.xib */; };
+		BA6ACAF01EB342F400B37CE7 /* IndexDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAEF1EB342F400B37CE7 /* IndexDatabaseView.xib */; };
+		BA6ACAF21EB3430E00B37CE7 /* SQLQueryDatabaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA6ACAF11EB3430E00B37CE7 /* SQLQueryDatabaseView.xib */; };
 		BA776E681EA6167E00DB7857 /* ConnectDatabaseWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */; };
 		BA776E6B1EA6176200DB7857 /* PostgreSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */; };
 		BA776E6F1EA619DE00DB7857 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */; };
@@ -159,6 +163,10 @@
 		BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureDatabaseView.swift; sourceTree = "<group>"; };
 		BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexDatabaseView.swift; sourceTree = "<group>"; };
 		BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLQueryDatabaseView.swift; sourceTree = "<group>"; };
+		BA6ACAEB1EB3429300B37CE7 /* RowsDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RowsDatabaseView.xib; sourceTree = "<group>"; };
+		BA6ACAED1EB342D800B37CE7 /* StructureDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StructureDatabaseView.xib; sourceTree = "<group>"; };
+		BA6ACAEF1EB342F400B37CE7 /* IndexDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexDatabaseView.xib; sourceTree = "<group>"; };
+		BA6ACAF11EB3430E00B37CE7 /* SQLQueryDatabaseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQLQueryDatabaseView.xib; sourceTree = "<group>"; };
 		BA776E671EA6167E00DB7857 /* ConnectDatabaseWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectDatabaseWorker.swift; sourceTree = "<group>"; };
 		BA776E6A1EA6176200DB7857 /* PostgreSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQLManager.swift; sourceTree = "<group>"; };
 		BA776E6E1EA619DE00DB7857 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
@@ -411,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */,
+				BA6ACAEB1EB3429300B37CE7 /* RowsDatabaseView.xib */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -419,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */,
+				BA6ACAED1EB342D800B37CE7 /* StructureDatabaseView.xib */,
 			);
 			name = Structure;
 			sourceTree = "<group>";
@@ -427,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAE71EB33BAD00B37CE7 /* IndexDatabaseView.swift */,
+				BA6ACAEF1EB342F400B37CE7 /* IndexDatabaseView.xib */,
 			);
 			name = Indexes;
 			sourceTree = "<group>";
@@ -435,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAE91EB33BB700B37CE7 /* SQLQueryDatabaseView.swift */,
+				BA6ACAF11EB3430E00B37CE7 /* SQLQueryDatabaseView.xib */,
 			);
 			name = "SQL Query";
 			sourceTree = "<group>";
@@ -858,7 +870,11 @@
 				BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */,
 				BABCE08B1EAF4FA400A2D08A /* StatusBarView.xib in Resources */,
 				BABCE06E1EAE0A9E00A2D08A /* TextFieldCellView.xib in Resources */,
+				BA6ACAEC1EB3429300B37CE7 /* RowsDatabaseView.xib in Resources */,
+				BA6ACAF21EB3430E00B37CE7 /* SQLQueryDatabaseView.xib in Resources */,
 				BA4FBC141EA902D800A067E9 /* GridDatabaseView.xib in Resources */,
+				BA6ACAF01EB342F400B37CE7 /* IndexDatabaseView.xib in Resources */,
+				BA6ACAEE1EB342D800B37CE7 /* StructureDatabaseView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

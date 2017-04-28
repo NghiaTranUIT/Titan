@@ -17,3 +17,7 @@ class SQLQueryDatabaseView: NSView {
     }
     
 }
+
+extension SQLQueryDatabaseView: XIBInitializable {
+    typealias T = SQLQueryDatabaseView
+}

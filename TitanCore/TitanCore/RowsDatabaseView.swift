@@ -9,11 +9,9 @@
 import Cocoa
 
 class RowsDatabaseView: NSView {
-
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
     
+}
+
+extension RowsDatabaseView: XIBInitializable {
+    typealias T = RowsDatabaseView
 }

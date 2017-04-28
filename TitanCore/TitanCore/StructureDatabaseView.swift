@@ -17,3 +17,7 @@ class StructureDatabaseView: NSView {
     }
     
 }
+
+extension StructureDatabaseView: XIBInitializable {
+    typealias T = StructureDatabaseView
+}

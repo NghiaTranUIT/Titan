@@ -22,6 +22,7 @@ open class GridDatabaseView: NSView {
     @IBOutlet weak var indexBtn: HoverButton!
     @IBOutlet weak var sqlQueryBtn: HoverButton!
     @IBOutlet weak var containerButtonsView: NSView!
+    @IBOutlet weak var containerView: NSView!
     
     //
     // MARK: - Variable
@@ -33,6 +34,12 @@ open class GridDatabaseView: NSView {
         }}
     fileprivate var viewModel: GridDatabaseViewModel!
     fileprivate var disposeBag = DisposeBag()
+    
+    /// Subviews
+    fileprivate var rowsView: RowsDatabaseView?
+    fileprivate var structureView: StructureDatabaseView?
+    fileprivate var indexView: IndexDatabaseView?
+    fileprivate var sqlQueryView: SQLQueryDatabaseView?
     
     //
     // MARK: - Init
@@ -52,22 +59,6 @@ open class GridDatabaseView: NSView {
     
     deinit {
         Logger.info("GridDatabaseView Deinit")
-    }
-    
-    @IBAction func rowBtnTapped(_ sender: HoverButton) {
-        self.resetAllState(sender)
-    }
-    
-    @IBAction func structureBtnTapped(_ sender: HoverButton) {
-        self.resetAllState(sender)
-    }
-    
-    @IBAction func indexBtnTapped(_ sender: HoverButton) {
-        self.resetAllState(sender)
-    }
-    
-    @IBAction func sqlQueryBtnTapped(_ sender: HoverButton) {
-        self.resetAllState(sender)
     }
 }
 
@@ -140,8 +131,9 @@ extension GridDatabaseView {
         }).addDisposableTo(self.disposeBag)
         
         // Change state
-        self.viewModel.output.stateVariable.asDriver().drive(onNext: { (state) in
-            
+        self.viewModel.output.stateVariable.asDriver().drive(onNext: {[weak self] (state) in
+            guard let `self` = self else {return}
+            self.handleViewSate(state)
         })
         .addDisposableTo(self.disposeBag)
         
@@ -157,6 +149,60 @@ extension GridDatabaseView {
         }
         sender.state = NSOnState
     }
+    
+    fileprivate func handleViewSate(_ state: GridDatabaseViewModelState) {
+        
+        // Hide all
+        self.hideAllView()
+        
+        // FIXME: Repeat code
+        
+        // Show
+        switch state {
+        case .row:
+            if self.rowsView == nil {
+                self.rowsView = self.lazyLoadView(viewType: RowsDatabaseView.self)
+            }
+            self.rowsView?.isHidden = false
+        
+        case .index:
+            if self.indexView == nil {
+                self.indexView = self.lazyLoadView(viewType: IndexDatabaseView.self)
+            }
+            self.indexView?.isHidden = false
+            
+        case .sqlQuery:
+            if self.sqlQueryView == nil {
+                self.sqlQueryView = self.lazyLoadView(viewType: SQLQueryDatabaseView.self)
+            }
+            self.sqlQueryView?.isHidden = false
+            
+        case .structure:
+            if self.structureView == nil {
+                self.structureView = self.lazyLoadView(viewType: StructureDatabaseView.self)
+            }
+            self.structureView?.isHidden = false
+        }
+    }
+    
+    fileprivate func hideAllView() {
+        
+        let views: [NSView?] = [self.rowsView, self.indexView, self.structureView, self.sqlQueryBtn]
+        for view in views {
+            view?.isHidden = true
+        }
+    }
+    
+    fileprivate func lazyLoadView<T: NSView >(viewType: T.Type) -> T where T: XIBInitializable {
+        let view = viewType.viewFromNib(with: .core) as! T
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.containerView.addSubview(view)
+        view.snp.makeConstraints({ (make) in
+            make.edges.equalTo(self.containerView)
+        })
+        return view
+    }
+
 }
 
 //

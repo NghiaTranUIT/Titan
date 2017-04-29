@@ -18,6 +18,7 @@ public protocol StatusBarViewModelType {
 
 public protocol StatusBarViewModelInput {
     var queryResultPublisher: PublishSubject<QueryResult> {get}
+    var selectionRowPublisher: PublishSubject<IndexSet> {get}
 }
 
 public protocol StatusBarViewModelOutput {
@@ -36,6 +37,7 @@ open class StatusBarViewModel: BaseViewModel, StatusBarViewModelType, StatusBarV
     //
     // MARK: - Input
     public var queryResultPublisher = PublishSubject<QueryResult>()
+    public var selectionRowPublisher = PublishSubject<IndexSet>()
     
     //
     // MARK: - Output
@@ -64,5 +66,12 @@ open class StatusBarViewModel: BaseViewModel, StatusBarViewModelType, StatusBarV
         }
         .asDriver(onErrorJustReturn: "0 Rows")
 
+        // Selection change
+        self.selectionRowPublisher.filter { (indexSet) -> Bool in
+            return indexSet.count > 0
+        }
+        .map { (indexSet) -> String in
+            
+        }
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import SwiftyPostgreSQL
+import RxCocoa
 
 public protocol RowDatabaseViewModelType {
     var input: RowDatabaseViewModelInput {get}
@@ -17,10 +18,12 @@ public protocol RowDatabaseViewModelType {
 
 public protocol RowDatabaseViewModelInput {
     var fetchDatabaseFromTablePublisher: PublishSubject<Void> {get}
+    var selectionRowPublisher: PublishSubject<IndexSet> {get}
 }
 
 public protocol RowDatabaseViewModelOutput {
     var queryResultVariable: Variable<QueryResult> {get}
+    var selectionRowChangedDriver: Driver<IndexSet>! {get}
 }
 
 open class RowDatabaseViewModel: BaseViewModel, RowDatabaseViewModelType, RowDatabaseViewModelInput, RowDatabaseViewModelOutput {
@@ -33,10 +36,12 @@ open class RowDatabaseViewModel: BaseViewModel, RowDatabaseViewModelType, RowDat
     //
     // MARK: - Input
     public var fetchDatabaseFromTablePublisher = PublishSubject<Void>()
+    public var selectionRowPublisher = PublishSubject<IndexSet>()
     
     //
     // MARK: - Output
     public var queryResultVariable = Variable<QueryResult>(QueryResult(nil))
+    public var selectionRowChangedDriver: Driver<IndexSet>!
     
     //
     // MARK: - Variable
@@ -69,6 +74,9 @@ open class RowDatabaseViewModel: BaseViewModel, RowDatabaseViewModelType, RowDat
         }
         .bind(to: self.queryResultVariable)
         .addDisposableTo(self.disposeBag)
+        
+        // Selection changed
+        self.selectionRowChangedDriver = self.selectionRowPublisher.asDriver(onErrorJustReturn: IndexSet())
     }
     
     public func field(at col: Column, row: Int) -> Field {

@@ -23,7 +23,12 @@ open class GridDatabaseView: NSView {
     
     //
     // MARK: - Variable
-    public var table: Table!
+    public var table: Table! {
+        didSet {
+            self.initViewModel()
+            self.binding()
+        }
+    }
     fileprivate var viewModel: GridDatabaseViewModel!
     fileprivate var disposeBag = DisposeBag()
     
@@ -46,8 +51,6 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
-        self.initViewModel()
-        self.binding()
     }
     
     deinit {

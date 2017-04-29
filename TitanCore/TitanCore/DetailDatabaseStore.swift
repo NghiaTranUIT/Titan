@@ -112,6 +112,11 @@ open class DetailDatabaseStore: ReduxStore {
             self.selectedIndexStackTables.value = replaceIndex
             
         case let action as SelectedIndexInStackViewAction:
+            // Remove from superview
+            let view = self.gridDatabaseViews.value[self.selectedIndexStackTables.value]
+            view.removeFromSuperview()
+            
+            // New selection
             self.selectedIndexStackTables.value = action.selectedIndex
             
         default:

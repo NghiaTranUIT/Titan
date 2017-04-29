@@ -23,6 +23,8 @@ class StatusBarView: NSView {
     //
     // MARK: - Variable
     public var queryResultPublisher = PublishSubject<QueryResult>()
+    public var selectionChangedPublisher = PublishSubject<IndexSet>()
+    
     fileprivate var viewModel: StatusBarViewModel!
     fileprivate var disposeBag = DisposeBag()
     
@@ -50,6 +52,9 @@ extension StatusBarView {
         
         // Status
         self.viewModel.output.statusDriver.drive(self.statusLbl.rx.text).addDisposableTo(self.disposeBag)
+        
+        // Selection
+        self.selectionChangedPublisher.bind(to: self.viewModel.input.selectionRowPublisher).addDisposableTo(self.disposeBag)
     }
     
 }

@@ -86,7 +86,7 @@ extension RowsDatabaseView {
             // NOtify
             self.statusBarView.queryResultPublisher.onNext(queryResult)
         }).addDisposableTo(self.disposeBag)
-
+        
     }
 }
 
@@ -138,6 +138,11 @@ extension RowsDatabaseView: NSTableViewDataSource {
 // MARK: - NSTableViewDelegate
 extension RowsDatabaseView: NSTableViewDelegate {
     
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        Logger.info("Selection = \(self.tableView.selectedRowIndexes)")
+        
+        self.statusBarView.selectionChangedPublisher.onNext(self.tableView.selectedRowIndexes)
+    }
 }
 
 extension RowsDatabaseView: XIBInitializable {

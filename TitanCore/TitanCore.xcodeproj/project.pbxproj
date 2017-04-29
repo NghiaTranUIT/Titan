@@ -360,7 +360,6 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAAE1EB19D3E00B37CE7 /* Buttons */,
-				BABCE0871EAF4F8000A2D08A /* Status View */,
 				BA4FBC181EA905C900A067E9 /* Stack View */,
 				BA4FBC151EA9031500A067E9 /* TitanTableView */,
 				BA4FBC101EA9029600A067E9 /* Grid Database View */,
@@ -423,6 +422,7 @@
 		BA6ACADF1EB33B4000B37CE7 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
+				BABCE0871EAF4F8000A2D08A /* Status View */,
 				BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */,
 				BA6ACAEB1EB3429300B37CE7 /* RowsDatabaseView.xib */,
 			);

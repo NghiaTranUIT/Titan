@@ -17,7 +17,7 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="rkC-Fu-hcJ">
                     <rect key="frame" x="0.0" y="387" width="628" height="50"/>
                     <subviews>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ECU-IC-XMn" customClass="HoverButton" customModule="TitanCore">
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ECU-IC-XMn" customClass="DatabaseModeButton" customModule="TitanCore" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="62" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="62" id="BOu-pz-waj"/>
@@ -27,7 +27,7 @@
                                 <font key="font" metaFont="systemMedium" size="13"/>
                             </buttonCell>
                         </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugT-Qf-CUR" customClass="HoverButton" customModule="TitanCore">
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugT-Qf-CUR" customClass="DatabaseModeButton" customModule="TitanCore" customModuleProvider="target">
                             <rect key="frame" x="146" y="0.0" width="76" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="76" id="mxV-1I-F8m"/>
@@ -37,7 +37,7 @@
                                 <font key="font" metaFont="systemMedium" size="13"/>
                             </buttonCell>
                         </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-aW-aHA" customClass="HoverButton" customModule="TitanCore">
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="o2i-aW-aHA" customClass="DatabaseModeButton" customModule="TitanCore" customModuleProvider="target">
                             <rect key="frame" x="62" y="0.0" width="84" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="84" id="SEI-Z2-5dH"/>
@@ -47,7 +47,7 @@
                                 <font key="font" metaFont="systemMedium" size="13"/>
                             </buttonCell>
                         </button>
-                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-wS-MGn" customClass="HoverButton" customModule="TitanCore">
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V1K-wS-MGn" customClass="DatabaseModeButton" customModule="TitanCore" customModuleProvider="target">
                             <rect key="frame" x="222" y="0.0" width="93" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="93" id="dy3-kt-lhZ"/>

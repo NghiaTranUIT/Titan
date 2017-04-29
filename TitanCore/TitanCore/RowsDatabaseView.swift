@@ -36,7 +36,8 @@ class RowsDatabaseView: NSView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        self.initCommon()
+        self.initStatusBarView()
     }
 }
 
@@ -50,6 +51,15 @@ extension RowsDatabaseView {
     
     fileprivate func initViewModel() {
         self.viewModel = RowDatabaseViewModel(with: self.table)
+    }
+    
+    fileprivate func initStatusBarView() {
+        self.statusBarView = StatusBarView.viewFromNib(with: .core)!
+        self.statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        self.containerStatusBarView.addSubview(self.statusBarView)
+        self.statusBarView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.containerStatusBarView)
+        }
     }
     
     fileprivate func binding() {

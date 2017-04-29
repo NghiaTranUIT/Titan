@@ -19,7 +19,7 @@ public protocol GridDatabaseViewModelType {
 }
 
 public protocol GridDatabaseViewModelInput {
-    
+    var statePublisher: PublishSubject<GridDatabaseViewModelState> {get}
 }
 
 public protocol GridDatabaseViewModelOutput {
@@ -44,6 +44,7 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     
     //
     // MARK: - Input
+    public var statePublisher = PublishSubject<GridDatabaseViewModelState>()
     
     //
     // MARK: - Output
@@ -62,7 +63,7 @@ open class GridDatabaseViewModel: BaseViewModel, GridDatabaseViewModelType, Grid
     }
     
     fileprivate func binding() {
-
+        self.statePublisher.bind(to: self.stateVariable)
+        .addDisposableTo(self.disposeBag)
     }
-    
 }

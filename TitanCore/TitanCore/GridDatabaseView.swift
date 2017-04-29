@@ -14,10 +14,10 @@ open class GridDatabaseView: NSView {
 
     //
     // MARK: - OUTLET
-    @IBOutlet weak var rowsBtn: HoverButton!
-    @IBOutlet weak var structureBtn: HoverButton!
-    @IBOutlet weak var indexBtn: HoverButton!
-    @IBOutlet weak var sqlQueryBtn: HoverButton!
+    @IBOutlet weak var rowsBtn: DatabaseModeButton!
+    @IBOutlet weak var structureBtn: DatabaseModeButton!
+    @IBOutlet weak var indexBtn: DatabaseModeButton!
+    @IBOutlet weak var sqlQueryBtn: DatabaseModeButton!
     @IBOutlet weak var containerButtonsView: NSView!
     @IBOutlet weak var containerView: NSView!
     
@@ -46,6 +46,7 @@ open class GridDatabaseView: NSView {
         
         //
         self.initCommon()
+        self.initViewModel()
         self.binding()
     }
     
@@ -61,6 +62,12 @@ extension GridDatabaseView {
     fileprivate func initCommon() {
         self.containerButtonsView.backgroundColor = NSColor(hexString: "#70599b")
         self.rowsBtn.state = NSOnState
+        
+        // Set state
+        self.rowsBtn.databaseMode = .row
+        self.indexBtn.databaseMode = .index
+        self.structureBtn.databaseMode = .structure
+        self.sqlQueryBtn.databaseMode = .sqlQuery
     }
     
     fileprivate func initViewModel() {
@@ -68,6 +75,8 @@ extension GridDatabaseView {
     }
     
     fileprivate func binding() {
+        
+        //FIXME: Figure it out the best solution here
         
         // Tap
         self.rowsBtn.rx.tap.asObservable().subscribe(onNext: {[weak self] _ in
@@ -99,7 +108,7 @@ extension GridDatabaseView {
         
     }
     
-    fileprivate func resetAllState(_ sender: HoverButton) {
+    fileprivate func resetAllState(_ sender: DatabaseModeButton) {
         let btns = [self.rowsBtn, self.indexBtn, self.structureBtn, self.sqlQueryBtn].filter { (btn) -> Bool in
             return btn !== sender
         }
@@ -108,6 +117,7 @@ extension GridDatabaseView {
             btn!.state = NSOffState
         }
         sender.state = NSOnState
+        self.viewModel.input.statePublisher.onNext(sender.databaseMode)
     }
     
     fileprivate func handleViewSate(_ state: GridDatabaseViewModelState) {

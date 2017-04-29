@@ -32,6 +32,7 @@
 		BA4FBC171EA9032800A067E9 /* TitanTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC161EA9032800A067E9 /* TitanTableView.swift */; };
 		BA4FBC1A1EA905ED00A067E9 /* StackTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBC191EA905ED00A067E9 /* StackTableView.swift */; };
 		BA4FBC1C1EA905FC00A067E9 /* StackTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */; };
+		BA5B02951EB443FF007A320E /* DatabaseModeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B02941EB443FF007A320E /* DatabaseModeButton.swift */; };
 		BA6ACAB01EB19D5300B37CE7 /* HoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */; };
 		BA6ACAE41EB33B7F00B37CE7 /* RowsDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */; };
 		BA6ACAE61EB33B8900B37CE7 /* StructureDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */; };
@@ -159,6 +160,7 @@
 		BA4FBC161EA9032800A067E9 /* TitanTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitanTableView.swift; sourceTree = "<group>"; };
 		BA4FBC191EA905ED00A067E9 /* StackTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTableView.swift; sourceTree = "<group>"; };
 		BA4FBC1B1EA905FC00A067E9 /* StackTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackTableView.xib; sourceTree = "<group>"; };
+		BA5B02941EB443FF007A320E /* DatabaseModeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseModeButton.swift; sourceTree = "<group>"; };
 		BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverButton.swift; sourceTree = "<group>"; };
 		BA6ACAE31EB33B7F00B37CE7 /* RowsDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowsDatabaseView.swift; sourceTree = "<group>"; };
 		BA6ACAE51EB33B8900B37CE7 /* StructureDatabaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructureDatabaseView.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6ACAAF1EB19D5300B37CE7 /* HoverButton.swift */,
+				BA5B02941EB443FF007A320E /* DatabaseModeButton.swift */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				BA87560F1E923BCF00FCDFB1 /* Headers */,
 				BA8756101E923BCF00FCDFB1 /* Resources */,
 				BA8756B11E929ED000FCDFB1 /* ShellScript */,
+				BA5B02961EB4451B007A320E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -884,6 +888,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BA5B02961EB4451B007A320E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
 		BA8756B11E929ED000FCDFB1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -947,6 +964,7 @@
 				BA6ACAF41EB3436B00B37CE7 /* RowDatabaseViewModel.swift in Sources */,
 				BADDF7481E94FD3B00F35FF3 /* UpdateGroupConnectionAction.swift in Sources */,
 				BABCE0891EAF4F9800A2D08A /* StatusBarView.swift in Sources */,
+				BA5B02951EB443FF007A320E /* DatabaseModeButton.swift in Sources */,
 				BABCE07D1EAEFF7C00A2D08A /* StackTableViewModel.swift in Sources */,
 				BA1802301E9C902B00096445 /* NotificationManager.swift in Sources */,
 				BA4FBC121EA902B100A067E9 /* GridDatabaseView.swift in Sources */,

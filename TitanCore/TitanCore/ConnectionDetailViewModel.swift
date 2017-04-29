@@ -69,7 +69,6 @@ extension ConnectionDetailViewModel {
         self._selectedDatabaseVariable = MainStore.globalStore.connectionStore
             .selectedDatabase
         
-
         // Connect selected database
         self.connectDatabasePublisher
         .do(onNext: { _ in
@@ -85,7 +84,6 @@ extension ConnectionDetailViewModel {
             Logger.error("Error connect DB \(error)")
         })
         .addDisposableTo(self.disposeBag)
-        
         
         // Create temp data
         self.databaseDataPublisher
